@@ -6,6 +6,8 @@
     "email": "defeng_mail@163.com",
     "url": "https://github.com/daief"
   },
+  "homepage": "https://daief.tech/daisyui-vue",
+  "repository": "https://github.com/daief/daisyui-vue",
   "license": "MIT",
   "main": "dist/lib/index.js",
   "module": "dist/esm/index.js",
@@ -40,5 +42,12 @@
   "workspaces": [
     "docs",
     "libs/*"
-  ]
+  ],
+  "engines": {
+    "node": ">12.20.0"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  }
 }
