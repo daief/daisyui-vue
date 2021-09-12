@@ -23,9 +23,11 @@ export const buttonProps = {
   shape: String as PropType<'circle' | 'square'>,
   block: Boolean,
   wide: Boolean,
-  loading: Boolean,
   disabled: Boolean,
   outline: Boolean,
+  active: Boolean,
+  loading: Boolean,
+  noAnimation: Boolean,
   onClick: Function as PropType<(payload: MouseEvent) => any>,
 };
 
@@ -36,6 +38,9 @@ export const Button = defineComponent({
   props: buttonProps,
   setup: (props, { slots }) => {
     const clickLoading = ref(false);
+
+    const finalLoading = computed(() => props.loading || clickLoading.value);
+
     const cls = computed(() => {
       return [
         'btn',
@@ -49,9 +54,11 @@ export const Button = defineComponent({
           [`btn-${props.shape}`]: !!props.shape,
           'btn-block': props.block,
           'btn-wide': props.wide,
-          loading: props.loading || clickLoading.value,
+          loading: finalLoading.value,
           'btn-disabled': props.disabled,
+          'btn-active': props.active,
           'btn-outline': props.outline,
+          'no-animation': props.noAnimation,
         },
       ];
     });
@@ -65,13 +72,20 @@ export const Button = defineComponent({
       clickLoading.value = false;
     };
 
+    const showContent = computed(() => {
+      if (['circle', 'square'].includes(props.shape)) {
+        return !finalLoading.value;
+      }
+      return true;
+    });
+
     return () => (
       <button
         disabled={props.disabled}
         class={cls.value}
         onClick={handleOnClick}
       >
-        {slots.default?.()}
+        {showContent.value ? slots.default?.() : null}
       </button>
     );
   },

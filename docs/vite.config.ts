@@ -42,7 +42,7 @@ const config: UserConfig = {
               }
             });
           };
-          md.core.ruler.push('router-link', scan);
+          md.core.ruler.push('code-2-demo', scan);
         },
       ],
     }),

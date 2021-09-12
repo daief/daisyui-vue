@@ -11,7 +11,7 @@ export default defineComponent({
     const currentTab = ref('preview');
 
     return () => (
-      <div class="py-2">
+      <div class="dv-playground py-2">
         <Tabs type="lifted" v-model={[currentTab.value, 'value']}>
           <Tab name="preview" title="Preview">
             {slots.default?.()}
@@ -31,3 +31,13 @@ export default defineComponent({
   },
 });
 </script>
+
+<style lang="less">
+p + .dv-playground {
+  margin-top: -1em;
+}
+
+.dv-playground + p {
+  margin-top: 1em;
+}
+</style>

@@ -52,7 +52,7 @@ export default defineComponent({
               </div>
             ),
             content: () => (
-              <div class="p-4 lg:p-10">
+              <div class="p-4 pb-8 lg:p-10">
                 <router-view />
               </div>
             ),
