@@ -1,0 +1,9 @@
+{
+  "name": "docs",
+  "short_name": "docs",
+  "start_url": "/daisyui-vue/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "lang": "en",
+  "scope": "/daisyui-vue/"
+}
