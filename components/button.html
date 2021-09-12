@@ -8,33 +8,34 @@
       type="module"
       async=""
       crossorigin=""
-      src="/daisyui-vue/assets/app.6d782fd3.js"
+      src="/daisyui-vue/assets/app.5931973f.js"
     ></script>
     <link rel="modulepreload" href="/daisyui-vue/assets/vendor.44a2ddf6.js" />
-    <link rel="stylesheet" href="/daisyui-vue/assets/app.a58153e7.css" />
+    <link rel="stylesheet" href="/daisyui-vue/assets/app.f55a9b0b.css" />
     <link rel="manifest" href="/daisyui-vue/manifest.webmanifest" />
     <link
       rel="modulepreload"
       crossorigin=""
-      href="/daisyui-vue/assets/button.c264578f.js"
+      href="/daisyui-vue/assets/button.1b168d5b.js"
     />
     <meta name="head:count" content="0" />
   </head>
   <body>
     <div id="app" data-server-rendered="true">
-      <main data-v-3c9aee03="">
+      <main data-v-60f56cd4="">
         <div
           class="h-screen drawer drawer-mobile"
           style="z-index: 100"
-          data-v-3c9aee03=""
+          data-v-60f56cd4=""
         >
           <input type="checkbox" class="drawer-toggle" />
           <div class="drawer-content">
             <!--[-->
-            <div class="p-4 lg:p-10" data-v-3c9aee03="">
-              <div class="markdown-body" data-v-3c9aee03="">
+            <div class="p-4 pb-8 lg:p-10" data-v-60f56cd4="">
+              <div class="markdown-body" data-v-60f56cd4="">
                 <h1>Button</h1>
-                <div class="py-2">
+                <p>button with brand colors</p>
+                <div class="dv-playground py-2">
                   <!--[-->
                   <div class="tabs">
                     <!--[--><a class="tab tab-lifted tab-md tab-active"
@@ -89,7 +90,8 @@
                   </div>
                   <!--]--><!--]-->
                 </div>
-                <div class="py-2">
+                <p>active state button</p>
+                <div class="dv-playground py-2">
                   <!--[-->
                   <div class="tabs">
                     <!--[--><a class="tab tab-lifted tab-md tab-active"
@@ -112,7 +114,65 @@
                         md:flex-row
                       "
                     >
-                      <button class="btn btn-md"><!--[-->netural<!--]--></button
+                      <button class="btn btn-md btn-active">
+                        <!--[-->netural<!--]--></button
+                      ><button class="btn btn-primary btn-md btn-active">
+                        <!--[-->secondary<!--]--></button
+                      ><button class="btn btn-secondary btn-md btn-active">
+                        <!--[-->secondary<!--]--></button
+                      ><button class="btn btn-accent btn-md btn-active">
+                        <!--[-->accent<!--]--></button
+                      ><button class="btn btn-ghost btn-md btn-active">
+                        <!--[-->ghost<!--]--></button
+                      ><button class="btn btn-link btn-md btn-active">
+                        <!--[-->link<!--]-->
+                      </button>
+                    </div>
+                    <!--]--><!--]-->
+                  </div>
+                  <div class="mt-2 hidden">
+                    <!--[-->
+                    <pre><code class="hljs language-html" hljs-language="html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>
+  <span class="hljs-attr">class</span>=<span class="hljs-string">"flex flex-wrap items-start md:space-x-2 space-y-2 md:space-y-0 flex-col md:flex-row"</span>
+&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">active</span>&gt;</span>netural<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">active</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"primary"</span>&gt;</span>secondary<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">active</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"secondary"</span>&gt;</span>secondary<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">active</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"accent"</span>&gt;</span>accent<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">active</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"ghost"</span>&gt;</span>ghost<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">active</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"link"</span>&gt;</span>link<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+                    <!--]-->
+                  </div>
+                  <!--]--><!--]-->
+                </div>
+                <p>outline button</p>
+                <div class="dv-playground py-2">
+                  <!--[-->
+                  <div class="tabs">
+                    <!--[--><a class="tab tab-lifted tab-md tab-active"
+                      >Preview</a
+                    ><a class="tab tab-lifted tab-md">Code</a
+                    ><!--]-->
+                    <div class="flex-1 cursor-default tab tab-lifted"></div>
+                  </div>
+                  <!--[-->
+                  <div class="mt-2">
+                    <!--[--><!--[-->
+                    <div
+                      class="
+                        flex flex-wrap
+                        items-start
+                        md:space-x-2
+                        space-y-2
+                        md:space-y-0
+                        flex-col
+                        md:flex-row
+                      "
+                    >
+                      <button class="btn btn-md btn-outline">
+                        <!--[-->netural<!--]--></button
                       ><button class="btn btn-primary btn-md btn-outline">
                         <!--[-->secondary<!--]--></button
                       ><button class="btn btn-secondary btn-md btn-outline">
@@ -132,12 +192,540 @@
                     <pre><code class="hljs language-html" hljs-language="html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>
   <span class="hljs-attr">class</span>=<span class="hljs-string">"flex flex-wrap items-start md:space-x-2 space-y-2 md:space-y-0 flex-col md:flex-row"</span>
 &gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">Button</span>&gt;</span>netural<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">outline</span>&gt;</span>netural<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"primary"</span> <span class="hljs-attr">outline</span>&gt;</span>secondary<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"secondary"</span> <span class="hljs-attr">outline</span>&gt;</span>secondary<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"accent"</span> <span class="hljs-attr">outline</span>&gt;</span>accent<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"ghost"</span> <span class="hljs-attr">outline</span>&gt;</span>ghost<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"link"</span> <span class="hljs-attr">outline</span>&gt;</span>link<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+                    <!--]-->
+                  </div>
+                  <!--]--><!--]-->
+                </div>
+                <p>disabled button</p>
+                <div class="dv-playground py-2">
+                  <!--[-->
+                  <div class="tabs">
+                    <!--[--><a class="tab tab-lifted tab-md tab-active"
+                      >Preview</a
+                    ><a class="tab tab-lifted tab-md">Code</a
+                    ><!--]-->
+                    <div class="flex-1 cursor-default tab tab-lifted"></div>
+                  </div>
+                  <!--[-->
+                  <div class="mt-2">
+                    <!--[--><!--[-->
+                    <div
+                      class="
+                        flex flex-wrap
+                        items-start
+                        md:space-x-2
+                        space-y-2
+                        md:space-y-0
+                        flex-col
+                        md:flex-row
+                      "
+                    >
+                      <button disabled="" class="btn btn-md btn-disabled">
+                        <!--[-->netural<!--]--></button
+                      ><button
+                        disabled=""
+                        class="btn btn-primary btn-md btn-disabled"
+                      >
+                        <!--[-->secondary<!--]--></button
+                      ><button
+                        disabled=""
+                        class="btn btn-secondary btn-md btn-disabled"
+                      >
+                        <!--[-->secondary<!--]--></button
+                      ><button
+                        disabled=""
+                        class="btn btn-accent btn-md btn-disabled"
+                      >
+                        <!--[-->accent<!--]--></button
+                      ><button
+                        disabled=""
+                        class="btn btn-ghost btn-md btn-disabled"
+                      >
+                        <!--[-->ghost<!--]--></button
+                      ><button
+                        disabled=""
+                        class="btn btn-link btn-md btn-disabled"
+                      >
+                        <!--[-->link<!--]-->
+                      </button>
+                    </div>
+                    <!--]--><!--]-->
+                  </div>
+                  <div class="mt-2 hidden">
+                    <!--[-->
+                    <pre><code class="hljs language-html" hljs-language="html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>
+  <span class="hljs-attr">class</span>=<span class="hljs-string">"flex flex-wrap items-start md:space-x-2 space-y-2 md:space-y-0 flex-col md:flex-row"</span>
+&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">disabled</span>&gt;</span>netural<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"primary"</span> <span class="hljs-attr">disabled</span>&gt;</span>secondary<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"secondary"</span> <span class="hljs-attr">disabled</span>&gt;</span>secondary<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"accent"</span> <span class="hljs-attr">disabled</span>&gt;</span>accent<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"ghost"</span> <span class="hljs-attr">disabled</span>&gt;</span>ghost<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"link"</span> <span class="hljs-attr">disabled</span>&gt;</span>link<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+                    <!--]-->
+                  </div>
+                  <!--]--><!--]-->
+                </div>
+                <p>button with state colors</p>
+                <div class="dv-playground py-2">
+                  <!--[-->
+                  <div class="tabs">
+                    <!--[--><a class="tab tab-lifted tab-md tab-active"
+                      >Preview</a
+                    ><a class="tab tab-lifted tab-md">Code</a
+                    ><!--]-->
+                    <div class="flex-1 cursor-default tab tab-lifted"></div>
+                  </div>
+                  <!--[-->
+                  <div class="mt-2">
+                    <!--[--><!--[-->
+                    <div
+                      class="
+                        flex flex-wrap
+                        items-start
+                        md:space-x-2
+                        space-y-2
+                        md:space-y-0
+                        flex-col
+                        md:flex-row
+                      "
+                    >
+                      <button class="btn btn-info btn-md">
+                        <!--[-->info<!--]--></button
+                      ><button class="btn btn-success btn-md">
+                        <!--[-->success<!--]--></button
+                      ><button class="btn btn-warning btn-md">
+                        <!--[-->warning<!--]--></button
+                      ><button class="btn btn-error btn-md">
+                        <!--[-->error<!--]-->
+                      </button>
+                    </div>
+                    <!--]--><!--]-->
+                  </div>
+                  <div class="mt-2 hidden">
+                    <!--[-->
+                    <pre><code class="hljs language-html" hljs-language="html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>
+  <span class="hljs-attr">class</span>=<span class="hljs-string">"flex flex-wrap items-start md:space-x-2 space-y-2 md:space-y-0 flex-col md:flex-row"</span>
+&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"info"</span>&gt;</span>info<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"success"</span>&gt;</span>success<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"warning"</span>&gt;</span>warning<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"error"</span>&gt;</span>error<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+                    <!--]-->
+                  </div>
+                  <!--]--><!--]-->
+                </div>
+                <p>glass button</p>
+                <div class="dv-playground py-2">
+                  <!--[-->
+                  <div class="tabs">
+                    <!--[--><a class="tab tab-lifted tab-md tab-active"
+                      >Preview</a
+                    ><a class="tab tab-lifted tab-md">Code</a
+                    ><!--]-->
+                    <div class="flex-1 cursor-default tab tab-lifted"></div>
+                  </div>
+                  <!--[-->
+                  <div class="mt-2">
+                    <!--[--><!--[-->
+                    <div
+                      class="p-20 bg-cover bg-base-200 w-80 h-52 rounded-box"
+                      style="
+                        background-image: url('https://picsum.photos/id/314/400/300');
+                      "
+                    >
+                      <button class="btn glass btn-md">
+                        <!--[-->Glass Button<!--]-->
+                      </button>
+                    </div>
+                    <!--]--><!--]-->
+                  </div>
+                  <div class="mt-2 hidden">
+                    <!--[-->
+                    <pre><code class="hljs language-html" hljs-language="html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>
+  <span class="hljs-attr">class</span>=<span class="hljs-string">"p-20 bg-cover bg-base-200 w-80 h-52 rounded-box"</span>
+  <span class="hljs-attr">style</span>=<span class="hljs-string">'background-image: url("https://picsum.photos/id/314/400/300");'</span>
+&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"glass"</span>&gt;</span>Glass Button<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+                    <!--]-->
+                  </div>
+                  <!--]--><!--]-->
+                </div>
+                <p>button size</p>
+                <div class="dv-playground py-2">
+                  <!--[-->
+                  <div class="tabs">
+                    <!--[--><a class="tab tab-lifted tab-md tab-active"
+                      >Preview</a
+                    ><a class="tab tab-lifted tab-md">Code</a
+                    ><!--]-->
+                    <div class="flex-1 cursor-default tab tab-lifted"></div>
+                  </div>
+                  <!--[-->
+                  <div class="mt-2">
+                    <!--[--><!--[-->
+                    <div
+                      class="
+                        flex flex-wrap
+                        items-start
+                        md:space-x-2
+                        space-y-2
+                        md:space-y-0
+                        flex-col
+                        md:flex-row
+                      "
+                    >
+                      <button class="btn btn-lg"><!--[-->Large<!--]--></button
+                      ><button class="btn btn-md"><!--[-->Normal<!--]--></button
+                      ><button class="btn btn-sm"><!--[-->Small<!--]--></button
+                      ><button class="btn btn-xs"><!--[-->Tiny<!--]--></button>
+                    </div>
+                    <!--]--><!--]-->
+                  </div>
+                  <div class="mt-2 hidden">
+                    <!--[-->
+                    <pre><code class="hljs language-html" hljs-language="html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>
+  <span class="hljs-attr">class</span>=<span class="hljs-string">"flex flex-wrap items-start md:space-x-2 space-y-2 md:space-y-0 flex-col md:flex-row"</span>
+&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"lg"</span>&gt;</span>Large<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Button</span>&gt;</span>Normal<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"sm"</span>&gt;</span>Small<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"xs"</span>&gt;</span>Tiny<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+                    <!--]-->
+                  </div>
+                  <!--]--><!--]-->
+                </div>
+                <p>button wide</p>
+                <div class="dv-playground py-2">
+                  <!--[-->
+                  <div class="tabs">
+                    <!--[--><a class="tab tab-lifted tab-md tab-active"
+                      >Preview</a
+                    ><a class="tab tab-lifted tab-md">Code</a
+                    ><!--]-->
+                    <div class="flex-1 cursor-default tab tab-lifted"></div>
+                  </div>
+                  <!--[-->
+                  <div class="mt-2">
+                    <!--[--><!--[-->
+                    <div class="flex items-start space-y-2 flex-col">
+                      <button class="btn btn-lg btn-wide">
+                        <!--[-->Large<!--]--></button
+                      ><button class="btn btn-md btn-wide">
+                        <!--[-->Normal<!--]--></button
+                      ><button class="btn btn-sm btn-wide">
+                        <!--[-->Small<!--]--></button
+                      ><button class="btn btn-xs btn-wide">
+                        <!--[-->Tiny<!--]-->
+                      </button>
+                    </div>
+                    <!--]--><!--]-->
+                  </div>
+                  <div class="mt-2 hidden">
+                    <!--[-->
+                    <pre><code class="hljs language-html" hljs-language="html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"flex items-start space-y-2 flex-col"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">wide</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"lg"</span>&gt;</span>Large<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">wide</span>&gt;</span>Normal<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">wide</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"sm"</span>&gt;</span>Small<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">wide</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"xs"</span>&gt;</span>Tiny<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+                    <!--]-->
+                  </div>
+                  <!--]--><!--]-->
+                </div>
+                <p>button shapes</p>
+                <div class="dv-playground py-2">
+                  <!--[-->
+                  <div class="tabs">
+                    <!--[--><a class="tab tab-lifted tab-md tab-active"
+                      >Preview</a
+                    ><a class="tab tab-lifted tab-md">Code</a
+                    ><!--]-->
+                    <div class="flex-1 cursor-default tab tab-lifted"></div>
+                  </div>
+                  <!--[-->
+                  <div class="mt-2">
+                    <!--[--><!--[-->
+                    <div
+                      class="
+                        flex flex-wrap
+                        items-start
+                        md:space-x-2
+                        space-y-2
+                        md:space-y-0
+                        flex-col
+                        md:flex-row
+                        mb-2
+                      "
+                    >
+                      <button class="btn btn-lg btn-circle">
+                        <!--[-->A<!--]--></button
+                      ><button class="btn btn-md btn-circle">
+                        <!--[-->B<!--]--></button
+                      ><button class="btn btn-sm btn-circle btn-outline">
+                        <!--[-->C<!--]--></button
+                      ><button class="btn btn-xs btn-circle btn-outline">
+                        <!--[-->D<!--]-->
+                      </button>
+                    </div>
+                    <div
+                      class="
+                        flex flex-wrap
+                        items-start
+                        md:space-x-2
+                        space-y-2
+                        md:space-y-0
+                        flex-col
+                        md:flex-row
+                      "
+                    >
+                      <button class="btn btn-lg btn-square">
+                        <!--[-->A<!--]--></button
+                      ><button class="btn btn-md btn-square">
+                        <!--[-->B<!--]--></button
+                      ><button class="btn btn-sm btn-square btn-outline">
+                        <!--[-->C<!--]--></button
+                      ><button class="btn btn-xs btn-square btn-outline">
+                        <!--[-->D<!--]-->
+                      </button>
+                    </div>
+                    <!--]--><!--]-->
+                  </div>
+                  <div class="mt-2 hidden">
+                    <!--[-->
+                    <pre><code class="hljs language-html" hljs-language="html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>
+  <span class="hljs-attr">class</span>=<span class="hljs-string">"flex flex-wrap items-start md:space-x-2 space-y-2 md:space-y-0 flex-col md:flex-row mb-2"</span>
+&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">shape</span>=<span class="hljs-string">"circle"</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"lg"</span>&gt;</span>A<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">shape</span>=<span class="hljs-string">"circle"</span>&gt;</span>B<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">outline</span> <span class="hljs-attr">shape</span>=<span class="hljs-string">"circle"</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"sm"</span>&gt;</span>C<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">outline</span> <span class="hljs-attr">shape</span>=<span class="hljs-string">"circle"</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"xs"</span>&gt;</span>D<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span>
+  <span class="hljs-attr">class</span>=<span class="hljs-string">"flex flex-wrap items-start md:space-x-2 space-y-2 md:space-y-0 flex-col md:flex-row"</span>
+&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">shape</span>=<span class="hljs-string">"square"</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"lg"</span>&gt;</span>A<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">shape</span>=<span class="hljs-string">"square"</span>&gt;</span>B<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">outline</span> <span class="hljs-attr">shape</span>=<span class="hljs-string">"square"</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"sm"</span>&gt;</span>C<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">outline</span> <span class="hljs-attr">shape</span>=<span class="hljs-string">"square"</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"xs"</span>&gt;</span>D<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+                    <!--]-->
+                  </div>
+                  <!--]--><!--]-->
+                </div>
+                <p>button block</p>
+                <div class="dv-playground py-2">
+                  <!--[-->
+                  <div class="tabs">
+                    <!--[--><a class="tab tab-lifted tab-md tab-active"
+                      >Preview</a
+                    ><a class="tab tab-lifted tab-md">Code</a
+                    ><!--]-->
+                    <div class="flex-1 cursor-default tab tab-lifted"></div>
+                  </div>
+                  <!--[-->
+                  <div class="mt-2">
+                    <!--[--><!--[--><button class="btn btn-md btn-block">
+                      <!--[-->Blcok Button<!--]--></button
+                    ><!--]--><!--]-->
+                  </div>
+                  <div class="mt-2 hidden">
+                    <!--[-->
+                    <pre><code class="hljs language-html" hljs-language="html"><span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">block</span>&gt;</span>Blcok Button<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+</code></pre>
+                    <!--]-->
+                  </div>
+                  <!--]--><!--]-->
+                </div>
+                <p>button loading</p>
+                <div class="dv-playground py-2">
+                  <!--[-->
+                  <div class="tabs">
+                    <!--[--><a class="tab tab-lifted tab-md tab-active"
+                      >Preview</a
+                    ><a class="tab tab-lifted tab-md">Code</a
+                    ><!--]-->
+                    <div class="flex-1 cursor-default tab tab-lifted"></div>
+                  </div>
+                  <!--[-->
+                  <div class="mt-2">
+                    <!--[--><!--[-->
+                    <div
+                      class="
+                        flex flex-wrap
+                        items-start
+                        md:space-x-2
+                        space-y-2
+                        md:space-y-0
+                        flex-col
+                        md:flex-row
+                        mb-1
+                      "
+                    >
+                      <button class="btn btn-md loading">
+                        <!--[-->netural<!--]--></button
+                      ><button class="btn btn-primary btn-md loading">
+                        <!--[-->secondary<!--]--></button
+                      ><button class="btn btn-secondary btn-md loading">
+                        <!--[-->secondary<!--]--></button
+                      ><button class="btn btn-accent btn-md loading">
+                        <!--[-->accent<!--]--></button
+                      ><button class="btn btn-ghost btn-md loading">
+                        <!--[-->ghost<!--]--></button
+                      ><button class="btn btn-link btn-md loading">
+                        <!--[-->link<!--]-->
+                      </button>
+                    </div>
+                    <div
+                      class="
+                        flex flex-wrap
+                        items-start
+                        md:space-x-2
+                        space-y-2
+                        md:space-y-0
+                        flex-col
+                        md:flex-row
+                      "
+                    >
+                      <button class="btn btn-md">
+                        <!--[-->Loading after click<!--]--></button
+                      ><button class="btn btn-primary btn-md">
+                        <!--[-->Loading after click<!--]--></button
+                      ><button class="btn btn-secondary btn-md btn-outline">
+                        <!--[-->
+                        Loading after click
+                        <!--]-->
+                      </button>
+                    </div>
+                    <!--]--><!--]-->
+                  </div>
+                  <div class="mt-2 hidden">
+                    <!--[-->
+                    <pre><code class="hljs language-html" hljs-language="html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>
+  <span class="hljs-attr">class</span>=<span class="hljs-string">"flex flex-wrap items-start md:space-x-2 space-y-2 md:space-y-0 flex-col md:flex-row mb-1"</span>
+&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">loading</span>&gt;</span>netural<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">loading</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"primary"</span>&gt;</span>secondary<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">loading</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"secondary"</span>&gt;</span>secondary<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">loading</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"accent"</span>&gt;</span>accent<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">loading</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"ghost"</span>&gt;</span>ghost<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">loading</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"link"</span>&gt;</span>link<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span>
+  <span class="hljs-attr">class</span>=<span class="hljs-string">"flex flex-wrap items-start md:space-x-2 space-y-2 md:space-y-0 flex-col md:flex-row"</span>
+&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">:onClick</span>=<span class="hljs-string">"asyncFunction"</span>&gt;</span>Loading after click<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">:onClick</span>=<span class="hljs-string">"asyncFunction"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"primary"</span>&gt;</span>Loading after click<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">:onClick</span>=<span class="hljs-string">"asyncFunction"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"secondary"</span> <span class="hljs-attr">outline</span>&gt;</span>
+    Loading after click
+  <span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+                    <!--]-->
+                  </div>
+                  <!--]--><!--]-->
+                </div>
+                <p>button loading without content</p>
+                <div class="dv-playground py-2">
+                  <!--[-->
+                  <div class="tabs">
+                    <!--[--><a class="tab tab-lifted tab-md tab-active"
+                      >Preview</a
+                    ><a class="tab tab-lifted tab-md">Code</a
+                    ><!--]-->
+                    <div class="flex-1 cursor-default tab tab-lifted"></div>
+                  </div>
+                  <!--[-->
+                  <div class="mt-2">
+                    <!--[--><!--[-->
+                    <div
+                      class="
+                        flex flex-wrap
+                        items-start
+                        md:space-x-2
+                        space-y-2
+                        md:space-y-0
+                        flex-col
+                        md:flex-row
+                      "
+                    >
+                      <button class="btn btn-md btn-circle loading">
+                        <!----></button
+                      ><button class="btn btn-md btn-circle btn-outline">
+                        <!--[-->GO<!--]-->
+                      </button>
+                    </div>
+                    <!--]--><!--]-->
+                  </div>
+                  <div class="mt-2 hidden">
+                    <!--[-->
+                    <pre><code class="hljs language-html" hljs-language="html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>
+  <span class="hljs-attr">class</span>=<span class="hljs-string">"flex flex-wrap items-start md:space-x-2 space-y-2 md:space-y-0 flex-col md:flex-row"</span>
+&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">loading</span> <span class="hljs-attr">shape</span>=<span class="hljs-string">"circle"</span>&gt;</span>A<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">:onClick</span>=<span class="hljs-string">"asyncFunction"</span> <span class="hljs-attr">outline</span> <span class="hljs-attr">shape</span>=<span class="hljs-string">"circle"</span>&gt;</span>GO<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+                    <!--]-->
+                  </div>
+                  <!--]--><!--]-->
+                </div>
+                <p>button loading without content</p>
+                <div class="dv-playground py-2">
+                  <!--[-->
+                  <div class="tabs">
+                    <!--[--><a class="tab tab-lifted tab-md tab-active"
+                      >Preview</a
+                    ><a class="tab tab-lifted tab-md">Code</a
+                    ><!--]-->
+                    <div class="flex-1 cursor-default tab tab-lifted"></div>
+                  </div>
+                  <!--[-->
+                  <div class="mt-2">
+                    <!--[--><!--[-->
+                    <div
+                      class="
+                        flex flex-wrap
+                        items-start
+                        md:space-x-2
+                        space-y-2
+                        md:space-y-0
+                        flex-col
+                        md:flex-row
+                      "
+                    >
+                      <button class="btn btn-primary btn-md no-animation">
+                        <!--[-->I don't have click animation<!--]-->
+                      </button>
+                    </div>
+                    <!--]--><!--]-->
+                  </div>
+                  <div class="mt-2 hidden">
+                    <!--[-->
+                    <pre><code class="hljs language-html" hljs-language="html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>
+  <span class="hljs-attr">class</span>=<span class="hljs-string">"flex flex-wrap items-start md:space-x-2 space-y-2 md:space-y-0 flex-col md:flex-row"</span>
+&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"primary"</span> <span class="hljs-attr">noAnimation</span>&gt;</span>I don't have click animation<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre>
                     <!--]-->
@@ -153,11 +741,11 @@
             <!--[-->
             <div
               class="overflow-y-auto w-80 bg-base-100 border-r border-base-200"
-              data-v-3c9aee03=""
+              data-v-60f56cd4=""
             >
-              <ul class="menu compact rounded-box p-4" data-v-3c9aee03="">
+              <ul class="menu compact rounded-box p-4" data-v-60f56cd4="">
                 <!--[-->
-                <li class="menu-title" data-v-3c9aee03="">
+                <li class="menu-title" data-v-60f56cd4="">
                   <span>Components</span>
                 </li>
                 <!--[-->

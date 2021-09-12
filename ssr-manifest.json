@@ -12,6 +12,7 @@
   "src/App.vue?vue&type=style&index=0&scoped=true&lang.css": [],
   "src/App.vue": [],
   "src/components/Playground.vue?vue&type=script&lang.tsx": [],
+  "src/components/Playground.vue?vue&type=style&index=0&lang.less": [],
   "src/main.ts": [],
   "index.html": [],
   "../node_modules/@vue/shared/dist/shared.esm-bundler.js": [
@@ -75,13 +76,13 @@
     "/daisyui-vue/assets/vendor.44a2ddf6.js"
   ],
   "src/pages/components/tab.md": [
-    "/daisyui-vue/assets/tab.4eb090a4.js"
+    "/daisyui-vue/assets/tab.9fc700e4.js"
   ],
   "src/pages/components/menu.md": [
-    "/daisyui-vue/assets/menu.931d069a.js"
+    "/daisyui-vue/assets/menu.ae8be62b.js"
   ],
   "src/pages/components/button.md": [
-    "/daisyui-vue/assets/button.c264578f.js"
+    "/daisyui-vue/assets/button.1b168d5b.js"
   ],
   "src/pages/b.vue?vue&type=script&lang.ts": [
     "/daisyui-vue/assets/b.c2f46dde.js"
