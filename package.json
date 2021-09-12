@@ -1,12 +1,21 @@
 {
   "name": "daisyui-vue",
-  "version": "0.0.1",
+  "version": "0.0.1-alpha.0.0.1",
+  "author": {
+    "name": "daief",
+    "email": "defeng_mail@163.com",
+    "url": "https://github.com/daief"
+  },
   "license": "MIT",
   "main": "dist/lib/index.js",
   "module": "dist/esm/index.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build:babel": "BABEL_ENV=es babel src -d es --extensions \".ts,.tsx\"",
-    "build": "rm -rf dist && NODE_ENV=production yarn rollup -c"
+    "build": "rm -rf dist && NODE_ENV=production rollup -c",
+    "watch": "rollup -c -w"
   },
   "devDependencies": {
     "@babel/cli": "^7.15.4",
@@ -20,11 +29,16 @@
     "daisyui": "^1.14.0",
     "less": "^4.1.1",
     "postcss": "^8.0.0",
+    "prettier": "portal:libs/prettier",
     "rollup": "^2.56.3",
     "rollup-plugin-postcss": "^4.0.1",
     "rollup-plugin-typescript2": "^0.30.0",
     "tailwindcss": "^2.2.11",
     "typescript": "^4.4.2",
-    "vue": "^3.2.0"
-  }
+    "vue": "^3.2.9"
+  },
+  "workspaces": [
+    "docs",
+    "libs/*"
+  ]
 }

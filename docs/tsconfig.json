@@ -1,0 +1,14 @@
+{
+  "extends": "../tsconfig.json",
+  "include": ["src"],
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "Node",
+    "esModuleInterop": true,
+    // "types": ["vite/client", "vite-plugin-pages/client"],
+    "baseUrl": ".",
+    "paths": {
+      "daisyui-vue": ["../dist/esm"]
+    }
+  }
+}

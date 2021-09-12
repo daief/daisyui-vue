@@ -3,8 +3,6 @@ import { babel } from '@rollup/plugin-babel';
 import resolve from '@rollup/plugin-node-resolve';
 import typescript from 'rollup-plugin-typescript2';
 
-// TODO 样式
-
 const extensions = ['.js', '.jsx', '.ts', '.tsx'];
 
 const componentsConfig = {
@@ -32,7 +30,12 @@ const componentsConfig = {
     //   extract: true,
     //   extract: 'style/button.css',
     // }),
-    resolve({ extensions }),
+    resolve({
+      extensions,
+      alias: {
+        '@': 'src',
+      },
+    }),
     babel({ extensions, babelHelpers: 'bundled' }),
   ],
 };

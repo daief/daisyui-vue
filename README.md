@@ -2,6 +2,10 @@
 
 基于 daisyui 封装的 vue 组件库。
 
+## todo
+
+- [ ] build style files
+
 ## components
 
 - [ ] alert

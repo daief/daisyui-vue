@@ -71,7 +71,7 @@ export const Button = defineComponent({
         class={cls.value}
         onClick={handleOnClick}
       >
-        {slots.default ? slots.default() : null}
+        {slots.default?.()}
       </button>
     );
   },

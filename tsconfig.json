@@ -8,10 +8,7 @@
     "noImplicitAny": false,
     "baseUrl": ".",
     "declaration": true,
-    "paths": {
-      "@t/*": ["src/@types/*"],
-      "@/*": ["src/*"]
-    },
+    "paths": {},
     "importsNotUsedAsValues": "remove",
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
