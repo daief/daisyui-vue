@@ -6,7 +6,7 @@ import Playground from './components/Playground.vue';
 
 export const createApp = ViteSSG(
   App,
-  { routes },
+  { routes, base: '/daisyui-vue/' },
   ({ app, router, isClient }) => {
     // install plugins etc.
     app.component('Playground', Playground);

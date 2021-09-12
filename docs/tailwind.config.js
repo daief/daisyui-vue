@@ -2,9 +2,9 @@
 module.exports = {
   purge: {
     content: [
-      './index.html',
-      './src/**/*.{vue,js,ts,jsx,tsx}',
-      '../daisyui-vue/**/*.{js,ts,tsx}',
+      'index.html',
+      'src/**/*.{vue,js,ts,jsx,tsx,html,md}',
+      '../dist/**/*.{js,ts,tsx}',
     ],
     options: {
       safelist: [/data-theme$/],

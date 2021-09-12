@@ -9,6 +9,7 @@ import { escape } from 'html-escaper';
 import hljs from 'highlight.js';
 
 const config: UserConfig = {
+  base: '/daisyui-vue/',
   plugins: [
     vueJsx(),
     Vue({
@@ -20,7 +21,6 @@ const config: UserConfig = {
         (md) => {
           const scan = (state) => {
             state.tokens.forEach((token) => {
-              console.log(token);
               if (
                 token &&
                 token.tag === 'code' &&
@@ -64,6 +64,7 @@ const config: UserConfig = {
       'daisyui-vue': resolve(__dirname, '../dist/esm'),
     },
   },
+  build: {},
   server: {
     fs: {
       // allow: ['/src', '../src/**/*'],

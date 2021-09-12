@@ -1,7 +1,7 @@
 import { computed, defineComponent, PropType, ref } from 'vue';
 
 export const _button: string =
-  'btn | btn-lg | btn-md | btn-sm | btn-xs | btn-wide | btn-block | btn-circle | btn-square | btn-primary | btn-secondary | btn-accent | btn-info | btn-success | btn-warning | btn-error | btn-ghost | btn-link | btn-outline | btn-active | btn-disabled | glass | loading | no-animation';
+  'btn btn-lg btn-md btn-sm btn-xs btn-wide btn-block btn-circle btn-square btn-primary btn-secondary btn-accent btn-info btn-success btn-warning btn-error btn-ghost btn-link btn-outline btn-active btn-disabled glass loading no-animation';
 
 export const buttonProps = {
   type: String as PropType<

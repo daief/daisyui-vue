@@ -1718,6 +1718,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@vue/server-renderer@npm:^3.2.11":
+  version: 3.2.11
+  resolution: "@vue/server-renderer@npm:3.2.11"
+  dependencies:
+    "@vue/compiler-ssr": 3.2.11
+    "@vue/shared": 3.2.11
+  peerDependencies:
+    vue: 3.2.11
+  checksum: 3eb18f918a739721b2901d346d6ee2399cad39c44d57a6998b6010fe8e605392360f19850bcdd1cadc282e46395a674a88e7b71e04a816042865443b7b625e7c
+  languageName: node
+  linkType: hard
+
 "@vue/shared@npm:3.2.11":
   version: 3.2.11
   resolution: "@vue/shared@npm:3.2.11"
@@ -3056,6 +3068,7 @@ __metadata:
     "@vitejs/plugin-vue": ^1.6.0
     "@vitejs/plugin-vue-jsx": ^1.1.8
     "@vue/compiler-sfc": ^3.2.9
+    "@vue/server-renderer": ^3.2.11
     "@vueuse/head": ^0.6.0
     autoprefixer: latest
     cross-env: ^7.0.3
