@@ -32,9 +32,6 @@ const componentsConfig = {
     // }),
     resolve({
       extensions,
-      alias: {
-        '@': 'src',
-      },
     }),
     babel({ extensions, babelHelpers: 'bundled' }),
   ],

@@ -1,4 +1,3 @@
-export * from './components/button';
-export * from './components/drawer';
-export * from './components/menu';
-export * from './components/tab';
+export * from './components';
+
+export { install as default } from './install';

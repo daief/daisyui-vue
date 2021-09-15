@@ -141,14 +141,6 @@
 .markdown-body hr:after {
   clear: both;
 }
-.markdown-body table {
-  border-spacing: 0;
-  border-collapse: collapse;
-}
-.markdown-body td,
-.markdown-body th {
-  padding: 0;
-}
 .markdown-body details summary {
   cursor: pointer;
 }
@@ -596,7 +588,7 @@
   padding: 0 16px;
   margin-bottom: 16px;
 }
-.markdown-body table {
+/* .markdown-body table {
   display: block;
   width: 100%;
   overflow: auto;
@@ -615,7 +607,7 @@
 }
 .markdown-body table tr:nth-child(2n) {
   background-color: #f6f8fa;
-}
+} */
 .markdown-body img {
   max-width: 100%;
   box-sizing: initial;

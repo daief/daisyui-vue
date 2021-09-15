@@ -1,12 +1,21 @@
 # Button
 
-<script setup>
-import { Button } from 'daisyui-vue';
+<script setup lang="tsx">
+import { createVNode } from 'vue';
 
 function asyncFunction() {
   return new Promise(r => setTimeout(r, 3000));
 }
 </script>
+
+## Props
+
+| 12  | 23    |
+| --- | ----- |
+| 12  | 23s   |
+| 212 | xx23s |
+
+## Example
 
 button with brand colors
 
@@ -14,12 +23,12 @@ button with brand colors
 <div
   class="flex flex-wrap items-start md:space-x-2 space-y-2 md:space-y-0 flex-col md:flex-row"
 >
-  <Button>netural</Button>
-  <Button type="primary">secondary</Button>
-  <Button type="secondary">secondary</Button>
-  <Button type="accent">accent</Button>
-  <Button type="ghost">ghost</Button>
-  <Button type="link">link</Button>
+  <DvButton>netural</DvButton>
+  <DvButton type="primary">secondary</DvButton>
+  <DvButton type="secondary">secondary</DvButton>
+  <DvButton type="accent">accent</DvButton>
+  <DvButton type="ghost">ghost</DvButton>
+  <DvButton type="link">link</DvButton>
 </div>
 ```
 
@@ -29,12 +38,12 @@ active state button
 <div
   class="flex flex-wrap items-start md:space-x-2 space-y-2 md:space-y-0 flex-col md:flex-row"
 >
-  <Button active>netural</Button>
-  <Button active type="primary">secondary</Button>
-  <Button active type="secondary">secondary</Button>
-  <Button active type="accent">accent</Button>
-  <Button active type="ghost">ghost</Button>
-  <Button active type="link">link</Button>
+  <DvButton active>netural</DvButton>
+  <DvButton active type="primary">secondary</DvButton>
+  <DvButton active type="secondary">secondary</DvButton>
+  <DvButton active type="accent">accent</DvButton>
+  <DvButton active type="ghost">ghost</DvButton>
+  <DvButton active type="link">link</DvButton>
 </div>
 ```
 
@@ -44,12 +53,12 @@ outline button
 <div
   class="flex flex-wrap items-start md:space-x-2 space-y-2 md:space-y-0 flex-col md:flex-row"
 >
-  <Button outline>netural</Button>
-  <Button type="primary" outline>secondary</Button>
-  <Button type="secondary" outline>secondary</Button>
-  <Button type="accent" outline>accent</Button>
-  <Button type="ghost" outline>ghost</Button>
-  <Button type="link" outline>link</Button>
+  <DvButton outline>netural</DvButton>
+  <DvButton type="primary" outline>secondary</DvButton>
+  <DvButton type="secondary" outline>secondary</DvButton>
+  <DvButton type="accent" outline>accent</DvButton>
+  <DvButton type="ghost" outline>ghost</DvButton>
+  <DvButton type="link" outline>link</DvButton>
 </div>
 ```
 
@@ -59,12 +68,12 @@ disabled button
 <div
   class="flex flex-wrap items-start md:space-x-2 space-y-2 md:space-y-0 flex-col md:flex-row"
 >
-  <Button disabled>netural</Button>
-  <Button type="primary" disabled>secondary</Button>
-  <Button type="secondary" disabled>secondary</Button>
-  <Button type="accent" disabled>accent</Button>
-  <Button type="ghost" disabled>ghost</Button>
-  <Button type="link" disabled>link</Button>
+  <DvButton disabled>netural</DvButton>
+  <DvButton type="primary" disabled>secondary</DvButton>
+  <DvButton type="secondary" disabled>secondary</DvButton>
+  <DvButton type="accent" disabled>accent</DvButton>
+  <DvButton type="ghost" disabled>ghost</DvButton>
+  <DvButton type="link" disabled>link</DvButton>
 </div>
 ```
 
@@ -74,10 +83,10 @@ button with state colors
 <div
   class="flex flex-wrap items-start md:space-x-2 space-y-2 md:space-y-0 flex-col md:flex-row"
 >
-  <Button type="info">info</Button>
-  <Button type="success">success</Button>
-  <Button type="warning">warning</Button>
-  <Button type="error">error</Button>
+  <DvButton type="info">info</DvButton>
+  <DvButton type="success">success</DvButton>
+  <DvButton type="warning">warning</DvButton>
+  <DvButton type="error">error</DvButton>
 </div>
 ```
 
@@ -88,7 +97,7 @@ glass button
   class="p-20 bg-cover bg-base-200 w-80 h-52 rounded-box"
   style='background-image: url("https://picsum.photos/id/314/400/300");'
 >
-  <Button type="glass">Glass Button</Button>
+  <DvButton type="glass">Glass Button</DvButton>
 </div>
 ```
 
@@ -98,10 +107,10 @@ button size
 <div
   class="flex flex-wrap items-start md:space-x-2 space-y-2 md:space-y-0 flex-col md:flex-row"
 >
-  <Button size="lg">Large</Button>
-  <Button>Normal</Button>
-  <Button size="sm">Small</Button>
-  <Button size="xs">Tiny</Button>
+  <DvButton size="lg">Large</DvButton>
+  <DvButton>Normal</DvButton>
+  <DvButton size="sm">Small</DvButton>
+  <DvButton size="xs">Tiny</DvButton>
 </div>
 ```
 
@@ -109,10 +118,10 @@ button wide
 
 ```html :::demo
 <div class="flex items-start space-y-2 flex-col">
-  <Button wide size="lg">Large</Button>
-  <Button wide>Normal</Button>
-  <Button wide size="sm">Small</Button>
-  <Button wide size="xs">Tiny</Button>
+  <DvButton wide size="lg">Large</DvButton>
+  <DvButton wide>Normal</DvButton>
+  <DvButton wide size="sm">Small</DvButton>
+  <DvButton wide size="xs">Tiny</DvButton>
 </div>
 ```
 
@@ -122,26 +131,26 @@ button shapes
 <div
   class="flex flex-wrap items-start md:space-x-2 space-y-2 md:space-y-0 flex-col md:flex-row mb-2"
 >
-  <Button shape="circle" size="lg">A</Button>
-  <Button shape="circle">B</Button>
-  <Button outline shape="circle" size="sm">C</Button>
-  <Button outline shape="circle" size="xs">D</Button>
+  <DvButton shape="circle" size="lg">A</DvButton>
+  <DvButton shape="circle">B</DvButton>
+  <DvButton outline shape="circle" size="sm">C</DvButton>
+  <DvButton outline shape="circle" size="xs">D</DvButton>
 </div>
 
 <div
   class="flex flex-wrap items-start md:space-x-2 space-y-2 md:space-y-0 flex-col md:flex-row"
 >
-  <Button shape="square" size="lg">A</Button>
-  <Button shape="square">B</Button>
-  <Button outline shape="square" size="sm">C</Button>
-  <Button outline shape="square" size="xs">D</Button>
+  <DvButton shape="square" size="lg">A</DvButton>
+  <DvButton shape="square">B</DvButton>
+  <DvButton outline shape="square" size="sm">C</DvButton>
+  <DvButton outline shape="square" size="xs">D</DvButton>
 </div>
 ```
 
 button block
 
 ```html :::demo
-<Button block>Blcok Button</Button>
+<DvButton block>Blcok Button</DvButton>
 ```
 
 button loading
@@ -150,22 +159,24 @@ button loading
 <div
   class="flex flex-wrap items-start md:space-x-2 space-y-2 md:space-y-0 flex-col md:flex-row mb-1"
 >
-  <Button loading>netural</Button>
-  <Button loading type="primary">secondary</Button>
-  <Button loading type="secondary">secondary</Button>
-  <Button loading type="accent">accent</Button>
-  <Button loading type="ghost">ghost</Button>
-  <Button loading type="link">link</Button>
+  <DvButton loading>netural</DvButton>
+  <DvButton loading type="primary">secondary</DvButton>
+  <DvButton loading type="secondary">secondary</DvButton>
+  <DvButton loading type="accent">accent</DvButton>
+  <DvButton loading type="ghost">ghost</DvButton>
+  <DvButton loading type="link">link</DvButton>
 </div>
 
 <div
   class="flex flex-wrap items-start md:space-x-2 space-y-2 md:space-y-0 flex-col md:flex-row"
 >
-  <Button :onClick="asyncFunction">Loading after click</Button>
-  <Button :onClick="asyncFunction" type="primary">Loading after click</Button>
-  <Button :onClick="asyncFunction" type="secondary" outline>
+  <DvButton :onClick="asyncFunction">Loading after click</DvButton>
+  <DvButton :onClick="asyncFunction" type="primary"
+    >Loading after click</DvButton
+  >
+  <DvButton :onClick="asyncFunction" type="secondary" outline>
     Loading after click
-  </Button>
+  </DvButton>
 </div>
 ```
 
@@ -175,8 +186,8 @@ button loading without content
 <div
   class="flex flex-wrap items-start md:space-x-2 space-y-2 md:space-y-0 flex-col md:flex-row"
 >
-  <Button loading shape="circle">A</Button>
-  <Button :onClick="asyncFunction" outline shape="circle">GO</Button>
+  <DvButton loading shape="circle">A</DvButton>
+  <DvButton :onClick="asyncFunction" outline shape="circle">GO</DvButton>
 </div>
 ```
 
@@ -186,6 +197,6 @@ button loading without content
 <div
   class="flex flex-wrap items-start md:space-x-2 space-y-2 md:space-y-0 flex-col md:flex-row"
 >
-  <Button type="primary" noAnimation>I don't have click animation</Button>
+  <DvButton type="primary" noAnimation>I don't have click animation</DvButton>
 </div>
 ```

@@ -1518,6 +1518,31 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/linkify-it@npm:*":
+  version: 3.0.2
+  resolution: "@types/linkify-it@npm:3.0.2"
+  checksum: dff8f10fafb885422474e456596f12d518ec4cdd6c33cca7a08e7c86b912d301ed91cf5a7613e148c45a12600dc9ab3d85ad16d5b48dc1aaeda151a68f16b536
+  languageName: node
+  linkType: hard
+
+"@types/markdown-it@npm:^12.2.1":
+  version: 12.2.1
+  resolution: "@types/markdown-it@npm:12.2.1"
+  dependencies:
+    "@types/linkify-it": "*"
+    "@types/mdurl": "*"
+    highlight.js: ^10.7.2
+  checksum: e3f367b7006e4ade2b8faa7125f06f6e5dd24ff762faedad7c55d1c99dc9905213a1021c7ae019ed1693814ec31fef25be028415d4d3061186bbf2d67646ddcb
+  languageName: node
+  linkType: hard
+
+"@types/mdurl@npm:*":
+  version: 1.0.2
+  resolution: "@types/mdurl@npm:1.0.2"
+  checksum: 79c7e523b377f53cf1f5a240fe23d0c6cae856667692bd21bf1d064eafe5ccc40ae39a2aa0a9a51e8c94d1307228c8f6b121e847124591a9a828c3baf65e86e2
+  languageName: node
+  linkType: hard
+
 "@types/node@npm:*":
   version: 16.7.13
   resolution: "@types/node@npm:16.7.13"
@@ -2855,12 +2880,13 @@ __metadata:
     "@babel/preset-typescript": ^7.15.0
     "@rollup/plugin-babel": ^5.3.0
     "@rollup/plugin-node-resolve": ^13.0.4
+    "@types/markdown-it": ^12.2.1
     "@vue/babel-plugin-jsx": ^1.0.7
     autoprefixer: ^10.3.4
     daisyui: ^1.14.0
     less: ^4.1.1
     postcss: ^8.0.0
-    prettier: "portal:libs/prettier"
+    prettier: ^2.4.0
     rollup: ^2.56.3
     rollup-plugin-postcss: ^4.0.1
     rollup-plugin-typescript2: ^0.30.0
@@ -3870,6 +3896,13 @@ fsevents@~2.3.2:
   version: 1.1.0
   resolution: "hex-color-regex@npm:1.1.0"
   checksum: 44fa1b7a26d745012f3bfeeab8015f60514f72d2fcf10dce33068352456b8d71a2e6bc5a17f933ab470da2c5ab1e3e04b05caf3fefe3c1cabd7e02e516fc8784
+  languageName: node
+  linkType: hard
+
+"highlight.js@npm:^10.7.2":
+  version: 10.7.3
+  resolution: "highlight.js@npm:10.7.3"
+  checksum: defeafcd546b535d710d8efb8e650af9e3b369ef53e28c3dc7893eacfe263200bba4c5fcf43524ae66d5c0c296b1af0870523ceae3e3104d24b7abf6374a4fea
   languageName: node
   linkType: hard
 
@@ -6137,21 +6170,14 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"prettier@^2.3.2, prettier@workspace:libs/prettier":
-  version: 0.0.0-use.local
-  resolution: "prettier@workspace:libs/prettier"
+"prettier@npm:^2.3.2, prettier@npm:^2.4.0":
+  version: 2.4.0
+  resolution: "prettier@npm:2.4.0"
   bin:
-    prettier: ./bin-prettier.js
-  languageName: unknown
-  linkType: soft
-
-"prettier@portal:libs/prettier::locator=daisyui-vue%40workspace%3A.":
-  version: 0.0.0-use.local
-  resolution: "prettier@portal:libs/prettier::locator=daisyui-vue%40workspace%3A."
-  bin:
-    prettier: ./bin-prettier.js
+    prettier: bin-prettier.js
+  checksum: ac1bf07566dad5f58469e6d8a954bd5c0f833935597deb00330e9f673e14e4cf81e07dee7eff5776c0edebe11358d199f332d9940be40c8b455516034e553ce0
   languageName: node
-  linkType: soft
+  linkType: hard
 
 "pretty-bytes@npm:^5.3.0, pretty-bytes@npm:^5.6.0":
   version: 5.6.0
