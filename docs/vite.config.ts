@@ -59,10 +59,6 @@ const config: UserConfig = {
             for (let index = 0; index < state.tokens.length; index++) {
               const token = state.tokens[index];
 
-              if (token.type === 'html_block') {
-                // console.log(token);
-              }
-
               if (isTable) {
                 token.hidden = true;
               }
@@ -79,7 +75,10 @@ const config: UserConfig = {
                   dataIndex: i,
                 }));
                 const dataSource = bodys.map((row) => {
-                  return row.reduce((res, curr) => ({ ...res, ...curr }), {});
+                  return row.reduce(
+                    (res, curr, i) => ({ ...res, [i]: curr }),
+                    {},
+                  );
                 });
 
                 Object.assign(token, token, {
@@ -87,9 +86,10 @@ const config: UserConfig = {
                   tag: '',
                   nesting: 0,
                   level: 0,
-                  content: `<MarkdownTable :columns="${escape(
-                    JSON.stringify(columns),
-                  )}" :dataSource="${escape(JSON.stringify(dataSource))}" />\n`,
+                  content: `<MarkdownTable
+                    :columns="${escape(JSON.stringify(columns))}"
+                    :dataSource="${escape(JSON.stringify(dataSource))}"
+                  />\n`,
                   children: null,
                   hidden: false,
                   markup: '',

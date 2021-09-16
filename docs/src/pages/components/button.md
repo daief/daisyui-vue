@@ -8,14 +8,7 @@ function asyncFunction() {
 }
 </script>
 
-## Props
-
-| 12  | 23    |
-| --- | ----- |
-| 12  | 23s   |
-| 212 | xx23s |
-
-## Example
+## Examples
 
 button with brand colors
 
@@ -200,3 +193,73 @@ button loading without content
   <DvButton type="primary" noAnimation>I don't have click animation</DvButton>
 </div>
 ```
+
+button group size
+
+```html :::demo
+<div class="space-y-2">
+  <DvButtonGroup>
+    <DvButton type="info">info</DvButton>
+    <DvButton type="warning">warning</DvButton>
+    <DvButton type="error">error</DvButton>
+  </DvButtonGroup>
+
+  <DvButtonGroup size="sm">
+    <DvButton type="info">info</DvButton>
+    <DvButton type="warning">warning</DvButton>
+    <DvButton type="error">error</DvButton>
+  </DvButtonGroup>
+</div>
+```
+
+button group shape
+
+```html :::demo
+<div class="space-y-2">
+  <DvButtonGroup size="sm" shape="circle">
+    <DvButton type="info">A</DvButton>
+    <DvButton type="warning">B</DvButton>
+    <DvButton type="error">C</DvButton>
+  </DvButtonGroup>
+
+  <DvButtonGroup size="sm" shape="square">
+    <DvButton type="info">A</DvButton>
+    <DvButton type="warning">B</DvButton>
+    <DvButton type="error">C</DvButton>
+  </DvButtonGroup>
+
+  <DvButtonGroup size="sm" shape="square">
+    <DvButton type="info">A</DvButton>
+    <DvButton type="warning" shape="default">this is default shape</DvButton>
+    <DvButton type="error">C</DvButton>
+  </DvButtonGroup>
+</div>
+```
+
+button group outline
+
+```html :::demo
+<div class="space-y-2">
+  <DvButtonGroup size="sm" outline>
+    <DvButton type="primary">primary</DvButton>
+    <DvButton type="secondary">secondary</DvButton>
+    <DvButton type="accent">accent</DvButton>
+  </DvButtonGroup>
+</div>
+```
+
+## Button Props
+
+| name        | description                            | type                                                                          | default | version |
+| ----------- | -------------------------------------- | ----------------------------------------------------------------------------- | ------- | ------- |
+| type        | button color type                      | netural, primary secondary accent info success warning error ghost link glass | netural |
+| size        | button size                            | ISize                                                                         | md      |
+| shape       | button shape                           | default, circle, square                                                       | default |
+| block       | full with button                       | boolean                                                                       | false   |
+| wide        | wide button (more horizontal padding)  | boolean                                                                       | false   |
+| disabled    | force button to show disabled state    | boolean                                                                       | false   |
+| outline     | transparent Button with colored border | boolean                                                                       | false   |
+| active      | force button to show active state      | boolean                                                                       | false   |
+| loading     | shows loading spinner                  | boolean                                                                       | false   |
+| noAnimation | disables click animation               | boolean                                                                       | false   |
+| onClick     | button click handle                    | Function                                                                      | -       |

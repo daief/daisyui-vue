@@ -9,7 +9,11 @@ export default defineComponent({
     dataSource: Array,
   },
   setup: (props, { slots }) => {
-    return () => <Table compact class="dv-markdowntable" {...props} />;
+    return () => (
+      <div class="overflow-x-auto">
+        <Table compact class="dv-markdowntable w-full" {...props} />
+      </div>
+    );
   },
 });
 </script>

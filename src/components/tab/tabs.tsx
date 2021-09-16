@@ -15,7 +15,7 @@ export const _tabs =
 
 const ctx = Symbol('tabs');
 
-const TabType = Symbol('TabType');
+const tabType = Symbol('TabType');
 
 type IType = 'bordered' | 'lifted' | 'boxed';
 
@@ -59,7 +59,7 @@ export const Tabs = defineComponent({
     const getPaneInstanceFromSlot = (vnode: VNode[], list: any[] = []) => {
       Array.from((vnode || []) as ArrayLike<VNode>).forEach((node) => {
         const type = node.type;
-        if (type && type[TabType]) {
+        if (type && type[tabType]) {
           list.push(node.props);
         } else if (type === Fragment || type === 'template') {
           getPaneInstanceFromSlot(node.children as any, list);
@@ -109,7 +109,7 @@ export const Tabs = defineComponent({
 
 export const Tab = defineComponent({
   name: 'Tab',
-  [TabType]: true,
+  [tabType]: true,
   props: {
     title: String,
     name: String,

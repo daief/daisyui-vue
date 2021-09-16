@@ -1,17 +1,5 @@
 import { App } from 'vue';
-// import {
-//   Button,
-//   ButtonGroup,
-//   Drawer,
-//   Menu,
-//   MenuItem,
-//   Tabs,
-//   Tab,
-//   Table,
-// } from './components';
 import * as all from './components';
-
-// const components = [Button, ButtonGroup, Drawer, Menu, MenuItem, Tabs, Tab, Table]
 
 export function install(
   app: App,

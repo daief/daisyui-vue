@@ -1,11 +1,16 @@
 import { computed, defineComponent, PropType } from 'vue';
+import tw, { css } from 'twin.macro';
+import { styled } from '../../shared/styled';
 
 export const _table = 'table table-zebra table-compact active hover';
+
+const StyledTable = styled('table', css``);
 
 export interface ITableColumn<T = unknown> {
   title?: string;
   dataIndex?: string;
   key?: string;
+  fixed?: 'left' | 'right';
   render?: (text: string, record: T, index: number) => any;
 }
 
@@ -32,13 +37,25 @@ export const Table = defineComponent({
 
     const head = computed(() =>
       props.columns.map((col, i) => (
-        <th key={col.dataIndex || col.key || i}>{col.title}</th>
+        <th
+          class={
+            col.fixed
+              ? {
+                  sticky: true,
+                  [col.fixed === 'left' ? 'left' : 'right']: 0,
+                }
+              : 'relative:important'
+          }
+          key={col.dataIndex || col.key || i}
+        >
+          {col.title}
+        </th>
       )),
     );
 
     return () => {
       return (
-        <table class={cls.value}>
+        <StyledTable class={cls.value}>
           <thead>
             <tr>{head.value}</tr>
           </thead>
@@ -46,7 +63,17 @@ export const Table = defineComponent({
             {props.dataSource.map((record, i) => (
               <tr key={i}>
                 {props.columns.map((col) => (
-                  <td key={col.dataIndex || col.key}>
+                  <td
+                    key={col.dataIndex || col.key}
+                    class={
+                      col.fixed
+                        ? {
+                            sticky: true,
+                            [col.fixed === 'left' ? 'left' : 'right']: 0,
+                          }
+                        : 'relative'
+                    }
+                  >
                     {typeof col.render === 'function'
                       ? col.render(record[col.dataIndex], record, i)
                       : record[col.dataIndex]}
@@ -55,7 +82,7 @@ export const Table = defineComponent({
               </tr>
             ))}
           </tbody>
-        </table>
+        </StyledTable>
       );
     };
   },

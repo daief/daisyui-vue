@@ -3,6 +3,10 @@ module.exports = (api) => {
   return {
     presets: ['@babel/preset-typescript'],
     // https://github.com/vuejs/jsx-next
-    plugins: ['@vue/babel-plugin-jsx'],
+    plugins: [
+      'babel-plugin-twin',
+      'babel-plugin-macros',
+      '@vue/babel-plugin-jsx',
+    ],
   };
 };
