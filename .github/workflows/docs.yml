@@ -30,13 +30,11 @@ jobs:
         cache: 'yarn'
 
     - name: git-clone-daisyui
-      uses: actions/checkout@v2
+      uses: Legion2/download-release-action@v2.1.0
       with:
-        repository: https://github.com/saadeghi/daisyui.git 
-        ref: v1.14.0
+        repository: saadeghi/daisyui.git 
+        tag: v1.14.0
         path: src/_daisyui
-        fetch-depth: 1
-        token: ${{ secrets.ACCESS_TOKEN }}
       
     - run: yarn
     - run: yarn clone
