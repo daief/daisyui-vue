@@ -28,7 +28,10 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'yarn'
+    - name: git-bash
+      uses: pkg-src/github-action-git-bash@v1.1
     - run: yarn
+    - run: yarn clone
     - run: yarn build
     - run: yarn workspace docs build
     - run: npm test
