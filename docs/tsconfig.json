@@ -8,7 +8,7 @@
     // "types": ["vite/client", "vite-plugin-pages/client"],
     "baseUrl": ".",
     "paths": {
-      "daisyui-vue": ["../dist/esm"]
+      "daisyui-vue": ["../src"]
     }
   }
 }

@@ -1,13 +1,6 @@
 import { ISize } from '../../shared/types/common';
 import { computed, defineComponent, inject, PropType, Ref, ref } from 'vue';
 import { ctxKey, ICtx } from './state';
-import { styled } from '../../shared/styled';
-import tw, { css } from 'twin.macro';
-
-/**
- * class
- * 'btn btn-lg btn-md btn-sm btn-xs btn-wide btn-block btn-circle btn-square btn-primary btn-secondary btn-accent btn-info btn-success btn-warning btn-error btn-ghost btn-link btn-outline btn-active btn-disabled glass loading no-animation'
- */
 
 export type IButtonShape = 'defalut' | 'circle' | 'square';
 
@@ -40,13 +33,6 @@ export const buttonProps = {
 };
 
 export type IButtonProps = typeof buttonProps;
-
-const StyledButton = styled(
-  'button',
-  css`
-    ${tw`btn`}
-  `,
-);
 
 export const Button = defineComponent({
   name: 'Button',

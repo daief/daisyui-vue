@@ -9,6 +9,7 @@ yarn-error.log*
 # Custom
 node_modules/
 \.DS_Store
+src/_daisyui
 
 dist
 es

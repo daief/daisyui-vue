@@ -11,7 +11,12 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "jsx": "preserve",
-    "removeComments": false
+    "removeComments": false,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "@styles/*": ["src/_daisyui/src/*"]
+    }
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules/*", "__sapper__/*", "public/*"]

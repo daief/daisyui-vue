@@ -1,9 +1,14 @@
 // tailwind.config.js
 module.exports = {
-  purge: [
-    './src/**/**/*.{vue,js,ts,jsx,tsx}',
-    './src/**/*.{vue,js,ts,jsx,tsx}',
-  ],
+  // https://tailwindcss.com/docs/optimizing-for-production
+  purge: {
+    enabled: true,
+    preserveHtmlElements: false,
+    content: [
+      './src/**/**/*.{vue,js,ts,jsx,tsx}',
+      './src/**/*.{vue,js,ts,jsx,tsx}',
+    ],
+  },
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {},
@@ -14,5 +19,10 @@ module.exports = {
   plugins: [require('daisyui')],
   daisyui: {
     logs: false,
+    themes: false,
+    // styled: false,
+    base: false,
+    // utils: false,
+    // rtl: false,
   },
 };

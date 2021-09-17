@@ -3,13 +3,19 @@ import { babel } from '@rollup/plugin-babel';
 import resolve from '@rollup/plugin-node-resolve';
 import typescript from 'rollup-plugin-typescript2';
 import cleanup from 'rollup-plugin-cleanup';
+import alias from '@rollup/plugin-alias';
+import replace from '@rollup/plugin-replace';
+import styles from './rollup-styles-plugin';
+
+import path from 'path';
+import pkg from './package.json';
 
 const extensions = ['.js', '.jsx', '.ts', '.tsx'];
 
 const componentsConfig = {
   input: {
     index: 'src/index',
-    // 'components/button/index': 'src/components/button/index.tsx',
+    'components/button/index': 'src/components/button/index.tsx',
   },
   output: [
     {
@@ -26,11 +32,23 @@ const componentsConfig = {
   // https://rollupjs.org/guide/en/#external
   external: ['vue'],
   plugins: [
+    alias({
+      entries: [
+        { find: '@', replacement: path.resolve(__dirname, 'src') },
+        {
+          find: '@styles',
+          replacement: path.resolve(__dirname, 'src/_daisyui/src'),
+        },
+      ],
+    }),
+    replace({
+      preventAssignment: true,
+      values: {
+        VERSION: JSON.stringify(pkg.version),
+      },
+    }),
+    styles(),
     typescript(),
-    // postcss({
-    //   extract: true,
-    //   extract: 'style/button.css',
-    // }),
     resolve({
       extensions,
     }),

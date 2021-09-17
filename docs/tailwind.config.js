@@ -4,7 +4,7 @@ module.exports = {
     content: [
       'index.html',
       'src/**/*.{vue,js,ts,jsx,tsx,html,md}',
-      '../dist/**/*.{js,ts,tsx}',
+      // '../dist/**/*.{js,ts,tsx}',
     ],
     options: {
       safelist: [/data-theme$/],
@@ -17,7 +17,7 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [require('daisyui')],
+  // plugins: [require('daisyui')],
   daisyui: {
     logs: false,
   },

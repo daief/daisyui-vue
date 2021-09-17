@@ -1,21 +1,16 @@
-import { createVNode, defineComponent } from 'vue';
+let cache: string[] = [];
+let style: HTMLStyleElement = null;
 
-export function styled<K extends keyof HTMLElementTagNameMap>(
-  tag: K,
-  emotionClassName: string,
-): (props: JSX.IntrinsicElements[K]) => JSX.Element {
-  return defineComponent({
-    // name: '',
-    functional: true,
-    setup:
-      (_, { slots }) =>
-      () =>
-        createVNode(
-          tag,
-          {
-            class: emotionClassName,
-          },
-          [slots?.default()],
-        ),
-  }) as any;
+export function insertCss(css: string) {
+  if (typeof document === 'undefined') return;
+  if (!style) {
+    style = document.createElement('style');
+    style.setAttribute('daisyui-vue', VERSION);
+    document.head.appendChild(style);
+  }
+  cache.push(css);
+  setTimeout(() => {
+    style.append(cache.join('\n'));
+    cache = [];
+  });
 }

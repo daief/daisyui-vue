@@ -1,10 +1,6 @@
 import { computed, defineComponent, PropType } from 'vue';
-import tw, { css } from 'twin.macro';
-import { styled } from '../../shared/styled';
 
-export const _table = 'table table-zebra table-compact active hover';
-
-const StyledTable = styled('table', css``);
+// <div class='table table-zebra table-compact active hover' />
 
 export interface ITableColumn<T = unknown> {
   title?: string;
@@ -55,7 +51,7 @@ export const Table = defineComponent({
 
     return () => {
       return (
-        <StyledTable class={cls.value}>
+        <table class={cls.value}>
           <thead>
             <tr>{head.value}</tr>
           </thead>
@@ -82,7 +78,7 @@ export const Table = defineComponent({
               </tr>
             ))}
           </tbody>
-        </StyledTable>
+        </table>
       );
     };
   },

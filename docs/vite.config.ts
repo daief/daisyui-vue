@@ -173,9 +173,11 @@ const config: UserConfig = {
   build: {},
   server: {
     fs: {
-      // allow: ['/src', '../src/**/*'],
       strict: false,
     },
+  },
+  define: {
+    'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
   },
 };
 
