@@ -9,6 +9,7 @@
   "homepage": "https://daief.tech/daisyui-vue",
   "repository": "https://github.com/daief/daisyui-vue",
   "license": "MIT",
+  "sideEffects": false,
   "main": "dist/lib/index.js",
   "module": "dist/esm/index.js",
   "files": [

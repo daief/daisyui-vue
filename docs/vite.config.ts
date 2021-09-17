@@ -167,7 +167,7 @@ const config: UserConfig = {
   },
   resolve: {
     alias: {
-      'daisyui-vue': resolve(__dirname, '../dist/esm'),
+      'daisyui-vue': resolve(__dirname, '..'),
     },
   },
   build: {},

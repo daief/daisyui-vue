@@ -1,10 +1,8 @@
 // tailwind.config.js
 module.exports = {
   purge: {
-    content: {
-      enabled: true,
-      content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx,html,md}'],
-    },
+    enabled: true,
+    content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx,html,md}'],
     options: {
       safelist: [/data-theme$/],
     },
