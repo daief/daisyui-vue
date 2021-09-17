@@ -5,14 +5,13 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
   workflow_dispatch:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     strategy:
@@ -22,29 +21,20 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v2
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'yarn'
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'yarn'
 
-    - name: git-clone-daisyui
-      uses: Legion2/download-release-action@v2.1.0
-      with:
-        repository: saadeghi/daisyui.git 
-        tag: v1.14.0
-        path: src/_daisyui
-      
-    - run: yarn
-    - run: yarn clone
-    - run: yarn build
-    - run: yarn workspace docs build
-    - run: npm test
-    - name: GitHub Pages action
-      uses: peaceiris/actions-gh-pages@v3.7.3
-      with:
-        github_token: ${{ secrets.ACCESS_TOKEN }}
-        publish_dir: docs/dist
-      
-      
+      - run: yarn
+      - run: yarn clone
+      - run: yarn build
+      - run: yarn workspace docs build
+      - run: npm test
+      - name: GitHub Pages action
+        uses: peaceiris/actions-gh-pages@v3.7.3
+        with:
+          github_token: ${{ secrets.ACCESS_TOKEN }}
+          publish_dir: docs/dist
