@@ -17,7 +17,7 @@
   "scripts": {
     "build": "rm -rf dist && NODE_ENV=production rollup -c",
     "watch": "rollup -c -w",
-    "clone": "rm -rf src/_daisyui && git clone git@github.com:saadeghi/daisyui.git src/_daisyui -b v1.14.0 --depth=1 && rm -rf src/_daisyui/.git"
+    "clone": "node scripts/clone.js"
   },
   "devDependencies": {
     "@babel/cli": "^7.15.4",
@@ -35,6 +35,7 @@
     "babel-plugin-macros": "^3.1.0",
     "babel-plugin-twin": "^1.0.2",
     "daisyui": "^1.14.0",
+    "download-git-repo": "^3.0.2",
     "less": "^4.1.1",
     "postcss": "^8.0.0",
     "prettier": "^2.4.0",
