@@ -32,6 +32,6 @@ export const ButtonGroup = defineComponent<HTMLAttributes & IButtonGroupProps>({
 
     provide(ctxKey, ctxVal);
 
-    return () => <div class="btn-group">{slots?.default()}</div>;
+    return () => <div class="dv-btn-group btn-group">{slots?.default()}</div>;
   },
 });

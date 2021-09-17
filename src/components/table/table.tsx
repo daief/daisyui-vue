@@ -1,7 +1,5 @@
 import { computed, defineComponent, PropType } from 'vue';
 
-// <div class='table table-zebra table-compact active hover' />
-
 export interface ITableColumn<T = unknown> {
   title?: string;
   dataIndex?: string;
@@ -24,25 +22,34 @@ export const Table = defineComponent({
   props: tableProps,
   setup: (props) => {
     const cls = computed(() => [
-      'table w-full',
+      'dv-table table',
       {
         'table-zebra': props.zebra,
         'table-compact': props.compact,
       },
     ]);
 
+    const cols = computed(() =>
+      props.columns.map((col, i) => ({
+        ...col,
+        key: col.key || col.dataIndex || i,
+      })),
+    );
+
     const head = computed(() =>
-      props.columns.map((col, i) => (
+      cols.value.map((col, i) => (
         <th
-          class={
+          style={
             col.fixed
               ? {
-                  sticky: true,
+                  position: 'sticky',
                   [col.fixed === 'left' ? 'left' : 'right']: 0,
                 }
-              : 'relative:important'
+              : {
+                  position: 'relative',
+                }
           }
-          key={col.dataIndex || col.key || i}
+          key={col.key}
         >
           {col.title}
         </th>
@@ -51,34 +58,41 @@ export const Table = defineComponent({
 
     return () => {
       return (
-        <table class={cls.value}>
-          <thead>
-            <tr>{head.value}</tr>
-          </thead>
-          <tbody>
-            {props.dataSource.map((record, i) => (
-              <tr key={i}>
-                {props.columns.map((col) => (
-                  <td
-                    key={col.dataIndex || col.key}
-                    class={
-                      col.fixed
-                        ? {
-                            sticky: true,
-                            [col.fixed === 'left' ? 'left' : 'right']: 0,
-                          }
-                        : 'relative'
-                    }
-                  >
-                    {typeof col.render === 'function'
-                      ? col.render(record[col.dataIndex], record, i)
-                      : record[col.dataIndex]}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
+        <div class="dv-table-wrap">
+          <table class={cls.value}>
+            <colgroup>
+              {cols.value.map((col) => (
+                <col key={col.key} />
+              ))}
+            </colgroup>
+            <thead>
+              <tr>{head.value}</tr>
+            </thead>
+            <tbody>
+              {props.dataSource.map((record, i) => (
+                <tr key={i} class="hover">
+                  {props.columns.map((col) => (
+                    <td
+                      key={col.dataIndex || col.key}
+                      class={
+                        col.fixed
+                          ? {
+                              sticky: true,
+                              [col.fixed === 'left' ? 'left' : 'right']: 0,
+                            }
+                          : 'relative'
+                      }
+                    >
+                      {typeof col.render === 'function'
+                        ? col.render(record[col.dataIndex], record, i)
+                        : record[col.dataIndex]}
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       );
     };
   },

@@ -37,7 +37,7 @@ export const Drawer = defineComponent({
             <div
               {...attrs}
               class={[
-                'drawer',
+                'dv-drawer drawer',
                 {
                   'h-screen fixed inset-0': !props.disableTeleport,
                   'drawer-end': props.placement === 'right',

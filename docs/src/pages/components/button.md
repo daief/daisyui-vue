@@ -50,8 +50,6 @@ outline button
   <DvButton type="primary" outline>secondary</DvButton>
   <DvButton type="secondary" outline>secondary</DvButton>
   <DvButton type="accent" outline>accent</DvButton>
-  <DvButton type="ghost" outline>ghost</DvButton>
-  <DvButton type="link" outline>link</DvButton>
 </div>
 ```
 
@@ -66,7 +64,6 @@ disabled button
   <DvButton type="secondary" disabled>secondary</DvButton>
   <DvButton type="accent" disabled>accent</DvButton>
   <DvButton type="ghost" disabled>ghost</DvButton>
-  <DvButton type="link" disabled>link</DvButton>
 </div>
 ```
 
@@ -87,7 +84,7 @@ glass button
 
 ```html :::demo
 <div
-  class="p-20 bg-cover bg-base-200 w-80 h-52 rounded-box"
+  class="p-20 bg-cover bg-base-200 w-80 h-52 rounded-lg"
   style='background-image: url("https://picsum.photos/id/314/400/300");'
 >
   <DvButton type="glass">Glass Button</DvButton>
@@ -248,18 +245,29 @@ button group outline
 </div>
 ```
 
-## Button Props
+## Props
 
-| name        | description                            | type                                                                          | default | version |
-| ----------- | -------------------------------------- | ----------------------------------------------------------------------------- | ------- | ------- |
-| type        | button color type                      | netural, primary secondary accent info success warning error ghost link glass | netural |
-| size        | button size                            | ISize                                                                         | md      |
-| shape       | button shape                           | default, circle, square                                                       | default |
-| block       | full with button                       | boolean                                                                       | false   |
-| wide        | wide button (more horizontal padding)  | boolean                                                                       | false   |
-| disabled    | force button to show disabled state    | boolean                                                                       | false   |
-| outline     | transparent Button with colored border | boolean                                                                       | false   |
-| active      | force button to show active state      | boolean                                                                       | false   |
-| loading     | shows loading spinner                  | boolean                                                                       | false   |
-| noAnimation | disables click animation               | boolean                                                                       | false   |
-| onClick     | button click handle                    | Function                                                                      | -       |
+### Button
+
+| name        | description                            | type                                                                                   | default |
+| ----------- | -------------------------------------- | -------------------------------------------------------------------------------------- | ------- |
+| type        | button color type                      | netural, primary, secondary, accent, info, success, warning, error, ghost, link, glass | netural |
+| size        | button size                            | ISize                                                                                  | md      |
+| shape       | button shape                           | default, circle, square                                                                | default |
+| block       | full with button                       | boolean                                                                                | false   |
+| wide        | wide button (more horizontal padding)  | boolean                                                                                | false   |
+| disabled    | force button to show disabled state    | boolean                                                                                | false   |
+| outline     | transparent Button with colored border | boolean                                                                                | false   |
+| active      | force button to show active state      | boolean                                                                                | false   |
+| loading     | shows loading spinner                  | boolean                                                                                | false   |
+| noAnimation | disables click animation               | boolean                                                                                | false   |
+| component   | button with diffrent HTML tags         | button, a, input                                                                       | button  |
+| onClick     | button click handle                    | Function                                                                               | -       |
+
+### ButtonGroup
+
+| name    | description                            | type                    | default |
+| ------- | -------------------------------------- | ----------------------- | ------- |
+| size    | button size                            | ISize                   | md      |
+| shape   | button shape                           | default, circle, square | default |
+| outline | transparent Button with colored border | boolean                 | false   |

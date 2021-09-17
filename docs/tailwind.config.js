@@ -1,11 +1,7 @@
 // tailwind.config.js
 module.exports = {
   purge: {
-    content: [
-      'index.html',
-      'src/**/*.{vue,js,ts,jsx,tsx,html,md}',
-      // '../dist/**/*.{js,ts,tsx}',
-    ],
+    content: ['index.html', 'src/**/*.{vue,js,ts,jsx,tsx,html,md}'],
     options: {
       safelist: [/data-theme$/],
     },
@@ -18,7 +14,7 @@ module.exports = {
     extend: {},
   },
   // plugins: [require('daisyui')],
-  daisyui: {
-    logs: false,
-  },
+  // daisyui: {
+  //   logs: false,
+  // },
 };

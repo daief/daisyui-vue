@@ -21,7 +21,7 @@ module.exports = {
     logs: false,
     themes: false,
     // styled: false,
-    base: false,
+    // base: false,
     // utils: false,
     // rtl: false,
   },

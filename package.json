@@ -17,7 +17,7 @@
   "scripts": {
     "build": "rm -rf dist && NODE_ENV=production rollup -c",
     "watch": "rollup -c -w",
-    "clone": "rm -rf src/_daisyui && git clone git@github.com:saadeghi/daisyui.git src/_daisyui --depth=1"
+    "clone": "rm -rf src/_daisyui && git clone git@github.com:saadeghi/daisyui.git src/_daisyui -b v1.14.0 --depth=1 && rm -rf src/_daisyui/.git"
   },
   "devDependencies": {
     "@babel/cli": "^7.15.4",

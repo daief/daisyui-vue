@@ -1,6 +1,14 @@
 <script lang="tsx">
 import { defineComponent, ref } from 'vue';
-import { Button, Drawer, Menu, MenuItem } from 'daisyui-vue';
+import {
+  Button,
+  Drawer,
+  Menu,
+  MenuItem,
+  Navbar,
+  NavbarStart,
+  NavbarEnd,
+} from 'daisyui-vue';
 import { RouteRecordNormalized, RouterLink } from 'vue-router';
 import routes from 'virtual:generated-pages';
 
@@ -25,13 +33,15 @@ export default defineComponent({
       },
     );
 
-    const componentsMenus = components.map((it) => (
-      <MenuItem childWrapper={false} key={it.path} class="capitalize">
-        <RouterLink to={it.path} activeClass="active">
-          {(it.name as string).replace('components-', '')}
-        </RouterLink>
-      </MenuItem>
-    ));
+    const componentsMenus = components
+      .sort((a, b) => (a.name as string).localeCompare(b.name as string))
+      .map((it) => (
+        <MenuItem childWrapper={false} key={it.path} class="capitalize">
+          <RouterLink to={it.path} activeClass="active">
+            {(it.name as string).replace('components-', '')}
+          </RouterLink>
+        </MenuItem>
+      ));
 
     return () => (
       <main>
@@ -44,7 +54,7 @@ export default defineComponent({
         >
           {{
             default: () => (
-              <div class="overflow-y-auto w-80 bg-base-100 border-r border-base-200">
+              <div class="overflow-y-auto w-80 bg-white border-r border-gray-200">
                 <Menu class="rounded-box p-4" compact>
                   <MenuItem asTitle>Components</MenuItem>
                   {componentsMenus}
@@ -52,8 +62,36 @@ export default defineComponent({
               </div>
             ),
             content: () => (
-              <div class="p-4 pb-8 lg:p-10">
-                <router-view />
+              <div>
+                <header class="sticky inset-x-0 top-0 bg-white border-b border-gray-100 z-20">
+                  <Navbar class="">
+                    <NavbarStart class="mx-2">
+                      <Button
+                        type="ghost"
+                        class="lg:hidden"
+                        shape="square"
+                        onClick={() => {
+                          open.value = !open.value;
+                        }}
+                      >
+                        menu
+                      </Button>
+                    </NavbarStart>
+                    <NavbarEnd>
+                      <Button
+                        component="a"
+                        href="https://github.com/daief/daisyui-vue"
+                        target="_blank"
+                        type="ghost"
+                      >
+                        github
+                      </Button>
+                    </NavbarEnd>
+                  </Navbar>
+                </header>
+                <div class="p-4 pb-8 lg:p-10">
+                  <router-view />
+                </div>
               </div>
             ),
           }}

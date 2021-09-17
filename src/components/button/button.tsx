@@ -1,23 +1,34 @@
 import { ISize } from '../../shared/types/common';
-import { computed, defineComponent, inject, PropType, Ref, ref } from 'vue';
+import {
+  AnchorHTMLAttributes,
+  computed,
+  createVNode,
+  defineComponent,
+  inject,
+  InputHTMLAttributes,
+  PropType,
+  Ref,
+  ref,
+} from 'vue';
 import { ctxKey, ICtx } from './state';
 
 export type IButtonShape = 'defalut' | 'circle' | 'square';
 
+export type IButtonType =
+  | 'netural'
+  | 'primary'
+  | 'secondary'
+  | 'accent'
+  | 'info'
+  | 'success'
+  | 'warning'
+  | 'error'
+  | 'ghost'
+  | 'link'
+  | 'glass';
+
 export const buttonProps = {
-  type: String as PropType<
-    | 'netural'
-    | 'primary'
-    | 'secondary'
-    | 'accent'
-    | 'info'
-    | 'success'
-    | 'warning'
-    | 'error'
-    | 'ghost'
-    | 'link'
-    | 'glass'
-  >,
+  type: String as PropType<IButtonType>,
   size: {
     type: String as PropType<ISize>,
   },
@@ -29,14 +40,33 @@ export const buttonProps = {
   active: Boolean,
   loading: Boolean,
   noAnimation: Boolean,
-  onClick: Function as PropType<(payload: MouseEvent) => any>,
+  onClick: Function as PropType<(e: MouseEvent) => any>,
+  component: {
+    type: String as PropType<'button' | 'a' | 'input'>,
+    default: 'button',
+  },
 };
 
-export type IButtonProps = typeof buttonProps;
+export interface IButtonProps {
+  type?: IButtonType;
+  size?: ISize;
+  shape?: IButtonShape;
+  block?: boolean;
+  wide?: boolean;
+  disabled?: boolean;
+  outline?: boolean;
+  active?: boolean;
+  loading?: boolean;
+  noAnimation?: boolean;
+  component?: 'button' | 'a' | 'input';
+  onClick?: (e: MouseEvent) => any;
+}
 
-export const Button = defineComponent({
+export const Button = defineComponent<
+  AnchorHTMLAttributes & InputHTMLAttributes & IButtonProps
+>({
   name: 'Button',
-  props: buttonProps,
+  props: buttonProps as any,
   setup: (props, { slots }) => {
     const ctxVal = inject<Ref<ICtx>>(ctxKey, null);
     const size = computed(() => props.size || ctxVal?.value.size || 'md');
@@ -51,7 +81,7 @@ export const Button = defineComponent({
 
     const cls = computed(() => {
       return [
-        'btn',
+        'dv-btn btn',
         props.type === 'glass'
           ? 'glass'
           : !!props.type
@@ -87,14 +117,15 @@ export const Button = defineComponent({
       return true;
     });
 
-    return () => (
-      <button
-        disabled={props.disabled}
-        class={cls.value}
-        onClick={handleOnClick}
-      >
-        {showContent.value ? slots.default?.() : null}
-      </button>
-    );
+    return () =>
+      createVNode(
+        props.component,
+        {
+          disabled: props.disabled || void 0,
+          class: cls.value,
+          onClick: handleOnClick,
+        },
+        [showContent.value ? slots.default?.() : null],
+      );
   },
 });

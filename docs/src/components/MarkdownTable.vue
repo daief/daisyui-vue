@@ -10,8 +10,8 @@ export default defineComponent({
   },
   setup: (props, { slots }) => {
     return () => (
-      <div class="overflow-x-auto">
-        <Table compact class="dv-markdowntable w-full" {...props} />
+      <div>
+        <Table zebra compact class="dv-markdowntable w-full" {...props} />
       </div>
     );
   },
