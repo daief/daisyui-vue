@@ -28,7 +28,16 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'yarn'
+
+    - name: git-clone-daisyui
+      uses: Legion2/download-release-action@v2.1.0
+      with:
+        repository: saadeghi/daisyui.git 
+        tag: v1.14.0
+        path: src/_daisyui
+      
     - run: yarn
+    - run: yarn clone
     - run: yarn build
     - run: yarn workspace docs build
     - run: npm test
