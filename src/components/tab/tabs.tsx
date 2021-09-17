@@ -10,9 +10,6 @@ import {
   VNode,
 } from 'vue';
 
-export const _tabs =
-  'tab-bordered tab-boxed tab-lifted tab-xs tab-sm tab-md tab-lg';
-
 const ctx = Symbol('tabs');
 
 const tabType = Symbol('TabType');
@@ -69,7 +66,7 @@ export const Tabs = defineComponent({
     };
 
     const tabHeadCls = computed(() => [
-      'tab',
+      'dv-tab tab',
       `tab-${props.type}`,
       `tab-${props.size}`,
     ]);
@@ -80,7 +77,7 @@ export const Tabs = defineComponent({
 
       return (
         <>
-          <div {...attrs} class="tabs">
+          <div {...attrs} class="dv-tabs tabs">
             {tabPropsList.map((p) => (
               <a
                 class={[
@@ -97,7 +94,7 @@ export const Tabs = defineComponent({
               </a>
             ))}
             {props.type === 'lifted' ? (
-              <div class="flex-1 cursor-default tab tab-lifted" />
+              <div class="dv-tabs__lifted-item" />
             ) : null}
           </div>
           {vns}
@@ -119,9 +116,9 @@ export const Tab = defineComponent({
     return () => (
       <div
         class={[
-          'mt-2',
+          'dv-tab-content',
           {
-            hidden: props.name !== ctxVal.value.currentName,
+            'dv-tab-content--hidden': props.name !== ctxVal.value.currentName,
           },
         ]}
       >

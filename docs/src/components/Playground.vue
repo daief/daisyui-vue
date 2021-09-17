@@ -19,7 +19,7 @@ export default defineComponent({
           <Tab name="code" title="Code">
             <pre>
               <code
-                class="hljs language-html"
+                class="hljs language-html rounded-md"
                 hljs-language="html"
                 innerHTML={props.code}
               ></code>
