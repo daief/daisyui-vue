@@ -33,6 +33,11 @@ const createPlugin = () => {
       // jsObject[':root'] = void 0;
       // return `export default ${JSON.stringify(jsObject)}`;
 
+      // TODO
+      // 1、分离样式文件
+      // 2、压缩样式
+      // 3、整包样式
+
       return `
       const css = ${JSON.stringify(postcssResult.css)};
       export default css;

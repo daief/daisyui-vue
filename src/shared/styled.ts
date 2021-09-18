@@ -18,7 +18,8 @@ export function insertCss(css: string | string[]) {
   }
 
   setTimeout(() => {
-    style.append(cache.join('\n'));
+    const filterd = cache.filter((it, i) => cache.indexOf(it) === i);
+    style.append(filterd.join('\n'));
     cache = [];
   });
 }
