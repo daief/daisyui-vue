@@ -1,21 +1,29 @@
-import { computed, defineComponent, PropType, ref } from 'vue';
+import { component } from '@/shared/styled';
+import { BoolConstructorToBase } from '@/shared/types/common';
+import { computed } from 'vue';
+import style from './style';
 
-export const menuProps = {
+const props = {
   compact: Boolean,
 };
 
-export type IMenuProps = typeof menuProps;
+export interface IMenuProps {
+  compace?: boolean;
+}
 
-export const Menu = defineComponent({
-  name: 'Menu',
-  props: menuProps,
-  setup: (props, { slots }) => {
-    const cls = computed(() => [
-      'menu',
-      {
-        compact: props.compact,
-      },
-    ]);
-    return () => <ul class={cls.value}>{slots.default?.()}</ul>;
+export const Menu = component<IMenuProps, BoolConstructorToBase<typeof props>>(
+  {
+    name: 'Menu',
+    props: props,
+    setup: (props, { slots }) => {
+      const cls = computed(() => [
+        'menu',
+        {
+          compact: props.compact,
+        },
+      ]);
+      return () => <ul class={cls.value}>{slots.default?.()}</ul>;
+    },
   },
-});
+  style,
+);

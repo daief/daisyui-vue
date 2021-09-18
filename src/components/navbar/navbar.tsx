@@ -1,29 +1,43 @@
-import { defineComponent } from '@vue/runtime-core';
+import { component } from '@/shared/styled';
+import { HTMLAttributes } from '@vue/runtime-dom';
+import style from './style';
 
-export const Navbar = defineComponent({
-  name: 'Navbar',
-  setup: (_, { slots }) => {
-    return () => <div class="navbar">{slots.default?.()}</div>;
+export const Navbar = component<HTMLAttributes>(
+  {
+    name: 'Navbar',
+    setup: (_, { slots }) => {
+      return () => <div class="navbar">{slots.default?.()}</div>;
+    },
   },
-});
+  style,
+);
 
-export const NavbarStart = defineComponent({
-  name: 'NavbarStart',
-  setup: (_, { slots }) => {
-    return () => <div class="navbar-start">{slots.default?.()}</div>;
+export const NavbarStart = component<HTMLAttributes>(
+  {
+    name: 'NavbarStart',
+    setup: (_, { slots }) => {
+      return () => <div class="navbar-start">{slots.default?.()}</div>;
+    },
   },
-});
+  style,
+);
 
-export const NavbarCenter = defineComponent({
-  name: 'NavbarCenter',
-  setup: (_, { slots }) => {
-    return () => <div class="navbar-center">{slots.default?.()}</div>;
+export const NavbarCenter = component<HTMLAttributes>(
+  {
+    name: 'NavbarCenter',
+    setup: (_, { slots }) => {
+      return () => <div class="navbar-center">{slots.default?.()}</div>;
+    },
   },
-});
+  style,
+);
 
-export const NavbarEnd = defineComponent({
-  name: 'NavbarEnd',
-  setup: (_, { slots }) => {
-    return () => <div class="navbar-end">{slots.default?.()}</div>;
+export const NavbarEnd = component<HTMLAttributes>(
+  {
+    name: 'NavbarEnd',
+    setup: (_, { slots }) => {
+      return () => <div class="navbar-end">{slots.default?.()}</div>;
+    },
   },
-});
+  style,
+);

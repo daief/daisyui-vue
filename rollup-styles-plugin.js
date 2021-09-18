@@ -34,9 +34,7 @@ const createPlugin = () => {
       // return `export default ${JSON.stringify(jsObject)}`;
 
       return `
-      import { insertCss } from '@/shared/styled';
       const css = ${JSON.stringify(postcssResult.css)};
-      insertCss(css);
       export default css;
       `;
     },
