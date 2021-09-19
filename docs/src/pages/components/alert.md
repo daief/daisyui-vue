@@ -1,5 +1,7 @@
 # Alert
 
+## Examples
+
 alert
 
 ```html :::demo

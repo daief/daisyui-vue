@@ -5,10 +5,11 @@
 ## todo
 
 - [ ] build style files
+- [ ] 抽离 css
 
 ## components
 
-- [ ] alert
+- [x] alert
 - [ ] artboard
 - [ ] avatar
 - [ ] badge

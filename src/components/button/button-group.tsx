@@ -31,7 +31,9 @@ export const ButtonGroup = component<
 
       provide(ctxKey, ctxVal);
 
-      return () => <div class="dv-btn-group btn-group">{slots?.default()}</div>;
+      return () => (
+        <div class="dv-btn-group btn-group">{slots.default?.()}</div>
+      );
     },
   },
   style,

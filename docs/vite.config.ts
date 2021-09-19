@@ -9,6 +9,21 @@ import { escape } from 'html-escaper';
 import hljs from 'highlight.js';
 import MarkdownIt from 'markdown-it';
 
+const highlightAuto = (str: string, lang: string, attrs: string) =>
+  hljs.getLanguage(lang)
+    ? hljs.highlight(str, {
+        language: lang,
+      }).value
+    : str;
+
+const wrap = (render) =>
+  function (...args) {
+    return render
+      .apply(this, args)
+      .replace('<code class="', '<code class="hljs ')
+      .replace('<code>', '<code class="hljs">');
+  };
+
 const config: UserConfig = {
   base: '/daisyui-vue/',
   plugins: [
@@ -22,24 +37,20 @@ const config: UserConfig = {
         (md: MarkdownIt) => {
           const scanCodeBlock: any = (state) => {
             state.tokens.forEach((token) => {
-              if (
-                token &&
-                token.tag === 'code' &&
-                token.type === 'fence' &&
-                token.info === 'html :::demo'
-              ) {
-                const codeResult = hljs.highlight(token.content, {
-                  language: 'html',
-                }).value;
-
-                // 代码块
-                Object.assign(token, {
-                  type: 'html_block',
-                  content:
-                    `<Playground ` +
-                    `code="${escape(codeResult)}"` +
-                    `>${token.content}</Playground>`,
-                });
+              if (token && token.tag === 'code' && token.type === 'fence') {
+                if (token.info === 'html :::demo') {
+                  const codeResult = hljs.highlight(token.content, {
+                    language: 'html',
+                  }).value;
+                  // 代码块
+                  Object.assign(token, {
+                    type: 'html_block',
+                    content:
+                      `<Playground ` +
+                      `code="${escape(codeResult)}"` +
+                      `>${token.content}</Playground>`,
+                  });
+                }
               }
             });
           };
@@ -146,6 +157,12 @@ const config: UserConfig = {
 
           md.core.ruler.push('code-2-demo', scanCodeBlock);
           md.core.ruler.push('table-2-vue', scanTable);
+
+          // 高亮代码块
+          // https://github.com/valeriangalliat/markdown-it-highlightjs/blob/e93816e4ea4cceb00a15e7969fae7bf4cd2bf5aa/core.js#L1
+          md.renderer.rules.fence = wrap(md.renderer.rules.fence);
+          md.renderer.rules.code_block = wrap(md.renderer.rules.code_block);
+          md.options.highlight = highlightAuto;
         },
       ],
     }),
