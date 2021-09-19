@@ -1665,6 +1665,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/fs-extra@npm:^9.0.12":
+  version: 9.0.12
+  resolution: "@types/fs-extra@npm:9.0.12"
+  dependencies:
+    "@types/node": "*"
+  checksum: c63834f0be8d0993c55abcc0b2c90f3c095cf3aa9e827973472167bd93687df9da546bd5e0823ddc9e83e1651c9cfb09bbac99fa57a15ab28fd21280426e472c
+  languageName: node
+  linkType: hard
+
 "@types/glob@npm:^7.1.4":
   version: 7.1.4
   resolution: "@types/glob@npm:7.1.4"
@@ -3255,6 +3264,7 @@ __metadata:
     "@rollup/plugin-babel": ^5.3.0
     "@rollup/plugin-node-resolve": ^13.0.4
     "@rollup/plugin-replace": ^3.0.0
+    "@types/fs-extra": ^9.0.12
     "@types/glob": ^7.1.4
     "@types/markdown-it": ^12.2.1
     "@vue/babel-plugin-jsx": ^1.0.7
@@ -3263,8 +3273,10 @@ __metadata:
     babel-plugin-twin: ^1.0.2
     daisyui: ^1.14.0
     download-git-repo: ^3.0.2
+    fs-extra: ^10.0.0
     glob: ^7.1.7
     less: ^4.1.1
+    node-html-parser: ^4.1.5
     postcss: ^8.0.0
     prettier: ^2.4.0
     rollup: ^2.56.3
@@ -4577,7 +4589,7 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"he@npm:^1.2.0":
+"he@npm:1.2.0, he@npm:^1.2.0":
   version: 1.2.0
   resolution: "he@npm:1.2.0"
   bin:
@@ -6185,6 +6197,16 @@ fsevents@~2.3.2:
   bin:
     node-gyp: bin/node-gyp.js
   checksum: 5e0e755eab8ca88647d20fc8aba4095560c3dd549686e86761b57b8489d93a1af68b0dccf881e5314bfce4d7ca290f8248e192915ccd3e18bf46571d72da6a9d
+  languageName: node
+  linkType: hard
+
+"node-html-parser@npm:^4.1.5":
+  version: 4.1.5
+  resolution: "node-html-parser@npm:4.1.5"
+  dependencies:
+    css-select: ^4.1.3
+    he: 1.2.0
+  checksum: 1b9e330e098c4cdf7b9973ca5fb057529c3370f2cfb7d41fc1bb977173bc708615da2d6e7665850486bcf3dde4f1bba6b26130226674491b596a38bd37bf5054
   languageName: node
   linkType: hard
 

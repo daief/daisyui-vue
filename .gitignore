@@ -10,6 +10,7 @@ yarn-error.log*
 node_modules/
 \.DS_Store
 src/_daisyui
+src/icons/vue
 
 dist
 es
