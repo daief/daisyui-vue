@@ -1,1 +1,0 @@
-import{u as a,c as t,o as e}from"./vendor.c94012a2.js";const o={class:"markdown-body"},s={setup(s,{expose:r}){r({frontmatter:{meta:[]}});return a({meta:[]}),(a,s)=>(e(),t("div",o))}};export{s as default};
