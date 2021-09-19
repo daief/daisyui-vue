@@ -1,1 +1,0 @@
-import{u as t,h as a,o as s,j as e}from"./vendor.596f70a4.js";import"./app.1b2cce32.js";const o={class:"markdown-body"},n=[e("pre",null,[e("code",{class:"language-tsx"},"<div>\n  <Button>1</Button>\n</div>\n")],-1)],r={setup(e,{expose:r}){r({frontmatter:{meta:[]}});return t({meta:[]}),(t,e)=>(s(),a("div",o,n))}};export{r as default};
