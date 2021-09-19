@@ -6,9 +6,13 @@ export interface IIconBaseProps {
   color?: string;
   size?: number | string;
   useStroke?: boolean;
+  viewBox?: string;
 }
 
-export const IconBase = component<HTMLAttributes, IIconBaseProps>(
+export const IconBase = component<
+  HTMLAttributes & IIconBaseProps,
+  IIconBaseProps
+>(
   {
     name: 'IconBase',
     props: {
@@ -18,12 +22,16 @@ export const IconBase = component<HTMLAttributes, IIconBaseProps>(
         type: Boolean,
         default: true,
       },
+      viewBox: {
+        type: String,
+        default: '0 0 1024 1024',
+      },
     },
     setup: (props, { slots }) => {
       return () => (
         <svg
           class="dv-icon"
-          viewBox="0 0 24 24"
+          viewBox={props.viewBox}
           focusable="false"
           aria-hidden="false"
           fill={props.useStroke ? 'none' : props.color}

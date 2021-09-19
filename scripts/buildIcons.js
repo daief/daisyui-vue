@@ -1,3 +1,9 @@
+/**
+ * 从 svg 文件生成 tsx 组件
+ * - 默认为 stroke 模式，如果是 fill 模式，需要在 svg 上标记 stroke="none"
+ * - svg 上的 viewBox 会被继承
+ */
+
 const path = require('path');
 const fs = require('fs-extra');
 const parser = require('node-html-parser');
@@ -16,7 +22,7 @@ const $name = component<IIconBaseProps>({
   name: '$name',
   setup: () => {
     return () => (
-      <IconBase>
+      <IconBase $props>
         $child
       </IconBase>
     );
@@ -42,11 +48,23 @@ for (let index = 0; index < svgs.length; index++) {
   icons.push(iconName);
 
   const svgContent = fs.readFileSync(path.resolve(svgDir, basename), 'utf-8');
-  const svgChildContent = parser.parse(svgContent).firstChild.innerHTML;
+  const svgNode = parser.parse(svgContent).firstChild;
+  const svgChildContent = svgNode.innerHTML;
 
   const iconFile = iconFileTpl
     .replace(/\$name/g, iconName)
-    .replace(/\$child/g, svgChildContent);
+    .replace(/\$child/g, svgChildContent)
+    // viewBox
+    .replace(
+      /\$props/g,
+      svgNode.attributes.viewBox
+        ? `viewBox="${svgNode.attributes.viewBox}" $props`
+        : '$props',
+    )
+    .replace(
+      /\$props/g,
+      svgContent.includes('stroke="none"') ? 'useStroke={false}' : '',
+    );
 
   fs.writeFileSync(path.resolve(vueDir, iconName + '.tsx'), iconFile);
 

@@ -8,6 +8,7 @@ import {
   Navbar,
   NavbarStart,
   NavbarEnd,
+  IconGithub,
   IconMenu,
 } from 'daisyui-vue';
 import { RouteRecordNormalized, RouterLink } from 'vue-router';
@@ -84,7 +85,7 @@ export default defineComponent({
                         target="_blank"
                         type="ghost"
                       >
-                        github
+                        <IconGithub size="2em" />
                       </Button>
                     </NavbarEnd>
                   </Navbar>
