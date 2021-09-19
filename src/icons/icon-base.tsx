@@ -13,10 +13,7 @@ export const IconBase = component<HTMLAttributes, IIconBaseProps>(
     name: 'IconBase',
     props: {
       color: { type: String, default: 'currentColor' },
-      size: {
-        type: [String, Number],
-        default: '1em',
-      },
+      size: [String, Number],
       useStroke: {
         type: Boolean,
         default: true,
@@ -31,10 +28,16 @@ export const IconBase = component<HTMLAttributes, IIconBaseProps>(
           aria-hidden="false"
           fill={props.useStroke ? 'none' : props.color}
           stroke={props.useStroke ? props.color : 'none'}
-          style={{
-            fontSize:
-              typeof props.size === 'number' ? `${props.size}px` : props.size,
-          }}
+          style={
+            props.size
+              ? {
+                  fontSize:
+                    typeof props.size === 'number'
+                      ? `${props.size}px`
+                      : props.size,
+                }
+              : {}
+          }
         >
           {slots.default?.()}
         </svg>

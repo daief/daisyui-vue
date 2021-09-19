@@ -67,6 +67,7 @@ export const Button = component<
       active: Boolean,
       loading: Boolean,
       noAnimation: Boolean,
+      onClick: Function,
     },
     setup: (props, { slots, attrs }) => {
       const ctxVal = inject<Ref<ICtx>>(ctxKey, null);

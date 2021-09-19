@@ -1,5 +1,6 @@
 import { App } from 'vue';
 import * as all from './components';
+import * as icons from './icons';
 
 export function install(
   app: App,
@@ -12,10 +13,12 @@ export function install(
     ...options,
   };
 
-  Object.keys(all).forEach((key) => {
-    const el = all[key];
-    if (typeof el === 'object' && 'setup' in el && /^[A-Z]/.test(el.name)) {
-      app.component(prefix + el.name, el);
-    }
+  [all, icons].forEach((set) => {
+    Object.keys(set).forEach((key) => {
+      const el = set[key];
+      if (typeof el === 'object' && 'setup' in el && /^[A-Z]/.test(el.name)) {
+        app.component(prefix + el.name, el);
+      }
+    });
   });
 }
