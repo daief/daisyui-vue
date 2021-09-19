@@ -8,11 +8,10 @@ import {
   Navbar,
   NavbarStart,
   NavbarEnd,
+  IconMenu,
 } from 'daisyui-vue';
 import { RouteRecordNormalized, RouterLink } from 'vue-router';
 import routes from 'virtual:generated-pages';
-
-console.log(routes);
 
 export default defineComponent({
   name: 'App',
@@ -74,7 +73,7 @@ export default defineComponent({
                           open.value = !open.value;
                         }}
                       >
-                        menu
+                        <IconMenu size="2em" />
                       </Button>
                     </NavbarStart>
                     <NavbarEnd>

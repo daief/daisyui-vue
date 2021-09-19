@@ -1,4 +1,25 @@
-// test code
-.testtest {
-  @apply text-red-100;
+.dv-alert {
+  &__content {
+    @apply flex-1;
+
+    > label {
+      @apply leading-6;
+
+      > h4 {
+        margin: 0;
+      }
+      > p {
+        @apply text-sm text-base-content text-opacity-60 leading-5;
+      }
+    }
+  }
+
+  &__iconwrap {
+    font-size: 1.5em;
+    @apply mr-2 flex;
+  }
+
+  &__actions {
+    @apply flex-none;
+  }
 }
