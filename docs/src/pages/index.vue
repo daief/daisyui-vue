@@ -1,16 +1,13 @@
-<template>
-  <router-link to="/nested/deep/a">A</router-link>
-  <router-link to="/b">B</router-link>
-</template>
-
-<script lang="ts">
+<script lang="tsx">
 import { useHead } from '@vueuse/head';
+import IconDisplay from '../components/IconDisplay.vue';
 
 export default {
   setup() {
-    useHead({
-      title: 'INDEX',
-    });
+    // useHead({
+    //   title: 'INDEX',
+    // });
+    return () => <IconDisplay />;
   },
 };
 </script>

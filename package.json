@@ -16,8 +16,9 @@
     "dist"
   ],
   "scripts": {
-    "build": "rm -rf dist && NODE_ENV=production rollup -c",
-    "watch": "rollup -c -w",
+    "build": "rm -rf dist && yarn icons && NODE_ENV=production rollup -c",
+    "watch": "yarn icons && rollup -c -w",
+    "icons": "node scripts/buildIcons.js",
     "clone": "node scripts/clone.js"
   },
   "devDependencies": {

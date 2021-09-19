@@ -3572,8 +3572,8 @@ __metadata:
     typescript: ^4.4.2
     vite: ^2.5.3
     vite-plugin-components: ^0.13.3
-    vite-plugin-md: ^0.11.0
-    vite-plugin-pages: ^0.18.0
+    vite-plugin-md: ^0.11.1
+    vite-plugin-pages: ^0.18.1
     vite-plugin-pwa: ^0.11.2
     vite-ssg: 0.15.1
     vue: ^3.2.9
@@ -8942,35 +8942,36 @@ typescript@^4.4.2:
   languageName: node
   linkType: hard
 
-"vite-plugin-md@npm:^0.11.0":
-  version: 0.11.0
-  resolution: "vite-plugin-md@npm:0.11.0"
+"vite-plugin-md@npm:^0.11.1":
+  version: 0.11.1
+  resolution: "vite-plugin-md@npm:0.11.1"
   dependencies:
+    "@rollup/pluginutils": ^4.1.1
     gray-matter: ^4.0.3
     markdown-it: ^12.2.0
   peerDependencies:
     vite: ^2.0.0
-  checksum: 5d0cd1368432e04346901b236d17c1b471c6c5a67ff1285f6fa2f34b3a975d9a1fcf6b074a0eb9d195ca65929af3da5e8521a04b95f508f68b507a3ad4c20e47
+  checksum: fd12d3135b25ebc22c5e08dc1f36b0ce313bf2a9d2d3ed2db0eed0c4cb6490ba8057880bf62842aa8615b1d4db4d0f2841e441672d9384203c1e67c2b5d99e95
   languageName: node
   linkType: hard
 
-"vite-plugin-pages@npm:^0.18.0":
-  version: 0.18.0
-  resolution: "vite-plugin-pages@npm:0.18.0"
+"vite-plugin-pages@npm:^0.18.1":
+  version: 0.18.1
+  resolution: "vite-plugin-pages@npm:0.18.1"
   dependencies:
     "@antfu/utils": ^0.3.0
     debug: ^4.3.2
     deep-equal: ^2.0.5
     fast-glob: ^3.2.7
     json5: ^2.2.0
-    yaml: ^2.0.0-7
+    yaml: ^2.0.0-8
   peerDependencies:
     "@vue/compiler-sfc": ">=3"
     vite: ">=2"
   peerDependenciesMeta:
     "@vue/compiler-sfc":
       optional: true
-  checksum: 8a77d41524adcbd81f1c6f0214b09dcd52cbabf7084b542291a17a0c4fd292d76773f1d8f2289d0b221780701a4a3c45e2976ade9aea1f1fca199a4db3103358
+  checksum: 5ddcaa5caf14127b87a80e9029c0ba7188af72dd00eeff9fea4ffe23253f0aecc717f5881a19b53825f7133978435c303317e3949509f9d3f49ff1676390b819
   languageName: node
   linkType: hard
 
@@ -9476,7 +9477,7 @@ typescript@^4.4.2:
   languageName: node
   linkType: hard
 
-"yaml@npm:^2.0.0-7":
+"yaml@npm:^2.0.0-8":
   version: 2.0.0-8
   resolution: "yaml@npm:2.0.0-8"
   checksum: b1e3f51de1cdb485469c19e1fa1db7a768201b5c577c7b357103c68ead3a86a9688e91eff670eb9ca2747c51d912b9976e308dc2984bff19f9fba5a833aad7c3

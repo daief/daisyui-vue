@@ -18,9 +18,6 @@ const config: UserConfig = {
     }),
     Markdown({
       headEnabled: true,
-      markdownItSetup: (md) => {
-        md.renderer.rules;
-      },
       markdownItUses: [
         (md: MarkdownIt) => {
           const scanCodeBlock: any = (state) => {
