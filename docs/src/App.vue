@@ -65,16 +65,17 @@ export default defineComponent({
                 <header class="sticky inset-x-0 top-0 bg-white border-b border-gray-100 z-20">
                   <Navbar class="">
                     <NavbarStart class="mx-2">
-                      <Button
-                        type="ghost"
-                        class="lg:hidden"
-                        shape="square"
-                        onClick={() => {
-                          open.value = !open.value;
-                        }}
-                      >
-                        <IconMenu size="2em" />
-                      </Button>
+                      <div class="lg:hidden">
+                        <Button
+                          type="ghost"
+                          shape="square"
+                          onClick={() => {
+                            open.value = !open.value;
+                          }}
+                        >
+                          <IconMenu size="2em" />
+                        </Button>
+                      </div>
                     </NavbarStart>
                     <NavbarEnd>
                       <Button
