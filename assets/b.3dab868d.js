@@ -1,1 +1,0 @@
-import{u as e,o as t,h as o}from"./vendor.596f70a4.js";var r={setup(){e({title:"Hello",meta:[{name:"description",content:"Website description"}],style:[{children:"body {color: #567839}"}]})}};r.render=function(e,r,n,l,a,s){return t(),o("p",null,"Hello I am B")};export{r as default};
