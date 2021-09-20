@@ -20,90 +20,90 @@
   "src/main.ts": [],
   "index.html": [],
   "../node_modules/@vue/shared/dist/shared.esm-bundler.js": [
-    "/daisyui-vue/assets/vendor.d7a40cf1.js"
+    "/daisyui-vue/assets/vendor.7260b986.js"
   ],
   "../node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js": [
-    "/daisyui-vue/assets/vendor.d7a40cf1.js"
+    "/daisyui-vue/assets/vendor.7260b986.js"
   ],
   "../node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js": [
-    "/daisyui-vue/assets/vendor.d7a40cf1.js"
+    "/daisyui-vue/assets/vendor.7260b986.js"
   ],
   "../node_modules/@vue/runtime-dom/dist/runtime-dom.esm-bundler.js": [
-    "/daisyui-vue/assets/vendor.d7a40cf1.js"
+    "/daisyui-vue/assets/vendor.7260b986.js"
   ],
   "../node_modules/vue/dist/vue.runtime.esm-bundler.js": [
-    "/daisyui-vue/assets/vendor.d7a40cf1.js"
+    "/daisyui-vue/assets/vendor.7260b986.js"
   ],
   "../node_modules/vite-ssg/dist/chunk-YPUM4SRK.mjs": [
-    "/daisyui-vue/assets/vendor.d7a40cf1.js"
+    "/daisyui-vue/assets/vendor.7260b986.js"
   ],
   "../node_modules/vite-ssg/dist/chunk-SO7PDUCV.mjs": [
-    "/daisyui-vue/assets/vendor.d7a40cf1.js"
+    "/daisyui-vue/assets/vendor.7260b986.js"
   ],
   "../node_modules/@vue/devtools-api/lib/esm/env.js": [
-    "/daisyui-vue/assets/vendor.d7a40cf1.js"
+    "/daisyui-vue/assets/vendor.7260b986.js"
   ],
   "../node_modules/@vue/devtools-api/lib/esm/const.js": [
-    "/daisyui-vue/assets/vendor.d7a40cf1.js"
+    "/daisyui-vue/assets/vendor.7260b986.js"
   ],
   "../node_modules/@vue/devtools-api/lib/esm/api/api.js": [
-    "/daisyui-vue/assets/vendor.d7a40cf1.js"
+    "/daisyui-vue/assets/vendor.7260b986.js"
   ],
   "../node_modules/@vue/devtools-api/lib/esm/api/app.js": [
-    "/daisyui-vue/assets/vendor.d7a40cf1.js"
+    "/daisyui-vue/assets/vendor.7260b986.js"
   ],
   "../node_modules/@vue/devtools-api/lib/esm/api/component.js": [
-    "/daisyui-vue/assets/vendor.d7a40cf1.js"
+    "/daisyui-vue/assets/vendor.7260b986.js"
   ],
   "../node_modules/@vue/devtools-api/lib/esm/api/context.js": [
-    "/daisyui-vue/assets/vendor.d7a40cf1.js"
+    "/daisyui-vue/assets/vendor.7260b986.js"
   ],
   "../node_modules/@vue/devtools-api/lib/esm/api/hooks.js": [
-    "/daisyui-vue/assets/vendor.d7a40cf1.js"
+    "/daisyui-vue/assets/vendor.7260b986.js"
   ],
   "../node_modules/@vue/devtools-api/lib/esm/api/util.js": [
-    "/daisyui-vue/assets/vendor.d7a40cf1.js"
+    "/daisyui-vue/assets/vendor.7260b986.js"
   ],
   "../node_modules/@vue/devtools-api/lib/esm/api/index.js": [
-    "/daisyui-vue/assets/vendor.d7a40cf1.js"
+    "/daisyui-vue/assets/vendor.7260b986.js"
   ],
   "../node_modules/@vue/devtools-api/lib/esm/index.js": [
-    "/daisyui-vue/assets/vendor.d7a40cf1.js"
+    "/daisyui-vue/assets/vendor.7260b986.js"
   ],
   "../node_modules/vue-router/dist/vue-router.esm-bundler.js": [
-    "/daisyui-vue/assets/vendor.d7a40cf1.js"
+    "/daisyui-vue/assets/vendor.7260b986.js"
   ],
   "../node_modules/@vueuse/head/dist/index.mjs": [
-    "/daisyui-vue/assets/vendor.d7a40cf1.js"
+    "/daisyui-vue/assets/vendor.7260b986.js"
   ],
   "../node_modules/vite-ssg/dist/index.mjs": [
-    "/daisyui-vue/assets/vendor.d7a40cf1.js"
+    "/daisyui-vue/assets/vendor.7260b986.js"
   ],
   "src/pages/components/tab.md": [
-    "/daisyui-vue/assets/tab.cabdd5c2.js"
+    "/daisyui-vue/assets/tab.2a5e8ad7.js"
   ],
   "src/pages/components/menu.md": [
-    "/daisyui-vue/assets/menu.f2355fdc.js"
+    "/daisyui-vue/assets/menu.03db2c1b.js"
   ],
   "src/components/IconDisplay.vue?vue&type=script&lang.tsx": [
-    "/daisyui-vue/assets/icons.188c8a26.js"
+    "/daisyui-vue/assets/icons.ee3ef6bb.js"
   ],
   "src/pages/components/icons.md": [
-    "/daisyui-vue/assets/icons.188c8a26.js"
+    "/daisyui-vue/assets/icons.ee3ef6bb.js"
   ],
   "src/pages/components/drawer.md": [
-    "/daisyui-vue/assets/drawer.4f7d7e65.js"
+    "/daisyui-vue/assets/drawer.f25ce74f.js"
   ],
   "src/pages/components/button.md": [
-    "/daisyui-vue/assets/button.450cb4f8.js"
+    "/daisyui-vue/assets/button.85b03c6e.js"
   ],
   "src/pages/components/alert.md": [
-    "/daisyui-vue/assets/alert.c88c830c.js"
+    "/daisyui-vue/assets/alert.ee7a3165.js"
   ],
   "src/pages/b.vue?vue&type=script&lang.ts": [
-    "/daisyui-vue/assets/b.b387aee2.js"
+    "/daisyui-vue/assets/b.791b1d0c.js"
   ],
   "src/pages/b.vue": [
-    "/daisyui-vue/assets/b.b387aee2.js"
+    "/daisyui-vue/assets/b.791b1d0c.js"
   ]
 }
