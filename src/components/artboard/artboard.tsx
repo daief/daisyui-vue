@@ -23,12 +23,14 @@ export const Artboard = component<
           class={[
             'artboard artboard-demo',
             {
-              phone: props.phone === true,
-              [`phone-${props.phone}`]: typeof props.phone === 'string',
+              phone: ['', true].includes(props.phone),
+              [`phone-${props.phone}`]:
+                !!props.phone && typeof props.phone === 'string',
               horizontal: !!props.horizontal,
             },
           ]}
         >
+          {props.phone}
           {slots.default?.()}
         </div>
       );
