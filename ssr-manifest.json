@@ -3,7 +3,7 @@
   "vite/preload-helper": [],
   "src/pages/index.vue?vue&type=script&lang.tsx": [],
   "../../../../../../@vite-plugin-pages/generated-pages": [],
-  "../dist/esm/button-group-5f65bcbc.js": [],
+  "../dist/esm/button-group-1623f952.js": [],
   "../dist/esm/index.js": [],
   "src/styles/tailwind.css": [],
   "src/styles/markdown.css": [],
@@ -80,22 +80,22 @@
     "/daisyui-vue/assets/vendor.d7a40cf1.js"
   ],
   "src/pages/components/tab.md": [
-    "/daisyui-vue/assets/tab.ecacec56.js"
+    "/daisyui-vue/assets/tab.d8cb5481.js"
   ],
   "src/pages/components/menu.md": [
-    "/daisyui-vue/assets/menu.a00c970b.js"
+    "/daisyui-vue/assets/menu.8a238acc.js"
   ],
   "src/components/IconDisplay.vue?vue&type=script&lang.tsx": [
-    "/daisyui-vue/assets/icons.d08f3b88.js"
+    "/daisyui-vue/assets/icons.22719321.js"
   ],
   "src/pages/components/icons.md": [
-    "/daisyui-vue/assets/icons.d08f3b88.js"
+    "/daisyui-vue/assets/icons.22719321.js"
   ],
   "src/pages/components/drawer.md": [
-    "/daisyui-vue/assets/drawer.cb5f17e0.js"
+    "/daisyui-vue/assets/drawer.4bf5b268.js"
   ],
   "src/pages/components/button.md": [
-    "/daisyui-vue/assets/button.60450206.js"
+    "/daisyui-vue/assets/button.275ff9c0.js"
   ],
   "src/pages/components/alert.md": [
     "/daisyui-vue/assets/alert.8d06afdd.js"
