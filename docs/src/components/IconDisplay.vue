@@ -21,7 +21,7 @@ export default defineComponent({
               class="mt-1 overflow-ellipsis overflow-hidden whitespace-nowrap"
               title={name}
             >
-              {name}
+              {name.replace(/^Icon/, '')}
             </p>
           </div>
         ))}

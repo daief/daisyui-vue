@@ -253,9 +253,9 @@ button group outline
 </div>
 ```
 
-## Attributes
+## Button
 
-### Button
+### Attributes
 
 | name        | description                            | type                                                                                   | default |
 | ----------- | -------------------------------------- | -------------------------------------------------------------------------------------- | ------- |
@@ -272,7 +272,9 @@ button group outline
 | component   | button with diffrent HTML tags         | button, a, input                                                                       | button  |
 | onClick     | button click handle                    | Function                                                                               | -       |
 
-### ButtonGroup
+## ButtonGroup
+
+### Attributes
 
 | name    | description                            | type                    | default |
 | ------- | -------------------------------------- | ----------------------- | ------- |

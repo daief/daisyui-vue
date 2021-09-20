@@ -76,15 +76,15 @@ alert
 </dv-alert>
 ```
 
-## Attributes
+## Alert
 
-### Alert
+### Attributes
 
 | name | description      | type                          | default |
 | ---- | ---------------- | ----------------------------- | ------- |
 | type | alert color type | info, success, warning, error | -       |
 
-### Alert Slots
+### Slots
 
 | name    | description   |
 | ------- | ------------- |

@@ -185,3 +185,28 @@ drawer right
   </div>
 </dv-drawer>
 ```
+
+## Drawer
+
+### Attributes
+
+| name            | description                                                                | type        | default |
+| --------------- | -------------------------------------------------------------------------- | ----------- | ------- |
+| open            | drawer open/close status                                                   | boolean     | -       |
+| disableTeleport | disable teleport behavior                                                  | boolean     | -       |
+| mobileOnly      | makes drawer to open/close on mobile but will be always visible on desktop | boolean     | -       |
+| placement       | drawer open position                                                       | left, right | left    |
+| placement       | drawer open position                                                       | left, right | left    |
+
+### Events
+
+| name  | description        | type     | default |
+| ----- | ------------------ | -------- | ------- |
+| close | drawer close event | function | -       |
+
+### Slots
+
+| name    | description         |
+| ------- | ------------------- |
+| default | drawer side content |
+| content | drawer content      |

@@ -15,7 +15,6 @@
 - [ ] badge
 - [ ] breadcrumbs
 - [x] button
-  - [ ] responsive buttons
 - [x] button-group
 - [ ] card
 - [ ] carousel
