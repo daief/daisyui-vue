@@ -48,7 +48,9 @@ const componentsConfig = {
       },
     }),
     styles(),
-    typescript(),
+    typescript({
+      exclude: [path.resolve(__dirname, 'src/_daisyui/**')],
+    }),
     resolve({
       extensions,
     }),

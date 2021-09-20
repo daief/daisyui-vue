@@ -30,7 +30,6 @@ export const Artboard = component<
             },
           ]}
         >
-          {props.phone}
           {slots.default?.()}
         </div>
       );
