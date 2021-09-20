@@ -189,7 +189,7 @@ button loading without content
 </div>
 ```
 
-button loading without content
+button doesn't have click animation
 
 ```html :::demo
 <div
