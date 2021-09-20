@@ -202,20 +202,30 @@
 .markdown-body blockquote {
   margin: 0;
 }
-.markdown-body ol,
-.markdown-body ul {
+.markdown-body ol:not(.menu),
+.markdown-body ul:not(.menu) {
   padding-left: 0;
   margin-top: 0;
   margin-bottom: 0;
 }
-.markdown-body ol ol,
-.markdown-body ul ol {
+.markdown-body ol:not(.menu) ol,
+.markdown-body ul:not(.menu) ol {
   list-style-type: lower-roman;
+
+  li {
+    word-wrap: break-all;
+  }
+  li > p {
+    margin-top: 16px;
+  }
+  li + li {
+    margin-top: 0.25em;
+  }
 }
-.markdown-body ol ol ol,
-.markdown-body ol ul ol,
-.markdown-body ul ol ol,
-.markdown-body ul ul ol {
+.markdown-body ol:not(.menu) ol ol,
+.markdown-body ol:not(.menu) ul ol,
+.markdown-body ul:not(.menu) ol ol,
+.markdown-body ul:not(.menu) ul ol {
   list-style-type: lower-alpha;
 }
 .markdown-body dd {
@@ -497,7 +507,7 @@
 .markdown-body p,
 .markdown-body pre,
 .markdown-body table,
-.markdown-body ul {
+.markdown-body ul:not(.menu) {
   margin-top: 0;
   margin-bottom: 16px;
 }
@@ -554,25 +564,16 @@
   font-size: 0.85em;
   color: #6a737d;
 }
-.markdown-body ol,
-.markdown-body ul {
+.markdown-body ol:not(.menu),
+.markdown-body ul:not(.menu) {
   padding-left: 2em;
 }
-.markdown-body ol ol,
-.markdown-body ol ul,
-.markdown-body ul ol,
-.markdown-body ul ul {
+.markdown-body ol:not(.menu) ol,
+.markdown-body ol:not(.menu) ul,
+.markdown-body ul:not(.menu) ol,
+.markdown-body ul:not(.menu) ul {
   margin-top: 0;
   margin-bottom: 0;
-}
-.markdown-body li {
-  word-wrap: break-all;
-}
-.markdown-body li > p {
-  margin-top: 16px;
-}
-.markdown-body li + li {
-  margin-top: 0.25em;
 }
 .markdown-body dl {
   padding: 0;

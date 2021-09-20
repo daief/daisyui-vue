@@ -5,10 +5,12 @@ import style from './style';
 
 const props = {
   compact: Boolean,
+  horizontal: Boolean,
 };
 
 export interface IMenuProps {
   compace?: boolean;
+  horizontal?: boolean;
 }
 
 export const Menu = component<IMenuProps, BoolConstructorToBase<typeof props>>(
@@ -20,6 +22,7 @@ export const Menu = component<IMenuProps, BoolConstructorToBase<typeof props>>(
         'menu',
         {
           compact: props.compact,
+          horizontal: props.horizontal,
         },
       ]);
       return () => <ul class={cls.value}>{slots.default?.()}</ul>;

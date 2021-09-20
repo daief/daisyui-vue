@@ -49,43 +49,78 @@ export const Drawer = component<
       );
 
       return () => {
-        const drawNode = (
+        const transitionWrap = (nodes: any) => (
           <Transition
             enterFromClass="dv-drawer--opacity-0"
             enterActiveClass="dv-drawer--transition-opacity"
             leaveActiveClass="dv-drawer--transition-opacity"
             leaveToClass="dv-drawer--opacity-0"
+            duration={300}
           >
-            {withDirectives(
-              <div
-                {...attrs}
-                class={[
-                  'dv-drawer drawer',
-                  {
-                    'dv-drawer--teleport': !props.disableTeleport,
-                    'drawer-end': attrs.placement === 'right',
-                    'drawer-mobile': !!props.mobileOnly,
-                  },
-                ]}
-                style={{
-                  zIndex: 100 + id,
-                }}
-              >
-                <input
-                  type="checkbox"
-                  class="drawer-toggle"
-                  checked={finalChecked.value}
-                />
-                <div class="drawer-content">{slots.content?.()}</div>
-                <div class="drawer-side">
-                  <div class="drawer-overlay" onClick={attrs.onClose} />
-                  {slots.default?.()}
-                </div>
-              </div>,
-              [[vShow, props.mobileOnly ? true : props.open]],
-            )}
+            {withDirectives(nodes, [
+              [vShow, props.mobileOnly ? true : props.open],
+            ])}
           </Transition>
         );
+
+        const drawNode = props.disableTeleport ? (
+          <div
+            {...attrs}
+            class={[
+              'dv-drawer drawer',
+              {
+                'dv-drawer--teleport': !props.disableTeleport,
+                'drawer-end': attrs.placement === 'right',
+                'drawer-mobile': !!props.mobileOnly,
+              },
+            ]}
+            style={{
+              zIndex: 100 + id,
+            }}
+          >
+            <input
+              type="checkbox"
+              class="drawer-toggle"
+              checked={finalChecked.value}
+            />
+            <div class="drawer-content">{slots.content?.()}</div>
+            {transitionWrap(
+              <div class="drawer-side">
+                <div class="drawer-overlay" onClick={attrs.onClose} />
+                {slots.default?.()}
+              </div>,
+            )}
+          </div>
+        ) : (
+          transitionWrap(
+            <div
+              {...attrs}
+              class={[
+                'dv-drawer drawer',
+                {
+                  'dv-drawer--teleport': !props.disableTeleport,
+                  'drawer-end': attrs.placement === 'right',
+                  'drawer-mobile': !!props.mobileOnly,
+                },
+              ]}
+              style={{
+                zIndex: 100 + id,
+              }}
+            >
+              <input
+                type="checkbox"
+                class="drawer-toggle"
+                checked={finalChecked.value}
+              />
+              <div class="drawer-content">{slots.content?.()}</div>
+              <div class="drawer-side">
+                <div class="drawer-overlay" onClick={attrs.onClose} />
+                {slots.default?.()}
+              </div>
+            </div>,
+          )
+        );
+
         return !props.disableTeleport ? (
           <Teleport to="body">{drawNode}</Teleport>
         ) : (
