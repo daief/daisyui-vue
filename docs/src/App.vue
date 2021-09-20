@@ -1,5 +1,5 @@
 <script lang="tsx">
-import { defineComponent, ref } from 'vue';
+import { defineComponent, ref, watch } from 'vue';
 import {
   Button,
   Drawer,
@@ -11,13 +11,22 @@ import {
   IconGithub,
   IconMenu,
 } from 'daisyui-vue';
-import { RouteRecordNormalized, RouterLink } from 'vue-router';
+import { RouteRecordNormalized, RouterLink, useRoute } from 'vue-router';
 import routes from 'virtual:generated-pages';
 
 export default defineComponent({
   name: 'App',
   setup: () => {
     const open = ref(false);
+
+    const route = useRoute();
+
+    watch(
+      () => route.path,
+      () => {
+        open.value = false;
+      },
+    );
 
     const { components } = (routes as any[]).reduce<{
       components: RouteRecordNormalized[];

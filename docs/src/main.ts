@@ -1,6 +1,6 @@
 import { ViteSSG } from 'vite-ssg';
 import routes from 'virtual:generated-pages';
-import DV from 'daisyui-vue';
+import daisyui from 'daisyui-vue';
 import './styles';
 import App from './App.vue';
 import Playground from './components/Playground.vue';
@@ -13,6 +13,6 @@ export const createApp = ViteSSG(
     // install plugins etc.
     app.component('Playground', Playground);
     app.component('MarkdownTable', MarkdownTable);
-    app.use(DV);
+    app.use(daisyui);
   },
 );
