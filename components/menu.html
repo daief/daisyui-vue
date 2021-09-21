@@ -12,15 +12,15 @@
       type="module"
       async=""
       crossorigin=""
-      src="/daisyui-vue/assets/app.cbdf37a3.js"
+      src="/daisyui-vue/assets/app.68b26dd7.js"
     ></script>
-    <link rel="modulepreload" href="/daisyui-vue/assets/vendor.7260b986.js" />
-    <link rel="stylesheet" href="/daisyui-vue/assets/app.71a0c858.css" />
+    <link rel="modulepreload" href="/daisyui-vue/assets/vendor.c673e678.js" />
+    <link rel="stylesheet" href="/daisyui-vue/assets/app.59410fec.css" />
     <link rel="manifest" href="/daisyui-vue/manifest.webmanifest" />
     <link
       rel="modulepreload"
       crossorigin=""
-      href="/daisyui-vue/assets/menu.49ba82b7.js"
+      href="/daisyui-vue/assets/menu.2444fedd.js"
     />
     <meta name="head:count" content="0" />
   </head>
@@ -111,7 +111,668 @@
                 </div>
               </header>
               <div class="p-4 pb-8 lg:p-10" data-v-50a6b668="">
-                <div class="markdown-body" data-v-50a6b668=""><p>11</p></div>
+                <div class="markdown-body" data-v-50a6b668="">
+                  <h1>Menu</h1>
+                  <p>notice:</p>
+                  <ul>
+                    <li>
+                      when menu class contains <code>p-</code>, menu-item will
+                      be have border-radius.
+                    </li>
+                  </ul>
+                  <h2>Examples</h2>
+                  <p>veritcal with icons</p>
+                  <div class="dv-playground py-2">
+                    <!--[-->
+                    <div class="dv-tabs tabs">
+                      <!--[--><a class="dv-tab tab tab-lifted tab-md tab-active"
+                        >Preview</a
+                      ><a class="dv-tab tab tab-lifted tab-md">Code</a
+                      ><!--]-->
+                      <div class="dv-tabs__lifted-item"></div>
+                    </div>
+                    <!--[-->
+                    <div class="dv-tab-content">
+                      <!--[--><!--[-->
+                      <div class="artboard artboard-demo py-4 bg-gray-100">
+                        <!--[-->
+                        <ul class="menu py-2 shadow-lg rounded-lg bg-white">
+                          <!--[-->
+                          <li class="menu-title">
+                            <span class=""> Menu title </span>
+                          </li>
+                          <li class=""><a class=""> Item without icon </a></li>
+                          <li class="">
+                            <a class=""
+                              ><svg
+                                class="dv-icon mr-2"
+                                viewBox="0 0 24 24"
+                                focusable="false"
+                                aria-hidden="false"
+                                fill="none"
+                                stroke="currentColor"
+                                style="font-size: 1.25em"
+                              >
+                                <!--[-->
+                                <path
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  stroke-width="2"
+                                  d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                                ></path>
+                                <!--]-->
+                              </svg>
+                              Item with icon
+                            </a>
+                          </li>
+                          <!--]-->
+                        </ul>
+                        <!--]-->
+                      </div>
+                      <!--]--><!--]-->
+                    </div>
+                    <div class="dv-tab-content dv-tab-content--hidden">
+                      <!--[-->
+                      <pre><code class="hljs language-html rounded-md" hljs-language="html"><span class="hljs-tag">&lt;<span class="hljs-name">dv-artboard</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"py-4 bg-gray-100"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">dv-menu</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"py-2 shadow-lg rounded-lg bg-white"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dv-menu-item</span> <span class="hljs-attr">asTitle</span>&gt;</span> Menu title <span class="hljs-tag">&lt;/<span class="hljs-name">dv-menu-item</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dv-menu-item</span>&gt;</span> Item without icon <span class="hljs-tag">&lt;/<span class="hljs-name">dv-menu-item</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dv-menu-item</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">dv-icon-eye</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mr-2"</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"1.25em"</span> /&gt;</span>
+      Item with icon
+    <span class="hljs-tag">&lt;/<span class="hljs-name">dv-menu-item</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">dv-menu</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">dv-artboard</span>&gt;</span>
+</code></pre>
+                      <!--]-->
+                    </div>
+                    <!--]--><!--]-->
+                  </div>
+                  <p>
+                    veritcal with icons and padding. menu-item have
+                    border-raidus
+                  </p>
+                  <div class="dv-playground py-2">
+                    <!--[-->
+                    <div class="dv-tabs tabs">
+                      <!--[--><a class="dv-tab tab tab-lifted tab-md tab-active"
+                        >Preview</a
+                      ><a class="dv-tab tab tab-lifted tab-md">Code</a
+                      ><!--]-->
+                      <div class="dv-tabs__lifted-item"></div>
+                    </div>
+                    <!--[-->
+                    <div class="dv-tab-content">
+                      <!--[--><!--[-->
+                      <div class="artboard artboard-demo py-4 bg-gray-100">
+                        <!--[-->
+                        <ul class="menu p-4 shadow-lg rounded-lg bg-white">
+                          <!--[-->
+                          <li class="menu-title">
+                            <span class=""> Menu title </span>
+                          </li>
+                          <li class=""><a class=""> Item without icon </a></li>
+                          <li class="">
+                            <a class=""
+                              ><svg
+                                class="dv-icon mr-2"
+                                viewBox="0 0 24 24"
+                                focusable="false"
+                                aria-hidden="false"
+                                fill="none"
+                                stroke="currentColor"
+                                style="font-size: 1.25em"
+                              >
+                                <!--[-->
+                                <path
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  stroke-width="2"
+                                  d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                                ></path>
+                                <!--]-->
+                              </svg>
+                              Item with icon
+                            </a>
+                          </li>
+                          <!--]-->
+                        </ul>
+                        <!--]-->
+                      </div>
+                      <!--]--><!--]-->
+                    </div>
+                    <div class="dv-tab-content dv-tab-content--hidden">
+                      <!--[-->
+                      <pre><code class="hljs language-html rounded-md" hljs-language="html"><span class="hljs-tag">&lt;<span class="hljs-name">dv-artboard</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"py-4 bg-gray-100"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">dv-menu</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"p-4 shadow-lg rounded-lg bg-white"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dv-menu-item</span> <span class="hljs-attr">asTitle</span>&gt;</span> Menu title <span class="hljs-tag">&lt;/<span class="hljs-name">dv-menu-item</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dv-menu-item</span>&gt;</span> Item without icon <span class="hljs-tag">&lt;/<span class="hljs-name">dv-menu-item</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dv-menu-item</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">dv-icon-eye</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mr-2"</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"1.25em"</span> /&gt;</span>
+      Item with icon
+    <span class="hljs-tag">&lt;/<span class="hljs-name">dv-menu-item</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">dv-menu</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">dv-artboard</span>&gt;</span>
+</code></pre>
+                      <!--]-->
+                    </div>
+                    <!--]--><!--]-->
+                  </div>
+                  <p>bordered, hover-bordered, disabled</p>
+                  <div class="dv-playground py-2">
+                    <!--[-->
+                    <div class="dv-tabs tabs">
+                      <!--[--><a class="dv-tab tab tab-lifted tab-md tab-active"
+                        >Preview</a
+                      ><a class="dv-tab tab tab-lifted tab-md">Code</a
+                      ><!--]-->
+                      <div class="dv-tabs__lifted-item"></div>
+                    </div>
+                    <!--[-->
+                    <div class="dv-tab-content">
+                      <!--[--><!--[-->
+                      <div class="artboard artboard-demo py-4 bg-gray-100">
+                        <!--[-->
+                        <ul class="menu py-4 shadow-lg rounded-lg bg-white">
+                          <!--[-->
+                          <li class="menu-title">
+                            <span class=""> Menu title </span>
+                          </li>
+                          <li class="disabled">
+                            <a class=""> Item is diabled </a>
+                          </li>
+                          <li class="bordered">
+                            <a class=""> Item is bordered </a>
+                          </li>
+                          <li class="hover-bordered">
+                            <a class=""> Item is hover bordered </a>
+                          </li>
+                          <li class="">
+                            <a class="active"> Item is active </a>
+                          </li>
+                          <!--]-->
+                        </ul>
+                        <!--]-->
+                      </div>
+                      <!--]--><!--]-->
+                    </div>
+                    <div class="dv-tab-content dv-tab-content--hidden">
+                      <!--[-->
+                      <pre><code class="hljs language-html rounded-md" hljs-language="html"><span class="hljs-tag">&lt;<span class="hljs-name">dv-artboard</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"py-4 bg-gray-100"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">dv-menu</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"py-4 shadow-lg rounded-lg bg-white"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dv-menu-item</span> <span class="hljs-attr">asTitle</span>&gt;</span> Menu title <span class="hljs-tag">&lt;/<span class="hljs-name">dv-menu-item</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dv-menu-item</span> <span class="hljs-attr">disabled</span>&gt;</span> Item is diabled <span class="hljs-tag">&lt;/<span class="hljs-name">dv-menu-item</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dv-menu-item</span> <span class="hljs-attr">bordered</span>&gt;</span> Item is bordered <span class="hljs-tag">&lt;/<span class="hljs-name">dv-menu-item</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dv-menu-item</span> <span class="hljs-attr">hover-bordered</span>&gt;</span> Item is hover bordered <span class="hljs-tag">&lt;/<span class="hljs-name">dv-menu-item</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dv-menu-item</span> <span class="hljs-attr">active</span>&gt;</span> Item is active <span class="hljs-tag">&lt;/<span class="hljs-name">dv-menu-item</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">dv-menu</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">dv-artboard</span>&gt;</span>
+</code></pre>
+                      <!--]-->
+                    </div>
+                    <!--]--><!--]-->
+                  </div>
+                  <p>horizontal</p>
+                  <div class="dv-playground py-2">
+                    <!--[-->
+                    <div class="dv-tabs tabs">
+                      <!--[--><a class="dv-tab tab tab-lifted tab-md tab-active"
+                        >Preview</a
+                      ><a class="dv-tab tab tab-lifted tab-md">Code</a
+                      ><!--]-->
+                      <div class="dv-tabs__lifted-item"></div>
+                    </div>
+                    <!--[-->
+                    <div class="dv-tab-content">
+                      <!--[--><!--[-->
+                      <div class="artboard artboard-demo py-4 bg-gray-100">
+                        <!--[-->
+                        <ul
+                          class="menu horizontal shadow-lg rounded-lg bg-white"
+                        >
+                          <!--[-->
+                          <li class="menu-title">
+                            <span class=""> Menu title </span>
+                          </li>
+                          <li class="disabled">
+                            <a class=""> Item is diabled </a>
+                          </li>
+                          <li class="bordered">
+                            <a class=""> Item is bordered </a>
+                          </li>
+                          <li class="">
+                            <a class="active"> Item is active </a>
+                          </li>
+                          <!--]-->
+                        </ul>
+                        <!--]-->
+                      </div>
+                      <!--]--><!--]-->
+                    </div>
+                    <div class="dv-tab-content dv-tab-content--hidden">
+                      <!--[-->
+                      <pre><code class="hljs language-html rounded-md" hljs-language="html"><span class="hljs-tag">&lt;<span class="hljs-name">dv-artboard</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"py-4 bg-gray-100"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">dv-menu</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"shadow-lg rounded-lg bg-white"</span> <span class="hljs-attr">horizontal</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dv-menu-item</span> <span class="hljs-attr">asTitle</span>&gt;</span> Menu title <span class="hljs-tag">&lt;/<span class="hljs-name">dv-menu-item</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dv-menu-item</span> <span class="hljs-attr">disabled</span>&gt;</span> Item is diabled <span class="hljs-tag">&lt;/<span class="hljs-name">dv-menu-item</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dv-menu-item</span> <span class="hljs-attr">bordered</span>&gt;</span> Item is bordered <span class="hljs-tag">&lt;/<span class="hljs-name">dv-menu-item</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dv-menu-item</span> <span class="hljs-attr">active</span>&gt;</span> Item is active <span class="hljs-tag">&lt;/<span class="hljs-name">dv-menu-item</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">dv-menu</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">dv-artboard</span>&gt;</span>
+</code></pre>
+                      <!--]-->
+                    </div>
+                    <!--]--><!--]-->
+                  </div>
+                  <p>icon</p>
+                  <div class="dv-playground py-2">
+                    <!--[-->
+                    <div class="dv-tabs tabs">
+                      <!--[--><a class="dv-tab tab tab-lifted tab-md tab-active"
+                        >Preview</a
+                      ><a class="dv-tab tab tab-lifted tab-md">Code</a
+                      ><!--]-->
+                      <div class="dv-tabs__lifted-item"></div>
+                    </div>
+                    <!--[-->
+                    <div class="dv-tab-content">
+                      <!--[--><!--[-->
+                      <div class="artboard artboard-demo py-4 bg-gray-100">
+                        <!--[-->
+                        <ul
+                          class="
+                            menu
+                            shadow-lg
+                            rounded-lg
+                            bg-white
+                            text-2xl
+                            mb-4
+                          "
+                        >
+                          <!--[-->
+                          <li class="">
+                            <a class=""
+                              ><svg
+                                class="dv-icon"
+                                viewBox="0 0 512 512"
+                                focusable="false"
+                                aria-hidden="false"
+                                fill="currentColor"
+                                stroke="none"
+                                style=""
+                              >
+                                <!--[-->
+                                <path
+                                  d="M256,32C132.3,32,32,134.9,32,261.7c0,101.5,64.2,187.5,153.2,217.9a17.56,17.56,0,0,0,3.8.4c8.3,0,11.5-6.1,11.5-11.4,0-5.5-.2-19.9-.3-39.1a102.4,102.4,0,0,1-22.6,2.7c-43.1,0-52.9-33.5-52.9-33.5-10.2-26.5-24.9-33.6-24.9-33.6-19.5-13.7-.1-14.1,1.4-14.1h.1c22.5,2,34.3,23.8,34.3,23.8,11.2,19.6,26.2,25.1,39.6,25.1a63,63,0,0,0,25.6-6c2-14.8,7.8-24.9,14.2-30.7-49.7-5.8-102-25.5-102-113.5,0-25.1,8.7-45.6,23-61.6-2.3-5.8-10-29.2,2.2-60.8a18.64,18.64,0,0,1,5-.5c8.1,0,26.4,3.1,56.6,24.1a208.21,208.21,0,0,1,112.2,0c30.2-21,48.5-24.1,56.6-24.1a18.64,18.64,0,0,1,5,.5c12.2,31.6,4.5,55,2.2,60.8,14.3,16.1,23,36.6,23,61.6,0,88.2-52.4,107.6-102.3,113.3,8,7.1,15.2,21.1,15.2,42.5,0,30.7-.3,55.5-.3,63,0,5.4,3.1,11.5,11.4,11.5a19.35,19.35,0,0,0,4-.4C415.9,449.2,480,363.1,480,261.7,480,134.9,379.7,32,256,32Z"
+                                ></path>
+                                <!--]-->
+                              </svg></a
+                            >
+                          </li>
+                          <li class="">
+                            <a class=""
+                              ><svg
+                                class="dv-icon"
+                                viewBox="0 0 24 24"
+                                focusable="false"
+                                aria-hidden="false"
+                                fill="none"
+                                stroke="currentColor"
+                                style=""
+                              >
+                                <!--[-->
+                                <path
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  stroke-width="2"
+                                  d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                                ></path>
+                                <!--]-->
+                              </svg></a
+                            >
+                          </li>
+                          <li class="">
+                            <a class=""
+                              ><svg
+                                class="dv-icon"
+                                viewBox="0 0 24 24"
+                                focusable="false"
+                                aria-hidden="false"
+                                fill="none"
+                                stroke="currentColor"
+                                style=""
+                              >
+                                <!--[-->
+                                <path
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  stroke-width="2"
+                                  d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                                ></path>
+                                <!--]-->
+                              </svg></a
+                            >
+                          </li>
+                          <!--]-->
+                        </ul>
+                        <ul
+                          class="
+                            menu
+                            horizontal
+                            shadow-lg
+                            rounded-lg
+                            bg-white
+                            text-2xl
+                          "
+                        >
+                          <!--[-->
+                          <li class="">
+                            <a class=""
+                              ><svg
+                                class="dv-icon"
+                                viewBox="0 0 512 512"
+                                focusable="false"
+                                aria-hidden="false"
+                                fill="currentColor"
+                                stroke="none"
+                                style=""
+                              >
+                                <!--[-->
+                                <path
+                                  d="M256,32C132.3,32,32,134.9,32,261.7c0,101.5,64.2,187.5,153.2,217.9a17.56,17.56,0,0,0,3.8.4c8.3,0,11.5-6.1,11.5-11.4,0-5.5-.2-19.9-.3-39.1a102.4,102.4,0,0,1-22.6,2.7c-43.1,0-52.9-33.5-52.9-33.5-10.2-26.5-24.9-33.6-24.9-33.6-19.5-13.7-.1-14.1,1.4-14.1h.1c22.5,2,34.3,23.8,34.3,23.8,11.2,19.6,26.2,25.1,39.6,25.1a63,63,0,0,0,25.6-6c2-14.8,7.8-24.9,14.2-30.7-49.7-5.8-102-25.5-102-113.5,0-25.1,8.7-45.6,23-61.6-2.3-5.8-10-29.2,2.2-60.8a18.64,18.64,0,0,1,5-.5c8.1,0,26.4,3.1,56.6,24.1a208.21,208.21,0,0,1,112.2,0c30.2-21,48.5-24.1,56.6-24.1a18.64,18.64,0,0,1,5,.5c12.2,31.6,4.5,55,2.2,60.8,14.3,16.1,23,36.6,23,61.6,0,88.2-52.4,107.6-102.3,113.3,8,7.1,15.2,21.1,15.2,42.5,0,30.7-.3,55.5-.3,63,0,5.4,3.1,11.5,11.4,11.5a19.35,19.35,0,0,0,4-.4C415.9,449.2,480,363.1,480,261.7,480,134.9,379.7,32,256,32Z"
+                                ></path>
+                                <!--]-->
+                              </svg></a
+                            >
+                          </li>
+                          <li class="">
+                            <a class=""
+                              ><svg
+                                class="dv-icon"
+                                viewBox="0 0 24 24"
+                                focusable="false"
+                                aria-hidden="false"
+                                fill="none"
+                                stroke="currentColor"
+                                style=""
+                              >
+                                <!--[-->
+                                <path
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  stroke-width="2"
+                                  d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                                ></path>
+                                <!--]-->
+                              </svg></a
+                            >
+                          </li>
+                          <li class="">
+                            <a class=""
+                              ><svg
+                                class="dv-icon"
+                                viewBox="0 0 24 24"
+                                focusable="false"
+                                aria-hidden="false"
+                                fill="none"
+                                stroke="currentColor"
+                                style=""
+                              >
+                                <!--[-->
+                                <path
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  stroke-width="2"
+                                  d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                                ></path>
+                                <!--]-->
+                              </svg></a
+                            >
+                          </li>
+                          <!--]-->
+                        </ul>
+                        <!--]-->
+                      </div>
+                      <!--]--><!--]-->
+                    </div>
+                    <div class="dv-tab-content dv-tab-content--hidden">
+                      <!--[-->
+                      <pre><code class="hljs language-html rounded-md" hljs-language="html"><span class="hljs-tag">&lt;<span class="hljs-name">dv-artboard</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"py-4 bg-gray-100"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">dv-menu</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"shadow-lg rounded-lg bg-white text-2xl mb-4"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dv-menu-item</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">dv-icon-github</span> /&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-name">dv-menu-item</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dv-menu-item</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">dv-icon-code</span> /&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-name">dv-menu-item</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dv-menu-item</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">dv-icon-eye</span> /&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-name">dv-menu-item</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">dv-menu</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">dv-menu</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"shadow-lg rounded-lg bg-white text-2xl"</span> <span class="hljs-attr">horizontal</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dv-menu-item</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">dv-icon-github</span> /&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-name">dv-menu-item</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dv-menu-item</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">dv-icon-code</span> /&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-name">dv-menu-item</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dv-menu-item</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">dv-icon-eye</span> /&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-name">dv-menu-item</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">dv-menu</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">dv-artboard</span>&gt;</span>
+</code></pre>
+                      <!--]-->
+                    </div>
+                    <!--]--><!--]-->
+                  </div>
+                  <p>veritcal with submenu and compact</p>
+                  <blockquote><p>TODO: refine usage api</p></blockquote>
+                  <div class="dv-playground py-2">
+                    <!--[-->
+                    <div class="dv-tabs tabs">
+                      <!--[--><a class="dv-tab tab tab-lifted tab-md tab-active"
+                        >Preview</a
+                      ><a class="dv-tab tab tab-lifted tab-md">Code</a
+                      ><!--]-->
+                      <div class="dv-tabs__lifted-item"></div>
+                    </div>
+                    <!--[-->
+                    <div class="dv-tab-content">
+                      <!--[--><!--[-->
+                      <div class="artboard artboard-demo py-4 bg-gray-100">
+                        <!--[-->
+                        <ul
+                          class="menu compact p-4 shadow-lg rounded-lg bg-white"
+                        >
+                          <!--[-->
+                          <li class=""><a class=""> Level 1 </a></li>
+                          <li class=""><a class=""> Level 1 </a></li>
+                          <li class=""><a class=""> Level 1 </a></li>
+                          <li class="" childwrapper="false">
+                            <!--[-->
+                            <ul class="menu">
+                              <!--[-->
+                              <li class=""><a class=""> Level 2 </a></li>
+                              <li class=""><a class=""> Level 2 </a></li>
+                              <li class="" childwrapper="false">
+                                <!--[-->
+                                <ul class="menu">
+                                  <!--[-->
+                                  <li class=""><a class=""> Level 3 </a></li>
+                                  <li class=""><a class=""> Level 3 </a></li>
+                                  <!--]-->
+                                </ul>
+                                <!--]-->
+                              </li>
+                              <li class=""><a class=""> Level 2 </a></li>
+                              <!--]-->
+                            </ul>
+                            <!--]-->
+                          </li>
+                          <li class=""><a class=""> Level 1 </a></li>
+                          <!--]-->
+                        </ul>
+                        <!--]-->
+                      </div>
+                      <!--]--><!--]-->
+                    </div>
+                    <div class="dv-tab-content dv-tab-content--hidden">
+                      <!--[-->
+                      <pre><code class="hljs language-html rounded-md" hljs-language="html"><span class="hljs-tag">&lt;<span class="hljs-name">dv-artboard</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"py-4 bg-gray-100"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">dv-menu</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"p-4 shadow-lg rounded-lg bg-white"</span> <span class="hljs-attr">compact</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dv-menu-item</span>&gt;</span> Level 1 <span class="hljs-tag">&lt;/<span class="hljs-name">dv-menu-item</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dv-menu-item</span>&gt;</span> Level 1 <span class="hljs-tag">&lt;/<span class="hljs-name">dv-menu-item</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dv-menu-item</span>&gt;</span> Level 1 <span class="hljs-tag">&lt;/<span class="hljs-name">dv-menu-item</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dv-menu-item</span> <span class="hljs-attr">:childWrapper</span>=<span class="hljs-string">"false"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">dv-menu</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">dv-menu-item</span>&gt;</span> Level 2 <span class="hljs-tag">&lt;/<span class="hljs-name">dv-menu-item</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">dv-menu-item</span>&gt;</span> Level 2 <span class="hljs-tag">&lt;/<span class="hljs-name">dv-menu-item</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">dv-menu-item</span> <span class="hljs-attr">:childWrapper</span>=<span class="hljs-string">"false"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">dv-menu</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">dv-menu-item</span>&gt;</span> Level 3 <span class="hljs-tag">&lt;/<span class="hljs-name">dv-menu-item</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">dv-menu-item</span>&gt;</span> Level 3 <span class="hljs-tag">&lt;/<span class="hljs-name">dv-menu-item</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">dv-menu</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">dv-menu-item</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">dv-menu-item</span>&gt;</span> Level 2 <span class="hljs-tag">&lt;/<span class="hljs-name">dv-menu-item</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">dv-menu</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">dv-menu-item</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dv-menu-item</span>&gt;</span> Level 1 <span class="hljs-tag">&lt;/<span class="hljs-name">dv-menu-item</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">dv-menu</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">dv-artboard</span>&gt;</span>
+</code></pre>
+                      <!--]-->
+                    </div>
+                    <!--]--><!--]-->
+                  </div>
+                  <h2>Menu</h2>
+                  <h3>Attributes</h3>
+                  <div data-v-5c5a3078="">
+                    <div
+                      class="dv-table-wrap dv-markdowntable w-full"
+                      data-v-5c5a3078=""
+                    >
+                      <table class="dv-table table table-zebra table-compact">
+                        <colgroup>
+                          <!--[-->
+                          <col />
+                          <col />
+                          <col />
+                          <col />
+                          <!--]-->
+                        </colgroup>
+                        <thead>
+                          <tr>
+                            <!--[-->
+                            <th style="position: relative">name</th>
+                            <th style="position: relative">description</th>
+                            <th style="position: relative">type</th>
+                            <th style="position: relative">default</th>
+                            <!--]-->
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <!--[-->
+                          <tr class="hover">
+                            <!--[-->
+                            <td class="relative">compact</td>
+                            <td class="relative">makes menu more compact</td>
+                            <td class="relative">boolean</td>
+                            <td class="relative">-</td>
+                            <!--]-->
+                          </tr>
+                          <tr class="hover">
+                            <!--[-->
+                            <td class="relative">horizontal</td>
+                            <td class="relative">makes menu list horizontal</td>
+                            <td class="relative">boolean</td>
+                            <td class="relative">-</td>
+                            <!--]-->
+                          </tr>
+                          <!--]-->
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <h2>MenuItem</h2>
+                  <h3>Attributes</h3>
+                  <div data-v-5c5a3078="">
+                    <div
+                      class="dv-table-wrap dv-markdowntable w-full"
+                      data-v-5c5a3078=""
+                    >
+                      <table class="dv-table table table-zebra table-compact">
+                        <colgroup>
+                          <!--[-->
+                          <col />
+                          <col />
+                          <col />
+                          <col />
+                          <!--]-->
+                        </colgroup>
+                        <thead>
+                          <tr>
+                            <!--[-->
+                            <th style="position: relative">name</th>
+                            <th style="position: relative">description</th>
+                            <th style="position: relative">type</th>
+                            <th style="position: relative">default</th>
+                            <!--]-->
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <!--[-->
+                          <tr class="hover">
+                            <!--[-->
+                            <td class="relative">asTitle</td>
+                            <td class="relative">
+                              makes menu item to be title
+                            </td>
+                            <td class="relative">boolean</td>
+                            <td class="relative">-</td>
+                            <!--]-->
+                          </tr>
+                          <tr class="hover">
+                            <!--[-->
+                            <td class="relative">disabled</td>
+                            <td class="relative">disabled status</td>
+                            <td class="relative">boolean</td>
+                            <td class="relative">-</td>
+                            <!--]-->
+                          </tr>
+                          <tr class="hover">
+                            <!--[-->
+                            <td class="relative">bordered</td>
+                            <td class="relative">bordered status</td>
+                            <td class="relative">boolean</td>
+                            <td class="relative">-</td>
+                            <!--]-->
+                          </tr>
+                          <tr class="hover">
+                            <!--[-->
+                            <td class="relative">hoverBordered</td>
+                            <td class="relative">hover-bordered status</td>
+                            <td class="relative">boolean</td>
+                            <td class="relative">-</td>
+                            <!--]-->
+                          </tr>
+                          <tr class="hover">
+                            <!--[-->
+                            <td class="relative">active</td>
+                            <td class="relative">
+                              menu item active status(only when child is anchor
+                              element works)
+                            </td>
+                            <td class="relative">boolean</td>
+                            <td class="relative">-</td>
+                            <!--]-->
+                          </tr>
+                          <tr class="hover">
+                            <!--[-->
+                            <td class="relative">childWrapper</td>
+                            <td class="relative">
+                              child wrap element, when asTitle then it will be
+                              span, otherwise it will be a
+                            </td>
+                            <td class="relative">a, span, false</td>
+                            <td class="relative">-</td>
+                            <!--]-->
+                          </tr>
+                          <!--]-->
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
             <!--]-->
@@ -126,7 +787,7 @@
               <ul class="menu compact rounded-box p-4" data-v-50a6b668="">
                 <!--[-->
                 <li class="menu-title" data-v-50a6b668="">
-                  <span>Components</span>
+                  <span class="">Components</span>
                 </li>
                 <!--[-->
                 <li class="capitalize" childwrapper="false">
