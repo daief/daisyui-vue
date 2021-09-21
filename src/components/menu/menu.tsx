@@ -9,7 +9,7 @@ const props = {
 };
 
 export interface IMenuProps {
-  compace?: boolean;
+  compact?: boolean;
   horizontal?: boolean;
 }
 

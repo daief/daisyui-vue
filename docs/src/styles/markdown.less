@@ -207,13 +207,10 @@
   padding-left: 0;
   margin-top: 0;
   margin-bottom: 0;
-}
-.markdown-body ol:not(.menu) ol,
-.markdown-body ul:not(.menu) ol {
-  list-style-type: lower-roman;
 
   li {
     word-wrap: break-all;
+    list-style-type: disc;
   }
   li > p {
     margin-top: 16px;
@@ -221,6 +218,10 @@
   li + li {
     margin-top: 0.25em;
   }
+}
+.markdown-body ol:not(.menu) ol,
+.markdown-body ul:not(.menu) ol {
+  list-style-type: lower-roman;
 }
 .markdown-body ol:not(.menu) ol ol,
 .markdown-body ol:not(.menu) ul ol,
@@ -739,4 +740,11 @@
 .markdown-body .task-list-item input {
   margin: 0 0.2em 0.25em -1.6em;
   vertical-align: middle;
+}
+.markdown-body code:not(.hljs) {
+  background-color: #afb8c133;
+  padding: 0.2em 0.4em;
+  margin: 0;
+  font-size: 85%;
+  border-radius: 6px;
 }
