@@ -6,6 +6,7 @@ export default defineComponent({
   name: 'Playground',
   props: {
     code: String,
+    lang: { type: String, default: 'html' },
   },
   setup: (props, { slots }) => {
     const currentTab = ref('preview');
@@ -19,8 +20,8 @@ export default defineComponent({
           <Tab name="code" title="Code">
             <pre>
               <code
-                class="hljs language-html rounded-md"
-                hljs-language="html"
+                class={`hljs language-${props.lang} rounded-md`}
+                hljs-language={props.lang}
                 innerHTML={props.code}
               ></code>
             </pre>

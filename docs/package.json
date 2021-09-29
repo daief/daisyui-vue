@@ -23,6 +23,7 @@
     "postcss": "latest",
     "tailwindcss": "latest",
     "typescript": "^4.4.2",
+    "unplugin-vue-components": "^0.15.4",
     "vite": "^2.5.3",
     "vite-plugin-components": "^0.13.3",
     "vite-plugin-md": "^0.11.1",

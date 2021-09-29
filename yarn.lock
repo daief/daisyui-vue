@@ -3570,6 +3570,7 @@ __metadata:
     postcss: latest
     tailwindcss: latest
     typescript: ^4.4.2
+    unplugin-vue-components: ^0.15.4
     vite: ^2.5.3
     vite-plugin-components: ^0.13.3
     vite-plugin-md: ^0.11.1
@@ -4492,6 +4493,13 @@ fsevents@~2.3.2:
   version: 4.0.0
   resolution: "has-flag@npm:4.0.0"
   checksum: 261a1357037ead75e338156b1f9452c016a37dcd3283a972a30d9e4a87441ba372c8b81f818cd0fbcd9c0354b4ae7e18b9e1afa1971164aef6d18c2b6095a8ad
+  languageName: node
+  linkType: hard
+
+"has-pkg@npm:^0.0.1":
+  version: 0.0.1
+  resolution: "has-pkg@npm:0.0.1"
+  checksum: badac2c1ea025759fe78357bfd461507abc3a581adeda25794f085a68e5b4cfbcb4c246af4f8008795036c7a80b634d8a98d5264d0eea61ea3ae5ca58cd6df4f
   languageName: node
   linkType: hard
 
@@ -8841,6 +8849,46 @@ typescript@^4.4.2:
   languageName: node
   linkType: hard
 
+"unplugin-vue-components@npm:^0.15.4":
+  version: 0.15.4
+  resolution: "unplugin-vue-components@npm:0.15.4"
+  dependencies:
+    "@antfu/utils": ^0.3.0
+    "@rollup/pluginutils": ^4.1.1
+    chokidar: ^3.5.2
+    debug: ^4.3.2
+    fast-glob: ^3.2.7
+    has-pkg: ^0.0.1
+    magic-string: ^0.25.7
+    minimatch: ^3.0.4
+    resolve: ^1.20.0
+    unplugin: ^0.2.13
+  peerDependencies:
+    vue: 2 || 3
+  checksum: bc0f1a47ca75a506ccdf778c60f00796f4052ebe5ec7251a0b8def9fa53f99503c2842921194400194c50bb684ab0db94935104bcb1070e626390dbcb920380f
+  languageName: node
+  linkType: hard
+
+"unplugin@npm:^0.2.13":
+  version: 0.2.16
+  resolution: "unplugin@npm:0.2.16"
+  dependencies:
+    webpack-virtual-modules: ^0.4.3
+  peerDependencies:
+    rollup: ^2.50.0
+    vite: ^2.3.0
+    webpack: 4 || 5
+  peerDependenciesMeta:
+    rollup:
+      optional: true
+    vite:
+      optional: true
+    webpack:
+      optional: true
+  checksum: fc1495ab518bdf0dd748cb6f2386f935d3f2b8084b293da70e20c9ec7d48e54cffdb69c8317811076cf44cf2dcd4924949484a721850f9c8ba336b6f3ce8b7fd
+  languageName: node
+  linkType: hard
+
 "unset-value@npm:^1.0.0":
   version: 1.0.0
   resolution: "unset-value@npm:1.0.0"
@@ -9097,6 +9145,13 @@ typescript@^4.4.2:
   version: 6.1.0
   resolution: "webidl-conversions@npm:6.1.0"
   checksum: 1f526507aa491f972a0c1409d07f8444e1d28778dfa269a9971f2e157182f3d496dc33296e4ed45b157fdb3bf535bb90c90bf10c50dcf1dd6caacb2a34cc84fb
+  languageName: node
+  linkType: hard
+
+"webpack-virtual-modules@npm:^0.4.3":
+  version: 0.4.3
+  resolution: "webpack-virtual-modules@npm:0.4.3"
+  checksum: 158d30633e0d9be3cfcde10fe959b28df5d5adb1068e0f057fcfb10b0b16ede6c892eba438f6ced089c7c442087748c2fcd1e3f035e4e2dc6760517a8c227714
   languageName: node
   linkType: hard
 

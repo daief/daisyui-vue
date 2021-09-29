@@ -8,6 +8,16 @@ import { resolve } from 'path';
 import { escape } from 'html-escaper';
 import hljs from 'highlight.js';
 import MarkdownIt from 'markdown-it';
+import Components from 'unplugin-vue-components/vite';
+import fs from 'fs-extra';
+import crypto from 'crypto';
+import path from 'path';
+
+const hash = (input: string) =>
+  crypto.createHash('sha1').update(input).digest('hex');
+
+const demoDir = (file = '') => path.resolve(__dirname, 'src/.demo', file);
+fs.mkdirpSync(demoDir());
 
 const highlightAuto = (str: string, lang: string, attrs: string) =>
   hljs.getLanguage(lang)
@@ -35,6 +45,7 @@ const config: UserConfig = {
       headEnabled: true,
       markdownItUses: [
         (md: MarkdownIt) => {
+          // 处理代码块
           const scanCodeBlock: any = (state) => {
             state.tokens.forEach((token) => {
               if (token && token.tag === 'code' && token.type === 'fence') {
@@ -51,10 +62,31 @@ const config: UserConfig = {
                       `>${token.content}</Playground>`,
                   });
                 }
+
+                if (token.info === 'tsx :::demo') {
+                  const codeResult = hljs.highlight(token.content, {
+                    language: 'tsx',
+                  }).value;
+                  const cname = `C${hash(token.content)}`;
+                  fs.writeFileSync(
+                    demoDir(`${cname}.tsx`),
+                    token.content,
+                    'utf-8',
+                  );
+                  // 代码块
+                  Object.assign(token, {
+                    type: 'html_block',
+                    content:
+                      `<Playground lang="tsx" ` +
+                      `code="${escape(codeResult)}"` +
+                      `><${cname} /></Playground>`,
+                  });
+                }
               }
             });
           };
 
+          // 转换 Markdown 表格至组件
           const scanTable: any = (state) => {
             let isTable = false;
             let isHead = false;
@@ -168,6 +200,12 @@ const config: UserConfig = {
     }),
     Pages({
       extensions: ['vue', 'md'],
+    }),
+    Components({
+      dirs: ['src/.demo'],
+      extensions: ['vue', 'tsx'],
+      deep: false,
+      include: [/\.md$/],
     }),
     VitePWA({
       minify: false,

@@ -17,3 +17,5 @@ es
 lib
 **/.yarn/install-state.gz
 **/.yarn/cache
+
+docs/src/.demo
