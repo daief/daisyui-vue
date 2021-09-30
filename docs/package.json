@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "daisyui": "^1.14.0",
-    "vue": "^3.2.9"
+    "vue": "^3.2.19"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^1.9.2",

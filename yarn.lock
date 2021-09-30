@@ -1863,7 +1863,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vue/compiler-sfc@npm:^3.2.19":
+"@vue/compiler-sfc@npm:3.2.19, @vue/compiler-sfc@npm:^3.2.19":
   version: 3.2.19
   resolution: "@vue/compiler-sfc@npm:3.2.19"
   dependencies:
@@ -1907,6 +1907,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@vue/reactivity@npm:3.2.19":
+  version: 3.2.19
+  resolution: "@vue/reactivity@npm:3.2.19"
+  dependencies:
+    "@vue/shared": 3.2.19
+  checksum: e26769406be9149c4409fda77ce34d886106bf19d9317b1cf510f08518e45650e6b69cc148d5204e5d1572d61b5538a00af62d3fde7abcf13554bbab2f47c710
+  languageName: node
+  linkType: hard
+
 "@vue/ref-transform@npm:3.2.19":
   version: 3.2.19
   resolution: "@vue/ref-transform@npm:3.2.19"
@@ -1930,6 +1939,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@vue/runtime-core@npm:3.2.19":
+  version: 3.2.19
+  resolution: "@vue/runtime-core@npm:3.2.19"
+  dependencies:
+    "@vue/reactivity": 3.2.19
+    "@vue/shared": 3.2.19
+  checksum: 5e16fb27d8a4bbd5fecb3ee99a3a849afb4145fe65d565b5774f4c9afe892b94bd775b398e51303ea7369358ba7ac24951f9bca1ee8619c692ee2dbf9ed50a73
+  languageName: node
+  linkType: hard
+
 "@vue/runtime-dom@npm:3.2.11":
   version: 3.2.11
   resolution: "@vue/runtime-dom@npm:3.2.11"
@@ -1941,7 +1960,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vue/server-renderer@npm:^3.2.19":
+"@vue/runtime-dom@npm:3.2.19":
+  version: 3.2.19
+  resolution: "@vue/runtime-dom@npm:3.2.19"
+  dependencies:
+    "@vue/runtime-core": 3.2.19
+    "@vue/shared": 3.2.19
+    csstype: ^2.6.8
+  checksum: 889c1ffce1ae95ad850f11d6c0a1b8af56789d6e4de49104d8b5473c85b65d0405780ac859290def23bf26bb9f4434db1f4c2ea89f2c53378b98d4243591fb1a
+  languageName: node
+  linkType: hard
+
+"@vue/server-renderer@npm:3.2.19, @vue/server-renderer@npm:^3.2.19":
   version: 3.2.19
   resolution: "@vue/server-renderer@npm:3.2.19"
   dependencies:
@@ -3615,7 +3645,7 @@ __metadata:
     vite-plugin-pages: ^0.18.1
     vite-plugin-pwa: ^0.11.2
     vite-ssg: 0.15.1
-    vue: ^3.2.9
+    vue: ^3.2.19
     vue-router: ^4.0.11
   languageName: unknown
   linkType: soft
@@ -9396,6 +9426,19 @@ typescript@^4.4.2:
   peerDependencies:
     vue: ^3.0.0
   checksum: 0b78314daf240252744b7d9a66c2167ff0e7824be5c0f622439d5102b62e0f568e697d353f779c025c653e2fae393313357d30b7c703268640a00f8efe83f61e
+  languageName: node
+  linkType: hard
+
+"vue@npm:3.2.19, vue@npm:^3.2.19":
+  version: 3.2.19
+  resolution: "vue@npm:3.2.19"
+  dependencies:
+    "@vue/compiler-dom": 3.2.19
+    "@vue/compiler-sfc": 3.2.19
+    "@vue/runtime-dom": 3.2.19
+    "@vue/server-renderer": 3.2.19
+    "@vue/shared": 3.2.19
+  checksum: e85f1fd5c9f70c7cf290e6f1575dfb0aeed1bef75540ebb263f3db83a7aa5b980b7ac31afb2d645af7a0f06925b9538fa6278e756d861fcf364514318eb5886e
   languageName: node
   linkType: hard
 
