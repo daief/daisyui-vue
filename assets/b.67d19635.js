@@ -1,0 +1,1 @@
+import{u as e,A as t,x as o}from"./vendor.28af8f46.js";import{_ as a}from"./app.a309a3f5.js";const r={setup(){e({title:"Hello",meta:[{name:"description",content:"Website description"}],style:[{children:"body {color: #567839}"}]})}};function s(n,c,p,l,i,d){return o(),t("p",null,"Hello I am B")}var _=a(r,[["render",s]]);export{_ as default};
