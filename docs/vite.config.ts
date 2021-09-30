@@ -17,7 +17,7 @@ const hash = (input: string) =>
   crypto.createHash('sha1').update(input).digest('hex');
 
 const demoDir = (file = '') => path.resolve(__dirname, 'src/.demo', file);
-fs.mkdirpSync(demoDir());
+fs.emptyDirSync(demoDir());
 
 const highlightAuto = (str: string, lang: string, attrs: string) =>
   hljs.getLanguage(lang)
@@ -63,13 +63,18 @@ const config: UserConfig = {
                   });
                 }
 
-                if (token.info === 'tsx :::demo') {
+                const lang = {
+                  'tsx :::run': 'tsx',
+                  'html :::run': 'html',
+                }[token.info];
+
+                if (lang) {
                   const codeResult = hljs.highlight(token.content, {
-                    language: 'tsx',
+                    language: lang,
                   }).value;
                   const cname = `C${hash(token.content)}`;
                   fs.writeFileSync(
-                    demoDir(`${cname}.tsx`),
+                    demoDir(`${cname}.` + (lang === 'html' ? 'vue' : 'tsx')),
                     token.content,
                     'utf-8',
                   );
@@ -77,7 +82,7 @@ const config: UserConfig = {
                   Object.assign(token, {
                     type: 'html_block',
                     content:
-                      `<Playground lang="tsx" ` +
+                      `<Playground lang="${lang}" ` +
                       `code="${escape(codeResult)}"` +
                       `><${cname} /></Playground>`,
                   });

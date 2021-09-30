@@ -1,13 +1,15 @@
 import { component } from '@/shared/styled';
+import { cssUnit } from '@/shared/utils';
 import { computed, HTMLAttributes, PropType } from 'vue';
 import style from './style';
 
 export interface ITableColumn<T = unknown> {
-  title?: string;
+  title?: string | (() => any);
   dataIndex?: string;
   key?: string;
   fixed?: 'left' | 'right';
-  render?: (text: string, record: T, index: number) => any;
+  width?: string | number;
+  render?: (text: string, record: T, rowIndex: number) => any;
 }
 
 const tableProps = {
@@ -59,7 +61,7 @@ export const Table = component<HTMLAttributes, ITableProps>(
             }
             key={col.key}
           >
-            {col.title}
+            {typeof col.title === 'function' ? col.title() : col.title}
           </th>
         )),
       );
@@ -70,7 +72,12 @@ export const Table = component<HTMLAttributes, ITableProps>(
             <table class={cls.value}>
               <colgroup>
                 {cols.value.map((col) => (
-                  <col key={col.key} />
+                  <col
+                    key={col.key}
+                    style={{
+                      width: cssUnit(col.width),
+                    }}
+                  />
                 ))}
               </colgroup>
               <thead>
@@ -82,13 +89,15 @@ export const Table = component<HTMLAttributes, ITableProps>(
                     {props.columns.map((col) => (
                       <td
                         key={col.dataIndex || col.key}
-                        class={
+                        style={
                           col.fixed
                             ? {
-                                sticky: true,
+                                position: 'sticky',
                                 [col.fixed === 'left' ? 'left' : 'right']: 0,
                               }
-                            : 'relative'
+                            : {
+                                position: 'relative',
+                              }
                         }
                       >
                         {typeof col.render === 'function'
