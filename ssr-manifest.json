@@ -21,126 +21,105 @@
   "src/main.ts": [],
   "index.html": [],
   "../node_modules/@vue/shared/dist/shared.esm-bundler.js": [
-    "/daisyui-vue/assets/vendor.28af8f46.js"
-  ],
-  "node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js": [
-    "/daisyui-vue/assets/vendor.28af8f46.js"
-  ],
-  "node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js": [
-    "/daisyui-vue/assets/vendor.28af8f46.js"
-  ],
-  "node_modules/@vue/runtime-dom/dist/runtime-dom.esm-bundler.js": [
-    "/daisyui-vue/assets/vendor.28af8f46.js"
-  ],
-  "node_modules/vue/dist/vue.runtime.esm-bundler.js": [
-    "/daisyui-vue/assets/vendor.28af8f46.js"
-  ],
-  "node_modules/vite-ssg/dist/chunk-YPUM4SRK.mjs": [
-    "/daisyui-vue/assets/vendor.28af8f46.js"
-  ],
-  "node_modules/vite-ssg/dist/chunk-SO7PDUCV.mjs": [
-    "/daisyui-vue/assets/vendor.28af8f46.js"
-  ],
-  "../node_modules/@vue/devtools-api/lib/esm/env.js": [
-    "/daisyui-vue/assets/vendor.28af8f46.js"
-  ],
-  "../node_modules/@vue/devtools-api/lib/esm/const.js": [
-    "/daisyui-vue/assets/vendor.28af8f46.js"
-  ],
-  "../node_modules/@vue/devtools-api/lib/esm/api/api.js": [
-    "/daisyui-vue/assets/vendor.28af8f46.js"
-  ],
-  "../node_modules/@vue/devtools-api/lib/esm/api/app.js": [
-    "/daisyui-vue/assets/vendor.28af8f46.js"
-  ],
-  "../node_modules/@vue/devtools-api/lib/esm/api/component.js": [
-    "/daisyui-vue/assets/vendor.28af8f46.js"
-  ],
-  "../node_modules/@vue/devtools-api/lib/esm/api/context.js": [
-    "/daisyui-vue/assets/vendor.28af8f46.js"
-  ],
-  "../node_modules/@vue/devtools-api/lib/esm/api/hooks.js": [
-    "/daisyui-vue/assets/vendor.28af8f46.js"
-  ],
-  "../node_modules/@vue/devtools-api/lib/esm/api/util.js": [
-    "/daisyui-vue/assets/vendor.28af8f46.js"
-  ],
-  "../node_modules/@vue/devtools-api/lib/esm/api/index.js": [
-    "/daisyui-vue/assets/vendor.28af8f46.js"
-  ],
-  "../node_modules/@vue/devtools-api/lib/esm/index.js": [
-    "/daisyui-vue/assets/vendor.28af8f46.js"
-  ],
-  "node_modules/vue-router/dist/vue-router.esm-bundler.js": [
-    "/daisyui-vue/assets/vendor.28af8f46.js"
-  ],
-  "node_modules/@vueuse/head/dist/index.mjs": [
-    "/daisyui-vue/assets/vendor.28af8f46.js"
-  ],
-  "node_modules/vite-ssg/dist/index.mjs": [
-    "/daisyui-vue/assets/vendor.28af8f46.js"
-  ],
-  "../node_modules/@vue/reactivity/node_modules/@vue/shared/dist/shared.esm-bundler.js": [
-    "/daisyui-vue/assets/vendor.28af8f46.js"
+    "/daisyui-vue/assets/vendor.70ccab45.js"
   ],
   "../node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js": [
-    "/daisyui-vue/assets/vendor.28af8f46.js"
-  ],
-  "../node_modules/@vue/runtime-core/node_modules/@vue/shared/dist/shared.esm-bundler.js": [
-    "/daisyui-vue/assets/vendor.28af8f46.js"
+    "/daisyui-vue/assets/vendor.70ccab45.js"
   ],
   "../node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js": [
-    "/daisyui-vue/assets/vendor.28af8f46.js"
-  ],
-  "../node_modules/@vue/runtime-dom/node_modules/@vue/shared/dist/shared.esm-bundler.js": [
-    "/daisyui-vue/assets/vendor.28af8f46.js"
+    "/daisyui-vue/assets/vendor.70ccab45.js"
   ],
   "../node_modules/@vue/runtime-dom/dist/runtime-dom.esm-bundler.js": [
-    "/daisyui-vue/assets/vendor.28af8f46.js"
+    "/daisyui-vue/assets/vendor.70ccab45.js"
   ],
   "../node_modules/vue/dist/vue.runtime.esm-bundler.js": [
-    "/daisyui-vue/assets/vendor.28af8f46.js"
+    "/daisyui-vue/assets/vendor.70ccab45.js"
   ],
-  "src/.demo/Cd0669a03d7317da194c3ebf254836d06f25cc8ec.tsx": [
-    "/daisyui-vue/assets/table.e4cf7ca7.js"
+  "../node_modules/vite-ssg/dist/chunk-YPUM4SRK.mjs": [
+    "/daisyui-vue/assets/vendor.70ccab45.js"
   ],
-  "src/.demo/C91ca4417e5552e7c4cad63728a2895d5133beaa8.vue?vue&type=script&lang.tsx": [
-    "/daisyui-vue/assets/table.e4cf7ca7.js"
+  "../node_modules/vite-ssg/dist/chunk-SO7PDUCV.mjs": [
+    "/daisyui-vue/assets/vendor.70ccab45.js"
   ],
-  "src/.demo/C91ca4417e5552e7c4cad63728a2895d5133beaa8.vue": [
-    "/daisyui-vue/assets/table.e4cf7ca7.js"
+  "../node_modules/@vue/devtools-api/lib/esm/env.js": [
+    "/daisyui-vue/assets/vendor.70ccab45.js"
   ],
-  "src/.demo/Cb95b2f204a3849b0ebe9f605406ad138b66d4ebb.tsx": [
-    "/daisyui-vue/assets/table.e4cf7ca7.js"
+  "../node_modules/@vue/devtools-api/lib/esm/const.js": [
+    "/daisyui-vue/assets/vendor.70ccab45.js"
+  ],
+  "../node_modules/@vue/devtools-api/lib/esm/api/api.js": [
+    "/daisyui-vue/assets/vendor.70ccab45.js"
+  ],
+  "../node_modules/@vue/devtools-api/lib/esm/api/app.js": [
+    "/daisyui-vue/assets/vendor.70ccab45.js"
+  ],
+  "../node_modules/@vue/devtools-api/lib/esm/api/component.js": [
+    "/daisyui-vue/assets/vendor.70ccab45.js"
+  ],
+  "../node_modules/@vue/devtools-api/lib/esm/api/context.js": [
+    "/daisyui-vue/assets/vendor.70ccab45.js"
+  ],
+  "../node_modules/@vue/devtools-api/lib/esm/api/hooks.js": [
+    "/daisyui-vue/assets/vendor.70ccab45.js"
+  ],
+  "../node_modules/@vue/devtools-api/lib/esm/api/util.js": [
+    "/daisyui-vue/assets/vendor.70ccab45.js"
+  ],
+  "../node_modules/@vue/devtools-api/lib/esm/api/index.js": [
+    "/daisyui-vue/assets/vendor.70ccab45.js"
+  ],
+  "../node_modules/@vue/devtools-api/lib/esm/index.js": [
+    "/daisyui-vue/assets/vendor.70ccab45.js"
+  ],
+  "../node_modules/vue-router/dist/vue-router.esm-bundler.js": [
+    "/daisyui-vue/assets/vendor.70ccab45.js"
+  ],
+  "../node_modules/@vueuse/head/dist/index.mjs": [
+    "/daisyui-vue/assets/vendor.70ccab45.js"
+  ],
+  "../node_modules/vite-ssg/dist/index.mjs": [
+    "/daisyui-vue/assets/vendor.70ccab45.js"
+  ],
+  "src/.demo/CtsxAwwccftwzwdzxdwtxfavzxuyybaezcwwcyybvvexv.tsx": [
+    "/daisyui-vue/assets/table.10fc07f3.js"
+  ],
+  "src/.demo/ChtmlAfxvtaaxdxbbbyxdvavtwczdyetyefbwbxzzuxtte.vue?vue&type=script&lang.tsx": [
+    "/daisyui-vue/assets/table.10fc07f3.js"
+  ],
+  "src/.demo/ChtmlAfxvtaaxdxbbbyxdvavtwczdyetyefbwbxzzuxtte.vue": [
+    "/daisyui-vue/assets/table.10fc07f3.js"
+  ],
+  "src/.demo/CtsxAufbuyyywatzeafuwxuxfycwbawctwxzeuccwaxuu.tsx": [
+    "/daisyui-vue/assets/table.10fc07f3.js"
   ],
   "src/pages/components/table.md": [
-    "/daisyui-vue/assets/table.e4cf7ca7.js"
+    "/daisyui-vue/assets/table.10fc07f3.js"
   ],
   "src/pages/components/tab.md": [
-    "/daisyui-vue/assets/tab.f39e95e8.js"
+    "/daisyui-vue/assets/tab.e21d8e82.js"
   ],
   "src/pages/components/menu.md": [
-    "/daisyui-vue/assets/menu.69722174.js"
+    "/daisyui-vue/assets/menu.271ca6fe.js"
   ],
   "src/components/IconDisplay.vue?vue&type=script&lang.tsx": [
-    "/daisyui-vue/assets/icons.1cc4c338.js"
+    "/daisyui-vue/assets/icons.4a0c8a81.js"
   ],
   "src/pages/components/icons.md": [
-    "/daisyui-vue/assets/icons.1cc4c338.js"
+    "/daisyui-vue/assets/icons.4a0c8a81.js"
   ],
   "src/pages/components/drawer.md": [
-    "/daisyui-vue/assets/drawer.3ad5adac.js"
+    "/daisyui-vue/assets/drawer.61f341e6.js"
   ],
   "src/pages/components/button.md": [
-    "/daisyui-vue/assets/button.cf880326.js"
+    "/daisyui-vue/assets/button.db78f944.js"
   ],
   "src/pages/components/artboard.md": [
-    "/daisyui-vue/assets/artboard.1273e661.js"
+    "/daisyui-vue/assets/artboard.a40d82ee.js"
   ],
   "src/pages/components/alert.md": [
-    "/daisyui-vue/assets/alert.1d496574.js"
+    "/daisyui-vue/assets/alert.f561877b.js"
   ],
   "src/pages/b.vue": [
-    "/daisyui-vue/assets/b.67d19635.js"
+    "/daisyui-vue/assets/b.d9a38bd1.js"
   ]
 }
