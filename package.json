@@ -21,6 +21,9 @@
     "icons": "node scripts/buildIcons.js",
     "clone": "node scripts/clone.js"
   },
+  "resolutions": {
+    "vue": "3.2.9"
+  },
   "devDependencies": {
     "@babel/cli": "^7.15.4",
     "@babel/core": "^7.15.5",
@@ -52,7 +55,7 @@
     "rollup-plugin-typescript2": "^0.30.0",
     "tailwindcss": "^2.2.11",
     "typescript": "^4.4.2",
-    "vue": "^3.2.9"
+    "vue": "3.2.9"
   },
   "workspaces": [
     "docs",

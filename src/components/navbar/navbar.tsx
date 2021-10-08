@@ -1,5 +1,5 @@
 import { component } from '@/shared/styled';
-import { HTMLAttributes } from '@vue/runtime-dom';
+import { HTMLAttributes } from 'vue';
 import style from './style';
 
 export const Navbar = component<HTMLAttributes>(

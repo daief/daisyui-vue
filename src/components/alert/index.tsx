@@ -1,6 +1,6 @@
 import { IconBell, IconInfo, IconInvalid, IconWarning } from '@/icons';
 import { component } from '@/shared/styled';
-import { HTMLAttributes } from '@vue/runtime-dom';
+import { HTMLAttributes } from 'vue';
 import style from './style';
 
 export interface IAlertProps {

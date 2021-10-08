@@ -8,7 +8,9 @@
     // "types": ["vite/client", "vite-plugin-pages/client"],
     "baseUrl": ".",
     "paths": {
-      "daisyui-vue": ["../src"]
-    }
+      "daisyui-vue": ["../src"],
+      "@/*": ["src/*"]
+    },
+    "resolveJsonModule": true
   }
 }

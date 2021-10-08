@@ -12,6 +12,9 @@ import pkg from './package.json';
 
 const extensions = ['.js', '.jsx', '.ts', '.tsx'];
 
+/**
+ * @type {import('rollup').RollupOptions}
+ */
 const componentsConfig = {
   input: {
     index: 'src/index',

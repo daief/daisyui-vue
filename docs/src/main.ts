@@ -13,6 +13,6 @@ export const createApp = ViteSSG(
     // install plugins etc.
     app.component('Playground', Playground);
     app.component('MarkdownTable', MarkdownTable);
-    app.use(daisyui);
+    app.use(daisyui as any);
   },
 );

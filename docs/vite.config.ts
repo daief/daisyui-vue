@@ -14,7 +14,14 @@ import crypto from 'crypto';
 import path from 'path';
 
 const hash = (input: string) =>
-  crypto.createHash('sha1').update(input).digest('hex');
+  crypto
+    .createHash('sha1')
+    .update(input)
+    .digest('hex')
+    // 全部转成英文
+    .split('')
+    .map((ch) => String.fromCharCode((ch.charCodeAt(0) % 26) + 97))
+    .join('');
 
 const demoDir = (file = '') => path.resolve(__dirname, 'src/.demo', file);
 fs.emptyDirSync(demoDir());
@@ -72,7 +79,7 @@ const config: UserConfig = {
                   const codeResult = hljs.highlight(token.content, {
                     language: lang,
                   }).value;
-                  const cname = `C${hash(token.content)}`;
+                  const cname = `C${lang}A${hash(token.content)}`;
                   fs.writeFileSync(
                     demoDir(`${cname}.` + (lang === 'html' ? 'vue' : 'tsx')),
                     token.content,
@@ -203,14 +210,14 @@ const config: UserConfig = {
         },
       ],
     }),
-    Pages({
-      extensions: ['vue', 'md'],
-    }),
     Components({
       dirs: ['src/.demo'],
       extensions: ['vue', 'tsx'],
       deep: false,
       include: [/\.md$/],
+    }),
+    Pages({
+      extensions: ['vue', 'md'],
     }),
     VitePWA({
       minify: false,
@@ -225,6 +232,7 @@ const config: UserConfig = {
   resolve: {
     alias: {
       'daisyui-vue': resolve(__dirname, '..'),
+      '@': resolve(__dirname, 'src'),
     },
   },
   build: {},
