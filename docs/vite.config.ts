@@ -23,6 +23,8 @@ const hash = (input: string) =>
     .map((ch) => String.fromCharCode((ch.charCodeAt(0) % 26) + 97))
     .join('');
 
+const markdownWrapClass = 'markdown-body';
+
 const demoDir = (file = '') => path.resolve(__dirname, 'src/.demo', file);
 fs.emptyDirSync(demoDir());
 
@@ -50,6 +52,7 @@ const config: UserConfig = {
     }),
     Markdown({
       headEnabled: true,
+      wrapperClasses: markdownWrapClass,
       markdownItUses: [
         (md: MarkdownIt) => {
           // 处理代码块
@@ -209,6 +212,73 @@ const config: UserConfig = {
           md.options.highlight = highlightAuto;
         },
       ],
+      transforms: {
+        /**
+         * markdown 全局样式会对 demo 的演示有影响，所以对结果进行一些调整，原始结果如下：
+         *
+         * ```html
+         * <div class="markdown-body">
+         *   <p>some text</p>
+         *   <p>some text <code>tag</code></p>
+         *
+         *   <Playground>
+         *     <!-- ... -->
+         *   </Playground>
+         *
+         *   <p>some text</p>
+         * </div>
+         * ```
+         *
+         * 转换为如下，将 Playground demo 从 markdown-body 中拆离出来：
+         *
+         * ```html
+         * <div class="markdown-body">
+         *   <p>some text</p>
+         *   <p>some text <code>tag</code></p>
+         * </div>
+         *
+         * <Playground>
+         *   <!-- ... -->
+         * </Playground>
+         *
+         * <div class="markdown-body">
+         *   <p>some text</p>
+         * </div>
+         * ```
+         *
+         * @param code
+         * @returns
+         */
+        after: (code) => {
+          const reg =
+            /(<Playground[^\>]*>(?!<\/Playground>).+?<\/Playground>)/g;
+          const ls = code.split(reg);
+          if (ls.length <= 1) {
+            return code;
+          }
+          const result = ls
+            .map((section, i) => {
+              if (section.startsWith('<Playground')) {
+                return section;
+              }
+
+              if (i === 0) {
+                return section + '</div>';
+              }
+
+              const startTag = `<div class="${markdownWrapClass}">`;
+
+              if (i === ls.length - 1) {
+                return startTag + section;
+              }
+
+              return startTag + section + '</div>';
+            })
+            .join('');
+
+          return result;
+        },
+      },
     }),
     Components({
       dirs: ['src/.demo'],

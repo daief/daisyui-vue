@@ -2,7 +2,7 @@
 
 notice:
 
-- when menu class contains `p-`, menu-item will be have border-radius.
+- when menu class contains `p-`, menu-item will become border-radius.
 
 ## Examples
 
