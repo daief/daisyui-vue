@@ -12,7 +12,7 @@
       type="module"
       async=""
       crossorigin=""
-      src="/daisyui-vue/assets/app.0dbd93df.js"
+      src="/daisyui-vue/assets/app.2a158522.js"
     ></script>
     <link rel="modulepreload" href="/daisyui-vue/assets/vendor.00cdd876.js" />
     <link rel="stylesheet" href="/daisyui-vue/assets/app.59410fec.css" />
@@ -20,7 +20,7 @@
     <link
       rel="modulepreload"
       crossorigin=""
-      href="/daisyui-vue/assets/tab.843e4424.js"
+      href="/daisyui-vue/assets/tab.887137a1.js"
     />
     <meta name="head:count" content="0" />
   </head>
@@ -111,12 +111,58 @@
                 </div>
               </header>
               <div class="p-4 pb-8 lg:p-10" data-v-50a6b668="">
-                <div class="markdown-body" data-v-50a6b668="">
-                  <pre><code class="hljs language-tsx">&lt;div&gt;
-  <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">Button</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span></span>
-&lt;/div&gt;
-</code></pre>
+                <!--[-->
+                <div class="markdown-body">
+                  <h1>Tab</h1>
+                  <h2>Examples</h2>
+                  <p>tabs</p>
                 </div>
+                <div class="dv-playground py-2">
+                  <!--[-->
+                  <div class="dv-tabs tabs">
+                    <!--[--><a class="dv-tab tab tab-lifted tab-md tab-active"
+                      >Preview</a
+                    ><a class="dv-tab tab tab-lifted tab-md">Code</a
+                    ><!--]-->
+                    <div class="dv-tabs__lifted-item"></div>
+                  </div>
+                  <!--[-->
+                  <div class="dv-tab-content">
+                    <!--[--><!--[--><cadcvuxbfdxzdywvwdwfwtfzzbbebxffuwdwadxec
+                    ></cadcvuxbfdxzdywvwdwfwtfzzbbebxffuwdwadxec
+                    ><!--]--><!--]-->
+                  </div>
+                  <div class="dv-tab-content dv-tab-content--hidden">
+                    <!--[-->
+                    <pre><code class="hljs language-tsx rounded-md" hljs-language="tsx"><span class="hljs-keyword">import</span> { <span class="hljs-title class_">Tabs</span>, <span class="hljs-title class_">Tab</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">'daisyui-vue'</span>;
+<span class="hljs-keyword">import</span> { ref } <span class="hljs-keyword">from</span> <span class="hljs-string">'vue'</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+  <span class="hljs-attr">setup</span>: <span class="hljs-function">() =&gt;</span> {
+    <span class="hljs-keyword">const</span> currentTab = <span class="hljs-title function_">ref</span>(<span class="hljs-string">'1'</span>);
+
+    <span class="hljs-keyword">return</span> <span class="hljs-function">() =&gt;</span> (
+      <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">Tabs</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">{[currentTab.value,</span> '<span class="hljs-attr">value</span>']}&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Tab</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"1"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Tab 1"</span>&gt;</span>
+          Content 1
+        <span class="hljs-tag">&lt;/<span class="hljs-name">Tab</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Tab</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"2"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Tab 2"</span>&gt;</span>
+          Content 2
+        <span class="hljs-tag">&lt;/<span class="hljs-name">Tab</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Tab</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"3"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Tab 3"</span>&gt;</span>
+          Content 3
+        <span class="hljs-tag">&lt;/<span class="hljs-name">Tab</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">Tabs</span>&gt;</span></span>
+    );
+  },
+};
+</code></pre>
+                    <!--]-->
+                  </div>
+                  <!--]--><!--]-->
+                </div>
+                <div class="markdown-body"></div>
+                <!--]-->
               </div>
             </div>
             <!--]-->
