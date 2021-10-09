@@ -1312,7 +1312,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/types@npm:^7.0.0, @babel/types@npm:^7.15.0, @babel/types@npm:^7.15.4, @babel/types@npm:^7.8.3":
+"@babel/types@npm:^7.0.0, @babel/types@npm:^7.15.4, @babel/types@npm:^7.8.3":
   version: 7.15.4
   resolution: "@babel/types@npm:7.15.4"
   dependencies:
@@ -1658,13 +1658,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/estree@npm:^0.0.48":
-  version: 0.0.48
-  resolution: "@types/estree@npm:0.0.48::__archiveUrl=https%3A%2F%2Fregistry.nlark.com%2F%40types%2Festree%2Fdownload%2F%40types%2Festree-0.0.48.tgz"
-  checksum: 5062c9a65d3b4020df54741ec7e697ad516bb446a1f8823bd7990544cf6221ab6facf8dd7ad1c79753a5dde5ecb6a9bc4ffcaa1123dba1119566887732cc39fb
-  languageName: node
-  linkType: hard
-
 "@types/fs-extra@npm:^9.0.12":
   version: 9.0.12
   resolution: "@types/fs-extra@npm:9.0.12"
@@ -1825,62 +1818,53 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vue/compiler-core@npm:3.2.9":
-  version: 3.2.9
-  resolution: "@vue/compiler-core@npm:3.2.9::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2F%40vue%2Fcompiler-core%2Fdownload%2F%40vue%2Fcompiler-core-3.2.9.tgz"
+"@vue/compiler-core@npm:3.2.19":
+  version: 3.2.19
+  resolution: "@vue/compiler-core@npm:3.2.19::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2F%40vue%2Fcompiler-core%2Fdownload%2F%40vue%2Fcompiler-core-3.2.19.tgz"
   dependencies:
     "@babel/parser": ^7.15.0
-    "@babel/types": ^7.15.0
-    "@vue/shared": 3.2.9
+    "@vue/shared": 3.2.19
     estree-walker: ^2.0.2
     source-map: ^0.6.1
-  checksum: 96b8178ddcf067de20b1441212afc276613775591fa8cfe320534af64b7cbb64d468ea833323773a4f49c052fd63032ed82a31957edb2e8fe5bc0873ada030cc
+  checksum: a90899453ee430189e542e4e2dedf771351d1fc3417a3bab074ebceeebe5536e2a503c50836a9f1dc813d06a168936a07ade7aaf197ab5fc7346729280cb9710
   languageName: node
   linkType: hard
 
-"@vue/compiler-dom@npm:3.2.9":
-  version: 3.2.9
-  resolution: "@vue/compiler-dom@npm:3.2.9::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2F%40vue%2Fcompiler-dom%2Fdownload%2F%40vue%2Fcompiler-dom-3.2.9.tgz"
+"@vue/compiler-dom@npm:3.2.19":
+  version: 3.2.19
+  resolution: "@vue/compiler-dom@npm:3.2.19::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2F%40vue%2Fcompiler-dom%2Fdownload%2F%40vue%2Fcompiler-dom-3.2.19.tgz"
   dependencies:
-    "@vue/compiler-core": 3.2.9
-    "@vue/shared": 3.2.9
-  checksum: cd893d725a2dcee01e9f86c00fec0e6cdc8d788c0bcd385556308ec8d907c04a7120723ce2b71355188e2621fa11a5758388ce4988daeaf90c1482527637196d
+    "@vue/compiler-core": 3.2.19
+    "@vue/shared": 3.2.19
+  checksum: 544347535567b23c113ff70054c104690c7a5bc898ce864c2ae8a9b7a71086dab530c8763f0e2a2ccd2a6acec448470bdf8d0504fcbf2a2f3586f9d32442a808
   languageName: node
   linkType: hard
 
-"@vue/compiler-sfc@npm:3.2.9":
-  version: 3.2.9
-  resolution: "@vue/compiler-sfc@npm:3.2.9::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2F%40vue%2Fcompiler-sfc%2Fdownload%2F%40vue%2Fcompiler-sfc-3.2.9.tgz"
+"@vue/compiler-sfc@npm:3.2.19":
+  version: 3.2.19
+  resolution: "@vue/compiler-sfc@npm:3.2.19::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2F%40vue%2Fcompiler-sfc%2Fdownload%2F%40vue%2Fcompiler-sfc-3.2.19.tgz"
   dependencies:
     "@babel/parser": ^7.15.0
-    "@babel/types": ^7.15.0
-    "@types/estree": ^0.0.48
-    "@vue/compiler-core": 3.2.9
-    "@vue/compiler-dom": 3.2.9
-    "@vue/compiler-ssr": 3.2.9
-    "@vue/ref-transform": 3.2.9
-    "@vue/shared": 3.2.9
-    consolidate: ^0.16.0
+    "@vue/compiler-core": 3.2.19
+    "@vue/compiler-dom": 3.2.19
+    "@vue/compiler-ssr": 3.2.19
+    "@vue/ref-transform": 3.2.19
+    "@vue/shared": 3.2.19
     estree-walker: ^2.0.2
-    hash-sum: ^2.0.0
-    lru-cache: ^5.1.1
     magic-string: ^0.25.7
-    merge-source-map: ^1.1.0
     postcss: ^8.1.10
-    postcss-modules: ^4.0.0
-    postcss-selector-parser: ^6.0.4
     source-map: ^0.6.1
-  checksum: 1aeb094fd2cf12b2bb6d64ccefff389fb7d665dc7a7f28baa15d5b44398d43bd968fe559fc5a7eb81b2a969b45f27715977e399e613f9883a03b43a7d8ff1375
+  checksum: e774dd1b3b824480f236335a74c94df1b20916981d083a2c1b52052d7e1df12743188398cbe6ddc2fc872c55dc985efa865df80ae981d3ad6c251f8888ed7075
   languageName: node
   linkType: hard
 
-"@vue/compiler-ssr@npm:3.2.9":
-  version: 3.2.9
-  resolution: "@vue/compiler-ssr@npm:3.2.9::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2F%40vue%2Fcompiler-ssr%2Fdownload%2F%40vue%2Fcompiler-ssr-3.2.9.tgz"
+"@vue/compiler-ssr@npm:3.2.19":
+  version: 3.2.19
+  resolution: "@vue/compiler-ssr@npm:3.2.19::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2F%40vue%2Fcompiler-ssr%2Fdownload%2F%40vue%2Fcompiler-ssr-3.2.19.tgz"
   dependencies:
-    "@vue/compiler-dom": 3.2.9
-    "@vue/shared": 3.2.9
-  checksum: 9f856f7758aebed6526b0e9733b634459dac7f4e89de2a0a15d5a921e2060fc364c4211c713227c7df3977b56c682c287d18449d124efe08404545ef15e1c95f
+    "@vue/compiler-dom": 3.2.19
+    "@vue/shared": 3.2.19
+  checksum: 1758c28f57d4da1738f3179fb4b1a8467285d520da5f7f874786c4d9e80cb32971bca23566bb2fd4c8464ceabe6b152ed7910e2b3b5170e33eb3015a4a8a6d35
   languageName: node
   linkType: hard
 
@@ -1891,65 +1875,65 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vue/reactivity@npm:3.2.9":
-  version: 3.2.9
-  resolution: "@vue/reactivity@npm:3.2.9::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2F%40vue%2Freactivity%2Fdownload%2F%40vue%2Freactivity-3.2.9.tgz"
+"@vue/reactivity@npm:3.2.19":
+  version: 3.2.19
+  resolution: "@vue/reactivity@npm:3.2.19::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2F%40vue%2Freactivity%2Fdownload%2F%40vue%2Freactivity-3.2.19.tgz"
   dependencies:
-    "@vue/shared": 3.2.9
-  checksum: a52e0781086c4d338afd10e88dbc92b62704d86272dfe25e68d8c84a535dd3b65a54699b496e513fe5a539f9a6283d742994646950956f850018b27eac406c3e
+    "@vue/shared": 3.2.19
+  checksum: e26769406be9149c4409fda77ce34d886106bf19d9317b1cf510f08518e45650e6b69cc148d5204e5d1572d61b5538a00af62d3fde7abcf13554bbab2f47c710
   languageName: node
   linkType: hard
 
-"@vue/ref-transform@npm:3.2.9":
-  version: 3.2.9
-  resolution: "@vue/ref-transform@npm:3.2.9::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2F%40vue%2Fref-transform%2Fdownload%2F%40vue%2Fref-transform-3.2.9.tgz"
+"@vue/ref-transform@npm:3.2.19":
+  version: 3.2.19
+  resolution: "@vue/ref-transform@npm:3.2.19::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2F%40vue%2Fref-transform%2Fdownload%2F%40vue%2Fref-transform-3.2.19.tgz"
   dependencies:
     "@babel/parser": ^7.15.0
-    "@vue/compiler-core": 3.2.9
-    "@vue/shared": 3.2.9
+    "@vue/compiler-core": 3.2.19
+    "@vue/shared": 3.2.19
     estree-walker: ^2.0.2
     magic-string: ^0.25.7
-  checksum: 6ca8af6233a9fbcad8339500e8c970d5e5cb3bf1d13feb71a547211453fdec520d508eb22d5d981bea3b2c7560a9a7d529a937881530e037fcf6849649c30db3
+  checksum: de3e57e51833b8021e558b445d7e7cfc8377b43170cbec7818a9debbaf963460137fa5f9f74ee4e80871099323184dff7e78e39a5edabdc949ba01abaab70331
   languageName: node
   linkType: hard
 
-"@vue/runtime-core@npm:3.2.9":
-  version: 3.2.9
-  resolution: "@vue/runtime-core@npm:3.2.9::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2F%40vue%2Fruntime-core%2Fdownload%2F%40vue%2Fruntime-core-3.2.9.tgz"
+"@vue/runtime-core@npm:3.2.19":
+  version: 3.2.19
+  resolution: "@vue/runtime-core@npm:3.2.19::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2F%40vue%2Fruntime-core%2Fdownload%2F%40vue%2Fruntime-core-3.2.19.tgz"
   dependencies:
-    "@vue/reactivity": 3.2.9
-    "@vue/shared": 3.2.9
-  checksum: 83376ec105ab87b617b9d4d63185c3aa7496ea12745352eec91f18a94e6e1b0a6475f012261a709847828aa1fe878156f376be24809b43000605866f932ab2f0
+    "@vue/reactivity": 3.2.19
+    "@vue/shared": 3.2.19
+  checksum: 5e16fb27d8a4bbd5fecb3ee99a3a849afb4145fe65d565b5774f4c9afe892b94bd775b398e51303ea7369358ba7ac24951f9bca1ee8619c692ee2dbf9ed50a73
   languageName: node
   linkType: hard
 
-"@vue/runtime-dom@npm:3.2.9":
-  version: 3.2.9
-  resolution: "@vue/runtime-dom@npm:3.2.9::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2F%40vue%2Fruntime-dom%2Fdownload%2F%40vue%2Fruntime-dom-3.2.9.tgz"
+"@vue/runtime-dom@npm:3.2.19":
+  version: 3.2.19
+  resolution: "@vue/runtime-dom@npm:3.2.19::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2F%40vue%2Fruntime-dom%2Fdownload%2F%40vue%2Fruntime-dom-3.2.19.tgz"
   dependencies:
-    "@vue/runtime-core": 3.2.9
-    "@vue/shared": 3.2.9
+    "@vue/runtime-core": 3.2.19
+    "@vue/shared": 3.2.19
     csstype: ^2.6.8
-  checksum: 97f2701fdc593ae1603e34cd85d177d14cdeec6a54f2c178b3a4fc1db9bdb9126de500cf375a57f7f97a3a2febe3221c826004989996f9adc139ad9830bcce4b
+  checksum: 889c1ffce1ae95ad850f11d6c0a1b8af56789d6e4de49104d8b5473c85b65d0405780ac859290def23bf26bb9f4434db1f4c2ea89f2c53378b98d4243591fb1a
   languageName: node
   linkType: hard
 
-"@vue/server-renderer@npm:3.2.9":
-  version: 3.2.9
-  resolution: "@vue/server-renderer@npm:3.2.9::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2F%40vue%2Fserver-renderer%2Fdownload%2F%40vue%2Fserver-renderer-3.2.9.tgz"
+"@vue/server-renderer@npm:3.2.19":
+  version: 3.2.19
+  resolution: "@vue/server-renderer@npm:3.2.19::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2F%40vue%2Fserver-renderer%2Fdownload%2F%40vue%2Fserver-renderer-3.2.19.tgz"
   dependencies:
-    "@vue/compiler-ssr": 3.2.9
-    "@vue/shared": 3.2.9
+    "@vue/compiler-ssr": 3.2.19
+    "@vue/shared": 3.2.19
   peerDependencies:
-    vue: 3.2.9
-  checksum: 80bf4e23a0305b772c85d24fca90664114678b76cf024b1a3d57af9e78ae4bd57f2912962622170628d6006b6d4d9617db8ac21b395a208ab9d79adf4809652c
+    vue: 3.2.19
+  checksum: 9d0c24e193d816949f8458dbfd9d5ec256b7d43c42fb4ea99dad836aab99d8b3c45120a50956670e85615281c2bfcc01e0e3a90edd9db6381a47bf479b13b7fd
   languageName: node
   linkType: hard
 
-"@vue/shared@npm:3.2.9":
-  version: 3.2.9
-  resolution: "@vue/shared@npm:3.2.9::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2F%40vue%2Fshared%2Fdownload%2F%40vue%2Fshared-3.2.9.tgz"
-  checksum: 06f68ffcfb97691eccffe36a9301242fecc38d28f28b44eb41c51dd2dd3e369820cd15fb78e261cb7a4d67bd1b3fffafbf3586aff47b0a181481fe3fdb8424f4
+"@vue/shared@npm:3.2.19":
+  version: 3.2.19
+  resolution: "@vue/shared@npm:3.2.19::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2F%40vue%2Fshared%2Fdownload%2F%40vue%2Fshared-3.2.19.tgz"
+  checksum: c32764c96e77be9610c104b95311c687edd1e2aac339299469ec73dc04aab98ca8fb9c2f7b6e0e8ef0b13310a96d51b3665d168b46b698d921e61cb2223439b7
   languageName: node
   linkType: hard
 
@@ -2420,13 +2404,6 @@ __metadata:
     readable-stream: ^2.3.5
     safe-buffer: ^5.1.1
   checksum: 123f097989ce2fa9087ce761cd41176aaaec864e28f7dfe5c7dab8ae16d66d9844f849c3ad688eb357e3c5e4f49b573e3c0780bb8bc937206735a3b6f8569a5f
-  languageName: node
-  linkType: hard
-
-"bluebird@npm:^3.7.2":
-  version: 3.7.2
-  resolution: "bluebird@npm:3.7.2::__archiveUrl=https%3A%2F%2Fregistry.nlark.com%2Fbluebird%2Fdownload%2Fbluebird-3.7.2.tgz"
-  checksum: 869417503c722e7dc54ca46715f70e15f4d9c602a423a02c825570862d12935be59ed9c7ba34a9b31f186c017c23cac6b54e35446f8353059c101da73eac22ef
   languageName: node
   linkType: hard
 
@@ -2996,15 +2973,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"consolidate@npm:^0.16.0":
-  version: 0.16.0
-  resolution: "consolidate@npm:0.16.0::__archiveUrl=https%3A%2F%2Fregistry.nlark.com%2Fconsolidate%2Fdownload%2Fconsolidate-0.16.0.tgz"
-  dependencies:
-    bluebird: ^3.7.2
-  checksum: f17164ffb2c4f79b4cbf685f1c76a49f59d329a40954b436425498861dc137b46fe821b2aadafa2dcfeb7eebd46846f35bd2c36b4a704d38521b4210a22a7515
-  languageName: node
-  linkType: hard
-
 "content-disposition@npm:^0.5.2":
   version: 0.5.3
   resolution: "content-disposition@npm:0.5.3"
@@ -3326,7 +3294,7 @@ __metadata:
     tailwindcss: ^2.2.11
     twin.macro: ^2.7.0
     typescript: ^4.4.2
-    vue: 3.2.9
+    vue: 3.2.19
   languageName: unknown
   linkType: soft
 
@@ -3599,8 +3567,8 @@ __metadata:
   dependencies:
     "@vitejs/plugin-vue": ^1.9.2
     "@vitejs/plugin-vue-jsx": ^1.2.0
-    "@vue/compiler-sfc": 3.2.9
-    "@vue/server-renderer": 3.2.9
+    "@vue/compiler-sfc": 3.2.19
+    "@vue/server-renderer": 3.2.19
     "@vueuse/head": ^0.6.0
     autoprefixer: ^10.3.6
     cross-env: ^7.0.3
@@ -3617,7 +3585,7 @@ __metadata:
     vite-plugin-pages: ^0.18.1
     vite-plugin-pwa: ^0.11.2
     vite-ssg: 0.15.1
-    vue: 3.2.9
+    vue: 3.2.19
     vue-router: ^4.0.11
   languageName: unknown
   linkType: soft
@@ -5989,15 +5957,6 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"lru-cache@npm:^5.1.1":
-  version: 5.1.1
-  resolution: "lru-cache@npm:5.1.1::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Flru-cache%2Fdownload%2Flru-cache-5.1.1.tgz"
-  dependencies:
-    yallist: ^3.0.2
-  checksum: c154ae1cbb0c2206d1501a0e94df349653c92c8cbb25236d7e85190bcaf4567a03ac6eb43166fabfa36fd35623694da7233e88d9601fbf411a9a481d85dbd2cb
-  languageName: node
-  linkType: hard
-
 "lru-cache@npm:^6.0.0":
   version: 6.0.0
   resolution: "lru-cache@npm:6.0.0"
@@ -6109,15 +6068,6 @@ fsevents@~2.3.2:
   version: 1.0.1
   resolution: "mdurl@npm:1.0.1"
   checksum: 71731ecba943926bfbf9f9b51e28b5945f9411c4eda80894221b47cc105afa43ba2da820732b436f0798fd3edbbffcd1fc1415843c41a87fea08a41cc1e3d02b
-  languageName: node
-  linkType: hard
-
-"merge-source-map@npm:^1.1.0":
-  version: 1.1.0
-  resolution: "merge-source-map@npm:1.1.0::__archiveUrl=https%3A%2F%2Fregistry.nlark.com%2Fmerge-source-map%2Fdownload%2Fmerge-source-map-1.1.0.tgz"
-  dependencies:
-    source-map: ^0.6.1
-  checksum: 945a83dcc59eff77dde709be1d3d6cb575c11cd7164a7ccdc1c6f0d463aad7c12750a510bdf84af2c05fac4615c4305d97ac90477975348bb901a905c8e92c4b
   languageName: node
   linkType: hard
 
@@ -9419,14 +9369,16 @@ typescript@^4.4.2:
   languageName: node
   linkType: hard
 
-"vue@npm:3.2.9":
-  version: 3.2.9
-  resolution: "vue@npm:3.2.9::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Fvue%2Fdownload%2Fvue-3.2.9.tgz"
+"vue@npm:3.2.19, vue@npm:3.2.19::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Fvue%2Fdownload%2Fvue-3.2.19.tgz":
+  version: 3.2.19
+  resolution: "vue@npm:3.2.19::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Fvue%2Fdownload%2Fvue-3.2.19.tgz"
   dependencies:
-    "@vue/compiler-dom": 3.2.9
-    "@vue/runtime-dom": 3.2.9
-    "@vue/shared": 3.2.9
-  checksum: 41d2b04865a2b4e43154676241984a5421b32456a924519a77898f5b59f9e84d53906a03cf026a1cea2acb51a3496580067bf0fc0883e7f27ce4f406b499f2a4
+    "@vue/compiler-dom": 3.2.19
+    "@vue/compiler-sfc": 3.2.19
+    "@vue/runtime-dom": 3.2.19
+    "@vue/server-renderer": 3.2.19
+    "@vue/shared": 3.2.19
+  checksum: e85f1fd5c9f70c7cf290e6f1575dfb0aeed1bef75540ebb263f3db83a7aa5b980b7ac31afb2d645af7a0f06925b9538fa6278e756d861fcf364514318eb5886e
   languageName: node
   linkType: hard
 
@@ -9829,13 +9781,6 @@ typescript@^4.4.2:
   version: 5.0.8
   resolution: "y18n@npm:5.0.8"
   checksum: 54f0fb95621ee60898a38c572c515659e51cc9d9f787fb109cef6fde4befbe1c4602dc999d30110feee37456ad0f1660fa2edcfde6a9a740f86a290999550d30
-  languageName: node
-  linkType: hard
-
-"yallist@npm:^3.0.2":
-  version: 3.1.1
-  resolution: "yallist@npm:3.1.1::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fyallist%2Fdownload%2Fyallist-3.1.1.tgz"
-  checksum: 48f7bb00dc19fc635a13a39fe547f527b10c9290e7b3e836b9a8f1ca04d4d342e85714416b3c2ab74949c9c66f9cebb0473e6bc353b79035356103b47641285d
   languageName: node
   linkType: hard
 

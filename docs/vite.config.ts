@@ -79,7 +79,7 @@ const config: UserConfig = {
                   const codeResult = hljs.highlight(token.content, {
                     language: lang,
                   }).value;
-                  const cname = `C${lang}A${hash(token.content)}`;
+                  const cname = `C${hash(token.content)}`;
                   fs.writeFileSync(
                     demoDir(`${cname}.` + (lang === 'html' ? 'vue' : 'tsx')),
                     token.content,

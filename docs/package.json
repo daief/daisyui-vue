@@ -8,13 +8,13 @@
   },
   "dependencies": {
     "daisyui": "^1.14.0",
-    "vue": "3.2.9"
+    "vue": "3.2.19"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^1.9.2",
     "@vitejs/plugin-vue-jsx": "^1.2.0",
-    "@vue/compiler-sfc": "3.2.9",
-    "@vue/server-renderer": "3.2.9",
+    "@vue/compiler-sfc": "3.2.19",
+    "@vue/server-renderer": "3.2.19",
     "@vueuse/head": "^0.6.0",
     "autoprefixer": "^10.3.6",
     "cross-env": "^7.0.3",
