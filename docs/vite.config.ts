@@ -251,7 +251,7 @@ const config: UserConfig = {
          */
         after: (code) => {
           const reg =
-            /(<Playground[^\>]*>(?!<\/Playground>).+?<\/Playground>)/g;
+            /(<Playground[^\>]*>(?!<\/Playground>).+?<\/Playground>)/gs;
           const ls = code.split(reg);
           if (ls.length <= 1) {
             return code;
