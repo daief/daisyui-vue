@@ -285,10 +285,6 @@ const config: UserConfig = {
       extensions: ['vue', 'tsx'],
       deep: false,
       include: [/\.md$/],
-      importPathTransform: (pp) => {
-        console.log('\n1111', pp);
-        return pp;
-      },
       resolvers: [
         (name) => {
           const based = resolve(__dirname, 'src/.demo');
