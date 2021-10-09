@@ -1,13 +1,5 @@
 # Button
 
-<script setup lang="tsx">
-import { createVNode } from 'vue';
-
-function asyncFunction() {
-  return new Promise(r => setTimeout(r, 3000));
-}
-</script>
-
 ## Examples
 
 button with brand colors
@@ -153,40 +145,56 @@ button block
 
 button loading
 
-```html :::demo
-<div
-  class="flex flex-wrap items-start md:space-x-2 space-y-2 md:space-y-0 flex-col md:flex-row mb-1"
->
-  <dv-button loading>netural</dv-button>
-  <dv-button loading type="primary">secondary</dv-button>
-  <dv-button loading type="secondary">secondary</dv-button>
-  <dv-button loading type="accent">accent</dv-button>
-  <dv-button loading type="ghost">ghost</dv-button>
-  <dv-button loading type="link">link</dv-button>
-</div>
-
-<div
-  class="flex flex-wrap items-start md:space-x-2 space-y-2 md:space-y-0 flex-col md:flex-row"
->
-  <dv-button :onClick="asyncFunction">Loading after click</dv-button>
-  <dv-button :onClick="asyncFunction" type="primary"
-    >Loading after click</dv-button
+```html :::run
+<template>
+  <div
+    class="flex flex-wrap items-start md:space-x-2 space-y-2 md:space-y-0 flex-col md:flex-row mb-1"
   >
-  <dv-button :onClick="asyncFunction" type="secondary" outline>
-    Loading after click
-  </dv-button>
-</div>
+    <dv-button loading>netural</dv-button>
+    <dv-button loading type="primary">secondary</dv-button>
+    <dv-button loading type="secondary">secondary</dv-button>
+    <dv-button loading type="accent">accent</dv-button>
+    <dv-button loading type="ghost">ghost</dv-button>
+    <dv-button loading type="link">link</dv-button>
+  </div>
+
+  <div
+    class="flex flex-wrap items-start md:space-x-2 space-y-2 md:space-y-0 flex-col md:flex-row"
+  >
+    <dv-button :onClick="asyncFunction">Loading after click</dv-button>
+    <dv-button :onClick="asyncFunction" type="primary"
+      >Loading after click</dv-button
+    >
+    <dv-button :onClick="asyncFunction" type="secondary" outline>
+      Loading after click
+    </dv-button>
+  </div>
+</template>
+
+<script lang="tsx" setup>
+  function asyncFunction() {
+    return new Promise((r) => setTimeout(r, 3000));
+  }
+</script>
 ```
 
 button loading without content
 
-```html :::demo
-<div
-  class="flex flex-wrap items-start md:space-x-2 space-y-2 md:space-y-0 flex-col md:flex-row"
->
-  <dv-button loading shape="circle">A</dv-button>
-  <dv-button :onClick="asyncFunction" outline shape="circle">GO</dv-button>
-</div>
+```html :::run
+<template>
+  <div
+    class="flex flex-wrap items-start md:space-x-2 space-y-2 md:space-y-0 flex-col md:flex-row"
+  >
+    <dv-button loading shape="circle">A</dv-button>
+    <dv-button :onClick="asyncFunction" outline shape="circle">GO</dv-button>
+  </div>
+</template>
+
+<script lang="tsx" setup>
+  function asyncFunction() {
+    return new Promise((r) => setTimeout(r, 3000));
+  }
+</script>
 ```
 
 button doesn't have click animation
