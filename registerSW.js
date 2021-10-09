@@ -1,1 +1,0 @@
-if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/daisyui-vue/sw.js', { scope: '/daisyui-vue/' })})}

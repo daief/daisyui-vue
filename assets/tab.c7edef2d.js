@@ -1,4 +1,4 @@
-import{u as c,j as a,l as e,c as n,q as o,F as r,s,o as h}from"./vendor.00cdd876.js";const j=s("div",{class:"markdown-body"},[s("h1",null,"Tab"),s("h2",null,"Examples"),s("p",null,"tabs")],-1),d=s("div",{class:"markdown-body"},null,-1),w={setup(u,{expose:l}){return l({frontmatter:{meta:[]}}),c({meta:[]}),(i,b)=>{const t=a("Cadcvuxbfdxzdywvwdwfwtfzzbbebxffuwdwadxec"),p=a("Playground");return h(),e(r,null,[j,n(p,{lang:"tsx",code:`<span class="hljs-keyword">import</span> { <span class="hljs-title class_">Tabs</span>, <span class="hljs-title class_">Tab</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;daisyui-vue&#x27;</span>;
+import{T as l,a as o}from"./app.774675bb.js";import{r,c as s,a as p,u as h,j as u,l as j,q as d,F as m,s as a,o as g}from"./vendor.00cdd876.js";var i={setup:()=>{const n=r("1");return()=>s(o,{value:n.value,"onUpdate:value":t=>n.value=t},{default:()=>[s(l,{name:"1",title:"Tab 1"},{default:()=>[p("Content 1")]}),s(l,{name:"2",title:"Tab 2"},{default:()=>[p("Content 2")]}),s(l,{name:"3",title:"Tab 3"},{default:()=>[p("Content 3")]})]})}};const b=a("div",{class:"markdown-body"},[a("h1",null,"Tab"),a("h2",null,"Examples"),a("p",null,"tabs")],-1),f=a("div",{class:"markdown-body"},null,-1),q={setup(n,{expose:t}){return t({frontmatter:{meta:[]}}),h({meta:[]}),(x,w)=>{const e=i,c=u("Playground");return g(),j(m,null,[b,s(c,{lang:"tsx",code:`<span class="hljs-keyword">import</span> { <span class="hljs-title class_">Tabs</span>, <span class="hljs-title class_">Tab</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;daisyui-vue&#x27;</span>;
 <span class="hljs-keyword">import</span> { ref } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue&#x27;</span>;
 
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
@@ -20,4 +20,4 @@ import{u as c,j as a,l as e,c as n,q as o,F as r,s,o as h}from"./vendor.00cdd876
     );
   },
 };
-`},{default:o(()=>[n(t)]),_:1}),d],64)}}};export{w as default};
+`},{default:d(()=>[s(e)]),_:1}),f],64)}}};export{q as default};
