@@ -33,12 +33,10 @@ export default defineComponent({
 });
 </script>
 
-<style lang="less">
-p + .dv-playground {
-  margin-top: -1em;
-}
-
-.dv-playground + p {
-  margin-top: 1em;
+<style lang="less" scoped>
+.dv-playground {
+  margin-bottom: 1em;
 }
 </style>
+
+<style lang="less"></style>
