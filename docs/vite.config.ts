@@ -82,7 +82,7 @@ const config: UserConfig = {
                   const codeResult = hljs.highlight(token.content, {
                     language: lang,
                   }).value;
-                  const cname = `C${hash(token.content)}`;
+                  const cname = `C${lang}C${hash(token.content)}`;
                   fs.writeFileSync(
                     demoDir(`${cname}.` + (lang === 'html' ? 'vue' : 'tsx')),
                     token.content,
@@ -285,14 +285,30 @@ const config: UserConfig = {
       extensions: ['vue', 'tsx'],
       deep: false,
       include: [/\.md$/],
+      importPathTransform: (pp) => {
+        console.log('\n1111', pp);
+        return pp;
+      },
+      resolvers: [
+        (name) => {
+          const based = resolve(__dirname, 'src/.demo');
+          if (name.startsWith('CtsxC')) {
+            return resolve(based, name);
+          }
+          if (name.startsWith('ChtmlC')) {
+            return resolve(based, name + '.vue');
+          }
+        },
+      ],
     }),
     Pages({
       extensions: ['vue', 'md'],
     }),
-    VitePWA({
-      minify: false,
-      mode: 'development',
-    }),
+    // TODO pwa
+    // VitePWA({
+    //   minify: false,
+    //   mode: 'development',
+    // }),
   ],
   // @ts-ignore
   ssgOptions: {
@@ -302,7 +318,7 @@ const config: UserConfig = {
   resolve: {
     alias: {
       'daisyui-vue': resolve(__dirname, '..'),
-      '@': resolve(__dirname, 'src'),
+      '@/': resolve(__dirname, 'src'),
     },
   },
   build: {},
