@@ -85,7 +85,13 @@ export const Tabs = component<HTMLAttributes, ITabsProps>(
 
         return (
           <>
-            <div {...attrs} class="dv-tabs tabs">
+            <div
+              {...attrs}
+              class={{
+                'dv-tabs tabs': true,
+                'tabs-boxed': props.type === 'boxed',
+              }}
+            >
               {tabPropsList.map((p) => (
                 <a
                   class={[

@@ -281,7 +281,7 @@ const config: UserConfig = {
       },
     }),
     Components({
-      dirs: ['src/.demo'],
+      dirs: [], // stay empty
       extensions: ['vue', 'tsx'],
       deep: false,
       include: [/\.md$/],
