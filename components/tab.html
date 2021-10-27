@@ -12,14 +12,14 @@
       type="module"
       async=""
       crossorigin=""
-      src="/daisyui-vue/assets/app.774675bb.js"
+      src="/daisyui-vue/assets/app.02e0a622.js"
     ></script>
     <link rel="modulepreload" href="/daisyui-vue/assets/vendor.00cdd876.js" />
-    <link rel="stylesheet" href="/daisyui-vue/assets/app.59410fec.css" />
+    <link rel="stylesheet" href="/daisyui-vue/assets/app.730211a8.css" />
     <link
       rel="modulepreload"
       crossorigin=""
-      href="/daisyui-vue/assets/tab.c7edef2d.js"
+      href="/daisyui-vue/assets/tab.d4945959.js"
     />
     <meta name="head:count" content="0" />
   </head>
@@ -116,7 +116,7 @@
                   <h2>Examples</h2>
                   <p>tabs</p>
                 </div>
-                <div class="dv-playground py-2">
+                <div class="dv-playground py-2" data-v-03294aad="">
                   <!--[-->
                   <div class="dv-tabs tabs">
                     <!--[--><a class="dv-tab tab tab-lifted tab-md tab-active"
@@ -126,7 +126,7 @@
                     <div class="dv-tabs__lifted-item"></div>
                   </div>
                   <!--[-->
-                  <div class="dv-tab-content">
+                  <div class="dv-tab-content" data-v-03294aad="">
                     <!--[--><!--[--><!--[-->
                     <div class="dv-tabs tabs">
                       <!--[--><a
@@ -146,15 +146,19 @@
                     </div>
                     <!--]--><!--]--><!--]--><!--]-->
                   </div>
-                  <div class="dv-tab-content dv-tab-content--hidden">
+                  <div
+                    class="dv-tab-content dv-tab-content--hidden"
+                    data-v-03294aad=""
+                  >
                     <!--[-->
-                    <pre><code class="hljs language-tsx rounded-md" hljs-language="tsx"><span class="hljs-keyword">import</span> { <span class="hljs-title class_">Tabs</span>, <span class="hljs-title class_">Tab</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">'daisyui-vue'</span>;
+                    <pre
+                      data-v-03294aad=""
+                    ><code class="hljs language-tsx rounded-md" hljs-language="tsx" data-v-03294aad=""><span class="hljs-keyword">import</span> { <span class="hljs-title class_">Tabs</span>, <span class="hljs-title class_">Tab</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">'daisyui-vue'</span>;
 <span class="hljs-keyword">import</span> { ref } <span class="hljs-keyword">from</span> <span class="hljs-string">'vue'</span>;
 
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
   <span class="hljs-attr">setup</span>: <span class="hljs-function">() =&gt;</span> {
     <span class="hljs-keyword">const</span> currentTab = <span class="hljs-title function_">ref</span>(<span class="hljs-string">'1'</span>);
-
     <span class="hljs-keyword">return</span> <span class="hljs-function">() =&gt;</span> (
       <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">Tabs</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">{[currentTab.value,</span> '<span class="hljs-attr">value</span>']}&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">Tab</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"1"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Tab 1"</span>&gt;</span>
@@ -167,6 +171,323 @@
           Content 3
         <span class="hljs-tag">&lt;/<span class="hljs-name">Tab</span>&gt;</span>
       <span class="hljs-tag">&lt;/<span class="hljs-name">Tabs</span>&gt;</span></span>
+    );
+  },
+};
+</code></pre>
+                    <!--]-->
+                  </div>
+                  <!--]--><!--]-->
+                </div>
+                <div class="markdown-body"><p>tab-bordered</p></div>
+                <div class="dv-playground py-2" data-v-03294aad="">
+                  <!--[-->
+                  <div class="dv-tabs tabs">
+                    <!--[--><a class="dv-tab tab tab-lifted tab-md tab-active"
+                      >Preview</a
+                    ><a class="dv-tab tab tab-lifted tab-md">Code</a
+                    ><!--]-->
+                    <div class="dv-tabs__lifted-item"></div>
+                  </div>
+                  <!--[-->
+                  <div class="dv-tab-content" data-v-03294aad="">
+                    <!--[--><!--[--><!--[-->
+                    <div class="dv-tabs tabs">
+                      <!--[--><a
+                        class="dv-tab tab tab-bordered tab-md tab-active"
+                        >Tab 1</a
+                      ><a class="dv-tab tab tab-bordered tab-md">Tab 2</a
+                      ><a class="dv-tab tab tab-bordered tab-md">Tab 3</a
+                      ><!--]--><!---->
+                    </div>
+                    <!--[-->
+                    <div class="dv-tab-content"><!--[-->Content 1<!--]--></div>
+                    <div class="dv-tab-content dv-tab-content--hidden">
+                      <!--[-->Content 2<!--]-->
+                    </div>
+                    <div class="dv-tab-content dv-tab-content--hidden">
+                      <!--[-->Content 3<!--]-->
+                    </div>
+                    <!--]--><!--]--><!--]--><!--]-->
+                  </div>
+                  <div
+                    class="dv-tab-content dv-tab-content--hidden"
+                    data-v-03294aad=""
+                  >
+                    <!--[-->
+                    <pre
+                      data-v-03294aad=""
+                    ><code class="hljs language-tsx rounded-md" hljs-language="tsx" data-v-03294aad=""><span class="hljs-keyword">import</span> { <span class="hljs-title class_">Tabs</span>, <span class="hljs-title class_">Tab</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">'daisyui-vue'</span>;
+<span class="hljs-keyword">import</span> { ref } <span class="hljs-keyword">from</span> <span class="hljs-string">'vue'</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+  <span class="hljs-attr">setup</span>: <span class="hljs-function">() =&gt;</span> {
+    <span class="hljs-keyword">const</span> currentTab = <span class="hljs-title function_">ref</span>(<span class="hljs-string">'1'</span>);
+    <span class="hljs-keyword">return</span> <span class="hljs-function">() =&gt;</span> (
+      <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">Tabs</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">{[currentTab.value,</span> '<span class="hljs-attr">value</span>']} <span class="hljs-attr">type</span>=<span class="hljs-string">"bordered"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Tab</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"1"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Tab 1"</span>&gt;</span>
+          Content 1
+        <span class="hljs-tag">&lt;/<span class="hljs-name">Tab</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Tab</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"2"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Tab 2"</span>&gt;</span>
+          Content 2
+        <span class="hljs-tag">&lt;/<span class="hljs-name">Tab</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Tab</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"3"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Tab 3"</span>&gt;</span>
+          Content 3
+        <span class="hljs-tag">&lt;/<span class="hljs-name">Tab</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">Tabs</span>&gt;</span></span>
+    );
+  },
+};
+</code></pre>
+                    <!--]-->
+                  </div>
+                  <!--]--><!--]-->
+                </div>
+                <div class="markdown-body"><p>tab-lifted</p></div>
+                <div class="dv-playground py-2" data-v-03294aad="">
+                  <!--[-->
+                  <div class="dv-tabs tabs">
+                    <!--[--><a class="dv-tab tab tab-lifted tab-md tab-active"
+                      >Preview</a
+                    ><a class="dv-tab tab tab-lifted tab-md">Code</a
+                    ><!--]-->
+                    <div class="dv-tabs__lifted-item"></div>
+                  </div>
+                  <!--[-->
+                  <div class="dv-tab-content" data-v-03294aad="">
+                    <!--[--><!--[--><!--[-->
+                    <div class="dv-tabs tabs">
+                      <!--[--><a class="dv-tab tab tab-lifted tab-md tab-active"
+                        >Tab 1</a
+                      ><a class="dv-tab tab tab-lifted tab-md">Tab 2</a
+                      ><a class="dv-tab tab tab-lifted tab-md">Tab 3</a
+                      ><!--]-->
+                      <div class="dv-tabs__lifted-item"></div>
+                    </div>
+                    <!--[-->
+                    <div class="dv-tab-content"><!--[-->Content 1<!--]--></div>
+                    <div class="dv-tab-content dv-tab-content--hidden">
+                      <!--[-->Content 2<!--]-->
+                    </div>
+                    <div class="dv-tab-content dv-tab-content--hidden">
+                      <!--[-->Content 3<!--]-->
+                    </div>
+                    <!--]--><!--]--><!--]--><!--]-->
+                  </div>
+                  <div
+                    class="dv-tab-content dv-tab-content--hidden"
+                    data-v-03294aad=""
+                  >
+                    <!--[-->
+                    <pre
+                      data-v-03294aad=""
+                    ><code class="hljs language-tsx rounded-md" hljs-language="tsx" data-v-03294aad=""><span class="hljs-keyword">import</span> { <span class="hljs-title class_">Tabs</span>, <span class="hljs-title class_">Tab</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">'daisyui-vue'</span>;
+<span class="hljs-keyword">import</span> { ref } <span class="hljs-keyword">from</span> <span class="hljs-string">'vue'</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+  <span class="hljs-attr">setup</span>: <span class="hljs-function">() =&gt;</span> {
+    <span class="hljs-keyword">const</span> currentTab = <span class="hljs-title function_">ref</span>(<span class="hljs-string">'1'</span>);
+    <span class="hljs-keyword">return</span> <span class="hljs-function">() =&gt;</span> (
+      <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">Tabs</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">{[currentTab.value,</span> '<span class="hljs-attr">value</span>']} <span class="hljs-attr">type</span>=<span class="hljs-string">"lifted"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Tab</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"1"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Tab 1"</span>&gt;</span>
+          Content 1
+        <span class="hljs-tag">&lt;/<span class="hljs-name">Tab</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Tab</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"2"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Tab 2"</span>&gt;</span>
+          Content 2
+        <span class="hljs-tag">&lt;/<span class="hljs-name">Tab</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Tab</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"3"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Tab 3"</span>&gt;</span>
+          Content 3
+        <span class="hljs-tag">&lt;/<span class="hljs-name">Tab</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">Tabs</span>&gt;</span></span>
+    );
+  },
+};
+</code></pre>
+                    <!--]-->
+                  </div>
+                  <!--]--><!--]-->
+                </div>
+                <div class="markdown-body"><p>tab-boxed</p></div>
+                <div class="dv-playground py-2" data-v-03294aad="">
+                  <!--[-->
+                  <div class="dv-tabs tabs">
+                    <!--[--><a class="dv-tab tab tab-lifted tab-md tab-active"
+                      >Preview</a
+                    ><a class="dv-tab tab tab-lifted tab-md">Code</a
+                    ><!--]-->
+                    <div class="dv-tabs__lifted-item"></div>
+                  </div>
+                  <!--[-->
+                  <div class="dv-tab-content" data-v-03294aad="">
+                    <!--[--><!--[--><!--[-->
+                    <div class="dv-tabs tabs tabs-boxed">
+                      <!--[--><a class="dv-tab tab tab-boxed tab-md tab-active"
+                        >Tab 1</a
+                      ><a class="dv-tab tab tab-boxed tab-md">Tab 2</a
+                      ><a class="dv-tab tab tab-boxed tab-md">Tab 3</a
+                      ><!--]--><!---->
+                    </div>
+                    <!--[-->
+                    <div class="dv-tab-content"><!--[-->Content 1<!--]--></div>
+                    <div class="dv-tab-content dv-tab-content--hidden">
+                      <!--[-->Content 2<!--]-->
+                    </div>
+                    <div class="dv-tab-content dv-tab-content--hidden">
+                      <!--[-->Content 3<!--]-->
+                    </div>
+                    <!--]--><!--]--><!--]--><!--]-->
+                  </div>
+                  <div
+                    class="dv-tab-content dv-tab-content--hidden"
+                    data-v-03294aad=""
+                  >
+                    <!--[-->
+                    <pre
+                      data-v-03294aad=""
+                    ><code class="hljs language-tsx rounded-md" hljs-language="tsx" data-v-03294aad=""><span class="hljs-keyword">import</span> { <span class="hljs-title class_">Tabs</span>, <span class="hljs-title class_">Tab</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">'daisyui-vue'</span>;
+<span class="hljs-keyword">import</span> { ref } <span class="hljs-keyword">from</span> <span class="hljs-string">'vue'</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+  <span class="hljs-attr">setup</span>: <span class="hljs-function">() =&gt;</span> {
+    <span class="hljs-keyword">const</span> currentTab = <span class="hljs-title function_">ref</span>(<span class="hljs-string">'1'</span>);
+    <span class="hljs-keyword">return</span> <span class="hljs-function">() =&gt;</span> (
+      <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">Tabs</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">{[currentTab.value,</span> '<span class="hljs-attr">value</span>']} <span class="hljs-attr">type</span>=<span class="hljs-string">"boxed"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Tab</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"1"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Tab 1"</span>&gt;</span>
+          Content 1
+        <span class="hljs-tag">&lt;/<span class="hljs-name">Tab</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Tab</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"2"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Tab 2"</span>&gt;</span>
+          Content 2
+        <span class="hljs-tag">&lt;/<span class="hljs-name">Tab</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Tab</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"3"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Tab 3"</span>&gt;</span>
+          Content 3
+        <span class="hljs-tag">&lt;/<span class="hljs-name">Tab</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">Tabs</span>&gt;</span></span>
+    );
+  },
+};
+</code></pre>
+                    <!--]-->
+                  </div>
+                  <!--]--><!--]-->
+                </div>
+                <div class="markdown-body"><p>size</p></div>
+                <div class="dv-playground py-2" data-v-03294aad="">
+                  <!--[-->
+                  <div class="dv-tabs tabs">
+                    <!--[--><a class="dv-tab tab tab-lifted tab-md tab-active"
+                      >Preview</a
+                    ><a class="dv-tab tab tab-lifted tab-md">Code</a
+                    ><!--]-->
+                    <div class="dv-tabs__lifted-item"></div>
+                  </div>
+                  <!--[-->
+                  <div class="dv-tab-content" data-v-03294aad="">
+                    <!--[--><!--[--><!--[--><!--[-->
+                    <div class="dv-tabs tabs">
+                      <!--[--><a class="dv-tab tab tab-lifted tab-xs tab-active"
+                        >Tiny</a
+                      ><a class="dv-tab tab tab-lifted tab-xs">Tiny</a
+                      ><a class="dv-tab tab tab-lifted tab-xs">Tiny</a
+                      ><!--]-->
+                      <div class="dv-tabs__lifted-item"></div>
+                    </div>
+                    <!--[-->
+                    <div class="dv-tab-content"><!----></div>
+                    <div class="dv-tab-content dv-tab-content--hidden">
+                      <!---->
+                    </div>
+                    <div class="dv-tab-content dv-tab-content--hidden">
+                      <!---->
+                    </div>
+                    <!--]--><!--]--><!--[-->
+                    <div class="dv-tabs tabs">
+                      <!--[--><a class="dv-tab tab tab-lifted tab-sm tab-active"
+                        >Small</a
+                      ><a class="dv-tab tab tab-lifted tab-sm">Small</a
+                      ><a class="dv-tab tab tab-lifted tab-sm">Small</a
+                      ><!--]-->
+                      <div class="dv-tabs__lifted-item"></div>
+                    </div>
+                    <!--[-->
+                    <div class="dv-tab-content"><!----></div>
+                    <div class="dv-tab-content dv-tab-content--hidden">
+                      <!---->
+                    </div>
+                    <div class="dv-tab-content dv-tab-content--hidden">
+                      <!---->
+                    </div>
+                    <!--]--><!--]--><!--[-->
+                    <div class="dv-tabs tabs">
+                      <!--[--><a class="dv-tab tab tab-lifted tab-md tab-active"
+                        >Normal</a
+                      ><a class="dv-tab tab tab-lifted tab-md">Normal</a
+                      ><a class="dv-tab tab tab-lifted tab-md">Normal</a
+                      ><!--]-->
+                      <div class="dv-tabs__lifted-item"></div>
+                    </div>
+                    <!--[-->
+                    <div class="dv-tab-content"><!----></div>
+                    <div class="dv-tab-content dv-tab-content--hidden">
+                      <!---->
+                    </div>
+                    <div class="dv-tab-content dv-tab-content--hidden">
+                      <!---->
+                    </div>
+                    <!--]--><!--]--><!--[-->
+                    <div class="dv-tabs tabs">
+                      <!--[--><a class="dv-tab tab tab-lifted tab-lg tab-active"
+                        >Large</a
+                      ><a class="dv-tab tab tab-lifted tab-lg">Large</a
+                      ><a class="dv-tab tab tab-lifted tab-lg">Large</a
+                      ><!--]-->
+                      <div class="dv-tabs__lifted-item"></div>
+                    </div>
+                    <!--[-->
+                    <div class="dv-tab-content"><!----></div>
+                    <div class="dv-tab-content dv-tab-content--hidden">
+                      <!---->
+                    </div>
+                    <div class="dv-tab-content dv-tab-content--hidden">
+                      <!---->
+                    </div>
+                    <!--]--><!--]--><!--]--><!--]--><!--]-->
+                  </div>
+                  <div
+                    class="dv-tab-content dv-tab-content--hidden"
+                    data-v-03294aad=""
+                  >
+                    <!--[-->
+                    <pre
+                      data-v-03294aad=""
+                    ><code class="hljs language-tsx rounded-md" hljs-language="tsx" data-v-03294aad=""><span class="hljs-keyword">import</span> { <span class="hljs-title class_">Tabs</span>, <span class="hljs-title class_">Tab</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">'daisyui-vue'</span>;
+<span class="hljs-keyword">import</span> { ref } <span class="hljs-keyword">from</span> <span class="hljs-string">'vue'</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+  <span class="hljs-attr">setup</span>: <span class="hljs-function">() =&gt;</span> {
+    <span class="hljs-keyword">const</span> currentTab = <span class="hljs-title function_">ref</span>(<span class="hljs-string">'1'</span>);
+    <span class="hljs-keyword">return</span> <span class="hljs-function">() =&gt;</span> (
+      <span class="language-xml"><span class="hljs-tag">&lt;&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Tabs</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">{[currentTab.value,</span> '<span class="hljs-attr">value</span>']} <span class="hljs-attr">type</span>=<span class="hljs-string">"lifted"</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"xs"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">Tab</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"1"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Tiny"</span> /&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">Tab</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"2"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Tiny"</span> /&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">Tab</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"3"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Tiny"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">Tabs</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Tabs</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">{[currentTab.value,</span> '<span class="hljs-attr">value</span>']} <span class="hljs-attr">type</span>=<span class="hljs-string">"lifted"</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"sm"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">Tab</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"1"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Small"</span> /&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">Tab</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"2"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Small"</span> /&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">Tab</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"3"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Small"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">Tabs</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Tabs</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">{[currentTab.value,</span> '<span class="hljs-attr">value</span>']} <span class="hljs-attr">type</span>=<span class="hljs-string">"lifted"</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"md"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">Tab</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"1"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Normal"</span> /&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">Tab</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"2"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Normal"</span> /&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">Tab</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"3"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Normal"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">Tabs</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Tabs</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">{[currentTab.value,</span> '<span class="hljs-attr">value</span>']} <span class="hljs-attr">type</span>=<span class="hljs-string">"lifted"</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"lg"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">Tab</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"1"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Large"</span> /&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">Tab</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"2"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Large"</span> /&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">Tab</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"3"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Large"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">Tabs</span>&gt;</span>
+      <span class="hljs-tag">&lt;/&gt;</span></span>
     );
   },
 };
