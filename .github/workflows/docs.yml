@@ -22,6 +22,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+      
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 6.19.1
+          
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2
         with:
@@ -33,8 +39,7 @@ jobs:
       # - run: yarn build
       # - run: yarn workspace docs build
       # - run: npm test
-      
-      - run: npm install -g pnpm@^6
+  
       - run: pnpm i
       - run: pnpm run clone
       - run: pnpm run build
