@@ -26,13 +26,19 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'yarn'
+          cache: 'pnpm'
 
-      - run: yarn
-      - run: yarn clone
-      - run: yarn build
-      - run: yarn workspace docs build
-      - run: npm test
+      # - run: yarn
+      # - run: yarn clone
+      # - run: yarn build
+      # - run: yarn workspace docs build
+      # - run: npm test
+
+      - run: pnpm i
+      - run: pnpm run clone
+      - run: pnpm run build
+      - run: pnpm run build --filter docs
+
       - name: GitHub Pages action
         uses: peaceiris/actions-gh-pages@v3.7.3
         with:

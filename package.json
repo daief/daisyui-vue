@@ -1,13 +1,12 @@
 {
   "name": "daisyui-vue",
   "version": "0.0.1-alpha.0",
-  "author": {
-    "name": "daief",
-    "email": "defeng_mail@163.com",
-    "url": "https://github.com/daief"
-  },
+  "author": "daief <defeng_mail@163.com> (https://github.com/daief)",
   "homepage": "https://daief.tech/daisyui-vue",
-  "repository": "https://github.com/daief/daisyui-vue",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daief/daisyui-vue.git"
+  },
   "license": "MIT",
   "sideEffects": false,
   "main": "dist/lib/index.js",
@@ -16,8 +15,8 @@
     "dist"
   ],
   "scripts": {
-    "build": "rm -rf dist && yarn icons && NODE_ENV=production rollup -c",
-    "watch": "yarn icons && rollup -c -w",
+    "build": "rm -rf dist && npm run icons && NODE_ENV=production rollup -c",
+    "watch": "npm run icons && rollup -c -w",
     "icons": "node scripts/buildIcons.js",
     "clone": "node scripts/clone.js"
   },
@@ -79,5 +78,12 @@
         "from": "@emotion/css"
       }
     }
+  },
+  "description": "基于 daisyui 封装的 vue 组件库。",
+  "bugs": {
+    "url": "https://github.com/daief/daisyui-vue/issues"
+  },
+  "directories": {
+    "doc": "docs"
   }
 }
