@@ -8,7 +8,7 @@ export function insertCss(css: string | string[]) {
   if (!style) {
     style = document.createElement('style');
     style.setAttribute('daisyui-vue', VERSION);
-    document.head.appendChild(style);
+    document.head.prepend(style);
   }
 
   if (Array.isArray(css)) {
