@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daisyui Vue</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/daisyui@1.14.6/dist/themes.css"
+    />
+    <script
+      type="module"
+      async=""
+      crossorigin=""
+      src="/daisyui-vue/assets/app.0793e862.js"
+    ></script>
+    <link rel="modulepreload" href="/daisyui-vue/assets/vendor.e4fb2856.js" />
+    <link rel="stylesheet" href="/daisyui-vue/assets/app.e9c37179.css" />
+    <link
+      rel="modulepreload"
+      crossorigin=""
+      href="/daisyui-vue/assets/tooltip.f5f7bd95.js"
+    />
+    <meta name="head:count" content="0" />
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true">
+      <main data-v-50a6b668="">
+        <div
+          class="h-screen dv-drawer drawer drawer-mobile"
+          style="z-index: 100"
+          data-v-50a6b668=""
+        >
+          <input type="checkbox" class="drawer-toggle" />
+          <div class="drawer-content">
+            <!--[-->
+            <div data-v-50a6b668="">
+              <header
+                class="
+                  sticky
+                  inset-x-0
+                  top-0
+                  bg-white
+                  border-b border-gray-100
+                  z-20
+                "
+                data-v-50a6b668=""
+              >
+                <div class="navbar" data-v-50a6b668="">
+                  <!--[-->
+                  <div class="navbar-start mx-2" data-v-50a6b668="">
+                    <!--[-->
+                    <div class="lg:hidden" data-v-50a6b668="">
+                      <button
+                        class="dv-btn btn btn-ghost btn-md btn-square"
+                        type="ghost"
+                        shape="square"
+                        data-v-50a6b668=""
+                      >
+                        <!--[--><svg
+                          class="dv-icon"
+                          viewBox="0 0 24 24"
+                          focusable="false"
+                          aria-hidden="false"
+                          fill="none"
+                          stroke="currentColor"
+                          style="font-size: 2em"
+                          data-v-50a6b668=""
+                        >
+                          <!--[-->
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"
+                          ></path>
+                          <!--]--></svg
+                        ><!--]-->
+                      </button>
+                    </div>
+                    <!--]-->
+                  </div>
+                  <div class="navbar-end" data-v-50a6b668="">
+                    <!--[--><a
+                      class="dv-btn btn btn-ghost btn-md btn-default"
+                      component="a"
+                      href="https://github.com/daief/daisyui-vue"
+                      target="_blank"
+                      type="ghost"
+                      data-v-50a6b668=""
+                      ><!--[--><svg
+                        class="dv-icon"
+                        viewBox="0 0 512 512"
+                        focusable="false"
+                        aria-hidden="false"
+                        fill="currentColor"
+                        stroke="none"
+                        style="font-size: 2em"
+                        data-v-50a6b668=""
+                      >
+                        <!--[-->
+                        <path
+                          d="M256,32C132.3,32,32,134.9,32,261.7c0,101.5,64.2,187.5,153.2,217.9a17.56,17.56,0,0,0,3.8.4c8.3,0,11.5-6.1,11.5-11.4,0-5.5-.2-19.9-.3-39.1a102.4,102.4,0,0,1-22.6,2.7c-43.1,0-52.9-33.5-52.9-33.5-10.2-26.5-24.9-33.6-24.9-33.6-19.5-13.7-.1-14.1,1.4-14.1h.1c22.5,2,34.3,23.8,34.3,23.8,11.2,19.6,26.2,25.1,39.6,25.1a63,63,0,0,0,25.6-6c2-14.8,7.8-24.9,14.2-30.7-49.7-5.8-102-25.5-102-113.5,0-25.1,8.7-45.6,23-61.6-2.3-5.8-10-29.2,2.2-60.8a18.64,18.64,0,0,1,5-.5c8.1,0,26.4,3.1,56.6,24.1a208.21,208.21,0,0,1,112.2,0c30.2-21,48.5-24.1,56.6-24.1a18.64,18.64,0,0,1,5,.5c12.2,31.6,4.5,55,2.2,60.8,14.3,16.1,23,36.6,23,61.6,0,88.2-52.4,107.6-102.3,113.3,8,7.1,15.2,21.1,15.2,42.5,0,30.7-.3,55.5-.3,63,0,5.4,3.1,11.5,11.4,11.5a19.35,19.35,0,0,0,4-.4C415.9,449.2,480,363.1,480,261.7,480,134.9,379.7,32,256,32Z"
+                        ></path>
+                        <!--]--></svg
+                      ><!--]--></a
+                    ><!--]-->
+                  </div>
+                  <!--]-->
+                </div>
+              </header>
+              <div class="p-4 pb-8 lg:p-10" data-v-50a6b668="">
+                <!--[-->
+                <div class="markdown-body">
+                  <h1>Tooltip</h1>
+                  <h2>Examples</h2>
+                  <p>tooltip</p>
+                </div>
+                <div class="dv-playground py-2" data-v-03294aad="">
+                  <!--[-->
+                  <div class="dv-tabs tabs">
+                    <!--[--><a class="dv-tab tab tab-lifted tab-md tab-active"
+                      >Preview</a
+                    ><a class="dv-tab tab tab-lifted tab-md">Code</a
+                    ><!--]-->
+                    <div class="dv-tabs__lifted-item"></div>
+                  </div>
+                  <!--[-->
+                  <div class="dv-tab-content" data-v-03294aad="">
+                    <!--[--><!--[-->
+                    <div class="pt-8 text-center">
+                      <div
+                        class="dv-tooltip tooltip"
+                        data-tip="hello"
+                        tip="hello"
+                      >
+                        <!--[--><button class="dv-btn btn btn-md btn-default">
+                          <!--[-->hover me<!--]--></button
+                        ><!--]-->
+                      </div>
+                    </div>
+                    <!--]--><!--]-->
+                  </div>
+                  <div
+                    class="dv-tab-content dv-tab-content--hidden"
+                    data-v-03294aad=""
+                  >
+                    <!--[-->
+                    <pre
+                      data-v-03294aad=""
+                    ><code class="hljs language-html rounded-md" hljs-language="html" data-v-03294aad=""><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"pt-8 text-center"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">dv-tooltip</span> <span class="hljs-attr">tip</span>=<span class="hljs-string">"hello"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dv-button</span>&gt;</span>hover me<span class="hljs-tag">&lt;/<span class="hljs-name">dv-button</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">dv-tooltip</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+                    <!--]-->
+                  </div>
+                  <!--]--><!--]-->
+                </div>
+                <div class="markdown-body"><p>tooltip-open</p></div>
+                <div class="dv-playground py-2" data-v-03294aad="">
+                  <!--[-->
+                  <div class="dv-tabs tabs">
+                    <!--[--><a class="dv-tab tab tab-lifted tab-md tab-active"
+                      >Preview</a
+                    ><a class="dv-tab tab tab-lifted tab-md">Code</a
+                    ><!--]-->
+                    <div class="dv-tabs__lifted-item"></div>
+                  </div>
+                  <!--[-->
+                  <div class="dv-tab-content" data-v-03294aad="">
+                    <!--[--><!--[-->
+                    <div class="pt-8 text-center">
+                      <div
+                        class="dv-tooltip tooltip tooltip-open"
+                        data-tip="hello"
+                        tip="hello"
+                      >
+                        <!--[--><button class="dv-btn btn btn-md btn-default">
+                          <!--[-->open by default<!--]--></button
+                        ><!--]-->
+                      </div>
+                    </div>
+                    <!--]--><!--]-->
+                  </div>
+                  <div
+                    class="dv-tab-content dv-tab-content--hidden"
+                    data-v-03294aad=""
+                  >
+                    <!--[-->
+                    <pre
+                      data-v-03294aad=""
+                    ><code class="hljs language-html rounded-md" hljs-language="html" data-v-03294aad=""><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"pt-8 text-center"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">dv-tooltip</span> <span class="hljs-attr">tip</span>=<span class="hljs-string">"hello"</span> <span class="hljs-attr">open</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dv-button</span>&gt;</span>open by default<span class="hljs-tag">&lt;/<span class="hljs-name">dv-button</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">dv-tooltip</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+                    <!--]-->
+                  </div>
+                  <!--]--><!--]-->
+                </div>
+                <div class="markdown-body"><p>tooltip-bottom</p></div>
+                <div class="dv-playground py-2" data-v-03294aad="">
+                  <!--[-->
+                  <div class="dv-tabs tabs">
+                    <!--[--><a class="dv-tab tab tab-lifted tab-md tab-active"
+                      >Preview</a
+                    ><a class="dv-tab tab tab-lifted tab-md">Code</a
+                    ><!--]-->
+                    <div class="dv-tabs__lifted-item"></div>
+                  </div>
+                  <!--[-->
+                  <div class="dv-tab-content" data-v-03294aad="">
+                    <!--[--><!--[-->
+                    <div class="pt-8 text-center">
+                      <div
+                        class="dv-tooltip tooltip tooltip-open tooltip-bottom"
+                        data-tip="hello"
+                        tip="hello"
+                        placement="bottom"
+                      >
+                        <!--[--><button class="dv-btn btn btn-md btn-default">
+                          <!--[-->bottom<!--]--></button
+                        ><!--]-->
+                      </div>
+                    </div>
+                    <!--]--><!--]-->
+                  </div>
+                  <div
+                    class="dv-tab-content dv-tab-content--hidden"
+                    data-v-03294aad=""
+                  >
+                    <!--[-->
+                    <pre
+                      data-v-03294aad=""
+                    ><code class="hljs language-html rounded-md" hljs-language="html" data-v-03294aad=""><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"pt-8 text-center"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">dv-tooltip</span> <span class="hljs-attr">tip</span>=<span class="hljs-string">"hello"</span> <span class="hljs-attr">open</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"bottom"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dv-button</span>&gt;</span>bottom<span class="hljs-tag">&lt;/<span class="hljs-name">dv-button</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">dv-tooltip</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+                    <!--]-->
+                  </div>
+                  <!--]--><!--]-->
+                </div>
+                <div class="markdown-body"><p>tooltip-left</p></div>
+                <div class="dv-playground py-2" data-v-03294aad="">
+                  <!--[-->
+                  <div class="dv-tabs tabs">
+                    <!--[--><a class="dv-tab tab tab-lifted tab-md tab-active"
+                      >Preview</a
+                    ><a class="dv-tab tab tab-lifted tab-md">Code</a
+                    ><!--]-->
+                    <div class="dv-tabs__lifted-item"></div>
+                  </div>
+                  <!--[-->
+                  <div class="dv-tab-content" data-v-03294aad="">
+                    <!--[--><!--[-->
+                    <div class="pt-8 text-center">
+                      <div
+                        class="dv-tooltip tooltip tooltip-open tooltip-left"
+                        data-tip="hello"
+                        tip="hello"
+                        placement="left"
+                      >
+                        <!--[--><button class="dv-btn btn btn-md btn-default">
+                          <!--[-->left<!--]--></button
+                        ><!--]-->
+                      </div>
+                    </div>
+                    <!--]--><!--]-->
+                  </div>
+                  <div
+                    class="dv-tab-content dv-tab-content--hidden"
+                    data-v-03294aad=""
+                  >
+                    <!--[-->
+                    <pre
+                      data-v-03294aad=""
+                    ><code class="hljs language-html rounded-md" hljs-language="html" data-v-03294aad=""><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"pt-8 text-center"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">dv-tooltip</span> <span class="hljs-attr">tip</span>=<span class="hljs-string">"hello"</span> <span class="hljs-attr">open</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"left"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dv-button</span>&gt;</span>left<span class="hljs-tag">&lt;/<span class="hljs-name">dv-button</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">dv-tooltip</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+                    <!--]-->
+                  </div>
+                  <!--]--><!--]-->
+                </div>
+                <div class="markdown-body"><p>tooltip-right</p></div>
+                <div class="dv-playground py-2" data-v-03294aad="">
+                  <!--[-->
+                  <div class="dv-tabs tabs">
+                    <!--[--><a class="dv-tab tab tab-lifted tab-md tab-active"
+                      >Preview</a
+                    ><a class="dv-tab tab tab-lifted tab-md">Code</a
+                    ><!--]-->
+                    <div class="dv-tabs__lifted-item"></div>
+                  </div>
+                  <!--[-->
+                  <div class="dv-tab-content" data-v-03294aad="">
+                    <!--[--><!--[-->
+                    <div class="pt-8 text-center">
+                      <div
+                        class="dv-tooltip tooltip tooltip-open tooltip-right"
+                        data-tip="hello"
+                        tip="hello"
+                        placement="right"
+                      >
+                        <!--[--><button class="dv-btn btn btn-md btn-default">
+                          <!--[-->right<!--]--></button
+                        ><!--]-->
+                      </div>
+                    </div>
+                    <!--]--><!--]-->
+                  </div>
+                  <div
+                    class="dv-tab-content dv-tab-content--hidden"
+                    data-v-03294aad=""
+                  >
+                    <!--[-->
+                    <pre
+                      data-v-03294aad=""
+                    ><code class="hljs language-html rounded-md" hljs-language="html" data-v-03294aad=""><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"pt-8 text-center"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">dv-tooltip</span> <span class="hljs-attr">tip</span>=<span class="hljs-string">"hello"</span> <span class="hljs-attr">open</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"right"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dv-button</span>&gt;</span>right<span class="hljs-tag">&lt;/<span class="hljs-name">dv-button</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">dv-tooltip</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+                    <!--]-->
+                  </div>
+                  <!--]--><!--]-->
+                </div>
+                <div class="markdown-body"><p>with colors</p></div>
+                <div class="dv-playground py-2" data-v-03294aad="">
+                  <!--[-->
+                  <div class="dv-tabs tabs">
+                    <!--[--><a class="dv-tab tab tab-lifted tab-md tab-active"
+                      >Preview</a
+                    ><a class="dv-tab tab tab-lifted tab-md">Code</a
+                    ><!--]-->
+                    <div class="dv-tabs__lifted-item"></div>
+                  </div>
+                  <!--[-->
+                  <div class="dv-tab-content" data-v-03294aad="">
+                    <!--[--><!--[-->
+                    <div
+                      class="
+                        text-center
+                        grid grid-cols-3
+                        lg:grid-cols-5
+                        my-10
+                        place-items-center
+                        gap-y-10
+                      "
+                    >
+                      <div
+                        class="dv-tooltip tooltip tooltip-open tooltip-netural"
+                        data-tip="hello"
+                        tip="hello"
+                        type="netural"
+                      >
+                        <!--[--><button
+                          class="dv-btn btn btn-netural btn-md btn-default"
+                          type="netural"
+                        >
+                          <!--[-->netural<!--]--></button
+                        ><!--]-->
+                      </div>
+                      <div
+                        class="dv-tooltip tooltip tooltip-open tooltip-primary"
+                        data-tip="hello"
+                        tip="hello"
+                        type="primary"
+                      >
+                        <!--[--><button
+                          class="dv-btn btn btn-primary btn-md btn-default"
+                          type="primary"
+                        >
+                          <!--[-->primary<!--]--></button
+                        ><!--]-->
+                      </div>
+                      <div
+                        class="
+                          dv-tooltip
+                          tooltip tooltip-open tooltip-secondary
+                        "
+                        data-tip="hello"
+                        tip="hello"
+                        type="secondary"
+                      >
+                        <!--[--><button
+                          class="dv-btn btn btn-secondary btn-md btn-default"
+                          type="secondary"
+                        >
+                          <!--[-->secondary<!--]--></button
+                        ><!--]-->
+                      </div>
+                      <div
+                        class="dv-tooltip tooltip tooltip-open tooltip-accent"
+                        data-tip="hello"
+                        tip="hello"
+                        type="accent"
+                      >
+                        <!--[--><button
+                          class="dv-btn btn btn-accent btn-md btn-default"
+                          type="accent"
+                        >
+                          <!--[-->accent<!--]--></button
+                        ><!--]-->
+                      </div>
+                      <div
+                        class="dv-tooltip tooltip tooltip-open tooltip-info"
+                        data-tip="hello"
+                        tip="hello"
+                        type="info"
+                      >
+                        <!--[--><button
+                          class="dv-btn btn btn-info btn-md btn-default"
+                          type="info"
+                        >
+                          <!--[-->info<!--]--></button
+                        ><!--]-->
+                      </div>
+                      <div
+                        class="dv-tooltip tooltip tooltip-open tooltip-success"
+                        data-tip="hello"
+                        tip="hello"
+                        type="success"
+                      >
+                        <!--[--><button
+                          class="dv-btn btn btn-success btn-md btn-default"
+                          type="success"
+                        >
+                          <!--[-->success<!--]--></button
+                        ><!--]-->
+                      </div>
+                      <div
+                        class="dv-tooltip tooltip tooltip-open tooltip-warning"
+                        data-tip="hello"
+                        tip="hello"
+                        type="warning"
+                      >
+                        <!--[--><button
+                          class="dv-btn btn btn-warning btn-md btn-default"
+                          type="warning"
+                        >
+                          <!--[-->warning<!--]--></button
+                        ><!--]-->
+                      </div>
+                      <div
+                        class="dv-tooltip tooltip tooltip-open tooltip-error"
+                        data-tip="hello"
+                        tip="hello"
+                        type="error"
+                      >
+                        <!--[--><button
+                          class="dv-btn btn btn-error btn-md btn-default"
+                          type="error"
+                        >
+                          <!--[-->error<!--]--></button
+                        ><!--]-->
+                      </div>
+                    </div>
+                    <!--]--><!--]-->
+                  </div>
+                  <div
+                    class="dv-tab-content dv-tab-content--hidden"
+                    data-v-03294aad=""
+                  >
+                    <!--[-->
+                    <pre
+                      data-v-03294aad=""
+                    ><code class="hljs language-html rounded-md" hljs-language="html" data-v-03294aad=""><span class="hljs-tag">&lt;<span class="hljs-name">div</span>
+  <span class="hljs-attr">class</span>=<span class="hljs-string">"text-center grid grid-cols-3 lg:grid-cols-5 my-10 place-items-center gap-y-10"</span>
+&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">dv-tooltip</span> <span class="hljs-attr">tip</span>=<span class="hljs-string">"hello"</span> <span class="hljs-attr">open</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"netural"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dv-button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"netural"</span>&gt;</span>netural<span class="hljs-tag">&lt;/<span class="hljs-name">dv-button</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">dv-tooltip</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">dv-tooltip</span> <span class="hljs-attr">tip</span>=<span class="hljs-string">"hello"</span> <span class="hljs-attr">open</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"primary"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dv-button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"primary"</span>&gt;</span>primary<span class="hljs-tag">&lt;/<span class="hljs-name">dv-button</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">dv-tooltip</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">dv-tooltip</span> <span class="hljs-attr">tip</span>=<span class="hljs-string">"hello"</span> <span class="hljs-attr">open</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"secondary"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dv-button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"secondary"</span>&gt;</span>secondary<span class="hljs-tag">&lt;/<span class="hljs-name">dv-button</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">dv-tooltip</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">dv-tooltip</span> <span class="hljs-attr">tip</span>=<span class="hljs-string">"hello"</span> <span class="hljs-attr">open</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"accent"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dv-button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"accent"</span>&gt;</span>accent<span class="hljs-tag">&lt;/<span class="hljs-name">dv-button</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">dv-tooltip</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">dv-tooltip</span> <span class="hljs-attr">tip</span>=<span class="hljs-string">"hello"</span> <span class="hljs-attr">open</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"info"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dv-button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"info"</span>&gt;</span>info<span class="hljs-tag">&lt;/<span class="hljs-name">dv-button</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">dv-tooltip</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">dv-tooltip</span> <span class="hljs-attr">tip</span>=<span class="hljs-string">"hello"</span> <span class="hljs-attr">open</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"success"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dv-button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"success"</span>&gt;</span>success<span class="hljs-tag">&lt;/<span class="hljs-name">dv-button</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">dv-tooltip</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">dv-tooltip</span> <span class="hljs-attr">tip</span>=<span class="hljs-string">"hello"</span> <span class="hljs-attr">open</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"warning"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dv-button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"warning"</span>&gt;</span>warning<span class="hljs-tag">&lt;/<span class="hljs-name">dv-button</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">dv-tooltip</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">dv-tooltip</span> <span class="hljs-attr">tip</span>=<span class="hljs-string">"hello"</span> <span class="hljs-attr">open</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"error"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dv-button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"error"</span>&gt;</span>error<span class="hljs-tag">&lt;/<span class="hljs-name">dv-button</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">dv-tooltip</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+                    <!--]-->
+                  </div>
+                  <!--]--><!--]-->
+                </div>
+                <div class="markdown-body"></div>
+                <!--]-->
+              </div>
+            </div>
+            <!--]-->
+          </div>
+          <div class="drawer-side">
+            <div class="drawer-overlay"></div>
+            <!--[-->
+            <div
+              class="overflow-y-auto w-80 bg-white border-r border-gray-200"
+              data-v-50a6b668=""
+            >
+              <ul class="menu compact rounded-box p-4" data-v-50a6b668="">
+                <!--[-->
+                <li class="menu-title" data-v-50a6b668="">
+                  <span class="">Components</span>
+                </li>
+                <!--[-->
+                <li class="capitalize" childwrapper="false">
+                  <!--[--><a href="/daisyui-vue/components/alert" class=""
+                    >alert</a
+                  ><!--]-->
+                </li>
+                <li class="capitalize" childwrapper="false">
+                  <!--[--><a href="/daisyui-vue/components/artboard" class=""
+                    >artboard</a
+                  ><!--]-->
+                </li>
+                <li class="capitalize" childwrapper="false">
+                  <!--[--><a href="/daisyui-vue/components/button" class=""
+                    >button</a
+                  ><!--]-->
+                </li>
+                <li class="capitalize" childwrapper="false">
+                  <!--[--><a href="/daisyui-vue/components/drawer" class=""
+                    >drawer</a
+                  ><!--]-->
+                </li>
+                <li class="capitalize" childwrapper="false">
+                  <!--[--><a href="/daisyui-vue/components/icons" class=""
+                    >icons</a
+                  ><!--]-->
+                </li>
+                <li class="capitalize" childwrapper="false">
+                  <!--[--><a href="/daisyui-vue/components/menu" class=""
+                    >menu</a
+                  ><!--]-->
+                </li>
+                <li class="capitalize" childwrapper="false">
+                  <!--[--><a href="/daisyui-vue/components/tab" class="">tab</a
+                  ><!--]-->
+                </li>
+                <li class="capitalize" childwrapper="false">
+                  <!--[--><a href="/daisyui-vue/components/table" class=""
+                    >table</a
+                  ><!--]-->
+                </li>
+                <li class="capitalize" childwrapper="false">
+                  <!--[--><a
+                    aria-current="page"
+                    href="/daisyui-vue/components/tooltip"
+                    class="active router-link-exact-active"
+                    >tooltip</a
+                  ><!--]-->
+                </li>
+                <!--]--><!--]-->
+              </ul>
+            </div>
+            <!--]-->
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
