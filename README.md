@@ -4,13 +4,15 @@
 
 ## todo
 
-- [ ] build style files
-- [ ] 抽离 css
+- [ ] style files
+  - [ ] auto require style conntent when using a component (now css-in-js)
+    - [ ] it is easy to use in SSR, but there is no style on first render (`FOUC`, because css inserted by js)
+  - [ ] extract css to a css file? (if so, may resolve FOUC)
 
 ## components
 
 - [x] alert
-- [ ] artboard
+- [x] artboard
 - [ ] avatar
 - [ ] badge
 - [ ] breadcrumbs
@@ -29,7 +31,7 @@
 - [ ] kbd
 - [ ] link
 - [ ] mask
-- [ ] menu
+- [x] menu
 - [ ] modal
 - [ ] navbar
 - [ ] pagination
@@ -37,8 +39,8 @@
 - [ ] stack
 - [ ] stat
 - [ ] steps
-- [ ] tab
-- [ ] table
+- [x] tab
+- [x] table
 - [ ] tooltip
 - [ ] form-checkbox
 - [ ] form-input
