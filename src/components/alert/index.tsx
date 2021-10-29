@@ -1,10 +1,11 @@
 import { IconBell, IconInfo, IconInvalid, IconWarning } from '@/icons';
 import { component } from '@/shared/styled';
+import { IStateColor } from '@/shared/types/common';
 import { HTMLAttributes } from 'vue';
 import style from './style';
 
 export interface IAlertProps {
-  type?: 'info' | 'success' | 'warning' | 'error';
+  type?: IStateColor;
 }
 
 export const Alert = component<IAlertProps & HTMLAttributes>(
@@ -15,11 +16,11 @@ export const Alert = component<IAlertProps & HTMLAttributes>(
         const icon =
           slots.icon?.() ||
           {
-            info: <IconInfo />,
-            success: <IconBell />, // TODO success icon
-            warning: <IconWarning />,
-            error: <IconInvalid />,
-          }[attrs.type];
+            info: () => <IconInfo />,
+            success: () => <IconBell />, // TODO success icon
+            warning: () => <IconWarning />,
+            error: () => <IconInvalid />,
+          }[attrs.type]?.();
 
         const actions = slots.actions?.();
         const content = slots.content?.();

@@ -4,3 +4,11 @@ export function cssUnit(unit: string | number) {
   }
   return unit || '';
 }
+
+export function isBool(v: any): boolean {
+  return typeof v === 'boolean';
+}
+
+export function isUndefined(v: any): boolean {
+  return typeof v === 'undefined';
+}

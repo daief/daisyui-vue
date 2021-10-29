@@ -6,3 +6,4 @@ export * from './menu';
 export * from './navbar';
 export * from './tab';
 export * from './table';
+export * from './tooltip';

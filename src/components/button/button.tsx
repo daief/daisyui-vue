@@ -1,4 +1,8 @@
-import { BoolConstructorToBase, ISize } from '@/shared/types/common';
+import {
+  BoolConstructorToBase,
+  IColorType,
+  ISize,
+} from '@/shared/types/common';
 import {
   AnchorHTMLAttributes,
   computed,
@@ -14,18 +18,7 @@ import style from './style';
 
 export type IButtonShape = 'defalut' | 'circle' | 'square';
 
-export type IButtonType =
-  | 'netural'
-  | 'primary'
-  | 'secondary'
-  | 'accent'
-  | 'info'
-  | 'success'
-  | 'warning'
-  | 'error'
-  | 'ghost'
-  | 'link'
-  | 'glass';
+export type IButtonType = IColorType | 'ghost' | 'link' | 'glass';
 
 const props = {
   block: Boolean,

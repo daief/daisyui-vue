@@ -41,7 +41,7 @@
 - [ ] steps
 - [x] tab
 - [x] table
-- [ ] tooltip
+- [x] tooltip
 - [ ] form-checkbox
 - [ ] form-input
 - [ ] form-radio
