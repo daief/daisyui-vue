@@ -53,9 +53,7 @@ const config: UserConfig = {
       transformIndexHtml: (html) => {
         return html.replace(
           '<!-- __GOOGLE_GA__ -->',
-          isDev
-            ? ''
-            : '<script src="https://daief/def-common/js/ga.js"></script>',
+          isDev ? '' : '<script src="/def-common/js/ga.js"></script>',
         );
       },
     },

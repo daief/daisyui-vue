@@ -14,5 +14,14 @@ export const createApp = ViteSSG(
     app.component('Playground', Playground);
     app.component('MarkdownTable', MarkdownTable);
     app.use(daisyui as any);
+
+    router.afterEach((to, from) => {
+      if (!isClient) return;
+      if (to.path !== from.path) {
+        try {
+          (window as any).gtag.trackPath(to.path);
+        } catch (error) {}
+      }
+    });
   },
 );
