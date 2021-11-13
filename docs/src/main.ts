@@ -19,7 +19,7 @@ export const createApp = ViteSSG(
       if (!isClient) return;
       if (to.path !== from.path) {
         try {
-          (window as any).gtag.trackPath(to.path);
+          (window as any).gtag.trackPath(to.fullPath);
         } catch (error) {}
       }
     });
