@@ -13,6 +13,8 @@ import fs from 'fs-extra';
 import crypto from 'crypto';
 import path from 'path';
 
+const isDev = process.env.NODE_ENV === 'development';
+
 const hash = (input: string) =>
   crypto
     .createHash('sha1')
@@ -46,6 +48,17 @@ const wrap = (render) =>
 const config: UserConfig = {
   base: '/daisyui-vue/',
   plugins: [
+    {
+      enforce: 'pre',
+      transformIndexHtml: (html) => {
+        return html.replace(
+          '<!-- __GOOGLE_GA__ -->',
+          isDev
+            ? ''
+            : '<script src="https://daief/def-common/js/ga.js"></script>',
+        );
+      },
+    },
     vueJsx(),
     Vue({
       include: [/\.vue$/, /\.md$/],
