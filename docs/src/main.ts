@@ -15,13 +15,15 @@ export const createApp = ViteSSG(
     app.component('MarkdownTable', MarkdownTable);
     app.use(daisyui as any);
 
-    router.afterEach((to, from) => {
-      if (!isClient) return;
-      if (to.path !== from.path) {
-        try {
-          (window as any).gtag.trackPath(to.fullPath);
-        } catch (error) {}
-      }
+    router.isReady().then(() => {
+      router.afterEach((to, from, fa) => {
+        if (!isClient) return;
+        if (to.path !== from.path) {
+          try {
+            (window as any).gtag.trackPath('');
+          } catch (error) {}
+        }
+      });
     });
   },
 );
