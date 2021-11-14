@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daisyui Vue</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/daisyui@1.14.6/dist/themes.css"
+    />
+    <script src="/def-common/js/ga.js"></script>
+    <style>
+      :root {
+        background-color: hsla(var(--b1) / var(--tw-bg-opacity, 1));
+        color: hsla(var(--bc) / var(--tw-text-opacity, 1));
+      }
+    </style>
+    <script
+      type="module"
+      async=""
+      crossorigin=""
+      src="/daisyui-vue/assets/app.0cf926d4.js"
+    ></script>
+    <link rel="modulepreload" href="/daisyui-vue/assets/vendor.e4fb2856.js" />
+    <link rel="stylesheet" href="/daisyui-vue/assets/app.522b9bb6.css" />
+    <link
+      rel="modulepreload"
+      crossorigin=""
+      href="/daisyui-vue/assets/badge.bfd6b637.js"
+    />
+    <meta name="head:count" content="0" />
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true">
+      <main data-v-50a6b668="">
+        <div
+          class="h-screen dv-drawer drawer drawer-mobile"
+          style="z-index: 100"
+          data-v-50a6b668=""
+        >
+          <input type="checkbox" class="drawer-toggle" />
+          <div class="drawer-content">
+            <!--[-->
+            <div data-v-50a6b668="">
+              <header
+                class="
+                  sticky
+                  inset-x-0
+                  top-0
+                  bg-white
+                  border-b border-gray-100
+                  z-20
+                "
+                data-v-50a6b668=""
+              >
+                <div class="navbar" data-v-50a6b668="">
+                  <!--[-->
+                  <div class="navbar-start mx-2" data-v-50a6b668="">
+                    <!--[-->
+                    <div class="lg:hidden" data-v-50a6b668="">
+                      <button
+                        class="dv-btn btn btn-ghost btn-md btn-square"
+                        type="ghost"
+                        shape="square"
+                        data-v-50a6b668=""
+                      >
+                        <!--[--><svg
+                          class="dv-icon"
+                          viewBox="0 0 24 24"
+                          focusable="false"
+                          aria-hidden="false"
+                          fill="none"
+                          stroke="currentColor"
+                          style="font-size: 2em"
+                          data-v-50a6b668=""
+                        >
+                          <!--[-->
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"
+                          ></path>
+                          <!--]--></svg
+                        ><!--]-->
+                      </button>
+                    </div>
+                    <!--]-->
+                  </div>
+                  <div class="navbar-end" data-v-50a6b668="">
+                    <!--[--><a
+                      class="dv-btn btn btn-ghost btn-md btn-default"
+                      component="a"
+                      href="https://github.com/daief/daisyui-vue"
+                      target="_blank"
+                      type="ghost"
+                      data-v-50a6b668=""
+                      ><!--[--><svg
+                        class="dv-icon"
+                        viewBox="0 0 512 512"
+                        focusable="false"
+                        aria-hidden="false"
+                        fill="currentColor"
+                        stroke="none"
+                        style="font-size: 2em"
+                        data-v-50a6b668=""
+                      >
+                        <!--[-->
+                        <path
+                          d="M256,32C132.3,32,32,134.9,32,261.7c0,101.5,64.2,187.5,153.2,217.9a17.56,17.56,0,0,0,3.8.4c8.3,0,11.5-6.1,11.5-11.4,0-5.5-.2-19.9-.3-39.1a102.4,102.4,0,0,1-22.6,2.7c-43.1,0-52.9-33.5-52.9-33.5-10.2-26.5-24.9-33.6-24.9-33.6-19.5-13.7-.1-14.1,1.4-14.1h.1c22.5,2,34.3,23.8,34.3,23.8,11.2,19.6,26.2,25.1,39.6,25.1a63,63,0,0,0,25.6-6c2-14.8,7.8-24.9,14.2-30.7-49.7-5.8-102-25.5-102-113.5,0-25.1,8.7-45.6,23-61.6-2.3-5.8-10-29.2,2.2-60.8a18.64,18.64,0,0,1,5-.5c8.1,0,26.4,3.1,56.6,24.1a208.21,208.21,0,0,1,112.2,0c30.2-21,48.5-24.1,56.6-24.1a18.64,18.64,0,0,1,5,.5c12.2,31.6,4.5,55,2.2,60.8,14.3,16.1,23,36.6,23,61.6,0,88.2-52.4,107.6-102.3,113.3,8,7.1,15.2,21.1,15.2,42.5,0,30.7-.3,55.5-.3,63,0,5.4,3.1,11.5,11.4,11.5a19.35,19.35,0,0,0,4-.4C415.9,449.2,480,363.1,480,261.7,480,134.9,379.7,32,256,32Z"
+                        ></path>
+                        <!--]--></svg
+                      ><!--]--></a
+                    ><!--]-->
+                  </div>
+                  <!--]-->
+                </div>
+              </header>
+              <div class="p-4 pb-8 lg:p-10" data-v-50a6b668="">
+                <!--[-->
+                <div class="markdown-body">
+                  <h1>Badge</h1>
+                  <h2>Examples</h2>
+                  <p>badge</p>
+                </div>
+                <div class="dv-playground py-2" data-v-03294aad="">
+                  <!--[-->
+                  <div class="dv-tabs tabs">
+                    <!--[--><a class="dv-tab tab tab-lifted tab-md tab-active"
+                      >Preview</a
+                    ><a class="dv-tab tab tab-lifted tab-md">Code</a
+                    ><!--]-->
+                    <div class="dv-tabs__lifted-item"></div>
+                  </div>
+                  <!--[-->
+                  <div class="dv-tab-content" data-v-03294aad="">
+                    <!--[--><!--[-->
+                    <div
+                      class="
+                        flex flex-wrap
+                        items-start
+                        md:space-x-2
+                        space-y-2
+                        md:space-y-0
+                        flex-col
+                        md:flex-row
+                      "
+                    >
+                      <div class="dv-badge badge badge-md">
+                        <!--[-->netural<!--]-->
+                      </div>
+                      <div
+                        class="dv-badge badge badge-primary badge-md"
+                        type="primary"
+                      >
+                        <!--[-->primary<!--]-->
+                      </div>
+                      <div
+                        class="dv-badge badge badge-secondary badge-md"
+                        type="secondary"
+                      >
+                        <!--[-->secondary<!--]-->
+                      </div>
+                      <div
+                        class="dv-badge badge badge-accent badge-md"
+                        type="accent"
+                      >
+                        <!--[-->accent<!--]-->
+                      </div>
+                      <div
+                        class="dv-badge badge badge-ghost badge-md"
+                        type="ghost"
+                      >
+                        <!--[-->ghost<!--]-->
+                      </div>
+                      <div
+                        class="dv-badge badge badge-info badge-md"
+                        type="info"
+                      >
+                        <!--[-->info<!--]-->
+                      </div>
+                      <div
+                        class="dv-badge badge badge-success badge-md"
+                        type="success"
+                      >
+                        <!--[-->success<!--]-->
+                      </div>
+                      <div
+                        class="dv-badge badge badge-warning badge-md"
+                        type="warning"
+                      >
+                        <!--[-->warning<!--]-->
+                      </div>
+                      <div
+                        class="dv-badge badge badge-error badge-md"
+                        type="error"
+                      >
+                        <!--[-->error<!--]-->
+                      </div>
+                    </div>
+                    <!--]--><!--]-->
+                  </div>
+                  <div
+                    class="dv-tab-content dv-tab-content--hidden"
+                    data-v-03294aad=""
+                  >
+                    <!--[-->
+                    <pre
+                      data-v-03294aad=""
+                    ><code class="hljs language-html rounded-md" hljs-language="html" data-v-03294aad=""><span class="hljs-tag">&lt;<span class="hljs-name">div</span>
+  <span class="hljs-attr">class</span>=<span class="hljs-string">"flex flex-wrap items-start md:space-x-2 space-y-2 md:space-y-0 flex-col md:flex-row"</span>
+&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">dv-badge</span>&gt;</span>netural<span class="hljs-tag">&lt;/<span class="hljs-name">dv-badge</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">dv-badge</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"primary"</span>&gt;</span>primary<span class="hljs-tag">&lt;/<span class="hljs-name">dv-badge</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">dv-badge</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"secondary"</span>&gt;</span>secondary<span class="hljs-tag">&lt;/<span class="hljs-name">dv-badge</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">dv-badge</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"accent"</span>&gt;</span>accent<span class="hljs-tag">&lt;/<span class="hljs-name">dv-badge</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">dv-badge</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"ghost"</span>&gt;</span>ghost<span class="hljs-tag">&lt;/<span class="hljs-name">dv-badge</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">dv-badge</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"info"</span>&gt;</span>info<span class="hljs-tag">&lt;/<span class="hljs-name">dv-badge</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">dv-badge</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"success"</span>&gt;</span>success<span class="hljs-tag">&lt;/<span class="hljs-name">dv-badge</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">dv-badge</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"warning"</span>&gt;</span>warning<span class="hljs-tag">&lt;/<span class="hljs-name">dv-badge</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">dv-badge</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"error"</span>&gt;</span>error<span class="hljs-tag">&lt;/<span class="hljs-name">dv-badge</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+                    <!--]-->
+                  </div>
+                  <!--]--><!--]-->
+                </div>
+                <div class="markdown-body"><p>badge size</p></div>
+                <div class="dv-playground py-2" data-v-03294aad="">
+                  <!--[-->
+                  <div class="dv-tabs tabs">
+                    <!--[--><a class="dv-tab tab tab-lifted tab-md tab-active"
+                      >Preview</a
+                    ><a class="dv-tab tab tab-lifted tab-md">Code</a
+                    ><!--]-->
+                    <div class="dv-tabs__lifted-item"></div>
+                  </div>
+                  <!--[-->
+                  <div class="dv-tab-content" data-v-03294aad="">
+                    <!--[--><!--[-->
+                    <div
+                      class="
+                        flex flex-wrap
+                        items-start
+                        md:space-x-2
+                        space-y-2
+                        md:space-y-0
+                        flex-col
+                        md:flex-row
+                      "
+                    >
+                      <div class="dv-badge badge badge-lg" size="lg">
+                        <!--[-->987,654<!--]-->
+                      </div>
+                      <div class="dv-badge badge badge-md" size="md">
+                        <!--[-->987,654<!--]-->
+                      </div>
+                      <div class="dv-badge badge badge-sm" size="sm">
+                        <!--[-->987,654<!--]-->
+                      </div>
+                      <div class="dv-badge badge badge-xs" size="xs">
+                        <!--[-->987,654<!--]-->
+                      </div>
+                    </div>
+                    <!--]--><!--]-->
+                  </div>
+                  <div
+                    class="dv-tab-content dv-tab-content--hidden"
+                    data-v-03294aad=""
+                  >
+                    <!--[-->
+                    <pre
+                      data-v-03294aad=""
+                    ><code class="hljs language-html rounded-md" hljs-language="html" data-v-03294aad=""><span class="hljs-tag">&lt;<span class="hljs-name">div</span>
+  <span class="hljs-attr">class</span>=<span class="hljs-string">"flex flex-wrap items-start md:space-x-2 space-y-2 md:space-y-0 flex-col md:flex-row"</span>
+&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">dv-badge</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"lg"</span>&gt;</span>987,654<span class="hljs-tag">&lt;/<span class="hljs-name">dv-badge</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">dv-badge</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"md"</span>&gt;</span>987,654<span class="hljs-tag">&lt;/<span class="hljs-name">dv-badge</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">dv-badge</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"sm"</span>&gt;</span>987,654<span class="hljs-tag">&lt;/<span class="hljs-name">dv-badge</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">dv-badge</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"xs"</span>&gt;</span>987,654<span class="hljs-tag">&lt;/<span class="hljs-name">dv-badge</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+                    <!--]-->
+                  </div>
+                  <!--]--><!--]-->
+                </div>
+                <div class="markdown-body"><p>empty badge</p></div>
+                <div class="dv-playground py-2" data-v-03294aad="">
+                  <!--[-->
+                  <div class="dv-tabs tabs">
+                    <!--[--><a class="dv-tab tab tab-lifted tab-md tab-active"
+                      >Preview</a
+                    ><a class="dv-tab tab tab-lifted tab-md">Code</a
+                    ><!--]-->
+                    <div class="dv-tabs__lifted-item"></div>
+                  </div>
+                  <!--[-->
+                  <div class="dv-tab-content" data-v-03294aad="">
+                    <!--[--><!--[-->
+                    <div
+                      class="
+                        flex flex-wrap
+                        items-start
+                        md:space-x-2
+                        space-y-2
+                        md:space-y-0
+                        flex-col
+                        md:flex-row
+                      "
+                    >
+                      <div class="dv-badge badge badge-lg" size="lg">
+                        <!---->
+                      </div>
+                      <div class="dv-badge badge badge-md" size="md">
+                        <!---->
+                      </div>
+                      <div class="dv-badge badge badge-sm" size="sm">
+                        <!---->
+                      </div>
+                      <div class="dv-badge badge badge-xs" size="xs">
+                        <!---->
+                      </div>
+                    </div>
+                    <!--]--><!--]-->
+                  </div>
+                  <div
+                    class="dv-tab-content dv-tab-content--hidden"
+                    data-v-03294aad=""
+                  >
+                    <!--[-->
+                    <pre
+                      data-v-03294aad=""
+                    ><code class="hljs language-html rounded-md" hljs-language="html" data-v-03294aad=""><span class="hljs-tag">&lt;<span class="hljs-name">div</span>
+  <span class="hljs-attr">class</span>=<span class="hljs-string">"flex flex-wrap items-start md:space-x-2 space-y-2 md:space-y-0 flex-col md:flex-row"</span>
+&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">dv-badge</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"lg"</span> /&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">dv-badge</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"md"</span> /&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">dv-badge</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"sm"</span> /&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">dv-badge</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"xs"</span> /&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+                    <!--]-->
+                  </div>
+                  <!--]--><!--]-->
+                </div>
+                <div class="markdown-body"><p>badge variants</p></div>
+                <div class="dv-playground py-2" data-v-03294aad="">
+                  <!--[-->
+                  <div class="dv-tabs tabs">
+                    <!--[--><a class="dv-tab tab tab-lifted tab-md tab-active"
+                      >Preview</a
+                    ><a class="dv-tab tab tab-lifted tab-md">Code</a
+                    ><!--]-->
+                    <div class="dv-tabs__lifted-item"></div>
+                  </div>
+                  <!--[-->
+                  <div class="dv-tab-content" data-v-03294aad="">
+                    <!--[--><!--[-->
+                    <div
+                      class="
+                        flex flex-wrap
+                        items-start
+                        md:space-x-2
+                        space-y-2
+                        md:space-y-0
+                        flex-col
+                        md:flex-row
+                      "
+                    >
+                      <div
+                        class="dv-badge badge badge-primary badge-md"
+                        type="primary"
+                      >
+                        <!--[--><svg
+                          class="dv-icon mr-1"
+                          viewBox="0 0 24 24"
+                          focusable="false"
+                          aria-hidden="false"
+                          fill="none"
+                          stroke="currentColor"
+                          style="font-size: 14px"
+                        >
+                          <!--[-->
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12"
+                          ></path>
+                          <!--]-->
+                        </svg>
+                        primary
+                        <!--]-->
+                      </div>
+                      <div
+                        class="dv-badge badge badge-info badge-md"
+                        type="info"
+                      >
+                        <!--[--><svg
+                          class="dv-icon mr-1"
+                          viewBox="0 0 24 24"
+                          focusable="false"
+                          aria-hidden="false"
+                          fill="none"
+                          stroke="currentColor"
+                          style="font-size: 14px"
+                        >
+                          <!--[-->
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12"
+                          ></path>
+                          <!--]-->
+                        </svg>
+                        info
+                        <!--]-->
+                      </div>
+                      <div
+                        class="dv-badge badge badge-warning badge-md"
+                        type="warning"
+                      >
+                        <!--[--><svg
+                          class="dv-icon mr-1"
+                          viewBox="0 0 24 24"
+                          focusable="false"
+                          aria-hidden="false"
+                          fill="none"
+                          stroke="currentColor"
+                          style="font-size: 14px"
+                        >
+                          <!--[-->
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12"
+                          ></path>
+                          <!--]-->
+                        </svg>
+                        warning
+                        <!--]-->
+                      </div>
+                      <div
+                        class="dv-badge badge badge-error badge-md"
+                        type="error"
+                      >
+                        <!--[--><svg
+                          class="dv-icon mr-1"
+                          viewBox="0 0 24 24"
+                          focusable="false"
+                          aria-hidden="false"
+                          fill="none"
+                          stroke="currentColor"
+                          style="font-size: 14px"
+                        >
+                          <!--[-->
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12"
+                          ></path>
+                          <!--]-->
+                        </svg>
+                        error
+                        <!--]-->
+                      </div>
+                    </div>
+                    <!--]--><!--]-->
+                  </div>
+                  <div
+                    class="dv-tab-content dv-tab-content--hidden"
+                    data-v-03294aad=""
+                  >
+                    <!--[-->
+                    <pre
+                      data-v-03294aad=""
+                    ><code class="hljs language-html rounded-md" hljs-language="html" data-v-03294aad=""><span class="hljs-tag">&lt;<span class="hljs-name">div</span>
+  <span class="hljs-attr">class</span>=<span class="hljs-string">"flex flex-wrap items-start md:space-x-2 space-y-2 md:space-y-0 flex-col md:flex-row"</span>
+&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">dv-badge</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"primary"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dv-icon-close</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"14px"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mr-1"</span> /&gt;</span>
+    primary
+  <span class="hljs-tag">&lt;/<span class="hljs-name">dv-badge</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">dv-badge</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"info"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dv-icon-close</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"14px"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mr-1"</span> /&gt;</span>
+    info
+  <span class="hljs-tag">&lt;/<span class="hljs-name">dv-badge</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">dv-badge</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"warning"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dv-icon-close</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"14px"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mr-1"</span> /&gt;</span>
+    warning
+  <span class="hljs-tag">&lt;/<span class="hljs-name">dv-badge</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">dv-badge</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"error"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dv-icon-close</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"14px"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mr-1"</span> /&gt;</span>
+    error
+  <span class="hljs-tag">&lt;/<span class="hljs-name">dv-badge</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+                    <!--]-->
+                  </div>
+                  <!--]--><!--]-->
+                </div>
+                <div class="markdown-body"><p>badge outline</p></div>
+                <div class="dv-playground py-2" data-v-03294aad="">
+                  <!--[-->
+                  <div class="dv-tabs tabs">
+                    <!--[--><a class="dv-tab tab tab-lifted tab-md tab-active"
+                      >Preview</a
+                    ><a class="dv-tab tab tab-lifted tab-md">Code</a
+                    ><!--]-->
+                    <div class="dv-tabs__lifted-item"></div>
+                  </div>
+                  <!--[-->
+                  <div class="dv-tab-content" data-v-03294aad="">
+                    <!--[--><!--[-->
+                    <div
+                      class="
+                        flex flex-wrap
+                        items-start
+                        md:space-x-2
+                        space-y-2
+                        md:space-y-0
+                        flex-col
+                        md:flex-row
+                      "
+                    >
+                      <div class="dv-badge badge badge-md badge-outline">
+                        <!--[-->netural<!--]-->
+                      </div>
+                      <div
+                        class="
+                          dv-badge
+                          badge badge-primary badge-md badge-outline
+                        "
+                        type="primary"
+                      >
+                        <!--[-->primary<!--]-->
+                      </div>
+                      <div
+                        class="
+                          dv-badge
+                          badge badge-secondary badge-md badge-outline
+                        "
+                        type="secondary"
+                      >
+                        <!--[-->secondary<!--]-->
+                      </div>
+                      <div
+                        class="
+                          dv-badge
+                          badge badge-accent badge-md badge-outline
+                        "
+                        type="accent"
+                      >
+                        <!--[-->accent<!--]-->
+                      </div>
+                    </div>
+                    <!--]--><!--]-->
+                  </div>
+                  <div
+                    class="dv-tab-content dv-tab-content--hidden"
+                    data-v-03294aad=""
+                  >
+                    <!--[-->
+                    <pre
+                      data-v-03294aad=""
+                    ><code class="hljs language-html rounded-md" hljs-language="html" data-v-03294aad=""><span class="hljs-tag">&lt;<span class="hljs-name">div</span>
+  <span class="hljs-attr">class</span>=<span class="hljs-string">"flex flex-wrap items-start md:space-x-2 space-y-2 md:space-y-0 flex-col md:flex-row"</span>
+&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">dv-badge</span> <span class="hljs-attr">outline</span>&gt;</span>netural<span class="hljs-tag">&lt;/<span class="hljs-name">dv-badge</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">dv-badge</span> <span class="hljs-attr">outline</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"primary"</span>&gt;</span>primary<span class="hljs-tag">&lt;/<span class="hljs-name">dv-badge</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">dv-badge</span> <span class="hljs-attr">outline</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"secondary"</span>&gt;</span>secondary<span class="hljs-tag">&lt;/<span class="hljs-name">dv-badge</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">dv-badge</span> <span class="hljs-attr">outline</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"accent"</span>&gt;</span>accent<span class="hljs-tag">&lt;/<span class="hljs-name">dv-badge</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+                    <!--]-->
+                  </div>
+                  <!--]--><!--]-->
+                </div>
+                <div class="markdown-body"><p>badge in text</p></div>
+                <div class="dv-playground py-2" data-v-03294aad="">
+                  <!--[-->
+                  <div class="dv-tabs tabs">
+                    <!--[--><a class="dv-tab tab tab-lifted tab-md tab-active"
+                      >Preview</a
+                    ><a class="dv-tab tab tab-lifted tab-md">Code</a
+                    ><!--]-->
+                    <div class="dv-tabs__lifted-item"></div>
+                  </div>
+                  <!--[-->
+                  <div class="dv-tab-content" data-v-03294aad="">
+                    <!--[--><!--[-->
+                    <div>
+                      <h2 class="mb-2 text-2xl">
+                        Heading
+                        <div
+                          class="dv-badge badge badge-lg badge-outline"
+                          size="lg"
+                        >
+                          <!--[-->New<!--]-->
+                        </div>
+                      </h2>
+                      <h2 class="mb-2 text-xl">
+                        Heading
+                        <div
+                          class="dv-badge badge badge-md badge-outline"
+                          size="md"
+                        >
+                          <!--[-->New<!--]-->
+                        </div>
+                      </h2>
+                      <h2 class="mb-2 text-lg">
+                        Heading
+                        <div
+                          class="dv-badge badge badge-md badge-outline"
+                          size="md"
+                        >
+                          <!--[-->New<!--]-->
+                        </div>
+                      </h2>
+                      <h2 class="mb-2 text-md">
+                        Heading
+                        <div
+                          class="dv-badge badge badge-sm badge-outline"
+                          size="sm"
+                        >
+                          <!--[-->New<!--]-->
+                        </div>
+                      </h2>
+                      <h2 class="text-sm">
+                        Heading
+                        <div
+                          class="dv-badge badge badge-sm badge-outline"
+                          size="sm"
+                        >
+                          <!--[-->New<!--]-->
+                        </div>
+                      </h2>
+                    </div>
+                    <!--]--><!--]-->
+                  </div>
+                  <div
+                    class="dv-tab-content dv-tab-content--hidden"
+                    data-v-03294aad=""
+                  >
+                    <!--[-->
+                    <pre
+                      data-v-03294aad=""
+                    ><code class="hljs language-html rounded-md" hljs-language="html" data-v-03294aad=""><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mb-2 text-2xl"</span>&gt;</span>
+    Heading
+    <span class="hljs-tag">&lt;<span class="hljs-name">dv-badge</span> <span class="hljs-attr">outline</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"lg"</span>&gt;</span>New<span class="hljs-tag">&lt;/<span class="hljs-name">dv-badge</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mb-2 text-xl"</span>&gt;</span>
+    Heading
+    <span class="hljs-tag">&lt;<span class="hljs-name">dv-badge</span> <span class="hljs-attr">outline</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"md"</span>&gt;</span>New<span class="hljs-tag">&lt;/<span class="hljs-name">dv-badge</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mb-2 text-lg"</span>&gt;</span>
+    Heading
+    <span class="hljs-tag">&lt;<span class="hljs-name">dv-badge</span> <span class="hljs-attr">outline</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"md"</span>&gt;</span>New<span class="hljs-tag">&lt;/<span class="hljs-name">dv-badge</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mb-2 text-md"</span>&gt;</span>
+    Heading
+    <span class="hljs-tag">&lt;<span class="hljs-name">dv-badge</span> <span class="hljs-attr">outline</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"sm"</span>&gt;</span>New<span class="hljs-tag">&lt;/<span class="hljs-name">dv-badge</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"text-sm"</span>&gt;</span>
+    Heading
+    <span class="hljs-tag">&lt;<span class="hljs-name">dv-badge</span> <span class="hljs-attr">outline</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"sm"</span>&gt;</span>New<span class="hljs-tag">&lt;/<span class="hljs-name">dv-badge</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+                    <!--]-->
+                  </div>
+                  <!--]--><!--]-->
+                </div>
+                <div class="markdown-body"><p>badge in button</p></div>
+                <div class="dv-playground py-2" data-v-03294aad="">
+                  <!--[-->
+                  <div class="dv-tabs tabs">
+                    <!--[--><a class="dv-tab tab tab-lifted tab-md tab-active"
+                      >Preview</a
+                    ><a class="dv-tab tab tab-lifted tab-md">Code</a
+                    ><!--]-->
+                    <div class="dv-tabs__lifted-item"></div>
+                  </div>
+                  <!--[-->
+                  <div class="dv-tab-content" data-v-03294aad="">
+                    <!--[--><!--[-->
+                    <div
+                      class="
+                        flex flex-wrap
+                        items-start
+                        md:space-x-2
+                        space-x-0 space-y-2
+                        md:space-y-0
+                        flex-col
+                        md:flex-row
+                      "
+                    >
+                      <button class="dv-btn btn btn-md btn-default">
+                        <!--[-->
+                        Version 2.7.0
+                        <div class="dv-badge badge badge-md ml-2">
+                          <!--[-->new<!--]-->
+                        </div>
+                        <!--]--></button
+                      ><button
+                        class="dv-btn btn btn-primary btn-md btn-default"
+                        type="primary"
+                      >
+                        <!--[-->
+                        Inbox
+                        <div class="dv-badge badge badge-md badge-outline ml-2">
+                          <!--[-->3<!--]-->
+                        </div>
+                        <!--]--></button
+                      ><button
+                        class="dv-btn btn btn-secondary btn-md btn-default"
+                        type="secondary"
+                      >
+                        <!--[-->
+                        Notifications
+                        <div class="dv-badge badge badge-md badge-outline ml-2">
+                          <!--[-->+999<!--]-->
+                        </div>
+                        <!--]--></button
+                      ><button
+                        class="dv-btn btn btn-accent btn-md btn-default"
+                        type="accent"
+                      >
+                        <!--[-->
+                        Accent
+                        <div class="dv-badge badge badge-md badge-outline ml-2">
+                          <!--[-->new<!--]-->
+                        </div>
+                        <!--]-->
+                      </button>
+                    </div>
+                    <!--]--><!--]-->
+                  </div>
+                  <div
+                    class="dv-tab-content dv-tab-content--hidden"
+                    data-v-03294aad=""
+                  >
+                    <!--[-->
+                    <pre
+                      data-v-03294aad=""
+                    ><code class="hljs language-html rounded-md" hljs-language="html" data-v-03294aad=""><span class="hljs-tag">&lt;<span class="hljs-name">div</span>
+  <span class="hljs-attr">class</span>=<span class="hljs-string">"flex flex-wrap items-start md:space-x-2 space-x-0 space-y-2 md:space-y-0 flex-col md:flex-row"</span>
+&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">dv-button</span>&gt;</span>
+    Version 2.7.0
+    <span class="hljs-tag">&lt;<span class="hljs-name">dv-badge</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"ml-2"</span>&gt;</span>new<span class="hljs-tag">&lt;/<span class="hljs-name">dv-badge</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">dv-button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">dv-button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"primary"</span>&gt;</span>
+    Inbox
+    <span class="hljs-tag">&lt;<span class="hljs-name">dv-badge</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"ml-2"</span> <span class="hljs-attr">outline</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-name">dv-badge</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">dv-button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">dv-button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"secondary"</span>&gt;</span>
+    Notifications
+    <span class="hljs-tag">&lt;<span class="hljs-name">dv-badge</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"ml-2"</span> <span class="hljs-attr">outline</span>&gt;</span>+999<span class="hljs-tag">&lt;/<span class="hljs-name">dv-badge</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">dv-button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">dv-button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"accent"</span>&gt;</span>
+    Accent
+    <span class="hljs-tag">&lt;<span class="hljs-name">dv-badge</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"ml-2"</span> <span class="hljs-attr">outline</span>&gt;</span>new<span class="hljs-tag">&lt;/<span class="hljs-name">dv-badge</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">dv-button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+                    <!--]-->
+                  </div>
+                  <!--]--><!--]-->
+                </div>
+                <div class="markdown-body">
+                  <h2>Badge</h2>
+                  <h3>Attributes</h3>
+                  <div data-v-5c5a3078="">
+                    <div
+                      class="dv-table-wrap dv-markdowntable w-full"
+                      data-v-5c5a3078=""
+                    >
+                      <table class="dv-table table table-zebra table-compact">
+                        <colgroup>
+                          <!--[-->
+                          <col style="width: " />
+                          <col style="width: " />
+                          <col style="width: " />
+                          <col style="width: " />
+                          <!--]-->
+                        </colgroup>
+                        <thead>
+                          <tr>
+                            <!--[-->
+                            <th style="position: relative">name</th>
+                            <th style="position: relative">description</th>
+                            <th style="position: relative">type</th>
+                            <th style="position: relative">default</th>
+                            <!--]-->
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <!--[-->
+                          <tr class="hover">
+                            <!--[-->
+                            <td style="position: relative">type</td>
+                            <td style="position: relative">color type</td>
+                            <td style="position: relative">
+                              netural, primary, secondary, accent, info,
+                              success, warning, error, ghost, link, glass
+                            </td>
+                            <td style="position: relative">netural</td>
+                            <!--]-->
+                          </tr>
+                          <tr class="hover">
+                            <!--[-->
+                            <td style="position: relative">size</td>
+                            <td style="position: relative">size</td>
+                            <td style="position: relative">ISize</td>
+                            <td style="position: relative">md</td>
+                            <!--]-->
+                          </tr>
+                          <tr class="hover">
+                            <!--[-->
+                            <td style="position: relative">outline</td>
+                            <td style="position: relative">
+                              transparent badge with [colorful] border
+                            </td>
+                            <td style="position: relative">boolean</td>
+                            <td style="position: relative">false</td>
+                            <!--]-->
+                          </tr>
+                          <!--]-->
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <!--]-->
+              </div>
+            </div>
+            <!--]-->
+          </div>
+          <div class="drawer-side">
+            <div class="drawer-overlay"></div>
+            <!--[-->
+            <div
+              class="overflow-y-auto w-80 bg-white border-r border-gray-200"
+              data-v-50a6b668=""
+            >
+              <ul class="menu compact rounded-box p-4" data-v-50a6b668="">
+                <!--[-->
+                <li class="menu-title" data-v-50a6b668="">
+                  <span class="">Components</span>
+                </li>
+                <!--[-->
+                <li class="capitalize" childwrapper="false">
+                  <!--[--><a href="/daisyui-vue/components/alert" class=""
+                    >alert</a
+                  ><!--]-->
+                </li>
+                <li class="capitalize" childwrapper="false">
+                  <!--[--><a href="/daisyui-vue/components/artboard" class=""
+                    >artboard</a
+                  ><!--]-->
+                </li>
+                <li class="capitalize" childwrapper="false">
+                  <!--[--><a
+                    aria-current="page"
+                    href="/daisyui-vue/components/badge"
+                    class="active router-link-exact-active"
+                    >badge</a
+                  ><!--]-->
+                </li>
+                <li class="capitalize" childwrapper="false">
+                  <!--[--><a href="/daisyui-vue/components/button" class=""
+                    >button</a
+                  ><!--]-->
+                </li>
+                <li class="capitalize" childwrapper="false">
+                  <!--[--><a href="/daisyui-vue/components/drawer" class=""
+                    >drawer</a
+                  ><!--]-->
+                </li>
+                <li class="capitalize" childwrapper="false">
+                  <!--[--><a href="/daisyui-vue/components/icons" class=""
+                    >icons</a
+                  ><!--]-->
+                </li>
+                <li class="capitalize" childwrapper="false">
+                  <!--[--><a href="/daisyui-vue/components/menu" class=""
+                    >menu</a
+                  ><!--]-->
+                </li>
+                <li class="capitalize" childwrapper="false">
+                  <!--[--><a href="/daisyui-vue/components/tab" class="">tab</a
+                  ><!--]-->
+                </li>
+                <li class="capitalize" childwrapper="false">
+                  <!--[--><a href="/daisyui-vue/components/table" class=""
+                    >table</a
+                  ><!--]-->
+                </li>
+                <li class="capitalize" childwrapper="false">
+                  <!--[--><a href="/daisyui-vue/components/tooltip" class=""
+                    >tooltip</a
+                  ><!--]-->
+                </li>
+                <!--]--><!--]-->
+              </ul>
+            </div>
+            <!--]-->
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
