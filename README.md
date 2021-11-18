@@ -14,8 +14,8 @@
 - [x] alert
 - [x] artboard
 - [ ] avatar
-- [ ] badge
-- [ ] breadcrumbs
+- [x] badge
+- [x] breadcrumb
 - [x] button
 - [x] button-group
 - [ ] card

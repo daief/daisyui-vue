@@ -1,6 +1,7 @@
 export * from './alert';
 export * from './artboard';
 export * from './badge';
+export * from './breadcrumb';
 export * from './button';
 export * from './drawer';
 export * from './menu';

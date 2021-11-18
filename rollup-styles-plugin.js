@@ -8,9 +8,20 @@ const createPlugin = () => {
   const tailwindConfig = require(path.resolve(__dirname, 'tailwind.config.js'));
   tailwindConfig.purge.content = [];
   const process = postcss([
-    require('autoprefixer'),
     require('tailwindcss')({
       ...tailwindConfig,
+    }),
+    require('postcss-nested')({
+      bubble: ['screen'],
+    }),
+    require('autoprefixer'),
+    require('cssnano')({
+      preset: [
+        'default',
+        {
+          mergeRules: false,
+        },
+      ],
     }),
   ]);
 
@@ -21,11 +32,17 @@ const createPlugin = () => {
     async transform(code, id) {
       if (!/\.(le|c)ss$/.test(id)) return null;
 
-      // https://lesscss.org/usage/#programmatic-usage
-      const lessResult = await less.render(code, {
-        sourceMap: { sourceMapFileInline: true },
-      });
-      const postcssResult = await process.process(lessResult.css, {
+      let cssCode = code;
+
+      if (/\.less/i.test(id)) {
+        // https://lesscss.org/usage/#programmatic-usage
+        const lessResult = await less.render(code, {
+          sourceMap: { sourceMapFileInline: true },
+        });
+        cssCode = lessResult.css;
+      }
+
+      const postcssResult = await process.process(cssCode, {
         map: false,
       });
 

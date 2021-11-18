@@ -23,6 +23,7 @@ importers:
       autoprefixer: ^10.3.4
       babel-plugin-macros: ^3.1.0
       babel-plugin-twin: ^1.0.2
+      cssnano: ^5.0.10
       daisyui: ^1.14.0
       download-git-repo: ^3.0.2
       fs-extra: ^10.0.0
@@ -30,6 +31,7 @@ importers:
       less: ^4.1.1
       node-html-parser: ^4.1.5
       postcss: ^8.0.0
+      postcss-nested: ^5.0.6
       prettier: ^2.4.0
       rollup: ^2.56.3
       rollup-plugin-cleanup: ^3.2.1
@@ -58,6 +60,7 @@ importers:
       autoprefixer: registry.npmmirror.com/autoprefixer/10.3.7_postcss@8.3.11
       babel-plugin-macros: registry.nlark.com/babel-plugin-macros/3.1.0
       babel-plugin-twin: registry.npmmirror.com/babel-plugin-twin/1.0.2
+      cssnano: registry.npmmirror.com/cssnano/5.0.10_postcss@8.3.11
       daisyui: registry.npmmirror.com/daisyui/1.14.6
       download-git-repo: registry.nlark.com/download-git-repo/3.0.2
       fs-extra: registry.nlark.com/fs-extra/10.0.0
@@ -65,6 +68,7 @@ importers:
       less: registry.npmmirror.com/less/4.1.2
       node-html-parser: registry.npmmirror.com/node-html-parser/4.1.5
       postcss: registry.npmmirror.com/postcss/8.3.11
+      postcss-nested: registry.nlark.com/postcss-nested/5.0.6_postcss@8.3.11
       prettier: registry.nlark.com/prettier/2.4.1
       rollup: registry.npmmirror.com/rollup/2.58.3
       rollup-plugin-cleanup: registry.npmmirror.com/rollup-plugin-cleanup/3.2.1_rollup@2.58.3
@@ -191,6 +195,8 @@ packages:
       '@babel/helper-optimise-call-expression': registry.nlark.com/@babel/helper-optimise-call-expression/7.15.4
       '@babel/helper-replace-supers': registry.nlark.com/@babel/helper-replace-supers/7.15.4
       '@babel/helper-split-export-declaration': registry.nlark.com/@babel/helper-split-export-declaration/7.15.4
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   registry.nlark.com/@babel/helper-create-regexp-features-plugin/7.14.5_@babel+core@7.15.8:
@@ -321,6 +327,8 @@ packages:
       '@babel/helper-optimise-call-expression': registry.nlark.com/@babel/helper-optimise-call-expression/7.15.4
       '@babel/traverse': registry.nlark.com/@babel/traverse/7.15.4
       '@babel/types': registry.nlark.com/@babel/types/7.15.6
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   registry.nlark.com/@babel/helper-simple-access/7.15.4:
@@ -384,6 +392,8 @@ packages:
       '@babel/template': registry.nlark.com/@babel/template/7.15.4
       '@babel/traverse': registry.nlark.com/@babel/traverse/7.15.4
       '@babel/types': registry.nlark.com/@babel/types/7.15.6
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   registry.nlark.com/@babel/highlight/7.14.5:
@@ -1262,6 +1272,8 @@ packages:
       '@babel/helper-plugin-utils': registry.nlark.com/@babel/helper-plugin-utils/7.14.5
       '@babel/helper-validator-option': registry.nlark.com/@babel/helper-validator-option/7.14.5
       '@babel/plugin-transform-typescript': registry.npmmirror.com/@babel/plugin-transform-typescript/7.15.8_@babel+core@7.15.8
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   registry.nlark.com/@babel/runtime/7.15.4:
@@ -1297,6 +1309,8 @@ packages:
       '@babel/types': registry.nlark.com/@babel/types/7.15.6
       debug: registry.nlark.com/debug/4.3.2
       globals: registry.npmmirror.com/globals/11.12.0
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   registry.nlark.com/@babel/types/7.15.6:
@@ -1993,7 +2007,7 @@ packages:
       normalize-path: registry.nlark.com/normalize-path/3.0.0
       readdirp: registry.nlark.com/readdirp/3.6.0
     optionalDependencies:
-      fsevents: registry.nlark.com/fsevents/2.3.2
+      fsevents: registry.npmmirror.com/fsevents/2.3.2
 
   registry.nlark.com/cliui/7.0.4:
     resolution: {integrity: sha1-oCZe5lVHb8gHrqnfPfjfd4OAi08=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/cliui/download/cliui-7.0.4.tgz}
@@ -2148,7 +2162,7 @@ packages:
       import-fresh: registry.nlark.com/import-fresh/3.3.0
       parse-json: registry.nlark.com/parse-json/5.2.0
       path-type: registry.nlark.com/path-type/4.0.0
-      yaml: registry.nlark.com/yaml/1.10.2
+      yaml: registry.npmmirror.com/yaml/1.10.2
 
   registry.nlark.com/cosmiconfig/7.0.1:
     resolution: {integrity: sha1-cU11ZSLKzoZ4Z8y0R0xdAbuuXW0=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/cosmiconfig/download/cosmiconfig-7.0.1.tgz}
@@ -2247,75 +2261,6 @@ packages:
     version: 3.0.0
     engines: {node: '>=4'}
     hasBin: true
-
-  registry.nlark.com/cssnano-preset-default/5.1.4_postcss@8.3.11:
-    resolution: {integrity: sha1-NZlDvwDFyOBUifEt0l8wBvLBy9I=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/cssnano-preset-default/download/cssnano-preset-default-5.1.4.tgz}
-    id: registry.nlark.com/cssnano-preset-default/5.1.4
-    name: cssnano-preset-default
-    version: 5.1.4
-    engines: {node: ^10 || ^12 || >=14.0}
-    peerDependencies:
-      postcss: ^8.2.15
-    dependencies:
-      css-declaration-sorter: registry.nlark.com/css-declaration-sorter/6.1.3_postcss@8.3.11
-      cssnano-utils: registry.nlark.com/cssnano-utils/2.0.1_postcss@8.3.11
-      postcss: registry.npmmirror.com/postcss/8.3.11
-      postcss-calc: registry.nlark.com/postcss-calc/8.0.0_postcss@8.3.11
-      postcss-colormin: registry.nlark.com/postcss-colormin/5.2.0_postcss@8.3.11
-      postcss-convert-values: registry.nlark.com/postcss-convert-values/5.0.1_postcss@8.3.11
-      postcss-discard-comments: registry.nlark.com/postcss-discard-comments/5.0.1_postcss@8.3.11
-      postcss-discard-duplicates: registry.nlark.com/postcss-discard-duplicates/5.0.1_postcss@8.3.11
-      postcss-discard-empty: registry.nlark.com/postcss-discard-empty/5.0.1_postcss@8.3.11
-      postcss-discard-overridden: registry.nlark.com/postcss-discard-overridden/5.0.1_postcss@8.3.11
-      postcss-merge-longhand: registry.nlark.com/postcss-merge-longhand/5.0.2_postcss@8.3.11
-      postcss-merge-rules: registry.nlark.com/postcss-merge-rules/5.0.2_postcss@8.3.11
-      postcss-minify-font-values: registry.nlark.com/postcss-minify-font-values/5.0.1_postcss@8.3.11
-      postcss-minify-gradients: registry.nlark.com/postcss-minify-gradients/5.0.2_postcss@8.3.11
-      postcss-minify-params: registry.nlark.com/postcss-minify-params/5.0.1_postcss@8.3.11
-      postcss-minify-selectors: registry.nlark.com/postcss-minify-selectors/5.1.0_postcss@8.3.11
-      postcss-normalize-charset: registry.nlark.com/postcss-normalize-charset/5.0.1_postcss@8.3.11
-      postcss-normalize-display-values: registry.nlark.com/postcss-normalize-display-values/5.0.1_postcss@8.3.11
-      postcss-normalize-positions: registry.nlark.com/postcss-normalize-positions/5.0.1_postcss@8.3.11
-      postcss-normalize-repeat-style: registry.nlark.com/postcss-normalize-repeat-style/5.0.1_postcss@8.3.11
-      postcss-normalize-string: registry.nlark.com/postcss-normalize-string/5.0.1_postcss@8.3.11
-      postcss-normalize-timing-functions: registry.nlark.com/postcss-normalize-timing-functions/5.0.1_postcss@8.3.11
-      postcss-normalize-unicode: registry.nlark.com/postcss-normalize-unicode/5.0.1_postcss@8.3.11
-      postcss-normalize-url: registry.nlark.com/postcss-normalize-url/5.0.2_postcss@8.3.11
-      postcss-normalize-whitespace: registry.nlark.com/postcss-normalize-whitespace/5.0.1_postcss@8.3.11
-      postcss-ordered-values: registry.nlark.com/postcss-ordered-values/5.0.2_postcss@8.3.11
-      postcss-reduce-initial: registry.nlark.com/postcss-reduce-initial/5.0.1_postcss@8.3.11
-      postcss-reduce-transforms: registry.nlark.com/postcss-reduce-transforms/5.0.1_postcss@8.3.11
-      postcss-svgo: registry.nlark.com/postcss-svgo/5.0.2_postcss@8.3.11
-      postcss-unique-selectors: registry.nlark.com/postcss-unique-selectors/5.0.1_postcss@8.3.11
-    dev: true
-
-  registry.nlark.com/cssnano-utils/2.0.1_postcss@8.3.11:
-    resolution: {integrity: sha1-hmCqKzfthp0uLyKRgZapqLZJjOI=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/cssnano-utils/download/cssnano-utils-2.0.1.tgz}
-    id: registry.nlark.com/cssnano-utils/2.0.1
-    name: cssnano-utils
-    version: 2.0.1
-    engines: {node: ^10 || ^12 || >=14.0}
-    peerDependencies:
-      postcss: ^8.2.15
-    dependencies:
-      postcss: registry.npmmirror.com/postcss/8.3.11
-    dev: true
-
-  registry.nlark.com/cssnano/5.0.8_postcss@8.3.11:
-    resolution: {integrity: sha1-Oa0WYlaYD8xk+qCMm7GLtXiez6k=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/cssnano/download/cssnano-5.0.8.tgz}
-    id: registry.nlark.com/cssnano/5.0.8
-    name: cssnano
-    version: 5.0.8
-    engines: {node: ^10 || ^12 || >=14.0}
-    peerDependencies:
-      postcss: ^8.2.15
-    dependencies:
-      cssnano-preset-default: registry.nlark.com/cssnano-preset-default/5.1.4_postcss@8.3.11
-      is-resolvable: registry.nlark.com/is-resolvable/1.1.0
-      lilconfig: registry.nlark.com/lilconfig/2.0.3
-      postcss: registry.npmmirror.com/postcss/8.3.11
-      yaml: registry.nlark.com/yaml/1.10.2
-    dev: true
 
   registry.nlark.com/csso/4.2.0:
     resolution: {integrity: sha1-6jpWE0bo3J9UbW/r7dUBh884lSk=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/csso/download/csso-4.2.0.tgz}
@@ -2460,7 +2405,7 @@ packages:
       decompress-tarbz2: registry.nlark.com/decompress-tarbz2/4.1.1
       decompress-targz: registry.nlark.com/decompress-targz/4.1.1
       decompress-unzip: registry.nlark.com/decompress-unzip/4.0.1
-      graceful-fs: registry.nlark.com/graceful-fs/4.2.8
+      graceful-fs: registry.npmmirror.com/graceful-fs/4.2.8
       make-dir: registry.nlark.com/make-dir/1.3.0
       pify: registry.nlark.com/pify/2.3.0
       strip-dirs: registry.nlark.com/strip-dirs/2.1.0
@@ -2953,7 +2898,7 @@ packages:
     version: 8.1.0
     engines: {node: '>=6 <7 || >=8'}
     dependencies:
-      graceful-fs: registry.nlark.com/graceful-fs/4.2.8
+      graceful-fs: registry.npmmirror.com/graceful-fs/4.2.8
       jsonfile: registry.nlark.com/jsonfile/4.0.0
       universalify: registry.nlark.com/universalify/0.1.2
     dev: true
@@ -2987,6 +2932,7 @@ packages:
     version: 2.3.2
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     requiresBuild: true
+    dev: true
     optional: true
 
   registry.nlark.com/function-bind/1.1.1:
@@ -3722,7 +3668,7 @@ packages:
     name: jsonfile
     version: 4.0.0
     optionalDependencies:
-      graceful-fs: registry.nlark.com/graceful-fs/4.2.8
+      graceful-fs: registry.npmmirror.com/graceful-fs/4.2.8
     dev: true
 
   registry.nlark.com/jsonfile/6.1.0:
@@ -3732,7 +3678,7 @@ packages:
     dependencies:
       universalify: registry.nlark.com/universalify/2.0.0
     optionalDependencies:
-      graceful-fs: registry.nlark.com/graceful-fs/4.2.8
+      graceful-fs: registry.npmmirror.com/graceful-fs/4.2.8
 
   registry.nlark.com/jsonpointer/4.1.0:
     resolution: {integrity: sha1-UB+4mYaiOJdlugnmBTKZzrTywsw=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/jsonpointer/download/jsonpointer-4.1.0.tgz}
@@ -3772,12 +3718,6 @@ packages:
       prelude-ls: registry.nlark.com/prelude-ls/1.1.2
       type-check: registry.nlark.com/type-check/0.3.2
     dev: true
-
-  registry.nlark.com/lilconfig/2.0.3:
-    resolution: {integrity: sha1-aPMAXpIdr70qKvtIN5mGqm0lef0=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/lilconfig/download/lilconfig-2.0.3.tgz}
-    name: lilconfig
-    version: 2.0.3
-    engines: {node: '>=10'}
 
   registry.nlark.com/lines-and-columns/1.1.6:
     resolution: {integrity: sha1-HADHQ7QzzQpOgHWPe2SldEDZ/wA=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/lines-and-columns/download/lines-and-columns-1.1.6.tgz}
@@ -3947,16 +3887,6 @@ packages:
     version: 1.50.0
     engines: {node: '>= 0.6'}
     dev: true
-
-  registry.nlark.com/mime/1.6.0:
-    resolution: {integrity: sha1-Ms2eXGRVO9WNGaVor0Uqz/BJgbE=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/mime/download/mime-1.6.0.tgz}
-    name: mime
-    version: 1.6.0
-    engines: {node: '>=4'}
-    hasBin: true
-    requiresBuild: true
-    dev: true
-    optional: true
 
   registry.nlark.com/mimic-response/1.0.1:
     resolution: {integrity: sha1-SSNTiHju9CBjy4o+OweYeBSHqxs=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/mimic-response/download/mimic-response-1.0.1.tgz}
@@ -4336,35 +4266,6 @@ packages:
       postcss-value-parser: registry.nlark.com/postcss-value-parser/4.1.0
     dev: true
 
-  registry.nlark.com/postcss-colormin/5.2.0_postcss@8.3.11:
-    resolution: {integrity: sha1-K2ILiMD/GWg/M0n0z54k69r7LIg=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/postcss-colormin/download/postcss-colormin-5.2.0.tgz}
-    id: registry.nlark.com/postcss-colormin/5.2.0
-    name: postcss-colormin
-    version: 5.2.0
-    engines: {node: ^10 || ^12 || >=14.0}
-    peerDependencies:
-      postcss: ^8.2.15
-    dependencies:
-      browserslist: registry.npmmirror.com/browserslist/4.17.5
-      caniuse-api: registry.nlark.com/caniuse-api/3.0.0
-      colord: registry.npmmirror.com/colord/2.9.1
-      postcss: registry.npmmirror.com/postcss/8.3.11
-      postcss-value-parser: registry.nlark.com/postcss-value-parser/4.1.0
-    dev: true
-
-  registry.nlark.com/postcss-convert-values/5.0.1_postcss@8.3.11:
-    resolution: {integrity: sha1-TsGdYBZTTjDjEC/fQU51M5hkUjI=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/postcss-convert-values/download/postcss-convert-values-5.0.1.tgz}
-    id: registry.nlark.com/postcss-convert-values/5.0.1
-    name: postcss-convert-values
-    version: 5.0.1
-    engines: {node: ^10 || ^12 || >=14.0}
-    peerDependencies:
-      postcss: ^8.2.15
-    dependencies:
-      postcss: registry.npmmirror.com/postcss/8.3.11
-      postcss-value-parser: registry.nlark.com/postcss-value-parser/4.1.0
-    dev: true
-
   registry.nlark.com/postcss-discard-comments/5.0.1_postcss@8.3.11:
     resolution: {integrity: sha1-nq5LdHz3YNMfJEfCfwYZ1XGJAf4=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/postcss-discard-comments/download/postcss-discard-comments-5.0.1.tgz}
     id: registry.nlark.com/postcss-discard-comments/5.0.1
@@ -4434,23 +4335,8 @@ packages:
         optional: true
     dependencies:
       import-cwd: registry.nlark.com/import-cwd/3.0.0
-      lilconfig: registry.nlark.com/lilconfig/2.0.3
-      yaml: registry.nlark.com/yaml/1.10.2
-
-  registry.nlark.com/postcss-merge-longhand/5.0.2_postcss@8.3.11:
-    resolution: {integrity: sha1-J3raUdmnlY6O+M8mMQPJOEsyKkE=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/postcss-merge-longhand/download/postcss-merge-longhand-5.0.2.tgz}
-    id: registry.nlark.com/postcss-merge-longhand/5.0.2
-    name: postcss-merge-longhand
-    version: 5.0.2
-    engines: {node: ^10 || ^12 || >=14.0}
-    peerDependencies:
-      postcss: ^8.2.15
-    dependencies:
-      css-color-names: registry.nlark.com/css-color-names/1.0.1
-      postcss: registry.npmmirror.com/postcss/8.3.11
-      postcss-value-parser: registry.nlark.com/postcss-value-parser/4.1.0
-      stylehacks: registry.nlark.com/stylehacks/5.0.1_postcss@8.3.11
-    dev: true
+      lilconfig: registry.npmmirror.com/lilconfig/2.0.3
+      yaml: registry.npmmirror.com/yaml/1.10.2
 
   registry.nlark.com/postcss-merge-rules/5.0.2_postcss@8.3.11:
     resolution: {integrity: sha1-1uTWUBi629t9zHicTzm5QTBdQQo=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/postcss-merge-rules/download/postcss-merge-rules-5.0.2.tgz}
@@ -4463,7 +4349,7 @@ packages:
     dependencies:
       browserslist: registry.npmmirror.com/browserslist/4.17.5
       caniuse-api: registry.nlark.com/caniuse-api/3.0.0
-      cssnano-utils: registry.nlark.com/cssnano-utils/2.0.1_postcss@8.3.11
+      cssnano-utils: registry.npmmirror.com/cssnano-utils/2.0.1_postcss@8.3.11
       postcss: registry.npmmirror.com/postcss/8.3.11
       postcss-selector-parser: registry.nlark.com/postcss-selector-parser/6.0.6
       vendors: registry.nlark.com/vendors/1.0.4
@@ -4482,21 +4368,6 @@ packages:
       postcss-value-parser: registry.nlark.com/postcss-value-parser/4.1.0
     dev: true
 
-  registry.nlark.com/postcss-minify-gradients/5.0.2_postcss@8.3.11:
-    resolution: {integrity: sha1-fBdcEI8GpWKZJdaYs8TPe9OGTuU=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/postcss-minify-gradients/download/postcss-minify-gradients-5.0.2.tgz}
-    id: registry.nlark.com/postcss-minify-gradients/5.0.2
-    name: postcss-minify-gradients
-    version: 5.0.2
-    engines: {node: ^10 || ^12 || >=14.0}
-    peerDependencies:
-      postcss: ^8.2.15
-    dependencies:
-      colord: registry.npmmirror.com/colord/2.9.1
-      cssnano-utils: registry.nlark.com/cssnano-utils/2.0.1_postcss@8.3.11
-      postcss: registry.npmmirror.com/postcss/8.3.11
-      postcss-value-parser: registry.nlark.com/postcss-value-parser/4.1.0
-    dev: true
-
   registry.nlark.com/postcss-minify-params/5.0.1_postcss@8.3.11:
     resolution: {integrity: sha1-NxFTuhZLnYVihC/c2SnJir2eW2w=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/postcss-minify-params/download/postcss-minify-params-5.0.1.tgz}
     id: registry.nlark.com/postcss-minify-params/5.0.1
@@ -4508,7 +4379,7 @@ packages:
     dependencies:
       alphanum-sort: registry.nlark.com/alphanum-sort/1.0.2
       browserslist: registry.npmmirror.com/browserslist/4.17.5
-      cssnano-utils: registry.nlark.com/cssnano-utils/2.0.1_postcss@8.3.11
+      cssnano-utils: registry.npmmirror.com/cssnano-utils/2.0.1_postcss@8.3.11
       postcss: registry.npmmirror.com/postcss/8.3.11
       postcss-value-parser: registry.nlark.com/postcss-value-parser/4.1.0
       uniqs: registry.nlark.com/uniqs/2.0.0
@@ -4633,7 +4504,7 @@ packages:
     peerDependencies:
       postcss: ^8.2.15
     dependencies:
-      cssnano-utils: registry.nlark.com/cssnano-utils/2.0.1_postcss@8.3.11
+      cssnano-utils: registry.npmmirror.com/cssnano-utils/2.0.1_postcss@8.3.11
       postcss: registry.npmmirror.com/postcss/8.3.11
       postcss-value-parser: registry.nlark.com/postcss-value-parser/4.1.0
     dev: true
@@ -4660,7 +4531,7 @@ packages:
     peerDependencies:
       postcss: ^8.2.15
     dependencies:
-      cssnano-utils: registry.nlark.com/cssnano-utils/2.0.1_postcss@8.3.11
+      cssnano-utils: registry.npmmirror.com/cssnano-utils/2.0.1_postcss@8.3.11
       postcss: registry.npmmirror.com/postcss/8.3.11
       postcss-value-parser: registry.nlark.com/postcss-value-parser/4.1.0
     dev: true
@@ -4687,7 +4558,7 @@ packages:
     peerDependencies:
       postcss: ^8.2.15
     dependencies:
-      cssnano-utils: registry.nlark.com/cssnano-utils/2.0.1_postcss@8.3.11
+      cssnano-utils: registry.npmmirror.com/cssnano-utils/2.0.1_postcss@8.3.11
       postcss: registry.npmmirror.com/postcss/8.3.11
       postcss-value-parser: registry.nlark.com/postcss-value-parser/4.1.0
     dev: true
@@ -4743,7 +4614,7 @@ packages:
     peerDependencies:
       postcss: ^8.2.15
     dependencies:
-      cssnano-utils: registry.nlark.com/cssnano-utils/2.0.1_postcss@8.3.11
+      cssnano-utils: registry.npmmirror.com/cssnano-utils/2.0.1_postcss@8.3.11
       postcss: registry.npmmirror.com/postcss/8.3.11
       postcss-value-parser: registry.nlark.com/postcss-value-parser/4.1.0
     dev: true
@@ -4771,33 +4642,19 @@ packages:
     peerDependencies:
       postcss: ^8.2.15
     dependencies:
-      cssnano-utils: registry.nlark.com/cssnano-utils/2.0.1_postcss@8.3.11
+      cssnano-utils: registry.npmmirror.com/cssnano-utils/2.0.1_postcss@8.3.11
       postcss: registry.npmmirror.com/postcss/8.3.11
       postcss-value-parser: registry.nlark.com/postcss-value-parser/4.1.0
     dev: true
 
   registry.nlark.com/postcss-selector-parser/6.0.6:
-    resolution: {integrity: sha1-LFu6gXSsL2mBq2MaQqsO5UrzMuo=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/postcss-selector-parser/download/postcss-selector-parser-6.0.6.tgz}
+    resolution: {integrity: sha1-LFu6gXSsL2mBq2MaQqsO5UrzMuo=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/postcss-selector-parser/download/postcss-selector-parser-6.0.6.tgz?cache=0&sync_timestamp=1631600348568&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fpostcss-selector-parser%2Fdownload%2Fpostcss-selector-parser-6.0.6.tgz}
     name: postcss-selector-parser
     version: 6.0.6
     engines: {node: '>=4'}
     dependencies:
       cssesc: registry.nlark.com/cssesc/3.0.0
       util-deprecate: registry.nlark.com/util-deprecate/1.0.2
-
-  registry.nlark.com/postcss-svgo/5.0.2_postcss@8.3.11:
-    resolution: {integrity: sha1-vHPE6kxagPvUtF4pBCw0zv+5JX8=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/postcss-svgo/download/postcss-svgo-5.0.2.tgz}
-    id: registry.nlark.com/postcss-svgo/5.0.2
-    name: postcss-svgo
-    version: 5.0.2
-    engines: {node: ^10 || ^12 || >=14.0}
-    peerDependencies:
-      postcss: ^8.2.15
-    dependencies:
-      postcss: registry.npmmirror.com/postcss/8.3.11
-      postcss-value-parser: registry.nlark.com/postcss-value-parser/4.1.0
-      svgo: registry.npmmirror.com/svgo/2.7.0
-    dev: true
 
   registry.nlark.com/postcss-unique-selectors/5.0.1_postcss@8.3.11:
     resolution: {integrity: sha1-O+XB1zYzUu/4OL1isLB6CrrUO/w=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/postcss-unique-selectors/download/postcss-unique-selectors-5.0.1.tgz}
@@ -5126,7 +4983,7 @@ packages:
     dependencies:
       chalk: registry.nlark.com/chalk/4.1.2
       concat-with-sourcemaps: registry.nlark.com/concat-with-sourcemaps/1.1.0
-      cssnano: registry.nlark.com/cssnano/5.0.8_postcss@8.3.11
+      cssnano: registry.npmmirror.com/cssnano/5.0.10_postcss@8.3.11
       import-cwd: registry.nlark.com/import-cwd/3.0.0
       p-queue: registry.nlark.com/p-queue/6.6.2
       pify: registry.nlark.com/pify/5.0.0
@@ -5445,12 +5302,6 @@ packages:
     resolution: {integrity: sha1-BOaSb2YolTVPPdAVIDYzuFcpfiw=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/sprintf-js/download/sprintf-js-1.0.3.tgz}
     name: sprintf-js
     version: 1.0.3
-    dev: true
-
-  registry.nlark.com/stable/0.1.8:
-    resolution: {integrity: sha1-g26zyDgv4pNv6vVEYxAXzn1Ho88=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/stable/download/stable-0.1.8.tgz}
-    name: stable
-    version: 0.1.8
     dev: true
 
   registry.nlark.com/strict-uri-encode/1.1.0:
@@ -6269,7 +6120,7 @@ packages:
       source-map: registry.nlark.com/source-map/0.5.7
     optionalDependencies:
       '@nicolo-ribaudo/chokidar-2': registry.npmmirror.com/@nicolo-ribaudo/chokidar-2/2.1.8-no-fsevents.3
-      chokidar: registry.nlark.com/chokidar/3.5.2
+      chokidar: registry.npmmirror.com/chokidar/3.5.2
     dev: true
 
   registry.npmmirror.com/@babel/code-frame/7.15.8:
@@ -6330,6 +6181,8 @@ packages:
       '@babel/template': registry.nlark.com/@babel/template/7.15.4
       '@babel/traverse': registry.nlark.com/@babel/traverse/7.15.4
       '@babel/types': registry.nlark.com/@babel/types/7.15.6
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   registry.npmmirror.com/@babel/parser/7.15.8:
@@ -6381,6 +6234,8 @@ packages:
       '@babel/helper-create-class-features-plugin': registry.nlark.com/@babel/helper-create-class-features-plugin/7.15.4_@babel+core@7.15.8
       '@babel/helper-plugin-utils': registry.nlark.com/@babel/helper-plugin-utils/7.14.5
       '@babel/plugin-syntax-typescript': registry.nlark.com/@babel/plugin-syntax-typescript/7.14.5_@babel+core@7.15.8
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   registry.npmmirror.com/@babel/preset-env/7.15.8_@babel+core@7.15.8:
@@ -6664,6 +6519,7 @@ packages:
       svg-tags: registry.nlark.com/svg-tags/1.0.0
     transitivePeerDependencies:
       - '@babel/core'
+      - supports-color
     dev: true
 
   registry.npmmirror.com/@vue/compiler-core/3.2.19:
@@ -6836,6 +6692,24 @@ packages:
     name: caniuse-lite
     version: 1.0.30001272
 
+  registry.npmmirror.com/chokidar/3.5.2:
+    resolution: {integrity: sha1-26OXb8rbAW9m/TZQIdkWANAcHnU=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/chokidar/download/chokidar-3.5.2.tgz?cache=0&sync_timestamp=1636462221288&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fchokidar%2Fdownload%2Fchokidar-3.5.2.tgz}
+    name: chokidar
+    version: 3.5.2
+    engines: {node: '>= 8.10.0'}
+    dependencies:
+      anymatch: registry.nlark.com/anymatch/3.1.2
+      braces: registry.nlark.com/braces/3.0.2
+      glob-parent: registry.npmmirror.com/glob-parent/5.1.2
+      is-binary-path: registry.nlark.com/is-binary-path/2.1.0
+      is-glob: registry.npmmirror.com/is-glob/4.0.3
+      normalize-path: registry.nlark.com/normalize-path/3.0.0
+      readdirp: registry.nlark.com/readdirp/3.6.0
+    optionalDependencies:
+      fsevents: registry.npmmirror.com/fsevents/2.3.2
+    dev: true
+    optional: true
+
   registry.npmmirror.com/clean-css/4.2.4:
     resolution: {integrity: sha1-czv0brpOYHxokepXwkqYk1aDEXg=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/clean-css/download/clean-css-4.2.4.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fclean-css%2Fdownload%2Fclean-css-4.2.4.tgz}
     name: clean-css
@@ -6877,7 +6751,7 @@ packages:
     engines: {node: '>= 6'}
 
   registry.npmmirror.com/commander/7.2.0:
-    resolution: {integrity: sha1-o2y1fQtQHOEI5NIFWaFQo5HZerc=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/commander/download/commander-7.2.0.tgz?cache=0&sync_timestamp=1634887824095&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fcommander%2Fdownload%2Fcommander-7.2.0.tgz}
+    resolution: {integrity: sha1-o2y1fQtQHOEI5NIFWaFQo5HZerc=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/commander/download/commander-7.2.0.tgz}
     name: commander
     version: 7.2.0
     engines: {node: '>= 10'}
@@ -6897,6 +6771,75 @@ packages:
     name: css-what
     version: 5.1.0
     engines: {node: '>= 6'}
+    dev: true
+
+  registry.npmmirror.com/cssnano-preset-default/5.1.6_postcss@8.3.11:
+    resolution: {integrity: sha1-G9uDvmprH+5txensLmEoa8rcx6Y=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/cssnano-preset-default/download/cssnano-preset-default-5.1.6.tgz}
+    id: registry.npmmirror.com/cssnano-preset-default/5.1.6
+    name: cssnano-preset-default
+    version: 5.1.6
+    engines: {node: ^10 || ^12 || >=14.0}
+    peerDependencies:
+      postcss: ^8.2.15
+    dependencies:
+      css-declaration-sorter: registry.nlark.com/css-declaration-sorter/6.1.3_postcss@8.3.11
+      cssnano-utils: registry.npmmirror.com/cssnano-utils/2.0.1_postcss@8.3.11
+      postcss: registry.npmmirror.com/postcss/8.3.11
+      postcss-calc: registry.nlark.com/postcss-calc/8.0.0_postcss@8.3.11
+      postcss-colormin: registry.npmmirror.com/postcss-colormin/5.2.1_postcss@8.3.11
+      postcss-convert-values: registry.npmmirror.com/postcss-convert-values/5.0.2_postcss@8.3.11
+      postcss-discard-comments: registry.nlark.com/postcss-discard-comments/5.0.1_postcss@8.3.11
+      postcss-discard-duplicates: registry.nlark.com/postcss-discard-duplicates/5.0.1_postcss@8.3.11
+      postcss-discard-empty: registry.nlark.com/postcss-discard-empty/5.0.1_postcss@8.3.11
+      postcss-discard-overridden: registry.nlark.com/postcss-discard-overridden/5.0.1_postcss@8.3.11
+      postcss-merge-longhand: registry.npmmirror.com/postcss-merge-longhand/5.0.3_postcss@8.3.11
+      postcss-merge-rules: registry.nlark.com/postcss-merge-rules/5.0.2_postcss@8.3.11
+      postcss-minify-font-values: registry.nlark.com/postcss-minify-font-values/5.0.1_postcss@8.3.11
+      postcss-minify-gradients: registry.npmmirror.com/postcss-minify-gradients/5.0.3_postcss@8.3.11
+      postcss-minify-params: registry.nlark.com/postcss-minify-params/5.0.1_postcss@8.3.11
+      postcss-minify-selectors: registry.nlark.com/postcss-minify-selectors/5.1.0_postcss@8.3.11
+      postcss-normalize-charset: registry.nlark.com/postcss-normalize-charset/5.0.1_postcss@8.3.11
+      postcss-normalize-display-values: registry.nlark.com/postcss-normalize-display-values/5.0.1_postcss@8.3.11
+      postcss-normalize-positions: registry.nlark.com/postcss-normalize-positions/5.0.1_postcss@8.3.11
+      postcss-normalize-repeat-style: registry.nlark.com/postcss-normalize-repeat-style/5.0.1_postcss@8.3.11
+      postcss-normalize-string: registry.nlark.com/postcss-normalize-string/5.0.1_postcss@8.3.11
+      postcss-normalize-timing-functions: registry.nlark.com/postcss-normalize-timing-functions/5.0.1_postcss@8.3.11
+      postcss-normalize-unicode: registry.nlark.com/postcss-normalize-unicode/5.0.1_postcss@8.3.11
+      postcss-normalize-url: registry.nlark.com/postcss-normalize-url/5.0.2_postcss@8.3.11
+      postcss-normalize-whitespace: registry.nlark.com/postcss-normalize-whitespace/5.0.1_postcss@8.3.11
+      postcss-ordered-values: registry.nlark.com/postcss-ordered-values/5.0.2_postcss@8.3.11
+      postcss-reduce-initial: registry.nlark.com/postcss-reduce-initial/5.0.1_postcss@8.3.11
+      postcss-reduce-transforms: registry.nlark.com/postcss-reduce-transforms/5.0.1_postcss@8.3.11
+      postcss-svgo: registry.npmmirror.com/postcss-svgo/5.0.3_postcss@8.3.11
+      postcss-unique-selectors: registry.nlark.com/postcss-unique-selectors/5.0.1_postcss@8.3.11
+    dev: true
+
+  registry.npmmirror.com/cssnano-utils/2.0.1_postcss@8.3.11:
+    resolution: {integrity: sha1-hmCqKzfthp0uLyKRgZapqLZJjOI=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/cssnano-utils/download/cssnano-utils-2.0.1.tgz}
+    id: registry.npmmirror.com/cssnano-utils/2.0.1
+    name: cssnano-utils
+    version: 2.0.1
+    engines: {node: ^10 || ^12 || >=14.0}
+    peerDependencies:
+      postcss: ^8.2.15
+    dependencies:
+      postcss: registry.npmmirror.com/postcss/8.3.11
+    dev: true
+
+  registry.npmmirror.com/cssnano/5.0.10_postcss@8.3.11:
+    resolution: {integrity: sha1-kiB+t8nG3AjTGAUHJvn60K33Igs=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/cssnano/download/cssnano-5.0.10.tgz}
+    id: registry.npmmirror.com/cssnano/5.0.10
+    name: cssnano
+    version: 5.0.10
+    engines: {node: ^10 || ^12 || >=14.0}
+    peerDependencies:
+      postcss: ^8.2.15
+    dependencies:
+      cssnano-preset-default: registry.npmmirror.com/cssnano-preset-default/5.1.6_postcss@8.3.11
+      is-resolvable: registry.nlark.com/is-resolvable/1.1.0
+      lilconfig: registry.npmmirror.com/lilconfig/2.0.3
+      postcss: registry.npmmirror.com/postcss/8.3.11
+      yaml: registry.npmmirror.com/yaml/1.10.2
     dev: true
 
   registry.npmmirror.com/daisyui/1.14.6:
@@ -7199,6 +7142,15 @@ packages:
       path-exists: registry.nlark.com/path-exists/4.0.0
     dev: true
 
+  registry.npmmirror.com/fsevents/2.3.2:
+    resolution: {integrity: sha1-ilJveLj99GI7cJ4Ll1xSwkwC/Ro=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/fsevents/download/fsevents-2.3.2.tgz}
+    name: fsevents
+    version: 2.3.2
+    engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
+    os: [darwin]
+    requiresBuild: true
+    optional: true
+
   registry.npmmirror.com/git-clone/0.1.0:
     resolution: {integrity: sha1-DXYWN3gJOu9/HDAjjyqe8/B6Lrk=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/git-clone/download/git-clone-0.1.0.tgz}
     name: git-clone
@@ -7239,6 +7191,11 @@ packages:
     version: 11.12.0
     engines: {node: '>=4'}
     dev: true
+
+  registry.npmmirror.com/graceful-fs/4.2.8:
+    resolution: {integrity: sha1-5BK40z9eAGWTy9PO5t+fLOu+gCo=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/graceful-fs/download/graceful-fs-4.2.8.tgz}
+    name: graceful-fs
+    version: 4.2.8
 
   registry.npmmirror.com/highlight.js/11.3.1:
     resolution: {integrity: sha1-gTB47zqlGcYXAPhP6QRyMcXcMpE=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/highlight.js/download/highlight.js-11.3.1.tgz}
@@ -7393,13 +7350,19 @@ packages:
       tslib: registry.nlark.com/tslib/2.3.1
     optionalDependencies:
       errno: registry.nlark.com/errno/0.1.8
-      graceful-fs: registry.nlark.com/graceful-fs/4.2.8
+      graceful-fs: registry.npmmirror.com/graceful-fs/4.2.8
       image-size: registry.nlark.com/image-size/0.5.5
       make-dir: registry.nlark.com/make-dir/2.1.0
-      mime: registry.nlark.com/mime/1.6.0
+      mime: registry.npmmirror.com/mime/1.6.0
       needle: registry.nlark.com/needle/2.9.1
       source-map: registry.nlark.com/source-map/0.6.1
     dev: true
+
+  registry.npmmirror.com/lilconfig/2.0.3:
+    resolution: {integrity: sha1-aPMAXpIdr70qKvtIN5mGqm0lef0=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/lilconfig/download/lilconfig-2.0.3.tgz}
+    name: lilconfig
+    version: 2.0.3
+    engines: {node: '>=10'}
 
   registry.npmmirror.com/linkify-it/3.0.3:
     resolution: {integrity: sha1-qYuvRM5FpVDvtNScdp0HUkzC+i4=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/linkify-it/download/linkify-it-3.0.3.tgz}
@@ -7456,6 +7419,16 @@ packages:
     dependencies:
       mime-db: registry.nlark.com/mime-db/1.50.0
     dev: true
+
+  registry.npmmirror.com/mime/1.6.0:
+    resolution: {integrity: sha1-Ms2eXGRVO9WNGaVor0Uqz/BJgbE=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/mime/download/mime-1.6.0.tgz}
+    name: mime
+    version: 1.6.0
+    engines: {node: '>=4'}
+    hasBin: true
+    requiresBuild: true
+    dev: true
+    optional: true
 
   registry.npmmirror.com/mlly/0.2.10:
     resolution: {integrity: sha1-ZFkCyXYdxrXe0XS45xcUf+UuSJM=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/mlly/download/mlly-0.2.10.tgz}
@@ -7564,6 +7537,79 @@ packages:
       find-up: registry.npmmirror.com/find-up/4.1.0
     dev: true
 
+  registry.npmmirror.com/postcss-colormin/5.2.1_postcss@8.3.11:
+    resolution: {integrity: sha1-bkRKgG/TxXiCfbrQInYt8ZM0QU0=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/postcss-colormin/download/postcss-colormin-5.2.1.tgz}
+    id: registry.npmmirror.com/postcss-colormin/5.2.1
+    name: postcss-colormin
+    version: 5.2.1
+    engines: {node: ^10 || ^12 || >=14.0}
+    peerDependencies:
+      postcss: ^8.2.15
+    dependencies:
+      browserslist: registry.npmmirror.com/browserslist/4.17.5
+      caniuse-api: registry.nlark.com/caniuse-api/3.0.0
+      colord: registry.npmmirror.com/colord/2.9.1
+      postcss: registry.npmmirror.com/postcss/8.3.11
+      postcss-value-parser: registry.nlark.com/postcss-value-parser/4.1.0
+    dev: true
+
+  registry.npmmirror.com/postcss-convert-values/5.0.2_postcss@8.3.11:
+    resolution: {integrity: sha1-h5uEncNnfH1ryUtqLBo/CAh5gFk=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/postcss-convert-values/download/postcss-convert-values-5.0.2.tgz}
+    id: registry.npmmirror.com/postcss-convert-values/5.0.2
+    name: postcss-convert-values
+    version: 5.0.2
+    engines: {node: ^10 || ^12 || >=14.0}
+    peerDependencies:
+      postcss: ^8.2.15
+    dependencies:
+      postcss: registry.npmmirror.com/postcss/8.3.11
+      postcss-value-parser: registry.nlark.com/postcss-value-parser/4.1.0
+    dev: true
+
+  registry.npmmirror.com/postcss-merge-longhand/5.0.3_postcss@8.3.11:
+    resolution: {integrity: sha1-QhlKX/uqVRPtv2Bu95xElYVkZYs=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/postcss-merge-longhand/download/postcss-merge-longhand-5.0.3.tgz}
+    id: registry.npmmirror.com/postcss-merge-longhand/5.0.3
+    name: postcss-merge-longhand
+    version: 5.0.3
+    engines: {node: ^10 || ^12 || >=14.0}
+    peerDependencies:
+      postcss: ^8.2.15
+    dependencies:
+      css-color-names: registry.nlark.com/css-color-names/1.0.1
+      postcss: registry.npmmirror.com/postcss/8.3.11
+      postcss-value-parser: registry.nlark.com/postcss-value-parser/4.1.0
+      stylehacks: registry.nlark.com/stylehacks/5.0.1_postcss@8.3.11
+    dev: true
+
+  registry.npmmirror.com/postcss-minify-gradients/5.0.3_postcss@8.3.11:
+    resolution: {integrity: sha1-+XChHMceCOkJXnjsOms0uRwZVQ4=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/postcss-minify-gradients/download/postcss-minify-gradients-5.0.3.tgz}
+    id: registry.npmmirror.com/postcss-minify-gradients/5.0.3
+    name: postcss-minify-gradients
+    version: 5.0.3
+    engines: {node: ^10 || ^12 || >=14.0}
+    peerDependencies:
+      postcss: ^8.2.15
+    dependencies:
+      colord: registry.npmmirror.com/colord/2.9.1
+      cssnano-utils: registry.npmmirror.com/cssnano-utils/2.0.1_postcss@8.3.11
+      postcss: registry.npmmirror.com/postcss/8.3.11
+      postcss-value-parser: registry.nlark.com/postcss-value-parser/4.1.0
+    dev: true
+
+  registry.npmmirror.com/postcss-svgo/5.0.3_postcss@8.3.11:
+    resolution: {integrity: sha1-2UUYV1bl36rgf57bDTyuf/efmzA=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/postcss-svgo/download/postcss-svgo-5.0.3.tgz}
+    id: registry.npmmirror.com/postcss-svgo/5.0.3
+    name: postcss-svgo
+    version: 5.0.3
+    engines: {node: ^10 || ^12 || >=14.0}
+    peerDependencies:
+      postcss: ^8.2.15
+    dependencies:
+      postcss: registry.npmmirror.com/postcss/8.3.11
+      postcss-value-parser: registry.nlark.com/postcss-value-parser/4.1.0
+      svgo: registry.npmmirror.com/svgo/2.7.0
+    dev: true
+
   registry.npmmirror.com/postcss/8.3.11:
     resolution: {integrity: sha1-w77KfqgRzV4cSj7G0udZnvH4+Fg=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/postcss/download/postcss-8.3.11.tgz}
     name: postcss
@@ -7612,7 +7658,7 @@ packages:
     engines: {node: '>=10.0.0'}
     hasBin: true
     optionalDependencies:
-      fsevents: registry.nlark.com/fsevents/2.3.2
+      fsevents: registry.npmmirror.com/fsevents/2.3.2
     dev: true
 
   registry.npmmirror.com/safe-identifier/0.4.2:
@@ -7626,6 +7672,12 @@ packages:
     name: skip-regex
     version: 1.0.2
     engines: {node: '>=4.2'}
+    dev: true
+
+  registry.npmmirror.com/stable/0.1.8:
+    resolution: {integrity: sha1-g26zyDgv4pNv6vVEYxAXzn1Ho88=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/stable/download/stable-0.1.8.tgz}
+    name: stable
+    version: 0.1.8
     dev: true
 
   registry.npmmirror.com/string-similarity/4.0.4:
@@ -7667,7 +7719,7 @@ packages:
       css-tree: registry.nlark.com/css-tree/1.1.3
       csso: registry.nlark.com/csso/4.2.0
       nanocolors: registry.npmmirror.com/nanocolors/0.1.12
-      stable: registry.nlark.com/stable/0.1.8
+      stable: registry.npmmirror.com/stable/0.1.8
     dev: true
 
   registry.npmmirror.com/tailwindcss/2.2.17_fa866e6aa6eb85ed70431566fb699b34:
@@ -8049,6 +8101,12 @@ packages:
       utf-8-validate:
         optional: true
     dev: true
+
+  registry.npmmirror.com/yaml/1.10.2:
+    resolution: {integrity: sha1-IwHF/78StGfejaIzOkWeKeeSDks=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/yaml/download/yaml-1.10.2.tgz}
+    name: yaml
+    version: 1.10.2
+    engines: {node: '>= 6'}
 
   registry.npmmirror.com/yargs/17.2.1:
     resolution: {integrity: sha1-4slbl5ag4ffzv0QnhjtC4EGBkeo=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/yargs/download/yargs-17.2.1.tgz}
