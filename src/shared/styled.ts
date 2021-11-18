@@ -24,7 +24,7 @@ export function insertCss(css: string | string[]) {
   });
 }
 
-export function component<Attrs = unknown, P = {}>(
+type IComponentOptions<P, A> = [
   options: {
     name: string;
     props?: any;
@@ -33,7 +33,7 @@ export function component<Attrs = unknown, P = {}>(
     setup: (
       props: P,
       ctx: {
-        attrs: Omit<Attrs, keyof P>;
+        attrs: Omit<A, keyof P>;
         slots: Slots;
         emit: any;
         expose: (exposed?: Record<string, any>) => void;
@@ -41,8 +41,36 @@ export function component<Attrs = unknown, P = {}>(
     ) => any;
     [k: string]: any;
   },
-  styles: string[] = [],
+  styles?: string[],
+];
+
+/**
+ * - Attar 组件所有属性类型
+ * - Props 仅 props 中的类型
+ * @deprecated
+ * @param options
+ * @param styles
+ * @returns
+ */
+export function component<Attrs = unknown, P = {}>(
+  ...args: IComponentOptions<P, Attrs>
 ): DefineComponent<Attrs, any> {
+  const [options, styles = []] = args;
   insertCss(styles);
   return defineComponent(options as any);
+}
+
+/**
+ * - Props 类型
+ * - Attar props 外的类型，如原生 div 的一些属性
+ * @param args
+ * @returns
+ */
+export function componentV2<Props = unknown, Attrs = unknown>(
+  ...args: IComponentOptions<Props, Props & Attrs>
+) {
+  return component<Props & Attrs, Props>(
+    // @ts-ignore
+    ...args,
+  );
 }

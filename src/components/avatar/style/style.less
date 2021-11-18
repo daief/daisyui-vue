@@ -1,0 +1,13 @@
+.dv-avatar {
+  &-circle {
+    @apply rounded-full;
+  }
+  &.placeholder {
+    & > .mask {
+      --tw-text-opacity: 1;
+      color: hsla(var(--nc) / var(--tw-text-opacity, 1));
+      --tw-bg-opacity: 1;
+      background-color: hsla(var(--nf) / var(--tw-bg-opacity, 1));
+    }
+  }
+}
