@@ -321,8 +321,8 @@ const config: UserConfig = {
   // @ts-ignore
   ssgOptions: {
     script: 'async',
-    formatting: 'prettify',
-    onPageRendered: async (route, html, ctx) => {
+    // formatting: 'prettify',
+    onPageRendered: (route, html, ctx) => {
       return html.replace(
         '<!-- __DAISYUI_VUE__ -->',
         ctx.$daisyui.styles.extractStyles(),

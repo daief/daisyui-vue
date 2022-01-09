@@ -30,7 +30,7 @@
     "vite-plugin-md": "^0.11.1",
     "vite-plugin-pages": "^0.18.1",
     "vite-plugin-pwa": "^0.11.2",
-    "vite-ssg": "0.17.5",
+    "vite-ssg": "0.17.4",
     "vue-router": "^4.0.11"
   },
   "engines": {
