@@ -1,4 +1,4 @@
-import{u as b,r as f,l as p,o as q,c as s,q as a,s as n,F as w,z as y,x,a as l}from"./vendor.8de24ed3.js";const k=y(`<div class="markdown-body"><h1>Drawer</h1><h2>Examples</h2><pre><code class="hljs language-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">setup</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;ts&quot;</span>&gt;</span><span class="language-javascript">
+import{u as b,r as f,l as p,o as q,c as s,q as a,s as n,F as w,z as y,x,a as l}from"./vendor.be1ef881.js";const k=y(`<div class="markdown-body"><h1>Drawer</h1><h2>Examples</h2><pre><code class="hljs language-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">setup</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;ts&quot;</span>&gt;</span><span class="language-javascript">
   <span class="hljs-keyword">import</span> { ref } <span class="hljs-keyword">from</span> <span class="hljs-string">&#39;vue&#39;</span>;
 
   <span class="hljs-keyword">const</span> open = <span class="hljs-title function_">ref</span>(<span class="hljs-literal">null</span>);
