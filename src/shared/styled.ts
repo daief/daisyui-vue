@@ -1,28 +1,7 @@
 import { DefineComponent, defineComponent, Slots } from 'vue';
+import { useDaisyui } from './ctx';
 
-let cache: string[] = [];
-let style: HTMLStyleElement = null;
-
-export function insertCss(css: string | string[]) {
-  if (typeof document === 'undefined') return;
-  if (!style) {
-    style = document.createElement('style');
-    style.setAttribute('daisyui-vue', VERSION);
-    document.head.prepend(style);
-  }
-
-  if (Array.isArray(css)) {
-    cache.push(...css);
-  } else {
-    cache.push(css);
-  }
-
-  setTimeout(() => {
-    const filterd = cache.filter((it, i) => cache.indexOf(it) === i);
-    style.append(filterd.join('\n'));
-    cache = [];
-  });
-}
+export const EMOTION_SYMBOL = Symbol('emotion');
 
 type IComponentOptions<P, A> = [
   options: {
@@ -56,8 +35,14 @@ export function component<Attrs = unknown, P = {}>(
   ...args: IComponentOptions<P, Attrs>
 ): DefineComponent<Attrs, any> {
   const [options, styles = []] = args;
-  insertCss(styles);
-  return defineComponent(options as any);
+  return defineComponent({
+    ...(options as any),
+    setup: (props, ctx) => {
+      useDaisyui().styles.insertCss(styles);
+      // @ts-ignore
+      return options.setup(props, ctx);
+    },
+  });
 }
 
 /**
@@ -73,4 +58,49 @@ export function componentV2<Props = unknown, Attrs = unknown>(
     // @ts-ignore
     ...args,
   );
+}
+
+export interface IStyles {
+  insertCss: (css: string | string[]) => void;
+  extractStyles: () => string;
+}
+
+export function createStyles(): IStyles {
+  const m = new Map<string, true>();
+  const STYLE_ATTR = `daisyui-vue="${VERSION}"`;
+  let style: HTMLStyleElement = null;
+  if (typeof document !== 'undefined') {
+    style = document.querySelector(`style[${STYLE_ATTR}]`);
+
+    if (style) {
+      const { cssRules } = style.sheet;
+      for (let i = 0; i < cssRules.length - 1; i++) {
+        m.set(cssRules.item(i).cssText, true);
+      }
+    } else {
+      style = document.createElement('style');
+      style.setAttribute('daisyui-vue', VERSION);
+      document.head.prepend(style);
+    }
+  }
+
+  return {
+    insertCss: (css: string | string[]) => {
+      css = Array.isArray(css) ? css : [css];
+      let appendText = '';
+      css.forEach((text) => {
+        if (m.get(text)) return;
+        m.set(text, true);
+        appendText += text;
+      });
+      style?.append(appendText);
+    },
+    extractStyles: () => {
+      let text = '';
+      for (const it of m.entries()) {
+        text += it[0];
+      }
+      return `<style ${STYLE_ATTR}>${text}</style>`;
+    },
+  };
 }

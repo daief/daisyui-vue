@@ -1,7 +1,7 @@
 import { UserConfig } from 'vite';
 import Pages from 'vite-plugin-pages';
 import Markdown from 'vite-plugin-md';
-import { VitePWA } from 'vite-plugin-pwa';
+// import { VitePWA } from 'vite-plugin-pwa';
 import Vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
 import { resolve } from 'path';
@@ -48,6 +48,7 @@ const wrap = (render) =>
 const config: UserConfig = {
   base: '/daisyui-vue/',
   plugins: [
+    // @ts-ignore
     {
       enforce: 'pre',
       transformIndexHtml: (html) => {
@@ -321,6 +322,12 @@ const config: UserConfig = {
   ssgOptions: {
     script: 'async',
     formatting: 'prettify',
+    onPageRendered: async (route, html, ctx) => {
+      return html.replace(
+        '<!-- __DAISYUI_VUE__ -->',
+        ctx.$daisyui.styles.extractStyles(),
+      );
+    },
   },
   resolve: {
     alias: {

@@ -51,11 +51,11 @@ const componentsConfig = {
       },
     }),
     styles(),
-    typescript({
-      exclude: [path.resolve(__dirname, 'src/_daisyui/**')],
-    }),
     resolve({
       extensions,
+    }),
+    typescript({
+      exclude: [path.resolve(__dirname, 'src/_daisyui/**')],
     }),
     babel({ extensions, babelHelpers: 'bundled' }),
     cleanup({

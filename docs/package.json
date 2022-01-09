@@ -7,14 +7,15 @@
     "serve": "vite preview"
   },
   "dependencies": {
+    "@emotion/server": "^11.4.0",
     "daisyui": "^1.14.0",
-    "vue": "3.2.19"
+    "vue": "3.2.26"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^1.9.2",
     "@vitejs/plugin-vue-jsx": "^1.2.0",
-    "@vue/compiler-sfc": "3.2.19",
-    "@vue/server-renderer": "3.2.19",
+    "@vue/compiler-sfc": "3.2.26",
+    "@vue/server-renderer": "3.2.26",
     "@vueuse/head": "^0.6.0",
     "autoprefixer": "^10.3.6",
     "cross-env": "^7.0.3",
@@ -29,7 +30,10 @@
     "vite-plugin-md": "^0.11.1",
     "vite-plugin-pages": "^0.18.1",
     "vite-plugin-pwa": "^0.11.2",
-    "vite-ssg": "0.15.1",
+    "vite-ssg": "0.17.5",
     "vue-router": "^4.0.11"
+  },
+  "engines": {
+    "node": ">=14.0.0"
   }
 }

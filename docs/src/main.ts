@@ -9,11 +9,15 @@ import MarkdownTable from './components/MarkdownTable.vue';
 export const createApp = ViteSSG(
   App,
   { routes, base: '/daisyui-vue/' },
-  ({ app, router, isClient }) => {
+  (ctx) => {
+    const { app, router, isClient } = ctx;
     // install plugins etc.
     app.component('Playground', Playground);
     app.component('MarkdownTable', MarkdownTable);
     app.use(daisyui as any);
+
+    // @ts-ignore
+    ctx.$daisyui = app.config.globalProperties.$daisyui;
 
     router.isReady().then(() => {
       router.afterEach((to, from, fa) => {
