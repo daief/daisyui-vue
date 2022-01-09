@@ -4,10 +4,9 @@
 
 ## todo
 
-- [ ] style files
-  - [ ] auto require style conntent when using a component (now css-in-js)
-    - [ ] it is easy to use in SSR, but there is no style on first render (`FOUC`, because css inserted by js)
-  - [ ] extract css to a css file? (if so, may resolve FOUC)
+- [x] style files
+  - [x] auto require style conntent when using a component (now css-in-js)
+    - [x] ~~it is easy to use in SSR, but there is no style on first render (`FOUC`, because css inserted by js)~~. Use `extractStyles` to extract critical css.
 
 ## components
 
