@@ -19,3 +19,4 @@ lib
 **/.yarn/cache
 
 docs/src/.demo
+.vite-ssg-temp
