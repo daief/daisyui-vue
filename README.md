@@ -17,7 +17,7 @@
 - [x] breadcrumb
 - [x] button
 - [x] button-group
-- [ ] card
+- [x] card
 - [ ] carousel
 - [ ] collapse
 - [ ] countdown
