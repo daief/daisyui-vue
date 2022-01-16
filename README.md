@@ -12,7 +12,7 @@
 
 - [x] alert
 - [x] artboard
-- [ ] avatar
+- [x] avatar
 - [x] badge
 - [x] breadcrumb
 - [x] button

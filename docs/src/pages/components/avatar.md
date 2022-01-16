@@ -240,6 +240,19 @@ avatar placeholder
 
 ### Attributes
 
+| name        | description                                       | type                                                                                                                                                                                                          | default |
+| ----------- | ------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
+| src         | avatar img source                                 | string                                                                                                                                                                                                        | -       |
+| placeholder | to show some letters as avatar placeholder source | string                                                                                                                                                                                                        | -       |
+| size        | size                                              | ISize                                                                                                                                                                                                         | md      |
+| type        | mask type                                         | squircle, heart, hexagon, hexagon-2, decagon, pentagon, diamond, square, circle, parallelogram, parallelogram-2, parallelogram-3, parallelogram-4, star, star-2, triangle, triangle-2, triangle-3, triangle-4 | circle  |
+| status      | shows online/offline indicator                    | online, offline                                                                                                                                                                                               | -       |
+
 ## AvatarGroup
 
 ### Attributes
+
+| name | description | type           | default |
+| ---- | ----------- | -------------- | ------- |
+| size | size        | ISize          | md      |
+| gap  | avatar gap  | string, number | -       |

@@ -72,6 +72,7 @@ export function createStyles(): IStyles {
   if (typeof document !== 'undefined') {
     style = document.querySelector(`style[${STYLE_ATTR}]`);
 
+    // TODO fix
     if (style) {
       const { cssRules } = style.sheet;
       for (let i = 0; i < cssRules.length - 1; i++) {
