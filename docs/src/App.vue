@@ -18,6 +18,7 @@ export default defineComponent({
   name: 'App',
   setup: () => {
     const open = ref(false);
+    const bodyRef = ref<HTMLDivElement>(null);
 
     const route = useRoute();
 
@@ -25,6 +26,7 @@ export default defineComponent({
       () => route.path,
       () => {
         open.value = false;
+        bodyRef.value?.scrollTo(0, 0);
       },
     );
 
@@ -71,7 +73,7 @@ export default defineComponent({
               </div>
             ),
             content: () => (
-              <div>
+              <div ref={bodyRef} class="h-full overflow-y-auto">
                 <header class="sticky inset-x-0 top-0 bg-white border-b border-gray-100 z-20">
                   <Navbar class="">
                     <NavbarStart class="mx-2">

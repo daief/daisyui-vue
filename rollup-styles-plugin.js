@@ -6,7 +6,7 @@ const less = require('less');
 
 const createPlugin = () => {
   const tailwindConfig = require(path.resolve(__dirname, 'tailwind.config.js'));
-  tailwindConfig.purge.content = [];
+  tailwindConfig.content = [];
   const process = postcss([
     require('tailwindcss')({
       ...tailwindConfig,
