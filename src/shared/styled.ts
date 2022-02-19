@@ -38,7 +38,7 @@ export function component<Attrs = unknown, P = {}>(
   return defineComponent({
     ...(options as any),
     setup: (props, ctx) => {
-      useDaisyui().styles.insertCss(styles);
+      useDaisyui()?.styles.insertCss(styles);
       // @ts-ignore
       return options.setup(props, ctx);
     },

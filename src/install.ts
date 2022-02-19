@@ -15,7 +15,7 @@ export function install(
     ...options,
   };
 
-  installContenxt(app);
+  installContext(app);
 
   [all, icons].forEach((set) => {
     Object.keys(set).forEach((key) => {
@@ -27,7 +27,7 @@ export function install(
   });
 }
 
-export function installContenxt(app: App) {
+export function installContext(app: App) {
   const ctx: IDaisyuiVueContext = reactive({
     styles: createStyles(),
   });
