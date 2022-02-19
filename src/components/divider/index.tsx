@@ -4,7 +4,7 @@ import { computed, HtmlHTMLAttributes } from 'vue';
 import style from './style';
 
 const props = {
-  vertical: {
+  horizontal: {
     type: Boolean,
     default: false,
   },
@@ -20,7 +20,7 @@ export const Divider = componentV2<IDividerProps, HtmlHTMLAttributes>(
       const cls = computed(() => ({
         divider: true,
         'dv-divider': true,
-        'divider-vertical': props.vertical,
+        'divider-horizontal': props.horizontal,
       }));
       return () => <div class={cls.value}>{slots.default?.()}</div>;
     },

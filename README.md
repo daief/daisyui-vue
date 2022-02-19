@@ -21,7 +21,7 @@
 - [ ] carousel
 - [ ] collapse
 - [ ] countdown
-- [ ] divider
+- [x] divider
 - [x] drawer
 - [ ] dropdown
 - [ ] footer

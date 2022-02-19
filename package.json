@@ -41,7 +41,7 @@
     "babel-plugin-macros": "^3.1.0",
     "babel-plugin-twin": "^1.0.2",
     "cssnano": "^5.0.10",
-    "daisyui": "^1.14.0",
+    "daisyui": "2.0.9",
     "download-git-repo": "^3.0.2",
     "fs-extra": "^10.0.0",
     "glob": "^7.1.7",

@@ -16,7 +16,7 @@ divider
 </div>
 ```
 
-divider vertical
+divider horizontal
 
 ```html :::demo
 <div class="flex flex-row w-full">
@@ -25,7 +25,7 @@ divider vertical
   >
     content
   </div>
-  <dv-divider vertical>OR</dv-divider>
+  <dv-divider horizontal>OR</dv-divider>
   <div
     class="grid flex-grow h-32 card bg-gray-300 rounded-xl place-items-center"
   >
@@ -48,7 +48,7 @@ divider with no text
 </div>
 ```
 
-divider vertical with no text
+divider with no text
 
 ```html :::demo
 <div class="flex flex-row w-full">
@@ -57,7 +57,7 @@ divider vertical with no text
   >
     content
   </div>
-  <dv-divider vertical />
+  <dv-divider horizontal />
   <div
     class="grid flex-grow h-32 card bg-gray-300 rounded-xl place-items-center"
   >
@@ -70,6 +70,6 @@ divider vertical with no text
 
 ### Attributes
 
-| name     | description        | type    | default |
-| -------- | ------------------ | ------- | ------- |
-| vertical | vertical direction | boolean | false   |
+| name       | description                        | type    | default |
+| ---------- | ---------------------------------- | ------- | ------- |
+| horizontal | Divide elements next to each other | boolean | false   |
