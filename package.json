@@ -20,7 +20,7 @@
     "icons": "node scripts/buildIcons.js",
     "clone": "node scripts/clone.js",
     "release": "standard-version",
-    "prerelease": "pnpm run release --prerelease=alpha"
+    "pre:release": "pnpm run release -- --prerelease=alpha"
   },
   "resolutions": {
     "vue": "3.2.26"
