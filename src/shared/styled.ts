@@ -66,19 +66,14 @@ export interface IStyles {
 }
 
 export function createStyles(): IStyles {
-  const m = new Map<string, true>();
+  const m = new Map<string, boolean>();
   const STYLE_ATTR = `daisyui-vue="${VERSION}"`;
+
   let style: HTMLStyleElement = null;
   if (typeof document !== 'undefined') {
     style = document.querySelector(`style[${STYLE_ATTR}]`);
 
-    // TODO fix
-    if (style) {
-      const { cssRules } = style.sheet;
-      for (let i = 0; i < cssRules.length - 1; i++) {
-        m.set(cssRules.item(i).cssText, true);
-      }
-    } else {
+    if (!style) {
       style = document.createElement('style');
       style.setAttribute('daisyui-vue', VERSION);
       document.head.prepend(style);
@@ -88,14 +83,22 @@ export function createStyles(): IStyles {
   return {
     insertCss: (css: string | string[]) => {
       css = Array.isArray(css) ? css : [css];
+
       let appendText = '';
+      const styleText = style.textContent || '';
+
       css.forEach((text) => {
-        if (m.get(text)) return;
+        if (styleText.includes(text)) return;
+        appendText += `${text}\n`;
         m.set(text, true);
-        appendText += text;
       });
+
       style?.append(appendText);
     },
+    /**
+     * 提取首屏样式
+     * @returns
+     */
     extractStyles: () => {
       let text = '';
       for (const it of m.entries()) {

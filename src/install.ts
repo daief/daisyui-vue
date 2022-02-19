@@ -1,7 +1,7 @@
 import { App, reactive } from 'vue';
 import * as all from './components';
 import * as icons from './icons';
-import { CONTEXT_SYMBOL } from './shared/ctx';
+import { CONTEXT_SYMBOL, IDaisyuiVueContext } from './shared/ctx';
 import { createStyles } from './shared/styled';
 
 export function install(
@@ -15,12 +15,7 @@ export function install(
     ...options,
   };
 
-  const ctx = reactive({
-    styles: createStyles(),
-  });
-
-  app.provide(CONTEXT_SYMBOL, ctx);
-  app.config.globalProperties.$daisyui = ctx;
+  installContenxt(app);
 
   [all, icons].forEach((set) => {
     Object.keys(set).forEach((key) => {
@@ -30,4 +25,13 @@ export function install(
       }
     });
   });
+}
+
+export function installContenxt(app: App) {
+  const ctx: IDaisyuiVueContext = reactive({
+    styles: createStyles(),
+  });
+
+  app.provide(CONTEXT_SYMBOL, ctx);
+  app.config.globalProperties.$daisyui = ctx;
 }

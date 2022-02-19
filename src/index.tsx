@@ -1,6 +1,8 @@
 export * from './components';
 export * from './icons';
 
-export { install as default } from './install';
+export * from './shared/ctx';
+
+export { install as default, installContenxt } from './install';
 
 export const version = VERSION;
