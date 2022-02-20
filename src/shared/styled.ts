@@ -23,6 +23,8 @@ type IComponentOptions<P, A> = [
   styles?: string[],
 ];
 
+const builtInStyles = createStyles();
+
 /**
  * - Attar 组件所有属性类型
  * - Props 仅 props 中的类型
@@ -38,7 +40,7 @@ export function component<Attrs = unknown, P = {}>(
   return defineComponent({
     ...(options as any),
     setup: (props, ctx) => {
-      useDaisyui()?.styles.insertCss(styles);
+      (useDaisyui()?.styles || builtInStyles).insertCss(styles);
       // @ts-ignore
       return options.setup(props, ctx);
     },
