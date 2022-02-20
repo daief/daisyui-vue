@@ -4,6 +4,15 @@
 
 ## Usage
 
+在模板中引入主题：
+
+```html
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/daisyui@2.0.9/dist/themes.css"
+/>
+```
+
 全局注册：
 
 ```tsx
@@ -67,7 +76,7 @@ export function render() {
     // ...
   });
 
-  const style = app.config.globalProperties.$daisyui.styles.extractStyles();
+  const style = app.config.globalProperties.$daisyui.styles.extractStyles(); // <style>...</style>
 
   const html = renderToString(app);
 
@@ -107,7 +116,7 @@ export function render() {
 - [ ] modal
 - [ ] navbar
 - [ ] pagination
-- [ ] progress
+- [x] progress
 - [ ] stack
 - [ ] stat
 - [ ] steps

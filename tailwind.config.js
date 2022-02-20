@@ -11,7 +11,7 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [require('daisyui')],
+  plugins: [require('daisyui')], // 代码样式提示
   daisyui: {
     logs: false,
     themes: false,
