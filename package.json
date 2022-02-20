@@ -65,18 +65,6 @@
     "registry": "https://registry.npmjs.org/",
     "access": "public"
   },
-  "dependencies": {
-    "twin.macro": "^2.7.0"
-  },
-  "babelMacros": {
-    "twin": {
-      "preset": "emotion",
-      "css": {
-        "import": "css",
-        "from": "@emotion/css"
-      }
-    }
-  },
   "description": "基于 daisyui 封装的 vue 组件库。",
   "bugs": {
     "url": "https://github.com/daief/daisyui-vue/issues"
