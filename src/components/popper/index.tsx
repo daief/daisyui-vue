@@ -137,7 +137,9 @@ export const Popper = componentV2<
 
       const createIns = () => {
         destroy();
-        state.popperIns = createPopper(getClidEl(), popperNode.value, {
+        const el = getClidEl();
+        if (!el) return;
+        state.popperIns = createPopper(el, popperNode.value, {
           placement: props.placement,
           modifiers: [preventOverflow],
         });
@@ -311,9 +313,9 @@ export const Popper = componentV2<
       );
 
       watch(
-        () => [props.placement, getClidEl()],
+        [() => props.placement, () => getClidEl()],
         () => {
-          if (!finalShow.value) return;
+          if (!finalShow.value || !state.hasTriggered) return;
           update(true);
         },
         {
