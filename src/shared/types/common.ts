@@ -10,6 +10,7 @@ export type IColorType = IBrandColor | IStateColor;
 
 /**
  * Bool => bool
+ * @deprecated
  */
 export type BoolConstructorToBase<T> = {
   [k in keyof T]: T[k] extends BooleanConstructor ? boolean : T[k];
@@ -26,6 +27,6 @@ export type ExtractFromProps<T> = {
       type: any;
     }
       ? T[k]['type']
-      : T[k]
+      : any
   >;
 };

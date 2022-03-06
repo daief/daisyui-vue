@@ -7,12 +7,16 @@ export function cssUnit(unit: string | number) {
   return unit || '';
 }
 
-export function isBool(v: any): boolean {
+export function isBool(v: any): v is boolean {
   return typeof v === 'boolean';
 }
 
-export function isUndefined(v: any): boolean {
+export function isUndefined(v: any): v is undefined {
   return typeof v === 'undefined';
+}
+
+export function isString(v: any): v is string {
+  return typeof v === 'string';
 }
 
 export function addClass(str: string, newClass: string | string[]) {

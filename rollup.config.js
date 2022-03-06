@@ -56,6 +56,8 @@ const componentsConfig = {
     }),
     typescript({
       exclude: [path.resolve(__dirname, 'src/_daisyui/**')],
+      clean: true,
+      check: false, // https://github.com/ezolenko/rollup-plugin-typescript2/issues/214#issuecomment-612647264
     }),
     babel({ extensions, babelHelpers: 'bundled' }),
     cleanup({

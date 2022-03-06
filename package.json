@@ -7,7 +7,7 @@
     "type": "git",
     "url": "git+https://github.com/daief/daisyui-vue.git"
   },
-  "license": "MIT",
+  "license": "Apache-2.0",
   "sideEffects": false,
   "main": "dist/lib/index.js",
   "module": "dist/esm/index.js",
@@ -55,7 +55,7 @@
     "rollup": "^2.56.3",
     "rollup-plugin-cleanup": "^3.2.1",
     "rollup-plugin-postcss": "^4.0.1",
-    "rollup-plugin-typescript2": "^0.31.0",
+    "rollup-plugin-typescript2": "^0.31.1",
     "standard-version": "^9.3.2",
     "tailwindcss": "^3.0.0",
     "typescript": "^4.4.2",
@@ -71,5 +71,8 @@
   },
   "directories": {
     "doc": "docs"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.0.0"
   }
 }

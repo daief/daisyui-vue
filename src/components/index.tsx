@@ -11,6 +11,7 @@ export * from './drawer';
 export * from './mask';
 export * from './menu';
 export * from './navbar';
+export * from './popper';
 export * from './progress';
 export * from './tab';
 export * from './table';
