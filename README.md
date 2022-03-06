@@ -117,12 +117,13 @@ export function render() {
 - [ ] navbar
 - [ ] pagination
 - [x] progress
+- [x] popper - new
 - [ ] stack
 - [ ] stat
 - [ ] steps
 - [x] tab
 - [x] table
-- [x] tooltip
+- [x] tooltip - refactor
 - [ ] form-checkbox
 - [ ] form-input
 - [ ] form-radio

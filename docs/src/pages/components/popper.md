@@ -85,6 +85,8 @@ export default {
     const pls = ref(placements[0]);
     const renderType = ref('btn');
 
+    const showArrow = ref(true);
+
     const renderSlice = (n: 0 | 3 | 6 | 9) =>
       placements.slice(n, n + 3).map((plsKey) => (
         <dv-button
@@ -105,6 +107,13 @@ export default {
             button
           </dv-button>
           <dv-button onClick={() => (renderType.value = 'div')}>div</dv-button>
+          <input
+            type="checkbox"
+            checked={showArrow.value}
+            onChange={(e) => {
+              showArrow.value = e.target.checked;
+            }}
+          />
         </div>
         <dv-divider />
         <div class="h-56 relative flex items-center justify-center">
@@ -116,6 +125,7 @@ export default {
             )}
             open
             placement={pls.value}
+            hideArrow={!showArrow.value}
           >
             {renderType.value === 'btn' ? (
               <dv-button size="sm">button</dv-button>
@@ -225,3 +235,10 @@ template slots
 | triggerAction      | the action to tigger popper          | contextMenu, hover, click, focus | hover   |
 | outsideCloseable   | click outside to close popper        | boolean                          | true    |
 | escapeKeyCloseable | press escape to close popper         | boolean                          | true    |
+
+### Slots
+
+| name    | description      |
+| ------- | ---------------- |
+| default | popper reference |
+| content | popper content   |

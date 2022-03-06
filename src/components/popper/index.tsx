@@ -57,6 +57,10 @@ export const props = {
     type: Boolean,
     default: true,
   },
+  hideArrow: {
+    type: Boolean,
+    default: false,
+  },
 };
 
 export type IPopperProps = ExtractFromProps<typeof props>;
@@ -345,7 +349,16 @@ export const Popper = componentV2<
             {state.hasTriggered ? (
               <Teleport to="body" disabled={props.disableTeleport}>
                 {withDirectives(
-                  <div {...attrs} class="dv-popper-node" ref={popperNode}>
+                  <div
+                    {...attrs}
+                    class={[
+                      'dv-popper-node',
+                      {
+                        'with-arrow': !props.hideArrow,
+                      },
+                    ]}
+                    ref={popperNode}
+                  >
                     <div class="popper-container">
                       <div class="popper-arrow" />
                       {content}

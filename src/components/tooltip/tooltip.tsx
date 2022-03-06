@@ -1,48 +1,37 @@
-import { component } from '@/shared/styled';
-import { BoolConstructorToBase, IColorType } from '@/shared/types/common';
-import { isUndefined } from '@/shared/utils';
-import { computed, ref } from 'vue';
+import { componentV2 } from '@/shared/styled';
+import { ExtractFromProps, IColorType } from '@/shared/types/common';
+import { HTMLAttributes, PropType } from 'vue';
+import { IPopperProps, props as popperProps, Popper } from '../popper';
 import style from './style';
 
-export interface ITooltipProps {
-  tip?: string;
-  open?: boolean;
-  placement?: 'top' | 'bottom' | 'left' | 'right';
-  type?: IColorType;
-}
-
 const props = {
-  open: { type: Boolean, default: void 0 },
+  ...popperProps,
+  type: {
+    type: String as PropType<IColorType>,
+    default: 'netural',
+  },
 };
 
-export const Tooltip = component<
-  ITooltipProps,
-  BoolConstructorToBase<typeof props>
->(
+export type ITooltipProps = ExtractFromProps<typeof props> & IPopperProps;
+
+export const Tooltip = componentV2<ITooltipProps, HTMLAttributes>(
   {
     name: 'Tooltip',
     props,
     setup: (props, { attrs, slots }) => {
-      const state = ref(!!props.open);
-
-      const finalOpen = computed(() => {
-        return isUndefined(props.open) ? state.value : props.open;
-      });
-
       return () => (
-        <div
+        <Popper
           class={[
-            'dv-tooltip tooltip',
+            'dv-tooltip',
+            attrs.class,
             {
-              'tooltip-open': finalOpen.value,
-              [`tooltip-${attrs.placement}`]: !!attrs.placement,
-              [`tooltip-${attrs.type}`]: !!attrs.type,
+              [`dv-tooltip-${props.type}`]: !!props.type,
             },
           ]}
-          data-tip={attrs.tip}
+          {...props}
         >
-          {slots?.default?.()}
-        </div>
+          {slots}
+        </Popper>
       );
     },
   },

@@ -1,4 +1,4 @@
-import { PropType } from 'vue';
+import { CSSProperties, PropType, StyleValue } from 'vue';
 
 export type ISize = 'xs' | 'sm' | 'md' | 'lg';
 
@@ -30,3 +30,8 @@ export type ExtractFromProps<T> = {
       : any
   >;
 };
+
+export interface IStyleProps {
+  class?: any;
+  style?: StyleValue;
+}
