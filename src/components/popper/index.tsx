@@ -323,6 +323,32 @@ export const Popper = componentV2<
         },
       );
 
+      watch(
+        () => getClidEl(),
+        (_, _2, onInvalidate) => {
+          if (typeof MutationObserver === 'undefined') return;
+          if (!getClidEl()) return;
+
+          const observer = new MutationObserver((e) => {
+            if (finalActions.value) {
+              state.popperIns?.update();
+            }
+          });
+
+          observer.observe(getClidEl(), {
+            attributes: true,
+            attributeFilter: ['style'],
+          });
+
+          onInvalidate(() => {
+            observer.disconnect();
+          });
+        },
+        {
+          // flush: 'post',
+        },
+      );
+
       onMounted(() => {
         finalShow.value && update(true);
       });
