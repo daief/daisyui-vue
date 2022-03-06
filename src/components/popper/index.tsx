@@ -1,6 +1,6 @@
 import { componentV2 } from '@/shared/styled';
 import { ExtractFromProps } from '@/shared/types/common';
-import { isBool, isString, isUndefined } from '@/shared/utils';
+import { isString, isUndefined } from '@/shared/utils';
 import {
   createPopper,
   Instance,
@@ -9,7 +9,6 @@ import {
 } from '@popperjs/core';
 import {
   computed,
-  getCurrentInstance,
   nextTick,
   onActivated,
   onBeforeUnmount,
@@ -88,6 +87,11 @@ export const Popper = componentV2<IPopperProps>({
       if (Array.isArray(props.triggerAction)) return props.triggerAction;
     });
 
+    const hasAction = (acts: ITriggerAction | ITriggerAction[]) =>
+      Array.isArray(acts)
+        ? acts.some((act) => finalActions.value.includes(act))
+        : finalActions.value.includes(acts);
+
     const handleClose = () => {
       change(false);
     };
@@ -121,12 +125,7 @@ export const Popper = componentV2<IPopperProps>({
     };
 
     const createIns = () => {
-      if (
-        state.popperIns &&
-        state.popperIns.state.elements.reference === getClidEl()
-      ) {
-        return;
-      }
+      destroy();
       state.popperIns = createPopper(getClidEl(), popperNode.value, {
         placement: props.placement,
         modifiers: [preventOverflow],
@@ -141,14 +140,22 @@ export const Popper = componentV2<IPopperProps>({
     };
 
     watch(
-      finalActions,
+      () => null,
       (_, _2, onInvalidate) => {
         const handleClickAway = (event: MouseEvent) => {
-          if (!childRef.value) {
+          const el = getClidEl();
+          if (!el) {
             return;
           }
 
-          const el = childRef.value.el as HTMLElement;
+          if (
+            !['click', 'contextMenu'].some((t: ITriggerAction) =>
+              finalActions.value.includes(t),
+            )
+          ) {
+            return;
+          }
+
           const doc = (el && el.ownerDocument) || document;
 
           if (
@@ -164,18 +171,25 @@ export const Popper = componentV2<IPopperProps>({
           }
         };
 
-        if (
-          ['click', 'contextMenu'].some((t: ITriggerAction) =>
-            finalActions.value.includes(t),
-          )
-        ) {
-          document.addEventListener('click', handleClickAway);
-          document.addEventListener('contextmenu', handleClickAway);
-          onInvalidate(() => {
-            document.removeEventListener('click', handleClickAway);
-            document.removeEventListener('contextmenu', handleClickAway);
-          });
-        }
+        const handleKeyDown = (e: KeyboardEvent) => {
+          if (
+            hasAction(['click', 'contextMenu', 'focus']) &&
+            e.key === 'Escape' &&
+            props.escapeKeyCloseable
+          ) {
+            getClidEl()?.blur();
+            change(false);
+          }
+        };
+
+        document.addEventListener('click', handleClickAway);
+        document.addEventListener('contextmenu', handleClickAway);
+        document.addEventListener('keydown', handleKeyDown);
+        onInvalidate(() => {
+          document.removeEventListener('click', handleClickAway);
+          document.removeEventListener('contextmenu', handleClickAway);
+          document.removeEventListener('keydown', handleKeyDown);
+        });
       },
       {
         immediate: true,
@@ -184,7 +198,7 @@ export const Popper = componentV2<IPopperProps>({
     );
 
     watch(
-      [childRef, finalActions],
+      childRef,
       (_, _2, onInvalidate) => {
         const unFns = [] as VoidFunction[];
 
@@ -195,10 +209,7 @@ export const Popper = componentV2<IPopperProps>({
         ) => {
           const getEl = () => {
             const els = [getClidEl()];
-
-            if (bindBothChildAndPopper) {
-              els.push(popperNode.value);
-            }
+            bindBothChildAndPopper && els.push(popperNode.value);
             return els;
           };
 
@@ -213,7 +224,6 @@ export const Popper = componentV2<IPopperProps>({
           };
 
           unFns.push(un);
-
           return un;
         };
 
@@ -236,55 +246,48 @@ export const Popper = componentV2<IPopperProps>({
           }, leaveDelay);
         };
 
-        const handleKeyDown = (e: KeyboardEvent) => {
-          if (e.key === 'Escape' && props.escapeKeyCloseable) {
-            getClidEl()?.blur();
-            change(false);
+        // click
+        on('click', () => {
+          hasAction('click');
+          change(true);
+        });
+
+        // hover
+        on('mouseenter', () => hasAction('hover') && handleEnter(), true);
+        on('mouseleave', () => hasAction('hover') && handleLeave(), true);
+
+        // focus
+        on(
+          'focus',
+          () => {
+            if (!hasAction('focus')) return;
+            state.isFocus = true;
+            handleEnter();
+          },
+          true,
+        );
+        on(
+          'blur',
+          () => {
+            if (!hasAction('focus')) return;
+            state.isFocus = false;
+            handleLeave();
+          },
+          true,
+        );
+
+        // contextMenu
+        on('contextmenu', (e) => {
+          if (!hasAction('contextMenu')) return;
+          e.preventDefault();
+        });
+        on('mouseup', (e: MouseEvent) => {
+          if (!hasAction('contextMenu')) return;
+          // 右键点击
+          if (e.button === 2) {
+            change(true);
           }
-        };
-
-        if (finalActions.value.includes('click')) {
-          on('click', () => change(true));
-          on('keydown', handleKeyDown);
-        }
-
-        if (finalActions.value.includes('hover')) {
-          on('mouseenter', handleEnter, true);
-          on('mouseleave', handleLeave, true);
-        }
-
-        if (finalActions.value.includes('focus')) {
-          on(
-            'focus',
-            () => {
-              state.isFocus = true;
-              handleEnter();
-            },
-            true,
-          );
-          on(
-            'blur',
-            () => {
-              state.isFocus = false;
-              handleLeave();
-            },
-            true,
-          );
-          on('keydown', handleKeyDown);
-        }
-
-        if (finalActions.value.includes('contextMenu')) {
-          on('contextmenu', (e) => {
-            e.preventDefault();
-          });
-          on('mouseup', (e: MouseEvent) => {
-            // 右键点击
-            if (e.button === 2) {
-              change(true);
-            }
-          });
-          on('keydown', handleKeyDown);
-        }
+        });
 
         onInvalidate(() => {
           unFns.forEach((un) => un());
@@ -297,17 +300,10 @@ export const Popper = componentV2<IPopperProps>({
     );
 
     watch(
-      () => [props.placement, childRef],
+      () => [props.placement, getClidEl()],
       () => {
         if (!finalShow.value) return;
-        createIns();
-        state.popperIns
-          .setOptions({
-            placement: props.placement,
-          })
-          .then(() => {
-            update(finalShow.value);
-          });
+        update(true);
       },
       {
         flush: 'post',
