@@ -220,18 +220,18 @@ export const Popper = componentV2<
             fn: any,
             bindBothChildAndPopper = false,
           ) => {
-            const getEl = () => {
+            const getEls = () => {
               const els = [getClidEl()];
               bindBothChildAndPopper && els.push(popperNode.value);
               return els;
             };
 
-            getEl().forEach((el) => {
+            getEls().forEach((el) => {
               el?.addEventListener(name, fn);
             });
 
             const un = () => {
-              getEl().forEach((el) => {
+              getEls().forEach((el) => {
                 el?.removeEventListener(name, fn);
               });
             };
@@ -261,8 +261,7 @@ export const Popper = componentV2<
 
           // click
           on('click', () => {
-            hasAction('click');
-            change(true);
+            hasAction('click') && change(true);
           });
 
           // hover
@@ -295,9 +294,8 @@ export const Popper = componentV2<
             e.preventDefault();
           });
           on('mouseup', (e: MouseEvent) => {
-            if (!hasAction('contextMenu')) return;
             // 右键点击
-            if (e.button === 2) {
+            if (hasAction('contextMenu') && e.button === 2) {
               change(true);
             }
           });
@@ -325,9 +323,9 @@ export const Popper = componentV2<
 
       watch(
         () => getClidEl(),
-        (_, _2, onInvalidate) => {
+        (el, _, onInvalidate) => {
           if (typeof MutationObserver === 'undefined') return;
-          if (!getClidEl()) return;
+          if (!el) return;
 
           const observer = new MutationObserver((e) => {
             if (finalActions.value) {
@@ -335,17 +333,29 @@ export const Popper = componentV2<
             }
           });
 
-          observer.observe(getClidEl(), {
+          observer.observe(el, {
             attributes: true,
             attributeFilter: ['style'],
           });
+
+          // 尝试处理 Button 这类触发时有动效的情况，自动校准位置
+          let updateTimer = null;
+          const debounceUpdate = () => {
+            clearTimeout(updateTimer);
+            updateTimer = setTimeout(() => {
+              if (!finalShow.value) return;
+              state.popperIns?.update();
+            }, 233);
+          };
+          el.addEventListener('animationend', debounceUpdate);
+          el.addEventListener('transitionrun', debounceUpdate);
 
           onInvalidate(() => {
             observer.disconnect();
           });
         },
         {
-          // flush: 'post',
+          flush: 'post',
         },
       );
 
