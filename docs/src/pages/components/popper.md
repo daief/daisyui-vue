@@ -38,8 +38,9 @@ focus
     triggerAction="focus"
     content="This is a tooltip."
     placement="right"
+    style="--popper-tail-offset: 10px"
   >
-    <input placeholder="Focus me" />
+    <dv-input placeholder="Focus me" />
   </dv-popper>
 </div>
 ```

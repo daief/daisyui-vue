@@ -8,6 +8,8 @@ export type IBrandColor = 'netural' | 'primary' | 'secondary' | 'accent';
 
 export type IColorType = IBrandColor | IStateColor;
 
+export type IColorTypeWithGhost = IColorType | 'ghost';
+
 /**
  * Bool => bool
  * @deprecated
