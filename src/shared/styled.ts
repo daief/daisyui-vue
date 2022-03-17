@@ -87,7 +87,7 @@ export function createStyles(): IStyles {
       css = Array.isArray(css) ? css : [css];
 
       let appendText = '';
-      const styleText = style.textContent || '';
+      const styleText = style?.textContent || '';
 
       css.forEach((text) => {
         if (styleText.includes(text)) return;

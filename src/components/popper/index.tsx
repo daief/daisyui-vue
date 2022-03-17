@@ -195,6 +195,9 @@ export const Popper = componentV2<
             }
           };
 
+          if (typeof document === 'undefined') return;
+
+          // TODO 封装事件 hooks
           document.addEventListener('click', handleClickAway);
           document.addEventListener('contextmenu', handleClickAway);
           document.addEventListener('keydown', handleKeyDown);
