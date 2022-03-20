@@ -1,0 +1,50 @@
+{
+  "name": "daisyui-style-ext",
+  "version": "1.0.0",
+  "main": "out/index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^14.0.13",
+    "@types/vscode": "^1.46.0",
+    "esbuild": "^0.14.27",
+    "typescript": "^4.0.0"
+  },
+  "engines": {
+    "vscode": "^1.46.0",
+    "node": ">=14.0.0"
+  },
+  "scripts": {
+    "dev": "pnpm build -- -w",
+    "esbuild-base": "esbuild ./src/index.ts --bundle --outfile=out/index.js --external:vscode --format=cjs --platform=node",
+    "build": "pnpm esbuild-base -- --minify",
+    "pkg": "vsce package --no-dependencies --out out/ext.vsix"
+  },
+  "activationEvents": [
+    "onCommand:extension.ds-insert-style"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.ds-insert-style",
+        "title": "Daisyui Style: Insert style"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "extension.ds-insert-style",
+          "group": "1_ds"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "extension.ds-insert-style",
+        "key": "alt+cmd+d"
+      }
+    ]
+  },
+  "configuration": {
+    "properties": {}
+  }
+}

@@ -20,3 +20,4 @@ lib
 
 docs/src/.demo
 .vite-ssg-temp
+out/

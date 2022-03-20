@@ -91,6 +91,7 @@ export function render() {
     - [x] ~~it is easy to use in SSR, but there is no style on first render (`FOUC`, because css inserted by js)~~. Use `extractStyles` to extract critical css.
 - [ ] media query & responsive
 - [ ] refine style insertion detect(maybe use a content hash)
+- [ ] pre insert all global style
 
 ## Components
 
