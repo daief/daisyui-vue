@@ -12,6 +12,7 @@ import Components from 'unplugin-vue-components/vite';
 import fs from 'fs-extra';
 import crypto from 'crypto';
 import path from 'path';
+import rootPkg from '../package.json';
 
 const isDev = process.env.NODE_ENV === 'development';
 
@@ -52,10 +53,12 @@ const config: UserConfig = {
     {
       enforce: 'pre',
       transformIndexHtml: (html) => {
-        return html.replace(
-          '<!-- __GOOGLE_GA__ -->',
-          isDev ? '' : '<script src="/def-common/js/ga.js"></script>',
-        );
+        return html
+          .replace(
+            '<!-- __GOOGLE_GA__ -->',
+            isDev ? '' : '<script src="/def-common/js/ga.js"></script>',
+          )
+          .replace('__DAISYUI_VERSION__', rootPkg.devDependencies.daisyui);
       },
     },
     vueJsx(),

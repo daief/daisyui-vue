@@ -1,4 +1,4 @@
-import { VNode } from 'vue';
+import { Slots, VNode } from 'vue';
 
 export function cssUnit(unit: string | number) {
   if (typeof unit === 'number') {
@@ -32,4 +32,24 @@ export function addClass(str: string, newClass: string | string[]) {
 export function removeClass(str: string, removeClass: string) {
   const classes = str.split(' ');
   return classes.filter((c) => c !== removeClass).join(' ');
+}
+
+/**
+ * 从 props、slots 中解析 render 方法的内容
+ * @param key
+ * @param props
+ * @param slots
+ * @param renderArgs
+ * @returns
+ */
+export function getRenderResult(
+  key: string,
+  props: any,
+  slots: Readonly<Slots>,
+  renderArgs: () => any = () => void 0,
+) {
+  return (
+    slots[key]?.(renderArgs()) ||
+    (typeof props[key] === 'function' ? props[key](renderArgs()) : props[key])
+  );
 }

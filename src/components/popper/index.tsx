@@ -1,6 +1,6 @@
 import { componentV2 } from '@/shared/styled';
 import { ExtractFromProps } from '@/shared/types/common';
-import { isString, isUndefined } from '@/shared/utils';
+import { getRenderResult, isString, isUndefined } from '@/shared/utils';
 import {
   createPopper,
   Instance,
@@ -76,7 +76,7 @@ export const Popper = componentV2<
     setup: (props, { attrs, slots }) => {
       const state = reactive({
         popperIns: null as Instance,
-        isOpen: false,
+        isOpen: props.open,
         isFocus: false,
         hasTriggered: false,
       });
@@ -416,15 +416,3 @@ export const Popper = componentV2<
   },
   [style],
 );
-
-function getRenderResult(
-  key: string,
-  props: any,
-  slots: any,
-  renderArgs: () => any = () => void 0,
-) {
-  return (
-    slots[key]?.(renderArgs()) ||
-    (typeof props[key] === 'function' ? props[key](renderArgs()) : props[key])
-  );
-}
