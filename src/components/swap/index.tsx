@@ -23,6 +23,10 @@ const props = {
     type: String as PropType<'rotate' | 'flip'>,
     default: '',
   },
+  onChange: {
+    type: Function as PropType<(e: boolean) => void>,
+    default: void 0,
+  },
 };
 
 export type ISwapProps = ExtractFromProps<typeof props>;
@@ -57,7 +61,8 @@ export const Swap = componentV2<ISwapProps>(
           {
             class: cls.value,
             onClick: () => {
-              state.active = !state.active;
+              state.active = !finalActive.value;
+              props.onChange?.(state.active);
             },
           },
           [<div class="swap-on">{on}</div>, <div class="swap-off">{off}</div>],

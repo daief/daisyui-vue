@@ -84,12 +84,14 @@ export default {
 
 ### Attributes
 
-| name      | description      | type         | default |
-| --------- | ---------------- | ------------ | ------- |
-| on        | render on        | -            | -       |
-| off       | render off       | -            | -       |
-| tag       | wrap elemnt tag  | string       | label   |
-| animation | animation effect | rotate, flip | -       |
+| name      | description                     | type         | default |
+| --------- | ------------------------------- | ------------ | ------- |
+| on        | render on                       | -            | -       |
+| off       | render off                      | -            | -       |
+| tag       | wrap elemnt tag                 | string       | label   |
+| animation | animation effect                | rotate, flip | -       |
+| active    | swap active status              | boolean      | -       |
+| onChange  | swap active status change event | Function     | -       |
 
 ### Solts
 

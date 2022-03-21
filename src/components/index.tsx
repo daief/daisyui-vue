@@ -17,4 +17,5 @@ export * from './progress';
 export * from './swap';
 export * from './tab';
 export * from './table';
+export * from './toggle';
 export * from './tooltip';
