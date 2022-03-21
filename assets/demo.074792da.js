@@ -1,0 +1,4 @@
+import{u as l,y as a,z as c,c as t,A as d,F as p,B as s,C as r}from"./vendor.dc484497.js";const m=s("div",{class:"markdown-body"},[s("h1",null,"Demo for development")],-1),_={class:"text-center"},g=s("div",{class:"markdown-body"},null,-1),x=[],y={setup(h,{expose:n}){return n({frontmatter:{meta:[]}}),l({meta:[]}),(v,j)=>{const e=a("dv-toggle"),o=a("Playground");return r(),c(p,null,[m,t(o,{code:`<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;text-center&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">dv-toggle</span> /&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+`},{default:d(()=>[s("div",_,[t(e)])]),_:1}),g],64)}}};export{y as default,x as meta};
