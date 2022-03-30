@@ -8,6 +8,7 @@ export * from './button';
 export * from './card';
 export * from './divider';
 export * from './drawer';
+export * from './dropdown';
 export * from './input';
 export * from './link';
 export * from './mask';

@@ -28,7 +28,7 @@ import style from './style/index.less';
 
 export type ITriggerAction = 'contextMenu' | 'hover' | 'click' | 'focus';
 
-export const props = {
+export const popperProps = {
   content: {
     default: '',
   },
@@ -63,7 +63,7 @@ export const props = {
   },
 };
 
-export type IPopperProps = ExtractFromProps<typeof props>;
+export type IPopperProps = ExtractFromProps<typeof popperProps>;
 
 export const Popper = componentV2<
   IPopperProps,
@@ -71,7 +71,7 @@ export const Popper = componentV2<
 >(
   {
     name: 'Popper',
-    props,
+    props: popperProps,
     inheritAttrs: false,
     setup: (props, { attrs, slots }) => {
       const state = reactive({
@@ -398,6 +398,7 @@ export const Popper = componentV2<
                         'with-arrow': !props.hideArrow,
                       },
                     ]}
+                    style={props.hideArrow ? '--popper-tail: 0px' : ''}
                     ref={popperNode}
                   >
                     <div class="popper-container">

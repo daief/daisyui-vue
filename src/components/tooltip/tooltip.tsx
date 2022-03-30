@@ -1,7 +1,7 @@
 import { componentV2 } from '@/shared/styled';
 import { ExtractFromProps, IColorType } from '@/shared/types/common';
 import { HTMLAttributes, PropType } from 'vue';
-import { IPopperProps, props as popperProps, Popper } from '../popper';
+import { IPopperProps, popperProps, Popper } from '../popper';
 import style from './style';
 
 const props = {

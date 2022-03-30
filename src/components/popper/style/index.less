@@ -17,38 +17,47 @@
     border-width: var(--popper-tail, 0);
   }
 
+  &[data-popper-placement*='top'] {
+    .popper-container {
+      margin-bottom: var(--popper-tail-offset);
+    }
+  }
+  &[data-popper-placement*='bottom'] {
+    .popper-container {
+      margin-top: var(--popper-tail-offset);
+    }
+  }
+  &[data-popper-placement*='left'] {
+    .popper-container {
+      margin-right: var(--popper-tail-offset);
+    }
+  }
+  &[data-popper-placement*='right'] {
+    .popper-container {
+      margin-left: var(--popper-tail-offset);
+    }
+  }
+
   &.with-arrow {
     &[data-popper-placement*='top'] {
-      .popper-container {
-        margin-bottom: var(--popper-tail-offset);
-      }
       .popper-arrow {
         border-color: var(--popper-color) transparent transparent transparent;
         top: 100%;
       }
     }
     &[data-popper-placement*='bottom'] {
-      .popper-container {
-        margin-top: var(--popper-tail-offset);
-      }
       .popper-arrow {
         border-color: transparent transparent var(--popper-color) transparent;
         bottom: 100%;
       }
     }
     &[data-popper-placement*='left'] {
-      .popper-container {
-        margin-right: var(--popper-tail-offset);
-      }
       .popper-arrow {
         border-color: transparent transparent transparent var(--popper-color);
         left: 100%;
       }
     }
     &[data-popper-placement*='right'] {
-      .popper-container {
-        margin-left: var(--popper-tail-offset);
-      }
       .popper-arrow {
         border-color: transparent var(--popper-color) transparent transparent;
         right: 100%;

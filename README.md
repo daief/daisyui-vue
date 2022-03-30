@@ -92,6 +92,7 @@ export function render() {
 - [ ] media query & responsive
 - [ ] refine style insertion detect(maybe use a content hash)
 - [ ] pre insert all global style
+- [ ] popper animation
 
 ## Components
 
@@ -108,7 +109,7 @@ export function render() {
 - [ ] countdown
 - [x] divider
 - [x] drawer
-- [ ] dropdown
+- [x] dropdown - 🛠 refactor(popper inside)
 - [ ] footer
 - [ ] hero
 - [ ] indicator
