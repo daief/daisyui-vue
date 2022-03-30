@@ -2,6 +2,6 @@
 
 ```html :::demo
 <div class="text-center">
-  <dv-toggle />
+  <dv-link>ds</dv-link>
 </div>
 ```
