@@ -355,6 +355,8 @@ export const Popper = componentV2<
 
           onInvalidate(() => {
             observer.disconnect();
+            el.removeEventListener('animationend', debounceUpdate);
+            el.removeEventListener('transitionrun', debounceUpdate);
           });
         },
         {
