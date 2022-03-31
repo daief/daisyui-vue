@@ -53,3 +53,19 @@ export function getRenderResult(
     (typeof props[key] === 'function' ? props[key](renderArgs()) : props[key])
   );
 }
+
+export function debounce<F extends (...args: any) => any>(
+  fn: F,
+  timeout: number,
+): (...args: Parameters<F>) => void {
+  let updateTimer = null;
+
+  const result = (...args) => {
+    clearTimeout(updateTimer);
+    updateTimer = setTimeout(() => {
+      fn(...args);
+    }, timeout);
+  };
+
+  return result;
+}
