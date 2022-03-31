@@ -231,7 +231,7 @@ template slots
 | open               | popper open status                   | boolean                          | -       |
 | placement          | popper placement                     | Placement                        | auto    |
 | disableTeleport    | disable popper node teleport to body | boolean                          | false   |
-| disabled           | disable popper                       | boolean                          | false   |
+| disabled           | disable popper                       | boolean                          | true    |
 | onChange           | emitted whe popper status change     | function                         | -       |
 | triggerAction      | the action to tigger popper          | contextMenu, hover, click, focus | hover   |
 | outsideCloseable   | click outside to close popper        | boolean                          | true    |

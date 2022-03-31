@@ -1,6 +1,11 @@
 import { componentV2 } from '@/shared/styled';
 import { ExtractFromProps } from '@/shared/types/common';
-import { getRenderResult, isString, isUndefined } from '@/shared/utils';
+import {
+  debounce,
+  getRenderResult,
+  isString,
+  isUndefined,
+} from '@/shared/utils';
 import {
   createPopper,
   Instance,
@@ -40,7 +45,10 @@ export const popperProps = {
     type: String as PropType<Placement>,
     default: 'auto',
   },
-  disableTeleport: Boolean,
+  disableTeleport: {
+    type: Boolean,
+    default: true,
+  },
   disabled: Boolean,
   onChange: {
     type: Function as PropType<(v: boolean) => void>,
@@ -78,7 +86,10 @@ export const Popper = componentV2<
         popperIns: null as Instance,
         isOpen: props.open,
         isFocus: false,
+        /** 是否触发过 */
         hasTriggered: false,
+        /** 子元素是否可见 */
+        childElVisibility: true,
       });
 
       let enterTimer = null;
@@ -142,6 +153,7 @@ export const Popper = componentV2<
         state.popperIns = createPopper(el, popperNode.value, {
           placement: props.placement,
           modifiers: [preventOverflow],
+          strategy: 'fixed',
         });
       };
 
@@ -324,43 +336,18 @@ export const Popper = componentV2<
         },
       );
 
-      watch(
+      useElementStatusChange(
         () => getClidEl(),
-        (el, _, onInvalidate) => {
-          if (typeof MutationObserver === 'undefined') return;
-          if (!el) return;
+        (visibilityChange) => {
+          if (typeof visibilityChange === 'boolean') {
+            state.childElVisibility = visibilityChange;
+            visibilityChange && nextTick(() => state.popperIns?.update());
+            return;
+          }
 
-          const observer = new MutationObserver((e) => {
-            if (finalActions.value) {
-              state.popperIns?.update();
-            }
-          });
-
-          observer.observe(el, {
-            attributes: true,
-            attributeFilter: ['style'],
-          });
-
-          // 尝试处理 Button 这类触发时有动效的情况，自动校准位置
-          let updateTimer = null;
-          const debounceUpdate = () => {
-            clearTimeout(updateTimer);
-            updateTimer = setTimeout(() => {
-              if (!finalShow.value) return;
-              state.popperIns?.update();
-            }, 233);
-          };
-          el.addEventListener('animationend', debounceUpdate);
-          el.addEventListener('transitionrun', debounceUpdate);
-
-          onInvalidate(() => {
-            observer.disconnect();
-            el.removeEventListener('animationend', debounceUpdate);
-            el.removeEventListener('transitionrun', debounceUpdate);
-          });
-        },
-        {
-          flush: 'post',
+          if (state.isOpen) {
+            state.popperIns?.update();
+          }
         },
       );
 
@@ -394,12 +381,7 @@ export const Popper = componentV2<
                 {withDirectives(
                   <div
                     {...attrs}
-                    class={[
-                      'dv-popper-node',
-                      {
-                        'with-arrow': !props.hideArrow,
-                      },
-                    ]}
+                    class={['dv-popper-node']}
                     style={props.hideArrow ? '--popper-tail: 0px' : ''}
                     ref={popperNode}
                   >
@@ -408,7 +390,7 @@ export const Popper = componentV2<
                       {content}
                     </div>
                   </div>,
-                  [[vShow, finalShow.value]],
+                  [[vShow, finalShow.value && state.childElVisibility]],
                 )}
               </Teleport>
             ) : null}
@@ -419,3 +401,65 @@ export const Popper = componentV2<
   },
   [style],
 );
+
+function useElementStatusChange(
+  getVal: () => HTMLElement,
+  cb: (visibilityChange?: boolean) => void,
+) {
+  watch(
+    () => getVal(),
+    (el, _, onInvalidate) => {
+      if (!el) return;
+      const debounceUpdate = debounce(cb, 233);
+      const eventHandler = () => debounceUpdate();
+
+      const mutation = () => {
+        if (typeof MutationObserver === 'undefined') return;
+        const observer = new MutationObserver((e) => {
+          debounceUpdate();
+        });
+
+        observer.observe(el, {
+          attributes: true,
+          attributeFilter: ['style'],
+        });
+
+        return () => {
+          observer.disconnect();
+        };
+      };
+
+      const intersection = () => {
+        if (typeof IntersectionObserver === 'undefined') return;
+        const observer = new IntersectionObserver(
+          ([e]) => {
+            debounceUpdate(e.intersectionRatio > 0);
+          },
+          {
+            threshold: [0],
+          },
+        );
+
+        observer.observe(el);
+
+        return () => observer.disconnect();
+      };
+
+      const mutationRes = mutation();
+      const intersectionRes = intersection();
+
+      el.addEventListener('animationend', eventHandler);
+      el.addEventListener('transitionrun', eventHandler);
+
+      onInvalidate(() => {
+        mutationRes?.();
+        intersectionRes?.();
+        el.removeEventListener('animationend', eventHandler);
+        el.removeEventListener('transitionrun', eventHandler);
+      });
+    },
+    {
+      flush: 'post',
+    },
+  );
+}

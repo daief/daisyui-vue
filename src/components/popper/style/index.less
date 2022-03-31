@@ -3,6 +3,8 @@
   --popper-color: hsl(var(--n));
   --popper-tail-offset: calc(1px + var(--popper-tail));
 
+  z-index: 1;
+
   .popper-container {
     position: relative;
   }
@@ -38,72 +40,70 @@
     }
   }
 
-  &.with-arrow {
-    &[data-popper-placement*='top'] {
-      .popper-arrow {
-        border-color: var(--popper-color) transparent transparent transparent;
-        top: 100%;
-      }
+  &[data-popper-placement*='top'] {
+    .popper-arrow {
+      border-color: var(--popper-color) transparent transparent transparent;
+      top: 100%;
     }
-    &[data-popper-placement*='bottom'] {
-      .popper-arrow {
-        border-color: transparent transparent var(--popper-color) transparent;
-        bottom: 100%;
-      }
+  }
+  &[data-popper-placement*='bottom'] {
+    .popper-arrow {
+      border-color: transparent transparent var(--popper-color) transparent;
+      bottom: 100%;
     }
-    &[data-popper-placement*='left'] {
-      .popper-arrow {
-        border-color: transparent transparent transparent var(--popper-color);
-        left: 100%;
-      }
+  }
+  &[data-popper-placement*='left'] {
+    .popper-arrow {
+      border-color: transparent transparent transparent var(--popper-color);
+      left: 100%;
     }
-    &[data-popper-placement*='right'] {
-      .popper-arrow {
-        border-color: transparent var(--popper-color) transparent transparent;
-        right: 100%;
-      }
+  }
+  &[data-popper-placement*='right'] {
+    .popper-arrow {
+      border-color: transparent var(--popper-color) transparent transparent;
+      right: 100%;
     }
+  }
 
-    // top & bottm
-    &[data-popper-placement='top-start'],
-    &[data-popper-placement='bottom-start'] {
-      .popper-arrow {
-        left: min(16px, 10%);
-      }
+  // top & bottm
+  &[data-popper-placement='top-start'],
+  &[data-popper-placement='bottom-start'] {
+    .popper-arrow {
+      left: min(16px, 10%);
     }
-    &[data-popper-placement='top'],
-    &[data-popper-placement='bottom'] {
-      .popper-arrow {
-        left: 50%;
-        transform: translateX(-50%);
-      }
+  }
+  &[data-popper-placement='top'],
+  &[data-popper-placement='bottom'] {
+    .popper-arrow {
+      left: 50%;
+      transform: translateX(-50%);
     }
-    &[data-popper-placement='top-end'],
-    &[data-popper-placement='bottom-end'] {
-      .popper-arrow {
-        right: min(16px, 10%);
-      }
+  }
+  &[data-popper-placement='top-end'],
+  &[data-popper-placement='bottom-end'] {
+    .popper-arrow {
+      right: min(16px, 10%);
     }
+  }
 
-    // left & right
-    &[data-popper-placement='left-start'],
-    &[data-popper-placement='right-start'] {
-      .popper-arrow {
-        top: min(16px, 10%);
-      }
+  // left & right
+  &[data-popper-placement='left-start'],
+  &[data-popper-placement='right-start'] {
+    .popper-arrow {
+      top: min(16px, 10%);
     }
-    &[data-popper-placement='left'],
-    &[data-popper-placement='right'] {
-      .popper-arrow {
-        top: 50%;
-        transform: translateY(-50%);
-      }
+  }
+  &[data-popper-placement='left'],
+  &[data-popper-placement='right'] {
+    .popper-arrow {
+      top: 50%;
+      transform: translateY(-50%);
     }
-    &[data-popper-placement='left-end'],
-    &[data-popper-placement='right-end'] {
-      .popper-arrow {
-        bottom: min(16px, 10%);
-      }
+  }
+  &[data-popper-placement='left-end'],
+  &[data-popper-placement='right-end'] {
+    .popper-arrow {
+      bottom: min(16px, 10%);
     }
   }
 }
