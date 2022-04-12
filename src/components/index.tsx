@@ -14,6 +14,7 @@ export * from './input';
 export * from './link';
 export * from './mask';
 export * from './menu';
+export * from './modal';
 export * from './navbar';
 export * from './popper';
 export * from './progress';

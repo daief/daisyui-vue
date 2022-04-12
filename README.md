@@ -1,6 +1,6 @@
 # daisyui-vue
 
-基于 daisyui 封装的 vue 组件库。
+基于 [daisyui](https://github.com/saadeghi/daisyui) 封装的 vue 组件库。
 
 ## Usage
 
@@ -140,3 +140,8 @@ export function render() {
 - [ ] mockup-code
 - [ ] mockup-phone
 - [ ] mockup-window
+
+## 命名规则
+
+- 事件名称，`onNameAction`：onMaskClick、onEscKeyDown
+- 事件控制，`xxxYYable`: keyboardCloseable

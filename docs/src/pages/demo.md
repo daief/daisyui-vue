@@ -1,18 +1,35 @@
 # Demo for development
 
-```html :::demo
-<div class="text-center">
-  <div style="height: 1000px" />
+```tsx :::run
+import { reactive, watch } from 'vue';
 
-  <dv-popper
-    triggerAction="click"
-    content="This is a tooltip."
-    placement="bottom"
-    open
-  >
-    <dv-button>click</dv-button>
-  </dv-popper>
+export default {
+  setup: () => {
+    const state = reactive({
+      show: false,
+    });
 
-  <div style="height: 1000px" />
-</div>
+    let c = 0;
+
+    watch([() => c], (newVal, oldVal) => {
+      console.log(newVal, oldVal);
+    });
+
+    return () => (
+      <div class="text-center">
+        <dv-toggle
+          checked={state.show}
+          onChange={(e) => (state.show = e.target.checked)}
+        />
+        <hr />
+        <dv-modal-base
+          open={state.show}
+          maskCloseable={false}
+          onClickMask={() => (state.show = false)}
+          custom={() => <div onClick={() => c++}>111 - {c}</div>}
+        ></dv-modal-base>
+      </div>
+    );
+  },
+};
 ```
