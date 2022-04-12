@@ -1,3 +1,4 @@
+import { useActiveChange } from '@/shared/hooks/useActiveChange';
 import { componentV2 } from '@/shared/styled';
 import { ExtractFromProps } from '@/shared/types/common';
 import {
@@ -16,10 +17,6 @@ import {
   computed,
   HTMLAttributes,
   nextTick,
-  onActivated,
-  onBeforeUnmount,
-  onDeactivated,
-  onMounted,
   PropType,
   reactive,
   ref,
@@ -61,7 +58,7 @@ export const popperProps = {
     type: Boolean,
     default: true,
   },
-  escapeKeyCloseable: {
+  escapeCloseable: {
     type: Boolean,
     default: true,
   },
@@ -164,66 +161,60 @@ export const Popper = componentV2<
         }
       };
 
-      watch(
-        () => null,
-        (_, _2, onInvalidate) => {
-          const handleClickAway = (event: MouseEvent) => {
-            const el = getClidEl();
-            if (!el) {
-              return;
+      useActiveChange(() => {
+        const handleClickAway = (event: MouseEvent) => {
+          const el = getClidEl();
+          if (!el) {
+            return;
+          }
+
+          if (
+            !['click', 'contextMenu'].some((t: ITriggerAction) =>
+              finalActions.value.includes(t),
+            )
+          ) {
+            return;
+          }
+
+          const doc = (el && el.ownerDocument) || document;
+
+          if (
+            doc.documentElement &&
+            doc.documentElement.contains(event.target as any) &&
+            !el.contains(event.target as any) && // 子节点不包含event.target
+            !popperNode.value?.contains(event.target as any) // Popper节点不包含event.target
+          ) {
+            // onClickAway && onClickAway(event);
+            if (props.outsideCloseable) {
+              handleClose();
             }
+          }
+        };
 
-            if (
-              !['click', 'contextMenu'].some((t: ITriggerAction) =>
-                finalActions.value.includes(t),
-              )
-            ) {
-              return;
-            }
+        const handleKeyDown = (e: KeyboardEvent) => {
+          if (
+            hasAction(['click', 'contextMenu', 'focus']) &&
+            e.key === 'Escape' &&
+            props.escapeCloseable
+          ) {
+            getClidEl()?.blur();
+            change(false);
+          }
+        };
 
-            const doc = (el && el.ownerDocument) || document;
+        if (typeof document === 'undefined') return;
 
-            if (
-              doc.documentElement &&
-              doc.documentElement.contains(event.target as any) &&
-              !el.contains(event.target as any) && // 子节点不包含event.target
-              !popperNode.value?.contains(event.target as any) // Popper节点不包含event.target
-            ) {
-              // onClickAway && onClickAway(event);
-              if (props.outsideCloseable) {
-                handleClose();
-              }
-            }
-          };
+        // TODO 封装事件 hooks
+        document.addEventListener('click', handleClickAway);
+        document.addEventListener('contextmenu', handleClickAway);
+        document.addEventListener('keydown', handleKeyDown);
 
-          const handleKeyDown = (e: KeyboardEvent) => {
-            if (
-              hasAction(['click', 'contextMenu', 'focus']) &&
-              e.key === 'Escape' &&
-              props.escapeKeyCloseable
-            ) {
-              getClidEl()?.blur();
-              change(false);
-            }
-          };
-
-          if (typeof document === 'undefined') return;
-
-          // TODO 封装事件 hooks
-          document.addEventListener('click', handleClickAway);
-          document.addEventListener('contextmenu', handleClickAway);
-          document.addEventListener('keydown', handleKeyDown);
-          onInvalidate(() => {
-            document.removeEventListener('click', handleClickAway);
-            document.removeEventListener('contextmenu', handleClickAway);
-            document.removeEventListener('keydown', handleKeyDown);
-          });
-        },
-        {
-          immediate: true,
-          flush: 'post',
-        },
-      );
+        return () => {
+          document.removeEventListener('click', handleClickAway);
+          document.removeEventListener('contextmenu', handleClickAway);
+          document.removeEventListener('keydown', handleKeyDown);
+        };
+      });
 
       watch(
         childRef,
@@ -351,20 +342,11 @@ export const Popper = componentV2<
         },
       );
 
-      onMounted(() => {
+      useActiveChange(() => {
         finalShow.value && update(true);
-      });
-
-      onBeforeUnmount(() => {
-        destroy();
-      });
-
-      onActivated(() => {
-        finalShow.value && update(true);
-      });
-
-      onDeactivated(() => {
-        destroy();
+        return () => {
+          destroy();
+        };
       });
 
       return () => {
@@ -402,6 +384,7 @@ export const Popper = componentV2<
   [style],
 );
 
+// TODO maybe some problem
 function useElementStatusChange(
   getVal: () => HTMLElement,
   cb: (visibilityChange?: boolean) => void,
