@@ -29,7 +29,7 @@ export type ExtractFromProps<T> = {
       type: any;
     }
       ? T[k]['type']
-      : any
+      : T[k]
   >;
 };
 
