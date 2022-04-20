@@ -15,6 +15,8 @@ export default {
       console.log(newVal, oldVal);
     });
 
+    const close = () => (state.show = false);
+
     return () => (
       <div class="text-center">
         <dv-toggle
@@ -24,10 +26,17 @@ export default {
         <hr />
         <dv-modal-base
           open={state.show}
-          maskCloseable={false}
-          onClickMask={() => (state.show = false)}
-          custom={() => <div onClick={() => c++}>111 - {c}</div>}
-        ></dv-modal-base>
+          // maskCloseable={false}
+          onClose={close}
+          destroyOnClose
+          // custom={() => <div onClick={() => c++}>111 - {c}</div>}
+        >
+          <dv-modal-title onClose={close}>1</dv-modal-title>
+          <dv-modal-body>2332</dv-modal-body>
+          <dv-modal-action>
+            <dv-button>Yay!</dv-button>
+          </dv-modal-action>
+        </dv-modal-base>
       </div>
     );
   },

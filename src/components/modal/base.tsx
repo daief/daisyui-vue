@@ -42,7 +42,6 @@ export const modalBaseProps = {
   >,
 
   custom: { default: '' },
-  // TODO
   destroyOnClose: Boolean,
 };
 
@@ -96,13 +95,13 @@ export const ModalBase = componentV2<IModalBaseProps>(
         },
       );
 
+      const getCustomNode = () => getRenderResult('custom', props, slots);
+
       return () => {
         const toContainer =
           typeof props.container === 'function'
             ? props.container()
             : props.container;
-
-        const customNode = getRenderResult('custom', props, slots);
 
         return state.hasTriggered ? (
           <Teleport disabled={props.disableTeleport} to={toContainer}>
@@ -115,9 +114,17 @@ export const ModalBase = componentV2<IModalBaseProps>(
                 style={maskStyle.value}
                 onClick={handleClickMask}
               >
-                {customNode || (
-                  <div class="dv-modal-box">{slots.default?.()}</div>
-                )}
+                {(() => {
+                  if (!props.open && props.destroyOnClose) {
+                    return null;
+                  }
+
+                  return (
+                    getCustomNode() || (
+                      <div class="dv-modal-box">{slots.default?.()}</div>
+                    )
+                  );
+                })()}
               </div>,
               [[vShow, props.open]],
             )}
