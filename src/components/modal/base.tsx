@@ -1,7 +1,7 @@
 import { useEventListener } from '@/shared/hooks/useEventListener';
 import { componentV2 } from '@/shared/styled';
 import { ExtractFromProps } from '@/shared/types/common';
-import { getRenderResult } from '@/shared/utils';
+import { getRenderResult, isBrowser } from '@/shared/utils';
 import {
   computed,
   PropType,
@@ -85,7 +85,7 @@ export const ModalBase = componentV2<IModalBaseProps>(
       };
 
       useEventListener(
-        () => document,
+        () => (isBrowser ? document : null),
         'keydown',
         (e) => {
           if (props.escapeCloseable && e.key === 'Escape') {

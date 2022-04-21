@@ -1,9 +1,15 @@
 declare module '*.less' {
-  const lessContent: string;
-  export default lessContent;
+  const content: {
+    css: string;
+    id: number;
+  };
+  export default content;
 }
 
 declare module '*.css' {
-  const lessContent: string;
-  export default lessContent;
+  const content: {
+    css: string;
+    id: number;
+  };
+  export default content;
 }

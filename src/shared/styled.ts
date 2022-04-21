@@ -1,7 +1,13 @@
 import { DefineComponent, defineComponent, Slots } from 'vue';
 import { useDaisyui } from './ctx';
+import { isBrowser } from './utils';
 
 export const EMOTION_SYMBOL = Symbol('emotion');
+
+interface IStyleFile {
+  css: string;
+  id: number;
+}
 
 type IComponentOptions<P, A> = [
   options: {
@@ -20,7 +26,7 @@ type IComponentOptions<P, A> = [
     ) => any;
     [k: string]: any;
   },
-  styles?: string[],
+  styles?: IStyleFile[],
 ];
 
 const builtInStyles = createStyles();
@@ -63,36 +69,40 @@ export function componentV2<Props = unknown, Attrs = unknown>(
 }
 
 export interface IStyles {
-  insertCss: (css: string | string[]) => void;
+  insertCss: (css: IStyleFile | IStyleFile[]) => void;
   extractStyles: () => string;
 }
 
 export function createStyles(): IStyles {
-  const m = new Map<string, boolean>();
+  const m = new Map<number, string>();
   const STYLE_ATTR = `daisyui-vue="${VERSION}"`;
 
   let style: HTMLStyleElement = null;
-  if (typeof document !== 'undefined') {
+  if (isBrowser) {
     style = document.querySelector(`style[${STYLE_ATTR}]`);
 
     if (!style) {
       style = document.createElement('style');
       style.setAttribute('daisyui-vue', VERSION);
       document.head.prepend(style);
+    } else {
+      const ids = (style.dataset.ids || '').split(',');
+      ids.forEach((id) => {
+        m.set(Number(id), '');
+      });
     }
   }
 
   return {
-    insertCss: (css: string | string[]) => {
+    insertCss: (css: IStyleFile | IStyleFile[]) => {
       css = Array.isArray(css) ? css : [css];
 
       let appendText = '';
-      const styleText = style?.textContent || '';
 
-      css.forEach((text) => {
-        if (styleText.includes(text)) return;
-        appendText += `${text}\n`;
-        m.set(text, true);
+      css.forEach((stl) => {
+        if (m.has(stl.id)) return;
+        appendText += `${stl.css}\n`;
+        m.set(stl.id, stl.css);
       });
 
       style?.append(appendText);
@@ -103,10 +113,15 @@ export function createStyles(): IStyles {
      */
     extractStyles: () => {
       let text = '';
-      for (const it of m.entries()) {
-        text += it[0];
+      let ids = '';
+      for (const [id, css] of m.entries()) {
+        text += css;
+        if (ids) {
+          ids += ',';
+        }
+        ids += id;
       }
-      return `<style ${STYLE_ATTR}>${text}</style>`;
+      return `<style ${STYLE_ATTR} data-ids="${ids}">${text}</style>`;
     },
   };
 }

@@ -25,6 +25,11 @@ const createPlugin = () => {
     }),
   ]);
 
+  const uid = (() => {
+    let i = 0;
+    return () => ++i;
+  })();
+
   /**
    * @type {import('rollup').Plugin}
    */
@@ -46,18 +51,17 @@ const createPlugin = () => {
         map: false,
       });
 
+      // css 2 js
       // const jsObject = postcssJs.objectify(postcssResult.root);
       // jsObject[':root'] = void 0;
       // return `export default ${JSON.stringify(jsObject)}`;
 
-      // TODO
-      // 1、分离样式文件
-      // 2、压缩样式
-      // 3、整包样式
-
       return `
       const css = ${JSON.stringify(postcssResult.css)};
-      export default css;
+      export default {
+        css,
+        id: ${uid()},
+      };
       `;
     },
   };

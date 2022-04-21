@@ -1,4 +1,6 @@
-import { Slots, VNode } from 'vue';
+import { Slots } from 'vue';
+
+export const isBrowser = typeof window !== 'undefined';
 
 export function cssUnit(unit: string | number) {
   if (typeof unit === 'number') {
