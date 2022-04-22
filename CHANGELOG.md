@@ -2,6 +2,32 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.1-alpha.3](https://github.com/daief/daisyui-vue/compare/v0.0.1-alpha.2...v0.0.1-alpha.3) (2022-04-22)
+
+
+### Features
+
+* add dropdown & refine popper style ([33b76e9](https://github.com/daief/daisyui-vue/commit/33b76e9f2d451fb9273fdd718e8be4fc59487479))
+* add input component & update daisyui version ([cd95e95](https://github.com/daief/daisyui-vue/commit/cd95e951b7ff2e945ecb33826b8e0b434c446070))
+* add link ([325101f](https://github.com/daief/daisyui-vue/commit/325101f28ccfeb4ff7ebaee4909b87bacdc4d24a))
+* add popper ([fe0a689](https://github.com/daief/daisyui-vue/commit/fe0a689e7832605de685f1462521440e286798ec))
+* add progress ([4b4ba16](https://github.com/daief/daisyui-vue/commit/4b4ba162d729df9d9fcc85ad8f38a8eefb09d472))
+* add swap ([4c30801](https://github.com/daief/daisyui-vue/commit/4c3080135e099f76b67e7430b731d2cd41c0664a))
+* add toggle ([2180890](https://github.com/daief/daisyui-vue/commit/21808909419924be31791ab5f249ec14b69c512c))
+* init modal base ([db48216](https://github.com/daief/daisyui-vue/commit/db48216ab3c707f3688cbf8237d16fd67772946d))
+* popper add arrow ([90465b5](https://github.com/daief/daisyui-vue/commit/90465b57c283a738c2ef60c95eae8c8ce4e255b7))
+
+
+### Bug Fixes
+
+* ExtractFromProps type ([ce2b2e4](https://github.com/daief/daisyui-vue/commit/ce2b2e49d276399b92928b99b6db18d29e1d7909))
+* insert style without context ([2f2810c](https://github.com/daief/daisyui-vue/commit/2f2810cd6a247a02ebf5fca876d20b1bf323e4f1))
+* poper server render ([33a9394](https://github.com/daief/daisyui-vue/commit/33a9394676e27a6ed090fe1e5effcb5d585e5c60))
+* popper arrow ([647f414](https://github.com/daief/daisyui-vue/commit/647f41401ba979fc287a70af4f97e2ae85144a19))
+* popper el visibility change ([1fdd280](https://github.com/daief/daisyui-vue/commit/1fdd2804c178411f1607f30438ef6abbb975f19a))
+* remove events when exit ([9b507a5](https://github.com/daief/daisyui-vue/commit/9b507a51c517ee3e93316235cd69b63bf58ffeb7))
+* wrong popper trigger ([4d5c383](https://github.com/daief/daisyui-vue/commit/4d5c3835c62ac64824898286fb0510877cf3912f))
+
 ### [0.0.1-alpha.2](https://github.com/daief/daisyui-vue/compare/v0.0.1-alpha.1...v0.0.1-alpha.2) (2022-02-19)
 
 
