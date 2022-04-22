@@ -1,5 +1,5 @@
 import { DefineComponent, defineComponent, Slots } from 'vue';
-import { useDaisyui } from './ctx';
+import { useTheme } from './ctx';
 import { isBrowser } from './utils';
 
 export const EMOTION_SYMBOL = Symbol('emotion');
@@ -44,7 +44,7 @@ export function component<Attrs = unknown, P = {}>(
   return defineComponent({
     ...(options as any),
     setup: (props, ctx) => {
-      useDaisyui().style.insertCss(styles);
+      useTheme().style.insertCss(styles);
       // @ts-ignore
       return options.setup(props, ctx);
     },

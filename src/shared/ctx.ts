@@ -17,6 +17,6 @@ export interface ITheme {
   style: IStyle;
 }
 
-export function useDaisyui() {
+export function useTheme() {
   return inject<ITheme>(CONTEXT_SYMBOL, builtInCtx);
 }
