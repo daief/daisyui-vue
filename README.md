@@ -91,10 +91,10 @@ export function render() {
 - [x] style files
   - [x] auto require style conntent when using a component (now css-in-js)
     - [x] ~~it is easy to use in SSR, but there is no style on first render (`FOUC`, because css inserted by js)~~. Use `extractStyles` to extract critical css.
-- [ ] media query & responsive
+- [x] media query & responsive
 - [x] refine style insertion detect(~~maybe use a content hash~~ self-increasing id)
 - [ ] pre insert all global style
-- [ ] popper/modal animation
+- [ ] popper/modal animation(maybe some preset animations)
 
 ## Components
 
