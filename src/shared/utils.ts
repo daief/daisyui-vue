@@ -21,21 +21,6 @@ export function isString(v: any): v is string {
   return typeof v === 'string';
 }
 
-export function addClass(str: string, newClass: string | string[]) {
-  const arr = Array.isArray(newClass) ? newClass : [newClass];
-  const classes = new Set(str.split(' '));
-  arr.forEach((c) => {
-    !classes.has(c) && classes.add(c);
-  });
-
-  return Array.from(classes).join(' ');
-}
-
-export function removeClass(str: string, removeClass: string) {
-  const classes = str.split(' ');
-  return classes.filter((c) => c !== removeClass).join(' ');
-}
-
 /**
  * 从 props、slots 中解析 render 方法的内容
  * @param key

@@ -147,3 +147,4 @@ export function render() {
 
 - 事件名称，`onNameAction`：onMaskClick、onEscKeyDown
 - 事件控制，`xxxYYable`: keyboardCloseable
+- 响应式：mobile first

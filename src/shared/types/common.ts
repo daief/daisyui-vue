@@ -1,4 +1,4 @@
-import { CSSProperties, PropType, StyleValue } from 'vue';
+import { CSSProperties, PropType, Ref, StyleValue } from 'vue';
 
 export type ISize = 'xs' | 'sm' | 'md' | 'lg';
 
@@ -37,3 +37,5 @@ export interface IStyleProps {
   class?: any;
   style?: StyleValue;
 }
+
+export type IMaybeRef<T> = T | Ref<T>;

@@ -1,9 +1,14 @@
 import { watch } from 'vue';
+import { isBrowser } from '../utils';
 
 export function useEventListener<
-  E extends HTMLElement | Document | Window,
+  E extends {
+    addEventListener;
+    removeEventListener;
+  },
   K extends keyof DocumentEventMap,
 >(getEl: () => E, type: K, cb: (this: E, ev: DocumentEventMap[K]) => any) {
+  if (!isBrowser) return;
   watch(
     getEl,
     (val, _, onInvalidate) => {

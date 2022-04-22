@@ -85,7 +85,7 @@ export const ModalBase = componentV2<IModalBaseProps>(
       };
 
       useEventListener(
-        () => (isBrowser ? document : null),
+        () => document,
         'keydown',
         (e) => {
           if (props.escapeCloseable && e.key === 'Escape') {

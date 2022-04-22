@@ -1,42 +1,36 @@
 # Demo for development
 
 ```tsx :::run
-import { reactive, watch } from 'vue';
+import { reactive, watch, toRef } from 'vue';
+import { _ } from 'daisyui-vue';
+
+import * as x from 'vue';
 
 export default {
   setup: () => {
     const state = reactive({
       show: false,
+      val: 'sm',
     });
 
-    let c = 0;
-
-    watch([() => c], (newVal, oldVal) => {
-      console.log(newVal, oldVal);
+    const res = _.useMediaParse({
+      default: 999,
+      lg: 2,
+      '2xl': 6,
     });
 
-    const close = () => (state.show = false);
+    const res2 = _.useMedias(['xs', 'sm', 'md', 'lg', 'xl', '2xl']);
 
     return () => (
       <div class="text-center">
-        <dv-toggle
-          checked={state.show}
-          onChange={(e) => (state.show = e.target.checked)}
-        />
+        {res.value + ''}
         <hr />
-        <dv-modal-base
-          open={state.show}
-          // maskCloseable={false}
-          onClose={close}
-          destroyOnClose
-          // custom={() => <div onClick={() => c++}>111 - {c}</div>}
-        >
-          <dv-modal-title onClose={close}>1</dv-modal-title>
-          <dv-modal-body>2332</dv-modal-body>
-          <dv-modal-action>
-            <dv-button>Yay!</dv-button>
-          </dv-modal-action>
-        </dv-modal-base>
+        {res2.value + ''}
+        <hr />
+        <input
+          value={state.val}
+          onInput={(e) => (state.val = e.target.value)}
+        />
       </div>
     );
   },
