@@ -6,6 +6,8 @@
 
 在模板中引入主题：
 
+> TODO: 后续计划包括进来
+
 ```html
 <link
   rel="stylesheet"
@@ -41,13 +43,13 @@ const App = defineComponent({
 
 ```tsx
 // main.ts
-import { installContext } from 'daisyui-vue';
+import { installTheme } from 'daisyui-vue';
 
 const app = createApp({
   // ...
 });
 
-app.use(installContext); // 注册组件库 context，当需要提取首屏样式时使用，否则可以不注册
+app.use(installTheme); // 注册组件库 context，当需要提取首屏样式时使用，否则可以不注册
 
 // App.tsx
 import { Button } from 'daisyui-vue';
@@ -76,11 +78,11 @@ export function render() {
     // ...
   });
 
-  const style = app.config.globalProperties.$daisyui.styles.extractStyles(); // <style>...</style>
+  const style = app.config.globalProperties.$daisyui.style.extractStyles(); // <style>...</style>
 
   const html = renderToString(app);
 
-  return html.replace('<!-- 自定义占位标识 -->', style);
+  return html.replace('<!-- YOUR_STYLE_PLACEHOLDER -->', style);
 }
 ```
 
@@ -90,9 +92,9 @@ export function render() {
   - [x] auto require style conntent when using a component (now css-in-js)
     - [x] ~~it is easy to use in SSR, but there is no style on first render (`FOUC`, because css inserted by js)~~. Use `extractStyles` to extract critical css.
 - [ ] media query & responsive
-- [ ] refine style insertion detect(maybe use a content hash)
+- [x] refine style insertion detect(~~maybe use a content hash~~ self-increasing id)
 - [ ] pre insert all global style
-- [ ] popper animation
+- [ ] popper/modal animation
 
 ## Components
 
@@ -117,7 +119,7 @@ export function render() {
 - [x] link
 - [ ] mask
 - [x] menu
-- [ ] modal
+- [x] modal
 - [ ] navbar
 - [ ] pagination
 - [x] progress

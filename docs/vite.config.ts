@@ -328,7 +328,7 @@ const config: UserConfig = {
     onPageRendered: (route, html, ctx) => {
       return html.replace(
         '<!-- __DAISYUI_VUE__ -->',
-        ctx.$daisyui.styles.extractStyles(),
+        ctx.$daisyui.style.extractStyles(),
       );
     },
   },

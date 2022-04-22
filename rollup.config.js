@@ -18,7 +18,7 @@ const extensions = ['.js', '.jsx', '.ts', '.tsx'];
 const componentsConfig = {
   input: {
     index: 'src/index',
-    'components/button/index': 'src/components/button/index.tsx',
+    _utils: 'src/shared/utils',
   },
   output: [
     {

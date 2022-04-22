@@ -29,8 +29,6 @@ type IComponentOptions<P, A> = [
   styles?: IStyleFile[],
 ];
 
-const builtInStyles = createStyles();
-
 /**
  * - Attar 组件所有属性类型
  * - Props 仅 props 中的类型
@@ -46,7 +44,7 @@ export function component<Attrs = unknown, P = {}>(
   return defineComponent({
     ...(options as any),
     setup: (props, ctx) => {
-      (useDaisyui()?.styles || builtInStyles).insertCss(styles);
+      useDaisyui().style.insertCss(styles);
       // @ts-ignore
       return options.setup(props, ctx);
     },
@@ -68,12 +66,12 @@ export function componentV2<Props = unknown, Attrs = unknown>(
   );
 }
 
-export interface IStyles {
+export interface IStyle {
   insertCss: (css: IStyleFile | IStyleFile[]) => void;
   extractStyles: () => string;
 }
 
-export function createStyles(): IStyles {
+export function createStyle(): IStyle {
   const m = new Map<number, string>();
   const STYLE_ATTR = `daisyui-vue="${VERSION}"`;
 
@@ -93,23 +91,24 @@ export function createStyles(): IStyles {
     }
   }
 
+  const insertCss = (css: IStyleFile | IStyleFile[]) => {
+    css = Array.isArray(css) ? css : [css];
+
+    let appendText = '';
+
+    css.forEach((stl) => {
+      if (m.has(stl.id)) return;
+      appendText += `${stl.css}\n`;
+      m.set(stl.id, stl.css);
+    });
+
+    style?.append(appendText);
+  };
+
   return {
-    insertCss: (css: IStyleFile | IStyleFile[]) => {
-      css = Array.isArray(css) ? css : [css];
-
-      let appendText = '';
-
-      css.forEach((stl) => {
-        if (m.has(stl.id)) return;
-        appendText += `${stl.css}\n`;
-        m.set(stl.id, stl.css);
-      });
-
-      style?.append(appendText);
-    },
+    insertCss,
     /**
      * 提取首屏样式
-     * @returns
      */
     extractStyles: () => {
       let text = '';

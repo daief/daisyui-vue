@@ -1,12 +1,22 @@
-import { inject } from 'vue';
-import { IStyles } from './styled';
+import { inject, reactive } from 'vue';
+import { createStyle, IStyle } from './styled';
 
 export const CONTEXT_SYMBOL = Symbol('context');
 
-export interface IDaisyuiVueContext {
-  styles: IStyles;
+export function createTheme() {
+  const style = createStyle();
+  const ctx: ITheme = reactive({
+    style,
+  });
+  return ctx;
+}
+
+const builtInCtx = createTheme();
+
+export interface ITheme {
+  style: IStyle;
 }
 
 export function useDaisyui() {
-  return inject<IDaisyuiVueContext>(CONTEXT_SYMBOL);
+  return inject<ITheme>(CONTEXT_SYMBOL, builtInCtx);
 }
