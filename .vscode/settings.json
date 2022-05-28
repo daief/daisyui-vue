@@ -8,5 +8,6 @@
     "tw={\"([^\"}]*)", // <div tw={"..."} />
     "tw\\.\\w+`([^`]*)", // tw.xxx`...`
     "tw\\(.*?\\)`([^`]*)" // tw(Component)`...`
-  ]
+  ],
+  "less.lint.unknownAtRules": "ignore"
 }

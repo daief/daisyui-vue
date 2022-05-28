@@ -1,130 +1,71 @@
-import { component } from '@/shared/styled';
-import { BoolConstructorToBase } from '@/shared/types/common';
-import {
-  Teleport,
-  Transition,
-  withDirectives,
-  vShow,
-  ref,
-  watch,
-  nextTick,
-} from 'vue';
+import { useMediaParse } from '@/shared/hooks/useMedia';
+import { componentV2 } from '@/shared/styled';
+import { ExtractFromProps } from '@/shared/types/common';
+import { getRenderResult } from '@/shared/utils';
+import { PropType, computed } from 'vue';
+import { ModalBase } from '../modal';
 import style from './style';
 
-// TODO 多弹框层级处理
-let id = 0;
-
-const boolProps = {
+const props = {
   open: Boolean,
   disableTeleport: Boolean,
   mobileOnly: Boolean,
+  placement: {
+    type: String as PropType<'left' | 'right'>,
+    default: 'left',
+  },
+  onClose: {
+    type: Function as PropType<VoidFunction>,
+  },
 };
 
-export interface IDrawerProps {
-  placement?: 'left' | 'right';
-  disableTeleport?: boolean;
-  mobileOnly?: boolean;
-  onClose?: () => void;
-}
+export type IDrawerProps = ExtractFromProps<typeof props>;
 
-// TODO lazy mount
-export const Drawer = component<
-  IDrawerProps,
-  BoolConstructorToBase<typeof boolProps>
->(
+export const Drawer = componentV2<IDrawerProps>(
   {
     name: 'Drawer',
-    props: boolProps,
+    props: props,
     inheritAttrs: false,
     setup: (props, { attrs, slots }) => {
-      // for side animation
-      const finalChecked = ref(props.open);
-      watch(
-        () => props.open,
-        async () => {
-          await nextTick();
-          await new Promise((r) => setTimeout(r));
-          finalChecked.value = props.open;
-        },
-      );
+      const matchMobile = useMediaParse({
+        xs: true,
+        lg: false,
+      });
+
+      const clsStatus = computed(() => ({
+        'dv-drawer-side-parent': true,
+        'drawer-end': props.placement === 'right',
+        'dv-drawer--mobile-unmatched': !matchMobile.value,
+        'dv-drawer--mobile-only': props.mobileOnly,
+        'dv-drawer--open': props.open,
+      }));
+
+      const rootCls = computed(() => ['dv-drawer', clsStatus.value]);
+
+      const overlayCls = computed(() => ['dv-drawer-overlay', clsStatus.value]);
 
       return () => {
-        const transitionWrap = (nodes: any) => (
-          <Transition
-            enterFromClass="dv-drawer--opacity-0"
-            enterActiveClass="dv-drawer--transition-opacity"
-            leaveActiveClass="dv-drawer--transition-opacity"
-            leaveToClass="dv-drawer--opacity-0"
-            duration={300}
-          >
-            {withDirectives(nodes, [
-              [vShow, props.mobileOnly ? true : props.open],
-            ])}
-          </Transition>
-        );
+        const contentNode = () => getRenderResult('content', props, slots);
+        const defaultNode = () => slots.default?.();
+        const sideNode = () => <div class="drawer-side">{defaultNode()}</div>;
 
-        const drawNode = props.disableTeleport ? (
-          <div
-            {...attrs}
-            class={[
-              'dv-drawer drawer',
-              {
-                'dv-drawer--teleport': !props.disableTeleport,
-                'drawer-end': attrs.placement === 'right',
-                'drawer-mobile': !!props.mobileOnly,
-              },
-            ]}
-            style={{
-              zIndex: 100 + id,
-            }}
-          >
-            <input
-              type="checkbox"
-              class="drawer-toggle"
-              checked={finalChecked.value}
-            />
-            <div class="drawer-content">{slots.content?.()}</div>
-            {transitionWrap(
-              <div class="drawer-side">
-                <div class="drawer-overlay" onClick={attrs.onClose} />
-                {slots.default?.()}
-              </div>,
+        const showSideDirectly = props.mobileOnly && !matchMobile.value;
+
+        return (
+          <div {...attrs} class={rootCls.value}>
+            <div class="drawer-content">{contentNode()}</div>
+            {showSideDirectly ? (
+              sideNode()
+            ) : (
+              <ModalBase
+                class={overlayCls.value}
+                disableTeleport={props.disableTeleport}
+                open={props.open}
+                onClose={props.onClose}
+                custom={sideNode()}
+              />
             )}
           </div>
-        ) : (
-          transitionWrap(
-            <div
-              {...attrs}
-              class={[
-                'dv-drawer drawer',
-                {
-                  'dv-drawer--teleport': !props.disableTeleport,
-                  'drawer-end': attrs.placement === 'right',
-                  'drawer-mobile': !!props.mobileOnly,
-                },
-              ]}
-              style={{
-                zIndex: 100 + id,
-              }}
-            >
-              <input
-                type="checkbox"
-                class="drawer-toggle"
-                checked={finalChecked.value}
-              />
-              <div class="drawer-content">{slots.content?.()}</div>
-              <div class="drawer-side">
-                <div class="drawer-overlay" onClick={attrs.onClose} />
-                {slots.default?.()}
-              </div>
-            </div>,
-          )
-        );
-
-        return !props.disableTeleport ? (
-          <Teleport to="body">{drawNode}</Teleport>
-        ) : (
-          drawNode
         );
       };
     },

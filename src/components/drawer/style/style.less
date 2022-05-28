@@ -1,12 +1,128 @@
 .dv-drawer {
-  &--teleport {
-    @apply h-screen fixed inset-0;
+  @apply grid overflow-hidden w-full;
+  @apply relative;
+
+  & > .drawer-content {
+    @apply z-0 col-start-1 row-start-1 overflow-y-auto;
+    @apply transition-all duration-300 ease-in-out;
+  }
+}
+
+// ------------------------------------ open
+.dv-drawer.dv-drawer--open {
+  & > .drawer-content {
+    @apply translate-x-2;
   }
 
-  &--opacity-0 {
-    @apply opacity-0;
+  // ------------------------------------ end
+  &.drawer-end {
+    & > .drawer-content {
+      @apply -translate-x-2;
+    }
   }
-  &--transition-opacity {
-    @apply transition-opacity;
+}
+
+// ------------------------------------ overlay
+.dv-drawer-overlay {
+  display: grid;
+}
+
+// ------------------------------------ side common
+.dv-drawer-side-parent {
+  & > .drawer-side {
+    @apply col-start-1 row-start-1 grid max-h-screen;
+    @apply cursor-auto pointer-events-none;
+    & > * {
+      @apply z-10 col-start-1 row-start-1 -translate-x-full transform;
+      @apply transition-all duration-300 ease-in-out;
+      @apply pointer-events-auto;
+    }
   }
+
+  &.drawer-end {
+    direction: rtl;
+    & > * {
+      direction: ltr;
+    }
+
+    & > .drawer-side {
+      & > * {
+        @apply translate-x-full justify-self-end;
+      }
+    }
+  } // end
+
+  // ------------------------------------ open
+  &.dv-drawer--open {
+    & > .drawer-side {
+      @apply overflow-y-auto;
+      & > * {
+        @apply translate-x-0;
+      }
+    }
+
+    // ------------------------------------ end
+    &.drawer-end {
+      & > .drawer-side {
+        & > * {
+          @apply translate-x-0;
+        }
+      }
+    }
+  }
+}
+
+// ------------------------------------ mobile
+.dv-drawer.dv-drawer--mobile-only {
+  & > .drawer-content {
+    @apply h-auto;
+  }
+
+  & > .drawer-side {
+    @apply overflow-y-auto;
+  }
+
+  &.drawer-end {
+    direction: ltr;
+    & > .drawer-content {
+      @apply h-auto;
+    }
+  } // end
+
+  &.dv-drawer--mobile-unmatched {
+    grid-auto-columns: max-content auto;
+
+    & > .drawer-content {
+      @apply col-start-2;
+    }
+
+    & > .drawer-side {
+      & > * {
+        @apply translate-x-0;
+      }
+    }
+
+    &.drawer-end {
+      grid-auto-columns: auto max-content;
+      direction: ltr;
+
+      & > .drawer-content {
+        @apply col-start-1;
+      }
+
+      & > .drawer-side {
+        @apply col-start-2;
+        & > * {
+          @apply translate-x-0;
+        }
+      }
+    } // end
+  }
+}
+
+[dir='rtl'] .drawer-side > * {
+  @apply translate-x-full;
+}
+[dir='rtl'] .drawer-side + * {
+  @apply translate-x-0;
 }

@@ -18,7 +18,7 @@ export type BoolConstructorToBase<T> = {
   [k in keyof T]: T[k] extends BooleanConstructor ? boolean : T[k];
 };
 
-type ExtractFromPropType<T> = T extends PropType<infer U> ? U : T;
+type ExtractFromPropType<T> = T extends PropType<infer U> ? U : any;
 
 /**
  * 从 props 对象类型中反推出类型

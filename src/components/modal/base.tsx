@@ -1,7 +1,7 @@
 import { useEventListener } from '@/shared/hooks/useEventListener';
 import { componentV2 } from '@/shared/styled';
 import { ExtractFromProps } from '@/shared/types/common';
-import { getRenderResult, isBrowser } from '@/shared/utils';
+import { getRenderResult } from '@/shared/utils';
 import {
   computed,
   PropType,
@@ -23,7 +23,7 @@ export const modalBaseProps = {
   },
   container: {
     type: [Function, String, Object] as PropType<
-      string | Element | (() => Element)
+      string | Element | (() => Element | string)
     >,
     default: 'body',
   },
@@ -74,6 +74,7 @@ export const ModalBase = componentV2<IModalBaseProps>(
             }
           : '',
         !props.maskCloseable ? { cursor: 'auto' } : '',
+        props.disableTeleport ? { position: 'absolute' } : '',
       ]);
 
       const stop = watch(
