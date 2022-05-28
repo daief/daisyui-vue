@@ -24,7 +24,7 @@ importers:
       babel-plugin-macros: ^3.1.0
       babel-plugin-twin: ^1.0.2
       cssnano: ^5.0.10
-      daisyui: 2.13.6
+      daisyui: 2.14.1
       download-git-repo: ^3.0.2
       fs-extra: ^10.0.0
       glob: ^7.1.7
@@ -60,7 +60,7 @@ importers:
       babel-plugin-macros: registry.nlark.com/babel-plugin-macros/3.1.0
       babel-plugin-twin: registry.npmmirror.com/babel-plugin-twin/1.0.2
       cssnano: registry.npmmirror.com/cssnano/5.0.10_postcss@8.3.11
-      daisyui: registry.npmmirror.com/daisyui/2.13.6_fa866e6aa6eb85ed70431566fb699b34
+      daisyui: registry.npmmirror.com/daisyui/2.14.1_fa866e6aa6eb85ed70431566fb699b34
       download-git-repo: registry.nlark.com/download-git-repo/3.0.2
       fs-extra: registry.nlark.com/fs-extra/10.0.0
       glob: registry.npmmirror.com/glob/7.2.0
@@ -6482,11 +6482,11 @@ packages:
     name: csstype
     version: 2.6.18
 
-  registry.npmmirror.com/daisyui/2.13.6_fa866e6aa6eb85ed70431566fb699b34:
-    resolution: {integrity: sha512-Z3DOqNwIKxp4og9qd64i8/eS4i3TccmmfcaKKXM/Y619FmRjKXRmKAm/GTu9qH+4W7GcVdL8IRxuw0z5GQSqvQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/daisyui/-/daisyui-2.13.6.tgz}
-    id: registry.npmmirror.com/daisyui/2.13.6
+  registry.npmmirror.com/daisyui/2.14.1_fa866e6aa6eb85ed70431566fb699b34:
+    resolution: {integrity: sha512-gVfq0R/yRHoYTUGy2s4ZPFzkshzsFcRb+taTmAs/0Q3BpIB+OUDcPKHebTSt8TM54WFqcCQksJO6MqOUkwiPDw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/daisyui/-/daisyui-2.14.1.tgz}
+    id: registry.npmmirror.com/daisyui/2.14.1
     name: daisyui
-    version: 2.13.6
+    version: 2.14.1
     peerDependencies:
       autoprefixer: ^10.0.2
       postcss: ^8.1.6
