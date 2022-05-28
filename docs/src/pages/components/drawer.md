@@ -65,7 +65,6 @@ drawer disable teleport
 <div>
   <dv-drawer
     :open="isOpen('d2')"
-    disableTeleport
     @close="close"
     class="rounded-lg shadow bg-base-200 h-52"
   >
