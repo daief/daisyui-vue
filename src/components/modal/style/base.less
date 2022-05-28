@@ -32,3 +32,14 @@
   overflow-y: auto;
   overscroll-behavior: contain;
 }
+
+.dv-modal-base-t-enter-active,
+.dv-modal-base-t-leave-active {
+  transition-property: opacity;
+  @apply duration-300 ease-in-out;
+}
+
+.dv-modal-base-t-enter-from,
+.dv-modal-base-t-leave-to {
+  @apply opacity-0;
+}

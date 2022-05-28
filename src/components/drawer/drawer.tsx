@@ -2,7 +2,7 @@ import { useMediaParse } from '@/shared/hooks/useMedia';
 import { componentV2 } from '@/shared/styled';
 import { ExtractFromProps } from '@/shared/types/common';
 import { getRenderResult } from '@/shared/utils';
-import { PropType, computed } from 'vue';
+import { PropType, computed, Transition, vShow, withDirectives } from 'vue';
 import { ModalBase } from '../modal';
 import style from './style';
 
@@ -45,6 +45,9 @@ export const Drawer = componentV2<IDrawerProps>(
       const overlayCls = computed(() => ['dv-drawer-overlay', clsStatus.value]);
 
       return () => {
+        const transitionName =
+          (props.placement === 'right' ? '-' : '') + 'dv-t-translate-x';
+
         const contentNode = () => getRenderResult('content', props, slots);
         const defaultNode = () => slots.default?.();
         const sideNode = () => <div class="drawer-side">{defaultNode()}</div>;
@@ -54,9 +57,10 @@ export const Drawer = componentV2<IDrawerProps>(
         return (
           <div {...attrs} class={rootCls.value}>
             <div class="drawer-content">{contentNode()}</div>
-            {showSideDirectly ? (
-              sideNode()
-            ) : (
+            <Transition name={transitionName} duration={300}>
+              {showSideDirectly ? sideNode() : null}
+            </Transition>
+            {!showSideDirectly && (
               <ModalBase
                 class={overlayCls.value}
                 disableTeleport={props.disableTeleport}

@@ -112,7 +112,7 @@ export const ModalBase = componentV2<IModalBaseProps>(
         return (
           <Teleport disabled={props.disableTeleport} to={toContainer}>
             <Transition
-              name="dv-fade"
+              name="dv-modal-base-t"
               duration={300}
               {...props.transitionProps}
             >

@@ -1,15 +1,17 @@
-:root {
-  --dv-fade-transition-duration: 300ms;
+.dv-t-translate-x-enter-active,
+.dv-t-translate-x-leave-active,
+.-dv-t-translate-x-enter-active,
+.-dv-t-translate-x-leave-active {
+  transition-property: transform;
+  @apply duration-300 ease-in-out;
 }
 
-.dv-fade-enter-active,
-.dv-fade-leave-active {
-  transition-property: opacity;
-  transition-duration: var(--dv-fade-transition-duration, 300ms);
-  transition-timing-function: ease;
+.dv-t-translate-x-enter-from,
+.dv-t-translate-x-leave-to {
+  @apply -translate-x-full;
 }
 
-.dv-fade-enter-from,
-.dv-fade-leave-to {
-  opacity: 0;
+.-dv-t-translate-x-enter-from,
+.-dv-t-translate-x-leave-to {
+  @apply translate-x-full;
 }
