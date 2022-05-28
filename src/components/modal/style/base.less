@@ -3,13 +3,19 @@
 }
 
 .dv-modal-base {
-  @apply cursor-pointer opacity-100;
+  @apply cursor-pointer;
   @apply bg-neutral-focus bg-opacity-40 duration-200 ease-in-out;
   @apply fixed inset-0 outline-0;
   transition-property: transform, opacity;
   overflow: hidden auto;
   overscroll-behavior: contain;
   z-index: var(--modal-base-z-index);
+
+  &[data-modal-status='close'] {
+    .dv-modal-box {
+      pointer-events: none;
+    }
+  }
 }
 
 .dv-modal-box {

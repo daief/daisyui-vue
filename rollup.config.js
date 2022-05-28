@@ -19,6 +19,7 @@ const componentsConfig = {
   input: {
     index: 'src/index',
     _utils: 'src/shared/utils',
+    _global_style: 'src/components/_styles/global',
   },
   output: [
     {

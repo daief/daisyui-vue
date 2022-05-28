@@ -1,0 +1,15 @@
+:root {
+  --dv-fade-transition-duration: 300ms;
+}
+
+.dv-fade-enter-active,
+.dv-fade-leave-active {
+  transition-property: opacity;
+  transition-duration: var(--dv-fade-transition-duration, 300ms);
+  transition-timing-function: ease;
+}
+
+.dv-fade-enter-from,
+.dv-fade-leave-to {
+  opacity: 0;
+}

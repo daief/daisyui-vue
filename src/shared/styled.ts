@@ -1,6 +1,7 @@
 import { DefineComponent, defineComponent, Slots } from 'vue';
 import { useTheme } from './ctx';
 import { isBrowser } from './utils';
+import globalStyles from '../components/_styles/global';
 
 export const EMOTION_SYMBOL = Symbol('emotion');
 
@@ -104,6 +105,8 @@ export function createStyle(): IStyle {
 
     style?.append(appendText);
   };
+
+  insertCss(globalStyles);
 
   return {
     insertCss,
