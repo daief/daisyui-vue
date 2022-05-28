@@ -47,10 +47,6 @@ export const modalBaseProps = {
   destroyOnClose: Boolean,
   transitionProps: {
     type: Object as PropType<Partial<TransitionProps>>,
-    default: {
-      name: 'dv-fade',
-      duration: 300,
-    },
   },
 };
 
@@ -113,36 +109,42 @@ export const ModalBase = componentV2<IModalBaseProps>(
             ? props.container()
             : props.container;
 
-        return state.hasTriggered ? (
+        return (
           <Teleport disabled={props.disableTeleport} to={toContainer}>
-            <Transition {...props.transitionProps}>
-              {withDirectives(
-                <div
-                  {...attrs}
-                  tabindex={-1}
-                  role="presentation"
-                  class="dv-modal-base"
-                  style={maskStyle.value}
-                  onClick={handleClickMask}
-                  data-modal-status={props.open ? 'open' : 'close'}
-                >
-                  {(() => {
-                    if (!props.open && props.destroyOnClose) {
-                      return null;
-                    }
+            <Transition
+              name="dv-fade"
+              duration={300}
+              {...props.transitionProps}
+            >
+              {state.hasTriggered
+                ? withDirectives(
+                    <div
+                      {...attrs}
+                      tabindex={-1}
+                      role="presentation"
+                      class="dv-modal-base"
+                      style={maskStyle.value}
+                      onClick={handleClickMask}
+                      data-modal-status={props.open ? 'open' : 'close'}
+                    >
+                      {(() => {
+                        if (!props.open && props.destroyOnClose) {
+                          return null;
+                        }
 
-                    return (
-                      getCustomNode() || (
-                        <div class="dv-modal-box">{slots.default?.()}</div>
-                      )
-                    );
-                  })()}
-                </div>,
-                [[vShow, props.open]],
-              )}
+                        return (
+                          getCustomNode() || (
+                            <div class="dv-modal-box">{slots.default?.()}</div>
+                          )
+                        );
+                      })()}
+                    </div>,
+                    [[vShow, props.open]],
+                  )
+                : null}
             </Transition>
           </Teleport>
-        ) : null;
+        );
       };
     },
   },
