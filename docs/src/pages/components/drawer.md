@@ -40,14 +40,9 @@
 </script>
 ```
 
-global drawer, mouts on body
+global drawer, mouts on body. content has a animation.
 
 ```html :::demo
-<div
-  class="rounded-lg shadow bg-base-200 h-52 flex justify-center items-center"
->
-  <dv-button :onClick="() => setOpen('d1')" type="primary">open</dv-button>
-</div>
 <dv-drawer :open="isOpen('d1')" @close="close">
   <div class="bg-white w-80 py-4">
     <dv-menu>
@@ -56,6 +51,13 @@ global drawer, mouts on body
       <dv-menu-item>item3</dv-menu-item>
     </dv-menu>
   </div>
+  <template v-slot:content>
+    <div
+      class="rounded-lg shadow bg-base-200 h-52 flex justify-center items-center"
+    >
+      <dv-button :onClick="() => setOpen('d1')" type="primary">open</dv-button>
+    </div>
+  </template>
 </dv-drawer>
 ```
 

@@ -110,7 +110,7 @@ export function render() {
 - [ ] collapse
 - [ ] countdown
 - [x] divider
-- [x] drawer
+- [x] drawer - 🛠 refactor
 - [x] dropdown - 🛠 refactor(popper inside)
 - [ ] footer
 - [ ] hero
