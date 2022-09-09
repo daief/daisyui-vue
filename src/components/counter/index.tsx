@@ -1,109 +1,103 @@
-import { IMaybeRef } from '@/shared/types/common';
-import { computed, unref } from 'vue';
+import { AnimationTimer, IATOptions } from '@/shared/animation-timer';
+import { componentV2 } from '@/shared/styled';
+import { ExtractFromProps, IMaybeRef } from '@/shared/types/common';
+import {
+  computed,
+  unref,
+  onUnmounted,
+  onMounted,
+  ref,
+  PropType,
+  watch,
+} from 'vue';
+import styles from './style';
 
-interface IUseCounterOptions<T = unknown> {
-  from: T;
-  duration?: number;
-  interval?: number;
-  intervalCount?: number;
-  updater: (progress: number, from: T) => T;
-  onComplete?: VoidFunction;
-  onUpdate?: (v: T) => void;
-}
-
-class SimpleAni<T> {
-  #opts: IUseCounterOptions<T>;
-
-  #loopTimer: number;
-  #execedTime = 0;
-  #execedCount = 0;
-  #isRunning = false;
-
-  #lastIntervalTime: number = 0;
-  #lasttime: number = 0;
-
-  current: T;
-
-  constructor(opts: IUseCounterOptions<T>) {
-    this.current = opts.from;
-    this.#opts = opts;
-  }
-
-  play() {
-    if (this.#isRunning) return;
-
-    this.#isRunning = true;
-
-    const loop = (t: number) => {
-      this.#execedTime += t - this.#lasttime;
-      this.#lasttime = t;
-
-      const shouldContinue = this.#opts.duration
-        ? this.#loopDuration()
-        : this.#loopInterval(t);
-
-      if (shouldContinue && this.#isRunning) {
-        this.#loopTimer = requestAnimationFrame(loop);
-      } else {
-        this.#opts.onComplete?.();
-      }
-    };
-
-    this.#loopTimer = requestAnimationFrame((t) => {
-      this.#lasttime = t;
-      this.#lastIntervalTime = t;
-      loop(t);
-    });
-  }
-
-  pause() {
-    this.#isRunning = false;
-    cancelAnimationFrame(this.#loopTimer);
-  }
-
-  reset() {
-    this.pause();
-    this.#execedCount = 0;
-    this.#execedTime = 0;
-  }
-
-  manualComplete(d = 200) {}
-
-  #loopDuration(): boolean {
-    const p = Math.min(this.#execedTime / this.#opts.duration, 1);
-    this.current = this.#opts.updater(p, this.#opts.from);
-    this.#opts.onUpdate(this.current);
-    return p < 1;
-  }
-
-  #loopInterval(t: number): boolean {
-    if (t - this.#lastIntervalTime >= this.#opts.interval) {
-      this.#lastIntervalTime = t;
-      ++this.#execedCount;
-      const p = Math.min(this.#execedCount / this.#opts.intervalCount, 1);
-      this.current = this.#opts.updater(p, this.#opts.from);
-      this.#opts.onUpdate(this.current);
-      return p < 1;
-    }
-    return true;
-  }
-}
-
-export function useCounter(opts: IMaybeRef<IUseCounterOptions<number>>) {
-  const options = computed(() => unref(opts));
-}
-
-const a = new SimpleAni<number>({
-  from: 100,
-  // duration: 10 * 1000,
-  interval: 100,
-  intervalCount: 100,
-  updater: (p) => {
-    return (1 - p) * 100;
+const counterProps = {
+  from: {
+    type: Number,
+    default: 0,
   },
-  onUpdate: (val) => {
-    console.log(val, Date.now());
+  duration: {
+    type: Number,
+    default: 0,
   },
-});
+  to: {
+    type: Number,
+    default: 0,
+  },
+  format: {
+    type: Function as PropType<(v: number) => string>,
+  },
+  transitionDuration: {
+    type: Number,
+    default: 0,
+  },
+};
 
-a.play();
+export type ICounterProps = ExtractFromProps<typeof counterProps>;
+
+export const Conter = componentV2<ICounterProps>(
+  {
+    name: 'Counter',
+    props: counterProps,
+    setup: (props) => {
+      const value2display = (val: number) => {
+        val = Math.trunc(val);
+        const pred = props.format ? props.format(val || 0) : val;
+        return String(pred || 0)
+          .split(/(\d)/g)
+          .filter(Boolean);
+      };
+
+      const display = ref<string[]>(value2display(props.from));
+      const at = new AnimationTimer<number>({
+        initialValue: props.from!,
+        duration: props.duration!,
+        updater: (ctx, p) => {
+          return props.from + (props.to! - props.from!) * p;
+        },
+        onUpdate: (ctx) => {
+          display.value = value2display(ctx.current);
+        },
+      });
+
+      watch([props.from, props.duration], () => {
+        at.updateOptions({
+          duration: props.duration,
+          initialValue: props.from,
+        });
+        at.reset();
+        at.play();
+      });
+
+      onMounted(() => {
+        at.play();
+      });
+
+      onUnmounted(() => {
+        at.reset();
+      });
+
+      return () => (
+        <span
+          class="dv-counter"
+          style={`--t-d: ${props.transitionDuration || 0}ms`}
+        >
+          {display.value.map((char, i) => {
+            const isNumber = /^\d$/.test(char);
+            return (
+              <span
+                key={i}
+                class={isNumber ? 'dv-counter-number' : 'dv-conter-chars'}
+                style={isNumber ? `--value: ${char}` : ''}
+              >
+                {isNumber ? '' : char}
+              </span>
+            );
+          })}
+        </span>
+      );
+    },
+  },
+  styles,
+);

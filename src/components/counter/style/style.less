@@ -1,0 +1,17 @@
+.dv-counter {
+  line-height: 1em;
+  & > * {
+    height: 1em;
+    @apply inline-block overflow-y-hidden;
+  }
+  & > .dv-counter-number {
+    &:before {
+      transition: all 0s cubic-bezier(1, 0, 0, 1);
+      transition-duration: var(--t-d);
+      position: relative;
+      content: '0\A 1\A 2\A 3\A 4\A 5\A 6\A 7\A 8\A 9\A';
+      white-space: pre;
+      top: calc(var(--value) * -1em);
+    }
+  }
+}
