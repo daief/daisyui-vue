@@ -41,9 +41,11 @@ export const Mask = component<IMaskProps, IMaskProps>(
     setup: (props, { slots }) => {
       return () => {
         const child = slots.default?.()?.[0];
-        return cloneVNode(child, {
-          class: `dv-mask mask mask-${props.type}`,
-        });
+        return child
+          ? cloneVNode(child, {
+              class: `dv-mask mask mask-${props.type}`,
+            })
+          : null;
       };
     },
   },

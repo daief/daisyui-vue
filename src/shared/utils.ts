@@ -45,7 +45,7 @@ export function debounce<F extends (...args: any) => any>(
   fn: F,
   timeout: number,
 ): (...args: Parameters<F>) => void {
-  let updateTimer = null;
+  let updateTimer: any = null;
 
   const result = (...args) => {
     clearTimeout(updateTimer);

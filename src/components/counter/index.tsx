@@ -49,12 +49,12 @@ export const Conter = componentV2<ICounterProps>(
           .filter(Boolean);
       };
 
-      const display = ref<string[]>(value2display(props.from));
+      const display = ref<string[]>(value2display(props.from!));
       const at = new AnimationTimer<number>({
         initialValue: props.from!,
         duration: props.duration!,
         updater: (ctx, p) => {
-          return props.from + (props.to! - props.from!) * p;
+          return props.from! + (props.to! - props.from!) * p;
         },
         onUpdate: (ctx) => {
           display.value = value2display(ctx.current);

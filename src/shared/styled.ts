@@ -58,7 +58,7 @@ export function component<Attrs = unknown, P = {}>(
  * @param args
  * @returns
  */
-export function componentV2<Props = unknown, Attrs = unknown>(
+export function componentV2<Props = {}, Attrs = unknown>(
   ...args: IComponentOptions<Props, Props & Attrs>
 ) {
   return component<Props & Attrs, Props>(
@@ -76,7 +76,7 @@ export function createStyle(): IStyle {
   const m = new Map<number, string>();
   const STYLE_ATTR = `daisyui-vue="${VERSION}"`;
 
-  let style: HTMLStyleElement = null;
+  let style: HTMLStyleElement | null = null;
   if (isBrowser) {
     style = document.querySelector(`style[${STYLE_ATTR}]`);
 

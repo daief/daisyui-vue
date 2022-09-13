@@ -17,7 +17,7 @@ export function useAsync<F extends IFun<any>>(
 ): [
   {
     loading: boolean;
-    data: UnwrapRef<ReturnType<F>>;
+    data: UnwrapRef<ReturnType<F>> | null;
     error: any;
   },
   F,
@@ -39,7 +39,7 @@ export function useAsync<F extends IFun<any>>(
       state.error = false;
       return state.data;
     } catch (error) {
-      state.data = defaultValue;
+      state.data = defaultValue as any;
       state.error = error || new Error('Call async fn error.');
       state.loading = false;
       throw state.error;

@@ -20,7 +20,7 @@ export const Alert = component<IAlertProps & HTMLAttributes>(
             success: () => <IconBell />, // TODO success icon
             warning: () => <IconWarning />,
             error: () => <IconInvalid />,
-          }[attrs.type]?.();
+          }[attrs.type!]?.();
 
         const actions = slots.actions?.();
         const content = slots.content?.();

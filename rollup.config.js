@@ -5,7 +5,8 @@ import typescript from 'rollup-plugin-typescript2';
 import cleanup from 'rollup-plugin-cleanup';
 import alias from '@rollup/plugin-alias';
 import replace from '@rollup/plugin-replace';
-import styles from './rollup-styles-plugin';
+
+import { createStylesPlugin } from '@dv/plugins';
 
 import path from 'path';
 import pkg from './package.json';
@@ -23,13 +24,8 @@ const componentsConfig = {
   },
   output: [
     {
-      dir: 'dist/esm',
+      dir: 'dist',
       format: 'esm',
-    },
-    {
-      dir: 'dist/lib',
-      format: 'cjs',
-      exports: 'auto',
     },
   ],
   // Specify here external modules which you don't want to include in your bundle (for instance: 'lodash', 'moment' etc.)
@@ -39,6 +35,10 @@ const componentsConfig = {
     alias({
       entries: [
         { find: '@', replacement: path.resolve(__dirname, 'src') },
+        {
+          find: '@/shared',
+          replacement: path.resolve(__dirname, 'src/shared'),
+        },
         {
           find: '@styles',
           replacement: path.resolve(__dirname, 'src/_daisyui/src'),
@@ -51,14 +51,14 @@ const componentsConfig = {
         VERSION: JSON.stringify(pkg.version),
       },
     }),
-    styles(),
+    createStylesPlugin(require('./tailwind.config')),
     resolve({
       extensions,
     }),
     typescript({
       exclude: [path.resolve(__dirname, 'src/_daisyui/**')],
       clean: true,
-      check: false, // https://github.com/ezolenko/rollup-plugin-typescript2/issues/214#issuecomment-612647264
+      check: true, // https://github.com/ezolenko/rollup-plugin-typescript2/issues/214#issuecomment-612647264
     }),
     babel({ extensions, babelHelpers: 'bundled' }),
     cleanup({

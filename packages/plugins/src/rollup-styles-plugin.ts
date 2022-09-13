@@ -1,11 +1,12 @@
+import { Plugin } from 'rollup';
+
 const postcss = require('postcss');
 // const postcssJs = require('postcss-js');
-
 const path = require('path');
 const less = require('less');
 
-const createPlugin = () => {
-  const tailwindConfig = require(path.resolve(__dirname, 'tailwind.config.js'));
+export const createStylesPlugin = (tailwindConfig: any) => {
+  tailwindConfig = { ...tailwindConfig };
   tailwindConfig.content = [];
   const process = postcss([
     require('tailwindcss')({
@@ -30,10 +31,8 @@ const createPlugin = () => {
     return () => ++i;
   })();
 
-  /**
-   * @type {import('rollup').Plugin}
-   */
-  const plugin = {
+  const plugin: Plugin = {
+    name: 'rollup-styles-plugin',
     async transform(code, id) {
       if (!/\.(le|c)ss$/.test(id)) return null;
 
@@ -68,5 +67,3 @@ const createPlugin = () => {
 
   return plugin;
 };
-
-export default createPlugin;
