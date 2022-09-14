@@ -6,7 +6,10 @@ import cleanup from 'rollup-plugin-cleanup';
 import alias from '@rollup/plugin-alias';
 import replace from '@rollup/plugin-replace';
 
-import { createStylesPlugin } from '@dv/plugins';
+import {
+  createStylesPlugin,
+  createDeclarationTransformerFactory,
+} from '@dv/plugins';
 
 import path from 'path';
 import pkg from './package.json';
@@ -59,6 +62,13 @@ const componentsConfig = {
       exclude: [path.resolve(__dirname, 'src/_daisyui/**')],
       clean: true,
       check: true, // https://github.com/ezolenko/rollup-plugin-typescript2/issues/214#issuecomment-612647264
+      transformers: [
+        (ls) => ({
+          afterDeclarations: createDeclarationTransformerFactory(
+            ls.getProgram(),
+          ),
+        }),
+      ],
     }),
     babel({ extensions, babelHelpers: 'bundled' }),
     cleanup({
