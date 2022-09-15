@@ -2,7 +2,6 @@ import { Plugin } from 'rollup';
 
 const postcss = require('postcss');
 // const postcssJs = require('postcss-js');
-const path = require('path');
 const less = require('less');
 
 export const createStylesPlugin = (tailwindConfig: any) => {

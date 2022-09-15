@@ -1,0 +1,49 @@
+{
+  "name": "@dv/develop",
+  "private": true,
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "bin": {
+    "dv": "cli.js"
+  },
+  "scripts": {
+    "watch": "pnpm build -- -w",
+    "build": "tsc -p ."
+  },
+  "dependencies": {
+    "@babel/cli": "^7.15.4",
+    "@babel/core": "^7.15.5",
+    "@babel/plugin-transform-typescript": "^7.15.4",
+    "@babel/preset-typescript": "^7.15.0",
+    "@rollup/plugin-alias": "^3.1.5",
+    "@rollup/plugin-babel": "^5.3.0",
+    "@rollup/plugin-node-resolve": "^13.0.4",
+    "@rollup/plugin-replace": "^3.0.0",
+    "@types/fs-extra": "^9.0.13",
+    "@types/glob": "^7.1.4",
+    "@vue/babel-plugin-jsx": "^1.0.7",
+    "autoprefixer": "^10.3.4",
+    "cac": "^6.7.14",
+    "cssnano": "^5.0.10",
+    "daisyui": "2.27.0",
+    "download-git-repo": "^3.0.2",
+    "fs-extra": "^10.0.1",
+    "glob": "^7.1.7",
+    "less": "^4.1.1",
+    "node-fetch": "^2.0.0",
+    "node-html-parser": "^4.1.5",
+    "postcss": "^8.0.0",
+    "postcss-nested": "^5.0.6",
+    "prettier": "^2.4.0",
+    "rollup": "^2.79.0",
+    "rollup-plugin-cleanup": "^3.2.1",
+    "rollup-plugin-postcss": "^4.0.1",
+    "rollup-plugin-typescript2": "^0.33.0",
+    "standard-version": "^9.3.2",
+    "tailwindcss": "^3.0.0",
+    "tslib": "^2.4.0",
+    "typescript": "^4.8.2",
+    "vue": "3.2.26"
+  }
+}
