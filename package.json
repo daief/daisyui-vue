@@ -18,6 +18,7 @@
     "build": "NODE_ENV=production rollup -c",
     "watch": "rollup -c -w",
     "init": "dv init",
+    "icons": "dv icons",
     "release": "standard-version",
     "pre:release": "pnpm run release -- --prerelease=alpha"
   },
@@ -28,10 +29,11 @@
     "tslib": ">=2.0.0"
   },
   "dependencies": {
-    "@popperjs/core": "^2.0.0"
+    "@vicons/ionicons5": "^0.12.0"
   },
   "devDependencies": {
     "@dv/develop": "*",
+    "@popperjs/core": "^2.11.6",
     "prettier": "^2.4.0",
     "standard-version": "^9.3.2"
   },

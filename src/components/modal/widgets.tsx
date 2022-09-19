@@ -1,6 +1,6 @@
-import { IconClose } from '@/icons';
 import { componentV2 } from '@/shared/styled';
 import { ExtractFromProps } from '@/shared/types/common';
+import { Close } from '@vicons/ionicons5';
 import { PropType } from 'vue';
 import { Button } from '../button';
 import style from './style/widgets.less';
@@ -32,7 +32,7 @@ export const ModalTitle = componentV2<IModalTitleProps>(
               class="dv-modal-title-close"
               onClick={props.onClose}
             >
-              <IconClose />
+              <Close />
             </Button>
           ) : null}
         </div>

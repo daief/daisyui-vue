@@ -12,7 +12,6 @@ import Components from 'unplugin-vue-components/vite';
 import fs from 'fs-extra';
 import crypto from 'crypto';
 import path from 'path';
-import rootPkg from '../package.json';
 
 const isDev = process.env.NODE_ENV === 'development';
 
@@ -53,12 +52,10 @@ const config: UserConfig = {
     {
       enforce: 'pre',
       transformIndexHtml: (html) => {
-        return html
-          .replace(
-            '<!-- __GOOGLE_GA__ -->',
-            isDev ? '' : '<script src="/def-common/js/ga.js"></script>',
-          )
-          .replace('__DAISYUI_VERSION__', rootPkg.devDependencies.daisyui);
+        return html.replace(
+          '<!-- __GOOGLE_GA__ -->',
+          isDev ? '' : '<script src="/def-common/js/ga.js"></script>',
+        );
       },
     },
     vueJsx(),
@@ -123,8 +120,8 @@ const config: UserConfig = {
             let isBody = false;
             let isBodyRow = false;
             let row = 0;
-            let heads = [];
-            let bodys = [];
+            let heads: string[] = [];
+            let bodys: Array<any> = []; // TODO types
 
             for (let index = 0; index < state.tokens.length; index++) {
               const token = state.tokens[index];

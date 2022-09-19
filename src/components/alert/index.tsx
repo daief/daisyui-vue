@@ -1,6 +1,11 @@
-import { IconBell, IconInfo, IconInvalid, IconWarning } from '@/icons';
 import { component } from '@/shared/styled';
 import { IStateColor } from '@/shared/types/common';
+import {
+  BanOutline,
+  CheckmarkCircleOutline,
+  InformationCircleOutline,
+  WarningOutline,
+} from '@vicons/ionicons5';
 import { HTMLAttributes } from 'vue';
 import style from './style';
 
@@ -16,10 +21,10 @@ export const Alert = component<IAlertProps & HTMLAttributes>(
         const icon =
           slots.icon?.() ||
           {
-            info: () => <IconInfo />,
-            success: () => <IconBell />, // TODO success icon
-            warning: () => <IconWarning />,
-            error: () => <IconInvalid />,
+            info: () => <InformationCircleOutline />,
+            success: () => <CheckmarkCircleOutline />,
+            warning: () => <WarningOutline />,
+            error: () => <BanOutline />,
           }[attrs.type!]?.();
 
         const actions = slots.actions?.();

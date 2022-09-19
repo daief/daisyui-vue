@@ -41,3 +41,48 @@ export const init = async (context: string) => {
 
   return Promise.all([clone(), downloadTheme()]);
 };
+
+export async function createIcons(context: string) {
+  const workspace = (...ps: string[]) => path.resolve(context, ...ps);
+  const iconFile = require.resolve('@vicons/ionicons5');
+
+  const filterFiles = ['index', 'async-index'];
+
+  const icons = await fs.readdir(path.dirname(iconFile)).then((ls) =>
+    ls
+      .filter((it) => it.endsWith('.js'))
+      .map((it) => it.replace('.js', ''))
+      .filter((it) => !filterFiles.includes(it)),
+  );
+
+  const topImports = `import { defineComponent, HTMLAttributes } from 'vue';
+import { Icon, iconProps, IIconProps } from './icon';
+export * from './icon';
+`;
+
+  const iconTpl = `export const Icon$name = defineComponent<IIconProps & HTMLAttributes>({
+    name: 'Icon$name',
+    props: iconProps as any,
+    setup: (props) => {
+      return () => (
+        <Icon {...props}>$slot</Icon>
+      );
+    },
+  });`;
+
+  let file = topImports;
+
+  file += 'import {\n';
+  file += icons.join(',\n');
+  file += `} from '@vicons/ionicons5'\n`;
+
+  file += icons
+    .map((icon) =>
+      iconTpl.replace(/\$name/g, icon).replace('$slot', `<${icon} />`),
+    )
+    .join('\n');
+
+  await fs.writeFile(workspace('src/icons/index.tsx'), file);
+
+  console.log(`Create ${icons.length} icons success.`);
+}

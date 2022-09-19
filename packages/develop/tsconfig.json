@@ -14,7 +14,8 @@
     "baseUrl": ".",
     "outDir": "dist",
     "declaration": true,
-    "declarationDir": "dist"
+    "declarationDir": "dist",
+    "declarationMap": true
   },
   "include": ["src"]
 }
