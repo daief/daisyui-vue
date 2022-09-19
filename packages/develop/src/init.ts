@@ -29,7 +29,7 @@ export const init = async (context: string) => {
   const themeCss = `https://cdn.jsdelivr.net/npm/daisyui@${version}/dist/themes.css`;
   const downloadTheme = () =>
     fetch(themeCss).then((res: any) => {
-      const themeFile = workspace('src/theme.css');
+      const themeFile = workspace('src/components/_styles/theme.css');
 
       const fileStream = fs.createWriteStream(themeFile, { flags: 'w' });
       return new Promise((resolve, reject) => {
