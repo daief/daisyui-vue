@@ -28,7 +28,7 @@ export function createTheme() {
   return ctx;
 }
 
-const builtInCtx = createTheme();
+let builtInCtx: ITheme;
 
 export interface ITheme {
   breakpoints: IBreakPoints;
@@ -36,5 +36,6 @@ export interface ITheme {
 }
 
 export function useTheme() {
-  return inject<ITheme>(CONTEXT_SYMBOL, builtInCtx);
+  builtInCtx ||= createTheme();
+  return inject<ITheme>(CONTEXT_SYMBOL) || builtInCtx;
 }
