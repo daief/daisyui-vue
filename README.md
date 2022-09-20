@@ -4,17 +4,6 @@
 
 ## Usage
 
-在模板中引入主题：
-
-> TODO: 后续计划包括进来
-
-```html
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/daisyui@2.0.9/dist/themes.css"
-/>
-```
-
 全局注册：
 
 ```tsx
@@ -149,3 +138,5 @@ export function render() {
 - 事件名称，`onNameAction`：onMaskClick、onEscKeyDown
 - 事件控制，`xxxYyable`: keyboardCloseable
 - 响应式：mobile first
+
+- [ ] icon: docs(dv-icon) & context
