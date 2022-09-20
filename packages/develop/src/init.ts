@@ -60,15 +60,17 @@ import { Icon, iconProps, IIconProps } from './icon';
 export * from './icon';
 `;
 
-  const iconTpl = `export const Icon$name = defineComponent<IIconProps & HTMLAttributes>({
-    name: 'Icon$name',
-    props: iconProps as any,
-    setup: (props) => {
-      return () => (
-        <Icon {...props}>$slot</Icon>
-      );
-    },
-  });`;
+  const iconTpl = `
+export const Icon$name = /* @__PURE__ */ defineComponent<IIconProps & HTMLAttributes>({
+  name: 'Icon$name',
+  props: iconProps as any,
+  setup: (props) => {
+    return () => (
+      <Icon {...props}>$slot</Icon>
+    );
+  },
+});
+`;
 
   let file = topImports;
 

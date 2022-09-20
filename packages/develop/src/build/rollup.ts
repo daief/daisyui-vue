@@ -1,5 +1,6 @@
 import { RollupOptions } from 'rollup';
 import * as path from 'path';
+import fs from 'fs-extra';
 
 import { babel } from '@rollup/plugin-babel';
 import resolve from '@rollup/plugin-node-resolve';
@@ -21,12 +22,24 @@ export function getRoolupConfig(opts: IBuildOptions) {
   const workspace = (...ps: string[]) => path.resolve(context, ...ps);
   const pkg = require(workspace('package.json'));
 
+  const components = fs
+    .readdirSync(workspace('src/components'))
+    .filter((cpt) => !['index.tsx', '_styles'].includes(cpt));
+
+  const entries = components.reduce<Record<string, string>>((res, curr) => {
+    const p = `components/${curr}/index`;
+    res[p] = 'src/' + p;
+    return res;
+  }, {});
+
   const config: RollupOptions = {
     context,
     input: {
-      index: 'src/index',
+      ...entries,
       _utils: 'src/shared/utils',
       _global_style: 'src/components/_styles/global',
+      'icons/index': 'src/icons/index',
+      index: 'src/index',
     },
     output: [
       {

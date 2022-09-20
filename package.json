@@ -15,8 +15,8 @@
     "dist"
   ],
   "scripts": {
-    "build": "NODE_ENV=production rollup -c",
-    "watch": "rollup -c -w",
+    "build": "rm -rf dist && NODE_ENV=production rollup -c",
+    "watch": "NODE_ENV=development rollup -c -w",
     "init": "dv init",
     "icons": "dv icons",
     "release": "standard-version",
