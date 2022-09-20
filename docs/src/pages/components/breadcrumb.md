@@ -17,15 +17,15 @@ breadcrumbs with icon
 ```html :::demo
 <dv-breadcrumb>
   <dv-breadcrumb-item>
-    <dv-icon-folder class="mr-1" />
+    <IconFolderOpenOutline class="mr-1" />
     Home
   </dv-breadcrumb-item>
   <dv-breadcrumb-item>
-    <dv-icon-folder class="mr-1" />
+    <IconFolderOpenOutline class="mr-1" />
     Documents
   </dv-breadcrumb-item>
   <dv-breadcrumb-item>
-    <dv-icon-document-add class="mr-1" />
+    <IconDocumentOutline class="mr-1" />
     Add Document
   </dv-breadcrumb-item>
 </dv-breadcrumb>

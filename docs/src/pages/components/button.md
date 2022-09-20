@@ -114,16 +114,16 @@ button shapes
   class="flex flex-wrap items-start md:space-x-2 space-y-2 md:space-y-0 flex-col md:flex-row mb-2"
 >
   <dv-button shape="circle" size="lg">
-    <dv-icon-close size="1.5em" />
+    <icon-close size="1.5em" />
   </dv-button>
   <dv-button shape="circle">
-    <dv-icon-close size="1.25em" />
+    <icon-close size="1.25em" />
   </dv-button>
   <dv-button outline shape="circle" size="sm">
-    <dv-icon-close />
+    <icon-close />
   </dv-button>
   <dv-button outline shape="circle" size="xs">
-    <dv-icon-close />
+    <icon-close />
   </dv-button>
 </div>
 

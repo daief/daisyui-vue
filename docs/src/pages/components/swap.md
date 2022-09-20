@@ -18,8 +18,8 @@ export default {
     return () => (
       <div class="text-center">
         <dv-swap
-          on={() => <dv-icon-volume-on size="48px" />}
-          off={() => <dv-icon-volume-off size="48px" />}
+          on={() => <IconVolumeHigh size="48px" />}
+          off={() => <IconVolumeMute size="48px" />}
         />
       </div>
     );
@@ -33,10 +33,10 @@ Swap icons with rotate effect
 <div class="text-center">
   <dv-swap animation="rotate">
     <template v-slot:on>
-      <dv-icon-sun size="48px" />
+      <IconSunny size="48px" />
     </template>
     <template v-slot:off>
-      <dv-icon-moon size="48px" />
+      <IconMoon size="48px" />
     </template>
   </dv-swap>
 </div>

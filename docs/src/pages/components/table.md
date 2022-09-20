@@ -149,7 +149,7 @@ export default {
       {
         title: () => (
           <>
-            <dv-icon-color size="1.5em" style="margin-right: 6px" />
+            <IconColorPalette size="1.5em" style="margin-right: 6px" />
             favorite color
           </>
         ),

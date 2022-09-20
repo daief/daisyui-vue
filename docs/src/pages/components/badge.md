@@ -53,19 +53,19 @@ badge variants
   class="flex flex-wrap items-start md:space-x-2 space-y-2 md:space-y-0 flex-col md:flex-row"
 >
   <dv-badge type="primary">
-    <dv-icon-close size="14px" class="mr-1" />
+    <icon-close size="14px" class="mr-1" />
     primary
   </dv-badge>
   <dv-badge type="info">
-    <dv-icon-close size="14px" class="mr-1" />
+    <icon-close size="14px" class="mr-1" />
     info
   </dv-badge>
   <dv-badge type="warning">
-    <dv-icon-close size="14px" class="mr-1" />
+    <icon-close size="14px" class="mr-1" />
     warning
   </dv-badge>
   <dv-badge type="error">
-    <dv-icon-close size="14px" class="mr-1" />
+    <icon-close size="14px" class="mr-1" />
     error
   </dv-badge>
 </div>

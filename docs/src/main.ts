@@ -1,10 +1,40 @@
 import { ViteSSG } from 'vite-ssg';
 import routes from 'virtual:generated-pages';
-import daisyui from 'daisyui-vue';
+import daisyui, {
+  IconHeart,
+  IconEllipsisHorizontal,
+  IconClose,
+  IconFolderOpenOutline,
+  IconDocumentOutline,
+  IconMenu,
+  IconCode,
+  IconLogoGithub,
+  IconVolumeMute,
+  IconVolumeHigh,
+  IconSunny,
+  IconMoon,
+  IconColorPalette,
+} from 'daisyui-vue';
 import './styles';
 import App from './App.vue';
 import Playground from './components/Playground.vue';
 import MarkdownTable from './components/MarkdownTable.vue';
+
+const icons = [
+  IconHeart,
+  IconEllipsisHorizontal,
+  IconClose,
+  IconFolderOpenOutline,
+  IconDocumentOutline,
+  IconMenu,
+  IconCode,
+  IconLogoGithub,
+  IconVolumeMute,
+  IconVolumeHigh,
+  IconSunny,
+  IconMoon,
+  IconColorPalette,
+];
 
 export const createApp = ViteSSG(
   App,
@@ -18,6 +48,8 @@ export const createApp = ViteSSG(
     app.component('Playground', Playground);
     app.component('MarkdownTable', MarkdownTable);
     app.use(daisyui as any);
+
+    icons.forEach((i) => app.component(i.name, i));
 
     // @ts-ignore
     ctx.$daisyui = app.config.globalProperties.$daisyui;

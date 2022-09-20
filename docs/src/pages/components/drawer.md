@@ -153,7 +153,7 @@ navbar menu for desktop + drawer for mobile
     <dv-navbar class="bg-gray-300">
       <div class="flex-none lg:hidden">
         <dv-button :onClick="() => setOpen('d4')" type="ghost">
-          <dv-icon-menu size="1.5em" />
+          <icon-menu size="1.5em" />
         </dv-button>
       </div>
       <div class="flex-1 mx-2"> Change screen size to show/hide menu </div>

@@ -14,7 +14,7 @@ veritcal with icons
     <dv-menu-item asTitle> Menu title </dv-menu-item>
     <dv-menu-item> Item without icon </dv-menu-item>
     <dv-menu-item>
-      <dv-icon-eye class="mr-2" size="1.25em" />
+      <IconHeart class="mr-2" size="1.25em" />
       Item with icon
     </dv-menu-item>
   </dv-menu>
@@ -29,7 +29,7 @@ veritcal with icons and padding. menu-item have border-raidus
     <dv-menu-item asTitle> Menu title </dv-menu-item>
     <dv-menu-item> Item without icon </dv-menu-item>
     <dv-menu-item>
-      <dv-icon-eye class="mr-2" size="1.25em" />
+      <IconHeart class="mr-2" size="1.25em" />
       Item with icon
     </dv-menu-item>
   </dv-menu>
@@ -68,15 +68,15 @@ icon
 ```html :::demo
 <dv-artboard class="py-4 bg-gray-100">
   <dv-menu class="shadow-lg rounded-lg bg-white text-2xl mb-4">
-    <dv-menu-item> <dv-icon-github /> </dv-menu-item>
-    <dv-menu-item> <dv-icon-code /> </dv-menu-item>
-    <dv-menu-item> <dv-icon-eye /> </dv-menu-item>
+    <dv-menu-item> <IconLogoGithub /> </dv-menu-item>
+    <dv-menu-item> <IconCode /> </dv-menu-item>
+    <dv-menu-item> <IconHeart /> </dv-menu-item>
   </dv-menu>
 
   <dv-menu class="shadow-lg rounded-lg bg-white text-2xl" horizontal>
-    <dv-menu-item> <dv-icon-github /> </dv-menu-item>
-    <dv-menu-item> <dv-icon-code /> </dv-menu-item>
-    <dv-menu-item> <dv-icon-eye /> </dv-menu-item>
+    <dv-menu-item> <IconLogoGithub /> </dv-menu-item>
+    <dv-menu-item> <IconCode /> </dv-menu-item>
+    <dv-menu-item> <IconHeart /> </dv-menu-item>
   </dv-menu>
 </dv-artboard>
 ```

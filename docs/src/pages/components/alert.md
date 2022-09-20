@@ -57,7 +57,7 @@ alert
 ```html :::demo
 <dv-alert>
   <template v-slot:icon>
-    <dv-icon-heart color="#ef3636" />
+    <icon-heart color="#ef3636" />
   </template>
   <template v-slot:default>
     Lorem ipsum dolor sit amet, consectetur adip!
@@ -70,7 +70,7 @@ alert
   </template>
   <template v-slot:actions>
     <dv-button type="ghost" size="sm" class="mr-2">
-      <dv-icon-dots size="1.5em" />
+      <icon-ellipsis-horizontal size="1.5em" />
     </dv-button>
   </template>
 </dv-alert>
