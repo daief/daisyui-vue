@@ -104,6 +104,8 @@ export function render() {
 - [x] dropdown - 🛠 refactor(popper inside)
 - [ ] footer
 - [ ] hero
+- [x] icon - [xicons](https://github.com/07akioni/xicons)
+  - [ ] context
 - [ ] indicator
 - [ ] kbd
 - [x] link
@@ -138,5 +140,3 @@ export function render() {
 - 事件名称，`onNameAction`：onMaskClick、onEscKeyDown
 - 事件控制，`xxxYyable`: keyboardCloseable
 - 响应式：mobile first
-
-- [ ] icon: docs(dv-icon) & context
