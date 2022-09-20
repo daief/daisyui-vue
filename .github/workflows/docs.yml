@@ -35,6 +35,7 @@ jobs:
           cache: 'pnpm'
 
       - run: pnpm i
+      - run: pnpm build --filter @dv/develop
       - run: pnpm run init
       - run: pnpm run icons
       - run: pnpm run build
