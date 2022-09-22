@@ -76,7 +76,7 @@ export function getRoolupConfig(opts: IBuildOptions) {
       }),
       typescript({
         exclude: [path.resolve(__dirname, 'src/_daisyui/**')],
-        clean: true,
+        // clean: true,
         check: true, // https://github.com/ezolenko/rollup-plugin-typescript2/issues/214#issuecomment-612647264
         transformers: [
           (ls) => ({
