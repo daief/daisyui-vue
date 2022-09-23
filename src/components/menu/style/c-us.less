@@ -1,0 +1,40 @@
+.dv-menu {
+  @apply flex flex-col;
+  &.horizontal {
+    @apply inline-flex flex-row;
+    :where(li) {
+      @apply flex-row;
+    }
+  }
+
+  :where(li) {
+    @apply relative flex flex-col flex-wrap items-stretch;
+  }
+  :where(li:not(.dv-menu-title)) > :where(*:not(ul)) {
+    @apply flex;
+  }
+  :where(li:not(.disabled):not(.dv-menu-title)) > :where(*:not(ul)) {
+    @apply cursor-pointer select-none items-center outline-none;
+  }
+  > :where(li > *:not(ul):focus) {
+    @apply outline-none;
+  }
+  > :where(li.disabled > *:not(ul):focus) {
+    @apply cursor-auto;
+  }
+
+  > :where(li) :where(ul) {
+    @apply flex flex-col items-stretch;
+  }
+  > :where(li) > :where(ul) {
+    @apply absolute hidden;
+    top: initial;
+    left: 100%;
+  }
+  > :where(li:hover) > :where(ul) {
+    @apply flex;
+  }
+  > :where(li:focus) > :where(ul) {
+    @apply flex;
+  }
+}

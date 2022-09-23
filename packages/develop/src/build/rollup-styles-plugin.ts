@@ -40,7 +40,7 @@ export const createStylesPlugin = (tailwindConfig: any) => {
       if (/\.less/i.test(id)) {
         // https://lesscss.org/usage/#programmatic-usage
         const lessResult = await less.render(code, {
-          sourceMap: { sourceMapFileInline: true },
+          sourceMap: { sourceMapFileInline: false },
         });
         cssCode = lessResult.css;
       }

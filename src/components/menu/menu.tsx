@@ -1,28 +1,25 @@
-import { component } from '@/shared/styled';
-import { BoolConstructorToBase } from '@/shared/types/common';
-import { computed } from 'vue';
+import { componentV2 } from '@/shared/styled';
+import { ExtractFromProps } from '@/shared/types/common';
+import { computed, HTMLAttributes } from 'vue';
 import style from './style';
 
-const props = {
+const menuProps = {
   compact: Boolean,
   horizontal: Boolean,
 };
 
-export interface IMenuProps {
-  compact?: boolean;
-  horizontal?: boolean;
-}
+export type IMenuProps = ExtractFromProps<typeof menuProps>;
 
-export const Menu = component<IMenuProps, BoolConstructorToBase<typeof props>>(
+export const Menu = componentV2<IMenuProps, HTMLAttributes>(
   {
     name: 'Menu',
-    props: props,
+    props: menuProps,
     setup: (props, { slots }) => {
       const cls = computed(() => [
-        'menu',
+        'dv-menu dv-menu-normal',
+        props.horizontal ? 'dv-menu-horizontal' : 'dv-menu-vertical',
         {
-          compact: props.compact,
-          horizontal: props.horizontal,
+          'dv-menu-compact': props.compact,
         },
       ]);
       return () => <ul class={cls.value}>{slots.default?.()}</ul>;

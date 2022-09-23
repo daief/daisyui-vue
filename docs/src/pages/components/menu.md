@@ -1,16 +1,12 @@
 # Menu
 
-notice:
-
-- when menu class contains `p-`, menu-item will become border-radius.
-
 ## Examples
 
 veritcal with icons
 
 ```html :::demo
 <dv-artboard class="py-4 bg-gray-100">
-  <dv-menu class="py-2 shadow-lg rounded-lg bg-white">
+  <dv-menu class="shadow-lg rounded-lg bg-white">
     <dv-menu-item asTitle> Menu title </dv-menu-item>
     <dv-menu-item> Item without icon </dv-menu-item>
     <dv-menu-item>
@@ -40,7 +36,7 @@ bordered, hover-bordered, disabled
 
 ```html :::demo
 <dv-artboard class="py-4 bg-gray-100">
-  <dv-menu class="py-4 shadow-lg rounded-lg bg-white">
+  <dv-menu class="shadow-lg rounded-lg bg-white">
     <dv-menu-item asTitle> Menu title </dv-menu-item>
     <dv-menu-item disabled> Item is diabled </dv-menu-item>
     <dv-menu-item bordered> Item is bordered </dv-menu-item>
@@ -55,7 +51,6 @@ horizontal
 ```html :::demo
 <dv-artboard class="py-4 bg-gray-100">
   <dv-menu class="shadow-lg rounded-lg bg-white" horizontal>
-    <dv-menu-item asTitle> Menu title </dv-menu-item>
     <dv-menu-item disabled> Item is diabled </dv-menu-item>
     <dv-menu-item bordered> Item is bordered </dv-menu-item>
     <dv-menu-item active> Item is active </dv-menu-item>
@@ -77,34 +72,6 @@ icon
     <dv-menu-item> <IconLogoGithub /> </dv-menu-item>
     <dv-menu-item> <IconCode /> </dv-menu-item>
     <dv-menu-item> <IconHeart /> </dv-menu-item>
-  </dv-menu>
-</dv-artboard>
-```
-
-veritcal with submenu and compact
-
-> TODO: refine usage api
-
-```html :::demo
-<dv-artboard class="py-4 bg-gray-100">
-  <dv-menu class="p-4 shadow-lg rounded-lg bg-white" compact>
-    <dv-menu-item> Level 1 </dv-menu-item>
-    <dv-menu-item> Level 1 </dv-menu-item>
-    <dv-menu-item> Level 1 </dv-menu-item>
-    <dv-menu-item :childWrapper="false">
-      <dv-menu>
-        <dv-menu-item> Level 2 </dv-menu-item>
-        <dv-menu-item> Level 2 </dv-menu-item>
-        <dv-menu-item :childWrapper="false">
-          <dv-menu>
-            <dv-menu-item> Level 3 </dv-menu-item>
-            <dv-menu-item> Level 3 </dv-menu-item>
-          </dv-menu>
-        </dv-menu-item>
-        <dv-menu-item> Level 2 </dv-menu-item>
-      </dv-menu>
-    </dv-menu-item>
-    <dv-menu-item> Level 1 </dv-menu-item>
   </dv-menu>
 </dv-artboard>
 ```
