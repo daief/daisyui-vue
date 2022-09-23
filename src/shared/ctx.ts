@@ -37,5 +37,5 @@ export interface ITheme {
 
 export function useTheme() {
   builtInCtx ||= createTheme();
-  return inject<ITheme>(CONTEXT_SYMBOL) || builtInCtx;
+  return inject<ITheme>(CONTEXT_SYMBOL, builtInCtx) || builtInCtx;
 }
