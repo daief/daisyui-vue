@@ -79,7 +79,7 @@ export default defineComponent({
                     <NavbarStart class="mx-2">
                       <div class="lg:hidden">
                         <Button
-                          type="ghost"
+                          variant="ghost"
                           shape="square"
                           onClick={() => {
                             open.value = !open.value;
@@ -94,7 +94,7 @@ export default defineComponent({
                         component="a"
                         href="https://github.com/daief/daisyui-vue"
                         target="_blank"
-                        type="ghost"
+                        variant="ghost"
                       >
                         <IconLogoGithub size="2em" />
                       </Button>

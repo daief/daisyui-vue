@@ -1,31 +1,31 @@
-import { BoolConstructorToBase, ISize } from '@/shared/types/common';
+import { ExtractFromProps, ISize } from '@/shared/types/common';
 import { computed, HTMLAttributes, PropType, provide } from 'vue';
 import { ctxKey, ICtx } from './state';
 import { IButtonShape } from './button';
-import { component } from '@/shared/styled';
+import { componentV2 } from '@/shared/styled';
 import style from './style';
 
-export interface IButtonGroupProps {
-  size?: ISize;
-  shape?: IButtonShape;
-  outline?: boolean;
-}
-
-const boolProps = {
+const props = {
   outline: Boolean,
+  size: {
+    type: String as PropType<ISize>,
+    default: 'md',
+  },
+  shape: {
+    type: String as PropType<IButtonShape>,
+  },
 };
 
-export const ButtonGroup = component<
-  HTMLAttributes & IButtonGroupProps,
-  BoolConstructorToBase<typeof boolProps>
->(
+export type IButtonGroupProps = ExtractFromProps<typeof props>;
+
+export const ButtonGroup = componentV2<IButtonGroupProps, HTMLAttributes>(
   {
     name: 'ButtonGroup',
-    props: boolProps,
-    setup: (props, { slots, attrs }) => {
+    props: props,
+    setup: (props, { slots }) => {
       const ctxVal = computed<ICtx>(() => ({
-        size: attrs.size || 'md',
-        shape: attrs.shape || 'defalut',
+        size: props.size || 'md',
+        shape: props.shape || 'defalut',
         outline: props.outline,
       }));
 

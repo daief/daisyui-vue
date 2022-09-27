@@ -1,8 +1,4 @@
-import {
-  BoolConstructorToBase,
-  IColorType,
-  ISize,
-} from '@/shared/types/common';
+import { ExtractFromProps, IColorType, ISize } from '@/shared/types/common';
 import {
   AnchorHTMLAttributes,
   computed,
@@ -11,9 +7,10 @@ import {
   InputHTMLAttributes,
   Ref,
   ref,
+  PropType,
 } from 'vue';
 import { ctxKey, ICtx } from './state';
-import { component } from '@/shared/styled';
+import { componentV2 } from '@/shared/styled';
 import style from './style';
 
 export type IButtonShape = 'defalut' | 'circle' | 'square';
@@ -28,48 +25,42 @@ const props = {
   active: Boolean,
   loading: Boolean,
   noAnimation: Boolean,
-  onClick: Function as unknown as IButtonProps['onClick'],
+  variant: {
+    type: String as PropType<IButtonType>,
+    default: 'netural',
+  },
+  shape: {
+    type: String as PropType<IButtonShape>,
+    default: 'netural',
+  },
+  size: {
+    type: String as PropType<ISize>,
+    default: 'md',
+  },
+  component: {
+    type: String as PropType<'button' | 'a' | 'input'>,
+    default: 'button',
+  },
+  onClick: Function as PropType<(e: MouseEvent) => any>,
 };
 
-export interface IButtonProps {
-  type?: IButtonType;
-  size?: ISize;
-  shape?: IButtonShape;
-  block?: boolean;
-  wide?: boolean;
-  disabled?: boolean;
-  outline?: boolean;
-  active?: boolean;
-  loading?: boolean;
-  noAnimation?: boolean;
-  component?: 'button' | 'a' | 'input';
-  onClick?: (e: MouseEvent) => any;
-}
+export type IButtonProps = ExtractFromProps<typeof props>;
 
-export const Button = component<
-  AnchorHTMLAttributes & InputHTMLAttributes & IButtonProps,
-  BoolConstructorToBase<typeof props>
+export const Button = componentV2<
+  IButtonProps,
+  AnchorHTMLAttributes & InputHTMLAttributes
 >(
   {
     name: 'Button',
-    props: {
-      block: Boolean,
-      wide: Boolean,
-      disabled: Boolean,
-      outline: Boolean,
-      active: Boolean,
-      loading: Boolean,
-      noAnimation: Boolean,
-      onClick: Function,
-    },
-    setup: (props, { slots, attrs }) => {
+    props,
+    setup: (props, { slots }) => {
       const ctxVal = inject<Ref<ICtx>>(ctxKey, null);
-      const size = computed(() => attrs.size || ctxVal?.value.size || 'md');
+      const size = computed(() => props.size || ctxVal?.value.size || 'md');
       const shape = computed(
-        () => attrs.shape || ctxVal?.value.shape || 'default',
+        () => props.shape || ctxVal?.value.shape || 'default',
       );
       const outline = computed(() => ctxVal?.value.outline || props.outline);
-      const componentType = computed(() => attrs.component || 'button');
+      const componentType = computed(() => props.component || 'button');
 
       const clickLoading = ref(false);
 
@@ -78,10 +69,10 @@ export const Button = component<
       const cls = computed(() => {
         return [
           'dv-btn btn',
-          attrs.type === 'glass'
+          props.variant === 'glass'
             ? 'glass'
-            : !!attrs.type
-            ? `btn-${attrs.type}`
+            : !!props.variant
+            ? `btn-${props.variant}`
             : '',
           {
             [`btn-${size.value}`]: true,
@@ -107,7 +98,7 @@ export const Button = component<
       };
 
       const showContent = computed(() => {
-        if (['circle', 'square'].includes(attrs.shape)) {
+        if (['circle', 'square'].includes(props.shape)) {
           return !finalLoading.value;
         }
         return true;

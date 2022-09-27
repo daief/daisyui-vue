@@ -9,11 +9,11 @@ button with brand colors
   class="flex flex-wrap items-start md:space-x-2 space-y-2 md:space-y-0 flex-col md:flex-row"
 >
   <dv-button>netural</dv-button>
-  <dv-button type="primary">secondary</dv-button>
-  <dv-button type="secondary">secondary</dv-button>
-  <dv-button type="accent">accent</dv-button>
-  <dv-button type="ghost">ghost</dv-button>
-  <dv-button type="link">link</dv-button>
+  <dv-button variant="primary">secondary</dv-button>
+  <dv-button variant="secondary">secondary</dv-button>
+  <dv-button variant="accent">accent</dv-button>
+  <dv-button variant="ghost">ghost</dv-button>
+  <dv-button variant="link">link</dv-button>
 </div>
 ```
 
@@ -24,11 +24,11 @@ active state button
   class="flex flex-wrap items-start md:space-x-2 space-y-2 md:space-y-0 flex-col md:flex-row"
 >
   <dv-button active>netural</dv-button>
-  <dv-button active type="primary">secondary</dv-button>
-  <dv-button active type="secondary">secondary</dv-button>
-  <dv-button active type="accent">accent</dv-button>
-  <dv-button active type="ghost">ghost</dv-button>
-  <dv-button active type="link">link</dv-button>
+  <dv-button active variant="primary">secondary</dv-button>
+  <dv-button active variant="secondary">secondary</dv-button>
+  <dv-button active variant="accent">accent</dv-button>
+  <dv-button active variant="ghost">ghost</dv-button>
+  <dv-button active variant="link">link</dv-button>
 </div>
 ```
 
@@ -39,9 +39,9 @@ outline button
   class="flex flex-wrap items-start md:space-x-2 space-y-2 md:space-y-0 flex-col md:flex-row"
 >
   <dv-button outline>netural</dv-button>
-  <dv-button type="primary" outline>secondary</dv-button>
-  <dv-button type="secondary" outline>secondary</dv-button>
-  <dv-button type="accent" outline>accent</dv-button>
+  <dv-button variant="primary" outline>secondary</dv-button>
+  <dv-button variant="secondary" outline>secondary</dv-button>
+  <dv-button variant="accent" outline>accent</dv-button>
 </div>
 ```
 
@@ -52,10 +52,10 @@ disabled button
   class="flex flex-wrap items-start md:space-x-2 space-y-2 md:space-y-0 flex-col md:flex-row"
 >
   <dv-button disabled>netural</dv-button>
-  <dv-button type="primary" disabled>secondary</dv-button>
-  <dv-button type="secondary" disabled>secondary</dv-button>
-  <dv-button type="accent" disabled>accent</dv-button>
-  <dv-button type="ghost" disabled>ghost</dv-button>
+  <dv-button variant="primary" disabled>secondary</dv-button>
+  <dv-button variant="secondary" disabled>secondary</dv-button>
+  <dv-button variant="accent" disabled>accent</dv-button>
+  <dv-button variant="ghost" disabled>ghost</dv-button>
 </div>
 ```
 
@@ -65,10 +65,10 @@ button with state colors
 <div
   class="flex flex-wrap items-start md:space-x-2 space-y-2 md:space-y-0 flex-col md:flex-row"
 >
-  <dv-button type="info">info</dv-button>
-  <dv-button type="success">success</dv-button>
-  <dv-button type="warning">warning</dv-button>
-  <dv-button type="error">error</dv-button>
+  <dv-button variant="info">info</dv-button>
+  <dv-button variant="success">success</dv-button>
+  <dv-button variant="warning">warning</dv-button>
+  <dv-button variant="error">error</dv-button>
 </div>
 ```
 
@@ -79,7 +79,7 @@ glass button
   class="p-20 bg-cover bg-base-200 w-80 h-52 rounded-lg"
   style='background-image: url("https://picsum.photos/id/314/400/300");'
 >
-  <dv-button type="glass">Glass Button</dv-button>
+  <dv-button variant="glass">Glass Button</dv-button>
 </div>
 ```
 
@@ -151,21 +151,21 @@ button loading
     class="flex flex-wrap items-start md:space-x-2 space-y-2 md:space-y-0 flex-col md:flex-row mb-1"
   >
     <dv-button loading>netural</dv-button>
-    <dv-button loading type="primary">secondary</dv-button>
-    <dv-button loading type="secondary">secondary</dv-button>
-    <dv-button loading type="accent">accent</dv-button>
-    <dv-button loading type="ghost">ghost</dv-button>
-    <dv-button loading type="link">link</dv-button>
+    <dv-button loading variant="primary">secondary</dv-button>
+    <dv-button loading variant="secondary">secondary</dv-button>
+    <dv-button loading variant="accent">accent</dv-button>
+    <dv-button loading variant="ghost">ghost</dv-button>
+    <dv-button loading variant="link">link</dv-button>
   </div>
 
   <div
     class="flex flex-wrap items-start md:space-x-2 space-y-2 md:space-y-0 flex-col md:flex-row"
   >
     <dv-button :onClick="asyncFunction">Loading after click</dv-button>
-    <dv-button :onClick="asyncFunction" type="primary"
+    <dv-button :onClick="asyncFunction" variant="primary"
       >Loading after click</dv-button
     >
-    <dv-button :onClick="asyncFunction" type="secondary" outline>
+    <dv-button :onClick="asyncFunction" variant="secondary" outline>
       Loading after click
     </dv-button>
   </div>
@@ -203,7 +203,9 @@ button doesn't have click animation
 <div
   class="flex flex-wrap items-start md:space-x-2 space-y-2 md:space-y-0 flex-col md:flex-row"
 >
-  <dv-button type="primary" noAnimation>I don't have click animation</dv-button>
+  <dv-button variant="primary" noAnimation
+    >I don't have click animation</dv-button
+  >
 </div>
 ```
 
@@ -212,15 +214,15 @@ button group size
 ```html :::demo
 <div class="space-y-2">
   <dv-button-group>
-    <dv-button type="info">info</dv-button>
-    <dv-button type="warning">warning</dv-button>
-    <dv-button type="error">error</dv-button>
+    <dv-button variant="info">info</dv-button>
+    <dv-button variant="warning">warning</dv-button>
+    <dv-button variant="error">error</dv-button>
   </dv-button-group>
 
   <dv-button-group size="sm">
-    <dv-button type="info">info</dv-button>
-    <dv-button type="warning">warning</dv-button>
-    <dv-button type="error">error</dv-button>
+    <dv-button variant="info">info</dv-button>
+    <dv-button variant="warning">warning</dv-button>
+    <dv-button variant="error">error</dv-button>
   </dv-button-group>
 </div>
 ```
@@ -230,21 +232,23 @@ button group shape
 ```html :::demo
 <div class="space-y-2">
   <dv-button-group size="sm" shape="circle">
-    <dv-button type="info">A</dv-button>
-    <dv-button type="warning">B</dv-button>
-    <dv-button type="error">C</dv-button>
+    <dv-button variant="info">A</dv-button>
+    <dv-button variant="warning">B</dv-button>
+    <dv-button variant="error">C</dv-button>
   </dv-button-group>
 
   <dv-button-group size="sm" shape="square">
-    <dv-button type="info">A</dv-button>
-    <dv-button type="warning">B</dv-button>
-    <dv-button type="error">C</dv-button>
+    <dv-button variant="info">A</dv-button>
+    <dv-button variant="warning">B</dv-button>
+    <dv-button variant="error">C</dv-button>
   </dv-button-group>
 
   <dv-button-group size="sm" shape="square">
-    <dv-button type="info">A</dv-button>
-    <dv-button type="warning" shape="default">this is default shape</dv-button>
-    <dv-button type="error">C</dv-button>
+    <dv-button variant="info">A</dv-button>
+    <dv-button variant="warning" shape="default"
+      >this is default shape</dv-button
+    >
+    <dv-button variant="error">C</dv-button>
   </dv-button-group>
 </div>
 ```
@@ -254,9 +258,9 @@ button group outline
 ```html :::demo
 <div class="space-y-2">
   <dv-button-group size="sm" outline>
-    <dv-button type="primary">primary</dv-button>
-    <dv-button type="secondary">secondary</dv-button>
-    <dv-button type="accent">accent</dv-button>
+    <dv-button variant="primary">primary</dv-button>
+    <dv-button variant="secondary">secondary</dv-button>
+    <dv-button variant="accent">accent</dv-button>
   </dv-button-group>
 </div>
 ```
@@ -267,7 +271,7 @@ button group outline
 
 | name        | description                            | type                                                                                   | default |
 | ----------- | -------------------------------------- | -------------------------------------------------------------------------------------- | ------- |
-| type        | button color type                      | netural, primary, secondary, accent, info, success, warning, error, ghost, link, glass | netural |
+| variant     | button color type                      | netural, primary, secondary, accent, info, success, warning, error, ghost, link, glass | netural |
 | size        | button size                            | ISize                                                                                  | md      |
 | shape       | button shape                           | default, circle, square                                                                | default |
 | block       | full with button                       | boolean                                                                                | false   |
