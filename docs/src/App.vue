@@ -91,7 +91,7 @@ export default defineComponent({
                     </NavbarStart>
                     <NavbarEnd>
                       <Button
-                        component="a"
+                        tag="a"
                         href="https://github.com/daief/daisyui-vue"
                         target="_blank"
                         variant="ghost"

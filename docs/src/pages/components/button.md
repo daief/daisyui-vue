@@ -281,7 +281,7 @@ button group outline
 | active      | force button to show active state      | boolean                                                                                | false   |
 | loading     | shows loading spinner                  | boolean                                                                                | false   |
 | noAnimation | disables click animation               | boolean                                                                                | false   |
-| component   | button with diffrent HTML tags         | button, a, input                                                                       | button  |
+| tag         | button with diffrent HTML tags         | button, a, input                                                                       | button  |
 | onClick     | button click handle                    | Function                                                                               | -       |
 
 ## ButtonGroup

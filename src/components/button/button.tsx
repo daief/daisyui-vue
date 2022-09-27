@@ -37,7 +37,7 @@ const props = {
     type: String as PropType<ISize>,
     default: 'md',
   },
-  component: {
+  tag: {
     type: String as PropType<'button' | 'a' | 'input'>,
     default: 'button',
   },
@@ -60,7 +60,7 @@ export const Button = componentV2<
         () => props.shape || ctxVal?.value.shape || 'default',
       );
       const outline = computed(() => ctxVal?.value.outline || props.outline);
-      const componentType = computed(() => props.component || 'button');
+      const componentType = computed(() => props.tag || 'button');
 
       const clickLoading = ref(false);
 
