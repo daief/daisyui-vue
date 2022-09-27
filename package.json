@@ -25,9 +25,6 @@
   "resolutions": {
     "vue": "3.2.26"
   },
-  "peerDependencies": {
-    "tslib": ">=2.0.0"
-  },
   "dependencies": {
     "@vicons/ionicons5": "^0.12.0"
   },

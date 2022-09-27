@@ -1,5 +1,26 @@
+// for ts-node
 {
+  // https://github.com/tsconfig/bases
+  // "extends": "ts-node/node14/tsconfig.json",
+
+  // Most ts-node options can be specified here using their programmatic names.
+  "ts-node": {
+    // It is faster to skip typechecking.
+    // Remove if you want ts-node to do typechecking.
+    "transpileOnly": false,
+
+    "files": true,
+
+    "compilerOptions": {
+      // compilerOptions specified here will override those declared below,
+      // but *only* in ts-node.  Useful if you want ts-node and tsc to use
+      // different options with a single tsconfig.json.
+    }
+  },
   "compilerOptions": {
+    // typescript options here
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
     "strict": true,
     "target": "ES6",
     "lib": ["DOM", "ESNext"],
@@ -9,13 +30,7 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
-    "resolveJsonModule": false,
-    "baseUrl": ".",
-    "outDir": "dist",
-    "declaration": true,
-    "declarationDir": "dist",
-    "declarationMap": true
+    "esModuleInterop": true
   },
-  "include": ["src"]
+  "include": ["src/**/*"]
 }
