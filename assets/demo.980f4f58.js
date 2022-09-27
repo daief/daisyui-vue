@@ -1,4 +1,4 @@
-import{c as s,uu as a,u as r,uw as c,ux as o,uy as e,F as h,uz as n}from"./vendor.bfd89e19.js";var u={setup:()=>()=>s("div",{class:"text-center"},[s(a("dv-counter"),{from:100,to:0,duration:10*1e3},null),s("br",null,null),s(a("dv-counter"),{from:20,to:0,duration:10*1e3,transitionDuration:300},null)])};const d=n("div",{class:"markdown-body"},[n("h1",null,"Demo for development")],-1),j=n("div",{class:"markdown-body"},null,-1),v=[],_={setup(i,{expose:t}){return t({frontmatter:{meta:[]}}),r({meta:[]}),(f,x)=>{const l=u,p=a("Playground");return c(),o(h,null,[d,s(p,{lang:"tsx",code:`<span class="hljs-keyword">import</span> d <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;daisyui-vue&#x27;</span>;
+import{c as s,Y as a,u as r,_ as c,$ as o,a0 as e,n as h,a1 as n}from"./vendor.1d9a2266.js";var d={setup:()=>()=>s("div",{class:"text-center"},[s(a("dv-counter"),{from:100,to:0,duration:10*1e3},null),s("br",null,null),s(a("dv-counter"),{from:20,to:0,duration:10*1e3,transitionDuration:300},null)])};const j=n("div",{class:"markdown-body"},[n("h1",null,"Demo for development")],-1),u=n("div",{class:"markdown-body"},null,-1),x=[],y={setup(i,{expose:t}){return t({frontmatter:{meta:[]}}),r({meta:[]}),(f,_)=>{const l=d,p=a("Playground");return c(),o(h,null,[j,s(p,{lang:"tsx",code:`<span class="hljs-keyword">import</span> d <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;daisyui-vue&#x27;</span>;
 <span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> x <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue&#x27;</span>;
 
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
@@ -18,4 +18,4 @@ import{c as s,uu as a,u as r,uw as c,ux as o,uy as e,F as h,uz as n}from"./vendo
     );
   },
 };
-`},{default:e(()=>[s(l)]),_:1}),j],64)}}};export{_ as default,v as meta};
+`},{default:e(()=>[s(l)]),_:1}),u],64)}}};export{y as default,x as meta};
