@@ -17,6 +17,7 @@ interface IBuildOptions {
 
 export function getRoolupConfig(opts: IBuildOptions) {
   const { context } = opts;
+  const isProd = process.env.NODE_ENV === 'production';
 
   const extensions = ['.js', '.jsx', '.ts', '.tsx'];
   const workspace = (...ps: string[]) => path.resolve(context, ...ps);
@@ -35,10 +36,14 @@ export function getRoolupConfig(opts: IBuildOptions) {
   const config: RollupOptions = {
     context,
     input: {
-      ...entries,
+      ...(isProd
+        ? {
+            ...entries,
+            'icons/index': 'src/icons/index',
+          }
+        : {}),
       _utils: 'src/shared/utils',
       _global_style: 'src/components/_styles/global',
-      'icons/index': 'src/icons/index',
       index: 'src/index',
     },
     output: [
@@ -74,22 +79,28 @@ export function getRoolupConfig(opts: IBuildOptions) {
       resolve({
         extensions,
       }),
-      typescript({
-        exclude: [path.resolve(__dirname, 'src/_daisyui/**')],
-        // clean: true,
-        check: true, // https://github.com/ezolenko/rollup-plugin-typescript2/issues/214#issuecomment-612647264
-        transformers: [
-          (ls) => ({
-            afterDeclarations: createDeclarationTransformerFactory(
-              ls.getProgram()!,
-            ) as any,
-          }),
-        ],
-      }),
+      isProd &&
+        typescript({
+          exclude: [path.resolve(__dirname, 'src/_daisyui/**')],
+          clean: true,
+          check: true,
+          transformers: [
+            (ls) => ({
+              afterDeclarations: createDeclarationTransformerFactory(
+                ls.getProgram()!,
+              ) as any,
+            }),
+          ],
+          tsconfigOverride: {
+            compilerOptions: {
+              emitDeclarationOnly: true,
+            },
+          },
+        }),
       babel({
         extensions,
         babelHelpers: 'bundled',
-        // presets: ['@babel/preset-typescript'],
+        presets: ['@babel/preset-typescript'],
         // https://github.com/vuejs/jsx-next
         plugins: ['@vue/babel-plugin-jsx'],
       }),
