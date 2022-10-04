@@ -1,4 +1,4 @@
-import { componentV2 } from '@/shared/styled';
+import { componentV2 } from 'daisyui-vue/shared/styled';
 import styles from './style';
 
 export const indicatorProps = {};

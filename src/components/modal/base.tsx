@@ -1,7 +1,7 @@
-import { useEventListener } from '@/shared/hooks/useEventListener';
-import { componentV2 } from '@/shared/styled';
-import { ExtractFromProps } from '@/shared/types/common';
-import { getRenderResult } from '@/shared/utils';
+import { useEventListener } from 'daisyui-vue/shared/hooks/useEventListener';
+import { componentV2 } from 'daisyui-vue/shared/styled';
+import { ExtractFromProps } from 'daisyui-vue/shared/types/common';
+import { getRenderResult } from 'daisyui-vue/shared/utils';
 import {
   computed,
   PropType,

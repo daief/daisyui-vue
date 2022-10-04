@@ -1,7 +1,11 @@
-import { InputChangeEvent } from '@/@types/dom';
-import { componentV2 } from '@/shared/styled';
-import { ExtractFromProps, IBrandColor, ISize } from '@/shared/types/common';
-import { isUndefined } from '@/shared/utils';
+import { InputChangeEvent } from 'daisyui-vue/@types/dom';
+import { componentV2 } from 'daisyui-vue/shared/styled';
+import {
+  ExtractFromProps,
+  IBrandColor,
+  ISize,
+} from 'daisyui-vue/shared/types/common';
+import { isUndefined } from 'daisyui-vue/shared/utils';
 import { computed, nextTick, PropType, reactive } from 'vue';
 import styles from './style';
 

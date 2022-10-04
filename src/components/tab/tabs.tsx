@@ -9,7 +9,7 @@ import {
   Ref,
   VNode,
 } from 'vue';
-import { component } from '@/shared/styled';
+import { component } from 'daisyui-vue/shared/styled';
 import style from './style';
 
 const ctx = Symbol('tabs');

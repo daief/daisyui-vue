@@ -1,6 +1,6 @@
-import { componentV2 } from '@/shared/styled';
+import { componentV2 } from 'daisyui-vue/shared/styled';
 import { computed, PropType } from 'vue';
-import { IColorType, ExtractFromProps } from '@/shared/types/common';
+import { IColorType, ExtractFromProps } from 'daisyui-vue/shared/types/common';
 import style from './style';
 
 const props = {

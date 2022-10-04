@@ -1,8 +1,8 @@
-import { ExtractFromProps, ISize } from '@/shared/types/common';
+import { ExtractFromProps, ISize } from 'daisyui-vue/shared/types/common';
 import { computed, HTMLAttributes, PropType, provide } from 'vue';
 import { ctxKey, ICtx } from './state';
 import { IButtonShape } from './button';
-import { componentV2 } from '@/shared/styled';
+import { componentV2 } from 'daisyui-vue/shared/styled';
 import style from './style';
 
 const props = {

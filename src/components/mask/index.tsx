@@ -1,4 +1,4 @@
-import { component } from '@/shared/styled';
+import { component } from 'daisyui-vue/shared/styled';
 import { cloneVNode, PropType } from 'vue';
 import style from './style';
 

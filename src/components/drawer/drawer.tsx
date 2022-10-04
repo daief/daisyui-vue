@@ -1,7 +1,7 @@
-import { useMediaParse } from '@/shared/hooks/useMedia';
-import { componentV2 } from '@/shared/styled';
-import { ExtractFromProps } from '@/shared/types/common';
-import { getRenderResult } from '@/shared/utils';
+import { useMediaParse } from 'daisyui-vue/shared/hooks/useMedia';
+import { componentV2 } from 'daisyui-vue/shared/styled';
+import { ExtractFromProps } from 'daisyui-vue/shared/types/common';
+import { getRenderResult } from 'daisyui-vue/shared/utils';
 import { PropType, computed, Transition, vShow, withDirectives } from 'vue';
 import { ModalBase } from '../modal';
 import style from './style';

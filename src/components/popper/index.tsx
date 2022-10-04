@@ -1,12 +1,12 @@
-import { useActiveChange } from '@/shared/hooks/useActiveChange';
-import { componentV2 } from '@/shared/styled';
-import { ExtractFromProps } from '@/shared/types/common';
+import { useActiveChange } from 'daisyui-vue/shared/hooks/useActiveChange';
+import { componentV2 } from 'daisyui-vue/shared/styled';
+import { ExtractFromProps } from 'daisyui-vue/shared/types/common';
 import {
   debounce,
   getRenderResult,
   isString,
   isUndefined,
-} from '@/shared/utils';
+} from 'daisyui-vue/shared/utils';
 import {
   createPopper,
   Instance,

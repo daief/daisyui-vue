@@ -1,5 +1,5 @@
-import { ISize } from '@/shared/types/common';
-import { cssUnit } from '@/shared/utils';
+import { ISize } from 'daisyui-vue/shared/types/common';
+import { cssUnit } from 'daisyui-vue/shared/utils';
 
 export const ctxAvatarGroupKey = Symbol('AvatarGroup');
 

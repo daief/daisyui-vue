@@ -15,10 +15,13 @@
     "removeComments": false,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"],
+      "daisyui-vue": ["src/index"],
+      "daisyui-vue/*": ["src/*"],
       "@styles/*": ["src/_daisyui/src/*"]
     },
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "declarationDir": "dist",
+    "emitDeclarationOnly": true
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules/*", "__sapper__/*", "public/*", "src/_daisyui"]

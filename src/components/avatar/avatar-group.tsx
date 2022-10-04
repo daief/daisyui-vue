@@ -1,5 +1,5 @@
-import { componentV2 } from '@/shared/styled';
-import { ExtractFromProps, ISize } from '@/shared/types/common';
+import { componentV2 } from 'daisyui-vue/shared/styled';
+import { ExtractFromProps, ISize } from 'daisyui-vue/shared/types/common';
 import {
   cloneVNode,
   computed,

@@ -1,4 +1,8 @@
-import { ExtractFromProps, IColorType, ISize } from '@/shared/types/common';
+import {
+  ExtractFromProps,
+  IColorType,
+  ISize,
+} from 'daisyui-vue/shared/types/common';
 import {
   AnchorHTMLAttributes,
   computed,
@@ -10,7 +14,7 @@ import {
   PropType,
 } from 'vue';
 import { ctxKey, ICtx } from './state';
-import { componentV2 } from '@/shared/styled';
+import { componentV2 } from 'daisyui-vue/shared/styled';
 import style from './style';
 
 export type IButtonShape = 'defalut' | 'circle' | 'square';

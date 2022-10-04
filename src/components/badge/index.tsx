@@ -1,9 +1,9 @@
-import { component } from '@/shared/styled';
+import { component } from 'daisyui-vue/shared/styled';
 import {
   BoolConstructorToBase,
   IColorType,
   ISize,
-} from '@/shared/types/common';
+} from 'daisyui-vue/shared/types/common';
 import { computed } from 'vue';
 import style from './style';
 

@@ -1,4 +1,4 @@
-import { componentV2 } from '@/shared/styled';
+import { componentV2 } from 'daisyui-vue/shared/styled';
 import { Popper, popperProps } from '../popper';
 import styles from './style';
 

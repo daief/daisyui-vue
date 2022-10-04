@@ -1,5 +1,5 @@
-import { component } from '@/shared/styled';
-import { cssUnit } from '@/shared/utils';
+import { component } from 'daisyui-vue/shared/styled';
+import { cssUnit } from 'daisyui-vue/shared/utils';
 import { computed, HTMLAttributes, PropType } from 'vue';
 import style from './style';
 

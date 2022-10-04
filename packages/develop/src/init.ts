@@ -56,8 +56,7 @@ export async function createIcons(context: string) {
   );
 
   const topImports = `import { defineComponent, HTMLAttributes } from 'vue';
-import { Icon, iconProps, IIconProps } from './icon';
-export * from './icon';
+import { Icon, iconProps, IIconProps, IconComponent } from './icon';
 `;
 
   const iconTpl = `
@@ -69,7 +68,7 @@ export const Icon$name = /* @__PURE__ */ defineComponent<IIconProps & HTMLAttrib
       <Icon {...props}>$slot</Icon>
     );
   },
-});
+}) as any as IconComponent;
 `;
 
   let file = topImports;

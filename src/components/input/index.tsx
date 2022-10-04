@@ -1,9 +1,9 @@
-import { componentV2 } from '@/shared/styled';
+import { componentV2 } from 'daisyui-vue/shared/styled';
 import {
   ExtractFromProps,
   IColorTypeWithGhost,
   ISize,
-} from '@/shared/types/common';
+} from 'daisyui-vue/shared/types/common';
 import { computed, InputHTMLAttributes, PropType } from 'vue';
 import styles from './style';
 

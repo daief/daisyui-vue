@@ -1,6 +1,6 @@
-import { AnimationTimer, IATOptions } from '@/shared/animation-timer';
-import { componentV2 } from '@/shared/styled';
-import { ExtractFromProps, IMaybeRef } from '@/shared/types/common';
+import { AnimationTimer, IATOptions } from 'daisyui-vue/shared/animation-timer';
+import { componentV2 } from 'daisyui-vue/shared/styled';
+import { ExtractFromProps, IMaybeRef } from 'daisyui-vue/shared/types/common';
 import {
   computed,
   unref,

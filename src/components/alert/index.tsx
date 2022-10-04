@@ -1,5 +1,5 @@
-import { component } from '@/shared/styled';
-import { IStateColor } from '@/shared/types/common';
+import { component } from 'daisyui-vue/shared/styled';
+import { IStateColor } from 'daisyui-vue/shared/types/common';
 import {
   BanOutline,
   CheckmarkCircleOutline,

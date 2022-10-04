@@ -64,7 +64,7 @@ export function componentV2<Props = {}, Attrs = unknown>(
   return component<Props & Attrs, Props>(
     // @ts-ignore
     ...args,
-  );
+  ) as DefineComponent<Props & Attrs, {}>;
 }
 
 export interface IStyle {

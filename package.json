@@ -1,5 +1,6 @@
 {
   "name": "daisyui-vue",
+  "private": true,
   "version": "0.0.1-alpha.4",
   "author": "daief <defeng_mail@163.com> (https://github.com/daief)",
   "homepage": "https://daief.tech/daisyui-vue",
@@ -9,11 +10,6 @@
   },
   "license": "Apache-2.0",
   "sideEffects": false,
-  "main": "dist/index.js",
-  "module": "dist/index.js",
-  "files": [
-    "dist"
-  ],
   "scripts": {
     "build": "rm -rf dist && NODE_ENV=production rollup -c",
     "watch": "NODE_ENV=development rollup -c -w",
@@ -41,8 +37,5 @@
   "description": "基于 daisyui 封装的 vue 组件库。",
   "bugs": {
     "url": "https://github.com/daief/daisyui-vue/issues"
-  },
-  "directories": {
-    "doc": "docs"
   }
 }

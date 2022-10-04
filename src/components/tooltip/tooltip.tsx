@@ -1,5 +1,5 @@
-import { componentV2 } from '@/shared/styled';
-import { ExtractFromProps, IColorType } from '@/shared/types/common';
+import { componentV2 } from 'daisyui-vue/shared/styled';
+import { ExtractFromProps, IColorType } from 'daisyui-vue/shared/types/common';
 import { HTMLAttributes, PropType } from 'vue';
 import { IPopperProps, popperProps, Popper } from '../popper';
 import style from './style';

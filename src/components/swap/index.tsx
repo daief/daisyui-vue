@@ -1,6 +1,6 @@
-import { componentV2 } from '@/shared/styled';
-import { ExtractFromProps } from '@/shared/types/common';
-import { getRenderResult, isUndefined } from '@/shared/utils';
+import { componentV2 } from 'daisyui-vue/shared/styled';
+import { ExtractFromProps } from 'daisyui-vue/shared/types/common';
+import { getRenderResult, isUndefined } from 'daisyui-vue/shared/utils';
 import { computed, h, PropType, reactive } from 'vue';
 import styles from './style';
 

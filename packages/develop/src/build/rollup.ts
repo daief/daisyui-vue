@@ -1,15 +1,14 @@
 import { RollupOptions } from 'rollup';
 import * as path from 'path';
 import fs from 'fs-extra';
+import { exec } from 'child_process';
 
 import { babel } from '@rollup/plugin-babel';
 import resolve from '@rollup/plugin-node-resolve';
-import typescript from 'rollup-plugin-typescript2';
 import cleanup from 'rollup-plugin-cleanup';
 import alias from '@rollup/plugin-alias';
 import replace from '@rollup/plugin-replace';
 import { createStylesPlugin } from './rollup-styles-plugin';
-import { createDeclarationTransformerFactory } from './ts-declaration-transformer';
 
 interface IBuildOptions {
   context: string;
@@ -53,11 +52,7 @@ export function getRoolupConfig(opts: IBuildOptions) {
     plugins: [
       alias({
         entries: [
-          { find: '@', replacement: workspace('src') },
-          {
-            find: '@/shared',
-            replacement: workspace('src/shared'),
-          },
+          { find: 'daisyui-vue', replacement: workspace('src') },
           {
             find: '@styles',
             replacement: workspace('src/_daisyui/src'),
@@ -75,32 +70,20 @@ export function getRoolupConfig(opts: IBuildOptions) {
         extensions,
       }),
       {
-        name: 'icons',
-        load(id) {
-          if (id.endsWith('icons.tsx') && !isProd) {
-            // fake icon when dev
-            // otherwise compiling is slow
-            return `export const IconDev = { name: 'IconDev', setup: () => () => null }`;
+        name: 'dtsPlugin',
+        buildStart() {
+          let cmd = 'tsc -p .';
+          if (this.meta.watchMode) {
+            cmd += '-w';
           }
+          const child = exec(cmd, {
+            cwd: context,
+          });
+          child.on('error', (err) => {
+            this.error(err);
+          });
         },
       },
-      typescript({
-        exclude: [path.resolve(__dirname, 'src/_daisyui/**')],
-        clean: isProd,
-        check: true,
-        transformers: [
-          (ls) => ({
-            afterDeclarations: createDeclarationTransformerFactory(
-              ls.getProgram()!,
-            ) as any,
-          }),
-        ],
-        tsconfigOverride: {
-          compilerOptions: {
-            emitDeclarationOnly: true,
-          },
-        },
-      }),
       babel({
         extensions,
         babelHelpers: 'bundled',
