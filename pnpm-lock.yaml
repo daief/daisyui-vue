@@ -13,10 +13,10 @@ importers:
       prettier: ^2.4.0
       standard-version: ^9.3.2
     dependencies:
+      '@popperjs/core': 2.11.6
       '@vicons/ionicons5': 0.12.0
     devDependencies:
       '@dv/develop': link:packages/develop
-      '@popperjs/core': 2.11.6
       prettier: registry.nlark.com/prettier/2.4.1
       standard-version: 9.3.2
 
@@ -968,7 +968,7 @@ packages:
 
   /@popperjs/core/2.11.6:
     resolution: {integrity: sha512-50/17A98tWUfQ176raKiOGXuYpLyyVMkxxG6oylzL3BPOlA6ADGdK7EYunSa4I064xerltq9TGXs8HmOk5E+vw==}
-    dev: true
+    dev: false
 
   /@rollup/plugin-alias/3.1.8_rollup@2.79.0:
     resolution: {integrity: sha512-tf7HeSs/06wO2LPqKNY3Ckbvy0JRe7Jyn98bXnt/gfrxbe+AJucoNJlsEVi9sdgbQtXemjbakCpO/76JVgnHpA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npm.taobao.org/@rollup/plugin-alias/-/plugin-alias-3.1.8.tgz}

@@ -54,7 +54,7 @@ export function getRoolupConfig(opts: IBuildOptions) {
     ],
     // Specify here external modules which you don't want to include in your bundle (for instance: 'lodash', 'moment' etc.)
     // https://rollupjs.org/guide/en/#external
-    external: ['vue', '@vicons/ionicons5'],
+    external: ['vue', '@vicons/ionicons5', '@popperjs/core'],
     plugins: [
       alias({
         entries: [
@@ -82,7 +82,7 @@ export function getRoolupConfig(opts: IBuildOptions) {
       isProd &&
         typescript({
           exclude: [path.resolve(__dirname, 'src/_daisyui/**')],
-          clean: true,
+          clean: isProd,
           check: true,
           transformers: [
             (ls) => ({
