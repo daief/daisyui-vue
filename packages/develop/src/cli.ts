@@ -22,7 +22,18 @@ cli.command('pre-publish', '').action(async () => {
   pkg.main = 'index.js';
   pkg.module = 'index.js';
   fs.writeJSONSync(workspace('dist/package.json'), pkg);
+  ['.npmrc'].forEach((file) => {
+    fs.copyFileSync(workspace(file), workspace('dist', file));
+  });
   console.log('package.json:\n', JSON.stringify(pkg, null, 4));
+});
+
+cli.command('publish', '').action(async () => {
+  const { execSync } = await import('child_process');
+  execSync('npm publish', {
+    cwd: workspace('dist'),
+    stdio: 'inherit',
+  });
 });
 
 cli.help().parse();
