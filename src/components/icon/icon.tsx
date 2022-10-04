@@ -25,8 +25,9 @@ export const Icon = componentV2<IIconProps, HTMLAttributes>(
     name: 'Icon',
     props: iconProps,
     setup: (props, { slots }) => {
-      return () =>
-        h(
+      return () => {
+        const child = slots.default?.()[0];
+        return h(
           props.tag!,
           {
             class: 'dv-icon',
@@ -36,12 +37,15 @@ export const Icon = componentV2<IIconProps, HTMLAttributes>(
             },
           },
           [
-            cloneVNode(slots.default()[0], {
-              focusable: false,
-              ariaHidden: false,
-            }),
+            child
+              ? cloneVNode(child, {
+                  focusable: false,
+                  ariaHidden: false,
+                })
+              : null,
           ],
         );
+      };
     },
   },
   style,

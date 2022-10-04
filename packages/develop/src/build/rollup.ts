@@ -36,12 +36,7 @@ export function getRoolupConfig(opts: IBuildOptions) {
   const config: RollupOptions = {
     context,
     input: {
-      ...(isProd
-        ? {
-            ...entries,
-            'icons/index': 'src/icons/index',
-          }
-        : {}),
+      ...(isProd ? entries : {}),
       _utils: 'src/shared/utils',
       _global_style: 'src/components/_styles/global',
       index: 'src/index',
@@ -79,24 +74,33 @@ export function getRoolupConfig(opts: IBuildOptions) {
       resolve({
         extensions,
       }),
-      isProd &&
-        typescript({
-          exclude: [path.resolve(__dirname, 'src/_daisyui/**')],
-          clean: isProd,
-          check: true,
-          transformers: [
-            (ls) => ({
-              afterDeclarations: createDeclarationTransformerFactory(
-                ls.getProgram()!,
-              ) as any,
-            }),
-          ],
-          tsconfigOverride: {
-            compilerOptions: {
-              emitDeclarationOnly: true,
-            },
+      {
+        name: 'icons',
+        load(id) {
+          if (id.endsWith('icons.tsx') && !isProd) {
+            // fake icon when dev
+            // otherwise compiling is slow
+            return `export const IconDev = { name: 'IconDev', setup: () => () => null }`;
+          }
+        },
+      },
+      typescript({
+        exclude: [path.resolve(__dirname, 'src/_daisyui/**')],
+        clean: isProd,
+        check: true,
+        transformers: [
+          (ls) => ({
+            afterDeclarations: createDeclarationTransformerFactory(
+              ls.getProgram()!,
+            ) as any,
+          }),
+        ],
+        tsconfigOverride: {
+          compilerOptions: {
+            emitDeclarationOnly: true,
           },
-        }),
+        },
+      }),
       babel({
         extensions,
         babelHelpers: 'bundled',
