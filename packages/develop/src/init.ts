@@ -75,7 +75,7 @@ export const Icon$name = /* @__PURE__ */ defineComponent<IIconProps & HTMLAttrib
   let file = topImports;
 
   file += 'import {\n';
-  file += icons.join(',\n');
+  file += '  ' + icons.join(',\n  ');
   file += `} from '@vicons/ionicons5'\n`;
 
   file += icons
@@ -84,7 +84,7 @@ export const Icon$name = /* @__PURE__ */ defineComponent<IIconProps & HTMLAttrib
     )
     .join('\n');
 
-  await fs.writeFile(workspace('src/icons/index.tsx'), file);
+  await fs.writeFile(workspace('src/components/icon/icons.tsx'), file);
 
   console.log(`Create ${icons.length} icons success.`);
 }

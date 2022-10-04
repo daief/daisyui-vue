@@ -21,4 +21,3 @@ lib
 docs/src/.demo
 .vite-ssg-temp
 out/
-src/icons/index.tsx

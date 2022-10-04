@@ -1,5 +1,5 @@
 export * from './components';
-export * from './icons';
+export * from './components/icon';
 
 export * from './shared/ctx';
 
