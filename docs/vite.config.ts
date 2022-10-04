@@ -322,7 +322,7 @@ const config: UserConfig = {
   ssgOptions: {
     script: 'async',
     // formatting: 'prettify',
-    onPageRendered: (route, html, ctx) => {
+    onPageRendered: (route, html, ctx: any) => {
       return html.replace(
         '<!-- __DAISYUI_VUE__ -->',
         ctx.$daisyui.style.extractStyles(),
@@ -331,7 +331,7 @@ const config: UserConfig = {
   },
   resolve: {
     alias: {
-      'daisyui-vue': resolve(__dirname, '..'),
+      'daisyui-vue': resolve(__dirname, '../dist'),
       '@/': resolve(__dirname, 'src'),
     },
   },
