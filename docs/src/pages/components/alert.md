@@ -5,7 +5,9 @@
 alert
 
 ```html :::demo
-<dv-alert>Lorem ipsum dolor sit amet, consectetur adip!</dv-alert>
+<dv-alert class="shadow-lg">
+  Lorem ipsum dolor sit amet, consectetur adip!
+</dv-alert>
 ```
 
 alert state: info

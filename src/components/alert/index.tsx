@@ -1,39 +1,45 @@
-import { component } from 'daisyui-vue/shared/styled';
-import { IStateColor } from 'daisyui-vue/shared/types/common';
+import { componentV2 } from 'daisyui-vue/shared/styled';
+import { ExtractFromProps, IStateColor } from 'daisyui-vue/shared/types/common';
 import {
-  BanOutline,
-  CheckmarkCircleOutline,
-  InformationCircleOutline,
-  WarningOutline,
-} from '@vicons/ionicons5';
-import { HTMLAttributes } from 'vue';
+  IconBanOutline,
+  IconCheckmarkCircleOutline,
+  IconInformationCircleOutline,
+  IconWarningOutline,
+} from '../icon';
+import { HTMLAttributes, PropType } from 'vue';
 import style from './style';
 
-export interface IAlertProps {
-  type?: IStateColor;
-}
+export const alertProps = {
+  type: {
+    type: String as PropType<IStateColor>,
+    default: '',
+  },
+};
 
-export const Alert = component<IAlertProps & HTMLAttributes>(
+export type IAlertProps = ExtractFromProps<typeof alertProps>;
+
+export const Alert = componentV2<IAlertProps, HTMLAttributes>(
   {
     name: 'Alert',
-    setup: (_, { attrs, slots }) => {
+    props: alertProps,
+    setup: (props, { slots }) => {
       return () => {
         const icon =
           slots.icon?.() ||
           {
-            info: () => <InformationCircleOutline />,
-            success: () => <CheckmarkCircleOutline />,
-            warning: () => <WarningOutline />,
-            error: () => <BanOutline />,
-          }[attrs.type!]?.();
+            info: () => <IconInformationCircleOutline />,
+            success: () => <IconCheckmarkCircleOutline />,
+            warning: () => <IconWarningOutline />,
+            error: () => <IconBanOutline />,
+          }[props.type!]?.();
 
         const actions = slots.actions?.();
         const content = slots.content?.();
         const defaultSlot = slots.default?.();
         return (
-          <div class={['dv-alert alert', `alert-${attrs.type || ''}`]}>
-            <div class="dv-alert__content">
-              {icon ? <div class="dv-alert__iconwrap">{icon}</div> : null}
+          <div class={['dv-alert', `dv-alert-${props.type || ''}`]}>
+            <div class="dv-alert-content">
+              {icon ? <div class="dv-alert-iconwrap">{icon}</div> : null}
               <label>
                 {content ? (
                   <>
@@ -45,7 +51,7 @@ export const Alert = component<IAlertProps & HTMLAttributes>(
                 )}
               </label>
             </div>
-            {actions ? <div class="dv-alert__actions">{actions}</div> : null}
+            {actions ? <div class="dv-alert-actions">{actions}</div> : null}
           </div>
         );
       };

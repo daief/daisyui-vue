@@ -1,7 +1,7 @@
-import s1 from './c-us.less';
-import s2 from './c-s.less';
-import s3 from './u-us.less';
-import s4 from './u-s.less';
+import s1 from './c-us.css';
+import s2 from './c-s.css';
+import s3 from './u-us.css';
+import s4 from './u-s.css';
 import s from './style.less';
 
 export default [s1, s2, s3, s4, s];

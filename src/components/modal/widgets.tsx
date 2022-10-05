@@ -1,6 +1,6 @@
 import { componentV2 } from 'daisyui-vue/shared/styled';
 import { ExtractFromProps } from 'daisyui-vue/shared/types/common';
-import { Close } from '@vicons/ionicons5';
+import { IconClose } from '../icon';
 import { PropType } from 'vue';
 import { Button } from '../button';
 import style from './style/widgets.less';
@@ -32,7 +32,7 @@ export const ModalTitle = componentV2<IModalTitleProps>(
               class="dv-modal-title-close"
               onClick={props.onClose}
             >
-              <Close />
+              <IconClose size="1.2em" />
             </Button>
           ) : null}
         </div>

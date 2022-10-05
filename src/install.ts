@@ -2,6 +2,10 @@ import { App } from 'vue';
 import * as all from './components';
 import { CONTEXT_SYMBOL, createTheme } from './shared/ctx';
 
+import { Alert } from './components';
+
+const all2 = [Alert];
+
 export function install(
   app: App,
   options?: {
