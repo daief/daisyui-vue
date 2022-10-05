@@ -16,7 +16,8 @@
     "init": "dv init",
     "icons": "dv icons",
     "release": "standard-version",
-    "pre:release": "pnpm run release -- --prerelease=alpha"
+    "pre:release": "pnpm run release -- --prerelease=alpha",
+    "pub": "pnpm build && pnpm dv pre-publish && pnpm dv publish"
   },
   "resolutions": {
     "vue": "3.2.26"
