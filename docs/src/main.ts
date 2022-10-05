@@ -47,7 +47,7 @@ export const createApp = ViteSSG(
     // install plugins etc.
     app.component('Playground', Playground);
     app.component('MarkdownTable', MarkdownTable);
-    app.use(daisyui as any);
+    app.use(daisyui);
 
     icons.forEach((i) => app.component(i.name, i));
 

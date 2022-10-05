@@ -10,6 +10,7 @@ export * from './counter';
 export * from './divider';
 export * from './drawer';
 export * from './dropdown';
+export * from './icon';
 export * from './indicator';
 export * from './input';
 export * from './link';
