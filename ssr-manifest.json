@@ -14,8 +14,8 @@
   "../dist/avatar-group-44aa0287.js": [],
   "../dist/components/badge/index.js": [],
   "../dist/components/breadcrumb/index.js": [],
-  "../dist/button-d22679af.js": [],
-  "../dist/button-group-d7665cf4.js": [],
+  "../dist/button-f90f1ee0.js": [],
+  "../dist/button-group-3ae2cc37.js": [],
   "../dist/components/card/index.js": [],
   "../dist/components/counter/index.js": [],
   "../dist/components/divider/index.js": [],
@@ -27,7 +27,7 @@
   "../dist/components/input/index.js": [],
   "../dist/components/link/index.js": [],
   "../dist/menu-item-7a4354b2.js": [],
-  "../dist/widgets-4e55d0fe.js": [],
+  "../dist/widgets-42eee954.js": [],
   "../dist/navbar-33f375a8.js": [],
   "../dist/components/progress/index.js": [],
   "../dist/components/swap/index.js": [],
@@ -4313,37 +4313,37 @@
     "/daisyui-vue/assets/toggle.98b8e5c7.js"
   ],
   "src/.demo/CtsxCwwccftwzwdzxdwtxfavzxuyybaezcwwcyybvvexv.tsx": [
-    "/daisyui-vue/assets/table.77dc4440.js"
+    "/daisyui-vue/assets/table.2dbe0682.js"
   ],
   "src/.demo/ChtmlCfxvtaaxdxbbbyxdvavtwczdyetyefbwbxzzuxtte.vue?vue&type=script&lang.tsx": [
-    "/daisyui-vue/assets/table.77dc4440.js"
+    "/daisyui-vue/assets/table.2dbe0682.js"
   ],
   "src/.demo/ChtmlCfxvtaaxdxbbbyxdvavtwczdyetyefbwbxzzuxtte.vue": [
-    "/daisyui-vue/assets/table.77dc4440.js"
+    "/daisyui-vue/assets/table.2dbe0682.js"
   ],
   "src/.demo/CtsxCycfzwvvbcwdxtuzxfttyxuwvzuyuactfcuxxyyvw.tsx": [
-    "/daisyui-vue/assets/table.77dc4440.js"
+    "/daisyui-vue/assets/table.2dbe0682.js"
   ],
   "src/pages/components/table.md": [
-    "/daisyui-vue/assets/table.77dc4440.js"
+    "/daisyui-vue/assets/table.2dbe0682.js"
   ],
   "src/.demo/CtsxCewewtbtbycctuwbyffycxdxwtxydxdzdwcacwuwy.tsx": [
-    "/daisyui-vue/assets/tab.dd373603.js"
+    "/daisyui-vue/assets/tab.ee568628.js"
   ],
   "src/.demo/CtsxCfwvxdtwftbzcxfewewdxyxuawdedtwyawtexewxw.tsx": [
-    "/daisyui-vue/assets/tab.dd373603.js"
+    "/daisyui-vue/assets/tab.ee568628.js"
   ],
   "src/.demo/CtsxCxfyzawbeaccfvvxbyuttaewwyyywwfbefwftebed.tsx": [
-    "/daisyui-vue/assets/tab.dd373603.js"
+    "/daisyui-vue/assets/tab.ee568628.js"
   ],
   "src/.demo/CtsxCtduwzetucztwfceeuddaexyxfxtwtxxcwywybxaf.tsx": [
-    "/daisyui-vue/assets/tab.dd373603.js"
+    "/daisyui-vue/assets/tab.ee568628.js"
   ],
   "src/.demo/CtsxCwdtcbxtuxycevcxwbbuvxaeyfbfyaztdvweytxbf.tsx": [
-    "/daisyui-vue/assets/tab.dd373603.js"
+    "/daisyui-vue/assets/tab.ee568628.js"
   ],
   "src/pages/components/tab.md": [
-    "/daisyui-vue/assets/tab.dd373603.js"
+    "/daisyui-vue/assets/tab.ee568628.js"
   ],
   "src/.demo/CtsxCzxeawwczxbfwewwyfayxuucwcwvzzxdwyvwdbbwe.tsx": [
     "/daisyui-vue/assets/swap.91e50078.js"
@@ -4394,28 +4394,28 @@
     "/daisyui-vue/assets/input.68ecad30.js"
   ],
   "src/.demo/ChtmlCdawwwxxyvvxdyadvyyyxdcbybbtxvfzxvuxtdwbf.vue": [
-    "/daisyui-vue/assets/icons.0d1b53ca.js"
+    "/daisyui-vue/assets/icons.86f9dd0c.js"
   ],
   "../node_modules/.pnpm/@vicons+fluent@0.12.0/node_modules/@vicons/fluent/es/Alert24Regular.js": [
-    "/daisyui-vue/assets/icons.0d1b53ca.js"
+    "/daisyui-vue/assets/icons.86f9dd0c.js"
   ],
   "../node_modules/.pnpm/@vicons+fluent@0.12.0/node_modules/@vicons/fluent/es/CheckmarkCircle24Regular.js": [
-    "/daisyui-vue/assets/icons.0d1b53ca.js"
+    "/daisyui-vue/assets/icons.86f9dd0c.js"
   ],
   "../node_modules/.pnpm/@vicons+fluent@0.12.0/node_modules/@vicons/fluent/es/ErrorCircle24Regular.js": [
-    "/daisyui-vue/assets/icons.0d1b53ca.js"
+    "/daisyui-vue/assets/icons.86f9dd0c.js"
   ],
   "../node_modules/.pnpm/@vicons+fluent@0.12.0/node_modules/@vicons/fluent/es/Info24Regular.js": [
-    "/daisyui-vue/assets/icons.0d1b53ca.js"
+    "/daisyui-vue/assets/icons.86f9dd0c.js"
   ],
   "../node_modules/.pnpm/@vicons+fluent@0.12.0/node_modules/@vicons/fluent/es/Warning24Regular.js": [
-    "/daisyui-vue/assets/icons.0d1b53ca.js"
+    "/daisyui-vue/assets/icons.86f9dd0c.js"
   ],
   "src/.demo/ChtmlCyyadxbzzefxeuuaxteauvwzzwvwatuzfaffcwcwx.vue": [
-    "/daisyui-vue/assets/icons.0d1b53ca.js"
+    "/daisyui-vue/assets/icons.86f9dd0c.js"
   ],
   "src/pages/components/icons.md": [
-    "/daisyui-vue/assets/icons.0d1b53ca.js"
+    "/daisyui-vue/assets/icons.86f9dd0c.js"
   ],
   "src/.demo/CtsxCcwcwdxuvxazavccxedwyawewxwtwyaeuudcybuzt.tsx": [
     "/daisyui-vue/assets/dropdown.3a53e900.js"
