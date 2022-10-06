@@ -1,4 +1,4 @@
-export interface IATOptions<T = unknown> {
+export interface IAnimationTimerOptions<T = unknown> {
   initialValue: T;
   duration?: number;
   interval?: number;
@@ -14,7 +14,7 @@ const intervalTimeout = (fn: FrameRequestCallback, interval: number) => {
 };
 
 export class AnimationTimer<T> {
-  #opts: IATOptions<T>;
+  #opts: IAnimationTimerOptions<T>;
 
   #loopTimer: number;
   #executionTime = 0;
@@ -25,12 +25,12 @@ export class AnimationTimer<T> {
 
   current: T;
 
-  constructor(opts: IATOptions<T>) {
+  constructor(opts: IAnimationTimerOptions<T>) {
     this.current = opts.initialValue;
     this.#opts = opts;
   }
 
-  updateOptions(o: Partial<IATOptions<T>>) {
+  updateOptions(o: Partial<IAnimationTimerOptions<T>>) {
     this.#opts = {
       ...this.#opts,
       ...o,

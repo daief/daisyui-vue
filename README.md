@@ -98,7 +98,7 @@ export function render() {
 - [x] card
 - [ ] carousel
 - [ ] collapse
-- [ ] counter 🆕 new
+- [x] counter 🆕 new
 - [ ] divider
 - [ ] drawer - 🛠 refactor
 - [ ] dropdown - 🛠 refactor(popper inside)

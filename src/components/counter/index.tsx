@@ -1,27 +1,19 @@
-import { AnimationTimer, IATOptions } from 'daisyui-vue/shared/animation-timer';
+import { AnimationTimer } from 'daisyui-vue/shared/animation-timer';
 import { componentV2 } from 'daisyui-vue/shared/styled';
-import { ExtractFromProps, IMaybeRef } from 'daisyui-vue/shared/types/common';
-import {
-  computed,
-  unref,
-  onUnmounted,
-  onMounted,
-  ref,
-  PropType,
-  watch,
-} from 'vue';
+import { ExtractFromProps } from 'daisyui-vue/shared/types/common';
+import { onUnmounted, onMounted, ref, PropType, watch } from 'vue';
 import styles from './style';
 
-const counterProps = {
+export const counterProps = {
   from: {
     type: Number,
     default: 0,
   },
-  duration: {
+  to: {
     type: Number,
     default: 0,
   },
-  to: {
+  duration: {
     type: Number,
     default: 0,
   },
@@ -61,7 +53,7 @@ export const Conter = componentV2<ICounterProps>(
         },
       });
 
-      watch([props.from, props.duration], () => {
+      watch([() => props.from, () => props.duration], () => {
         at.updateOptions({
           duration: props.duration,
           initialValue: props.from,
