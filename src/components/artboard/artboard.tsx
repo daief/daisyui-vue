@@ -1,32 +1,35 @@
-import { component } from 'daisyui-vue/shared/styled';
-import { HTMLAttributes } from 'vue';
+import { componentV2 } from 'daisyui-vue/shared/styled';
+import { ExtractFromProps } from 'daisyui-vue/shared/types/common';
+import { HTMLAttributes, PropType } from 'vue';
 import style from './style';
 
-export interface IArtboardProps {
-  phone?: boolean | '1' | '2' | '3' | '4' | '5' | '6';
-  horizontal?: boolean;
-}
+export const artboardProps = {
+  phone: {
+    type: [String, Boolean] as PropType<
+      boolean | '1' | '2' | '3' | '4' | '5' | '6'
+    >,
+  },
+  horizontal: {
+    type: Boolean,
+  },
+};
 
-export const Artboard = component<
-  IArtboardProps & HTMLAttributes,
-  IArtboardProps
->(
+export type IArtboardProps = ExtractFromProps<typeof artboardProps>;
+
+export const Artboard = componentV2<IArtboardProps, HTMLAttributes>(
   {
     name: 'Artboard',
-    props: {
-      phone: [String, Boolean],
-      horizontal: Boolean,
-    },
+    props: artboardProps,
     setup: (props, { slots }) => {
       return () => (
         <div
           class={[
-            'artboard artboard-demo',
+            'dv-artboard dv-artboard-demo',
             {
-              phone: ['', true].includes(props.phone),
-              [`phone-${props.phone}`]:
+              'dv-phone': ['', true].includes(props.phone),
+              [`dv-phone-${props.phone}`]:
                 !!props.phone && typeof props.phone === 'string',
-              horizontal: !!props.horizontal,
+              'dv-horizontal': !!props.horizontal,
             },
           ]}
         >
