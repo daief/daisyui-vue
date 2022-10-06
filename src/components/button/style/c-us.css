@@ -51,10 +51,10 @@
 /* group */
 .dv-btn-group {
   @apply flex flex-wrap;
-  & > input[type='radio'].btn {
+  & > input[type='radio'].dv-btn {
     @apply appearance-none;
   }
-  & > input[type='radio'].btn:before {
+  & > input[type='radio'].dv-btn:before {
     content: attr(data-title);
   }
 }

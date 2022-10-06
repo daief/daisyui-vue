@@ -22,30 +22,30 @@
     @apply w-full;
   }
   &-square {
-    &:where(.btn-xs) {
+    &:where(.dv-btn-xs) {
       @apply h-6 w-6 p-0;
     }
-    &:where(.btn-sm) {
+    &:where(.dv-btn-sm) {
       @apply h-8 w-8 p-0;
     }
-    &:where(.btn-md) {
+    &:where(.dv-btn-md) {
       @apply h-12 w-12 p-0;
     }
-    &:where(.btn-lg) {
+    &:where(.dv-btn-lg) {
       @apply h-16 w-16 p-0;
     }
   }
   &-circle {
-    &:where(.btn-xs) {
+    &:where(.dv-btn-xs) {
       @apply h-6 w-6 rounded-full p-0;
     }
-    &:where(.btn-sm) {
+    &:where(.dv-btn-sm) {
       @apply h-8 w-8 rounded-full p-0;
     }
-    &:where(.btn-md) {
+    &:where(.dv-btn-md) {
       @apply h-12 w-12 rounded-full p-0;
     }
-    &:where(.btn-lg) {
+    &:where(.dv-btn-lg) {
       @apply h-16 w-16 rounded-full p-0;
     }
   }
