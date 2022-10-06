@@ -15,9 +15,8 @@
     "node": ">=14.0.0"
   },
   "scripts": {
-    "dev": "pnpm build -- -w",
     "esbuild-base": "esbuild ./src/index.ts --bundle --outfile=out/index.js --external:vscode --format=cjs --platform=node",
-    "build": "pnpm esbuild-base -- --minify",
+    "build": "pnpm esbuild-base --minify",
     "pkg": "vsce package --no-dependencies --out out/ext.vsix"
   },
   "activationEvents": [

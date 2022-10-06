@@ -16,6 +16,12 @@ export function activate(context: vscode.ExtensionContext) {
   const prefix = 'src/_daisyui/src';
 
   const dirs = ['components', 'utilities'];
+  const cfg = Object.entries({
+    'c-us': ['components', 'unstyled'],
+    'c-s': ['components', 'styled'],
+    'u-us': ['utilities', 'unstyled'],
+    'u-s': ['utilities', 'styled'],
+  });
 
   opc.appendLine('Actived, ' + root);
 
@@ -23,6 +29,15 @@ export function activate(context: vscode.ExtensionContext) {
     vscode.commands.registerCommand('extension.ds-insert-style', async () => {
       const comptName = (await vscode.window.showInputBox({})) || '';
       const results = [] as string[];
+      /**
+       * {
+       *   'c-us': '',
+       *   'c-s': '',
+       *   'u-us': '',
+       *   'u-s': '',
+       * }
+       */
+      const resultMap: Record<string, string> = {};
 
       dirs.forEach((dir) => {
         ['unstyled', 'styled'].forEach((s) => {
@@ -30,6 +45,13 @@ export function activate(context: vscode.ExtensionContext) {
           const file = path.join(root, prefix, fileName);
           if (fs.existsSync(file)) {
             results.push(fileName);
+            const t = cfg.find((it) =>
+              it[1].every((subpath) => file.includes(subpath)),
+            );
+            if (t) {
+              // @ts-ignore
+              resultMap[t[0]] = fs.readFileSync(file, { encoding: 'utf-8' });
+            }
           }
         });
       });
@@ -43,12 +65,23 @@ export function activate(context: vscode.ExtensionContext) {
         .join(', ')}];`;
 
       const editoer = vscode.window.activeTextEditor;
-      editoer?.edit((builder) => {
-        const selection = editoer?.selection;
-        builder.insert(selection.start, resultStr);
-      });
+
+      if (editoer) {
+        editoer.edit((builder) => {
+          const selection = editoer?.selection;
+          builder.insert(selection.start, resultStr);
+        });
+
+        if (editoer.document.fileName) {
+          const baseDir = path.dirname(editoer.document.fileName);
+          Object.entries(resultMap).forEach(([key, content]) => {
+            fs.writeFileSync(path.join(baseDir, key + '.css'), content);
+          });
+        }
+      }
 
       opc.appendLine(resultStr);
+      opc.appendLine(JSON.stringify(resultMap, null, 4));
     }),
   );
 }
