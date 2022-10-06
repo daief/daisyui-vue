@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.1-alpha.7](https://github.com/daief/daisyui-vue/compare/v0.0.1-alpha.6...v0.0.1-alpha.7) (2022-10-06)
+
 ### [0.0.1-alpha.6](https://github.com/daief/daisyui-vue/compare/v0.0.1-alpha.5...v0.0.1-alpha.6) (2022-10-05)
 
 
