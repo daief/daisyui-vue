@@ -5,7 +5,7 @@ import { IButtonShape } from './button';
 import { componentV2 } from 'daisyui-vue/shared/styled';
 import style from './style';
 
-const props = {
+export const buttonGroupProps = {
   outline: Boolean,
   size: {
     type: String as PropType<ISize>,
@@ -16,12 +16,12 @@ const props = {
   },
 };
 
-export type IButtonGroupProps = ExtractFromProps<typeof props>;
+export type IButtonGroupProps = ExtractFromProps<typeof buttonGroupProps>;
 
 export const ButtonGroup = componentV2<IButtonGroupProps, HTMLAttributes>(
   {
     name: 'ButtonGroup',
-    props: props,
+    props: buttonGroupProps,
     setup: (props, { slots }) => {
       const ctxVal = computed<ICtx>(() => ({
         size: props.size || 'md',
@@ -31,9 +31,7 @@ export const ButtonGroup = componentV2<IButtonGroupProps, HTMLAttributes>(
 
       provide(ctxKey, ctxVal);
 
-      return () => (
-        <div class="dv-btn-group btn-group">{slots.default?.()}</div>
-      );
+      return () => <div class="dv-btn-group">{slots.default?.()}</div>;
     },
   },
   style,

@@ -1,7 +1,7 @@
-.glass {
+.dv-glass {
   &,
   &:hover,
-  &.btn-active {
+  &.dv-btn-active {
     border: none;
     backdrop-filter: blur(var(--glass-blur, 40px));
     background-color: transparent;

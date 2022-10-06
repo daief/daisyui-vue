@@ -21,7 +21,7 @@ export type IButtonShape = 'defalut' | 'circle' | 'square';
 
 export type IButtonType = IColorType | 'ghost' | 'link' | 'glass';
 
-const props = {
+export const buttonProps = {
   block: Boolean,
   wide: Boolean,
   disabled: Boolean,
@@ -48,7 +48,7 @@ const props = {
   onClick: Function as PropType<(e: MouseEvent) => any>,
 };
 
-export type IButtonProps = ExtractFromProps<typeof props>;
+export type IButtonProps = ExtractFromProps<typeof buttonProps>;
 
 export const Button = componentV2<
   IButtonProps,
@@ -56,7 +56,7 @@ export const Button = componentV2<
 >(
   {
     name: 'Button',
-    props,
+    props: buttonProps,
     setup: (props, { slots }) => {
       const ctxVal = inject<Ref<ICtx>>(ctxKey, null);
       const size = computed(() => props.size || ctxVal?.value.size || 'md');
@@ -72,22 +72,22 @@ export const Button = componentV2<
 
       const cls = computed(() => {
         return [
-          'dv-btn btn',
+          'dv-btn',
           props.variant === 'glass'
-            ? 'glass'
+            ? 'dv-glass'
             : !!props.variant
-            ? `btn-${props.variant}`
+            ? `dv-btn-${props.variant}`
             : '',
           {
-            [`btn-${size.value}`]: true,
-            [`btn-${shape.value}`]: true,
-            'btn-block': props.block,
-            'btn-wide': props.wide,
-            loading: finalLoading.value,
-            'btn-disabled': props.disabled,
-            'btn-active': props.active,
-            'btn-outline': outline.value,
-            'no-animation': props.noAnimation,
+            [`dv-btn-${size.value}`]: true,
+            [`dv-btn-${shape.value}`]: true,
+            'dv-btn-block': props.block,
+            'dv-btn-wide': props.wide,
+            'dv-loading': finalLoading.value,
+            'dv-btn-disabled': props.disabled,
+            'dv-btn-active': props.active,
+            'dv-btn-outline': outline.value,
+            'dv-no-animation': props.noAnimation,
           },
         ];
       });
