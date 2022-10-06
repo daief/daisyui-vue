@@ -73,23 +73,31 @@ export interface IStyle {
 }
 
 export function createStyle(): IStyle {
-  const m = new Map<number, string>();
+  let cssMap: Map<
+    /* style id*/ number,
+    /* css content or empty string */ string
+  >;
   const STYLE_ATTR = `daisyui-vue="${VERSION}"`;
+  const CSS_MAP_PROP = '__DAISYUI_VUE_CSS_MAP__';
 
   let style: HTMLStyleElement | null = null;
   if (isBrowser) {
     style = document.querySelector(`style[${STYLE_ATTR}]`);
-
     if (!style) {
       style = document.createElement('style');
       style.setAttribute('daisyui-vue', VERSION);
       document.head.prepend(style);
-    } else {
-      const ids = (style.dataset.ids || '').split(',');
-      ids.forEach((id) => {
-        m.set(Number(id), '');
-      });
     }
+
+    cssMap = style[CSS_MAP_PROP] || new Map();
+    style[CSS_MAP_PROP] ||= cssMap;
+
+    const ids = (style.dataset.ids || '').split(',');
+    ids.forEach((id) => {
+      cssMap.set(Number(id), '');
+    });
+  } else {
+    cssMap = new Map();
   }
 
   const insertCss = (css: IStyleFile | IStyleFile[]) => {
@@ -98,9 +106,9 @@ export function createStyle(): IStyle {
     let appendText = '';
 
     css.forEach((stl) => {
-      if (m.has(stl.id)) return;
+      if (cssMap.has(stl.id)) return;
       appendText += `${stl.css}\n`;
-      m.set(stl.id, stl.css);
+      cssMap.set(stl.id, stl.css);
     });
 
     style?.append(appendText);
@@ -116,7 +124,7 @@ export function createStyle(): IStyle {
     extractStyles: () => {
       let text = '';
       let ids = '';
-      for (const [id, css] of m.entries()) {
+      for (const [id, css] of cssMap.entries()) {
         text += css;
         if (ids) {
           ids += ',';
