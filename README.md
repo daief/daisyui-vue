@@ -91,41 +91,41 @@ export function render() {
 - [x] alert
 - [x] artboard
 - [x] avatar
-- [x] badge
-- [x] breadcrumb
-- [x] button
-- [x] button-group
-- [x] card
+- [ ] badge
+- [ ] breadcrumb
+- [ ] button
+- [ ] button-group
+- [ ] card
 - [ ] carousel
 - [ ] collapse
-- [x] counter 🆕 new
-- [x] divider
-- [x] drawer - 🛠 refactor
-- [x] dropdown - 🛠 refactor(popper inside)
+- [ ] counter 🆕 new
+- [ ] divider
+- [ ] drawer - 🛠 refactor
+- [ ] dropdown - 🛠 refactor(popper inside)
 - [ ] footer
 - [ ] hero
 - [x] icon - [xicons](https://github.com/07akioni/xicons)
   - [ ] context
 - [ ] indicator
 - [ ] kbd
-- [x] link
-- [ ] mask
-- [x] menu
-- [x] modal
+- [ ] link
+- [x] mask
+- [ ] menu
+- [ ] modal
 - [ ] navbar
 - [ ] pagination
-- [x] progress
+- [ ] progress
 - [x] popper - 🆕 new
-- [x] swap - 🛠 refactor
+- [ ] swap - 🛠 refactor
 - [ ] stack
 - [ ] stat
 - [ ] steps
-- [x] tab
-- [x] table
-- [x] toggle
+- [ ] tab
+- [ ] table
+- [ ] toggle
 - [x] tooltip - 🛠 refactor
 - [ ] form-checkbox
-- [x] form-input
+- [ ] form-input
 - [ ] form-radio
 - [ ] form-range
 - [ ] form-select

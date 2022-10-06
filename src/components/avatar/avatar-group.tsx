@@ -12,7 +12,7 @@ import {
 import { ctxAvatarGroupKey, IAvatarGroupCtx, sizeMap } from './state';
 import style from './style';
 
-const props = {
+export const avatarGroupProps = {
   size: {
     type: [Number, String] as PropType<ISize | string | number>,
     default: 'md',
@@ -23,13 +23,12 @@ const props = {
   },
 };
 
-export const AvatrGroup = componentV2<
-  ExtractFromProps<typeof props>,
-  HTMLAttributes
->(
+export type IAvatarGroupProps = ExtractFromProps<typeof avatarGroupProps>;
+
+export const AvatrGroup = componentV2<IAvatarGroupProps, HTMLAttributes>(
   {
     name: 'AvatarGroup',
-    props,
+    props: avatarGroupProps,
     setup: (props, { slots }) => {
       provide<IAvatarGroupCtx>(
         ctxAvatarGroupKey,
@@ -44,7 +43,7 @@ export const AvatrGroup = componentV2<
       });
 
       return () => (
-        <div class="dv-avatar-group avatar-group">
+        <div class="dv-avatar-group">
           {(slots.default?.() || []).map((v, i) =>
             cloneVNode(v, {
               style:

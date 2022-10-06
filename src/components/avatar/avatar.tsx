@@ -6,7 +6,7 @@ import style from './style';
 import { ctxAvatarGroupKey, getSizeValue, IAvatarGroupCtx } from './state';
 import { isUndefined } from 'daisyui-vue/shared/utils';
 
-const props = {
+export const avatarProps = {
   src: String,
   placeholder: {
     type: String,
@@ -23,12 +23,12 @@ const props = {
   },
 };
 
-export type IAvatarProps = ExtractFromProps<typeof props>;
+export type IAvatarProps = ExtractFromProps<typeof avatarProps>;
 
 export const Avatar = componentV2<IAvatarProps, HTMLAttributes>(
   {
     name: 'Avatar',
-    props,
+    props: avatarProps,
     setup: (props, { slots }) => {
       const ctx = inject<IAvatarGroupCtx>(ctxAvatarGroupKey, { size: '' });
       const merged = computed(() => ({
@@ -51,10 +51,10 @@ export const Avatar = componentV2<IAvatarProps, HTMLAttributes>(
         return (
           <div
             class={{
-              'dv-avatar avatar': true,
-              placeholder: !props.src && !isUndefined(props.placeholder),
+              'dv-avatar ': true,
+              'dv-placeholder': !props.src && !isUndefined(props.placeholder),
               'dv-avatar-circle': props.type === 'circle',
-              [props.status]: !!props.status,
+              [`dv-${props.status}`]: !!props.status,
             }}
           >
             <Mask type={props.type}>

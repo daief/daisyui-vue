@@ -1,7 +1,6 @@
-import s1 from '@styles/components/unstyled/avatar.css';
-import s2 from '@styles/components/styled/avatar.css';
-
-import s3 from '@styles/utilities/styled/avatar.css';
+import s1 from './c-us.css';
+import s2 from './c-s.css';
+import s3 from './u-s.css';
 
 import s from './style.less';
 

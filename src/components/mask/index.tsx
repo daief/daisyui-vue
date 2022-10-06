@@ -1,4 +1,5 @@
-import { component } from 'daisyui-vue/shared/styled';
+import { componentV2 } from 'daisyui-vue/shared/styled';
+import { ExtractFromProps } from 'daisyui-vue/shared/types/common';
 import { cloneVNode, PropType } from 'vue';
 import style from './style';
 
@@ -23,27 +24,25 @@ export type IMaskType =
   | 'triangle-3'
   | 'triangle-4';
 
-const props = {
+export const maskProps = {
   type: {
     type: String as PropType<IMaskType>,
     default: 'squircle',
   },
 };
 
-export interface IMaskProps {
-  type?: IMaskType;
-}
+export type IMaskProps = ExtractFromProps<typeof maskProps>;
 
-export const Mask = component<IMaskProps, IMaskProps>(
+export const Mask = componentV2<IMaskProps, IMaskProps>(
   {
     name: 'Mask',
-    props,
+    props: maskProps,
     setup: (props, { slots }) => {
       return () => {
         const child = slots.default?.()?.[0];
         return child
           ? cloneVNode(child, {
-              class: `dv-mask mask mask-${props.type}`,
+              class: `dv-mask dv-mask-${props.type}`,
             })
           : null;
       };
