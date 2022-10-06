@@ -91,7 +91,7 @@ export function render() {
 - [x] alert
 - [x] artboard
 - [x] avatar
-- [ ] badge
+- [x] badge
 - [ ] breadcrumb
 - [ ] button
 - [ ] button-group

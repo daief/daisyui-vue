@@ -34,7 +34,7 @@ export default {
           <div key={type}>
             <p class="my-2">mask-{type}</p>
             <dv-mask type={type} class="mb-8">
-              <img src="https://picsum.photos/id/1005/200/200" />
+              <img src="https://placeimg.com/192/192/people" />
             </dv-mask>
           </div>
         ))}

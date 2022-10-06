@@ -1,39 +1,41 @@
-import { component } from 'daisyui-vue/shared/styled';
+import { componentV2 } from 'daisyui-vue/shared/styled';
 import {
-  BoolConstructorToBase,
+  ExtractFromProps,
   IColorType,
   ISize,
 } from 'daisyui-vue/shared/types/common';
-import { computed } from 'vue';
+import { computed, PropType, HTMLAttributes } from 'vue';
 import style from './style';
 
-export interface IBadgeProps {
-  type?: IColorType | 'ghost';
-  size?: ISize;
-}
-
-const props = {
+export const badgeProps = {
   outline: { type: Boolean, default: void 0 },
+  type: {
+    type: String as PropType<IColorType | 'ghost'>,
+    default: 'netural',
+  },
+  size: {
+    type: String as PropType<ISize>,
+    default: 'md',
+  },
 };
 
-export const Badge = component<
-  IBadgeProps,
-  BoolConstructorToBase<typeof props>
->(
+export type IBadgeProps = ExtractFromProps<typeof badgeProps>;
+
+export const Badge = componentV2<IBadgeProps, HTMLAttributes>(
   {
     name: 'Badge',
-    props,
-    setup: (props, { attrs, slots }) => {
-      const size = computed(() => attrs.size || 'md');
+    props: badgeProps,
+    setup: (props, { slots }) => {
+      const size = computed(() => props.size || 'md');
       const outline = computed(() => props.outline || false);
 
       return () => (
         <div
           class={{
             'dv-badge badge': true,
-            [`badge-${attrs.type}`]: attrs.type,
-            [`badge-${size.value}`]: size.value,
-            [`badge-outline`]: outline.value,
+            [`dv-badge-${props.type}`]: props.type,
+            [`dv-badge-${size.value}`]: size.value,
+            [`dv-badge-outline`]: outline.value,
           }}
         >
           {slots.default?.()}

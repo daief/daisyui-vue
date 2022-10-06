@@ -1,0 +1,117 @@
+.dv-badge {
+  @apply border border-neutral bg-neutral text-neutral-content rounded-badge;
+  &-primary {
+    @apply border-primary bg-primary text-primary-content;
+  }
+  &-secondary {
+    @apply border-secondary bg-secondary text-secondary-content;
+  }
+  &-accent {
+    @apply border-accent bg-accent text-accent-content;
+  }
+  &-info {
+    @apply border-transparent bg-info text-info-content;
+  }
+  &-success {
+    @apply border-transparent bg-success text-success-content;
+  }
+  &-warning {
+    @apply border-transparent bg-warning text-warning-content;
+  }
+  &-error {
+    @apply border-transparent bg-error text-error-content;
+  }
+  &-ghost {
+    @apply border-base-200 bg-base-200 text-base-content;
+  }
+
+  &-outline {
+    @apply border-current border-opacity-50 bg-transparent text-current;
+    &.dv-badge-primary {
+      @apply text-primary;
+    }
+    &.dv-badge-secondary {
+      @apply text-secondary;
+    }
+    &.dv-badge-accent {
+      @apply text-accent;
+    }
+    &.dv-badge-info {
+      @apply text-info;
+    }
+    &.dv-badge-success {
+      @apply text-success;
+    }
+    &.dv-badge-warning {
+      @apply text-warning;
+    }
+    &.dv-badge-error {
+      @apply text-error;
+    }
+  }
+}
+
+.dv-btn-outline {
+  .dv-badge {
+    @apply border-neutral-focus text-neutral-content;
+  }
+  &.dv-btn-primary .dv-badge {
+    @apply border-primary bg-primary text-primary-content;
+  }
+  &.dv-btn-secondary .dv-badge {
+    @apply border-secondary bg-secondary text-secondary-content;
+  }
+  &.dv-btn-accent .dv-badge {
+    @apply border-accent bg-accent text-accent-content;
+  }
+
+  .dv-badge.dv-outline {
+    @apply border-neutral-focus bg-transparent;
+  }
+  &.dv-btn-primary .dv-badge-outline {
+    @apply border-primary bg-transparent text-primary;
+  }
+  &.dv-btn-secondary .dv-badge-outline {
+    @apply border-secondary bg-transparent text-secondary;
+  }
+  &.dv-btn-accent .dv-badge-outline {
+    @apply border-accent bg-transparent text-accent;
+  }
+  &.dv-btn-info .dv-badge-outline {
+    @apply border-info bg-transparent text-info;
+  }
+  &.dv-btn-success .dv-badge-outline {
+    @apply border-success bg-transparent text-success;
+  }
+  &.dv-btn-warning .dv-badge-outline {
+    @apply border-warning bg-transparent text-warning;
+  }
+  &.dv-btn-error .dv-badge-outline {
+    @apply border-error bg-transparent text-error;
+  }
+
+  &:hover .dv-badge {
+    @apply border-base-200 bg-base-200 text-base-content;
+    &.outline {
+      @apply border-base-200 text-neutral-content;
+    }
+  }
+  &.dv-btn-primary:hover .dv-badge {
+    @apply border-primary-content bg-primary-content text-primary;
+    &.outline {
+      @apply border-primary-content bg-primary-focus text-primary-content;
+    }
+  }
+  &.dv-btn-secondary:hover .dv-badge {
+    @apply border-secondary-content bg-secondary-content text-secondary;
+    &.outline {
+      @apply border-secondary-content bg-secondary-focus text-secondary-content;
+    }
+  }
+  &.dv-btn-accent:hover .dv-badge {
+    @apply border-accent-content bg-accent-content text-accent;
+    &.outline {
+      @apply border-accent-content bg-accent-focus text-accent-content;
+    }
+  }
+}
