@@ -1,13 +1,13 @@
-import { component } from 'daisyui-vue/shared/styled';
+import { componentV2 } from 'daisyui-vue/shared/styled';
 import { AnchorHTMLAttributes, HTMLAttributes } from 'vue';
 import style from './style';
 
-export const Breadcrumb = component<HTMLAttributes>(
+export const Breadcrumb = componentV2<{}, HTMLAttributes>(
   {
     name: 'Breadcrumb',
     setup: (_, { slots }) => {
       return () => (
-        <div class="dv-breadcrumbs breadcrumbs">
+        <div class="dv-breadcrumbs">
           <ul>{slots.default?.()}</ul>
         </div>
       );
@@ -16,7 +16,7 @@ export const Breadcrumb = component<HTMLAttributes>(
   style,
 );
 
-export const BreadcrumbItem = component<AnchorHTMLAttributes>({
+export const BreadcrumbItem = componentV2<{}, AnchorHTMLAttributes>({
   name: 'BreadcrumbItem',
   inheritAttrs: false,
   setup: (_, { attrs, slots }) => {
