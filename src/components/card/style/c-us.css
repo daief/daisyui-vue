@@ -1,0 +1,35 @@
+.dv-card {
+  @apply relative flex flex-col overflow-hidden;
+  &:focus {
+    @apply outline-none;
+  }
+  &-body {
+    @apply flex flex-auto flex-col;
+    :where(p) {
+      @apply flex-grow;
+    }
+  }
+  &-actions {
+    @apply flex flex-wrap items-start gap-2;
+  }
+  & figure {
+    @apply flex items-center justify-center;
+  }
+  &.dv-image-full {
+    @apply grid;
+    &:before {
+      @apply relative;
+      content: '';
+    }
+    &:before,
+    & > * {
+      @apply col-start-1 row-start-1;
+    }
+    & > figure img {
+      @apply h-full object-cover;
+    }
+  }
+  &.dv-image-full > &-body {
+    @apply relative;
+  }
+}

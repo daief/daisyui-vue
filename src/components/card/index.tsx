@@ -3,7 +3,7 @@ import { ExtractFromProps } from 'daisyui-vue/shared/types/common';
 import { computed, h, HTMLAttributes } from 'vue';
 import style from './style';
 
-const cardProps = {
+export const cardProps = {
   bordered: {
     type: Boolean,
     default: true,
@@ -38,12 +38,11 @@ export const Card = componentV2<ICardProps, HTMLAttributes>(
     setup: (props, { slots }) => {
       const cls = computed(() => ({
         'dv-card': true,
-        card: true,
-        'card-bordered': props.bordered,
-        'image-full': props.imageFull,
-        'card-compact': props.compact,
-        'card-side': props.side,
-        glass: props.glass,
+        'dv-card-bordered': props.bordered,
+        'dv-image-full': props.imageFull,
+        'dv-card-compact': props.compact,
+        'dv-card-side': props.side,
+        'dv-glass': props.glass,
       }));
 
       return () => (
@@ -65,7 +64,7 @@ export const Card = componentV2<ICardProps, HTMLAttributes>(
   style,
 );
 
-const cardImageProps = {
+export const cardImageProps = {
   src: String,
 };
 
@@ -88,7 +87,7 @@ export const CardImage = componentV2<ICardImageProps, HTMLAttributes>(
   style,
 );
 
-const cardBodyProps = {};
+export const cardBodyProps = {};
 
 export type ICardBodyProps = ExtractFromProps<typeof cardBodyProps>;
 
@@ -97,15 +96,13 @@ export const CardBody = componentV2<ICardBodyProps, HTMLAttributes>(
     name: 'CardBody',
     props: cardBodyProps,
     setup: (props, { slots }) => {
-      return () => (
-        <div class="dv-card-body card-body">{slots.default?.()}</div>
-      );
+      return () => <div class="dv-card-body">{slots.default?.()}</div>;
     },
   },
   style,
 );
 
-const cardTitleProps = {
+export const cardTitleProps = {
   component: {
     type: String,
     default: 'h2',
@@ -122,7 +119,7 @@ export const CardTitle = componentV2<ICardTitleProps, HTMLAttributes>(
       return () =>
         h(
           props.component || 'h2',
-          { class: 'dv-card-title card-title' },
+          { class: 'dv-card-title' },
           slots.default?.(),
         );
     },
@@ -130,7 +127,7 @@ export const CardTitle = componentV2<ICardTitleProps, HTMLAttributes>(
   style,
 );
 
-const cardActionsProps = {};
+export const cardActionsProps = {};
 
 export type ICardActionsProps = ExtractFromProps<typeof cardActionsProps>;
 
@@ -139,9 +136,7 @@ export const CardActions = componentV2<ICardActionsProps, HTMLAttributes>(
     name: 'CardActions',
     props: cardActionsProps,
     setup: (props, { slots }) => {
-      return () => (
-        <div class="dv-card-actions card-actions">{slots.default?.()}</div>
-      );
+      return () => <div class="dv-card-actions">{slots.default?.()}</div>;
     },
   },
   style,

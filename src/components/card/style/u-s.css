@@ -1,0 +1,17 @@
+.dv-card-compact {
+  .dv-card-body {
+    @apply p-4 text-sm;
+  }
+  .dv-card-title {
+    @apply mb-1;
+  }
+}
+.dv-card-normal {
+  .dv-card-body {
+    padding: var(--padding-card, 2rem);
+    @apply text-base;
+  }
+  .dv-card-title {
+    @apply mb-3;
+  }
+}

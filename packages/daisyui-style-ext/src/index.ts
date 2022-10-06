@@ -44,12 +44,11 @@ export function activate(context: vscode.ExtensionContext) {
           const fileName = path.join(dir, s, `${comptName}.css`);
           const file = path.join(root, prefix, fileName);
           if (fs.existsSync(file)) {
-            results.push(fileName);
             const t = cfg.find((it) =>
               it[1].every((subpath) => file.includes(subpath)),
             );
             if (t) {
-              // @ts-ignore
+              results.push(t[0]);
               resultMap[t[0]] = fs.readFileSync(file, { encoding: 'utf-8' });
             }
           }
@@ -57,7 +56,7 @@ export function activate(context: vscode.ExtensionContext) {
       });
 
       let resultStr = results.reduce((acc, cur, i) => {
-        return acc + '\n' + `import s${i + 1} from '@styles/${cur}';`;
+        return acc + '\n' + `import s${i + 1} from './${cur}.css';`;
       }, '');
 
       resultStr += `\nexport default [${results

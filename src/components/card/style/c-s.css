@@ -1,0 +1,33 @@
+.dv-card {
+  @apply rounded-box;
+  &:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+  }
+  &.dv-bordered {
+    @apply border border-base-200;
+  }
+  &-bordered {
+    @apply border border-base-200;
+  }
+  &.dv-compact {
+    .card-body {
+      @apply p-4 text-sm;
+    }
+  }
+  &-body {
+    padding: var(--padding-card, 2rem);
+    @apply flex flex-col gap-2;
+  }
+  &-title {
+    @apply flex items-center gap-2 text-xl font-semibold;
+  }
+  &.dv-image-full {
+    &:before {
+      @apply z-10 bg-neutral opacity-75 rounded-box;
+    }
+  }
+  &.dv-image-full > &-body {
+    @apply z-20 text-neutral-content;
+  }
+}

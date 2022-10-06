@@ -7,18 +7,18 @@ card
 ```html :::demo
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
   <dv-card
+    class="bg-base-100"
     bordered
-    image="https://picsum.photos/id/1005/400/250"
+    image="https://placeimg.com/400/225/arch"
     title="Top image"
-    description="Rerum reiciendis beatae tenetur excepturi aut pariatur est eos. Sit sit
- necessitatibus veritatis sed molestiae voluptates incidunt iure sapiente."
+    description="Rerum reiciendis beatae tenetur excepturi aut pariatur est eos. Sit sit necessitatibus veritatis sed molestiae voluptates incidunt iure sapiente."
   >
     <template v-slot:actions>
       <dv-button type="secondary">More info</dv-button>
     </template>
   </dv-card>
 
-  <dv-card bordered>
+  <dv-card bordered class="bg-base-100">
     <dv-card-body>
       <dv-card-title> Image bottom </dv-card-title>
       <p>
@@ -31,11 +31,11 @@ card
         <dv-button type="ghost">Register</dv-button>
       </dv-card-actions>
     </dv-card-body>
-    <dv-card-image src="https://picsum.photos/id/1005/400/250" />
+    <dv-card-image src="https://placeimg.com/400/225/arch" />
   </dv-card>
 
-  <dv-card bordered>
-    <dv-card-image src="https://picsum.photos/id/1005/60/40" />
+  <dv-card bordered class="bg-base-100">
+    <dv-card-image src="https://placeimg.com/400/225/arch" />
     <dv-card-body>
       <dv-card-title> Small image file </dv-card-title>
       <p>
@@ -58,7 +58,7 @@ image-full
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
   <dv-card
     bordered
-    image="https://picsum.photos/id/1005/400/250"
+    image="https://placeimg.com/400/225/arch"
     title="Image overlay"
     description="Rerum reiciendis beatae tenetur excepturi aut pariatur est eos. Sit sit
  necessitatibus veritatis sed molestiae voluptates incidunt iure sapiente."
@@ -76,11 +76,11 @@ card-compact
 ```html :::demo
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
   <dv-card
+    class="bg-base-100"
     bordered
-    image="https://picsum.photos/id/1005/400/250"
+    image="https://placeimg.com/400/225/arch"
     title="This card is compact"
-    description="Rerum reiciendis beatae tenetur excepturi aut pariatur est eos. Sit sit
- necessitatibus veritatis sed molestiae voluptates incidunt iure sapiente."
+    description="Rerum reiciendis beatae tenetur excepturi aut pariatur est eos. Sit sit necessitatibus veritatis sed molestiae voluptates incidunt iure sapiente."
     compact
   >
     <template v-slot:actions>
@@ -95,11 +95,11 @@ card with side image
 ```html :::demo
 <div>
   <dv-card
+    class="bg-base-100"
     bordered
-    image="https://picsum.photos/id/1005/400/250"
+    image="https://placeimg.com/400/225/arch"
     title="Horizontal"
-    description="Rerum reiciendis beatae tenetur excepturi aut pariatur est eos. Sit sit
- necessitatibus veritatis sed molestiae voluptates incidunt iure sapiente."
+    description="Rerum reiciendis beatae tenetur excepturi aut pariatur est eos. Sit sit necessitatibus veritatis sed molestiae voluptates incidunt iure sapiente."
     side
   >
     <template v-slot:actions>
@@ -114,10 +114,10 @@ card without image
 ```html :::demo
 <div>
   <dv-card
+    class="bg-base-100"
     bordered
     title="No Images"
-    description="Rerum reiciendis beatae tenetur excepturi aut pariatur est eos. Sit sit
- necessitatibus veritatis sed molestiae voluptates incidunt iure sapiente."
+    description="Rerum reiciendis beatae tenetur excepturi aut pariatur est eos. Sit sit necessitatibus veritatis sed molestiae voluptates incidunt iure sapiente."
   >
     <template v-slot:actions>
       <dv-button type="secondary">More info</dv-button>
@@ -131,19 +131,19 @@ glass card
 ```html :::demo
 <div
   class="flex items-center w-full px-4 py-10 bg-cover text-white rounded-lg"
-  style="background-image:url(https://picsum.photos/id/314/1000/300)"
+  style="background-image:url(https://placeimg.com/400/225/arch)"
 >
   <dv-card
     bordered
     glass
     side
-    image="https://picsum.photos/id/1005/300/200"
+    image="https://placeimg.com/400/225/arch"
     title="Glass"
     description="Rerum reiciendis beatae tenetur excepturi aut pariatur est eos. Sit sit
  necessitatibus veritatis sed molestiae voluptates incidunt iure sapiente."
   >
     <dv-card-image class="p-6">
-      <img class="rounded-2xl" src="https://picsum.photos/id/1005/300/200" />
+      <img class="rounded-2xl" src="https://placeimg.com/400/225/arch" />
     </dv-card-image>
     <dv-card-body>
       <dv-card-title> Glass </dv-card-title>
