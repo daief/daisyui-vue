@@ -5,19 +5,19 @@
     @apply col-start-1 row-start-1;
   }
 
-  .swap-on {
+  .dv-swap-on {
     @apply opacity-0;
   }
 
-  .swap-off {
+  .dv-swap-off {
     @apply opacity-100;
   }
 
-  &.swap-active {
-    .swap-on {
+  &.dv-swap-active {
+    .dv-swap-on {
       @apply opacity-100;
     }
-    .swap-off {
+    .dv-swap-off {
       @apply opacity-0;
     }
   }
@@ -31,36 +31,36 @@
   }
 }
 
-.swap-rotate {
-  .swap-on {
+.dv-swap-rotate {
+  .dv-swap-on {
     @apply rotate-45;
   }
 
-  &.swap-active {
-    .swap-on {
+  &.dv-swap-active {
+    .dv-swap-on {
       @apply rotate-0;
     }
-    .swap-off {
+    .dv-swap-off {
       @apply -rotate-45;
     }
   }
 }
 
-.swap-flip {
+.dv-swap-flip {
   transform-style: preserve-3d;
   perspective: 16em;
 
-  .swap-on {
+  .dv-swap-on {
     transform: rotateY(180deg);
     backface-visibility: hidden;
     @apply opacity-100;
   }
 
-  &.swap-active {
-    .swap-on {
+  &.dv-swap-active {
+    .dv-swap-on {
       transform: rotateY(0deg);
     }
-    .swap-off {
+    .dv-swap-off {
       transform: rotateY(-180deg);
       backface-visibility: hidden;
       @apply opacity-100;

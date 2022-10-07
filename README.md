@@ -117,7 +117,7 @@ export function render() {
 - [ ] pagination
 - [x] progress
 - [x] popper - 🆕 new
-- [ ] swap - 🛠 refactor
+- [x] swap - 🛠 refactor
 - [ ] stack
 - [ ] stat
 - [ ] steps

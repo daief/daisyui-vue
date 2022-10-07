@@ -4,7 +4,7 @@ import { getRenderResult, isUndefined } from 'daisyui-vue/shared/utils';
 import { computed, h, PropType, reactive } from 'vue';
 import styles from './style';
 
-const props = {
+export const swapProps = {
   on: {
     default: '',
   },
@@ -29,12 +29,12 @@ const props = {
   },
 };
 
-export type ISwapProps = ExtractFromProps<typeof props>;
+export type ISwapProps = ExtractFromProps<typeof swapProps>;
 
 export const Swap = componentV2<ISwapProps>(
   {
     name: 'Swap',
-    props,
+    props: swapProps,
     setup: (props, { slots }) => {
       const state = reactive({
         active: props.active,
@@ -45,10 +45,10 @@ export const Swap = componentV2<ISwapProps>(
       );
 
       const cls = computed(() => [
-        'dv-swap swap',
+        'dv-swap',
         {
-          'swap-active': finalActive.value,
-          [`swap-${props.animation}`]: props.animation,
+          'dv-swap-active': finalActive.value,
+          [`dv-swap-${props.animation}`]: props.animation,
         },
       ]);
 
@@ -65,7 +65,10 @@ export const Swap = componentV2<ISwapProps>(
               props.onChange?.(state.active);
             },
           },
-          [<div class="swap-on">{on}</div>, <div class="swap-off">{off}</div>],
+          [
+            <div class="dv-swap-on">{on}</div>,
+            <div class="dv-swap-off">{off}</div>,
+          ],
         );
       };
     },
