@@ -367,8 +367,8 @@ export const Popper = componentV2<
                     style={props.hideArrow ? '--popper-tail: 0px' : ''}
                     ref={popperNode}
                   >
-                    <div class="popper-container">
-                      <div class="popper-arrow" />
+                    <div class="dv-popper-container">
+                      <div class="dv-popper-arrow" />
                       {content}
                     </div>
                   </div>,
