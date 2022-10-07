@@ -18,9 +18,8 @@ export const Divider = componentV2<IDividerProps, HtmlHTMLAttributes>(
     props,
     setup: (props, { slots }) => {
       const cls = computed(() => ({
-        divider: true,
         'dv-divider': true,
-        'divider-horizontal': props.horizontal,
+        'dv-divider-horizontal': props.horizontal,
       }));
       return () => <div class={cls.value}>{slots.default?.()}</div>;
     },
