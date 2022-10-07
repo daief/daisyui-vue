@@ -101,12 +101,13 @@ export function render() {
 - [x] counter 🆕 new
 - [x] divider
 - [x] drawer - 🛠 refactor
-- [ ] dropdown - 🛠 refactor(popper inside)
+- [x] dropdown - 🛠 refactor(popper inside)
 - [ ] footer
 - [ ] hero
-- [x] icon - [xicons](https://github.com/07akioni/xicons)
+- [x] icon - 🛠 [xicons](https://github.com/07akioni/xicons)
   - [ ] context
 - [ ] indicator
+- [x] input
 - [ ] kbd
 - [ ] link
 - [x] mask

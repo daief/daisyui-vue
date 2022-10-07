@@ -7,7 +7,7 @@ import {
 import { computed, InputHTMLAttributes, PropType } from 'vue';
 import styles from './style';
 
-const props = {
+export const inputProps = {
   border: {
     type: Boolean,
     default: true,
@@ -22,18 +22,18 @@ const props = {
   },
 };
 
-export type IInputProps = ExtractFromProps<typeof props>;
+export type IInputProps = ExtractFromProps<typeof inputProps>;
 
 export const Input = componentV2<IInputProps, InputHTMLAttributes>(
   {
     name: 'Input',
-    props,
+    props: inputProps,
     setup: (props) => {
       const cls = computed(() => ({
-        'dv-input input': true,
-        'input-bordered': props.border,
-        [`input-${props.type}`]: !!props.type,
-        [`input-${props.size}`]: !!props.size,
+        'dv-input': true,
+        'dv-input-bordered': props.border,
+        [`dv-input-${props.type}`]: !!props.type,
+        [`dv-input-${props.size}`]: !!props.size,
       }));
       return () => <input type="text" class={cls.value} />;
     },
