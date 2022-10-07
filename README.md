@@ -109,7 +109,7 @@ export function render() {
 - [ ] indicator
 - [x] input
 - [ ] kbd
-- [ ] link
+- [x] link
 - [x] mask
 - [ ] menu
 - [ ] modal

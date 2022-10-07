@@ -3,7 +3,7 @@ import { ExtractFromProps, IBrandColor } from 'daisyui-vue/shared/types/common';
 import { computed, PropType } from 'vue';
 import styles from './style';
 
-const props = {
+export const linkProps = {
   type: {
     type: String as PropType<IBrandColor>,
     default: 'neutral',
@@ -14,18 +14,18 @@ const props = {
   },
 };
 
-export type ILinkProps = ExtractFromProps<typeof props>;
+export type ILinkProps = ExtractFromProps<typeof linkProps>;
 
 export const Link = componentV2<ILinkProps>(
   {
     name: 'Link',
-    props,
+    props: linkProps,
     setup: (props, { slots }) => {
       const cls = computed(() => [
-        'dv-link link',
+        'dv-link',
         {
-          [`link-${props.type}`]: !!props.type,
-          'link-hover': props.enableHoverClass,
+          [`dv-link-${props.type}`]: !!props.type,
+          'dv-link-hover': props.enableHoverClass,
         },
       ]);
       return () => <a class={cls.value}>{slots.default?.()}</a>;
