@@ -1,5 +1,4 @@
-import s1 from '@styles/components/unstyled/toggle.css';
-import s2 from '@styles/components/styled/toggle.css';
-import s3 from '@styles/utilities/unstyled/toggle.css';
-
+import s1 from './c-us.css';
+import s2 from './c-s.css';
+import s3 from './u-us.css';
 export default [s1, s2, s3];

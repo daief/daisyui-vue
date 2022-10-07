@@ -32,7 +32,7 @@ export const Table = componentV2<ITableProps, HTMLAttributes>(
     props: tableProps,
     setup: (props) => {
       const cls = computed(() => [
-        'dv-table table',
+        'dv-table',
         {
           'dv-table-zebra': props.zebra,
           'dv-table-compact': props.compact,

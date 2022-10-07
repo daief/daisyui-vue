@@ -44,10 +44,10 @@ export const Toggle = componentV2<IToggleProps>(
       );
 
       const cls = computed(() => [
-        'dv-toggle toggle',
+        'dv-toggle',
         {
-          [`toggle-${props.type}`]: props.type,
-          [`toggle-${props.size}`]: props.size,
+          [`dv-toggle-${props.type}`]: props.type,
+          [`dv-toggle-${props.size}`]: props.size,
         },
       ]);
 
