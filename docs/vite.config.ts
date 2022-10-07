@@ -332,7 +332,7 @@ const config: UserConfig = {
   resolve: {
     alias: {
       'daisyui-vue': resolve(__dirname, '../dist'),
-      '@/': resolve(__dirname, 'src'),
+      '@': resolve(__dirname, 'src'),
     },
   },
   build: {},
