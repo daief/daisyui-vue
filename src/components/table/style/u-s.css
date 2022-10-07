@@ -1,0 +1,10 @@
+.dv-table-normal {
+  :where(th, td) {
+    @apply p-4 text-base;
+  }
+}
+.dv-table-compact {
+  :where(th, td) {
+    @apply p-2 text-sm;
+  }
+}

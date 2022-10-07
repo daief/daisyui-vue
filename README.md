@@ -122,7 +122,7 @@ export function render() {
 - [ ] stat
 - [ ] steps
 - [x] tab
-- [ ] table
+- [x] table
 - [ ] toggle
 - [x] tooltip - 🛠 refactor
 - [ ] form-checkbox

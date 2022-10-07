@@ -1,4 +1,4 @@
-import { component } from 'daisyui-vue/shared/styled';
+import { componentV2 } from 'daisyui-vue/shared/styled';
 import { cssUnit } from 'daisyui-vue/shared/utils';
 import { computed, HTMLAttributes, PropType } from 'vue';
 import style from './style';
@@ -12,7 +12,7 @@ export interface ITableColumn<T = unknown> {
   render?: (text: string, record: T, rowIndex: number) => any;
 }
 
-const tableProps = {
+export const tableProps = {
   zebra: Boolean,
   compact: Boolean,
   columns: { type: Array as PropType<ITableColumn<any>[]>, default: () => [] },
@@ -26,7 +26,7 @@ export interface ITableProps<T = any> {
   dataSource?: T[];
 }
 
-export const Table = component<HTMLAttributes, ITableProps>(
+export const Table = componentV2<ITableProps, HTMLAttributes>(
   {
     name: 'Table',
     props: tableProps,
@@ -34,8 +34,8 @@ export const Table = component<HTMLAttributes, ITableProps>(
       const cls = computed(() => [
         'dv-table table',
         {
-          'table-zebra': props.zebra,
-          'table-compact': props.compact,
+          'dv-table-zebra': props.zebra,
+          'dv-table-compact': props.compact,
         },
       ]);
 
@@ -85,7 +85,7 @@ export const Table = component<HTMLAttributes, ITableProps>(
               </thead>
               <tbody>
                 {props.dataSource.map((record, i) => (
-                  <tr key={i} class="hover">
+                  <tr key={i} class="dv-hover">
                     {props.columns.map((col) => (
                       <td
                         key={col.dataIndex || col.key}
