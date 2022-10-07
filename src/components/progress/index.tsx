@@ -3,7 +3,7 @@ import { computed, PropType } from 'vue';
 import { IColorType, ExtractFromProps } from 'daisyui-vue/shared/types/common';
 import style from './style';
 
-const props = {
+export const progressProps = {
   type: String as PropType<IColorType>,
   value: {
     type: Number,
@@ -15,17 +15,17 @@ const props = {
   },
 };
 
-export type IProgressProps = ExtractFromProps<typeof props>;
+export type IProgressProps = ExtractFromProps<typeof progressProps>;
 
 export const Progress = componentV2<IProgressProps>(
   {
     name: 'Progress',
-    props,
+    props: progressProps,
     setup: (props) => {
       const cls = computed(() => [
-        'dv-progress progress',
+        'dv-progress',
         {
-          [`progress-${props.type}`]: !!props.type,
+          [`dv-progress-${props.type}`]: !!props.type,
         },
       ]);
       return () => (

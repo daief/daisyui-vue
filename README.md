@@ -115,7 +115,7 @@ export function render() {
 - [x] modal
 - [x] navbar
 - [ ] pagination
-- [ ] progress
+- [x] progress
 - [x] popper - 🆕 new
 - [ ] swap - 🛠 refactor
 - [ ] stack
