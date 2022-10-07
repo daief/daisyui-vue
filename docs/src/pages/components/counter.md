@@ -5,7 +5,7 @@
 Counter
 
 ```html :::demo
-<div class="flex flex-col w-full">
+<div>
   <dv-counter :from="59" :to="0" :duration="60000" :transitionDuration="1000" />
 </div>
 ```
@@ -13,7 +13,7 @@ Counter
 Large text
 
 ```html :::demo
-<div class="flex flex-col w-full text-6xl">
+<div class="text-6xl">
   <dv-counter
     :from="3600 * 3.5"
     :to="0"
@@ -27,7 +27,7 @@ Large text
 Increase
 
 ```html :::demo
-<div class="flex flex-col w-full text-2xl">
+<div class="text-2xl">
   <dv-counter :from="0" :to="3000" :duration="2000" />
 </div>
 ```

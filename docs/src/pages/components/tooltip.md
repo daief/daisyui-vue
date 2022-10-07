@@ -56,7 +56,7 @@ with colors
 
 ```html :::demo
 <div
-  class="text-center grid grid-cols-3 lg:grid-cols-5 my-10 place-items-center gap-y-10"
+  class="text-center grid grid-cols-1 lg:grid-cols-5 my-10 place-items-center gap-y-12"
 >
   <dv-tooltip content="hello" open placement="top" type="netural">
     <dv-button type="netural">netural</dv-button>

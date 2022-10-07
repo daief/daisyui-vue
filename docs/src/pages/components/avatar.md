@@ -59,7 +59,7 @@ avatar with mask
 avatar with border(by css). Circle & square types only, but the others are not supported
 
 ```html :::demo
-<div class="flex items-center space-x-8 flex-wrap mb-8">
+<div class="w-full flex justify-center items-center space-x-8 flex-wrap mb-8">
   <dv-avatar
     src="http://daisyui.com/tailwind-css-component-profile-1@94w.png"
     size="lg"
@@ -76,7 +76,7 @@ avatar with border(by css). Circle & square types only, but the others are not s
     class="ring ring-pink-600 ring-offset-4"
   />
 </div>
-<div class="flex items-center space-x-8 flex-wrap">
+<div class="w-full flex justify-center items-center space-x-8 flex-wrap">
   <dv-avatar
     src="http://daisyui.com/tailwind-css-component-profile-1@94w.png"
     size="lg"
@@ -101,51 +101,53 @@ avatar with border(by css). Circle & square types only, but the others are not s
 avatar-group, default gap(half size)
 
 ```html :::demo
-<dv-avatar-group size="lg" class="mb-4">
-  <dv-avatar
-    src="http://daisyui.com/tailwind-css-component-profile-1@94w.png"
-  />
-  <dv-avatar
-    src="http://daisyui.com/tailwind-css-component-profile-1@94w.png"
-  />
-  <dv-avatar
-    src="http://daisyui.com/tailwind-css-component-profile-1@94w.png"
-  />
-  <dv-avatar placeholder="+99" />
-</dv-avatar-group>
-<dv-avatar-group size="md" class="mb-4">
-  <dv-avatar
-    src="http://daisyui.com/tailwind-css-component-profile-1@94w.png"
-  />
-  <dv-avatar
-    src="http://daisyui.com/tailwind-css-component-profile-1@94w.png"
-  />
-  <dv-avatar
-    src="http://daisyui.com/tailwind-css-component-profile-1@94w.png"
-  />
-</dv-avatar-group>
-<dv-avatar-group size="sm" class="mb-4">
-  <dv-avatar
-    src="http://daisyui.com/tailwind-css-component-profile-1@94w.png"
-  />
-  <dv-avatar
-    src="http://daisyui.com/tailwind-css-component-profile-1@94w.png"
-  />
-  <dv-avatar
-    src="http://daisyui.com/tailwind-css-component-profile-1@94w.png"
-  />
-</dv-avatar-group>
-<dv-avatar-group size="xs" class="mb-4">
-  <dv-avatar
-    src="http://daisyui.com/tailwind-css-component-profile-1@94w.png"
-  />
-  <dv-avatar
-    src="http://daisyui.com/tailwind-css-component-profile-1@94w.png"
-  />
-  <dv-avatar
-    src="http://daisyui.com/tailwind-css-component-profile-1@94w.png"
-  />
-</dv-avatar-group>
+<div class="flex flex-col items-center">
+  <dv-avatar-group size="lg" class="mb-4">
+    <dv-avatar
+      src="http://daisyui.com/tailwind-css-component-profile-1@94w.png"
+    />
+    <dv-avatar
+      src="http://daisyui.com/tailwind-css-component-profile-1@94w.png"
+    />
+    <dv-avatar
+      src="http://daisyui.com/tailwind-css-component-profile-1@94w.png"
+    />
+    <dv-avatar placeholder="+99" />
+  </dv-avatar-group>
+  <dv-avatar-group size="md" class="mb-4">
+    <dv-avatar
+      src="http://daisyui.com/tailwind-css-component-profile-1@94w.png"
+    />
+    <dv-avatar
+      src="http://daisyui.com/tailwind-css-component-profile-1@94w.png"
+    />
+    <dv-avatar
+      src="http://daisyui.com/tailwind-css-component-profile-1@94w.png"
+    />
+  </dv-avatar-group>
+  <dv-avatar-group size="sm" class="mb-4">
+    <dv-avatar
+      src="http://daisyui.com/tailwind-css-component-profile-1@94w.png"
+    />
+    <dv-avatar
+      src="http://daisyui.com/tailwind-css-component-profile-1@94w.png"
+    />
+    <dv-avatar
+      src="http://daisyui.com/tailwind-css-component-profile-1@94w.png"
+    />
+  </dv-avatar-group>
+  <dv-avatar-group size="xs" class="mb-4">
+    <dv-avatar
+      src="http://daisyui.com/tailwind-css-component-profile-1@94w.png"
+    />
+    <dv-avatar
+      src="http://daisyui.com/tailwind-css-component-profile-1@94w.png"
+    />
+    <dv-avatar
+      src="http://daisyui.com/tailwind-css-component-profile-1@94w.png"
+    />
+  </dv-avatar-group>
+</div>
 ```
 
 avatar-group, custom gap
@@ -170,7 +172,7 @@ avatar-group, custom gap
 avatar with presense indicator
 
 ```html :::demo
-<div class="flex items-center space-x-8 flex-wrap mb-4">
+<div class="w-full flex justify-center items-center space-x-8 flex-wrap mb-4">
   <dv-avatar
     src="http://daisyui.com/tailwind-css-component-profile-1@94w.png"
     size="lg"
@@ -193,7 +195,7 @@ avatar with presense indicator
   />
 </div>
 
-<div class="flex items-center space-x-8 flex-wrap">
+<div class="w-full flex justify-center items-center space-x-8 flex-wrap">
   <dv-avatar
     src="http://daisyui.com/tailwind-css-component-profile-1@94w.png"
     size="lg"

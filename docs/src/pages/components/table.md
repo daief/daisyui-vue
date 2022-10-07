@@ -54,7 +54,11 @@ export default {
         favoriteColor: 'Crimson',
       },
     ];
-    return () => <dv-table columns={columns} dataSource={dataSource} />;
+    return () => (
+      <div class="w-full">
+        <dv-table columns={columns} dataSource={dataSource} />
+      </div>
+    );
   },
 };
 ```
@@ -63,7 +67,9 @@ table-zebra & table-compact
 
 ```html :::run
 <template>
-  <dv-table :columns="columns" :dataSource="dataSource" zebra compact />
+  <div class="w-full">
+    <dv-table :columns="columns" :dataSource="dataSource" zebra compact />
+  </div>
 </template>
 
 <script lang="tsx">
@@ -184,7 +190,11 @@ export default {
         favoriteColor: 'Crimson',
       },
     ];
-    return () => <dv-table columns={columns} dataSource={dataSource} />;
+    return () => (
+      <div class="w-full">
+        <dv-table columns={columns} dataSource={dataSource} />
+      </div>
+    );
   },
 };
 ```

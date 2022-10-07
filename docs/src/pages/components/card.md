@@ -55,75 +55,67 @@ card
 image-full
 
 ```html :::demo
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-  <dv-card
-    bordered
-    image="https://placeimg.com/400/225/arch"
-    title="Image overlay"
-    description="Rerum reiciendis beatae tenetur excepturi aut pariatur est eos. Sit sit
- necessitatibus veritatis sed molestiae voluptates incidunt iure sapiente."
-    image-full
-  >
-    <template v-slot:actions>
-      <dv-button type="secondary">More info</dv-button>
-    </template>
-  </dv-card>
-</div>
+<dv-card
+  class="w-64 max-w-full"
+  bordered
+  image="https://placeimg.com/400/225/arch"
+  title="Image overlay"
+  description="Rerum reiciendis beatae tenetur excepturi aut pariatur est eos. Sit sit necessitatibus veritatis sed molestiae voluptates incidunt iure sapiente."
+  image-full
+>
+  <template v-slot:actions>
+    <dv-button type="secondary">More info</dv-button>
+  </template>
+</dv-card>
 ```
 
 card-compact
 
 ```html :::demo
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-  <dv-card
-    class="bg-base-100"
-    bordered
-    image="https://placeimg.com/400/225/arch"
-    title="This card is compact"
-    description="Rerum reiciendis beatae tenetur excepturi aut pariatur est eos. Sit sit necessitatibus veritatis sed molestiae voluptates incidunt iure sapiente."
-    compact
-  >
-    <template v-slot:actions>
-      <dv-button type="secondary">More info</dv-button>
-    </template>
-  </dv-card>
-</div>
+<dv-card
+  class="w-64 max-w-full bg-base-100"
+  bordered
+  image="https://placeimg.com/400/225/arch"
+  title="This card is compact"
+  description="Rerum reiciendis beatae tenetur excepturi aut pariatur est eos. Sit sit necessitatibus veritatis sed molestiae voluptates incidunt iure sapiente."
+  compact
+>
+  <template v-slot:actions>
+    <dv-button type="secondary">More info</dv-button>
+  </template>
+</dv-card>
 ```
 
 card with side image
 
 ```html :::demo
-<div>
-  <dv-card
-    class="bg-base-100"
-    bordered
-    image="https://placeimg.com/400/225/arch"
-    title="Horizontal"
-    description="Rerum reiciendis beatae tenetur excepturi aut pariatur est eos. Sit sit necessitatibus veritatis sed molestiae voluptates incidunt iure sapiente."
-    side
-  >
-    <template v-slot:actions>
-      <dv-button type="secondary">More info</dv-button>
-    </template>
-  </dv-card>
-</div>
+<dv-card
+  class="bg-base-100"
+  bordered
+  image="https://placeimg.com/400/225/arch"
+  title="Horizontal"
+  description="Rerum reiciendis beatae tenetur excepturi aut pariatur est eos. Sit sit necessitatibus veritatis sed molestiae voluptates incidunt iure sapiente."
+  side
+>
+  <template v-slot:actions>
+    <dv-button type="secondary">More info</dv-button>
+  </template>
+</dv-card>
 ```
 
 card without image
 
 ```html :::demo
-<div>
-  <dv-card
-    class="bg-base-100"
-    bordered
-    title="No Images"
-    description="Rerum reiciendis beatae tenetur excepturi aut pariatur est eos. Sit sit necessitatibus veritatis sed molestiae voluptates incidunt iure sapiente."
-  >
-    <template v-slot:actions>
-      <dv-button type="secondary">More info</dv-button>
-    </template>
-  </dv-card>
-</div>
+<dv-card
+  class="bg-base-100"
+  bordered
+  title="No Images"
+  description="Rerum reiciendis beatae tenetur excepturi aut pariatur est eos. Sit sit necessitatibus veritatis sed molestiae voluptates incidunt iure sapiente."
+>
+  <template v-slot:actions>
+    <dv-button type="secondary">More info</dv-button>
+  </template>
+</dv-card>
 ```
 
 glass card

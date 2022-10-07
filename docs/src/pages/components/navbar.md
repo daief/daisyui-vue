@@ -5,7 +5,7 @@
 Navbar
 
 ```html :::demo
-<div class="text-center">
+<div class="w-full">
   <dv-navbar class="bg-base-100 rounded-box">
     <dv-button variant="ghost">daisyui vue</dv-button>
   </dv-navbar>
@@ -15,7 +15,7 @@ Navbar
 Navbar with icons
 
 ```html :::demo
-<div class="text-center">
+<div class="w-full">
   <dv-navbar class="bg-base-100 rounded-box">
     <dv-navbar-center class="flex-1">
       <dv-button variant="ghost">daisyui vue</dv-button>
@@ -32,7 +32,7 @@ Navbar with icons
 Navbar with icon at start and end
 
 ```html :::demo
-<div class="text-center">
+<div class="w-full">
   <dv-navbar class="bg-base-100 rounded-box">
     <dv-navbar-start class="flex-1">
       <dv-button variant="ghost"><icon-menu /></dv-button>

@@ -5,7 +5,7 @@
 progress
 
 ```html :::demo
-<div>
+<div class="w-full">
   <dv-progress />
   <dv-progress :value="10" />
   <dv-progress :value="70" />
@@ -16,7 +16,7 @@ progress
 primary color
 
 ```html :::demo
-<div>
+<div class="w-full">
   <dv-progress type="primary" />
   <dv-progress :value="10" type="primary" />
   <dv-progress :value="70" type="primary" />
@@ -27,7 +27,7 @@ primary color
 secondary color
 
 ```html :::demo
-<div>
+<div class="w-full">
   <dv-progress type="secondary" />
   <dv-progress :value="10" type="secondary" />
   <dv-progress :value="70" type="secondary" />
@@ -38,7 +38,7 @@ secondary color
 accent color
 
 ```html :::demo
-<div>
+<div class="w-full">
   <dv-progress type="accent" />
   <dv-progress :value="10" type="accent" />
   <dv-progress :value="70" type="accent" />
@@ -49,7 +49,7 @@ accent color
 info color
 
 ```html :::demo
-<div>
+<div class="w-full">
   <dv-progress type="info" />
   <dv-progress :value="10" type="info" />
   <dv-progress :value="70" type="info" />
@@ -60,7 +60,7 @@ info color
 success color
 
 ```html :::demo
-<div>
+<div class="w-full">
   <dv-progress type="success" />
   <dv-progress :value="10" type="success" />
   <dv-progress :value="70" type="success" />
@@ -71,7 +71,7 @@ success color
 warning color
 
 ```html :::demo
-<div>
+<div class="w-full">
   <dv-progress type="warning" />
   <dv-progress :value="10" type="warning" />
   <dv-progress :value="70" type="warning" />
@@ -82,7 +82,7 @@ warning color
 error color
 
 ```html :::demo
-<div>
+<div class="w-full">
   <dv-progress type="error" />
   <dv-progress :value="10" type="error" />
   <dv-progress :value="70" type="error" />

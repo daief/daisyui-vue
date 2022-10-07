@@ -111,7 +111,7 @@ button shapes
 
 ```html :::demo
 <div
-  class="flex flex-wrap items-start md:space-x-2 space-y-2 md:space-y-0 flex-col md:flex-row mb-2"
+  class="w-full flex justify-center items-center flex-wrap md:space-x-2 space-y-2 md:space-y-0 flex-col md:flex-row mb-4"
 >
   <dv-button shape="circle" size="lg">
     <icon-close size="1.5em" />
@@ -128,7 +128,7 @@ button shapes
 </div>
 
 <div
-  class="flex flex-wrap items-start md:space-x-2 space-y-2 md:space-y-0 flex-col md:flex-row"
+  class="w-full flex justify-center items-center flex-wrap md:space-x-2 space-y-2 md:space-y-0 flex-col md:flex-row"
 >
   <dv-button shape="square" size="lg">A</dv-button>
   <dv-button shape="square">B</dv-button>
@@ -148,18 +148,17 @@ button loading
 ```html :::run
 <template>
   <div
-    class="flex flex-wrap items-start md:space-x-2 space-y-2 md:space-y-0 flex-col md:flex-row mb-1"
+    class="w-full flex flex-wrap justify-center items-center md:space-x-2 space-y-2 md:space-y-0 flex-col md:flex-row mb-4"
   >
     <dv-button loading>netural</dv-button>
     <dv-button loading variant="primary">secondary</dv-button>
-    <dv-button loading variant="secondary">secondary</dv-button>
     <dv-button loading variant="accent">accent</dv-button>
     <dv-button loading variant="ghost">ghost</dv-button>
     <dv-button loading variant="link">link</dv-button>
   </div>
 
   <div
-    class="flex flex-wrap items-start md:space-x-2 space-y-2 md:space-y-0 flex-col md:flex-row"
+    class="w-full flex flex-wrap justify-center items-center md:space-x-2 space-y-2 md:space-y-0 flex-col md:flex-row"
   >
     <dv-button :onClick="asyncFunction">Loading after click</dv-button>
     <dv-button :onClick="asyncFunction" variant="primary"

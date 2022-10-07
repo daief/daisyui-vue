@@ -64,7 +64,7 @@ global drawer, mouts on body. content has a animation.
 drawer disable teleport
 
 ```html :::demo
-<div>
+<div class="w-full">
   <dv-drawer
     :open="isOpen('d2')"
     disableTeleport
@@ -172,9 +172,7 @@ navbar menu for desktop + drawer for mobile
 drawer right
 
 ```html :::demo
-<div
-  class="rounded-lg shadow bg-base-200 h-52 flex justify-center items-center"
->
+<div class="w-full text-center">
   <dv-button :onClick="() => setOpen('d5')" type="primary">open</dv-button>
 </div>
 <dv-drawer :open="isOpen('d5')" @close="close" placement="right">

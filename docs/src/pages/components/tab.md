@@ -12,17 +12,19 @@ export default {
   setup: () => {
     const currentTab = ref('1');
     return () => (
-      <Tabs v-model={[currentTab.value, 'value']}>
-        <Tab name="1" title="Tab 1">
-          Content 1
-        </Tab>
-        <Tab name="2" title="Tab 2">
-          Content 2
-        </Tab>
-        <Tab name="3" title="Tab 3">
-          Content 3
-        </Tab>
-      </Tabs>
+      <div>
+        <Tabs v-model={[currentTab.value, 'value']}>
+          <Tab name="1" title="Tab 1">
+            Content 1
+          </Tab>
+          <Tab name="2" title="Tab 2">
+            Content 2
+          </Tab>
+          <Tab name="3" title="Tab 3">
+            Content 3
+          </Tab>
+        </Tabs>
+      </div>
     );
   },
 };
@@ -38,17 +40,19 @@ export default {
   setup: () => {
     const currentTab = ref('1');
     return () => (
-      <Tabs v-model={[currentTab.value, 'value']} type="bordered">
-        <Tab name="1" title="Tab 1">
-          Content 1
-        </Tab>
-        <Tab name="2" title="Tab 2">
-          Content 2
-        </Tab>
-        <Tab name="3" title="Tab 3">
-          Content 3
-        </Tab>
-      </Tabs>
+      <div>
+        <Tabs v-model={[currentTab.value, 'value']} type="bordered">
+          <Tab name="1" title="Tab 1">
+            Content 1
+          </Tab>
+          <Tab name="2" title="Tab 2">
+            Content 2
+          </Tab>
+          <Tab name="3" title="Tab 3">
+            Content 3
+          </Tab>
+        </Tabs>
+      </div>
     );
   },
 };
@@ -64,17 +68,19 @@ export default {
   setup: () => {
     const currentTab = ref('1');
     return () => (
-      <Tabs v-model={[currentTab.value, 'value']} type="lifted">
-        <Tab name="1" title="Tab 1">
-          Content 1
-        </Tab>
-        <Tab name="2" title="Tab 2">
-          Content 2
-        </Tab>
-        <Tab name="3" title="Tab 3">
-          Content 3
-        </Tab>
-      </Tabs>
+      <div>
+        <Tabs v-model={[currentTab.value, 'value']} type="lifted">
+          <Tab name="1" title="Tab 1">
+            Content 1
+          </Tab>
+          <Tab name="2" title="Tab 2">
+            Content 2
+          </Tab>
+          <Tab name="3" title="Tab 3">
+            Content 3
+          </Tab>
+        </Tabs>
+      </div>
     );
   },
 };
@@ -90,17 +96,19 @@ export default {
   setup: () => {
     const currentTab = ref('1');
     return () => (
-      <Tabs v-model={[currentTab.value, 'value']} type="boxed">
-        <Tab name="1" title="Tab 1">
-          Content 1
-        </Tab>
-        <Tab name="2" title="Tab 2">
-          Content 2
-        </Tab>
-        <Tab name="3" title="Tab 3">
-          Content 3
-        </Tab>
-      </Tabs>
+      <div>
+        <Tabs v-model={[currentTab.value, 'value']} type="boxed">
+          <Tab name="1" title="Tab 1">
+            Content 1
+          </Tab>
+          <Tab name="2" title="Tab 2">
+            Content 2
+          </Tab>
+          <Tab name="3" title="Tab 3">
+            Content 3
+          </Tab>
+        </Tabs>
+      </div>
     );
   },
 };
@@ -116,7 +124,7 @@ export default {
   setup: () => {
     const currentTab = ref('1');
     return () => (
-      <>
+      <div>
         <Tabs v-model={[currentTab.value, 'value']} type="lifted" size="xs">
           <Tab name="1" title="Tiny" />
           <Tab name="2" title="Tiny" />
@@ -137,7 +145,7 @@ export default {
           <Tab name="2" title="Large" />
           <Tab name="3" title="Large" />
         </Tabs>
-      </>
+      </div>
     );
   },
 };

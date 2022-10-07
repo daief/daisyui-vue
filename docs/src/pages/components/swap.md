@@ -5,9 +5,7 @@
 Swap text
 
 ```html :::demo
-<div class="text-center">
-  <dv-swap on="ON" off="OFF" />
-</div>
+<dv-swap on="ON" off="OFF" />
 ```
 
 Swap volume icons
@@ -16,12 +14,10 @@ Swap volume icons
 export default {
   setup: () => {
     return () => (
-      <div class="text-center">
-        <dv-swap
-          on={() => <IconVolumeHigh size="48px" />}
-          off={() => <IconVolumeMute size="48px" />}
-        />
-      </div>
+      <dv-swap
+        on={() => <IconVolumeHigh size="48px" />}
+        off={() => <IconVolumeMute size="48px" />}
+      />
     );
   },
 };
@@ -30,16 +26,14 @@ export default {
 Swap icons with rotate effect
 
 ```html :::demo
-<div class="text-center">
-  <dv-swap animation="rotate">
-    <template v-slot:on>
-      <IconSunny size="48px" />
-    </template>
-    <template v-slot:off>
-      <IconMoon size="48px" />
-    </template>
-  </dv-swap>
-</div>
+<dv-swap animation="rotate">
+  <template v-slot:on>
+    <IconSunny size="48px" />
+  </template>
+  <template v-slot:off>
+    <IconMoon size="48px" />
+  </template>
+</dv-swap>
 ```
 
 Swap with flip effect

@@ -45,7 +45,7 @@ export default defineComponent({
     hsla(var(--b2) / 1) 0.5px
   );
   background-size: 5px 5px;
-  @apply flex justify-center items-center min-h-6;
+  @apply flex flex-wrap justify-center items-center min-h-6;
 }
 </style>
 

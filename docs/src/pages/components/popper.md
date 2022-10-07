@@ -102,7 +102,7 @@ export default {
       ));
 
     return () => (
-      <>
+      <div class="w-full">
         <div class="flex justify-center space-x-3 mb-1">
           <dv-button onClick={() => (renderType.value = 'btn')}>
             button
@@ -154,7 +154,7 @@ export default {
             {renderSlice(6)}
           </div>
         </div>
-      </>
+      </div>
     );
   },
 };
