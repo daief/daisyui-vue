@@ -127,7 +127,7 @@ export default defineComponent({
             ),
             content: () => (
               <div ref={bodyRef} class="h-full overflow-y-auto">
-                <header class="sticky inset-x-0 top-0 bg-base-100 border-b border-gray-100 z-20">
+                <header class="sticky inset-x-0 top-0 bg-base-100 border-b border-base-200 z-20">
                   <Navbar class="">
                     <NavbarStart class="mx-2">
                       <div class="lg:hidden">
