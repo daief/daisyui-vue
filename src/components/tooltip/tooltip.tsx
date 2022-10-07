@@ -4,7 +4,7 @@ import { HTMLAttributes, PropType } from 'vue';
 import { IPopperProps, popperProps, Popper } from '../popper';
 import style from './style';
 
-const props = {
+export const toolTipprops = {
   ...popperProps,
   type: {
     type: String as PropType<IColorType>,
@@ -12,12 +12,13 @@ const props = {
   },
 };
 
-export type ITooltipProps = ExtractFromProps<typeof props> & IPopperProps;
+export type ITooltipProps = ExtractFromProps<typeof toolTipprops> &
+  IPopperProps;
 
 export const Tooltip = componentV2<ITooltipProps, HTMLAttributes>(
   {
     name: 'Tooltip',
-    props,
+    props: toolTipprops,
     setup: (props, { attrs, slots }) => {
       return () => (
         <Popper
