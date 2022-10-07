@@ -1,0 +1,23 @@
+.dv-indicator {
+  & :where(.dv-indicator-item) {
+    @apply right-0 left-auto top-0 bottom-auto translate-x-1/2 -translate-y-1/2;
+  }
+  & :where(.dv-indicator-item.dv-indicator-start) {
+    @apply right-auto left-0 -translate-x-1/2;
+  }
+  & :where(.dv-indicator-item.dv-indicator-center) {
+    @apply right-1/2 left-1/2 -translate-x-1/2;
+  }
+  & :where(.dv-indicator-item.dv-indicator-end) {
+    @apply right-0 left-auto translate-x-1/2;
+  }
+  & :where(.dv-indicator-item.dv-indicator-bottom) {
+    @apply top-auto bottom-0 translate-y-1/2;
+  }
+  & :where(.dv-indicator-item.dv-indicator-middle) {
+    @apply top-1/2 bottom-1/2 -translate-y-1/2;
+  }
+  & :where(.dv-indicator-item.dv-indicator-top) {
+    @apply top-0 bottom-auto -translate-y-1/2;
+  }
+}

@@ -10,14 +10,6 @@ export type IColorType = IBrandColor | IStateColor;
 
 export type IColorTypeWithGhost = IColorType | 'ghost';
 
-/**
- * Bool => bool
- * @deprecated
- */
-export type BoolConstructorToBase<T> = {
-  [k in keyof T]: T[k] extends BooleanConstructor ? boolean : T[k];
-};
-
 type ExtractFromPropType<T> = T extends PropType<infer U> ? U : any;
 
 /**

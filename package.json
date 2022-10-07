@@ -29,7 +29,8 @@
   "devDependencies": {
     "@dv/develop": "*",
     "prettier": "^2.4.0",
-    "standard-version": "^9.3.2"
+    "standard-version": "^9.3.2",
+    "vue": "*"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",

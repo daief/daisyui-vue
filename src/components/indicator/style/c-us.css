@@ -1,0 +1,8 @@
+.dv-indicator {
+  @apply relative inline-flex;
+  width: max-content;
+  & :where(.dv-indicator-item) {
+    z-index: 1;
+    @apply absolute transform;
+  }
+}

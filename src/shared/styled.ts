@@ -38,7 +38,7 @@ type IComponentOptions<P, A> = [
  * @param styles
  * @returns
  */
-export function component<Attrs = unknown, P = {}>(
+function component<Attrs = unknown, P = {}>(
   ...args: IComponentOptions<P, Attrs>
 ): DefineComponent<Attrs, any> {
   const [options, styles = []] = args;

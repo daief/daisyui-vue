@@ -32,7 +32,7 @@ export const Badge = componentV2<IBadgeProps, HTMLAttributes>(
       return () => (
         <div
           class={{
-            'dv-badge badge': true,
+            'dv-badge': true,
             [`dv-badge-${props.type}`]: props.type,
             [`dv-badge-${size.value}`]: size.value,
             [`dv-badge-outline`]: outline.value,
