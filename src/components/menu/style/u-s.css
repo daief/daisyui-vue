@@ -1,7 +1,7 @@
-.dv-menu-vertical :where(li.bordered > *) {
+.dv-menu-vertical :where(li.dv-bordered > *) {
   @apply border-l-4 border-b-0;
 }
-.dv-menu-horizontal :where(li.bordered > *) {
+.dv-menu-horizontal :where(li.dv-bordered > *) {
   @apply border-l-0 border-b-4;
 }
 .dv-menu-normal :where(li > *) {

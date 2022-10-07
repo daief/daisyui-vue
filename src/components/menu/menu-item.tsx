@@ -3,7 +3,7 @@ import { ExtractFromProps } from 'daisyui-vue/shared/types/common';
 import { createVNode, computed, HTMLAttributes, PropType } from 'vue';
 import style from './style';
 
-const menuItemProps = {
+export const menuItemProps = {
   asTitle: Boolean,
   disabled: Boolean,
   bordered: Boolean,
@@ -28,9 +28,9 @@ export const MenuItem = componentV2<IMuneItemProps, HTMLAttributes>(
       const cls = computed(() => [
         {
           'dv-menu-title': props.asTitle,
-          disabled: props.disabled,
-          bordered: props.bordered,
-          'hover-bordered': props.hoverBordered,
+          'dv-disabled': props.disabled,
+          'dv-bordered': props.bordered,
+          'dv-hover-bordered': props.hoverBordered,
         },
       ]);
 
@@ -53,7 +53,7 @@ export const MenuItem = componentV2<IMuneItemProps, HTMLAttributes>(
                   wrapper.value,
                   {
                     class: {
-                      active: props.active,
+                      'dv-active': props.active,
                     },
                   },
                   children,

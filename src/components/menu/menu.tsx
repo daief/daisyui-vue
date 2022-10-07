@@ -3,7 +3,7 @@ import { ExtractFromProps } from 'daisyui-vue/shared/types/common';
 import { computed, HTMLAttributes } from 'vue';
 import style from './style';
 
-const menuProps = {
+export const menuProps = {
   compact: Boolean,
   horizontal: Boolean,
 };

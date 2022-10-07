@@ -1,7 +1,7 @@
 .dv-menu {
-  &.horizontal {
+  &.dv-horizontal {
     li {
-      &.bordered {
+      &.dv-bordered {
         > a,
         > button,
         > span {
@@ -14,7 +14,7 @@
   &[class^='p-'] li > * {
     @apply rounded-btn;
   }
-  :where(li.bordered > *) {
+  :where(li.dv-bordered > *) {
     @apply border-l-4 border-primary;
   }
   :where(li) > :where(*:not(ul)) {
@@ -25,7 +25,7 @@
   :where(li:not(.dv-menu-title):not(:empty)) > :where(*:not(ul):hover) {
     @apply bg-base-content bg-opacity-10;
   }
-  :where(li:not(.dv-menu-title):not(:empty)) > :where(:not(ul).active),
+  :where(li:not(.dv-menu-title):not(:empty)) > :where(:not(ul).dv-active),
   :where(li:not(.dv-menu-title):not(:empty)) > :where(*:not(ul):active) {
     @apply bg-primary text-primary-content;
   }
@@ -33,22 +33,14 @@
     @apply mx-4 my-2 h-px bg-base-content bg-opacity-10;
   }
 
-  li.disabled {
+  li.dv-disabled {
     & > * {
       @apply select-none text-base-content text-opacity-20 hover:bg-transparent;
     }
   }
-  li.hover-bordered {
+  li.dv-hover-bordered {
     a {
       @apply border-l-4 border-transparent hover:border-primary;
-    }
-  }
-  &.compact {
-    li {
-      > a,
-      > span {
-        @apply py-2 text-sm;
-      }
     }
   }
   .dv-menu-title {
@@ -57,7 +49,7 @@
     }
   }
 
-  :where(li:not(.disabled)) > :where(*:not(ul)) {
+  :where(li:not(.dv-disabled)) > :where(*:not(ul)) {
     @apply outline-none transition duration-200 ease-in-out;
   }
 

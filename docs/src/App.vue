@@ -48,7 +48,7 @@ export default defineComponent({
       .sort((a, b) => (a.name as string).localeCompare(b.name as string))
       .map((it) => (
         <MenuItem childWrapper={false} key={it.path} class="capitalize">
-          <RouterLink to={it.path} activeClass="active">
+          <RouterLink to={it.path} activeClass="dv-active">
             {(it.name as string).replace('components-', '')}
           </RouterLink>
         </MenuItem>

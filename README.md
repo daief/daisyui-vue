@@ -111,7 +111,7 @@ export function render() {
 - [ ] kbd
 - [x] link
 - [x] mask
-- [ ] menu
+- [x] menu
 - [ ] modal
 - [ ] navbar
 - [ ] pagination
