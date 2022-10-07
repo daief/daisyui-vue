@@ -1,4 +1,4 @@
-import { ISize } from '../../shared/types/common';
+import { ExtractFromProps, ISize } from '../../shared/types/common';
 import {
   computed,
   Fragment,
@@ -9,7 +9,7 @@ import {
   Ref,
   VNode,
 } from 'vue';
-import { component } from 'daisyui-vue/shared/styled';
+import { componentV2 } from 'daisyui-vue/shared/styled';
 import style from './style';
 
 const ctx = Symbol('tabs');
@@ -25,7 +25,7 @@ interface ICtx {
   onChange: (name: string) => void;
 }
 
-const tabsProps = {
+export const tabsProps = {
   type: {
     type: String as PropType<IType>,
   },
@@ -35,13 +35,9 @@ const tabsProps = {
   },
   value: String,
 };
-export interface ITabsProps {
-  type?: IType;
-  size?: ISize;
-  value?: string;
-}
+export type ITabsProps = ExtractFromProps<typeof tabsProps>;
 
-export const Tabs = component<HTMLAttributes, ITabsProps>(
+export const Tabs = componentV2<ITabsProps, HTMLAttributes>(
   {
     name: 'Tabs',
     props: tabsProps,
@@ -74,9 +70,9 @@ export const Tabs = component<HTMLAttributes, ITabsProps>(
       };
 
       const tabHeadCls = computed(() => [
-        'dv-tab tab',
-        `tab-${props.type}`,
-        `tab-${props.size}`,
+        'dv-tab',
+        `dv-tab-${props.type}`,
+        `dv-tab-${props.size}`,
       ]);
 
       return () => {
@@ -88,8 +84,8 @@ export const Tabs = component<HTMLAttributes, ITabsProps>(
             <div
               {...attrs}
               class={{
-                'dv-tabs tabs': true,
-                'tabs-boxed': props.type === 'boxed',
+                'dv-tabs': true,
+                'dv-tabs-boxed': props.type === 'boxed',
               }}
             >
               {tabPropsList.map((p) => (
@@ -97,7 +93,7 @@ export const Tabs = component<HTMLAttributes, ITabsProps>(
                   class={[
                     tabHeadCls.value,
                     {
-                      'tab-active': props.value === p.name,
+                      'dv-tab-active': props.value === p.name,
                     },
                   ]}
                   onClick={() => {
@@ -108,7 +104,7 @@ export const Tabs = component<HTMLAttributes, ITabsProps>(
                 </a>
               ))}
               {props.type === 'lifted' ? (
-                <div class="dv-tabs__lifted-item" />
+                <div class="dv-tabs-lifted-item" />
               ) : null}
             </div>
             {vns}
@@ -120,12 +116,12 @@ export const Tabs = component<HTMLAttributes, ITabsProps>(
   style,
 );
 
-export const Tab = component<
-  HTMLAttributes,
+export const Tab = componentV2<
   {
     title?: string;
     name?: string;
-  }
+  },
+  HTMLAttributes
 >(
   {
     name: 'Tab',

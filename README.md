@@ -121,7 +121,7 @@ export function render() {
 - [ ] stack
 - [ ] stat
 - [ ] steps
-- [ ] tab
+- [x] tab
 - [ ] table
 - [ ] toggle
 - [x] tooltip - 🛠 refactor
