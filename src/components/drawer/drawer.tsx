@@ -6,7 +6,7 @@ import { PropType, computed, Transition, vShow, withDirectives } from 'vue';
 import { ModalBase } from '../modal';
 import style from './style';
 
-const props = {
+export const drawerProps = {
   open: Boolean,
   disableTeleport: Boolean,
   mobileOnly: Boolean,
@@ -19,14 +19,13 @@ const props = {
   },
 };
 
-export type IDrawerProps = ExtractFromProps<typeof props>;
+export type IDrawerProps = ExtractFromProps<typeof drawerProps>;
 
 export const Drawer = componentV2<IDrawerProps>(
   {
     name: 'Drawer',
-    props: props,
-    inheritAttrs: false,
-    setup: (props, { attrs, slots }) => {
+    props: drawerProps,
+    setup: (props, { slots }) => {
       const matchMobile = useMediaParse({
         xs: true,
         lg: false,
@@ -34,7 +33,7 @@ export const Drawer = componentV2<IDrawerProps>(
 
       const clsStatus = computed(() => ({
         'dv-drawer-side-parent': true,
-        'drawer-end': props.placement === 'right',
+        'dv-drawer-end': props.placement === 'right',
         'dv-drawer--mobile-unmatched': !matchMobile.value,
         'dv-drawer--mobile-only': props.mobileOnly,
         'dv-drawer--open': props.open,
@@ -50,13 +49,15 @@ export const Drawer = componentV2<IDrawerProps>(
 
         const contentNode = () => getRenderResult('content', props, slots);
         const defaultNode = () => slots.default?.();
-        const sideNode = () => <div class="drawer-side">{defaultNode()}</div>;
+        const sideNode = () => (
+          <div class="dv-drawer-side">{defaultNode()}</div>
+        );
 
         const showSideDirectly = props.mobileOnly && !matchMobile.value;
 
         return (
-          <div {...attrs} class={rootCls.value}>
-            <div class="drawer-content">{contentNode()}</div>
+          <div class={rootCls.value}>
+            <div class="dv-drawer-content">{contentNode()}</div>
             <Transition name={transitionName} duration={300}>
               {showSideDirectly ? sideNode() : null}
             </Transition>

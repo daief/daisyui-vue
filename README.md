@@ -99,8 +99,8 @@ export function render() {
 - [ ] carousel
 - [ ] collapse
 - [x] counter 🆕 new
-- [ ] divider
-- [ ] drawer - 🛠 refactor
+- [x] divider
+- [x] drawer - 🛠 refactor
 - [ ] dropdown - 🛠 refactor(popper inside)
 - [ ] footer
 - [ ] hero

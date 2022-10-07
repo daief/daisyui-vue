@@ -2,7 +2,7 @@
   @apply grid overflow-hidden w-full;
   @apply relative;
 
-  & > .drawer-content {
+  & > .dv-drawer-content {
     @apply z-0 col-start-1 row-start-1 overflow-y-auto;
     @apply transition-all duration-300 ease-in-out;
   }
@@ -10,13 +10,13 @@
 
 // ------------------------------------ open
 .dv-drawer.dv-drawer--open {
-  & > .drawer-content {
+  & > .dv-drawer-content {
     @apply translate-x-2;
   }
 
   // ------------------------------------ end
-  &.drawer-end {
-    & > .drawer-content {
+  &.dv-drawer-end {
+    & > .dv-drawer-content {
       @apply -translate-x-2;
     }
   }
@@ -29,7 +29,7 @@
 
 // ------------------------------------ side common
 .dv-drawer-side-parent {
-  & > .drawer-side {
+  & > .dv-drawer-side {
     @apply col-start-1 row-start-1 grid max-h-screen;
     @apply cursor-auto pointer-events-none;
     & > * {
@@ -38,13 +38,13 @@
     }
   }
 
-  &.drawer-end {
+  &.dv-drawer-end {
     direction: rtl;
     & > * {
       direction: ltr;
     }
 
-    & > .drawer-side {
+    & > .dv-drawer-side {
       & > * {
         @apply justify-self-end;
       }
@@ -54,17 +54,17 @@
 
 // ------------------------------------ mobile
 .dv-drawer.dv-drawer--mobile-only {
-  & > .drawer-content {
+  & > .dv-drawer-content {
     @apply h-auto;
   }
 
-  & > .drawer-side {
+  & > .dv-drawer-side {
     @apply overflow-y-auto;
   }
 
-  &.drawer-end {
+  &.dv-drawer-end {
     direction: ltr;
-    & > .drawer-content {
+    & > .dv-drawer-content {
       @apply h-auto;
     }
   } // end
@@ -72,19 +72,19 @@
   &.dv-drawer--mobile-unmatched {
     grid-auto-columns: max-content auto;
 
-    & > .drawer-content {
+    & > .dv-drawer-content {
       @apply col-start-2;
     }
 
-    &.drawer-end {
+    &.dv-drawer-end {
       grid-auto-columns: auto max-content;
       direction: ltr;
 
-      & > .drawer-content {
+      & > .dv-drawer-content {
         @apply col-start-1;
       }
 
-      & > .drawer-side {
+      & > .dv-drawer-side {
         @apply col-start-2;
       }
     } // end
@@ -94,26 +94,26 @@
 // animation
 .dv-modal-base-t-enter-active,
 .dv-modal-base-t-leave-active {
-  .drawer-side {
+  .dv-drawer-side {
     @apply duration-300 ease-in-out transition-all;
   }
 }
 
 .dv-modal-base-t-enter-from,
 .dv-modal-base-t-leave-to {
-  .drawer-side {
+  .dv-drawer-side {
     @apply -translate-x-full transform;
   }
-  &.drawer-end {
-    .drawer-side {
+  &.dv-drawer-end {
+    .dv-drawer-side {
       @apply translate-x-full;
     }
   }
 }
 
-[dir='rtl'] .drawer-side > * {
+[dir='rtl'] .dv-drawer-side > * {
   @apply translate-x-full;
 }
-[dir='rtl'] .drawer-side + * {
+[dir='rtl'] .dv-drawer-side + * {
   @apply translate-x-0;
 }
