@@ -1,0 +1,17 @@
+.dv-navbar {
+  @apply flex items-center;
+}
+:where(.dv-navbar > *) {
+  @apply inline-flex items-center;
+}
+.dv-navbar-start {
+  width: 50%;
+  justify-content: flex-start;
+}
+.dv-navbar-center {
+  flex-shrink: 0;
+}
+.dv-navbar-end {
+  width: 50%;
+  justify-content: flex-end;
+}

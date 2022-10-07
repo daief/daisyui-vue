@@ -112,8 +112,8 @@ export function render() {
 - [x] link
 - [x] mask
 - [x] menu
-- [ ] modal
-- [ ] navbar
+- [x] modal
+- [x] navbar
 - [ ] pagination
 - [ ] progress
 - [x] popper - 🆕 new

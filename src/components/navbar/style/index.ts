@@ -1,4 +1,3 @@
-import s1 from '@styles/components/unstyled/navbar.css';
-import s2 from '@styles/components/styled/navbar.css';
-
+import s1 from './c-us.css';
+import s2 from './c-s.css';
 export default [s1, s2];
