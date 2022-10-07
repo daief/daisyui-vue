@@ -9,7 +9,7 @@ Dropdown menu
   <dv-dropdown triggerAction="click">
     <dv-button>Click</dv-button>
     <template #content>
-      <dv-menu class="shadow-lg rounded-lg bg-white p-2 w-56">
+      <dv-menu class="shadow-lg rounded-lg bg-base-100 p-2 w-56">
         <dv-menu-item>Item 1</dv-menu-item>
         <dv-menu-item>Item 2</dv-menu-item>
       </dv-menu>
@@ -25,7 +25,7 @@ Hover
   <dv-dropdown triggerAction="hover">
     <dv-button>Hover</dv-button>
     <template #content>
-      <dv-menu class="shadow-lg rounded-lg bg-white p-2 w-56">
+      <dv-menu class="shadow-lg rounded-lg bg-base-100 p-2 w-56">
         <dv-menu-item>Item 1</dv-menu-item>
         <dv-menu-item>Item 2</dv-menu-item>
       </dv-menu>
@@ -86,7 +86,7 @@ export default {
         <div class="h-80 relative flex items-center justify-center">
           <dv-dropdown
             content={() => (
-              <dv-menu class="shadow-lg rounded-lg bg-white p-1 w-40">
+              <dv-menu class="shadow-lg rounded-lg bg-base-100 p-1 w-40">
                 <dv-menu-item>Item 1</dv-menu-item>
                 <dv-menu-item>Item 2</dv-menu-item>
               </dv-menu>
@@ -133,7 +133,7 @@ Dropdown card
   <dv-dropdown>
     <dv-button>Hover</dv-button>
     <template #content>
-      <dv-card bordered class="w-64 bg-white">
+      <dv-card bordered class="w-64 bg-base-100">
         <dv-card-body>
           <dv-card-title>Card Title</dv-card-title>
           <p> you can use any element as a dropdown. </p>

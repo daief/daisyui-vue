@@ -44,7 +44,7 @@ global drawer, mouts on body. content has a animation.
 
 ```html :::demo
 <dv-drawer :open="isOpen('d1')" @close="close">
-  <div class="bg-white w-80 py-4">
+  <div class="bg-base-100 w-80 py-4">
     <dv-menu>
       <dv-menu-item>item1</dv-menu-item>
       <dv-menu-item>item2</dv-menu-item>
@@ -72,7 +72,7 @@ drawer disable teleport
     class="rounded-lg shadow bg-base-200 h-52"
   >
     <template v-slot:default>
-      <div class="bg-white w-80 py-4">
+      <div class="bg-base-100 w-80 py-4">
         <dv-menu class="px-4">
           <dv-menu-item>item1</dv-menu-item>
           <dv-menu-item>item2</dv-menu-item>
@@ -102,7 +102,7 @@ sliding drawer for mobile only
   class="rounded-lg shadow bg-base-200 h-52"
 >
   <template v-slot:default>
-    <div class="bg-white w-80 py-4 border-r border-gray-100">
+    <div class="bg-base-100 w-80 py-4 border-r border-base-100">
       <dv-menu class="px-4">
         <dv-menu-item>item1</dv-menu-item>
         <dv-menu-item>item2</dv-menu-item>
@@ -138,10 +138,10 @@ navbar menu for desktop + drawer for mobile
   :open="isOpen('d4')"
   disableTeleport
   @close="close"
-  class="rounded-lg shadow bg-gray-200 h-52"
+  class="rounded-lg shadow bg-base-200 h-52"
 >
   <template v-slot:default>
-    <div class="bg-white w-80 py-4 border-r border-gray-100">
+    <div class="bg-base-100 w-80 py-4 border-r border-base-100">
       <dv-menu class="p-">
         <dv-menu-item>item1</dv-menu-item>
         <dv-menu-item>item2</dv-menu-item>
@@ -150,7 +150,7 @@ navbar menu for desktop + drawer for mobile
     </div>
   </template>
   <template v-slot:content>
-    <dv-navbar class="bg-gray-300">
+    <dv-navbar class="bg-base-300">
       <div class="flex-none lg:hidden">
         <dv-button :onClick="() => setOpen('d4')" type="ghost">
           <icon-menu size="1.5em" />

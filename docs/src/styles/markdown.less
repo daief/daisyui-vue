@@ -54,7 +54,6 @@
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   line-height: 1.5;
-  color: #24292e;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
     sans-serif, Apple Color Emoji, Segoe UI Emoji;
   font-size: 16px;
@@ -116,7 +115,6 @@
   line-height: inherit;
 }
 .markdown-body a {
-  color: #0366d6;
   text-decoration: none;
 }
 .markdown-body a:hover {
@@ -747,4 +745,13 @@
   margin: 0;
   font-size: 85%;
   border-radius: 6px;
+}
+
+// ---------------------------------------- custom
+.markdown-body {
+  color: var(--tw-prose-body);
+  a {
+    color: var(--tw-prose-links);
+    text-decoration: underline;
+  }
 }
