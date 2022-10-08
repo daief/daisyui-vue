@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.1-alpha.8](https://github.com/daief/daisyui-vue/compare/v0.0.1-alpha.7...v0.0.1-alpha.8) (2022-10-08)
+
+
+### Features
+
+* add indicator ([d936204](https://github.com/daief/daisyui-vue/commit/d936204031f3d146db69b279b93ca9144e23ff59))
+
+
+### Bug Fixes
+
+* button circle class prefix ([e6ff478](https://github.com/daief/daisyui-vue/commit/e6ff47891ddff6363720a6d157e8db3076ad170d))
+
 ### [0.0.1-alpha.7](https://github.com/daief/daisyui-vue/compare/v0.0.1-alpha.6...v0.0.1-alpha.7) (2022-10-06)
 
 ### [0.0.1-alpha.6](https://github.com/daief/daisyui-vue/compare/v0.0.1-alpha.5...v0.0.1-alpha.6) (2022-10-05)
