@@ -21,7 +21,9 @@ cli.command('pre-publish', '').action(async () => {
   pkg.private = false;
   pkg.main = 'index.js';
   pkg.module = 'index.js';
-  fs.writeJSONSync(workspace('dist/package.json'), pkg);
+  fs.writeJSONSync(workspace('dist/package.json'), pkg, {
+    spaces: 2,
+  });
   ['.npmrc'].forEach((file) => {
     fs.copyFileSync(workspace(file), workspace('dist', file));
   });
