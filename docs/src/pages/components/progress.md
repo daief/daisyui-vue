@@ -140,7 +140,7 @@ Custom style
 Custom size and custom thickness
 
 ```html :::demo
-<div class="w-full space-x-6 text-center">
+<div class="w-full space-x-6 space-y-6 text-center">
   <dv-radial-progress
     :value="70"
     size="12rem"
