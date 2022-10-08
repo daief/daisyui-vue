@@ -118,7 +118,7 @@ export default defineComponent({
         >
           {{
             default: () => (
-              <div class="overflow-y-auto w-80 bg-base-200">
+              <div class="overflow-y-auto w-80 bg-base-200 pb-6">
                 <Menu class="rounded-box p-4" compact>
                   <MenuItem asTitle>Components</MenuItem>
                   {componentsMenus}

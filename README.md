@@ -106,7 +106,7 @@ export function render() {
 - [ ] hero
 - [x] icon - 🛠 [xicons](https://github.com/07akioni/xicons)
   - [ ] context
-- [ ] indicator
+- [x] indicator
 - [x] input
 - [ ] kbd
 - [x] link
@@ -116,6 +116,7 @@ export function render() {
 - [x] navbar
 - [ ] pagination
 - [x] progress
+  - [x] radial progress
 - [x] popper - 🆕 new
 - [x] swap - 🛠 refactor
 - [ ] stack

@@ -1,0 +1,31 @@
+.dv-radial-progress {
+  --value: 0;
+  --size: 5rem;
+  --thickness: calc(var(--size) / 10);
+
+  &:after {
+    @apply bg-current;
+  }
+
+  &-primary {
+    @apply text-primary;
+  }
+  &-secondary {
+    @apply text-secondary;
+  }
+  &-accent {
+    @apply text-accent;
+  }
+  &-info {
+    @apply text-info;
+  }
+  &-success {
+    @apply text-success;
+  }
+  &-warning {
+    @apply text-warning;
+  }
+  &-error {
+    @apply text-error;
+  }
+}

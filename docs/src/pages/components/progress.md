@@ -90,6 +90,67 @@ error color
 </div>
 ```
 
+Radial progress
+
+```html :::demo
+<dv-radial-progress :value="70" />
+```
+
+Different values
+
+```html :::demo
+<div class="w-full space-x-6 text-center">
+  <dv-radial-progress :value="0" />
+  <dv-radial-progress :value="20" />
+  <dv-radial-progress :value="60" />
+  <dv-radial-progress :value="80" />
+  <dv-radial-progress :value="100" />
+</div>
+```
+
+Type
+
+```html :::demo
+<div
+  class="w-full text-center grid grid-cols-2 lg:grid-cols-4 gap-4 justify-items-center"
+>
+  <dv-radial-progress :value="60" />
+  <dv-radial-progress :value="60" type="primary" />
+  <dv-radial-progress :value="60" type="secondary" />
+  <dv-radial-progress :value="60" type="accent" />
+  <dv-radial-progress :value="60" type="info" />
+  <dv-radial-progress :value="60" type="success" />
+  <dv-radial-progress :value="60" type="warning" />
+  <dv-radial-progress :value="60" type="error" />
+</div>
+```
+
+Custom style
+
+```html :::demo
+<div class="w-full space-x-6 text-center">
+  <dv-radial-progress :value="50" class="text-red-500">Red</dv-radial-progress>
+  <dv-radial-progress
+    :value="20"
+    class="text-white bg-blue-400 border-blue-400 border-4"
+  />
+</div>
+```
+
+Custom size and custom thickness
+
+```html :::demo
+<div class="w-full space-x-6 text-center">
+  <dv-radial-progress
+    :value="70"
+    size="12rem"
+    thickness="2px"
+    class="text-2xl"
+  />
+  <dv-radial-progress :value="70" size="12rem" thickness="10px" />
+</div>
+```
+
 ## Progress
 
 ### Attributes
@@ -99,3 +160,14 @@ error color
 | type  | progress color type    | netural, primary, secondary, accent, info, success, warning, error | netural |
 | value | current progress value | number                                                             | 0       |
 | max   | max progress value     | number                                                             | 100     |
+
+## RadialProgress
+
+### Attributes
+
+| name      | description                   | type                                                               | default   |
+| --------- | ----------------------------- | ------------------------------------------------------------------ | --------- |
+| type      | progress color type           | netural, primary, secondary, accent, info, success, warning, error | netural   |
+| value     | current progress value, 0~100 | number                                                             | 0         |
+| size      | circle size                   | number, string                                                     | 5rem      |
+| thickness | thickness size                | number, string                                                     | size / 10 |
