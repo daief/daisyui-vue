@@ -10,15 +10,11 @@ import { ref } from 'vue';
 export default {
   setup: () => {
     const checked = ref(false);
-    return () => (
-      <dv-checkbox
-        checked={checked.value}
-        onChange={(e) => {
-          checked.value = e.target.checked;
-          console.log('Checked:', checked.value);
-        }}
-      />
-    );
+    const onChange = (e) => {
+      checked.value = e.target.checked;
+      console.log('Checked:', checked.value);
+    };
+    return () => <dv-checkbox checked={checked.value} onChange={onChange} />;
   },
 };
 ```
@@ -82,6 +78,21 @@ Indeterminate(style only, do not affect the value)
 <dv-checkbox indeterminate>Orange</dv-checkbox>
 <dv-checkbox indeterminate defaultChecked>Apple</dv-checkbox>
 <dv-checkbox indeterminate disabled>Pear</dv-checkbox>
+```
+
+Group
+
+```tsx :::run
+export default {
+  setup: () => {
+    const options = [
+      { value: 'apple', label: 'Apple' },
+      { value: 'pear', label: 'Pear' },
+      { value: 'orange', label: 'Orange' },
+    ];
+    return () => <dv-checkbox-group options={options} />;
+  },
+};
 ```
 
 ## Checkbox

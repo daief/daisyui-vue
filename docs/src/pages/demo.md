@@ -6,14 +6,12 @@ import * as x from 'vue';
 
 export default {
   setup: () => {
-    return () => (
-      <div class="text-center">
-        <dv-checkbox>132</dv-checkbox>
-        <dv-checkbox size="xs" indeterminate>
-          132
-        </dv-checkbox>
-      </div>
-    );
+    const options = [
+      { value: 'apple', label: 'Apple' },
+      { value: 'pear', label: 'Pear' },
+      { value: 'orange', label: 'Orange' },
+    ];
+    return () => <dv-checkbox-group options={options} />;
   },
 };
 ```

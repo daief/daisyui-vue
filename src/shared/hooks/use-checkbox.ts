@@ -1,6 +1,6 @@
 import { InputChangeEvent } from 'daisyui-vue/@types/dom';
 import { computed, nextTick, reactive } from 'vue';
-import { isUndefined } from '../utils';
+import { isBool, isUndefined } from '../utils';
 
 export interface IUseCheckboxOptions {
   defaultChecked?: boolean;
@@ -10,11 +10,11 @@ export interface IUseCheckboxOptions {
 
 export function useCheckbox(props: IUseCheckboxOptions) {
   const state = reactive({
-    checked: props.defaultChecked ?? props.checked,
+    checked: isBool(props.checked) ? props.checked : !!props.defaultChecked,
   });
 
   const finalVal = computed(() =>
-    isUndefined(props.checked) ? state.checked : props.checked,
+    isBool(props.checked) ? props.checked : state.checked,
   );
 
   const handleOnChange = (e: InputChangeEvent) => {

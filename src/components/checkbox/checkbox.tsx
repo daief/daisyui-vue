@@ -23,6 +23,11 @@ export const checkProps = {
   disabled: Boolean,
   readOnly: Boolean,
   indeterminate: Boolean,
+  value: {
+    type: [String, Number] as PropType<string | number>,
+    default: void 0,
+  },
+  name: String,
 };
 
 export type ICheckProps = ExtractFromProps<typeof checkProps>;
@@ -56,6 +61,8 @@ export const Checkbox = componentV2<ICheckProps, HTMLAttributes>(
               class={inputCls.value}
               onChange={handleOnChange}
               readonly={props.readOnly}
+              value={props.value}
+              name={props.name}
             />
             {slots.default ? <span>{slots.default()}</span> : null}
           </label>
