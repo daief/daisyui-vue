@@ -1,0 +1,75 @@
+.dv-checkbox {
+  &-wrapper {
+    display: inline-flex;
+    vertical-align: baseline;
+    align-items: center;
+    cursor: pointer;
+
+    &-disabled {
+      cursor: not-allowed;
+    }
+
+    & + & {
+      margin-left: var(--dv-checkbox-gap, 8px);
+    }
+  }
+
+  &-indeterminate {
+    @apply bg-base-content bg-no-repeat;
+    animation: checkmark var(--animation-input, 0.2s) ease-in-out;
+    background-image: linear-gradient(
+        90deg,
+        transparent 80%,
+        hsl(var(--chkbg)) 80%
+      ),
+      linear-gradient(-90deg, transparent 80%, hsl(var(--chkbg)) 80%),
+      linear-gradient(
+        0deg,
+        hsl(var(--chkbg)) 43%,
+        hsl(var(--chkfg)) 43%,
+        hsl(var(--chkfg)) 57%,
+        hsl(var(--chkbg)) 57%
+      );
+  }
+  &:not(&-indeterminate) {
+    &:checked,
+    &[checked='true'],
+    &[aria-checked='true'] {
+      @apply bg-base-content bg-no-repeat;
+      animation: checkmark var(--animation-input, 0.2s) ease-in-out;
+      background-image: linear-gradient(
+          -45deg,
+          transparent 65%,
+          hsl(var(--chkbg)) 65.99%
+        ),
+        linear-gradient(45deg, transparent 75%, hsl(var(--chkbg)) 75.99%),
+        linear-gradient(-45deg, hsl(var(--chkbg)) 40%, transparent 40.99%),
+        linear-gradient(
+          45deg,
+          hsl(var(--chkbg)) 30%,
+          hsl(var(--chkfg)) 30.99%,
+          hsl(var(--chkfg)) 40%,
+          transparent 40.99%
+        ),
+        linear-gradient(-45deg, hsl(var(--chkfg)) 50%, hsl(var(--chkbg)) 50.99%);
+    }
+  }
+
+  &-xs + span {
+    @apply text-xs;
+  }
+  &-sm + span {
+    @apply text-sm;
+  }
+  &-md + span {
+    @apply text-base;
+  }
+  &-lg + span {
+    @apply text-lg;
+  }
+
+  & + span {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}

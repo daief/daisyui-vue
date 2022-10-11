@@ -124,9 +124,10 @@ export function render() {
 - [ ] steps
 - [x] tab
 - [x] table
-- [ ] toggle
+- [x] toggle
 - [x] tooltip - 🛠 refactor
-- [ ] form-checkbox
+- [x] form-checkbox
+  - [ ] checkbox-group
 - [ ] form-input
 - [ ] form-radio
 - [ ] form-range

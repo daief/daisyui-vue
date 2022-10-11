@@ -1,0 +1,90 @@
+.dv-checkbox {
+  --chkbg: var(--bc);
+  --chkfg: var(--b1);
+  @apply h-6 w-6 cursor-pointer appearance-none border border-base-content border-opacity-20 rounded-btn;
+  &:focus-visible {
+    outline: 2px solid hsl(var(--bc));
+    outline-offset: 2px;
+  }
+
+  &-primary {
+    --chkbg: var(--p);
+    --chkfg: var(--pc);
+    @apply border-primary hover:border-primary;
+    &:focus-visible {
+      outline: 2px solid hsl(var(--p));
+    }
+    &:checked,
+    &[checked='true'],
+    &[aria-checked='true'] {
+      @apply border-primary bg-primary text-primary-content;
+    }
+  }
+  &-secondary {
+    --chkbg: var(--s);
+    --chkfg: var(--sc);
+    @apply border-secondary hover:border-secondary;
+    &:focus-visible {
+      outline: 2px solid hsl(var(--s));
+    }
+    &:checked,
+    &[checked='true'],
+    &[aria-checked='true'] {
+      @apply border-secondary bg-secondary text-secondary-content;
+    }
+  }
+  &-accent {
+    --chkbg: var(--a);
+    --chkfg: var(--ac);
+    @apply border-accent hover:border-accent;
+    &:focus-visible {
+      outline: 2px solid hsl(var(--a));
+    }
+    &:checked,
+    &[checked='true'],
+    &[aria-checked='true'] {
+      @apply border-accent bg-accent text-accent-content;
+    }
+  }
+  &:disabled {
+    @apply cursor-not-allowed border-transparent bg-base-content opacity-20;
+  }
+}
+
+@keyframes checkmark {
+  0% {
+    background-position-y: 5px;
+  }
+  50% {
+    background-position-y: -2px;
+  }
+  100% {
+    background-position-y: 0;
+  }
+}
+
+body[dir='rtl'] {
+  .dv-checkbox {
+    --chkbg: var(--bc);
+    --chkfg: var(--b1);
+    &:checked,
+    &[checked='true'],
+    &[aria-checked='true'] {
+      background-image: linear-gradient(
+          45deg,
+          transparent 65%,
+          hsl(var(--chkbg)) 65.99%
+        ),
+        linear-gradient(-45deg, transparent 75%, hsl(var(--chkbg)) 75.99%),
+        linear-gradient(45deg, hsl(var(--chkbg)) 40%, transparent 40.99%),
+        linear-gradient(
+          -45deg,
+          hsl(var(--chkbg)) 30%,
+          hsl(var(--chkfg)) 30.99%,
+          hsl(var(--chkfg)) 40%,
+          transparent 40.99%
+        ),
+        linear-gradient(45deg, hsl(var(--chkfg)) 50%, hsl(var(--chkbg)) 50.99%);
+    }
+  }
+}
