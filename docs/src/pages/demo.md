@@ -1,8 +1,7 @@
 # Demo for development
 
 ```tsx :::run
-import * as d from 'daisyui-vue';
-import * as x from 'vue';
+import { ref } from 'vue';
 
 export default {
   setup: () => {
@@ -11,7 +10,17 @@ export default {
       { value: 'pear', label: 'Pear' },
       { value: 'orange', label: 'Orange' },
     ];
-    return () => <dv-checkbox-group options={options} />;
+    const value = ref(['apple', 'pear']);
+    const onChange = (values) => {
+      value.value = values;
+    };
+    return () => (
+      <dv-checkbox-group
+        options={options}
+        value={value.value}
+        onChange={onChange}
+      />
+    );
   },
 };
 ```

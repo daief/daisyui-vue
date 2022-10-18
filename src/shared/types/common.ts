@@ -31,3 +31,5 @@ export interface IStyleProps {
 }
 
 export type IMaybeRef<T> = T | Ref<T>;
+
+export type IText = string | number;

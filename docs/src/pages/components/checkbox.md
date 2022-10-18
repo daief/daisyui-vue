@@ -83,6 +83,8 @@ Indeterminate(style only, do not affect the value)
 Group
 
 ```tsx :::run
+import { ref } from 'vue';
+
 export default {
   setup: () => {
     const options = [
@@ -90,7 +92,30 @@ export default {
       { value: 'pear', label: 'Pear' },
       { value: 'orange', label: 'Orange' },
     ];
-    return () => <dv-checkbox-group options={options} />;
+    const value = ref(['apple', 'pear']);
+    const disabled = ref(false);
+    const onChange = (array) => {
+      value.value = array;
+    };
+    return () => (
+      <div>
+        <div class="flex items-center">
+          <label class="mr-4">Disabled:</label>
+          <dv-toggle
+            checked={disabled.value}
+            onChange={(e) => (disabled.value = e.target.checked)}
+          />
+        </div>
+        <dv-divider />
+        <dv-checkbox-group
+          size="lg"
+          options={options}
+          disabled={disabled.value}
+          value={value.value}
+          onChange={onChange}
+        />
+      </div>
+    );
   },
 };
 ```

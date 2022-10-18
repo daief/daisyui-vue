@@ -1,6 +1,6 @@
 import { InputChangeEvent } from 'daisyui-vue/@types/dom';
-import { computed, nextTick, reactive } from 'vue';
-import { isBool, isUndefined } from '../utils';
+import { computed, nextTick, reactive, ToRefs } from 'vue';
+import { isBool } from '../utils';
 
 export interface IUseCheckboxOptions {
   defaultChecked?: boolean;
@@ -8,19 +8,21 @@ export interface IUseCheckboxOptions {
   onChange?: (e: InputChangeEvent) => void;
 }
 
-export function useCheckbox(props: IUseCheckboxOptions) {
+export function useCheckbox(props: ToRefs<IUseCheckboxOptions>) {
   const state = reactive({
-    checked: isBool(props.checked) ? props.checked : !!props.defaultChecked,
+    checked: isBool(props.checked.value)
+      ? props.checked.value
+      : !!props.defaultChecked.value,
   });
 
   const finalVal = computed(() =>
-    isBool(props.checked) ? props.checked : state.checked,
+    isBool(props.checked.value) ? props.checked.value : state.checked,
   );
 
   const handleOnChange = (e: InputChangeEvent) => {
     const newVal = !finalVal.value;
     state.checked = newVal;
-    props.onChange?.(e);
+    props.onChange.value?.(e);
     nextTick(() => {
       // force sync with finalVal
       e.target.checked = finalVal.value;

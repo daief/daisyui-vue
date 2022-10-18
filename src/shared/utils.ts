@@ -21,6 +21,10 @@ export function isString(v: any): v is string {
   return typeof v === 'string';
 }
 
+export function isNil(v: any) {
+  return [null, void 0].includes(v);
+}
+
 /**
  * 从 props、slots 中解析 render 方法的内容
  * @param key

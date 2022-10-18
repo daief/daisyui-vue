@@ -2,8 +2,17 @@ import { InputChangeEvent } from 'daisyui-vue/@types/dom';
 import { brandTypeProps, sizeProps } from 'daisyui-vue/shared/constants';
 import { useCheckbox } from 'daisyui-vue/shared/hooks';
 import { componentV2 } from 'daisyui-vue/shared/styled';
-import { ExtractFromProps } from 'daisyui-vue/shared/types/common';
-import { computed, HTMLAttributes, PropType } from 'vue';
+import { ExtractFromProps, IText } from 'daisyui-vue/shared/types/common';
+import {
+  computed,
+  ComputedRef,
+  HTMLAttributes,
+  inject,
+  PropType,
+  toRef,
+  watch,
+} from 'vue';
+import { checkboxCtxKey, ICheckboxContext } from './state';
 import style from './style';
 
 export const checkProps = {
@@ -24,7 +33,7 @@ export const checkProps = {
   readOnly: Boolean,
   indeterminate: Boolean,
   value: {
-    type: [String, Number] as PropType<string | number>,
+    type: [String, Number] as PropType<IText>,
     default: void 0,
   },
   name: String,
@@ -37,26 +46,55 @@ export const Checkbox = componentV2<ICheckProps, HTMLAttributes>(
     name: 'Checkbox',
     props: checkProps,
     setup(props, { slots }) {
-      const { checked, handleOnChange } = useCheckbox(props);
+      const ctx = inject<ComputedRef<ICheckboxContext>>(checkboxCtxKey, null);
+
+      const size = computed(() => ctx?.value.size || props.size);
+      const disabled = computed(() => ctx?.value.disabled ?? props.disabled);
+
+      const { checked, handleOnChange } = useCheckbox({
+        checked: computed(
+          () => ctx?.value.value.includes(props.value) ?? props.checked,
+        ),
+        defaultChecked: toRef(props, 'defaultChecked'),
+        onChange: computed(() => (e: InputChangeEvent) => {
+          ctx?.value.onChange(props.value);
+          props.onChange?.(e);
+        }),
+      });
+
       const wrapperCls = computed(() => ({
         'dv-checkbox-wrapper': true,
-        [`dv-checkbox-wrapper-${props.size}`]: props.size,
-        'dv-checkbox-wrapper-disabled': props.disabled,
+        [`dv-checkbox-wrapper-${size.value}`]: size.value,
+        'dv-checkbox-wrapper-disabled': disabled.value,
       }));
 
       const inputCls = computed(() => ({
         'dv-checkbox': true,
-        [`dv-checkbox-${props.size}`]: props.size,
+        [`dv-checkbox-${size.value}`]: size.value,
         [`dv-checkbox-${props.type}`]: props.type,
         'dv-checkbox-indeterminate': props.indeterminate,
       }));
+
+      watch(
+        () => props.value,
+        (newValue, _, onInvalidate) => {
+          ctx?.value.register(newValue);
+          onInvalidate(() => {
+            ctx?.value.cancel(newValue);
+          });
+        },
+        {
+          immediate: true,
+          flush: 'post',
+        },
+      );
 
       return () => {
         return (
           <label class={wrapperCls.value}>
             <input
               type="checkbox"
-              disabled={props.disabled}
+              disabled={disabled.value}
               checked={checked.value}
               class={inputCls.value}
               onChange={handleOnChange}
