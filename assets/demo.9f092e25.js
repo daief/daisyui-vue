@@ -1,4 +1,4 @@
-import{v as r,c as a,a0 as t,u as h,a2 as u,a3 as j,p as g,a4 as n,a5 as x}from"./vendor.d0ebca45.js";var d={setup:()=>{const l=[{value:"apple",label:"Apple"},{value:"pear",label:"Pear"},{value:"orange",label:"Orange"}],s=r(["apple","pear"]),p=e=>{s.value=e};return()=>a(t("dv-checkbox-group"),{options:l,value:s.value,onChange:p},null)}};const i=n("div",{class:"markdown-body"},[n("h1",null,"Demo for development")],-1),v=n("div",{class:"markdown-body"},null,-1),f=[],k={setup(l,{expose:s}){return s({frontmatter:{meta:[]}}),h({meta:[]}),(m,_)=>{const o=d,c=t("Playground");return x(),u(g,null,[i,a(c,{lang:"tsx",code:`<span class="hljs-keyword">import</span> { ref } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue&#x27;</span>;
+import{v as e,c as s,a as c,a0 as n,u as o,a2 as r,a3 as h,p as d,a4 as a,a5 as u}from"./vendor.29ec88ef.js";var j={setup:()=>(e(["apple","pear"]),()=>s(n("dv-radio"),null,{default:()=>[c("ad")]}))};const m=a("div",{class:"markdown-body"},[a("h1",null,"Demo for development")],-1),x=a("div",{class:"markdown-body"},null,-1),y=[],k={setup(g,{expose:l}){return l({frontmatter:{meta:[]}}),o({meta:[]}),(f,_)=>{const p=j,t=n("Playground");return u(),r(d,null,[m,s(t,{lang:"tsx",code:`<span class="hljs-keyword">import</span> { ref } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue&#x27;</span>;
 
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
   <span class="hljs-attr">setup</span>: <span class="hljs-function">() =&gt;</span> {
@@ -12,12 +12,13 @@ import{v as r,c as a,a0 as t,u as h,a2 as u,a3 as j,p as g,a4 as n,a5 as x}from"
       value.<span class="hljs-property">value</span> = values;
     };
     <span class="hljs-keyword">return</span> <span class="hljs-function">() =&gt;</span> (
-      <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">dv-checkbox-group</span>
-        <span class="hljs-attr">options</span>=<span class="hljs-string">{options}</span>
-        <span class="hljs-attr">value</span>=<span class="hljs-string">{value.value}</span>
-        <span class="hljs-attr">onChange</span>=<span class="hljs-string">{onChange}</span>
-      /&gt;</span></span>
+      <span class="hljs-comment">// &lt;dv-checkbox-group</span>
+      <span class="hljs-comment">//   options={options}</span>
+      <span class="hljs-comment">//   value={value.value}</span>
+      <span class="hljs-comment">//   onChange={onChange}</span>
+      <span class="hljs-comment">// /&gt;</span>
+      <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">dv-radio</span>&gt;</span>ad<span class="hljs-tag">&lt;/<span class="hljs-name">dv-radio</span>&gt;</span></span>
     );
   },
 };
-`},{default:j(()=>[a(o)]),_:1}),v],64)}}};export{k as default,f as meta};
+`},{default:h(()=>[s(p)]),_:1}),x],64)}}};export{k as default,y as meta};
