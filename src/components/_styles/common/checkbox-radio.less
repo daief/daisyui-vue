@@ -1,0 +1,58 @@
+.dv-checkbox,
+.dv-radio {
+  &-wrapper {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    vertical-align: top;
+
+    &-disabled {
+      cursor: not-allowed;
+    }
+  }
+
+  &-xs + span {
+    @apply text-xs leading-5;
+  }
+  &-sm + span {
+    @apply text-sm leading-6;
+  }
+  &-md + span {
+    @apply text-base leading-7;
+  }
+  &-lg + span {
+    @apply text-lg leading-8;
+  }
+
+  & + span {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}
+
+@names: checkbox, radio;
+each(@names, {
+  @css-gap: ~"--dv-@{value}-gap";
+
+  .dv-@{value}-wrapper {
+    & + & {
+      margin-left: var(@css-gap, 8px);
+    }
+  }
+
+  .dv-@{value}-group-item {
+    margin-right: var(@css-gap, 8px);
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+})
+  .dv-checkbox-group,
+.dv-radio-group {
+  display: inline-block;
+  line-height: 1.5715;
+
+  &-item + &-item {
+    margin-left: 0;
+  }
+}

@@ -55,11 +55,11 @@ export const Checkbox = componentV2<ICheckProps, HTMLAttributes>(
         checked: computed(
           () => ctx?.value.value.includes(props.value) ?? props.checked,
         ),
-        defaultChecked: toRef(props, 'defaultChecked'),
-        onChange: computed(() => (e: InputChangeEvent) => {
+        defaultChecked: props.defaultChecked,
+        onChange: () => (e: InputChangeEvent) => {
           ctx?.value.onChange(props.value);
           props.onChange?.(e);
-        }),
+        },
       });
 
       const wrapperCls = computed(() => ({

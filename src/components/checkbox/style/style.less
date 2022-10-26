@@ -1,19 +1,4 @@
 .dv-checkbox {
-  &-wrapper {
-    display: inline-flex;
-    align-items: center;
-    cursor: pointer;
-    vertical-align: top;
-
-    &-disabled {
-      cursor: not-allowed;
-    }
-
-    & + & {
-      margin-left: var(--dv-checkbox-gap, 8px);
-    }
-  }
-
   &-indeterminate {
     @apply bg-base-content bg-no-repeat;
     animation: checkmark var(--animation-input, 0.2s) ease-in-out;
@@ -53,40 +38,5 @@
         ),
         linear-gradient(-45deg, hsl(var(--chkfg)) 50%, hsl(var(--chkbg)) 50.99%);
     }
-  }
-
-  &-xs + span {
-    @apply text-xs leading-5;
-  }
-  &-sm + span {
-    @apply text-sm leading-6;
-  }
-  &-md + span {
-    @apply text-base leading-7;
-  }
-  &-lg + span {
-    @apply text-lg leading-8;
-  }
-
-  & + span {
-    padding-left: 8px;
-    padding-right: 8px;
-  }
-}
-
-.dv-checkbox-group {
-  display: inline-block;
-  line-height: 1.5715;
-
-  &-item {
-    margin-right: var(--dv-checkbox-gap, 8px);
-
-    &:last-child {
-      margin-right: 0;
-    }
-  }
-
-  &-item + &-item {
-    margin-left: 0;
   }
 }

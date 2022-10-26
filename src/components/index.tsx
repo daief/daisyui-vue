@@ -21,6 +21,7 @@ export * from './modal';
 export * from './navbar';
 export * from './popper';
 export * from './progress';
+export * from './radio';
 export * from './swap';
 export * from './tab';
 export * from './table';

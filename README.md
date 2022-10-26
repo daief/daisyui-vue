@@ -105,7 +105,6 @@ export function render() {
 - [ ] footer
 - [ ] hero
 - [x] icon - 🛠 [xicons](https://github.com/07akioni/xicons)
-  - [ ] context
 - [x] indicator
 - [x] input
 - [ ] kbd
@@ -128,8 +127,9 @@ export function render() {
 - [x] tooltip - 🛠 refactor
 - [x] form-checkbox
   - [x] checkbox-group
-- [ ] form-input
-- [ ] form-radio
+- [x] form-input
+- [x] form-radio
+  - [x] radio-group
 - [ ] form-range
 - [ ] form-select
 - [ ] form-textarea

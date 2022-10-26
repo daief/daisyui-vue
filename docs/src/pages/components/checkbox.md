@@ -128,12 +128,25 @@ export default {
 | -------------- | --------------------------------------------------------- | ----------------------------------- | ------- |
 | size           | size                                                      | ISize                               | md      |
 | type           | color type                                                | netural, primary, secondary, accent | netural |
-| defaultChecked | initial checked status                                    | bool                                | -       |
+| disabled       | disable status                                            | bool                                | -       |
 | checked        | checked status                                            | bool                                | -       |
 | onChange       | change callback                                           | Function                            | -       |
-| disabled       | disable status                                            | bool                                | -       |
+| defaultChecked | initial checked status                                    | bool                                | -       |
 | readOnly       | read only status                                          | bool                                | -       |
+| options        | checkbox options                                          | IOption[]                           | -       |
 | indeterminate  | indeterminate status. style only, do not affect the value | bool                                | -       |
+
+## CheckboxGroup
+
+| name         | description     | type                                | default |
+| ------------ | --------------- | ----------------------------------- | ------- |
+| size         | size            | ISize                               | md      |
+| type         | color type      | netural, primary, secondary, accent | netural |
+| disabled     | disable status  | bool                                | -       |
+| options      | options         | IOption[]                           | -       |
+| value        | selected values | IText[]                             | -       |
+| defaultValue | initial values  | IText[]                             | -       |
+| onChange     | change event    | Function                            | -       |
 
 ## CSS variables
 

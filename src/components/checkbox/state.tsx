@@ -1,4 +1,4 @@
-import { IBrandColor, ISize, IText } from 'daisyui-vue/shared/types/common';
+import { ISize, IText } from 'daisyui-vue/shared/types/common';
 
 export interface ICheckboxContext {
   value: IText[];

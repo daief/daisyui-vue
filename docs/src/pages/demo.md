@@ -15,11 +15,12 @@ export default {
       value.value = values;
     };
     return () => (
-      <dv-checkbox-group
-        options={options}
-        value={value.value}
-        onChange={onChange}
-      />
+      // <dv-checkbox-group
+      //   options={options}
+      //   value={value.value}
+      //   onChange={onChange}
+      // />
+      <dv-radio>ad</dv-radio>
     );
   },
 };
