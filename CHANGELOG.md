@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.1-alpha.9](https://github.com/daief/daisyui-vue/compare/v0.0.1-alpha.8...v0.0.1-alpha.9) (2022-11-07)
+
+
+### Features
+
+* add checkbox ([a6d1fba](https://github.com/daief/daisyui-vue/commit/a6d1fbaa86b00112e2aa5b3a9a3b7e6fcd668811))
+* add RadialProgress ([70bca2c](https://github.com/daief/daisyui-vue/commit/70bca2c9a12e2717007c34e33c7ad028fc03da6a))
+* checkbox group ([73949c8](https://github.com/daief/daisyui-vue/commit/73949c8008a8035066bb052d7325b05c279ba600))
+* radio ([45c5ab5](https://github.com/daief/daisyui-vue/commit/45c5ab54627f46c3c54dea3d6757973de4a52d86))
+
 ### [0.0.1-alpha.8](https://github.com/daief/daisyui-vue/compare/v0.0.1-alpha.7...v0.0.1-alpha.8) (2022-10-08)
 
 
