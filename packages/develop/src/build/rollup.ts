@@ -87,7 +87,17 @@ export function getRoolupConfig(opts: IBuildOptions) {
       babel({
         extensions,
         babelHelpers: 'bundled',
-        presets: ['@babel/preset-typescript'],
+        presets: [
+          [
+            '@babel/preset-env',
+            {
+              targets: {
+                chrome: '69',
+              },
+            },
+          ],
+          '@babel/preset-typescript',
+        ],
         // https://github.com/vuejs/jsx-next
         plugins: ['@vue/babel-plugin-jsx'],
       }),
