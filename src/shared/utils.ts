@@ -1,4 +1,4 @@
-import { Slots } from 'vue';
+import { isVNode, Slots, VNode, VNodeNormalizedChildren } from 'vue';
 
 export const isBrowser = typeof window !== 'undefined';
 
@@ -34,15 +34,49 @@ export function isNil(v: any) {
  * @returns
  */
 export function getRenderResult(
-  key: string,
-  props: any,
-  slots: Readonly<Slots>,
+  key: string | [propsKey: string, slotsKey: string],
+  props: any = {},
+  slots: Readonly<Slots> = {},
   renderArgs: () => any = () => void 0,
 ) {
-  return (
-    slots[key]?.(renderArgs()) ||
-    (typeof props[key] === 'function' ? props[key](renderArgs()) : props[key])
-  );
+  const [propsKey, slotsKey] = typeof key === 'string' ? [key, key] : key;
+  const getPropsResult = () => {
+    const propVal = props[propsKey];
+    return typeof propVal === 'function' ? propVal(renderArgs()) : propVal;
+  };
+  const getSlotsResult = () => slots[slotsKey]?.(renderArgs());
+  return getPropsResult() ?? getSlotsResult();
+}
+
+type IVueNode = VNode | VNodeNormalizedChildren;
+
+export function findInTree(
+  root: IVueNode | IVueNode[],
+  finder: (node: VNode) => boolean,
+) {
+  const vnodes = Array.isArray(root) ? root : [root];
+  const result: VNode[] = [];
+
+  vnodes.forEach((child) => {
+    if (Array.isArray(child)) {
+      result.push(...findInTree(child, finder));
+      return;
+    }
+
+    if (!isVNode(child)) {
+      return;
+    }
+
+    if (finder(child)) {
+      result.push(child);
+    } else if (Array.isArray(child.children)) {
+      result.push(...findInTree(child.children, finder));
+    } else if (child.component?.subTree) {
+      result.push(...findInTree(child.component.subTree, finder));
+    }
+  });
+
+  return result;
 }
 
 export function debounce<F extends (...args: any) => any>(

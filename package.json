@@ -29,7 +29,7 @@
   "devDependencies": {
     "@dv/develop": "*",
     "prettier": "^2.4.0",
-    "standard-version": "^9.3.2",
+    "standard-version": "^9.5.0",
     "vue": "*"
   },
   "publishConfig": {

@@ -13,7 +13,7 @@ export default defineComponent({
 
     return () => (
       <div class="dv-playground py-2">
-        <Tabs type="lifted" v-model={[currentTab.value, 'value']}>
+        <Tabs type="lifted" v-model={currentTab.value}>
           <Tab name="preview" title="Preview">
             <div class="preview-demo-wrap p-4 rounded-md">
               {slots.default?.()}

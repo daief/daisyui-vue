@@ -1,16 +1,19 @@
-import { ExtractFromProps, ISize } from '../../shared/types/common';
+import { ExtractFromProps, ISize, IText } from '../../shared/types/common';
 import {
   computed,
-  Fragment,
+  getCurrentInstance,
   HTMLAttributes,
   inject,
+  onUnmounted,
   PropType,
   provide,
   Ref,
-  VNode,
+  shallowRef,
+  toRef,
 } from 'vue';
 import { componentV2 } from 'daisyui-vue/shared/styled';
 import style from './style';
+import { findInTree, getRenderResult, isNil } from 'daisyui-vue/shared/utils';
 
 const ctx = Symbol('tabs');
 
@@ -18,11 +21,19 @@ const tabType = Symbol('TabType');
 
 type IType = 'bordered' | 'lifted' | 'boxed';
 
+interface ITabItem {
+  uid: number;
+  name: Ref<IText>;
+  title: (active: boolean) => any;
+  content: (active: boolean) => any;
+}
+
 interface ICtx {
   type: IType;
   size: ISize;
-  currentName: string;
-  onChange: (name: string) => void;
+  currentName: IText;
+  onCollect: (it: ITabItem, preName?: string) => void;
+  onRemove: (uid: number) => void;
 }
 
 export const tabsProps = {
@@ -33,7 +44,9 @@ export const tabsProps = {
     type: String as PropType<ISize>,
     default: 'md',
   },
-  value: String,
+  modelValue: {
+    type: [String, Number] as PropType<IText>,
+  },
 };
 export type ITabsProps = ExtractFromProps<typeof tabsProps>;
 
@@ -42,32 +55,42 @@ export const Tabs = componentV2<ITabsProps, HTMLAttributes>(
     name: 'Tabs',
     props: tabsProps,
     inheritAttrs: false,
-    emits: ['update:value'],
+    emits: ['update:modelValue'],
     setup: (props, { slots, emit, attrs }) => {
-      const onChange = (name: string) => {
-        emit('update:value', name);
+      const children: Record<number, ITabItem> = {};
+      const tabItemList = shallowRef<ITabItem[]>([]);
+
+      const onChange = (name: IText) => {
+        emit('update:modelValue', name);
       };
+
+      const instance = getCurrentInstance()!;
 
       const ctxVal: Ref<ICtx> = computed(() => ({
         type: props.type,
         size: props.size,
-        currentName: props.value,
-        onChange,
+        currentName: props.modelValue,
+        onCollect: (it: ITabItem) => {
+          children[it.uid] = it;
+
+          const tabNodeList = findInTree(
+            instance!.subTree,
+            (n) => n.type[tabType],
+          );
+          const uids = tabNodeList.map((it) => it.component?.uid);
+          if (uids.some((i) => isNil(i))) return;
+
+          tabItemList.value = uids
+            .map((uid) => children[uid])
+            .filter((p) => !!p);
+        },
+        onRemove: (uid) => {
+          delete children[uid];
+          tabItemList.value = tabItemList.value.filter((it) => it.uid !== uid);
+        },
       }));
 
       provide(ctx, ctxVal);
-
-      const getPaneInstanceFromSlot = (vnode: VNode[], list: any[] = []) => {
-        Array.from((vnode || []) as ArrayLike<VNode>).forEach((node) => {
-          const type = node.type;
-          if (type && type[tabType]) {
-            list.push(node.props);
-          } else if (type === Fragment || type === 'template') {
-            getPaneInstanceFromSlot(node.children as any, list);
-          }
-        });
-        return list;
-      };
 
       const tabHeadCls = computed(() => [
         'dv-tab',
@@ -77,10 +100,9 @@ export const Tabs = componentV2<ITabsProps, HTMLAttributes>(
 
       return () => {
         const vns = slots.default?.() || [];
-        const tabPropsList = getPaneInstanceFromSlot(vns);
 
         return (
-          <>
+          <div class="dv-tabs-wrapper">
             <div
               {...attrs}
               class={{
@@ -88,19 +110,20 @@ export const Tabs = componentV2<ITabsProps, HTMLAttributes>(
                 'dv-tabs-boxed': props.type === 'boxed',
               }}
             >
-              {tabPropsList.map((p) => (
+              {tabItemList.value.map((p) => (
                 <a
                   class={[
                     tabHeadCls.value,
                     {
-                      'dv-tab-active': props.value === p.name,
+                      'dv-tab-active':
+                        ctxVal.value.currentName === p.name.value,
                     },
                   ]}
                   onClick={() => {
-                    onChange(p.name);
+                    onChange(p.name.value);
                   }}
                 >
-                  {p.title}
+                  {p.title(ctxVal.value.currentName === p.name.value)}
                 </a>
               ))}
               {props.type === 'lifted' ? (
@@ -108,7 +131,20 @@ export const Tabs = componentV2<ITabsProps, HTMLAttributes>(
               ) : null}
             </div>
             {vns}
-          </>
+            {tabItemList.value.map((t) => (
+              <div
+                class={[
+                  'dv-tab-content',
+                  {
+                    'dv-tab-content--hidden':
+                      t.name.value !== ctxVal.value.currentName,
+                  },
+                ]}
+              >
+                {t.content(t.name.value === ctxVal.value.currentName)}
+              </div>
+            ))}
+          </div>
         );
       };
     },
@@ -116,34 +152,44 @@ export const Tabs = componentV2<ITabsProps, HTMLAttributes>(
   style,
 );
 
-export const Tab = componentV2<
-  {
-    title?: string;
-    name?: string;
+export const tabProps = {
+  title: {
+    type: [String, Number] as PropType<IText>,
   },
-  HTMLAttributes
->(
+  name: {
+    type: [String, Number] as PropType<IText>,
+  },
+};
+
+export type ITabProps = ExtractFromProps<typeof tabProps>;
+
+export const Tab = componentV2<ITabProps, HTMLAttributes>(
   {
     name: 'Tab',
     [tabType]: true,
-    props: {
-      title: String,
-      name: String,
-    },
+    props: tabProps,
     setup: (props, { slots }) => {
       const ctxVal = inject<Ref<ICtx>>(ctx);
-      return () => (
-        <div
-          class={[
-            'dv-tab-content',
-            {
-              'dv-tab-content--hidden': props.name !== ctxVal.value.currentName,
-            },
-          ]}
-        >
-          {slots.default?.()}
-        </div>
-      );
+      const renderTitle = () => getRenderResult('title', props, slots);
+      const renderContent = () =>
+        getRenderResult(['content', 'default'], props, slots);
+
+      const ins = getCurrentInstance()!;
+
+      ctxVal.value.onCollect({
+        uid: getCurrentInstance()!.uid,
+        name: toRef(props, 'name'),
+        title: renderTitle,
+        content: renderContent,
+      });
+
+      onUnmounted(() => {
+        ctxVal.value.onRemove(ins.uid);
+      });
+
+      return () => {
+        return null;
+      };
     },
   },
   style,
