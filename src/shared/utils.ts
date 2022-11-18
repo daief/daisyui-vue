@@ -26,6 +26,24 @@ export function isNil(v: any) {
 }
 
 /**
+ * @see https://developer.mozilla.org/en-US/docs/Web/API/Node/nodeType
+ * @param el
+ * @returns
+ */
+function isElementNode(el: any) {
+  return !!(el?.nodeType === 1);
+}
+
+export function isElementVNode(n: IVueNode): n is VNode {
+  return isVNode(n) && !!n.type && typeof n.type === 'string';
+}
+
+export function oneToArray<T>(o: T | T[]): T[] {
+  if (Array.isArray(o)) return o;
+  return isNil(o) ? [] : [o];
+}
+
+/**
  * 从 props、slots 中解析 render 方法的内容
  * @param key
  * @param props
@@ -38,17 +56,17 @@ export function getRenderResult(
   props: any = {},
   slots: Readonly<Slots> = {},
   renderArgs: () => any = () => void 0,
-) {
+): IVueNode[] {
   const [propsKey, slotsKey] = typeof key === 'string' ? [key, key] : key;
   const getPropsResult = () => {
     const propVal = props[propsKey];
     return typeof propVal === 'function' ? propVal(renderArgs()) : propVal;
   };
   const getSlotsResult = () => slots[slotsKey]?.(renderArgs());
-  return getPropsResult() ?? getSlotsResult();
+  return oneToArray(getSlotsResult() || getPropsResult());
 }
 
-type IVueNode = VNode | VNodeNormalizedChildren;
+export type IVueNode = VNode | VNodeNormalizedChildren;
 
 export function findInTree(
   root: IVueNode | IVueNode[],

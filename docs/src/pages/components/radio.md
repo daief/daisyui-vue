@@ -133,6 +133,8 @@ export default {
 
 ## RadioGroup
 
+### Attributes
+
 | name         | description    | type                                | default |
 | ------------ | -------------- | ----------------------------------- | ------- |
 | size         | size           | ISize                               | md      |

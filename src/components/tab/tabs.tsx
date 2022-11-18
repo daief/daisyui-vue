@@ -1,5 +1,6 @@
 import { ExtractFromProps, ISize, IText } from '../../shared/types/common';
 import {
+  cloneVNode,
   computed,
   getCurrentInstance,
   HTMLAttributes,
@@ -13,19 +14,25 @@ import {
 } from 'vue';
 import { componentV2 } from 'daisyui-vue/shared/styled';
 import style from './style';
-import { findInTree, getRenderResult, isNil } from 'daisyui-vue/shared/utils';
+import {
+  findInTree,
+  getRenderResult,
+  isElementVNode,
+  isNil,
+  IVueNode,
+} from 'daisyui-vue/shared/utils';
 
 const ctx = Symbol('tabs');
 
-const tabType = Symbol('TabType');
+const tabPanelType = Symbol('TabType');
 
 type IType = 'bordered' | 'lifted' | 'boxed';
 
 interface ITabItem {
   uid: number;
   name: Ref<IText>;
-  title: (active: boolean) => any;
-  content: (active: boolean) => any;
+  title: (active: boolean) => IVueNode[];
+  content: (active: boolean) => IVueNode[];
 }
 
 interface ICtx {
@@ -75,7 +82,7 @@ export const Tabs = componentV2<ITabsProps, HTMLAttributes>(
 
           const tabNodeList = findInTree(
             instance!.subTree,
-            (n) => n.type[tabType],
+            (n) => n.type[tabPanelType],
           );
           const uids = tabNodeList.map((it) => it.component?.uid);
           if (uids.some((i) => isNil(i))) return;
@@ -110,22 +117,27 @@ export const Tabs = componentV2<ITabsProps, HTMLAttributes>(
                 'dv-tabs-boxed': props.type === 'boxed',
               }}
             >
-              {tabItemList.value.map((p) => (
-                <a
-                  class={[
+              {tabItemList.value.map((p) => {
+                const isTitleActive = ctxVal.value.currentName === p.name.value;
+                const titleProps = {
+                  key: p.name.value,
+                  class: [
                     tabHeadCls.value,
                     {
-                      'dv-tab-active':
-                        ctxVal.value.currentName === p.name.value,
+                      'dv-tab-active': isTitleActive,
                     },
-                  ]}
-                  onClick={() => {
+                  ],
+                  onClick: () => {
                     onChange(p.name.value);
-                  }}
-                >
-                  {p.title(ctxVal.value.currentName === p.name.value)}
-                </a>
-              ))}
+                  },
+                };
+                const titleNodes = p.title(isTitleActive);
+                return isElementVNode(titleNodes[0]) ? (
+                  cloneVNode(titleNodes[0], titleProps)
+                ) : (
+                  <a {...titleProps}>{titleNodes}</a>
+                );
+              })}
               {props.type === 'lifted' ? (
                 <div class="dv-tabs-lifted-item" />
               ) : null}
@@ -133,6 +145,7 @@ export const Tabs = componentV2<ITabsProps, HTMLAttributes>(
             {vns}
             {tabItemList.value.map((t) => (
               <div
+                key={t.uid}
                 class={[
                   'dv-tab-content',
                   {
@@ -152,22 +165,23 @@ export const Tabs = componentV2<ITabsProps, HTMLAttributes>(
   style,
 );
 
-export const tabProps = {
+export const tabPanelProps = {
   title: {
-    type: [String, Number] as PropType<IText>,
+    default: '',
   },
   name: {
+    required: true,
     type: [String, Number] as PropType<IText>,
   },
 };
 
-export type ITabProps = ExtractFromProps<typeof tabProps>;
+export type ITabPanelProps = ExtractFromProps<typeof tabPanelProps>;
 
-export const Tab = componentV2<ITabProps, HTMLAttributes>(
+export const TabPanel = componentV2<ITabPanelProps, HTMLAttributes>(
   {
-    name: 'Tab',
-    [tabType]: true,
-    props: tabProps,
+    name: 'TabPanel',
+    [tabPanelType]: true,
+    props: tabPanelProps,
     setup: (props, { slots }) => {
       const ctxVal = inject<Ref<ICtx>>(ctx);
       const renderTitle = () => getRenderResult('title', props, slots);

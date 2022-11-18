@@ -46,6 +46,25 @@ for avatar
 </dv-indicator>
 ```
 
+for tab
+
+```html :::demo
+<dv-tabs type="lifted" modelValue="1">
+  <dv-tab-panel name="1">
+    <template #title>
+      <dv-indicator>
+        <dv-indicator-item>
+          <dv-badge type="secondary">1</dv-badge>
+        </dv-indicator-item>
+        <a>Tiny 1</a>
+      </dv-indicator>
+    </template>
+  </dv-tab-panel>
+  <dv-tab-panel name="2" title="Tiny2" />
+  <dv-tab-panel name="3" title="Tiny3" />
+</dv-tabs>
+```
+
 for an input
 
 ```html :::demo

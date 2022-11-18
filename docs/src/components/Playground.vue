@@ -1,6 +1,6 @@
 <script lang="tsx">
 import { defineComponent, ref } from 'vue';
-import { Tabs, Tab } from 'daisyui-vue';
+import { Tabs, TabPanel } from 'daisyui-vue';
 
 export default defineComponent({
   name: 'Playground',
@@ -14,12 +14,12 @@ export default defineComponent({
     return () => (
       <div class="dv-playground py-2">
         <Tabs type="lifted" v-model={currentTab.value}>
-          <Tab name="preview" title="Preview">
+          <TabPanel name="preview" title="Preview">
             <div class="preview-demo-wrap p-4 rounded-md">
               {slots.default?.()}
             </div>
-          </Tab>
-          <Tab name="code" title="Code">
+          </TabPanel>
+          <TabPanel name="code" title="Code">
             <pre>
               <code
                 class={`hljs language-${props.lang} rounded-md`}
@@ -27,7 +27,7 @@ export default defineComponent({
                 innerHTML={props.code}
               ></code>
             </pre>
-          </Tab>
+          </TabPanel>
         </Tabs>
       </div>
     );

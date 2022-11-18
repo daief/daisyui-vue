@@ -138,6 +138,8 @@ export default {
 
 ## CheckboxGroup
 
+### Attributes
+
 | name         | description     | type                                | default |
 | ------------ | --------------- | ----------------------------------- | ------- |
 | size         | size            | ISize                               | md      |
