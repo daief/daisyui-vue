@@ -31,8 +31,8 @@ type IType = 'bordered' | 'lifted' | 'boxed';
 interface ITabItem {
   uid: number;
   name: Ref<IText>;
-  title: (active: boolean) => IVueNode[];
-  content: (active: boolean) => IVueNode[];
+  title: (arg: { active: boolean }) => IVueNode[];
+  content: (arg: { active: boolean }) => IVueNode[];
 }
 
 interface ICtx {
@@ -135,7 +135,9 @@ export const Tabs = componentV2<ITabsProps, HTMLAttributes>(
                   },
                 ]}
               >
-                {t.content(t.name.value === ctxVal.value.currentName)}
+                {t.content({
+                  active: t.name.value === ctxVal.value.currentName,
+                })}
               </div>
             ))}
           </div>
@@ -201,33 +203,38 @@ const TabTitle = componentV2<
   name: 'TabTitle',
   setup: (_, { attrs }) => {
     const ctxVal = inject<Ref<ICtx>>(ctx);
-    const isTitleActive = ctxVal.value.currentName === attrs.name.value;
+    const isTitleActive = computed(
+      () => ctxVal.value.currentName === attrs.name.value,
+    );
 
     const tabHeadCls = computed(() => [
       'dv-tab',
-      `dv-tab-${attrs.type}`,
-      `dv-tab-${attrs.size}`,
+      {
+        [`dv-tab-${attrs.type}`]: !!attrs.type,
+        [`dv-tab-${attrs.size}`]: !!attrs.size,
+      },
     ]);
 
-    const titleProps = {
-      key: attrs.name.value,
+    const handleOnClick = () => {
+      ctxVal.value.onChange(attrs.name.value);
+    };
+
+    const titleProps = computed(() => ({
       class: [
         tabHeadCls.value,
         {
-          'dv-tab-active': isTitleActive,
+          'dv-tab-active': isTitleActive.value,
         },
       ],
-      onClick: () => {
-        ctxVal.value.onChange(attrs.name.value);
-      },
-    };
+      onClick: handleOnClick,
+    }));
 
     return () => {
-      const titleNodes = attrs.title(isTitleActive);
+      const titleNodes = attrs.title({ active: isTitleActive.value });
       return isElementVNode(titleNodes[0]) ? (
-        cloneVNode(titleNodes[0], titleProps)
+        cloneVNode(titleNodes[0], titleProps.value)
       ) : (
-        <a {...titleProps}>{titleNodes}</a>
+        <a {...titleProps.value}>{titleNodes}</a>
       );
     };
   },
