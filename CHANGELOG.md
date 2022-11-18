@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.1-alpha.11](https://github.com/daief/daisyui-vue/compare/v0.0.1-alpha.10...v0.0.1-alpha.11) (2022-11-18)
+
+
+### Bug Fixes
+
+* 💥 tab title render & tab doc & rename Tab to TabPanel ([e81eb0b](https://github.com/daief/daisyui-vue/commit/e81eb0bb2c327b0a9c492b7968c06d76ef447fad))
+
 ### [0.0.1-alpha.10](https://github.com/daief/daisyui-vue/compare/v0.0.1-alpha.9...v0.0.1-alpha.10) (2022-11-07)
 
 ### [0.0.1-alpha.9](https://github.com/daief/daisyui-vue/compare/v0.0.1-alpha.8...v0.0.1-alpha.9) (2022-11-07)
