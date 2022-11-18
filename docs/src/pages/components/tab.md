@@ -189,11 +189,11 @@ export default {
 
 ### Attributes
 
-| name    | description | type                    | default |
-| ------- | ----------- | ----------------------- | ------- |
-| type    | tabs type   | bordered, lifted, boxed | -       |
-| size    | tabs size   | ISize                   | md      |
-| v-model | tabs value  | -                       | -       |
+| name    | description | type                    | default  |
+| ------- | ----------- | ----------------------- | -------- |
+| type    | tabs type   | bordered, lifted, boxed | bordered |
+| size    | tabs size   | ISize                   | md       |
+| v-model | tabs value  | -                       | -        |
 
 ## TabPanel
 

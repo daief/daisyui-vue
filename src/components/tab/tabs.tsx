@@ -47,6 +47,7 @@ interface ICtx {
 export const tabsProps = {
   type: {
     type: String as PropType<IType>,
+    default: 'bordered',
   },
   size: {
     type: String as PropType<ISize>,
