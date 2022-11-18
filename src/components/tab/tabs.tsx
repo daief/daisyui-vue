@@ -41,6 +41,7 @@ interface ICtx {
   currentName: IText;
   onCollect: (it: ITabItem, preName?: string) => void;
   onRemove: (uid: number) => void;
+  onChange: (val: IText) => void;
 }
 
 export const tabsProps = {
@@ -77,6 +78,7 @@ export const Tabs = componentV2<ITabsProps, HTMLAttributes>(
         type: props.type,
         size: props.size,
         currentName: props.modelValue,
+        onChange,
         onCollect: (it: ITabItem) => {
           children[it.uid] = it;
 
@@ -99,45 +101,24 @@ export const Tabs = componentV2<ITabsProps, HTMLAttributes>(
 
       provide(ctx, ctxVal);
 
-      const tabHeadCls = computed(() => [
-        'dv-tab',
-        `dv-tab-${props.type}`,
-        `dv-tab-${props.size}`,
-      ]);
+      const tabsCls = computed(() => ({
+        'dv-tabs': true,
+        'dv-tabs-boxed': props.type === 'boxed',
+      }));
 
       return () => {
         const vns = slots.default?.() || [];
-
         return (
           <div class="dv-tabs-wrapper">
-            <div
-              {...attrs}
-              class={{
-                'dv-tabs': true,
-                'dv-tabs-boxed': props.type === 'boxed',
-              }}
-            >
-              {tabItemList.value.map((p) => {
-                const isTitleActive = ctxVal.value.currentName === p.name.value;
-                const titleProps = {
-                  key: p.name.value,
-                  class: [
-                    tabHeadCls.value,
-                    {
-                      'dv-tab-active': isTitleActive,
-                    },
-                  ],
-                  onClick: () => {
-                    onChange(p.name.value);
-                  },
-                };
-                const titleNodes = p.title(isTitleActive);
-                return isElementVNode(titleNodes[0]) ? (
-                  cloneVNode(titleNodes[0], titleProps)
-                ) : (
-                  <a {...titleProps}>{titleNodes}</a>
-                );
-              })}
+            <div {...attrs} class={tabsCls.value}>
+              {tabItemList.value.map((p) => (
+                <TabTitle
+                  key={p.name.value}
+                  {...p}
+                  type={props.type}
+                  size={props.size}
+                />
+              ))}
               {props.type === 'lifted' ? (
                 <div class="dv-tabs-lifted-item" />
               ) : null}
@@ -208,3 +189,46 @@ export const TabPanel = componentV2<ITabPanelProps, HTMLAttributes>(
   },
   style,
 );
+
+/** internal, for performance */
+const TabTitle = componentV2<
+  {},
+  ITabItem & {
+    type: IType;
+    size: ISize;
+  }
+>({
+  name: 'TabTitle',
+  setup: (_, { attrs }) => {
+    const ctxVal = inject<Ref<ICtx>>(ctx);
+    const isTitleActive = ctxVal.value.currentName === attrs.name.value;
+
+    const tabHeadCls = computed(() => [
+      'dv-tab',
+      `dv-tab-${attrs.type}`,
+      `dv-tab-${attrs.size}`,
+    ]);
+
+    const titleProps = {
+      key: attrs.name.value,
+      class: [
+        tabHeadCls.value,
+        {
+          'dv-tab-active': isTitleActive,
+        },
+      ],
+      onClick: () => {
+        ctxVal.value.onChange(attrs.name.value);
+      },
+    };
+
+    return () => {
+      const titleNodes = attrs.title(isTitleActive);
+      return isElementVNode(titleNodes[0]) ? (
+        cloneVNode(titleNodes[0], titleProps)
+      ) : (
+        <a {...titleProps}>{titleNodes}</a>
+      );
+    };
+  },
+});

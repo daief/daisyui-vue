@@ -1,26 +1,35 @@
 # Demo for development
 
 ```tsx :::run
+import { Tabs, TabPanel } from 'daisyui-vue';
 import { ref } from 'vue';
 
 export default {
   setup: () => {
-    const options = [
-      { value: 'apple', label: 'Apple' },
-      { value: 'pear', label: 'Pear' },
-      { value: 'orange', label: 'Orange' },
-    ];
-    const value = ref(['apple', 'pear']);
-    const onChange = (values) => {
-      value.value = values;
+    const currentTab = ref('1');
+    const slots = {
+      default: () => 'Content 3',
+      title: () => <a style="color: blue">Title Slot</a>,
     };
+
     return () => (
-      // <dv-checkbox-group
-      //   options={options}
-      //   value={value.value}
-      //   onChange={onChange}
-      // />
-      <dv-radio>ad</dv-radio>
+      <div>
+        <Tabs v-model={currentTab.value}>
+          <TabPanel
+            name="1"
+            title={() => <a style="color: red">Render Props</a>}
+          >
+            Content 1
+          </TabPanel>
+          <TabPanel
+            name="2"
+            title={<a style="color: orange">VNode As Props</a>}
+          >
+            Content 2
+          </TabPanel>
+          <TabPanel name="3">{slots}</TabPanel>
+        </Tabs>
+      </div>
     );
   },
 };
