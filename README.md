@@ -1,17 +1,27 @@
 # daisyui-vue
 
-基于 [daisyui](https://github.com/saadeghi/daisyui) 封装的 vue 组件库。
+Vue3 UI components based on [daisyui](https://github.com/saadeghi/daisyui).
 
 ## Usage
 
-全局注册：
+Install:
+
+```bash
+$ pnpm add daisyui-vue
+# or
+$ npm add daisyui-vue
+# or
+$ yarn add daisyui-vue
+```
+
+Import all(❌ not recommended):
 
 ```tsx
 // main.ts
 import daisyui from 'daisyui-vue';
 import { createApp, defineComponent } from 'vue';
 
-app.use(daisyui); // 注册
+app.use(daisyui); // register all components expect icons
 
 // App.tsx
 const App = defineComponent({
@@ -28,7 +38,7 @@ const App = defineComponent({
 });
 ```
 
-按需使用：
+Use as needed(👍 recommended):
 
 ```tsx
 // main.ts
@@ -38,9 +48,11 @@ const app = createApp({
   // ...
 });
 
-app.use(installTheme); // 注册组件库 context，当需要提取首屏样式时使用，否则可以不注册
+// optional, install theme only when SSR to extract critical css
+app.use(installTheme);
 
 // App.tsx
+// import what you need
 import { Button } from 'daisyui-vue';
 
 const App = defineComponent({
@@ -57,7 +69,7 @@ const App = defineComponent({
 });
 ```
 
-SSR 提取首屏样式，避免 FOUC 问题：
+Avoid `FOUC` problem when SSR:
 
 ```tsx
 // entry-server.ts

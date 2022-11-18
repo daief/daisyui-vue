@@ -59,28 +59,28 @@ with colors
   class="text-center grid grid-cols-1 lg:grid-cols-5 my-10 place-items-center gap-y-12"
 >
   <dv-tooltip content="hello" open placement="top" type="netural">
-    <dv-button type="netural">netural</dv-button>
+    <dv-button variant="netural">netural</dv-button>
   </dv-tooltip>
   <dv-tooltip content="hello" open placement="top" type="primary">
-    <dv-button type="primary">primary</dv-button>
+    <dv-button variant="primary">primary</dv-button>
   </dv-tooltip>
   <dv-tooltip content="hello" open placement="top" type="secondary">
-    <dv-button type="secondary">secondary</dv-button>
+    <dv-button variant="secondary">secondary</dv-button>
   </dv-tooltip>
   <dv-tooltip content="hello" open placement="top" type="accent">
-    <dv-button type="accent">accent</dv-button>
+    <dv-button variant="accent">accent</dv-button>
   </dv-tooltip>
   <dv-tooltip content="hello" open placement="top" type="info">
-    <dv-button type="info">info</dv-button>
+    <dv-button variant="info">info</dv-button>
   </dv-tooltip>
   <dv-tooltip content="hello" open placement="top" type="success">
-    <dv-button type="success">success</dv-button>
+    <dv-button variant="success">success</dv-button>
   </dv-tooltip>
   <dv-tooltip content="hello" open placement="top" type="warning">
-    <dv-button type="warning">warning</dv-button>
+    <dv-button variant="warning">warning</dv-button>
   </dv-tooltip>
   <dv-tooltip content="hello" open placement="top" type="error">
-    <dv-button type="error">error</dv-button>
+    <dv-button variant="error">error</dv-button>
   </dv-tooltip>
 </div>
 ```
