@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.1-alpha.12](https://github.com/daief/daisyui-vue/compare/v0.0.1-alpha.11...v0.0.1-alpha.12) (2022-11-18)
+
+
+### Bug Fixes
+
+* tab title active status ([3068d81](https://github.com/daief/daisyui-vue/commit/3068d81d8946107f7ce369093f5a2d961d32206f))
+
 ### [0.0.1-alpha.11](https://github.com/daief/daisyui-vue/compare/v0.0.1-alpha.10...v0.0.1-alpha.11) (2022-11-18)
 
 
