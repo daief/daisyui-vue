@@ -32,8 +32,6 @@ export default {
 
 custom title
 
-tabs
-
 ```tsx :::run
 import { Tabs, TabPanel } from 'daisyui-vue';
 import { ref } from 'vue';

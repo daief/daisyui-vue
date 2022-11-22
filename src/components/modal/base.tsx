@@ -1,4 +1,4 @@
-import { useEventListener } from 'daisyui-vue/shared/hooks/useEventListener';
+import { useEventListener } from 'daisyui-vue/shared/hooks/use-event-listener';
 import { componentV2 } from 'daisyui-vue/shared/styled';
 import { ExtractFromProps } from 'daisyui-vue/shared/types/common';
 import { getRenderResult } from 'daisyui-vue/shared/utils';

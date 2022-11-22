@@ -6,7 +6,7 @@ export { install as default, installTheme } from './install';
 
 export const version = VERSION;
 
-import { useMedia, useMediaParse, useMedias } from './shared/hooks/useMedia';
+import { useMedia, useMediaParse, useMedias } from './shared/hooks/use-media';
 
 /**
  * @private

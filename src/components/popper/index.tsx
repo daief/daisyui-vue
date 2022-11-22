@@ -1,4 +1,4 @@
-import { useActiveChange } from 'daisyui-vue/shared/hooks/useActiveChange';
+import { useActiveChange } from 'daisyui-vue/shared/hooks/use-active-change';
 import { componentV2 } from 'daisyui-vue/shared/styled';
 import { ExtractFromProps } from 'daisyui-vue/shared/types/common';
 import {

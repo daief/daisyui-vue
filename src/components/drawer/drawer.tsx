@@ -1,4 +1,4 @@
-import { useMediaParse } from 'daisyui-vue/shared/hooks/useMedia';
+import { useMediaParse } from 'daisyui-vue/shared/hooks/use-media';
 import { componentV2 } from 'daisyui-vue/shared/styled';
 import { ExtractFromProps } from 'daisyui-vue/shared/types/common';
 import { getRenderResult } from 'daisyui-vue/shared/utils';

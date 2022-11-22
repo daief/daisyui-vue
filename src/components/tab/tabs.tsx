@@ -1,3 +1,4 @@
+// TODO SSR fail ?
 import { ExtractFromProps, ISize, IText } from '../../shared/types/common';
 import {
   cloneVNode,
@@ -111,6 +112,7 @@ export const Tabs = componentV2<ITabsProps, HTMLAttributes>(
         const vns = slots.default?.() || [];
         return (
           <div class="dv-tabs-wrapper">
+            {vns}
             <div {...attrs} class={tabsCls.value}>
               {tabItemList.value.map((p) => (
                 <TabTitle
@@ -124,7 +126,6 @@ export const Tabs = componentV2<ITabsProps, HTMLAttributes>(
                 <div class="dv-tabs-lifted-item" />
               ) : null}
             </div>
-            {vns}
             {tabItemList.value.map((t) => (
               <div
                 key={t.uid}
