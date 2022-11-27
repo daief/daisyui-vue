@@ -10,9 +10,7 @@ import {
   Teleport,
   Transition,
   TransitionProps,
-  vShow,
   watch,
-  withDirectives,
 } from 'vue';
 import style from './style/base.less';
 
@@ -43,7 +41,7 @@ export const modalBaseProps = {
     (e: MouseEvent | KeyboardEvent, trigger: 'esc' | 'mask') => void
   >,
 
-  custom: { default: '' },
+  custom: { default: null },
   destroyOnClose: Boolean,
   transitionProps: {
     type: Object as PropType<Partial<TransitionProps>>,
@@ -101,7 +99,7 @@ export const ModalBase = componentV2<IModalBaseProps>(
         },
       );
 
-      const getCustomNode = () => getRenderResult('custom', props, slots);
+      const getCustomNodes = () => getRenderResult('custom', props, slots);
 
       return () => {
         const toContainer =
@@ -116,32 +114,31 @@ export const ModalBase = componentV2<IModalBaseProps>(
               duration={300}
               {...props.transitionProps}
             >
-              {state.hasTriggered
-                ? withDirectives(
-                    <div
-                      {...attrs}
-                      tabindex={-1}
-                      role="presentation"
-                      class="dv-modal-base"
-                      style={maskStyle.value}
-                      onClick={handleClickMask}
-                      data-modal-status={props.open ? 'open' : 'close'}
-                    >
-                      {(() => {
-                        if (!props.open && props.destroyOnClose) {
-                          return null;
-                        }
+              {state.hasTriggered ? (
+                <div
+                  {...attrs}
+                  tabindex={-1}
+                  role="presentation"
+                  class="dv-modal-base"
+                  style={maskStyle.value}
+                  onClick={handleClickMask}
+                  data-modal-status={props.open ? 'open' : 'close'}
+                  v-show={props.open}
+                >
+                  {(() => {
+                    if (!props.open && props.destroyOnClose) {
+                      return null;
+                    }
 
-                        return (
-                          getCustomNode() || (
-                            <div class="dv-modal-box">{slots.default?.()}</div>
-                          )
-                        );
-                      })()}
-                    </div>,
-                    [[vShow, props.open]],
-                  )
-                : null}
+                    const customNodes = getCustomNodes();
+                    return customNodes.length ? (
+                      customNodes
+                    ) : (
+                      <div class="dv-modal-box">{slots.default?.()}</div>
+                    );
+                  })()}
+                </div>
+              ) : null}
             </Transition>
           </Teleport>
         );
