@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.1-alpha.13](https://github.com/daief/daisyui-vue/compare/v0.0.1-alpha.12...v0.0.1-alpha.13) (2022-11-27)
+
+
+### Bug Fixes
+
+* modal children render ([6bac0bd](https://github.com/daief/daisyui-vue/commit/6bac0bdfd7f2319923412113bc873a9079bf0a39))
+* tab type add default value bordered ([d3d74f3](https://github.com/daief/daisyui-vue/commit/d3d74f3499d823259ab5eaa98e99e92751c3412a))
+
 ### [0.0.1-alpha.12](https://github.com/daief/daisyui-vue/compare/v0.0.1-alpha.11...v0.0.1-alpha.12) (2022-11-18)
 
 
