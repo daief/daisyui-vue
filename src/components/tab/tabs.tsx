@@ -203,6 +203,7 @@ const TabTitle = componentV2<
   }
 >({
   name: 'TabTitle',
+  inheritAttrs: false,
   setup: (_, { attrs }) => {
     const ctxVal = inject<Ref<ICtx>>(ctx);
     const isTitleActive = computed(

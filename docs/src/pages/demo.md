@@ -14,21 +14,9 @@ export default {
 
     return () => (
       <div>
-        <Tabs v-model={currentTab.value}>
-          <TabPanel
-            name="1"
-            title={() => <a style="color: red">Render Props</a>}
-          >
-            Content 1
-          </TabPanel>
-          <TabPanel
-            name="2"
-            title={<a style="color: orange">VNode As Props</a>}
-          >
-            Content 2
-          </TabPanel>
-          <TabPanel name="3">{slots}</TabPanel>
-        </Tabs>
+        <dv-element onClick={console.log} variant="info" class="xs">
+          asd
+        </dv-element>
       </div>
     );
   },

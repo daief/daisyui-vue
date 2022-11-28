@@ -27,3 +27,5 @@ export * from './tab';
 export * from './table';
 export * from './toggle';
 export * from './tooltip';
+
+export * from './_widgets/element';
