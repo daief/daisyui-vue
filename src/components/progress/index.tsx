@@ -45,7 +45,7 @@ export const radialProgressProps = {
   },
   size: {
     type: [Number, String] as PropType<number | string>,
-    default: '5rem',
+    default: '80px',
   },
   thickness: {
     type: [Number, String] as PropType<number | string>,

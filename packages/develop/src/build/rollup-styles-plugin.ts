@@ -1,8 +1,25 @@
 import { Plugin } from 'rollup';
+import postcss, { Plugin as PostcssPlugin } from 'postcss';
 
-const postcss = require('postcss');
 // const postcssJs = require('postcss-js');
 const less = require('less');
+
+const postcssRemToPx = (): PostcssPlugin => {
+  const base = 16;
+  return {
+    postcssPlugin: 'postcssRemToPx',
+    Rule(rule) {
+      rule.walkDecls((decl) => {
+        const reg = /(\d*\.?\d+)rem/gis;
+        const res = decl.value.matchAll(reg);
+        for (const it of res) {
+          const px = +it[1] * base + 'px';
+          decl.value = decl.value.replace(it[0], px);
+        }
+      });
+    },
+  };
+};
 
 export const createStylesPlugin = (tailwindConfig: any) => {
   tailwindConfig = { ...tailwindConfig };
@@ -23,6 +40,7 @@ export const createStylesPlugin = (tailwindConfig: any) => {
         },
       ],
     }),
+    postcssRemToPx(),
   ]);
 
   const uid = (() => {

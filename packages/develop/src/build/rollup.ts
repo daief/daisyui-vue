@@ -24,7 +24,7 @@ export function getRoolupConfig(opts: IBuildOptions) {
 
   const components = fs
     .readdirSync(workspace('src/components'))
-    .filter((cpt) => !['index.tsx', '_styles'].includes(cpt));
+    .filter((cpt) => !['index.tsx', '_styles', '_widgets'].includes(cpt));
 
   const entries = components.reduce<Record<string, string>>((res, curr) => {
     const p = `components/${curr}/index`;
