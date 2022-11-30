@@ -1,0 +1,3 @@
+.dv-kbd {
+  @apply inline-flex items-center justify-center;
+}

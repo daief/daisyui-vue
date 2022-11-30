@@ -122,7 +122,7 @@ export function render() {
 - [x] icon - 🛠 [xicons](https://github.com/07akioni/xicons)
 - [x] indicator
 - [x] input
-- [ ] kbd
+- [x] kbd
 - [x] link
 - [x] mask
 - [x] menu
