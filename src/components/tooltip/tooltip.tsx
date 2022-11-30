@@ -8,7 +8,7 @@ export const toolTipprops = {
   ...popperProps,
   type: {
     type: String as PropType<IColorType>,
-    default: 'netural',
+    default: 'neutral',
   },
 };
 

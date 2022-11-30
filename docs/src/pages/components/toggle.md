@@ -46,5 +46,5 @@ Toggle size
 | -------- | ---------------------------------- | ----------------------------------- | ------- |
 | checked  | toggle checked status              | boolean                             | -       |
 | onChange | toggle checked status change event | Function                            | -       |
-| type     | toogle color type                  | netural, primary, secondary, accent | netural |
+| type     | toogle color type                  | neutral, primary, secondary, accent | neutral |
 | size     | toogle size                        | xs, sm, md, lg                      | -       |

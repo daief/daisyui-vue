@@ -11,7 +11,7 @@ export const badgeProps = {
   outline: { type: Boolean, default: void 0 },
   type: {
     type: String as PropType<IColorType | 'ghost'>,
-    default: 'netural',
+    default: 'neutral',
   },
   size: {
     type: String as PropType<ISize>,

@@ -20,7 +20,7 @@ export const toggleProps = {
   },
   type: {
     type: String as PropType<IBrandColor>,
-    default: 'netural',
+    default: 'neutral',
   },
   size: {
     type: String as PropType<ISize>,

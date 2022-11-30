@@ -114,6 +114,8 @@ export function render() {
 - [x] divider
 - [x] drawer - 🛠 refactor
 - [x] dropdown - 🛠 refactor(popper inside)
+- [ ] widgets 🆕 new
+  - [x] element
 - [ ] footer
 - [ ] hero
 - [x] icon - 🛠 [xicons](https://github.com/07akioni/xicons)

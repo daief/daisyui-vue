@@ -8,7 +8,7 @@ badge
 <div
   class="flex flex-wrap items-start md:space-x-2 space-y-2 md:space-y-0 flex-col md:flex-row"
 >
-  <dv-badge>netural</dv-badge>
+  <dv-badge>neutral</dv-badge>
   <dv-badge type="primary">primary</dv-badge>
   <dv-badge type="secondary">secondary</dv-badge>
   <dv-badge type="accent">accent</dv-badge>
@@ -77,7 +77,7 @@ badge outline
 <div
   class="flex flex-wrap items-start md:space-x-2 space-y-2 md:space-y-0 flex-col md:flex-row"
 >
-  <dv-badge outline>netural</dv-badge>
+  <dv-badge outline>neutral</dv-badge>
   <dv-badge outline type="primary">primary</dv-badge>
   <dv-badge outline type="secondary">secondary</dv-badge>
   <dv-badge outline type="accent">accent</dv-badge>
@@ -142,6 +142,6 @@ badge in button
 
 | name    | description                              | type                                                                                   | default |
 | ------- | ---------------------------------------- | -------------------------------------------------------------------------------------- | ------- |
-| type    | color type                               | netural, primary, secondary, accent, info, success, warning, error, ghost, link, glass | netural |
+| type    | color type                               | neutral, primary, secondary, accent, info, success, warning, error, ghost, link, glass | neutral |
 | size    | size                                     | ISize                                                                                  | md      |
 | outline | transparent badge with [colorful] border | boolean                                                                                | false   |

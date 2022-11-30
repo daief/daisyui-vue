@@ -95,6 +95,6 @@ Disabled
 
 | name   | description      | type                                                                      | default |
 | ------ | ---------------- | ------------------------------------------------------------------------- | ------- |
-| type   | input color type | netural, primary, secondary, accent, info, success, warning, error, ghost | netural |
+| type   | input color type | neutral, primary, secondary, accent, info, success, warning, error, ghost | neutral |
 | size   | input size       | ISize                                                                     | md      |
 | border | input border     | boolean                                                                   | true    |

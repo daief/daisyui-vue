@@ -34,7 +34,7 @@ export const Element = componentV2<IElementProps, HTMLAttributes>(
         let color = '';
 
         if (props.variant) {
-          bg = COLORS[props.variant];
+          bg = COLORS[props.variant] || 'none';
           bgContent = props.variant.startsWith('base-')
             ? COLORS['base-content']
             : COLORS[`${props.variant}-content`];

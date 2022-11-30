@@ -30,7 +30,7 @@ Color type
 ```tsx :::run
 export default {
   setup: () => {
-    const types = ['netural', 'primary', 'secondary', 'accent'];
+    const types = ['neutral', 'primary', 'secondary', 'accent'];
     return () => (
       <div class="flex flex-col items-center space-y-4">
         {types.map((type) => (
@@ -127,7 +127,7 @@ export default {
 | name           | description                                               | type                                | default |
 | -------------- | --------------------------------------------------------- | ----------------------------------- | ------- |
 | size           | size                                                      | ISize                               | md      |
-| type           | color type                                                | netural, primary, secondary, accent | netural |
+| type           | color type                                                | neutral, primary, secondary, accent | neutral |
 | disabled       | disable status                                            | bool                                | -       |
 | checked        | checked status                                            | bool                                | -       |
 | onChange       | change callback                                           | Function                            | -       |
@@ -143,7 +143,7 @@ export default {
 | name         | description     | type                                | default |
 | ------------ | --------------- | ----------------------------------- | ------- |
 | size         | size            | ISize                               | md      |
-| type         | color type      | netural, primary, secondary, accent | netural |
+| type         | color type      | neutral, primary, secondary, accent | neutral |
 | disabled     | disable status  | bool                                | -       |
 | options      | options         | IOption[]                           | -       |
 | value        | selected values | IText[]                             | -       |

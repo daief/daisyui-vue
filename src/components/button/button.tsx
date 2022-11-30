@@ -31,11 +31,11 @@ export const buttonProps = {
   noAnimation: Boolean,
   variant: {
     type: String as PropType<IButtonType>,
-    default: 'netural',
+    default: 'neutral',
   },
   shape: {
     type: String as PropType<IButtonShape>,
-    default: 'netural',
+    default: 'neutral',
   },
   size: {
     type: String as PropType<ISize>,

@@ -8,7 +8,7 @@ button with brand colors
 <div
   class="flex flex-wrap items-start md:space-x-2 space-y-2 md:space-y-0 flex-col md:flex-row"
 >
-  <dv-button>netural</dv-button>
+  <dv-button>neutral</dv-button>
   <dv-button variant="primary">secondary</dv-button>
   <dv-button variant="secondary">secondary</dv-button>
   <dv-button variant="accent">accent</dv-button>
@@ -23,7 +23,7 @@ active state button
 <div
   class="flex flex-wrap items-start md:space-x-2 space-y-2 md:space-y-0 flex-col md:flex-row"
 >
-  <dv-button active>netural</dv-button>
+  <dv-button active>neutral</dv-button>
   <dv-button active variant="primary">secondary</dv-button>
   <dv-button active variant="secondary">secondary</dv-button>
   <dv-button active variant="accent">accent</dv-button>
@@ -38,7 +38,7 @@ outline button
 <div
   class="flex flex-wrap items-start md:space-x-2 space-y-2 md:space-y-0 flex-col md:flex-row"
 >
-  <dv-button outline>netural</dv-button>
+  <dv-button outline>neutral</dv-button>
   <dv-button variant="primary" outline>secondary</dv-button>
   <dv-button variant="secondary" outline>secondary</dv-button>
   <dv-button variant="accent" outline>accent</dv-button>
@@ -51,7 +51,7 @@ disabled button
 <div
   class="flex flex-wrap items-start md:space-x-2 space-y-2 md:space-y-0 flex-col md:flex-row"
 >
-  <dv-button disabled>netural</dv-button>
+  <dv-button disabled>neutral</dv-button>
   <dv-button variant="primary" disabled>secondary</dv-button>
   <dv-button variant="secondary" disabled>secondary</dv-button>
   <dv-button variant="accent" disabled>accent</dv-button>
@@ -150,7 +150,7 @@ button loading
   <div
     class="w-full flex flex-wrap justify-center items-center md:space-x-2 space-y-2 md:space-y-0 flex-col md:flex-row mb-4"
   >
-    <dv-button loading>netural</dv-button>
+    <dv-button loading>neutral</dv-button>
     <dv-button loading variant="primary">secondary</dv-button>
     <dv-button loading variant="accent">accent</dv-button>
     <dv-button loading variant="ghost">ghost</dv-button>
@@ -270,7 +270,7 @@ button group outline
 
 | name        | description                            | type                                                                                   | default |
 | ----------- | -------------------------------------- | -------------------------------------------------------------------------------------- | ------- |
-| variant     | button color type                      | netural, primary, secondary, accent, info, success, warning, error, ghost, link, glass | netural |
+| variant     | button color type                      | neutral, primary, secondary, accent, info, success, warning, error, ghost, link, glass | neutral |
 | size        | button size                            | ISize                                                                                  | md      |
 | shape       | button shape                           | default, circle, square                                                                | default |
 | block       | full with button                       | boolean                                                                                | false   |

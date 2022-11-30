@@ -95,7 +95,7 @@ export default {
           size="xs"
           data-pls={plsKey}
           onClick={() => (pls.value = plsKey)}
-          type={plsKey === pls.value ? 'primary' : 'netural'}
+          type={plsKey === pls.value ? 'primary' : 'neutral'}
         >
           {plsKey}
         </dv-button>

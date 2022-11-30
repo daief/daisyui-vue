@@ -58,8 +58,8 @@ with colors
 <div
   class="text-center grid grid-cols-1 lg:grid-cols-5 my-10 place-items-center gap-y-12"
 >
-  <dv-tooltip content="hello" open placement="top" type="netural">
-    <dv-button variant="netural">netural</dv-button>
+  <dv-tooltip content="hello" open placement="top" type="neutral">
+    <dv-button variant="neutral">neutral</dv-button>
   </dv-tooltip>
   <dv-tooltip content="hello" open placement="top" type="primary">
     <dv-button variant="primary">primary</dv-button>
@@ -91,6 +91,6 @@ with colors
 
 | name | description | type                                                               | default |
 | ---- | ----------- | ------------------------------------------------------------------ | ------- |
-| type | color type  | netural, primary, secondary, accent, info, success, warning, error | netural |
+| type | color type  | neutral, primary, secondary, accent, info, success, warning, error | neutral |
 
 Others attributes are same as `Popper`.

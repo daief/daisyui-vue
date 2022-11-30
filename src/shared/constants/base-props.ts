@@ -11,13 +11,13 @@ export const sizeProps = {
 export const colorTypeProps = {
   type: {
     type: String as PropType<IColorType>,
-    default: 'netural',
+    default: 'neutral',
   },
 };
 
 export const brandTypeProps = {
   type: {
     type: String as PropType<IBrandColor>,
-    default: 'netural',
+    default: 'neutral',
   },
 };

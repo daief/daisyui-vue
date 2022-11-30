@@ -4,7 +4,7 @@ export type ISize = 'xs' | 'sm' | 'md' | 'lg';
 
 export type IStateColor = 'info' | 'success' | 'warning' | 'error';
 
-export type IBrandColor = 'netural' | 'primary' | 'secondary' | 'accent';
+export type IBrandColor = 'neutral' | 'primary' | 'secondary' | 'accent';
 
 export type IColorType = IBrandColor | IStateColor;
 

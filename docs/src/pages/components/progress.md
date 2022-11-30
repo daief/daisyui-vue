@@ -157,7 +157,7 @@ Custom size and custom thickness
 
 | name  | description            | type                                                               | default |
 | ----- | ---------------------- | ------------------------------------------------------------------ | ------- |
-| type  | progress color type    | netural, primary, secondary, accent, info, success, warning, error | netural |
+| type  | progress color type    | neutral, primary, secondary, accent, info, success, warning, error | neutral |
 | value | current progress value | number                                                             | 0       |
 | max   | max progress value     | number                                                             | 100     |
 
@@ -167,7 +167,7 @@ Custom size and custom thickness
 
 | name      | description                   | type                                                               | default   |
 | --------- | ----------------------------- | ------------------------------------------------------------------ | --------- |
-| type      | progress color type           | netural, primary, secondary, accent, info, success, warning, error | netural   |
+| type      | progress color type           | neutral, primary, secondary, accent, info, success, warning, error | neutral   |
 | value     | current progress value, 0~100 | number                                                             | 0         |
 | size      | circle size                   | number, string                                                     | 5rem      |
 | thickness | thickness size                | number, string                                                     | size / 10 |
