@@ -97,6 +97,7 @@ export function render() {
 - [x] pre insert all global style
 - [ ] popper/modal/drawer animation(maybe some preset animations)
   - [x] modal, drawer
+- [ ] refine theme usage
 
 ## Components
 
@@ -154,6 +155,6 @@ export function render() {
 
 ## 命名规则
 
-- 事件名称，`onNameAction`：onMaskClick、onEscKeyDown
-- 事件控制，`xxxYyable`: keyboardCloseable
-- 响应式：mobile first
+- event handler name, `onNameAction`: onMaskClick、onEscKeyDown
+- action flag name, `xxxYyable`: keyboardCloseable
+- responsive: mobile first

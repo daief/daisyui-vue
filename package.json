@@ -13,7 +13,7 @@
   "scripts": {
     "build": "rm -rf dist && NODE_ENV=production rollup -c",
     "watch": "NODE_ENV=development rollup -c -w",
-    "init": "dv init",
+    "dvinit": "dv init",
     "icons": "dv icons",
     "release": "standard-version",
     "pre:release": "pnpm run release --prerelease=alpha",
@@ -36,7 +36,14 @@
     "registry": "https://registry.npmjs.org/",
     "access": "public"
   },
-  "description": "基于 daisyui 封装的 vue 组件库。",
+  "description": "Vue3 UI components based on [daisyui](https://github.com/saadeghi/daisyui).",
+  "keywords": [
+    "Vue",
+    "Vue3",
+    "UI Library",
+    "UI Components",
+    "Daisyui"
+  ],
   "bugs": {
     "url": "https://github.com/daief/daisyui-vue/issues"
   }

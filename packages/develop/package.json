@@ -22,7 +22,7 @@
     "autoprefixer": "^10.3.4",
     "cac": "^6.7.14",
     "cssnano": "^5.0.10",
-    "daisyui": "2.27.0",
+    "daisyui": "2.42.1",
     "download-git-repo": "^3.0.2",
     "fs-extra": "^10.0.1",
     "glob": "^7.1.7",
