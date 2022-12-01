@@ -36,7 +36,7 @@ jobs:
 
       - run: pnpm i
       - run: pnpm build --filter @dv/develop
-      - run: pnpm run init
+      - run: pnpm run dvinit
       - run: pnpm run build
       - run: pnpm run build --filter docs
 
