@@ -49,6 +49,7 @@ import {
   Tabs,
   TabPanel,
   Table,
+  Textarea,
   Toggle,
   Tooltip,
 } from './components';
@@ -101,6 +102,7 @@ const all = /* @__PURE__ */ [
   Tabs,
   TabPanel,
   Table,
+  Textarea,
   Toggle,
   Tooltip,
 ];

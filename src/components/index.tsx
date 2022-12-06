@@ -26,6 +26,7 @@ export * from './radio';
 export * from './swap';
 export * from './tab';
 export * from './table';
+export * from './textarea';
 export * from './toggle';
 export * from './tooltip';
 

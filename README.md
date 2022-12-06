@@ -147,7 +147,7 @@ export function render() {
   - [x] radio-group
 - [ ] form-range
 - [ ] form-select
-- [ ] form-textarea
+- [x] form-textarea
 - [ ] form-toggle
 - [ ] mockup-code
 - [ ] mockup-phone
