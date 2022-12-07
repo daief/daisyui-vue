@@ -7,39 +7,40 @@
   "../dist/_utils.js": [],
   "../dist/_global_style.js": [],
   "../dist/styled-cd90766b.js": [],
-  "../dist/icons-45d795b4.js": [],
+  "../dist/icons-d15db366.js": [],
   "../dist/components/alert/index.js": [],
-  "../dist/artboard-9586a52f.js": [],
+  "../dist/artboard-a18b6709.js": [],
   "../dist/components/mask/index.js": [],
-  "../dist/avatar-group-59be0e5d.js": [],
+  "../dist/avatar-group-99ae7724.js": [],
   "../dist/components/badge/index.js": [],
   "../dist/components/breadcrumb/index.js": [],
-  "../dist/button-85d4e153.js": [],
-  "../dist/button-group-df15d59d.js": [],
+  "../dist/button-ad75b306.js": [],
+  "../dist/button-group-38309be3.js": [],
   "../dist/components/card/index.js": [],
-  "../dist/checkbox-radio-0de1acb7.js": [],
-  "../dist/base-props-93ab9e67.js": [],
-  "../dist/group-cbf03510.js": [],
+  "../dist/checkbox-radio-74b2263a.js": [],
+  "../dist/base-props-878d09d0.js": [],
+  "../dist/group-3da47f0e.js": [],
   "../dist/components/counter/index.js": [],
   "../dist/components/divider/index.js": [],
   "../dist/base-0ea6cca6.js": [],
-  "../dist/drawer-1fd508da.js": [],
+  "../dist/drawer-5a3cefd3.js": [],
   "../dist/components/popper/index.js": [],
   "../dist/components/dropdown/index.js": [],
   "../dist/components/indicator/index.js": [],
   "../dist/components/input/index.js": [],
   "../dist/components/kbd/index.js": [],
   "../dist/components/link/index.js": [],
-  "../dist/menu-item-aac4fc1a.js": [],
-  "../dist/widgets-ed7730c1.js": [],
-  "../dist/navbar-6bfd3ae3.js": [],
+  "../dist/menu-item-2bcfac47.js": [],
+  "../dist/widgets-38e9a7ab.js": [],
+  "../dist/navbar-2e44cca6.js": [],
   "../dist/components/progress/index.js": [],
-  "../dist/group-989bf807.js": [],
+  "../dist/group-e0da1b24.js": [],
   "../dist/components/swap/index.js": [],
-  "../dist/tabs-96e687a5.js": [],
-  "../dist/table-b42d8082.js": [],
+  "../dist/tabs-92482521.js": [],
+  "../dist/table-b9d7f788.js": [],
+  "../dist/components/textarea/index.js": [],
   "../dist/components/toggle/index.js": [],
-  "../dist/tooltip-ee7afcdc.js": [],
+  "../dist/tooltip-725b58cc.js": [],
   "../dist/index.js": [],
   "src/styles/tailwind.css": [],
   "src/styles/markdown.less": [],
@@ -4318,41 +4319,44 @@
   "src/pages/components/toggle.md": [
     "/daisyui-vue/assets/toggle.a90be861.js"
   ],
+  "src/pages/components/textarea.md": [
+    "/daisyui-vue/assets/textarea.2ee5e362.js"
+  ],
   "src/.demo/CtsxCyavdxwdvzxyvxwyzxwyzcxtaufxdwxvwdczdaxfe.tsx": [
-    "/daisyui-vue/assets/table.eea58e38.js"
+    "/daisyui-vue/assets/table.c341827f.js"
   ],
   "src/.demo/ChtmlCwwfwfvyvwuxdwzzfvfywyxxcaxdfcbzvbabxfayy.vue?vue&type=script&lang.tsx": [
-    "/daisyui-vue/assets/table.eea58e38.js"
+    "/daisyui-vue/assets/table.c341827f.js"
   ],
   "src/.demo/ChtmlCwwfwfvyvwuxdwzzfvfywyxxcaxdfcbzvbabxfayy.vue": [
-    "/daisyui-vue/assets/table.eea58e38.js"
+    "/daisyui-vue/assets/table.c341827f.js"
   ],
   "src/.demo/CtsxCxaxdxzxdyxdweytxwduyxwvwxzytceavytyxwwet.tsx": [
-    "/daisyui-vue/assets/table.eea58e38.js"
+    "/daisyui-vue/assets/table.c341827f.js"
   ],
   "src/pages/components/table.md": [
-    "/daisyui-vue/assets/table.eea58e38.js"
+    "/daisyui-vue/assets/table.c341827f.js"
   ],
   "src/.demo/CtsxCayzydxufuwcubxeyefaedubfywtxztdywvvbexzw.tsx": [
-    "/daisyui-vue/assets/tab.823b4cf1.js"
+    "/daisyui-vue/assets/tab.f7268c05.js"
   ],
   "src/.demo/CtsxCxfcbtxwxfbwwyxeudtzzcadwywbbbxwxcuwyaevy.tsx": [
-    "/daisyui-vue/assets/tab.823b4cf1.js"
+    "/daisyui-vue/assets/tab.f7268c05.js"
   ],
   "src/.demo/CtsxCubcbxxeybvczyfetxxvtdztyxytxydxcvzyuwbbt.tsx": [
-    "/daisyui-vue/assets/tab.823b4cf1.js"
+    "/daisyui-vue/assets/tab.f7268c05.js"
   ],
   "src/.demo/CtsxCwtwzadwbwabvwfbyvtdvwzxyfufvxxtwytwwvtyt.tsx": [
-    "/daisyui-vue/assets/tab.823b4cf1.js"
+    "/daisyui-vue/assets/tab.f7268c05.js"
   ],
   "src/.demo/CtsxCyvezattcwwxxyffcxuyaeuuxttewazuayybxtbuc.tsx": [
-    "/daisyui-vue/assets/tab.823b4cf1.js"
+    "/daisyui-vue/assets/tab.f7268c05.js"
   ],
   "src/.demo/CtsxCwxzxwyzzaxauzvwvawxyyyffyxyzxwtbxyzbuyuf.tsx": [
-    "/daisyui-vue/assets/tab.823b4cf1.js"
+    "/daisyui-vue/assets/tab.f7268c05.js"
   ],
   "src/pages/components/tab.md": [
-    "/daisyui-vue/assets/tab.823b4cf1.js"
+    "/daisyui-vue/assets/tab.f7268c05.js"
   ],
   "src/.demo/CtsxCeywvwxevtexwbtfyytzawycyxwweaaaywxawyuuy.tsx": [
     "/daisyui-vue/assets/swap.cba004d8.js"
@@ -4424,34 +4428,34 @@
     "/daisyui-vue/assets/input.1fe87cdd.js"
   ],
   "src/.demo/CtsxCfbxzwzycdxtuxzyeatwbeecfucfyefawyduvazxx.tsx": [
-    "/daisyui-vue/assets/indicator.6aab343f.js"
+    "/daisyui-vue/assets/indicator.0e8d3864.js"
   ],
   "src/pages/components/indicator.md": [
-    "/daisyui-vue/assets/indicator.6aab343f.js"
+    "/daisyui-vue/assets/indicator.0e8d3864.js"
   ],
   "src/.demo/ChtmlCdawwwxxyvvxdyadvyyyxdcbybbtxvfzxvuxtdwbf.vue": [
-    "/daisyui-vue/assets/icons.34693734.js"
+    "/daisyui-vue/assets/icons.c390f782.js"
   ],
   "../node_modules/.pnpm/@vicons+fluent@0.12.0/node_modules/@vicons/fluent/es/Alert24Regular.js": [
-    "/daisyui-vue/assets/icons.34693734.js"
+    "/daisyui-vue/assets/icons.c390f782.js"
   ],
   "../node_modules/.pnpm/@vicons+fluent@0.12.0/node_modules/@vicons/fluent/es/CheckmarkCircle24Regular.js": [
-    "/daisyui-vue/assets/icons.34693734.js"
+    "/daisyui-vue/assets/icons.c390f782.js"
   ],
   "../node_modules/.pnpm/@vicons+fluent@0.12.0/node_modules/@vicons/fluent/es/ErrorCircle24Regular.js": [
-    "/daisyui-vue/assets/icons.34693734.js"
+    "/daisyui-vue/assets/icons.c390f782.js"
   ],
   "../node_modules/.pnpm/@vicons+fluent@0.12.0/node_modules/@vicons/fluent/es/Info24Regular.js": [
-    "/daisyui-vue/assets/icons.34693734.js"
+    "/daisyui-vue/assets/icons.c390f782.js"
   ],
   "../node_modules/.pnpm/@vicons+fluent@0.12.0/node_modules/@vicons/fluent/es/Warning24Regular.js": [
-    "/daisyui-vue/assets/icons.34693734.js"
+    "/daisyui-vue/assets/icons.c390f782.js"
   ],
   "src/.demo/ChtmlCyyadxbzzefxeuuaxteauvwzzwvwatuzfaffcwcwx.vue": [
-    "/daisyui-vue/assets/icons.34693734.js"
+    "/daisyui-vue/assets/icons.c390f782.js"
   ],
   "src/pages/components/icons.md": [
-    "/daisyui-vue/assets/icons.34693734.js"
+    "/daisyui-vue/assets/icons.c390f782.js"
   ],
   "src/pages/components/element.md": [
     "/daisyui-vue/assets/element.d3f52209.js"
