@@ -21,10 +21,10 @@
   &.dv-loading {
     &,
     &:hover {
-      @apply pointer-events-none;
+      @apply cursor-not-allowed;
     }
     &:before {
-      @apply mr-2 h-4 w-4 rounded-full border-2;
+      @apply mr-2 h-4 w-4 rounded-full border-2 border-solid;
       animation: spin 2s linear infinite;
       content: '';
       border-top-color: transparent;

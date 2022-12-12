@@ -21,6 +21,7 @@ cli.command('pre-publish', '').action(async () => {
   pkg.private = false;
   pkg.main = 'index.js';
   pkg.module = 'index.js';
+  delete pkg.devDependencies;
   fs.writeJSONSync(workspace('dist/package.json'), pkg, {
     spaces: 2,
   });

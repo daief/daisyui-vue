@@ -87,18 +87,21 @@ export const Button = componentV2<
             'dv-btn-disabled': props.disabled,
             'dv-btn-active': props.active,
             'dv-btn-outline': outline.value,
-            'dv-no-animation': props.noAnimation,
+            'dv-no-animation': props.noAnimation || finalLoading.value,
           },
         ];
       });
 
       const handleOnClick = async (e: any) => {
-        if (clickLoading.value || typeof props.onClick !== 'function') return;
+        if (finalLoading.value || typeof props.onClick !== 'function') return;
         clickLoading.value = true;
         try {
           await props.onClick(e);
-        } catch (error) {}
-        clickLoading.value = false;
+        } catch (error) {
+          throw error;
+        } finally {
+          clickLoading.value = false;
+        }
       };
 
       const showContent = computed(() => {
