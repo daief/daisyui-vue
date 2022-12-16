@@ -1,4 +1,4 @@
-import { brandTypeProps, sizeProps } from 'daisyui-vue/shared/constants';
+import { brandVariantProps, sizeProps } from 'daisyui-vue/shared/constants';
 import { componentV2 } from 'daisyui-vue/shared/styled';
 import { ExtractFromProps, IText } from 'daisyui-vue/shared/types/common';
 import { IOption } from 'daisyui-vue/shared/types/components';
@@ -8,22 +8,19 @@ import { checkboxCtxKey, ICheckboxContext } from './state';
 
 export const checkGroupProps = {
   ...sizeProps,
-  ...brandTypeProps,
+  ...brandVariantProps,
   disabled: Boolean,
   options: {
     type: Array as PropType<IOption[]>,
     default: [],
   },
-  value: {
+  modelValue: {
     type: Array as PropType<IText[]>,
     default: void 0,
   },
   defaultValue: {
     type: Array as PropType<IText[]>,
     default: [],
-  },
-  onChange: {
-    type: Function as PropType<(values: IText[]) => void>,
   },
 };
 
@@ -32,14 +29,15 @@ export type ICheckGroupProps = ExtractFromProps<typeof checkGroupProps>;
 export const CheckboxGroup = componentV2<ICheckGroupProps, HTMLAttributes>({
   name: 'CheckboxGroup',
   props: checkGroupProps,
-  setup: (props, { slots }) => {
+  emits: ['update:modelValue'],
+  setup: (props, { slots, emit }) => {
     const state = reactive({
-      value: props.value || props.defaultValue || [],
+      value: props.modelValue || props.defaultValue || [],
       registeredValues: new Set<IText>(),
     });
 
     const finalValue = computed(() =>
-      Array.isArray(props.value) ? props.value : state.value,
+      Array.isArray(props.modelValue) ? props.modelValue : state.value,
     );
 
     const handleChange = (v: IText) => {
@@ -54,11 +52,11 @@ export const CheckboxGroup = componentV2<ICheckGroupProps, HTMLAttributes>({
         newValue.splice(optionIndex, 1);
       }
 
-      if (!Array.isArray(props.value)) {
+      if (!Array.isArray(props.modelValue)) {
         state.value = newValue;
       }
 
-      props.onChange?.(newValue);
+      emit('update:modelValue', newValue);
     };
 
     const register = (v: IText) => {

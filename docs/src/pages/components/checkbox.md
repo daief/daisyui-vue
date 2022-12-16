@@ -35,7 +35,7 @@ export default {
       <div class="flex flex-col items-center space-y-4">
         {types.map((type) => (
           <div key={type} class="w-32">
-            <dv-checkbox type={type} defaultChecked>
+            <dv-checkbox variant={type} defaultChecked>
               {type}
             </dv-checkbox>
           </div>
@@ -94,9 +94,7 @@ export default {
     ];
     const value = ref(['apple', 'pear']);
     const disabled = ref(false);
-    const onChange = (array) => {
-      value.value = array;
-    };
+
     return () => (
       <div>
         <div class="flex items-center">
@@ -111,8 +109,7 @@ export default {
           size="lg"
           options={options}
           disabled={disabled.value}
-          value={value.value}
-          onChange={onChange}
+          v-model={value.value}
         />
       </div>
     );
@@ -127,7 +124,7 @@ export default {
 | name           | description                                               | type                                | default |
 | -------------- | --------------------------------------------------------- | ----------------------------------- | ------- |
 | size           | size                                                      | ISize                               | md      |
-| type           | color type                                                | neutral, primary, secondary, accent | neutral |
+| variant        | color type                                                | neutral, primary, secondary, accent | neutral |
 | disabled       | disable status                                            | bool                                | -       |
 | checked        | checked status                                            | bool                                | -       |
 | onChange       | change callback                                           | Function                            | -       |
@@ -140,15 +137,14 @@ export default {
 
 ### Attributes
 
-| name         | description     | type                                | default |
-| ------------ | --------------- | ----------------------------------- | ------- |
-| size         | size            | ISize                               | md      |
-| type         | color type      | neutral, primary, secondary, accent | neutral |
-| disabled     | disable status  | bool                                | -       |
-| options      | options         | IOption[]                           | -       |
-| value        | selected values | IText[]                             | -       |
-| defaultValue | initial values  | IText[]                             | -       |
-| onChange     | change event    | Function                            | -       |
+| name         | description                 | type                                | default |
+| ------------ | --------------------------- | ----------------------------------- | ------- |
+| v-model      | v-model for selected values | IText[]                             | -       |
+| size         | size                        | ISize                               | md      |
+| variant      | color type                  | neutral, primary, secondary, accent | neutral |
+| disabled     | disable status              | bool                                | -       |
+| options      | options                     | IOption[]                           | -       |
+| defaultValue | initial values              | IText[]                             | -       |
 
 ## CSS variables
 

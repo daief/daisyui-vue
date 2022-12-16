@@ -1,5 +1,5 @@
 import { InputChangeEvent } from 'daisyui-vue/@types/dom';
-import { brandTypeProps, sizeProps } from 'daisyui-vue/shared/constants';
+import { brandVariantProps, sizeProps } from 'daisyui-vue/shared/constants';
 import { useCheckbox } from 'daisyui-vue/shared/hooks';
 import { componentV2 } from 'daisyui-vue/shared/styled';
 import { ExtractFromProps, IText } from 'daisyui-vue/shared/types/common';
@@ -9,7 +9,6 @@ import {
   HTMLAttributes,
   inject,
   PropType,
-  toRef,
   watch,
 } from 'vue';
 import { checkboxCtxKey, ICheckboxContext } from './state';
@@ -17,7 +16,7 @@ import style from './style';
 
 export const checkProps = {
   ...sizeProps,
-  ...brandTypeProps,
+  ...brandVariantProps,
   defaultChecked: {
     type: Boolean,
     default: void 0,
@@ -56,7 +55,7 @@ export const Checkbox = componentV2<ICheckProps, HTMLAttributes>(
           () => ctx?.value.value.includes(props.value) ?? props.checked,
         ),
         defaultChecked: props.defaultChecked,
-        onChange: () => (e: InputChangeEvent) => {
+        onChange: (e: InputChangeEvent) => {
           ctx?.value.onChange(props.value);
           props.onChange?.(e);
         },
@@ -71,7 +70,7 @@ export const Checkbox = componentV2<ICheckProps, HTMLAttributes>(
       const inputCls = computed(() => ({
         'dv-checkbox': true,
         [`dv-checkbox-${size.value}`]: size.value,
-        [`dv-checkbox-${props.type}`]: props.type,
+        [`dv-checkbox-${props.variant}`]: props.variant,
         'dv-checkbox-indeterminate': props.indeterminate,
       }));
 
