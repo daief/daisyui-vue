@@ -24,7 +24,10 @@ export const inputProps = {
 
 export type IInputProps = ExtractFromProps<typeof inputProps>;
 
-export const Input = componentV2<IInputProps, InputHTMLAttributes>(
+export const Input = componentV2<
+  IInputProps,
+  Omit<InputHTMLAttributes, 'onChange'>
+>(
   {
     name: 'Input',
     props: inputProps,

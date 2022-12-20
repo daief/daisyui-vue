@@ -1,13 +1,11 @@
+import { brandVariantProps } from 'daisyui-vue/shared/constants';
 import { componentV2 } from 'daisyui-vue/shared/styled';
-import { ExtractFromProps, IBrandColor } from 'daisyui-vue/shared/types/common';
-import { computed, PropType } from 'vue';
+import { ExtractFromProps } from 'daisyui-vue/shared/types/common';
+import { computed, HTMLAttributes } from 'vue';
 import styles from './style';
 
 export const linkProps = {
-  type: {
-    type: String as PropType<IBrandColor>,
-    default: 'neutral',
-  },
+  ...brandVariantProps,
   enableHoverClass: {
     type: Boolean,
     default: false,
@@ -16,7 +14,7 @@ export const linkProps = {
 
 export type ILinkProps = ExtractFromProps<typeof linkProps>;
 
-export const Link = componentV2<ILinkProps>(
+export const Link = componentV2<ILinkProps, HTMLAttributes>(
   {
     name: 'Link',
     props: linkProps,
@@ -24,7 +22,7 @@ export const Link = componentV2<ILinkProps>(
       const cls = computed(() => [
         'dv-link',
         {
-          [`dv-link-${props.type}`]: !!props.type,
+          [`dv-link-${props.variant}`]: !!props.variant,
           'dv-link-hover': props.enableHoverClass,
         },
       ]);

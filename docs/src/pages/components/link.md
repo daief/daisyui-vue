@@ -27,10 +27,10 @@ Link type color
 
 ```html :::demo
 <div class="flex flex-col items-center space-y-2">
-  <dv-link type="neutral">neutral color</dv-link>
-  <dv-link type="primary">primary color</dv-link>
-  <dv-link type="secondary">secondary color</dv-link>
-  <dv-link type="accent">accent color</dv-link>
+  <dv-link variant="neutral">neutral color</dv-link>
+  <dv-link variant="primary">primary color</dv-link>
+  <dv-link variant="secondary">secondary color</dv-link>
+  <dv-link variant="accent">accent color</dv-link>
 </div>
 ```
 
@@ -48,5 +48,5 @@ Show underline only on hover
 
 | name             | description                  | type                                | default |
 | ---------------- | ---------------------------- | ----------------------------------- | ------- |
-| type             | link color type              | neutral, primary, secondary, accent | neutral |
+| variant          | link color type              | neutral, primary, secondary, accent | neutral |
 | enableHoverClass | show underline only on hover | boolean                             | false   |
