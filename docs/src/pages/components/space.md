@@ -36,6 +36,7 @@ export default {
     return () => (
       <div class="space-y-4">
         <dv-radio-group options={options} v-model={size.value} />
+        <br />
         <dv-space direction="vertical" spacing={size.value}>
           I'm a text
           <dv-button>button</dv-button>
