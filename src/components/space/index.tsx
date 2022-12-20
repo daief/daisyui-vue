@@ -54,7 +54,7 @@ export const Space = componentV2<ISpaceProps, HTMLAttributes>(
 
       const style = computed<StyleValue>(() => ({
         flexWrap: props.wrap ? 'wrap' : void 0,
-        display: props.block ? 'block' : void 0,
+        display: props.block ? 'flex' : void 0,
         flexDirection: props.direction === 'vertical' ? 'column' : void 0,
         alignItems:
           isUndefined(props.align) && props.direction === 'horizontal'
