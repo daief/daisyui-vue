@@ -23,7 +23,7 @@ Ghost (no background)
 ```html :::demo
 <div class="text-center">
   <dv-input
-    type="ghost"
+    variant="ghost"
     :border="false"
     class="w-full max-w-xs"
     placeholder="Type here"
@@ -36,34 +36,38 @@ Input with colors
 ```html :::demo
 <div class="text-center">
   <dv-input
-    type="primary"
+    variant="primary"
     class="w-full max-w-xs"
     placeholder="primary color"
   />
   <div class="py-1" />
   <dv-input
-    type="secondary"
+    variant="secondary"
     class="w-full max-w-xs"
     placeholder="secondary color"
   />
   <div class="py-1" />
-  <dv-input type="accent" class="w-full max-w-xs" placeholder="accent color" />
+  <dv-input
+    variant="accent"
+    class="w-full max-w-xs"
+    placeholder="accent color"
+  />
   <div class="py-1" />
-  <dv-input type="info" class="w-full max-w-xs" placeholder="info color" />
+  <dv-input variant="info" class="w-full max-w-xs" placeholder="info color" />
   <div class="py-1" />
   <dv-input
-    type="success"
+    variant="success"
     class="w-full max-w-xs"
     placeholder="success color"
   />
   <div class="py-1" />
   <dv-input
-    type="warning"
+    variant="warning"
     class="w-full max-w-xs"
     placeholder="warning color"
   />
   <div class="py-1" />
-  <dv-input type="error" class="w-full max-w-xs" placeholder="error color" />
+  <dv-input variant="error" class="w-full max-w-xs" placeholder="error color" />
 </div>
 ```
 
@@ -93,8 +97,9 @@ Disabled
 
 ### Attributes
 
-| name   | description      | type                                                                      | default |
-| ------ | ---------------- | ------------------------------------------------------------------------- | ------- |
-| type   | input color type | neutral, primary, secondary, accent, info, success, warning, error, ghost | neutral |
-| size   | input size       | ISize                                                                     | md      |
-| border | input border     | boolean                                                                   | true    |
+| name    | description             | type                                                                      | default |
+| ------- | ----------------------- | ------------------------------------------------------------------------- | ------- |
+| variant | input color type        | neutral, primary, secondary, accent, info, success, warning, error, ghost | neutral |
+| size    | input size              | ISize                                                                     | md      |
+| border  | input border            | boolean                                                                   | true    |
+| v-model | v-model for input value | string                                                                    | -       |
