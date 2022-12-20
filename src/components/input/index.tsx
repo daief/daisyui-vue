@@ -1,5 +1,8 @@
 import { InputChangeEvent } from 'daisyui-vue/@types/dom';
-import { colorVariantWithGhostProps } from 'daisyui-vue/shared/constants';
+import {
+  colorVariantWithGhostProps,
+  V_MODEL_EVENT,
+} from 'daisyui-vue/shared/constants';
 import { componentV2 } from 'daisyui-vue/shared/styled';
 import { ExtractFromProps, ISize } from 'daisyui-vue/shared/types/common';
 import { computed, InputHTMLAttributes, PropType } from 'vue';
@@ -27,7 +30,7 @@ export const Input = componentV2<IInputProps, InputHTMLAttributes>(
   {
     name: 'Input',
     props: inputProps,
-    emits: ['update:modelValue'],
+    emits: [V_MODEL_EVENT],
     setup: (props, { emit }) => {
       const cls = computed(() => ({
         'dv-input': true,
@@ -37,7 +40,7 @@ export const Input = componentV2<IInputProps, InputHTMLAttributes>(
       }));
 
       const handleOnInput = (e: InputChangeEvent) => {
-        emit('update:modelValue', e.target.value);
+        emit(V_MODEL_EVENT, e.target.value);
       };
 
       return () => (

@@ -6,6 +6,8 @@ import {
   ISize,
 } from '../types/common';
 
+export const V_MODEL_EVENT = 'update:modelValue';
+
 export const sizeProps = {
   size: {
     type: String as PropType<ISize>,

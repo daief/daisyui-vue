@@ -1,5 +1,5 @@
 import { InputChangeEvent } from 'daisyui-vue/@types/dom';
-import { colorVariantProps } from 'daisyui-vue/shared/constants';
+import { colorVariantProps, V_MODEL_EVENT } from 'daisyui-vue/shared/constants';
 import { componentV2 } from 'daisyui-vue/shared/styled';
 import { ExtractFromProps } from 'daisyui-vue/shared/types/common';
 import { computed, InputHTMLAttributes } from 'vue';
@@ -23,7 +23,7 @@ export const Textarea = componentV2<ITextareaProps, InputHTMLAttributes>(
   {
     name: 'Textarea',
     props: textareaProps,
-    emits: ['update:modelValue'],
+    emits: [V_MODEL_EVENT],
     setup: (props, { emit }) => {
       const cls = computed(() => ({
         'dv-textarea': true,
@@ -32,7 +32,7 @@ export const Textarea = componentV2<ITextareaProps, InputHTMLAttributes>(
       }));
 
       const handleOnInput = (e: InputChangeEvent) => {
-        emit('update:modelValue', e.target.value);
+        emit(V_MODEL_EVENT, e.target.value);
       };
 
       return () => (
