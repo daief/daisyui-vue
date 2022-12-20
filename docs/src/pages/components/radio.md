@@ -91,9 +91,7 @@ export default {
     ];
     const value = ref('apple');
     const disabled = ref(false);
-    const onChange = (e) => {
-      value.value = e.target.value;
-    };
+
     return () => (
       <div>
         <div class="flex items-center">
@@ -108,8 +106,7 @@ export default {
           size="lg"
           options={options}
           disabled={disabled.value}
-          value={value.value}
-          onChange={onChange}
+          v-model={value.value}
         />
       </div>
     );
@@ -135,15 +132,14 @@ export default {
 
 ### Attributes
 
-| name         | description    | type                                | default |
-| ------------ | -------------- | ----------------------------------- | ------- |
-| size         | size           | ISize                               | md      |
-| type         | color type     | neutral, primary, secondary, accent | neutral |
-| disabled     | disable status | bool                                | -       |
-| options      | options        | IOption[]                           | -       |
-| value        | selected value | IText                               | -       |
-| defaultValue | initial value  | IText                               | -       |
-| onChange     | change event   | Function                            | -       |
+| name         | description                | type                                | default |
+| ------------ | -------------------------- | ----------------------------------- | ------- |
+| size         | size                       | ISize                               | md      |
+| type         | color type                 | neutral, primary, secondary, accent | neutral |
+| disabled     | disable status             | bool                                | -       |
+| options      | options                    | IOption[]                           | -       |
+| v-model      | v-model for selected value | IText                               | -       |
+| defaultValue | initial value              | IText                               | -       |
 
 ## CSS variables
 

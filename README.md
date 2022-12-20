@@ -132,6 +132,7 @@ export function render() {
 - [x] progress
   - [x] radial progress
 - [x] popper - 🆕 new
+- [x] space - 🆕 new
 - [x] swap - 🛠 refactor
 - [ ] stack
 - [ ] stat
