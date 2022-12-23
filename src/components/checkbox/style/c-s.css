@@ -1,7 +1,7 @@
 .dv-checkbox {
   --chkbg: var(--bc);
   --chkfg: var(--b1);
-  @apply h-6 w-6 cursor-pointer appearance-none border border-base-content border-opacity-20 rounded-btn;
+  @apply h-6 w-6 cursor-pointer appearance-none border border-solid border-base-content border-opacity-20 rounded-btn;
   &:focus-visible {
     outline: 2px solid hsl(var(--bc));
     outline-offset: 2px;

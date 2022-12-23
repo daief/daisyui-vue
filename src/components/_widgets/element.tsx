@@ -16,7 +16,7 @@ export const elementProps = {
     default: '',
   },
   color: {
-    type: String as PropType<IColor | string>,
+    type: String as PropType<IColor> | PropType<string>,
     default: '',
   },
 };
