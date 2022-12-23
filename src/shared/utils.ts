@@ -1,4 +1,11 @@
-import { isVNode, Slots, VNode, VNodeNormalizedChildren } from 'vue';
+import {
+  Comment,
+  Fragment,
+  isVNode,
+  Slots,
+  VNode,
+  VNodeNormalizedChildren,
+} from 'vue';
 
 export const isBrowser = typeof window !== 'undefined';
 
@@ -25,17 +32,54 @@ export function isNil(v: any) {
   return [null, void 0].includes(v);
 }
 
-/**
- * @see https://developer.mozilla.org/en-US/docs/Web/API/Node/nodeType
- * @param el
- * @returns
- */
-function isElementNode(el: any) {
-  return !!(el?.nodeType === 1);
+/** 是否 comment 类型 */
+export function isCommentVNode(n: IVueNode) {
+  if (!isVNode(n)) return false;
+  return n.type === Comment;
 }
 
+/** 是否 dom 元素类型 */
 export function isElementVNode(n: IVueNode): n is VNode {
   return isVNode(n) && !!n.type && typeof n.type === 'string';
+}
+
+/**
+ * 递归拍散 vnode 节点
+ */
+export function flatUntilNotFragment(
+  n?: IVueNode | IVueNode[],
+  opts?: {
+    keepEmpty?: boolean;
+  },
+): IVueNode[] {
+  const { keepEmpty } = { ...opts };
+
+  if (isNil(n)) return [];
+
+  const res: IVueNode[] = [];
+
+  oneToArray<IVueNode>(n).forEach(function walkIn(it: IVueNode) {
+    if (isNil(it)) {
+      return res.push(...(keepEmpty ? [it] : []));
+    }
+
+    if (!isVNode(it)) {
+      if (Array.isArray(it)) return it.forEach(walkIn as any);
+      else return res.push(it);
+    }
+
+    if (isCommentVNode(it)) {
+      return res.push(...(keepEmpty ? [it] : []));
+    }
+
+    if (it.type !== Fragment) {
+      return res.push(it);
+    }
+
+    oneToArray<IVueNode>(it.children).forEach(walkIn);
+  });
+
+  return res;
 }
 
 export function oneToArray<T>(o: T | T[]): T[] {
@@ -66,7 +110,10 @@ export function getRenderResult(
   return oneToArray(getSlotsResult() || getPropsResult());
 }
 
-export type IVueNode = VNode | VNodeNormalizedChildren;
+export type IVueNode =
+  | VNode
+  | VNodeNormalizedChildren
+  | Array<VNode | VNodeNormalizedChildren>;
 
 export function findInTree(
   root: IVueNode | IVueNode[],

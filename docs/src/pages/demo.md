@@ -12,12 +12,26 @@ export default {
       title: () => <a style="color: blue">Title Slot</a>,
     };
 
+    const arr = [1, 2, 3];
+
     return () => (
-      <div>
-        <dv-element onClick={console.log} variant="info" class="xs">
+      <dv-space>
+        I'm a text
+        {null}
+        {false}
+        {0}
+        {'a'}
+        <dv-button>button</dv-button>
+        <>
+          {arr.map((it) => (
+            <div>{it}</div>
+          ))}
           asd
-        </dv-element>
-      </div>
+          {arr.map((it) => (
+            <div>{it}2</div>
+          ))}
+        </>
+      </dv-space>
     );
   },
 };

@@ -2,7 +2,11 @@ import { computed, HTMLAttributes, PropType, StyleValue } from 'vue';
 import { componentV2 } from 'daisyui-vue/shared/styled';
 import { ExtractFromProps, ISize } from 'daisyui-vue/shared/types/common';
 import style from './style';
-import { cssUnit, isUndefined } from 'daisyui-vue/shared/utils';
+import {
+  cssUnit,
+  flatUntilNotFragment,
+  isUndefined,
+} from 'daisyui-vue/shared/utils';
 
 export const spaceProps = {
   align: {
@@ -65,8 +69,11 @@ export const Space = componentV2<ISpaceProps, HTMLAttributes>(
 
       return () => (
         <div class="dv-space" style={style.value}>
-          {slots.default?.().map((it, i) => (
-            <div class="dv-space-item" key={`${i}-${it.component?.uid}`}>
+          {flatUntilNotFragment(slots.default?.()).map((it, i) => (
+            <div
+              class="dv-space-item"
+              key={`${i}-${(it as any)?.component?.uid}`}
+            >
               {it}
             </div>
           ))}

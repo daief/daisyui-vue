@@ -105,7 +105,17 @@ export default {
 };
 ```
 
-## Link
+Wrap
+
+```html :::demo
+<dv-space block wrap :spacing="[12, 4]">
+  <dv-button v-for="(i) in Array.from(new Array(20).keys())" :key="i">
+    {{i}}
+  </dv-button>
+</dv-space>
+```
+
+## Space
 
 ### Attributes
 
