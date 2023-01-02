@@ -108,7 +108,7 @@ export default {
 Wrap
 
 ```html :::demo
-<dv-space block wrap :spacing="[12, 4]">
+<dv-space class="w-64 max-w-full" block wrap :spacing="[12, 4]">
   <dv-button v-for="(i) in Array.from(new Array(20).keys())" :key="i">
     {{i}}
   </dv-button>

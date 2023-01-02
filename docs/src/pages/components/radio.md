@@ -15,7 +15,7 @@ import { ref } from 'vue';
 
 export default {
   setup: () => {
-    const val = ref();
+    const val = ref('a');
     const onChange = (e) => {
       val.value = e.target.value;
     };
@@ -49,7 +49,7 @@ export default {
       <div class="flex flex-col items-center space-y-4">
         {types.map((type) => (
           <div key={type} class="w-32">
-            <dv-radio type={type}>{type}</dv-radio>
+            <dv-radio variant={type}>{type}</dv-radio>
           </div>
         ))}
       </div>
@@ -121,7 +121,7 @@ export default {
 | name     | description      | type                                | default |
 | -------- | ---------------- | ----------------------------------- | ------- |
 | size     | size             | ISize                               | md      |
-| type     | color type       | neutral, primary, secondary, accent | neutral |
+| variant  | color type       | neutral, primary, secondary, accent | neutral |
 | disabled | disable status   | bool                                | -       |
 | checked  | checked status   | bool                                | -       |
 | value    | input value      | IText                               | -       |
@@ -135,7 +135,7 @@ export default {
 | name         | description                | type                                | default |
 | ------------ | -------------------------- | ----------------------------------- | ------- |
 | size         | size                       | ISize                               | md      |
-| type         | color type                 | neutral, primary, secondary, accent | neutral |
+| variant      | color type                 | neutral, primary, secondary, accent | neutral |
 | disabled     | disable status             | bool                                | -       |
 | options      | options                    | IOption[]                           | -       |
 | v-model      | v-model for selected value | IText                               | -       |

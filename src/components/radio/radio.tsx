@@ -1,5 +1,9 @@
 import { InputChangeEvent } from 'daisyui-vue/@types/dom';
-import { brandTypeProps, sizeProps } from 'daisyui-vue/shared/constants';
+import {
+  brandVariantProps,
+  sizeProps,
+  V_MODEL_EVENT,
+} from 'daisyui-vue/shared/constants';
 import { componentV2 } from 'daisyui-vue/shared/styled';
 import { ExtractFromProps, IText } from 'daisyui-vue/shared/types/common';
 import { computed, ComputedRef, HTMLAttributes, inject, PropType } from 'vue';
@@ -8,7 +12,7 @@ import style from './style';
 
 export const radioProps = {
   ...sizeProps,
-  ...brandTypeProps,
+  ...brandVariantProps,
   disabled: Boolean,
   checked: {
     type: Boolean,
@@ -28,7 +32,8 @@ export const Radio = componentV2<IRadioProps, HTMLAttributes>(
   {
     name: 'Radio',
     props: radioProps,
-    setup: (props, { slots }) => {
+    emits: ['change'],
+    setup: (props, { slots, emit }) => {
       const ctx = inject<ComputedRef<IRadioContext>>(radioCtxKey, null);
 
       const size = computed(() => ctx?.value.size || props.size);
@@ -44,6 +49,7 @@ export const Radio = componentV2<IRadioProps, HTMLAttributes>(
 
       const handleOnChange = (e: InputChangeEvent) => {
         ctx?.value.onChange(e);
+        emit('change', e);
       };
 
       const wrapperCls = computed(() => ({
@@ -55,7 +61,7 @@ export const Radio = componentV2<IRadioProps, HTMLAttributes>(
       const inputCls = computed(() => ({
         'dv-radio': true,
         [`dv-radio-${size.value}`]: size.value,
-        [`dv-radio-${props.type}`]: props.type,
+        [`dv-radio-${props.variant}`]: props.variant,
       }));
 
       return () => (

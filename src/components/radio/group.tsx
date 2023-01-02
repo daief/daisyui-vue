@@ -1,5 +1,9 @@
 import { InputChangeEvent } from 'daisyui-vue/@types/dom';
-import { brandVariantProps, sizeProps } from 'daisyui-vue/shared/constants';
+import {
+  brandVariantProps,
+  sizeProps,
+  V_MODEL_EVENT,
+} from 'daisyui-vue/shared/constants';
 import { componentV2 } from 'daisyui-vue/shared/styled';
 import { ExtractFromProps, IText } from 'daisyui-vue/shared/types/common';
 import { IOption } from 'daisyui-vue/shared/types/components';
@@ -31,7 +35,7 @@ export type IRadioGroupProps = ExtractFromProps<typeof radioGroupProps>;
 export const RadioGroup = componentV2<IRadioGroupProps, HTMLAttributes>({
   name: 'RadioGroup',
   props: radioGroupProps,
-  emits: ['update:modelValue'],
+  emits: [V_MODEL_EVENT],
   setup: (props, { slots, emit }) => {
     const state = reactive({
       value: props.modelValue || props.defaultValue || null,
@@ -48,7 +52,7 @@ export const RadioGroup = componentV2<IRadioGroupProps, HTMLAttributes>({
         state.value = val;
       }
 
-      emit('update:modelValue', val);
+      emit(V_MODEL_EVENT, val);
     };
 
     const ctxVal = computed<IRadioContext>(() => ({
