@@ -18,8 +18,8 @@
   "../dist/button-group-2f2e67ac.js": [],
   "../dist/components/card/index.js": [],
   "../dist/checkbox-radio-f3c3f136.js": [],
-  "../dist/base-props-208503ca.js": [],
-  "../dist/group-ca7c378e.js": [],
+  "../dist/base-props-beff0fda.js": [],
+  "../dist/group-1c57be15.js": [],
   "../dist/components/counter/index.js": [],
   "../dist/components/divider/index.js": [],
   "../dist/base-a591383c.js": [],
@@ -34,7 +34,7 @@
   "../dist/widgets-3f3fedf2.js": [],
   "../dist/navbar-bb7c9893.js": [],
   "../dist/components/progress/index.js": [],
-  "../dist/group-40043245.js": [],
+  "../dist/group-895662ca.js": [],
   "../dist/components/space/index.js": [],
   "../dist/components/swap/index.js": [],
   "../dist/tabs-4f8990b4.js": [],
@@ -4324,40 +4324,40 @@
     "/daisyui-vue/assets/textarea.e9539300.js"
   ],
   "src/.demo/CtsxCyavdxwdvzxyvxwyzxwyzcxtaufxdwxvwdczdaxfe.tsx": [
-    "/daisyui-vue/assets/table.e68557b5.js"
+    "/daisyui-vue/assets/table.7d6688bb.js"
   ],
   "src/.demo/ChtmlCwwfwfvyvwuxdwzzfvfywyxxcaxdfcbzvbabxfayy.vue?vue&type=script&lang.tsx": [
-    "/daisyui-vue/assets/table.e68557b5.js"
+    "/daisyui-vue/assets/table.7d6688bb.js"
   ],
   "src/.demo/ChtmlCwwfwfvyvwuxdwzzfvfywyxxcaxdfcbzvbabxfayy.vue": [
-    "/daisyui-vue/assets/table.e68557b5.js"
+    "/daisyui-vue/assets/table.7d6688bb.js"
   ],
   "src/.demo/CtsxCxaxdxzxdyxdweytxwduyxwvwxzytceavytyxwwet.tsx": [
-    "/daisyui-vue/assets/table.e68557b5.js"
+    "/daisyui-vue/assets/table.7d6688bb.js"
   ],
   "src/pages/components/table.md": [
-    "/daisyui-vue/assets/table.e68557b5.js"
+    "/daisyui-vue/assets/table.7d6688bb.js"
   ],
   "src/.demo/CtsxCayzydxufuwcubxeyefaedubfywtxztdywvvbexzw.tsx": [
-    "/daisyui-vue/assets/tab.7c83d30f.js"
+    "/daisyui-vue/assets/tab.ebfe1c83.js"
   ],
   "src/.demo/CtsxCxfcbtxwxfbwwyxeudtzzcadwywbbbxwxcuwyaevy.tsx": [
-    "/daisyui-vue/assets/tab.7c83d30f.js"
+    "/daisyui-vue/assets/tab.ebfe1c83.js"
   ],
   "src/.demo/CtsxCubcbxxeybvczyfetxxvtdztyxytxydxcvzyuwbbt.tsx": [
-    "/daisyui-vue/assets/tab.7c83d30f.js"
+    "/daisyui-vue/assets/tab.ebfe1c83.js"
   ],
   "src/.demo/CtsxCwtwzadwbwabvwfbyvtdvwzxyfufvxxtwytwwvtyt.tsx": [
-    "/daisyui-vue/assets/tab.7c83d30f.js"
+    "/daisyui-vue/assets/tab.ebfe1c83.js"
   ],
   "src/.demo/CtsxCyvezattcwwxxyffcxuyaeuuxttewazuayybxtbuc.tsx": [
-    "/daisyui-vue/assets/tab.7c83d30f.js"
+    "/daisyui-vue/assets/tab.ebfe1c83.js"
   ],
   "src/.demo/CtsxCwxzxwyzzaxauzvwvawxyyyffyxyzxwtbxyzbuyuf.tsx": [
-    "/daisyui-vue/assets/tab.7c83d30f.js"
+    "/daisyui-vue/assets/tab.ebfe1c83.js"
   ],
   "src/pages/components/tab.md": [
-    "/daisyui-vue/assets/tab.7c83d30f.js"
+    "/daisyui-vue/assets/tab.ebfe1c83.js"
   ],
   "src/.demo/CtsxCeywvwxevtexwbtfyytzawycyxwweaaaywxawyuuy.tsx": [
     "/daisyui-vue/assets/swap.98e34cc0.js"
@@ -4372,39 +4372,39 @@
     "/daisyui-vue/assets/swap.98e34cc0.js"
   ],
   "src/.demo/CtsxCvbwtdyfbxbefvwbtyfuywyeawwcdbuwwducbyyzy.tsx": [
-    "/daisyui-vue/assets/space.02531311.js",
+    "/daisyui-vue/assets/space.05baeb74.js",
     "/daisyui-vue/assets/space.4d87feab.css"
   ],
   "src/.demo/ChtmlCavvfffdxwazdwwcfuzxxexvuuyewyvaxffbbxywy.vue?vue&type=style&index=0&scoped=true&lang.css": [
-    "/daisyui-vue/assets/space.02531311.js",
+    "/daisyui-vue/assets/space.05baeb74.js",
     "/daisyui-vue/assets/space.4d87feab.css"
   ],
   "src/.demo/ChtmlCavvfffdxwazdwwcfuzxxexvuuyewyvaxffbbxywy.vue": [
-    "/daisyui-vue/assets/space.02531311.js",
+    "/daisyui-vue/assets/space.05baeb74.js",
     "/daisyui-vue/assets/space.4d87feab.css"
   ],
   "src/.demo/CtsxCyzyvxxybydyxaawyaeyxwcyefvwyuewwfwvwdtuy.tsx": [
-    "/daisyui-vue/assets/space.02531311.js",
+    "/daisyui-vue/assets/space.05baeb74.js",
     "/daisyui-vue/assets/space.4d87feab.css"
   ],
   "src/pages/components/space.md": [
-    "/daisyui-vue/assets/space.02531311.js",
+    "/daisyui-vue/assets/space.05baeb74.js",
     "/daisyui-vue/assets/space.4d87feab.css"
   ],
-  "src/.demo/CtsxCxfwdzvaytywwctaewycyycywwwwddfxyaybawytd.tsx": [
-    "/daisyui-vue/assets/radio.0f8b3316.js"
+  "src/.demo/CtsxCaetycwyxwyzfwvbbbwvfxwtyzuxexcvbftayfxzc.tsx": [
+    "/daisyui-vue/assets/radio.44ea6198.js"
   ],
-  "src/.demo/CtsxCxxddzzyvfvxbvyyfvyxdxyybycvwxutxvcyadaey.tsx": [
-    "/daisyui-vue/assets/radio.0f8b3316.js"
+  "src/.demo/CtsxCytwyaybwxzvtcccbeuaybawxyctyfuzuvyfaexyt.tsx": [
+    "/daisyui-vue/assets/radio.44ea6198.js"
   ],
   "src/.demo/CtsxCffwtvxetwvybtwfwwvyeyxbwxbwwcxxxuyyuexux.tsx": [
-    "/daisyui-vue/assets/radio.0f8b3316.js"
+    "/daisyui-vue/assets/radio.44ea6198.js"
   ],
   "src/.demo/CtsxCdyddwuwceddbwuffewtfzywxwwytuxfxtxzdwyay.tsx": [
-    "/daisyui-vue/assets/radio.0f8b3316.js"
+    "/daisyui-vue/assets/radio.44ea6198.js"
   ],
   "src/pages/components/radio.md": [
-    "/daisyui-vue/assets/radio.0f8b3316.js"
+    "/daisyui-vue/assets/radio.44ea6198.js"
   ],
   "src/pages/components/progress.md": [
     "/daisyui-vue/assets/progress.3232cfe2.js"
@@ -4449,34 +4449,34 @@
     "/daisyui-vue/assets/input.6d151be7.js"
   ],
   "src/.demo/CtsxCfbxzwzycdxtuxzyeatwbeecfucfyefawyduvazxx.tsx": [
-    "/daisyui-vue/assets/indicator.8aca6026.js"
+    "/daisyui-vue/assets/indicator.1780de5d.js"
   ],
   "src/pages/components/indicator.md": [
-    "/daisyui-vue/assets/indicator.8aca6026.js"
+    "/daisyui-vue/assets/indicator.1780de5d.js"
   ],
   "src/.demo/ChtmlCdawwwxxyvvxdyadvyyyxdcbybbtxvfzxvuxtdwbf.vue": [
-    "/daisyui-vue/assets/icons.0eb0ee7b.js"
+    "/daisyui-vue/assets/icons.4cff6a88.js"
   ],
   "../node_modules/.pnpm/@vicons+fluent@0.12.0/node_modules/@vicons/fluent/es/Alert24Regular.js": [
-    "/daisyui-vue/assets/icons.0eb0ee7b.js"
+    "/daisyui-vue/assets/icons.4cff6a88.js"
   ],
   "../node_modules/.pnpm/@vicons+fluent@0.12.0/node_modules/@vicons/fluent/es/CheckmarkCircle24Regular.js": [
-    "/daisyui-vue/assets/icons.0eb0ee7b.js"
+    "/daisyui-vue/assets/icons.4cff6a88.js"
   ],
   "../node_modules/.pnpm/@vicons+fluent@0.12.0/node_modules/@vicons/fluent/es/ErrorCircle24Regular.js": [
-    "/daisyui-vue/assets/icons.0eb0ee7b.js"
+    "/daisyui-vue/assets/icons.4cff6a88.js"
   ],
   "../node_modules/.pnpm/@vicons+fluent@0.12.0/node_modules/@vicons/fluent/es/Info24Regular.js": [
-    "/daisyui-vue/assets/icons.0eb0ee7b.js"
+    "/daisyui-vue/assets/icons.4cff6a88.js"
   ],
   "../node_modules/.pnpm/@vicons+fluent@0.12.0/node_modules/@vicons/fluent/es/Warning24Regular.js": [
-    "/daisyui-vue/assets/icons.0eb0ee7b.js"
+    "/daisyui-vue/assets/icons.4cff6a88.js"
   ],
   "src/.demo/ChtmlCyyadxbzzefxeuuaxteauvwzzwvwatuzfaffcwcwx.vue": [
-    "/daisyui-vue/assets/icons.0eb0ee7b.js"
+    "/daisyui-vue/assets/icons.4cff6a88.js"
   ],
   "src/pages/components/icons.md": [
-    "/daisyui-vue/assets/icons.0eb0ee7b.js"
+    "/daisyui-vue/assets/icons.4cff6a88.js"
   ],
   "src/pages/components/element.md": [
     "/daisyui-vue/assets/element.536a595f.js"
