@@ -6,7 +6,14 @@ import {
 } from 'daisyui-vue/shared/constants';
 import { componentV2 } from 'daisyui-vue/shared/styled';
 import { ExtractFromProps, IText } from 'daisyui-vue/shared/types/common';
-import { computed, ComputedRef, HTMLAttributes, inject, PropType } from 'vue';
+import {
+  computed,
+  ComputedRef,
+  HTMLAttributes,
+  inject,
+  nextTick,
+  PropType,
+} from 'vue';
 import { IRadioContext, radioCtxKey } from './state';
 import style from './style';
 
@@ -50,6 +57,10 @@ export const Radio = componentV2<IRadioProps, HTMLAttributes>(
       const handleOnChange = (e: InputChangeEvent) => {
         ctx?.value.onChange(e);
         emit('change', e);
+        nextTick(() => {
+          // sync dom state
+          e.target.checked = checked.value;
+        });
       };
 
       const wrapperCls = computed(() => ({
