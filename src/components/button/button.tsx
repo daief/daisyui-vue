@@ -16,6 +16,7 @@ import {
 import { ctxKey, ICtx } from './state';
 import { componentV2 } from 'daisyui-vue/shared/styled';
 import style from './style';
+import { isUndefined } from 'daisyui-vue/shared/utils';
 
 export type IButtonShape = 'defalut' | 'circle' | 'square';
 
@@ -68,7 +69,9 @@ export const Button = componentV2<
 
       const clickLoading = ref(false);
 
-      const finalLoading = computed(() => props.loading || clickLoading.value);
+      const finalLoading = computed(() =>
+        isUndefined(props.loading) ? clickLoading.value : props.loading,
+      );
 
       const cls = computed(() => {
         return [
