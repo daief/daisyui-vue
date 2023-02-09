@@ -73,7 +73,7 @@ export default {
     const currentTab = ref('1');
     return () => (
       <div>
-        <Tabs v-model={currentTab.value} type="bordered">
+        <Tabs v-model={currentTab.value} variant="bordered">
           <TabPanel name="1" title="TabPanel 1">
             Content 1
           </TabPanel>
@@ -101,7 +101,7 @@ export default {
     const currentTab = ref('1');
     return () => (
       <div>
-        <Tabs v-model={currentTab.value} type="lifted">
+        <Tabs v-model={currentTab.value} variant="lifted">
           <TabPanel name="1" title="TabPanel 1">
             Content 1
           </TabPanel>
@@ -129,7 +129,7 @@ export default {
     const currentTab = ref('1');
     return () => (
       <div>
-        <Tabs v-model={currentTab.value} type="boxed">
+        <Tabs v-model={currentTab.value} variant="boxed">
           <TabPanel name="1" title="TabPanel 1">
             Content 1
           </TabPanel>
@@ -157,22 +157,22 @@ export default {
     const currentTab = ref('1');
     return () => (
       <div>
-        <Tabs v-model={currentTab.value} type="lifted" size="xs">
+        <Tabs v-model={currentTab.value} variant="lifted" size="xs">
           <TabPanel name="1" title="Tiny" />
           <TabPanel name="2" title="Tiny" />
           <TabPanel name="3" title="Tiny" />
         </Tabs>
-        <Tabs v-model={currentTab.value} type="lifted" size="sm">
+        <Tabs v-model={currentTab.value} variant="lifted" size="sm">
           <TabPanel name="1" title="Small" />
           <TabPanel name="2" title="Small" />
           <TabPanel name="3" title="Small" />
         </Tabs>
-        <Tabs v-model={currentTab.value} type="lifted" size="md">
+        <Tabs v-model={currentTab.value} variant="lifted" size="md">
           <TabPanel name="1" title="Normal" />
           <TabPanel name="2" title="Normal" />
           <TabPanel name="3" title="Normal" />
         </Tabs>
-        <Tabs v-model={currentTab.value} type="lifted" size="lg">
+        <Tabs v-model={currentTab.value} variant="lifted" size="lg">
           <TabPanel name="1" title="Large" />
           <TabPanel name="2" title="Large" />
           <TabPanel name="3" title="Large" />
@@ -189,7 +189,7 @@ export default {
 
 | name    | description | type                    | default  |
 | ------- | ----------- | ----------------------- | -------- |
-| type    | tabs type   | bordered, lifted, boxed | bordered |
+| variant | tabs type   | bordered, lifted, boxed | bordered |
 | size    | tabs size   | ISize                   | md       |
 | v-model | tabs value  | -                       | -        |
 

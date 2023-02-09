@@ -9,6 +9,7 @@ import {
   onUnmounted,
   PropType,
   provide,
+  ref,
   Ref,
   shallowRef,
   toRef,
@@ -20,8 +21,10 @@ import {
   getRenderResult,
   isElementVNode,
   isNil,
+  isUndefined,
   IVueNode,
 } from 'daisyui-vue/shared/utils';
+import { V_MODEL_EVENT } from 'daisyui-vue/shared/constants';
 
 const ctx = Symbol('tabs');
 
@@ -46,7 +49,7 @@ interface ICtx {
 }
 
 export const tabsProps = {
-  type: {
+  variant: {
     type: String as PropType<IType>,
     default: 'bordered',
   },
@@ -56,6 +59,7 @@ export const tabsProps = {
   },
   modelValue: {
     type: [String, Number] as PropType<IText>,
+    default: void 0,
   },
 };
 export type ITabsProps = ExtractFromProps<typeof tabsProps>;
@@ -64,24 +68,30 @@ export const Tabs = componentV2<ITabsProps, HTMLAttributes>(
   {
     name: 'Tabs',
     props: tabsProps,
-    inheritAttrs: false,
-    emits: ['update:modelValue'],
-    setup: (props, { slots, emit, attrs }) => {
+    emits: [V_MODEL_EVENT],
+    setup: (props, { slots, emit }) => {
       const children: Record<number, ITabItem> = {};
       const tabItemList = shallowRef<ITabItem[]>([]);
 
+      const innerValue = ref(props.modelValue);
+
       const onChange = (name: IText) => {
-        emit('update:modelValue', name);
+        emit(V_MODEL_EVENT, name);
+        innerValue.value = name;
       };
 
       const instance = getCurrentInstance()!;
 
       const ctxVal: Ref<ICtx> = computed(() => ({
-        type: props.type,
+        type: props.variant,
         size: props.size,
-        currentName: props.modelValue,
+        currentName: isUndefined(props.modelValue)
+          ? innerValue.value
+          : props.modelValue,
         onChange,
         onCollect: (it: ITabItem) => {
+          if (!it.name) return;
+
           children[it.uid] = it;
 
           const tabNodeList = findInTree(
@@ -105,7 +115,7 @@ export const Tabs = componentV2<ITabsProps, HTMLAttributes>(
 
       const tabsCls = computed(() => ({
         'dv-tabs': true,
-        'dv-tabs-boxed': props.type === 'boxed',
+        'dv-tabs-boxed': props.variant === 'boxed',
       }));
 
       return () => {
@@ -113,16 +123,16 @@ export const Tabs = componentV2<ITabsProps, HTMLAttributes>(
         return (
           <div class="dv-tabs-wrapper">
             {vns}
-            <div {...attrs} class={tabsCls.value}>
+            <div class={tabsCls.value}>
               {tabItemList.value.map((p) => (
                 <TabTitle
                   key={p.name.value}
                   {...p}
-                  type={props.type}
+                  type={props.variant}
                   size={props.size}
                 />
               ))}
-              {props.type === 'lifted' ? (
+              {props.variant === 'lifted' ? (
                 <div class="dv-tabs-lifted-item" />
               ) : null}
             </div>
