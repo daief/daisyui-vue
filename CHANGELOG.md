@@ -2,6 +2,31 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.1-alpha.14](https://github.com/daief/daisyui-vue/compare/v0.0.1-alpha.13...v0.0.1-alpha.14) (2023-02-09)
+
+
+### Features
+
+* add kbd ([eb27bdc](https://github.com/daief/daisyui-vue/commit/eb27bdc5a40f0214eb60d438970d233b86011459))
+* add space ([b86efa1](https://github.com/daief/daisyui-vue/commit/b86efa136f1643ff9109ab2b7513190ad89e5c06))
+* add textarea ([3211fa2](https://github.com/daief/daisyui-vue/commit/3211fa2f6af6a0d98ac8a4224f51a96d9d2adc14))
+* add widget element ([bddea6a](https://github.com/daief/daisyui-vue/commit/bddea6a76d5a5e1d8769172d7a31d9a31d7a7b8f))
+
+
+### Bug Fixes
+
+* 💥 make result unit to px ([f402067](https://github.com/daief/daisyui-vue/commit/f402067e599b9c1869d2823ab988171c456c5484))
+* button ignore props loading ([8fa7e1b](https://github.com/daief/daisyui-vue/commit/8fa7e1bc0ff64a6cdd59d0bb758fa0b3ec2964bc))
+* button loading status ([c331207](https://github.com/daief/daisyui-vue/commit/c331207e62dde6cf68a7aea4361f9053c7c5a7e3))
+* change tabs type to variant & support inner state ([851734b](https://github.com/daief/daisyui-vue/commit/851734bb6d9e9bf8dba8f2012c5af39bede1eaac))
+* checkbox onchange bug & update checkbox props defination ([1a08a96](https://github.com/daief/daisyui-vue/commit/1a08a964e8340ebb4c57607fb597a2fd21626b7f))
+* input add v-model & change type to variant ([f387f51](https://github.com/daief/daisyui-vue/commit/f387f51b49eb31323868f2d627eb426f04c7f81c))
+* netural => neutral; add doc for Element ([ae18e1e](https://github.com/daief/daisyui-vue/commit/ae18e1e11515fd41363fd5c2cb5528c8d0092505))
+* radio ([4aabda3](https://github.com/daief/daisyui-vue/commit/4aabda3c6280cbcd61b7c8ebbb9fe3cd0b76f87b))
+* radio ([0d635b4](https://github.com/daief/daisyui-vue/commit/0d635b4079378009f2edbf128e5e78cfb90c7bcc))
+* space not work with array children ([7dabc97](https://github.com/daief/daisyui-vue/commit/7dabc97fcc0aee4afeeec0d692743aa935ed7742))
+* textarea support v-model ([019cbcf](https://github.com/daief/daisyui-vue/commit/019cbcf341be78e25ed2136397c965236bb60b38))
+
 ### [0.0.1-alpha.13](https://github.com/daief/daisyui-vue/compare/v0.0.1-alpha.12...v0.0.1-alpha.13) (2022-11-27)
 
 
