@@ -58,7 +58,7 @@ const config: UserConfig = {
         );
       },
     },
-    vueJsx(),
+    vueJsx({ enableObjectSlots: false }),
     Vue({
       include: [/\.vue$/, /\.md$/],
     }),

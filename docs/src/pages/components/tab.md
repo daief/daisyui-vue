@@ -54,7 +54,7 @@ export default {
           <TabPanel name="2" title={vNode}>
             Content 2
           </TabPanel>
-          <TabPanel name="3">{slots}</TabPanel>
+          <TabPanel name="3" v-slots={slots}></TabPanel>
         </Tabs>
       </div>
     );

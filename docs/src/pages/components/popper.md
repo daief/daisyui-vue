@@ -190,8 +190,9 @@ export default {
   setup: () => {
     return () => (
       <div class="p-6 text-center">
-        <dv-popper placement="right">
-          {{
+        <dv-popper
+          placement="right"
+          v-slots={{
             default: () => <dv-button>Hover Me</dv-button>,
             content: () => (
               <div>
@@ -199,7 +200,7 @@ export default {
               </div>
             ),
           }}
-        </dv-popper>
+        ></dv-popper>
       </div>
     );
   },

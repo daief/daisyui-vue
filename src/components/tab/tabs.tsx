@@ -186,7 +186,7 @@ export const TabPanel = componentV2<ITabPanelProps, HTMLAttributes>(
       const ins = getCurrentInstance()!;
 
       ctxVal.value.onCollect({
-        uid: getCurrentInstance()!.uid,
+        uid: ins.uid,
         name: toRef(props, 'name'),
         title: renderTitle,
         content: renderContent,
@@ -196,9 +196,7 @@ export const TabPanel = componentV2<ITabPanelProps, HTMLAttributes>(
         ctxVal.value.onRemove(ins.uid);
       });
 
-      return () => {
-        return null;
-      };
+      return () => null;
     },
   },
   style,
