@@ -13,6 +13,8 @@ import {
   Ref,
   shallowRef,
   toRef,
+  unref,
+  watch,
 } from 'vue';
 import { componentV2 } from 'daisyui-vue/shared/styled';
 import style from './style';
@@ -23,6 +25,7 @@ import {
   isNil,
   isUndefined,
   IVueNode,
+  tryCall,
 } from 'daisyui-vue/shared/utils';
 import { V_MODEL_EVENT } from 'daisyui-vue/shared/constants';
 
@@ -34,7 +37,7 @@ type IType = 'bordered' | 'lifted' | 'boxed';
 
 interface ITabItem {
   uid: number;
-  name: Ref<IText>;
+  name: IText | Ref<IText>;
   title: (arg: { active: boolean }) => IVueNode[];
   content: (arg: { active: boolean }) => IVueNode[];
 }
@@ -61,6 +64,16 @@ export const tabsProps = {
     type: [String, Number] as PropType<IText>,
     default: void 0,
   },
+  items: {
+    type: Array as PropType<
+      Array<{
+        title: any;
+        name: IText;
+        content?: any;
+      }>
+    >,
+    default: () => [],
+  },
 };
 export type ITabsProps = ExtractFromProps<typeof tabsProps>;
 
@@ -72,8 +85,18 @@ export const Tabs = componentV2<ITabsProps, HTMLAttributes>(
     setup: (props, { slots, emit }) => {
       const children: Record<number, ITabItem> = {};
       const tabItemList = shallowRef<ITabItem[]>([]);
+      const finalIItems = computed(() =>
+        props.items.length
+          ? props.items.map<ITabItem>((it, i) => ({
+              uid: i,
+              title: (_) => tryCall(it.title, () => _),
+              content: (_) => tryCall(it.content, () => _),
+              name: it.name,
+            }))
+          : tabItemList.value,
+      );
 
-      const innerValue = ref(props.modelValue);
+      const innerValue = ref(finalIItems.value[0]?.name);
 
       const onChange = (name: IText) => {
         emit(V_MODEL_EVENT, name);
@@ -113,20 +136,27 @@ export const Tabs = componentV2<ITabsProps, HTMLAttributes>(
 
       provide(ctx, ctxVal);
 
+      watch(finalIItems, () => {
+        if (!isUndefined(props.modelValue)) return;
+        const names = finalIItems.value.map((it) => it.name);
+        if (!names.includes(innerValue.value)) {
+          innerValue.value = unref(finalIItems.value[0]?.name);
+        }
+      });
+
       const tabsCls = computed(() => ({
         'dv-tabs': true,
         'dv-tabs-boxed': props.variant === 'boxed',
       }));
 
       return () => {
-        const vns = slots.default?.() || [];
         return (
           <div class="dv-tabs-wrapper">
-            {vns}
+            {props.items.length ? null : slots.default?.()}
             <div class={tabsCls.value}>
-              {tabItemList.value.map((p) => (
+              {finalIItems.value.map((p) => (
                 <TabTitle
-                  key={p.name.value}
+                  key={unref(p.name)}
                   {...p}
                   type={props.variant}
                   size={props.size}
@@ -136,22 +166,24 @@ export const Tabs = componentV2<ITabsProps, HTMLAttributes>(
                 <div class="dv-tabs-lifted-item" />
               ) : null}
             </div>
-            {tabItemList.value.map((t) => (
-              <div
-                key={t.uid}
-                class={[
-                  'dv-tab-content',
-                  {
-                    'dv-tab-content--hidden':
-                      t.name.value !== ctxVal.value.currentName,
-                  },
-                ]}
-              >
-                {t.content({
-                  active: t.name.value === ctxVal.value.currentName,
-                })}
-              </div>
-            ))}
+            {finalIItems.value.map((t) => {
+              const isActive = unref(t.name) === ctxVal.value.currentName;
+              return (
+                <div
+                  key={t.uid}
+                  class={[
+                    'dv-tab-content',
+                    {
+                      'dv-tab-content--hidden': !isActive,
+                    },
+                  ]}
+                >
+                  {t.content({
+                    active: isActive,
+                  })}
+                </div>
+              );
+            })}
           </div>
         );
       };
@@ -215,7 +247,7 @@ const TabTitle = componentV2<
   setup: (_, { attrs }) => {
     const ctxVal = inject<Ref<ICtx>>(ctx);
     const isTitleActive = computed(
-      () => ctxVal.value.currentName === attrs.name.value,
+      () => ctxVal.value.currentName === unref(attrs.name),
     );
 
     const tabHeadCls = computed(() => [
@@ -227,7 +259,7 @@ const TabTitle = componentV2<
     ]);
 
     const handleOnClick = () => {
-      ctxVal.value.onChange(attrs.name.value);
+      ctxVal.value.onChange(unref(attrs.name));
     };
 
     const titleProps = computed(() => ({

@@ -87,26 +87,30 @@ export function oneToArray<T>(o: T | T[]): T[] {
   return isNil(o) ? [] : [o];
 }
 
+export function tryCall(funcOrVal: any, args: () => any = () => void 0) {
+  return typeof funcOrVal === 'function' ? funcOrVal(args()) : funcOrVal;
+}
+
 /**
  * 从 props、slots 中解析 render 方法的内容
  * @param key
  * @param props
  * @param slots
- * @param renderArgs
+ * @param renderArg
  * @returns
  */
 export function getRenderResult(
   key: string | [propsKey: string, slotsKey: string],
   props: any = {},
   slots: Readonly<Slots> = {},
-  renderArgs: () => any = () => void 0,
+  renderArg: () => any = () => void 0,
 ): IVueNode[] {
   const [propsKey, slotsKey] = typeof key === 'string' ? [key, key] : key;
   const getPropsResult = () => {
     const propVal = props[propsKey];
-    return typeof propVal === 'function' ? propVal(renderArgs()) : propVal;
+    return tryCall(propVal, renderArg);
   };
-  const getSlotsResult = () => slots[slotsKey]?.(renderArgs());
+  const getSlotsResult = () => slots[slotsKey]?.(renderArg());
   return oneToArray(getSlotsResult() || getPropsResult());
 }
 
