@@ -20,6 +20,7 @@ export * from './mask';
 export * from './menu';
 export * from './modal';
 export * from './navbar';
+export * from './pagination';
 export * from './popper';
 export * from './progress';
 export * from './radio';

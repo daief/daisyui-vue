@@ -128,7 +128,7 @@ export function render() {
 - [x] menu
 - [x] modal
 - [x] navbar
-- [ ] pagination
+- [x] pagination
 - [x] progress
   - [x] radial progress
 - [x] popper - 🆕 new

@@ -40,7 +40,6 @@ export const buttonProps = {
   },
   size: {
     type: String as PropType<ISize>,
-    default: 'md',
   },
   tag: {
     type: String as PropType<'button' | 'a' | 'input'>,
@@ -59,8 +58,8 @@ export const Button = componentV2<
     name: 'Button',
     props: buttonProps,
     setup: (props, { slots }) => {
-      const ctxVal = inject<Ref<ICtx>>(ctxKey, null);
-      const size = computed(() => props.size || ctxVal?.value.size || 'md');
+      const ctxVal = inject<Ref<ICtx> | null>(ctxKey, null);
+      const size = computed(() => ctxVal?.value.size || props.size || 'md');
       const shape = computed(
         () => props.shape || ctxVal?.value.shape || 'default',
       );
