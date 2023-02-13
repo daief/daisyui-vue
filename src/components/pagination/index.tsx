@@ -60,6 +60,7 @@ export const Pagination = componentV2<IPaginationProps, HTMLAttributes>({
     });
 
     const handleChange = (page: number) => {
+      if (page === finalCurrent.value) return;
       emit(V_MODEL_EVENT, page);
       state.current = page;
     };
