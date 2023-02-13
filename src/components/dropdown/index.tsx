@@ -19,9 +19,7 @@ export const Dropdown = componentV2<IDropdownProps>(
     props: dropdownProps,
     setup: (props, { slots }) => {
       return () => (
-        <Popper class="dv-dropdown" {...props} hideArrow>
-          {slots}
-        </Popper>
+        <Popper class="dv-dropdown" {...props} hideArrow v-slots={slots} />
       );
     },
   },

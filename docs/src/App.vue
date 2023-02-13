@@ -115,8 +115,7 @@ export default defineComponent({
           class="h-screen"
           open={open.value}
           onClose={() => (open.value = false)}
-        >
-          {{
+          v-slots={{
             default: () => (
               <div class="overflow-y-auto w-80 bg-base-200 pb-6">
                 <Menu class="rounded-box p-4" compact>
@@ -198,7 +197,7 @@ export default defineComponent({
               </div>
             ),
           }}
-        </Drawer>
+        />
       </main>
     );
   },
