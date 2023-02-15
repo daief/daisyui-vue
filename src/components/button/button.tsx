@@ -36,7 +36,7 @@ export const buttonProps = {
   },
   shape: {
     type: String as PropType<IButtonShape>,
-    default: 'neutral',
+    default: '',
   },
   size: {
     type: String as PropType<ISize>,
@@ -73,16 +73,19 @@ export const Button = componentV2<
       );
 
       const cls = computed(() => {
+        let variantCls = '';
+        if (props.variant === 'glass') {
+          variantCls = 'dv-glass';
+        } else if (props.variant) {
+          variantCls =
+            props.variant !== 'neutral' ? `dv-btn-${props.variant}` : '';
+        }
         return [
           'dv-btn',
-          props.variant === 'glass'
-            ? 'dv-glass'
-            : !!props.variant
-            ? `dv-btn-${props.variant}`
-            : '',
+          variantCls,
           {
             [`dv-btn-${size.value}`]: true,
-            [`dv-btn-${shape.value}`]: true,
+            [`dv-btn-${shape.value}`]: !!shape.value,
             'dv-btn-block': props.block,
             'dv-btn-wide': props.wide,
             'dv-loading': finalLoading.value,
