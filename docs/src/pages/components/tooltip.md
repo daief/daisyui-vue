@@ -58,28 +58,28 @@ with colors
 <div
   class="text-center grid grid-cols-1 lg:grid-cols-5 my-10 place-items-center gap-y-12"
 >
-  <dv-tooltip content="hello" open placement="top" type="neutral">
+  <dv-tooltip content="hello" open placement="top" variant="neutral">
     <dv-button variant="neutral">neutral</dv-button>
   </dv-tooltip>
-  <dv-tooltip content="hello" open placement="top" type="primary">
+  <dv-tooltip content="hello" open placement="top" variant="primary">
     <dv-button variant="primary">primary</dv-button>
   </dv-tooltip>
-  <dv-tooltip content="hello" open placement="top" type="secondary">
+  <dv-tooltip content="hello" open placement="top" variant="secondary">
     <dv-button variant="secondary">secondary</dv-button>
   </dv-tooltip>
-  <dv-tooltip content="hello" open placement="top" type="accent">
+  <dv-tooltip content="hello" open placement="top" variant="accent">
     <dv-button variant="accent">accent</dv-button>
   </dv-tooltip>
-  <dv-tooltip content="hello" open placement="top" type="info">
+  <dv-tooltip content="hello" open placement="top" variant="info">
     <dv-button variant="info">info</dv-button>
   </dv-tooltip>
-  <dv-tooltip content="hello" open placement="top" type="success">
+  <dv-tooltip content="hello" open placement="top" variant="success">
     <dv-button variant="success">success</dv-button>
   </dv-tooltip>
-  <dv-tooltip content="hello" open placement="top" type="warning">
+  <dv-tooltip content="hello" open placement="top" variant="warning">
     <dv-button variant="warning">warning</dv-button>
   </dv-tooltip>
-  <dv-tooltip content="hello" open placement="top" type="error">
+  <dv-tooltip content="hello" open placement="top" variant="error">
     <dv-button variant="error">error</dv-button>
   </dv-tooltip>
 </div>
@@ -89,8 +89,8 @@ with colors
 
 ### Attributes
 
-| name | description | type                                                               | default |
-| ---- | ----------- | ------------------------------------------------------------------ | ------- |
-| type | color type  | neutral, primary, secondary, accent, info, success, warning, error | neutral |
+| name    | description | type                                                               | default |
+| ------- | ----------- | ------------------------------------------------------------------ | ------- |
+| variant | color type  | neutral, primary, secondary, accent, info, success, warning, error | neutral |
 
 Others attributes are same as `Popper`.

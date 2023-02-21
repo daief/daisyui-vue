@@ -1,15 +1,13 @@
+import { colorVariantProps } from 'daisyui-vue/shared/constants';
 import { componentV2 } from 'daisyui-vue/shared/styled';
-import { ExtractFromProps, IColorType } from 'daisyui-vue/shared/types/common';
-import { HTMLAttributes, PropType } from 'vue';
+import { ExtractFromProps } from 'daisyui-vue/shared/types/common';
+import { HTMLAttributes } from 'vue';
 import { IPopperProps, popperProps, Popper } from '../popper';
 import style from './style';
 
 export const toolTipprops = {
   ...popperProps,
-  type: {
-    type: String as PropType<IColorType>,
-    default: 'neutral',
-  },
+  ...colorVariantProps,
 };
 
 export type ITooltipProps = ExtractFromProps<typeof toolTipprops> &
@@ -26,13 +24,12 @@ export const Tooltip = componentV2<ITooltipProps, HTMLAttributes>(
             'dv-tooltip',
             attrs.class,
             {
-              [`dv-tooltip-${props.type}`]: !!props.type,
+              [`dv-tooltip-${props.variant}`]: !!props.variant,
             },
           ]}
           {...props}
-        >
-          {slots}
-        </Popper>
+          v-slots={slots}
+        />
       );
     },
   },
