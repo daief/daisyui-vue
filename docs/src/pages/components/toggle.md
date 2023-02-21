@@ -13,14 +13,12 @@ Toggle
 Toggle color
 
 ```html :::demo
-<div class="text-center">
-  <dv-toggle checked />
-  <div class="h-2" />
-  <dv-toggle checked variant="primary" />
-  <div class="h-2" />
-  <dv-toggle checked variant="secondary" />
-  <div class="h-2" />
-  <dv-toggle checked variant="accent" />
+<div class="text-center space-y-2 flex items-center flex-col">
+  <dv-toggle
+    defaultValue
+    v-for="variant in ['neutral', 'primary', 'secondary', 'accent', 'info']"
+    :variant="variant"
+  />
 </div>
 ```
 
@@ -42,9 +40,9 @@ Toggle size
 
 ### Attributes
 
-| name     | description                        | type                                | default |
-| -------- | ---------------------------------- | ----------------------------------- | ------- |
-| checked  | toggle checked status              | boolean                             | -       |
-| onChange | toggle checked status change event | Function                            | -       |
-| variant  | toogle color type                  | neutral, primary, secondary, accent | neutral |
-| size     | toogle size                        | xs, sm, md, lg                      | -       |
+| name         | description            | type                                | default |
+| ------------ | ---------------------- | ----------------------------------- | ------- |
+| v-model      | v-model checked status | boolean                             | -       |
+| defaultValue | initial checked status | Function                            | -       |
+| variant      | toogle color type      | neutral, primary, secondary, accent | neutral |
+| size         | toogle size            | xs, sm, md, lg                      | -       |

@@ -1,8 +1,9 @@
 import { InputChangeEvent } from 'daisyui-vue/@types/dom';
+import { V_MODEL_EVENT } from 'daisyui-vue/shared/constants';
 import { componentV2 } from 'daisyui-vue/shared/styled';
 import {
   ExtractFromProps,
-  IColorType,
+  IBrandColor,
   ISize,
 } from 'daisyui-vue/shared/types/common';
 import { isUndefined } from 'daisyui-vue/shared/utils';
@@ -10,16 +11,16 @@ import { computed, nextTick, PropType, reactive } from 'vue';
 import styles from './style';
 
 export const toggleProps = {
-  checked: {
+  modelValue: {
     type: Boolean,
     default: void 0,
   },
-  onChange: {
-    type: Function as PropType<(e: InputChangeEvent) => void>,
+  defaultValue: {
+    type: Boolean,
     default: void 0,
   },
   variant: {
-    type: String as PropType<IColorType>,
+    type: String as PropType<IBrandColor>,
     default: 'neutral',
   },
   size: {
@@ -34,13 +35,14 @@ export const Toggle = componentV2<IToggleProps>(
   {
     name: 'Toggle',
     props: toggleProps,
-    setup: (props) => {
+    emits: [V_MODEL_EVENT],
+    setup: (props, { emit }) => {
       const state = reactive({
-        checked: props.checked,
+        checked: props.defaultValue ?? props.modelValue,
       });
 
       const finalVal = computed(() =>
-        isUndefined(props.checked) ? state.checked : props.checked,
+        isUndefined(props.modelValue) ? state.checked : props.modelValue,
       );
 
       const cls = computed(() => [
@@ -60,7 +62,7 @@ export const Toggle = componentV2<IToggleProps>(
             onChange={(e: InputChangeEvent) => {
               const newVal = !finalVal.value;
               state.checked = newVal;
-              props.onChange?.(e);
+              emit(V_MODEL_EVENT, newVal);
               nextTick(() => {
                 // force sync with finalVal
                 e.target.checked = finalVal.value;
