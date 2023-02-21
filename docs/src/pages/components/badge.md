@@ -9,14 +9,14 @@ badge
   class="flex flex-wrap items-start md:space-x-2 space-y-2 md:space-y-0 flex-col md:flex-row"
 >
   <dv-badge>neutral</dv-badge>
-  <dv-badge type="primary">primary</dv-badge>
-  <dv-badge type="secondary">secondary</dv-badge>
-  <dv-badge type="accent">accent</dv-badge>
-  <dv-badge type="ghost">ghost</dv-badge>
-  <dv-badge type="info">info</dv-badge>
-  <dv-badge type="success">success</dv-badge>
-  <dv-badge type="warning">warning</dv-badge>
-  <dv-badge type="error">error</dv-badge>
+  <dv-badge variant="primary">primary</dv-badge>
+  <dv-badge variant="secondary">secondary</dv-badge>
+  <dv-badge variant="accent">accent</dv-badge>
+  <dv-badge variant="ghost">ghost</dv-badge>
+  <dv-badge variant="info">info</dv-badge>
+  <dv-badge variant="success">success</dv-badge>
+  <dv-badge variant="warning">warning</dv-badge>
+  <dv-badge variant="error">error</dv-badge>
 </div>
 ```
 
@@ -52,19 +52,19 @@ badge variants
 <div
   class="flex flex-wrap items-start md:space-x-2 space-y-2 md:space-y-0 flex-col md:flex-row"
 >
-  <dv-badge type="primary">
+  <dv-badge variant="primary">
     <icon-close size="14px" class="mr-1" />
     primary
   </dv-badge>
-  <dv-badge type="info">
+  <dv-badge variant="info">
     <icon-close size="14px" class="mr-1" />
     info
   </dv-badge>
-  <dv-badge type="warning">
+  <dv-badge variant="warning">
     <icon-close size="14px" class="mr-1" />
     warning
   </dv-badge>
-  <dv-badge type="error">
+  <dv-badge variant="error">
     <icon-close size="14px" class="mr-1" />
     error
   </dv-badge>
@@ -78,9 +78,9 @@ badge outline
   class="flex flex-wrap items-start md:space-x-2 space-y-2 md:space-y-0 flex-col md:flex-row"
 >
   <dv-badge outline>neutral</dv-badge>
-  <dv-badge outline type="primary">primary</dv-badge>
-  <dv-badge outline type="secondary">secondary</dv-badge>
-  <dv-badge outline type="accent">accent</dv-badge>
+  <dv-badge outline variant="primary">primary</dv-badge>
+  <dv-badge outline variant="secondary">secondary</dv-badge>
+  <dv-badge outline variant="accent">accent</dv-badge>
 </div>
 ```
 
@@ -121,15 +121,15 @@ badge in button
     Version 2.7.0
     <dv-badge class="ml-2">new</dv-badge>
   </dv-button>
-  <dv-button type="primary">
+  <dv-button variant="primary">
     Inbox
     <dv-badge class="ml-2" outline>3</dv-badge>
   </dv-button>
-  <dv-button type="secondary">
+  <dv-button variant="secondary">
     Notifications
     <dv-badge class="ml-2" outline>+999</dv-badge>
   </dv-button>
-  <dv-button type="accent">
+  <dv-button variant="accent">
     Accent
     <dv-badge class="ml-2" outline>new</dv-badge>
   </dv-button>
@@ -142,6 +142,6 @@ badge in button
 
 | name    | description                              | type                                                                                   | default |
 | ------- | ---------------------------------------- | -------------------------------------------------------------------------------------- | ------- |
-| type    | color type                               | neutral, primary, secondary, accent, info, success, warning, error, ghost, link, glass | neutral |
+| variant | color type                               | neutral, primary, secondary, accent, info, success, warning, error, ghost, link, glass | neutral |
 | size    | size                                     | ISize                                                                                  | md      |
 | outline | transparent badge with [colorful] border | boolean                                                                                | false   |

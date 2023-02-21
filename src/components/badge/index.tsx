@@ -9,7 +9,7 @@ import style from './style';
 
 export const badgeProps = {
   outline: { type: Boolean, default: void 0 },
-  type: {
+  variant: {
     type: String as PropType<IColorType | 'ghost'>,
     default: 'neutral',
   },
@@ -33,7 +33,7 @@ export const Badge = componentV2<IBadgeProps, HTMLAttributes>(
         <div
           class={{
             'dv-badge': true,
-            [`dv-badge-${props.type}`]: props.type,
+            [`dv-badge-${props.variant}`]: props.variant,
             [`dv-badge-${size.value}`]: size.value,
             [`dv-badge-outline`]: outline.value,
           }}
