@@ -14,13 +14,13 @@ All notable changes to this project will be documented in this file. See [standa
 ### Bug Fixes
 
 * button default variant ([1377fe7](https://github.com/daief/daisyui-vue/commit/1377fe762eadc9e3aad4480e731a1068f399d64d))
-* change Element to Raw ([3fb978b](https://github.com/daief/daisyui-vue/commit/3fb978bdba3a870c7ffcbf885a4a79d75bd969d5))
-* change toggle type to variant ([24431e2](https://github.com/daief/daisyui-vue/commit/24431e2a8a762c87c56681ac9e8cae3e71a7d744))
-* change type to variant ([d713fad](https://github.com/daief/daisyui-vue/commit/d713fadd3b4a23732e9e65e986428cdede93bfdc))
+* 💥 change Element to Raw ([3fb978b](https://github.com/daief/daisyui-vue/commit/3fb978bdba3a870c7ffcbf885a4a79d75bd969d5))
+* 💥 change toggle type to variant ([24431e2](https://github.com/daief/daisyui-vue/commit/24431e2a8a762c87c56681ac9e8cae3e71a7d744))
+* 💥 change type to variant ([d713fad](https://github.com/daief/daisyui-vue/commit/d713fadd3b4a23732e9e65e986428cdede93bfdc))
 * pass slots after disable objectSlots in Dropdown ([cd9849a](https://github.com/daief/daisyui-vue/commit/cd9849a8a9eeee7c82ab2dc52b7e203d3f8f8907))
-* toggle props change to v-model ([86f6616](https://github.com/daief/daisyui-vue/commit/86f6616f7d10abecbbb31a0a8bb1ae55c13597f6))
-* toogle variant type ([1ba8a5b](https://github.com/daief/daisyui-vue/commit/1ba8a5b3c930b234da272fea64bdcc90af9ad223))
-* tooltip & change type to variant ([5dfb152](https://github.com/daief/daisyui-vue/commit/5dfb15268e160a843316e08a8bd52ad5510a7197))
+* 💥 toggle props change to v-model ([86f6616](https://github.com/daief/daisyui-vue/commit/86f6616f7d10abecbbb31a0a8bb1ae55c13597f6))
+* 💥 toogle variant type ([1ba8a5b](https://github.com/daief/daisyui-vue/commit/1ba8a5b3c930b234da272fea64bdcc90af9ad223))
+* 💥 tooltip & change type to variant ([5dfb152](https://github.com/daief/daisyui-vue/commit/5dfb15268e160a843316e08a8bd52ad5510a7197))
 
 ### [0.0.1-alpha.14](https://github.com/daief/daisyui-vue/compare/v0.0.1-alpha.13...v0.0.1-alpha.14) (2023-02-09)
 
@@ -38,10 +38,10 @@ All notable changes to this project will be documented in this file. See [standa
 * 💥 make result unit to px ([f402067](https://github.com/daief/daisyui-vue/commit/f402067e599b9c1869d2823ab988171c456c5484))
 * button ignore props loading ([8fa7e1b](https://github.com/daief/daisyui-vue/commit/8fa7e1bc0ff64a6cdd59d0bb758fa0b3ec2964bc))
 * button loading status ([c331207](https://github.com/daief/daisyui-vue/commit/c331207e62dde6cf68a7aea4361f9053c7c5a7e3))
-* change tabs type to variant & support inner state ([851734b](https://github.com/daief/daisyui-vue/commit/851734bb6d9e9bf8dba8f2012c5af39bede1eaac))
+* 💥 change tabs type to variant & support inner state ([851734b](https://github.com/daief/daisyui-vue/commit/851734bb6d9e9bf8dba8f2012c5af39bede1eaac))
 * checkbox onchange bug & update checkbox props defination ([1a08a96](https://github.com/daief/daisyui-vue/commit/1a08a964e8340ebb4c57607fb597a2fd21626b7f))
-* input add v-model & change type to variant ([f387f51](https://github.com/daief/daisyui-vue/commit/f387f51b49eb31323868f2d627eb426f04c7f81c))
-* netural => neutral; add doc for Element ([ae18e1e](https://github.com/daief/daisyui-vue/commit/ae18e1e11515fd41363fd5c2cb5528c8d0092505))
+* 💥 input add v-model & change type to variant ([f387f51](https://github.com/daief/daisyui-vue/commit/f387f51b49eb31323868f2d627eb426f04c7f81c))
+* 💥 netural => neutral; add doc for Element ([ae18e1e](https://github.com/daief/daisyui-vue/commit/ae18e1e11515fd41363fd5c2cb5528c8d0092505))
 * radio ([4aabda3](https://github.com/daief/daisyui-vue/commit/4aabda3c6280cbcd61b7c8ebbb9fe3cd0b76f87b))
 * radio ([0d635b4](https://github.com/daief/daisyui-vue/commit/0d635b4079378009f2edbf128e5e78cfb90c7bcc))
 * space not work with array children ([7dabc97](https://github.com/daief/daisyui-vue/commit/7dabc97fcc0aee4afeeec0d692743aa935ed7742))
