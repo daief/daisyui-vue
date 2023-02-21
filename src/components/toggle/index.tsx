@@ -2,7 +2,7 @@ import { InputChangeEvent } from 'daisyui-vue/@types/dom';
 import { componentV2 } from 'daisyui-vue/shared/styled';
 import {
   ExtractFromProps,
-  IBrandColor,
+  IColorType,
   ISize,
 } from 'daisyui-vue/shared/types/common';
 import { isUndefined } from 'daisyui-vue/shared/utils';
@@ -19,7 +19,7 @@ export const toggleProps = {
     default: void 0,
   },
   variant: {
-    type: String as PropType<IBrandColor>,
+    type: String as PropType<IColorType>,
     default: 'neutral',
   },
   size: {
