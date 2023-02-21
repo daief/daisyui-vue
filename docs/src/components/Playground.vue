@@ -73,7 +73,7 @@ export default defineComponent({
 .dv-playground {
   margin-bottom: 1em;
 
-  /deep/ .preview-demo-wrap {
+  :deep(.preview-demo-wrap) {
     background-image: radial-gradient(
       hsla(var(--bc) / 0.2) 0.5px,
       hsla(var(--b2) / 1) 0.5px
@@ -82,7 +82,7 @@ export default defineComponent({
     @apply flex flex-wrap justify-center items-center min-h-6;
   }
 
-  /deep/ .code-wrapper {
+  :deep(.code-wrapper) {
     position: relative;
 
     .code-badges {
