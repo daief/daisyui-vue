@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.1-alpha.15](https://github.com/daief/daisyui-vue/compare/v0.0.1-alpha.14...v0.0.1-alpha.15) (2023-02-21)
+
+
+### Features
+
+* add pagination ([39b2c7d](https://github.com/daief/daisyui-vue/commit/39b2c7d597611e381e7e342f978fc4f2cdaa7532))
+* tabs support props items ([9fa1638](https://github.com/daief/daisyui-vue/commit/9fa16382ca43836e9dfd6a21ed2e04eafaf52c58))
+
+
+### Bug Fixes
+
+* button default variant ([1377fe7](https://github.com/daief/daisyui-vue/commit/1377fe762eadc9e3aad4480e731a1068f399d64d))
+* change Element to Raw ([3fb978b](https://github.com/daief/daisyui-vue/commit/3fb978bdba3a870c7ffcbf885a4a79d75bd969d5))
+* change toggle type to variant ([24431e2](https://github.com/daief/daisyui-vue/commit/24431e2a8a762c87c56681ac9e8cae3e71a7d744))
+* change type to variant ([d713fad](https://github.com/daief/daisyui-vue/commit/d713fadd3b4a23732e9e65e986428cdede93bfdc))
+* pass slots after disable objectSlots in Dropdown ([cd9849a](https://github.com/daief/daisyui-vue/commit/cd9849a8a9eeee7c82ab2dc52b7e203d3f8f8907))
+* toggle props change to v-model ([86f6616](https://github.com/daief/daisyui-vue/commit/86f6616f7d10abecbbb31a0a8bb1ae55c13597f6))
+* toogle variant type ([1ba8a5b](https://github.com/daief/daisyui-vue/commit/1ba8a5b3c930b234da272fea64bdcc90af9ad223))
+* tooltip & change type to variant ([5dfb152](https://github.com/daief/daisyui-vue/commit/5dfb15268e160a843316e08a8bd52ad5510a7197))
+
 ### [0.0.1-alpha.14](https://github.com/daief/daisyui-vue/compare/v0.0.1-alpha.13...v0.0.1-alpha.14) (2023-02-09)
 
 
