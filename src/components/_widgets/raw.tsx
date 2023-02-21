@@ -4,15 +4,15 @@ import { ExtractFromProps, IColorType } from 'daisyui-vue/shared/types/common';
 import { computed, createVNode, HTMLAttributes, PropType } from 'vue';
 import style from './style/element.less';
 
-export type IElementType = IColorType | 'base-100' | 'base-200' | 'base-300';
+export type IRawType = IColorType | 'base-100' | 'base-200' | 'base-300';
 
-export const elementProps = {
+export const rawProps = {
   tag: {
     type: String,
     default: 'div',
   },
   variant: {
-    type: String as PropType<IElementType>,
+    type: String as PropType<IRawType>,
     default: '',
   },
   color: {
@@ -21,12 +21,12 @@ export const elementProps = {
   },
 };
 
-export type IElementProps = ExtractFromProps<typeof elementProps>;
+export type IRawProps = ExtractFromProps<typeof rawProps>;
 
-export const Element = componentV2<IElementProps, HTMLAttributes>(
+export const Raw = componentV2<IRawProps, HTMLAttributes>(
   {
-    name: 'Element',
-    props: elementProps,
+    name: 'Raw',
+    props: rawProps,
     setup: (props, { slots }) => {
       const styleRef = computed(() => {
         let bg = 'none';
