@@ -16,11 +16,11 @@ Toggle color
 <div class="text-center">
   <dv-toggle checked />
   <div class="h-2" />
-  <dv-toggle checked type="primary" />
+  <dv-toggle checked variant="primary" />
   <div class="h-2" />
-  <dv-toggle checked type="secondary" />
+  <dv-toggle checked variant="secondary" />
   <div class="h-2" />
-  <dv-toggle checked type="accent" />
+  <dv-toggle checked variant="accent" />
 </div>
 ```
 
@@ -46,5 +46,5 @@ Toggle size
 | -------- | ---------------------------------- | ----------------------------------- | ------- |
 | checked  | toggle checked status              | boolean                             | -       |
 | onChange | toggle checked status change event | Function                            | -       |
-| type     | toogle color type                  | neutral, primary, secondary, accent | neutral |
+| variant  | toogle color type                  | neutral, primary, secondary, accent | neutral |
 | size     | toogle size                        | xs, sm, md, lg                      | -       |

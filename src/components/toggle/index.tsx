@@ -18,7 +18,7 @@ export const toggleProps = {
     type: Function as PropType<(e: InputChangeEvent) => void>,
     default: void 0,
   },
-  type: {
+  variant: {
     type: String as PropType<IBrandColor>,
     default: 'neutral',
   },
@@ -46,7 +46,7 @@ export const Toggle = componentV2<IToggleProps>(
       const cls = computed(() => [
         'dv-toggle',
         {
-          [`dv-toggle-${props.type}`]: props.type,
+          [`dv-toggle-${props.variant}`]: props.variant,
           [`dv-toggle-${props.size}`]: props.size,
         },
       ]);
