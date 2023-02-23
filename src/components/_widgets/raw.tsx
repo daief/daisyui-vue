@@ -2,7 +2,7 @@ import { COLORS, IColor } from 'daisyui-vue/shared/constants';
 import { componentV2 } from 'daisyui-vue/shared/styled';
 import { ExtractFromProps, IColorType } from 'daisyui-vue/shared/types/common';
 import { computed, createVNode, HTMLAttributes, PropType } from 'vue';
-import style from './style/element.less';
+import style from './style/raw.less';
 
 export type IRawType = IColorType | 'base-100' | 'base-200' | 'base-300';
 
@@ -47,8 +47,8 @@ export const Raw = componentV2<IRawProps, HTMLAttributes>(
         }
 
         return {
-          '--dv-element-bg': bg,
-          '--dv-element-color': color,
+          '--dv-raw-bg': bg,
+          '--dv-raw-color': color,
         };
       });
 
@@ -56,7 +56,7 @@ export const Raw = componentV2<IRawProps, HTMLAttributes>(
         createVNode(
           props.tag,
           {
-            class: 'dv-element',
+            class: 'dv-raw',
             style: styleRef.value,
           },
           slots.default?.(),
