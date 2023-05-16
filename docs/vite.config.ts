@@ -322,10 +322,10 @@ const config: UserConfig = {
   ssgOptions: {
     script: 'async',
     // formatting: 'prettify',
-    onPageRendered: (route, html, ctx: any) => {
+    onPageRendered: (route, html, ctx) => {
       return html.replace(
         '<!-- __DAISYUI_VUE__ -->',
-        ctx.$daisyui.style.extractStyles(),
+        ctx.app.config.globalProperties.$styleManager.extractStyles(),
       );
     },
   },

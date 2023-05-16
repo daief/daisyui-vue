@@ -1,6 +1,8 @@
 import { ViteSSG } from 'vite-ssg';
 import routes from 'virtual:generated-pages';
 import daisyui, {
+  STYLE_MANAGER_CONTEXT_SYMBOL,
+  StyleManager,
   IconHeart,
   IconEllipsisHorizontal,
   IconClose,
@@ -44,6 +46,12 @@ export const createApp = ViteSSG(
   },
   (ctx) => {
     const { app, router, isClient } = ctx;
+    if (!isClient) {
+      const styleManager = new StyleManager();
+      app.provide(STYLE_MANAGER_CONTEXT_SYMBOL, styleManager);
+      app.config.globalProperties.$styleManager = styleManager;
+    }
+
     // install plugins etc.
     app.component('Playground', Playground);
     app.component('MarkdownTable', MarkdownTable);
