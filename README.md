@@ -73,17 +73,21 @@ Avoid `FOUC` problem when SSR:
 
 ```tsx
 // entry-server.ts
+import { STYLE_MANAGER_CONTEXT_SYMBOL, StyleManager } from 'daisyui-vue';
 
 export function render() {
   const app = createApp({
     // ...
   });
 
-  const style = app.config.globalProperties.$daisyui.style.extractStyles(); // <style>...</style>
+  const styleManager = new StyleManager();
+  app.provide(STYLE_MANAGER_CONTEXT_SYMBOL, styleManager);
+
+  const styleTagStr = styleManager.extractStyles(); // <style>...</style>
 
   const html = renderToString(app);
 
-  return html.replace('<!-- YOUR_STYLE_PLACEHOLDER -->', style);
+  return html.replace('<!-- YOUR_STYLE_PLACEHOLDER -->', styleTagStr);
 }
 ```
 
