@@ -27,6 +27,7 @@ import {
   withDirectives,
 } from 'vue';
 import style from './style/index.less';
+import { useTheme } from 'daisyui-vue/shared/ctx';
 
 export type ITriggerAction = 'contextMenu' | 'hover' | 'click' | 'focus';
 
@@ -79,8 +80,9 @@ export const Popper = componentV2<
     props: popperProps,
     inheritAttrs: false,
     setup: (props, { attrs, slots }) => {
+      const theme = useTheme();
       const state = reactive({
-        popperIns: null as Instance,
+        popperIns: null as Instance | null,
         isOpen: props.open,
         isFocus: false,
         /** 是否触发过 */
@@ -89,8 +91,8 @@ export const Popper = componentV2<
         childElVisibility: true,
       });
 
-      let enterTimer = null;
-      let leaveTimer = null;
+      let enterTimer: ReturnType<typeof setTimeout> | null = null;
+      let leaveTimer: ReturnType<typeof setTimeout> | null = null;
 
       const finalShow = computed(() =>
         props.disabled
@@ -108,15 +110,15 @@ export const Popper = componentV2<
 
       const hasAction = (acts: ITriggerAction | ITriggerAction[]) =>
         Array.isArray(acts)
-          ? acts.some((act) => finalActions.value.includes(act))
-          : finalActions.value.includes(acts);
+          ? acts.some((act) => finalActions.value?.includes(act))
+          : finalActions.value?.includes(acts);
 
       const handleClose = () => {
         change(false);
       };
 
-      const childRef = ref<VNode>(null);
-      const popperNode = ref<HTMLElement>(null);
+      const childRef = ref<VNode | null>(null);
+      const popperNode = ref<HTMLElement | null>(null);
       const getClidEl = () => childRef.value?.el as HTMLElement | undefined;
 
       const update = (v: boolean) => {
@@ -146,7 +148,7 @@ export const Popper = componentV2<
       const createIns = () => {
         destroy();
         const el = getClidEl();
-        if (!el) return;
+        if (!el || !popperNode.value) return;
         state.popperIns = createPopper(el, popperNode.value, {
           placement: props.placement,
           modifiers: [preventOverflow],
@@ -169,8 +171,8 @@ export const Popper = componentV2<
           }
 
           if (
-            !['click', 'contextMenu'].some((t: ITriggerAction) =>
-              finalActions.value.includes(t),
+            !(['click', 'contextMenu'] as ITriggerAction[]).some((t) =>
+              finalActions.value?.includes(t),
             )
           ) {
             return;
@@ -228,7 +230,9 @@ export const Popper = componentV2<
           ) => {
             const getEls = () => {
               const els = [getClidEl()];
-              bindBothChildAndPopper && els.push(popperNode.value);
+              if (bindBothChildAndPopper && popperNode.value) {
+                els.push(popperNode.value);
+              }
               return els;
             };
 
@@ -250,16 +254,16 @@ export const Popper = componentV2<
           const leaveDelay = 0;
 
           const handleEnter = () => {
-            clearTimeout(enterTimer);
-            clearTimeout(leaveTimer);
+            clearTimeout(enterTimer!);
+            clearTimeout(leaveTimer!);
             enterTimer = setTimeout(() => {
               change(true);
             }, enterDelay);
           };
 
           const handleLeave = () => {
-            clearTimeout(enterTimer);
-            clearTimeout(leaveTimer);
+            clearTimeout(enterTimer!);
+            clearTimeout(leaveTimer!);
             leaveTimer = setTimeout(() => {
               change(false);
             }, leaveDelay);
@@ -353,7 +357,7 @@ export const Popper = componentV2<
         const children = slots.default?.();
         const content = getRenderResult('content', props, slots);
 
-        childRef.value = children?.[0];
+        childRef.value = children?.[0] || null;
 
         return (
           <>
@@ -363,7 +367,7 @@ export const Popper = componentV2<
                 {withDirectives(
                   <div
                     {...attrs}
-                    class={['dv-popper-node']}
+                    class={[theme.className, 'dv-popper-node']}
                     style={props.hideArrow ? '--popper-tail: 0px' : ''}
                     ref={popperNode}
                   >
@@ -386,7 +390,7 @@ export const Popper = componentV2<
 
 // TODO maybe some problem
 function useElementStatusChange(
-  getVal: () => HTMLElement,
+  getVal: () => HTMLElement | undefined,
   cb: (visibilityChange?: boolean) => void,
 ) {
   watch(

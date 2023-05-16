@@ -33,3 +33,4 @@ export * from './toggle';
 export * from './tooltip';
 
 export * from './_widgets/raw';
+export { ThemeProvider } from './_widgets/theme';

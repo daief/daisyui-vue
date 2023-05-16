@@ -8,6 +8,7 @@ import {
 } from '../icon';
 import { HTMLAttributes, PropType } from 'vue';
 import style from './style';
+import { useTheme } from 'daisyui-vue/shared/ctx';
 
 export const alertProps = {
   type: {
@@ -36,8 +37,16 @@ export const Alert = componentV2<IAlertProps, HTMLAttributes>(
         const actions = slots.actions?.();
         const content = slots.content?.();
         const defaultSlot = slots.default?.();
+        const theme = useTheme();
+
         return (
-          <div class={['dv-alert', `dv-alert-${props.type || ''}`]}>
+          <div
+            class={[
+              theme.className,
+              'dv-alert',
+              `dv-alert-${props.type || ''}`,
+            ]}
+          >
             <div class="dv-alert-content">
               {icon ? <div class="dv-alert-iconwrap">{icon}</div> : null}
               <label>

@@ -7,7 +7,7 @@ card
 ```html :::demo
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
   <dv-card
-    class="bg-base-100"
+    class="dv-bgbase100"
     bordered
     image="https://placeimg.com/400/225/arch"
     title="Top image"
@@ -18,7 +18,7 @@ card
     </template>
   </dv-card>
 
-  <dv-card bordered class="bg-base-100">
+  <dv-card bordered class="dv-bgbase100">
     <dv-card-body>
       <dv-card-title> Image bottom </dv-card-title>
       <p>
@@ -34,7 +34,7 @@ card
     <dv-card-image src="https://placeimg.com/400/225/arch" />
   </dv-card>
 
-  <dv-card bordered class="bg-base-100">
+  <dv-card bordered class="dv-bgbase100">
     <dv-card-image src="https://placeimg.com/400/225/arch" />
     <dv-card-body>
       <dv-card-title> Small image file </dv-card-title>
@@ -73,7 +73,7 @@ card-compact
 
 ```html :::demo
 <dv-card
-  class="w-64 max-w-full bg-base-100"
+  class="w-64 max-w-full dv-bgbase100"
   bordered
   image="https://placeimg.com/400/225/arch"
   title="This card is compact"
@@ -90,7 +90,7 @@ card with side image
 
 ```html :::demo
 <dv-card
-  class="bg-base-100"
+  class="dv-bgbase100"
   bordered
   image="https://placeimg.com/400/225/arch"
   title="Horizontal"
@@ -107,7 +107,7 @@ card without image
 
 ```html :::demo
 <dv-card
-  class="bg-base-100"
+  class="dv-bgbase100"
   bordered
   title="No Images"
   description="Rerum reiciendis beatae tenetur excepturi aut pariatur est eos. Sit sit necessitatibus veritatis sed molestiae voluptates incidunt iure sapiente."

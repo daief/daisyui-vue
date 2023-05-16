@@ -37,7 +37,7 @@ export const Pagination = componentV2<IPaginationProps, HTMLAttributes>({
 
     const items = computed(() => {
       const currentValue = finalCurrent.value;
-      const totalValue = props.total;
+      const totalValue = props.total!;
 
       const headDelta = currentValue;
       const tailDelta = totalValue - currentValue;
@@ -94,7 +94,7 @@ export const Pagination = componentV2<IPaginationProps, HTMLAttributes>({
           break;
         case 'next-dot':
           ps.onClick = () =>
-            handleChange(Math.min(currentValue + delta + 2, props.total));
+            handleChange(Math.min(currentValue + delta + 2, props.total!));
           break;
         default:
           ps.onClick = () => handleChange(it);

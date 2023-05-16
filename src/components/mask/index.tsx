@@ -2,6 +2,7 @@ import { componentV2 } from 'daisyui-vue/shared/styled';
 import { ExtractFromProps } from 'daisyui-vue/shared/types/common';
 import { cloneVNode, PropType } from 'vue';
 import style from './style';
+import { useTheme } from 'daisyui-vue/shared/ctx';
 
 export type IMaskType =
   | 'squircle'
@@ -38,11 +39,12 @@ export const Mask = componentV2<IMaskProps, IMaskProps>(
     name: 'Mask',
     props: maskProps,
     setup: (props, { slots }) => {
+      const theme = useTheme();
       return () => {
         const child = slots.default?.()?.[0];
         return child
           ? cloneVNode(child, {
-              class: `dv-mask dv-mask-${props.type}`,
+              class: `${theme.className} dv-mask dv-mask-${props.type}`,
             })
           : null;
       };

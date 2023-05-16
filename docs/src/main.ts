@@ -51,9 +51,6 @@ export const createApp = ViteSSG(
 
     icons.forEach((i) => app.component(i.name, i));
 
-    // @ts-ignore
-    ctx.$daisyui = app.config.globalProperties.$daisyui;
-
     router.isReady().then(() => {
       router.afterEach((to, from, fa) => {
         if (!isClient) return;

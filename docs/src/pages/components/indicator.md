@@ -7,9 +7,9 @@ Empty badge as indicator
 ```html :::demo
 <dv-indicator>
   <dv-indicator-item>
-    <dv-badge type="secondary" />
+    <dv-badge variant="secondary" />
   </dv-indicator-item>
-  <div class="grid w-32 h-32 bg-base-300 place-items-center"> content </div>
+  <div class="grid w-32 h-32 dv-bgbase300 place-items-center"> content </div>
 </dv-indicator>
 ```
 
@@ -18,9 +18,9 @@ Badge as indicator
 ```html :::demo
 <dv-indicator>
   <dv-indicator-item>
-    <dv-badge type="primary">New</dv-badge>
+    <dv-badge variant="primary">New</dv-badge>
   </dv-indicator-item>
-  <div class="grid w-32 h-32 bg-base-300 place-items-center"> content </div>
+  <div class="grid w-32 h-32 dv-bgbase300 place-items-center"> content </div>
 </dv-indicator>
 ```
 
@@ -29,7 +29,7 @@ for button
 ```html :::demo
 <dv-indicator>
   <dv-indicator-item>
-    <dv-badge type="secondary">99+</dv-badge>
+    <dv-badge variant="secondary">99+</dv-badge>
   </dv-indicator-item>
   <dv-button>INBOX</dv-button>
 </dv-indicator>
@@ -40,7 +40,7 @@ for avatar
 ```html :::demo
 <dv-indicator>
   <dv-indicator-item>
-    <dv-badge type="secondary">Typing...</dv-badge>
+    <dv-badge variant="secondary">Typing...</dv-badge>
   </dv-indicator-item>
   <dv-avatar src="https://placeimg.com/160/160/people" :size="80" />
 </dv-indicator>
@@ -49,12 +49,12 @@ for avatar
 for tab
 
 ```html :::demo
-<dv-tabs type="lifted" modelValue="1">
+<dv-tabs variant="lifted" modelValue="1">
   <dv-tab-panel name="1">
     <template #title>
       <dv-indicator>
         <dv-indicator-item>
-          <dv-badge type="secondary">1</dv-badge>
+          <dv-badge variant="secondary">1</dv-badge>
         </dv-indicator-item>
         <a>Tiny 1</a>
       </dv-indicator>
@@ -81,10 +81,10 @@ A button as an indicator for a card
 ```html :::demo
 <dv-indicator>
   <dv-indicator-item placement="bottom-end">
-    <dv-button type="primary">Apply</dv-button>
+    <dv-button variant="primary">Apply</dv-button>
   </dv-indicator-item>
   <dv-card
-    class="bg-base-100"
+    class="dv-bgbase100"
     bordered
     title="Job Title"
     description="Rerum reiciendis beatae tenetur excepturi"
@@ -110,11 +110,18 @@ export default {
     return () => (
       <dv-indicator>
         {ls.map((p) => (
-          <dv-indicator-item key={p} placement={p} tag={Badge} type="secondary">
+          <dv-indicator-item
+            key={p}
+            placement={p}
+            tag={Badge}
+            variant="secondary"
+          >
             {p}
           </dv-indicator-item>
         ))}
-        <div class="grid w-80 h-32 bg-base-300 place-items-center">content</div>
+        <div class="grid w-80 h-32 dv-bgbase300 place-items-center">
+          content
+        </div>
       </dv-indicator>
     );
   },

@@ -3,6 +3,7 @@ import { ExtractFromProps } from 'daisyui-vue/shared/types/common';
 import { cssUnit } from 'daisyui-vue/shared/utils';
 import { HTMLAttributes, cloneVNode, PropType, h, DefineComponent } from 'vue';
 import style from './style';
+import { useTheme } from 'daisyui-vue/shared/ctx';
 
 export const iconProps = {
   color: {
@@ -27,14 +28,15 @@ export const Icon: IconComponent = componentV2<IIconProps, HTMLAttributes>(
     name: 'Icon',
     props: iconProps,
     setup: (props, { slots }) => {
+      const theme = useTheme();
       return () => {
         const child = slots.default?.()[0];
         return h(
           props.tag!,
           {
-            class: 'dv-icon',
+            class: theme.className + ' dv-icon',
             style: {
-              fontSize: cssUnit(props.size),
+              fontSize: cssUnit(props.size!),
               color: props.color,
             },
           },

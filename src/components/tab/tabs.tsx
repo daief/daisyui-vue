@@ -28,6 +28,7 @@ import {
   tryCall,
 } from 'daisyui-vue/shared/utils';
 import { V_MODEL_EVENT } from 'daisyui-vue/shared/constants';
+import { useTheme } from 'daisyui-vue/shared/ctx';
 
 const ctx = Symbol('tabs');
 
@@ -83,10 +84,11 @@ export const Tabs = componentV2<ITabsProps, HTMLAttributes>(
     props: tabsProps,
     emits: [V_MODEL_EVENT],
     setup: (props, { slots, emit }) => {
+      const theme = useTheme();
       const children: Record<number, ITabItem> = {};
       const tabItemList = shallowRef<ITabItem[]>([]);
       const finalIItems = computed(() =>
-        props.items.length
+        props.items?.length
           ? props.items.map<ITabItem>((it, i) => ({
               uid: i,
               title: (_) => tryCall(it.title, () => _),
@@ -106,8 +108,8 @@ export const Tabs = componentV2<ITabsProps, HTMLAttributes>(
       const instance = getCurrentInstance()!;
 
       const ctxVal: Ref<ICtx> = computed(() => ({
-        type: props.variant,
-        size: props.size,
+        type: props.variant!,
+        size: props.size!,
         currentName: isUndefined(props.modelValue)
           ? innerValue.value
           : props.modelValue,
@@ -125,7 +127,7 @@ export const Tabs = componentV2<ITabsProps, HTMLAttributes>(
           if (uids.some((i) => isNil(i))) return;
 
           tabItemList.value = uids
-            .map((uid) => children[uid])
+            .map((uid) => children[uid!])
             .filter((p) => !!p);
         },
         onRemove: (uid) => {
@@ -151,8 +153,8 @@ export const Tabs = componentV2<ITabsProps, HTMLAttributes>(
 
       return () => {
         return (
-          <div class="dv-tabs-wrapper">
-            {props.items.length ? null : slots.default?.()}
+          <div class={[theme.className, 'dv-tabs-wrapper']}>
+            {props.items?.length ? null : slots.default?.()}
             <div class={tabsCls.value}>
               {finalIItems.value.map((p) => (
                 <TabTitle
@@ -217,15 +219,16 @@ export const TabPanel = componentV2<ITabPanelProps, HTMLAttributes>(
 
       const ins = getCurrentInstance()!;
 
-      ctxVal.value.onCollect({
+      ctxVal?.value.onCollect({
         uid: ins.uid,
+        // @ts-expect-error
         name: toRef(props, 'name'),
         title: renderTitle,
         content: renderContent,
       });
 
       onUnmounted(() => {
-        ctxVal.value.onRemove(ins.uid);
+        ctxVal?.value.onRemove(ins.uid);
       });
 
       return () => null;
@@ -238,8 +241,8 @@ export const TabPanel = componentV2<ITabPanelProps, HTMLAttributes>(
 const TabTitle = componentV2<
   {},
   ITabItem & {
-    type: IType;
-    size: ISize;
+    type?: IType;
+    size?: ISize;
   }
 >({
   name: 'TabTitle',
@@ -247,7 +250,7 @@ const TabTitle = componentV2<
   setup: (_, { attrs }) => {
     const ctxVal = inject<Ref<ICtx>>(ctx);
     const isTitleActive = computed(
-      () => ctxVal.value.currentName === unref(attrs.name),
+      () => ctxVal?.value.currentName === unref(attrs.name),
     );
 
     const tabHeadCls = computed(() => [
@@ -259,7 +262,7 @@ const TabTitle = componentV2<
     ]);
 
     const handleOnClick = () => {
-      ctxVal.value.onChange(unref(attrs.name));
+      ctxVal?.value.onChange(unref(attrs.name));
     };
 
     const titleProps = computed(() => ({

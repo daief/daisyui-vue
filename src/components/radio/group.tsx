@@ -11,6 +11,7 @@ import { isUndefined } from 'daisyui-vue/shared/utils';
 import { computed, HTMLAttributes, PropType, provide, reactive } from 'vue';
 import { Radio } from './radio';
 import { IRadioContext, radioCtxKey } from './state';
+import { useTheme } from 'daisyui-vue/shared/ctx';
 
 export const radioGroupProps = {
   ...sizeProps,
@@ -37,6 +38,7 @@ export const RadioGroup = componentV2<IRadioGroupProps, HTMLAttributes>({
   props: radioGroupProps,
   emits: [V_MODEL_EVENT],
   setup: (props, { slots, emit }) => {
+    const theme = useTheme();
     const state = reactive({
       value: props.modelValue || props.defaultValue || null,
     });
@@ -56,16 +58,16 @@ export const RadioGroup = componentV2<IRadioGroupProps, HTMLAttributes>({
     };
 
     const ctxVal = computed<IRadioContext>(() => ({
-      size: props.size,
-      disabled: props.disabled,
-      value: finalValue.value,
+      size: props.size!,
+      disabled: props.disabled!,
+      value: finalValue.value!,
       onChange: handleChange,
     }));
 
     provide(radioCtxKey, ctxVal);
 
     return () => (
-      <div class="dv-radio-group">
+      <div class={[theme.className, 'dv-radio-group']}>
         {props.options?.length
           ? props.options.map((option) => (
               <Radio

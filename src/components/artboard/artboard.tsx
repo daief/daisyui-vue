@@ -2,6 +2,7 @@ import { componentV2 } from 'daisyui-vue/shared/styled';
 import { ExtractFromProps } from 'daisyui-vue/shared/types/common';
 import { HTMLAttributes, PropType } from 'vue';
 import style from './style';
+import { useTheme } from 'daisyui-vue/shared/ctx';
 
 export const artboardProps = {
   phone: {
@@ -21,12 +22,14 @@ export const Artboard = componentV2<IArtboardProps, HTMLAttributes>(
     name: 'Artboard',
     props: artboardProps,
     setup: (props, { slots }) => {
+      const theme = useTheme();
       return () => (
         <div
           class={[
+            theme.className,
             'dv-artboard dv-artboard-demo',
             {
-              'dv-phone': ['', true].includes(props.phone),
+              'dv-phone': ['', true].includes(props.phone!),
               [`dv-phone-${props.phone}`]:
                 !!props.phone && typeof props.phone === 'string',
               'dv-horizontal': !!props.horizontal,

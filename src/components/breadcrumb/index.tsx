@@ -1,13 +1,15 @@
 import { componentV2 } from 'daisyui-vue/shared/styled';
 import { AnchorHTMLAttributes, HTMLAttributes } from 'vue';
 import style from './style';
+import { useTheme } from 'daisyui-vue/shared/ctx';
 
 export const Breadcrumb = componentV2<{}, HTMLAttributes>(
   {
     name: 'Breadcrumb',
     setup: (_, { slots }) => {
+      const theme = useTheme();
       return () => (
-        <div class="dv-breadcrumbs">
+        <div class={[theme.className, 'dv-breadcrumbs']}>
           <ul>{slots.default?.()}</ul>
         </div>
       );

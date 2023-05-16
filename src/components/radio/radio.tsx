@@ -16,6 +16,7 @@ import {
 } from 'vue';
 import { IRadioContext, radioCtxKey } from './state';
 import style from './style';
+import { useTheme } from 'daisyui-vue/shared/ctx';
 
 export const radioProps = {
   ...sizeProps,
@@ -41,7 +42,8 @@ export const Radio = componentV2<IRadioProps, HTMLAttributes>(
     props: radioProps,
     emits: ['change'],
     setup: (props, { slots, emit }) => {
-      const ctx = inject<ComputedRef<IRadioContext>>(radioCtxKey, null);
+      const theme = useTheme();
+      const ctx = inject<ComputedRef<IRadioContext> | null>(radioCtxKey, null);
 
       const size = computed(() => ctx?.value.size || props.size);
       const disabled = computed(() => ctx?.value.disabled ?? props.disabled);
@@ -59,11 +61,12 @@ export const Radio = componentV2<IRadioProps, HTMLAttributes>(
         emit('change', e);
         nextTick(() => {
           // sync dom state
-          e.target.checked = checked.value;
+          e.target.checked = checked.value!;
         });
       };
 
       const wrapperCls = computed(() => ({
+        [theme.className]: true,
         'dv-radio-wrapper': true,
         [`dv-radio-wrapper-${size.value}`]: size.value,
         'dv-radio-wrapper-disabled': disabled.value,
@@ -82,6 +85,7 @@ export const Radio = componentV2<IRadioProps, HTMLAttributes>(
             disabled={disabled.value}
             checked={checked.value}
             class={inputCls.value}
+            // @ts-expect-error
             onChange={handleOnChange}
             readonly={props.readOnly}
             value={props.value}

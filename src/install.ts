@@ -1,5 +1,4 @@
 import { App, Plugin } from 'vue';
-import { CONTEXT_SYMBOL, createTheme } from './shared/ctx';
 
 import {
   Alert,
@@ -22,7 +21,6 @@ import {
   Divider,
   Drawer,
   Dropdown,
-  Raw,
   Icon,
   Indicator,
   IndicatorItem,
@@ -54,6 +52,8 @@ import {
   Textarea,
   Toggle,
   Tooltip,
+  Raw,
+  ThemeProvider,
 } from './components';
 
 const all = /* @__PURE__ */ [
@@ -61,7 +61,6 @@ const all = /* @__PURE__ */ [
   Artboard,
   Avatar,
   AvatrGroup,
-  Raw,
   Badge,
   Breadcrumb,
   BreadcrumbItem,
@@ -109,6 +108,9 @@ const all = /* @__PURE__ */ [
   Textarea,
   Toggle,
   Tooltip,
+
+  Raw,
+  ThemeProvider,
 ];
 
 export const install: Plugin = /* @__PURE__ */ function (
@@ -122,16 +124,7 @@ export const install: Plugin = /* @__PURE__ */ function (
     ...options,
   };
 
-  // @ts-ignore
-  installTheme(app);
-
   all.forEach((el) => {
     app.component(prefix + el.name, el);
   });
-};
-
-export const installTheme: Plugin = /* @__PURE__ */ function (app: App) {
-  const ctx = createTheme();
-  app.provide(CONTEXT_SYMBOL, ctx);
-  app.config.globalProperties.$daisyui = ctx;
 };

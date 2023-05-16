@@ -7,6 +7,7 @@ import { componentV2 } from 'daisyui-vue/shared/styled';
 import { ExtractFromProps, ISize } from 'daisyui-vue/shared/types/common';
 import { computed, InputHTMLAttributes, PropType } from 'vue';
 import styles from './style';
+import { useTheme } from 'daisyui-vue/shared/ctx';
 
 export const inputProps = {
   border: {
@@ -32,7 +33,9 @@ export const Input = componentV2<IInputProps, InputHTMLAttributes>(
     props: inputProps,
     emits: [V_MODEL_EVENT],
     setup: (props, { emit }) => {
+      const theme = useTheme();
       const cls = computed(() => ({
+        [theme.className]: true,
         'dv-input': true,
         'dv-input-bordered': props.border,
         [`dv-input-${props.variant}`]: !!props.variant,
@@ -48,6 +51,7 @@ export const Input = componentV2<IInputProps, InputHTMLAttributes>(
           type="text"
           class={cls.value}
           value={props.modelValue}
+          // @ts-expect-error
           onInput={handleOnInput}
         />
       );

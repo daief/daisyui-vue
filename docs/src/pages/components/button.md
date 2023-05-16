@@ -76,7 +76,7 @@ glass button
 
 ```html :::demo
 <div
-  class="p-20 bg-cover bg-base-200 w-80 h-52 rounded-lg"
+  class="p-20 bg-cover dv-bgbase200 w-80 h-52 rounded-lg"
   style='background-image: url("https://placeimg.com/1000/300/arch");'
 >
   <dv-button variant="glass">Glass Button</dv-button>

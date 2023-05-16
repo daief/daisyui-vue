@@ -2,6 +2,7 @@ import { componentV2 } from 'daisyui-vue/shared/styled';
 import { cssUnit } from 'daisyui-vue/shared/utils';
 import { computed, HTMLAttributes, PropType } from 'vue';
 import style from './style';
+import { useTheme } from 'daisyui-vue/shared/ctx';
 
 export interface ITableColumn<T = unknown> {
   title?: string | (() => any);
@@ -31,7 +32,9 @@ export const Table = componentV2<ITableProps, HTMLAttributes>(
     name: 'Table',
     props: tableProps,
     setup: (props) => {
+      const theme = useTheme();
       const cls = computed(() => [
+        theme.className,
         'dv-table',
         {
           'dv-table-zebra': props.zebra,
@@ -39,11 +42,12 @@ export const Table = componentV2<ITableProps, HTMLAttributes>(
         },
       ]);
 
-      const cols = computed(() =>
-        props.columns.map((col, i) => ({
-          ...col,
-          key: col.key || col.dataIndex || i,
-        })),
+      const cols = computed(
+        () =>
+          props.columns?.map((col, i) => ({
+            ...col,
+            key: col.key || col.dataIndex || i,
+          })) || [],
       );
 
       const head = computed(() =>
@@ -84,9 +88,9 @@ export const Table = componentV2<ITableProps, HTMLAttributes>(
                 <tr>{head.value}</tr>
               </thead>
               <tbody>
-                {props.dataSource.map((record, i) => (
+                {props.dataSource?.map((record, i) => (
                   <tr key={i} class="dv-hover">
-                    {props.columns.map((col) => (
+                    {props.columns?.map((col) => (
                       <td
                         key={col.dataIndex || col.key}
                         style={
@@ -101,8 +105,8 @@ export const Table = componentV2<ITableProps, HTMLAttributes>(
                         }
                       >
                         {typeof col.render === 'function'
-                          ? col.render(record[col.dataIndex], record, i)
-                          : record[col.dataIndex]}
+                          ? col.render(record[col.dataIndex!], record, i)
+                          : record[col.dataIndex!]}
                       </td>
                     ))}
                   </tr>

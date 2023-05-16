@@ -1,9 +1,5 @@
 import { DefineComponent, defineComponent, Slots } from 'vue';
-import { useTheme } from './ctx';
-import { isBrowser } from './utils';
-import globalStyles from '../components/_styles/global';
-
-export const EMOTION_SYMBOL = Symbol('emotion');
+import { useStyleManager } from './ctx';
 
 interface IStyleFile {
   css: string;
@@ -45,7 +41,7 @@ function component<Attrs = unknown, P = {}>(
   return defineComponent({
     ...(options as any),
     setup: (props, ctx) => {
-      useTheme().style.insertCss(styles);
+      useStyleManager()?.insertCss(styles);
       // @ts-ignore
       return options.setup(props, ctx);
     },
@@ -65,73 +61,4 @@ export function componentV2<Props = {}, Attrs = unknown>(
     // @ts-ignore
     ...args,
   ) as DefineComponent<Props & Attrs, {}>;
-}
-
-export interface IStyle {
-  insertCss: (css: IStyleFile | IStyleFile[]) => void;
-  extractStyles: () => string;
-}
-
-export function createStyle(): IStyle {
-  let cssMap: Map<
-    /* style id*/ number,
-    /* css content or empty string */ string
-  >;
-  const STYLE_ATTR = `daisyui-vue="${VERSION}"`;
-  const CSS_MAP_PROP = '__DAISYUI_VUE_CSS_MAP__';
-
-  let style: HTMLStyleElement | null = null;
-  if (isBrowser) {
-    style = document.querySelector(`style[${STYLE_ATTR}]`);
-    if (!style) {
-      style = document.createElement('style');
-      style.setAttribute('daisyui-vue', VERSION);
-      document.head.prepend(style);
-    }
-
-    cssMap = style[CSS_MAP_PROP] || new Map();
-    style[CSS_MAP_PROP] ||= cssMap;
-
-    const ids = (style.dataset.ids || '').split(',');
-    ids.forEach((id) => {
-      cssMap.set(Number(id), '');
-    });
-  } else {
-    cssMap = new Map();
-  }
-
-  const insertCss = (css: IStyleFile | IStyleFile[]) => {
-    css = Array.isArray(css) ? css : [css];
-
-    let appendText = '';
-
-    css.forEach((stl) => {
-      if (cssMap.has(stl.id)) return;
-      appendText += `${stl.css}\n`;
-      cssMap.set(stl.id, stl.css);
-    });
-
-    style?.append(appendText);
-  };
-
-  insertCss(globalStyles);
-
-  return {
-    insertCss,
-    /**
-     * 提取首屏样式
-     */
-    extractStyles: () => {
-      let text = '';
-      let ids = '';
-      for (const [id, css] of cssMap.entries()) {
-        text += css;
-        if (ids) {
-          ids += ',';
-        }
-        ids += id;
-      }
-      return `<style ${STYLE_ATTR} data-ids="${ids}">${text}</style>`;
-    },
-  };
 }

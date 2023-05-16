@@ -2,9 +2,10 @@ import { useMediaParse } from 'daisyui-vue/shared/hooks/use-media';
 import { componentV2 } from 'daisyui-vue/shared/styled';
 import { ExtractFromProps } from 'daisyui-vue/shared/types/common';
 import { getRenderResult } from 'daisyui-vue/shared/utils';
-import { PropType, computed, Transition, vShow, withDirectives } from 'vue';
+import { PropType, computed, Transition } from 'vue';
 import { ModalBase } from '../modal';
 import style from './style';
+import { useTheme } from 'daisyui-vue/shared/ctx';
 
 export const drawerProps = {
   open: Boolean,
@@ -26,6 +27,7 @@ export const Drawer = componentV2<IDrawerProps>(
     name: 'Drawer',
     props: drawerProps,
     setup: (props, { slots }) => {
+      const theme = useTheme();
       const matchMobile = useMediaParse({
         xs: true,
         lg: false,
@@ -39,7 +41,11 @@ export const Drawer = componentV2<IDrawerProps>(
         'dv-drawer--open': props.open,
       }));
 
-      const rootCls = computed(() => ['dv-drawer', clsStatus.value]);
+      const rootCls = computed(() => [
+        theme.className,
+        'dv-drawer',
+        clsStatus.value,
+      ]);
 
       const overlayCls = computed(() => ['dv-drawer-overlay', clsStatus.value]);
 

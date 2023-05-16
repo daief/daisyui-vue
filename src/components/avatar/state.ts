@@ -11,9 +11,9 @@ export const sizeMap: Record<ISize, number> = {
 };
 
 export interface IAvatarGroupCtx {
-  size: string | number;
+  size?: string | number;
 }
 
-export function getSizeValue(size: string | number) {
+export function getSizeValue(size: string | number = '') {
   return cssUnit(sizeMap[size] || size);
 }

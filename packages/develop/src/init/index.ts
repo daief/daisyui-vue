@@ -1,4 +1,4 @@
-const pkg = require('../package.json');
+import pkg from '../../package.json';
 const version = pkg.dependencies.daisyui;
 
 // @ts-ignore
@@ -7,39 +7,31 @@ import path from 'path';
 import fs from 'fs-extra';
 // @ts-ignore
 import fetch from 'node-fetch';
+import { parseCssTheme } from './parse-css-theme';
 
 export const init = async (context: string) => {
   const workspace = (...ps: string[]) => path.resolve(context, ...ps);
 
   const clone = () =>
-    new Promise<void>((a, r) => {
+    new Promise<void>((accept, reject) => {
       downloadRepo(
         'saadeghi/daisyui#v' + version,
         workspace('src/_daisyui'),
+        {
+          shallow: 1,
+        },
         (err: any) => {
           if (err) {
-            return r(err);
+            return reject(err);
           }
+          accept();
           fs.emptyDirSync(workspace('src/_daisyui/examples'));
-          a();
+          console.log('[Init]: clone daisyui repo done');
         },
       );
     });
 
-  const themeCss = `https://cdn.jsdelivr.net/npm/daisyui@${version}/dist/themes.css`;
-  const downloadTheme = () =>
-    fetch(themeCss).then((res: any) => {
-      const themeFile = workspace('src/components/_styles/theme.css');
-
-      const fileStream = fs.createWriteStream(themeFile, { flags: 'w' });
-      return new Promise((resolve, reject) => {
-        res.body.pipe(fileStream);
-        res.body.on('error', reject);
-        fileStream.on('finish', resolve);
-      });
-    });
-
-  return Promise.all([clone(), downloadTheme()]);
+  return Promise.all([clone(), parseCssTheme(context)]);
 };
 
 export async function createIcons(context: string) {
@@ -85,5 +77,5 @@ export const Icon$name = /* @__PURE__ */ defineComponent<IIconProps & HTMLAttrib
 
   await fs.writeFile(workspace('src/components/icon/icons.tsx'), file);
 
-  console.log(`Create ${icons.length} icons success.`);
+  console.log(`[Generate icons]: create ${icons.length} icons success.`);
 }

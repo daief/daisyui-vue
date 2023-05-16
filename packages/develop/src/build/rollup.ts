@@ -9,6 +9,8 @@ import cleanup from 'rollup-plugin-cleanup';
 import alias from '@rollup/plugin-alias';
 import replace from '@rollup/plugin-replace';
 import { createStylesPlugin } from './rollup-styles-plugin';
+import { clsUnique } from './classname-plugin';
+import commonjs from '@rollup/plugin-commonjs';
 
 interface IBuildOptions {
   context: string;
@@ -63,9 +65,11 @@ export function getRoolupConfig(opts: IBuildOptions) {
         preventAssignment: true,
         values: {
           VERSION: JSON.stringify(pkg.version),
+          CLASSNAME_UNIQUE: JSON.stringify(clsUnique),
         },
       }),
       createStylesPlugin(require(workspace('tailwind.config'))),
+      commonjs(),
       resolve({
         extensions,
       }),

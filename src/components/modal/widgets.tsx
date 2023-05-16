@@ -4,6 +4,7 @@ import { IconClose } from '../icon';
 import { PropType } from 'vue';
 import { Button } from '../button';
 import style from './style/widgets.less';
+import { useTheme } from 'daisyui-vue/shared/ctx';
 
 // title ----------------------------------------------------------------------------
 
@@ -22,8 +23,9 @@ export const ModalTitle = componentV2<IModalTitleProps>(
     name: 'ModalTitle',
     props: modalTitleProps,
     setup: (props, { slots }) => {
+      const theme = useTheme();
       return () => (
-        <div class="dv-modal-title">
+        <div class={[theme.className, 'dv-modal-title']}>
           <h3>{slots.default?.()}</h3>
           {props.closable ? (
             <Button
@@ -53,7 +55,12 @@ export const ModalBody = componentV2<IModalBodyProps>(
     name: 'ModalBody',
     props: modalBodyProps,
     setup: (props, { slots }) => {
-      return () => <div class="dv-modal-body">{slots.default?.()}</div>;
+      const theme = useTheme();
+      return () => (
+        <div class={[theme.className, 'dv-modal-body']}>
+          {slots.default?.()}
+        </div>
+      );
     },
   },
   [style],
@@ -70,7 +77,12 @@ export const ModalAction = componentV2<IModalActionProps>(
     name: 'ModalAction',
     props: modalActionProps,
     setup: (props, { slots }) => {
-      return () => <div class="dv-modal-action">{slots.default?.()}</div>;
+      const theme = useTheme();
+      return () => (
+        <div class={[theme.className, 'dv-modal-action']}>
+          {slots.default?.()}
+        </div>
+      );
     },
   },
   [style],

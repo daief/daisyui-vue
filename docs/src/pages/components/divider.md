@@ -6,11 +6,11 @@ divider
 
 ```html :::demo
 <div class="flex flex-col w-full">
-  <div class="grid h-20 card bg-base-300 rounded-xl place-items-center">
+  <div class="grid h-20 card dv-bgbase300 rounded-xl place-items-center">
     content
   </div>
   <dv-divider>OR</dv-divider>
-  <div class="grid h-20 card bg-base-300 rounded-xl place-items-center">
+  <div class="grid h-20 card dv-bgbase300 rounded-xl place-items-center">
     content
   </div>
 </div>
@@ -21,13 +21,13 @@ divider horizontal
 ```html :::demo
 <div class="flex flex-row w-full">
   <div
-    class="grid flex-grow h-32 card bg-base-300 rounded-xl place-items-center"
+    class="grid flex-grow h-32 card dv-bgbase300 rounded-xl place-items-center"
   >
     content
   </div>
   <dv-divider horizontal>OR</dv-divider>
   <div
-    class="grid flex-grow h-32 card bg-base-300 rounded-xl place-items-center"
+    class="grid flex-grow h-32 card dv-bgbase300 rounded-xl place-items-center"
   >
     content
   </div>
@@ -38,11 +38,11 @@ divider with no text
 
 ```html :::demo
 <div class="flex flex-col w-full">
-  <div class="grid h-20 card bg-base-300 rounded-xl place-items-center">
+  <div class="grid h-20 card dv-bgbase300 rounded-xl place-items-center">
     content
   </div>
   <dv-divider />
-  <div class="grid h-20 card bg-base-300 rounded-xl place-items-center">
+  <div class="grid h-20 card dv-bgbase300 rounded-xl place-items-center">
     content
   </div>
 </div>
@@ -53,13 +53,13 @@ divider with no text
 ```html :::demo
 <div class="flex flex-row w-full">
   <div
-    class="grid flex-grow h-32 card bg-base-300 rounded-xl place-items-center"
+    class="grid flex-grow h-32 card dv-bgbase300 rounded-xl place-items-center"
   >
     content
   </div>
   <dv-divider horizontal />
   <div
-    class="grid flex-grow h-32 card bg-base-300 rounded-xl place-items-center"
+    class="grid flex-grow h-32 card dv-bgbase300 rounded-xl place-items-center"
   >
     content
   </div>

@@ -6,7 +6,7 @@ veritcal with icons
 
 ```html :::demo
 <dv-artboard class="py-4 bg-transparent">
-  <dv-menu class="shadow-lg rounded-lg bg-base-100">
+  <dv-menu class="shadow-lg rounded-lg dv-bgbase100">
     <dv-menu-item asTitle> Menu title </dv-menu-item>
     <dv-menu-item> Item without icon </dv-menu-item>
     <dv-menu-item>
@@ -21,7 +21,7 @@ veritcal with icons and padding. menu-item have border-raidus
 
 ```html :::demo
 <dv-artboard class="py-4 bg-transparent">
-  <dv-menu class="p-4 shadow-lg rounded-lg bg-base-100">
+  <dv-menu class="p-4 shadow-lg rounded-lg dv-bgbase100">
     <dv-menu-item asTitle> Menu title </dv-menu-item>
     <dv-menu-item> Item without icon </dv-menu-item>
     <dv-menu-item>
@@ -36,7 +36,7 @@ bordered, hover-bordered, disabled
 
 ```html :::demo
 <dv-artboard class="py-4 bg-transparent">
-  <dv-menu class="shadow-lg rounded-lg bg-base-100">
+  <dv-menu class="shadow-lg rounded-lg dv-bgbase100">
     <dv-menu-item asTitle> Menu title </dv-menu-item>
     <dv-menu-item disabled> Item is diabled </dv-menu-item>
     <dv-menu-item bordered> Item is bordered </dv-menu-item>
@@ -50,7 +50,7 @@ horizontal
 
 ```html :::demo
 <dv-artboard class="py-4 bg-transparent">
-  <dv-menu class="shadow-lg rounded-lg bg-base-100" horizontal>
+  <dv-menu class="shadow-lg rounded-lg dv-bgbase100" horizontal>
     <dv-menu-item disabled> Item is diabled </dv-menu-item>
     <dv-menu-item bordered> Item is bordered </dv-menu-item>
     <dv-menu-item active> Item is active </dv-menu-item>
@@ -62,13 +62,13 @@ icon
 
 ```html :::demo
 <dv-artboard class="py-4 bg-transparent">
-  <dv-menu class="shadow-lg rounded-lg bg-base-100 text-2xl mb-4">
+  <dv-menu class="shadow-lg rounded-lg dv-bgbase100 text-2xl mb-4">
     <dv-menu-item> <IconLogoGithub /> </dv-menu-item>
     <dv-menu-item> <IconCode /> </dv-menu-item>
     <dv-menu-item> <IconHeart /> </dv-menu-item>
   </dv-menu>
 
-  <dv-menu class="shadow-lg rounded-lg bg-base-100 text-2xl" horizontal>
+  <dv-menu class="shadow-lg rounded-lg dv-bgbase100 text-2xl" horizontal>
     <dv-menu-item> <IconLogoGithub /> </dv-menu-item>
     <dv-menu-item> <IconCode /> </dv-menu-item>
     <dv-menu-item> <IconHeart /> </dv-menu-item>

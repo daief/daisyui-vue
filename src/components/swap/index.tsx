@@ -3,6 +3,7 @@ import { ExtractFromProps } from 'daisyui-vue/shared/types/common';
 import { getRenderResult, isUndefined } from 'daisyui-vue/shared/utils';
 import { computed, h, PropType, reactive } from 'vue';
 import styles from './style';
+import { useTheme } from 'daisyui-vue/shared/ctx';
 
 export const swapProps = {
   on: {
@@ -36,6 +37,8 @@ export const Swap = componentV2<ISwapProps>(
     name: 'Swap',
     props: swapProps,
     setup: (props, { slots }) => {
+      const theme = useTheme();
+
       const state = reactive({
         active: props.active,
       });
@@ -45,6 +48,7 @@ export const Swap = componentV2<ISwapProps>(
       );
 
       const cls = computed(() => [
+        theme.className,
         'dv-swap',
         {
           'dv-swap-active': finalActive.value,
@@ -57,7 +61,7 @@ export const Swap = componentV2<ISwapProps>(
         const off = getRenderResult('off', props, slots);
 
         return h(
-          props.tag,
+          props.tag!,
           {
             class: cls.value,
             onClick: () => {

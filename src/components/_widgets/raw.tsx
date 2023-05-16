@@ -1,8 +1,12 @@
-import { COLORS, IColor } from 'daisyui-vue/shared/constants';
 import { componentV2 } from 'daisyui-vue/shared/styled';
 import { ExtractFromProps, IColorType } from 'daisyui-vue/shared/types/common';
 import { computed, createVNode, HTMLAttributes, PropType } from 'vue';
 import style from './style/raw.less';
+import {
+  IThemeVariableColor,
+  themeVariableColor,
+} from 'daisyui-vue/shared/theme/define';
+import { useTheme } from 'daisyui-vue/shared/ctx';
 
 export type IRawType = IColorType | 'base-100' | 'base-200' | 'base-300';
 
@@ -16,7 +20,7 @@ export const rawProps = {
     default: '',
   },
   color: {
-    type: String as PropType<IColor> | PropType<string>,
+    type: String as PropType<IThemeVariableColor> | PropType<string>,
     default: '',
   },
 };
@@ -28,20 +32,21 @@ export const Raw = componentV2<IRawProps, HTMLAttributes>(
     name: 'Raw',
     props: rawProps,
     setup: (props, { slots }) => {
+      const theme = useTheme();
       const styleRef = computed(() => {
         let bg = 'none';
         let bgContent = '';
         let color = '';
 
         if (props.variant) {
-          bg = COLORS[props.variant] || 'none';
+          bg = themeVariableColor[props.variant]?.[0] || 'none';
           bgContent = props.variant.startsWith('base-')
-            ? COLORS['base-content']
-            : COLORS[`${props.variant}-content`];
+            ? themeVariableColor['base-content'][0]
+            : themeVariableColor[`${props.variant}-content`]?.[0];
         }
 
         if (props.color) {
-          color = COLORS[props.color] || props.color;
+          color = themeVariableColor[props.color]?.[0] || props.color;
         } else {
           color = bgContent || 'currentColor';
         }
@@ -54,9 +59,9 @@ export const Raw = componentV2<IRawProps, HTMLAttributes>(
 
       return () =>
         createVNode(
-          props.tag,
+          props.tag || 'div',
           {
-            class: 'dv-raw',
+            class: `${theme.className} dv-raw`,
             style: styleRef.value,
           },
           slots.default?.(),

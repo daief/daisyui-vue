@@ -5,6 +5,7 @@ import { IOption } from 'daisyui-vue/shared/types/components';
 import { computed, HTMLAttributes, PropType, provide, reactive } from 'vue';
 import { Checkbox } from './checkbox';
 import { checkboxCtxKey, ICheckboxContext } from './state';
+import { useTheme } from 'daisyui-vue/shared/ctx';
 
 export const checkGroupProps = {
   ...sizeProps,
@@ -31,6 +32,8 @@ export const CheckboxGroup = componentV2<ICheckGroupProps, HTMLAttributes>({
   props: checkGroupProps,
   emits: ['update:modelValue'],
   setup: (props, { slots, emit }) => {
+    const theme = useTheme();
+
     const state = reactive({
       value: props.modelValue || props.defaultValue || [],
       registeredValues: new Set<IText>(),
@@ -68,8 +71,8 @@ export const CheckboxGroup = componentV2<ICheckGroupProps, HTMLAttributes>({
     };
 
     const ctxVal = computed<ICheckboxContext>(() => ({
-      size: props.size,
-      disabled: props.disabled,
+      size: props.size!,
+      disabled: props.disabled!,
       value: finalValue.value,
       onChange: handleChange,
       register,
@@ -79,7 +82,7 @@ export const CheckboxGroup = componentV2<ICheckGroupProps, HTMLAttributes>({
     provide(checkboxCtxKey, ctxVal);
 
     return () => (
-      <div class="dv-checkbox-group">
+      <div class={[theme.className, 'dv-checkbox-group']}>
         {props.options?.length
           ? props.options.map((option) => (
               <Checkbox

@@ -1,8 +1,9 @@
 export * from './components';
 
 export * from './shared/ctx';
+export * from './shared/theme/themes';
 
-export { install as default, installTheme } from './install';
+export { install as default } from './install';
 
 export type { IUseAsyncOptions } from './shared/hooks/use-async';
 export { useAsync } from './shared/hooks/use-async';

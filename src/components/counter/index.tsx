@@ -3,6 +3,7 @@ import { componentV2 } from 'daisyui-vue/shared/styled';
 import { ExtractFromProps } from 'daisyui-vue/shared/types/common';
 import { onUnmounted, onMounted, ref, PropType, watch } from 'vue';
 import styles from './style';
+import { useTheme } from 'daisyui-vue/shared/ctx';
 
 export const counterProps = {
   from: {
@@ -33,6 +34,8 @@ export const Conter = componentV2<ICounterProps>(
     name: 'Counter',
     props: counterProps,
     setup: (props) => {
+      const theme = useTheme();
+
       const value2display = (val: number) => {
         val = Math.trunc(val);
         const pred = props.format ? props.format(val || 0) : val;
@@ -72,7 +75,7 @@ export const Conter = componentV2<ICounterProps>(
 
       return () => (
         <span
-          class="dv-counter"
+          class={[theme.className, 'dv-counter']}
           style={`--t-d: ${props.transitionDuration || 0}ms`}
         >
           {display.value.map((char, i) => {

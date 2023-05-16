@@ -13,6 +13,7 @@ import {
   watch,
 } from 'vue';
 import style from './style/base.less';
+import { useTheme } from 'daisyui-vue/shared/ctx';
 
 export const modalBaseProps = {
   disableTeleport: {
@@ -56,6 +57,8 @@ export const ModalBase = componentV2<IModalBaseProps>(
     props: modalBaseProps,
     inheritAttrs: false,
     setup: (props, { slots, attrs }) => {
+      const theme = useTheme();
+
       const state = reactive({
         hasTriggered: !!props.open,
       });
@@ -119,7 +122,7 @@ export const ModalBase = componentV2<IModalBaseProps>(
                   {...attrs}
                   tabindex={-1}
                   role="presentation"
-                  class="dv-modal-base"
+                  class={[theme.className, 'dv-modal-base']}
                   style={maskStyle.value}
                   onClick={handleClickMask}
                   data-modal-status={props.open ? 'open' : 'close'}

@@ -1,9 +1,44 @@
 body {
   -webkit-tap-highlight-color: transparent;
-  @apply bg-base-100;
+  --tw-bg-opacity: 1;
+  background-color: hsl(var(--b1) / var(--tw-bg-opacity));
 }
 
 code.hljs {
   font-size: 14px;
   border-radius: 6px;
+}
+
+.dv {
+  &-bgbase100 {
+    --tw-bg-opacity: 1;
+    background-color: hsl(var(--b1) / var(--tw-bg-opacity));
+  }
+  &-bgbase200 {
+    --tw-bg-opacity: 1;
+    background-color: hsl(var(--b2) / var(--tw-bg-opacity));
+  }
+  &-bgbase300 {
+    --tw-bg-opacity: 1;
+    background-color: hsl(var(--b3) / var(--tw-bg-opacity));
+  }
+
+  &-borderbase100 {
+    --tw-border-opacity: 1;
+    border-color: hsl(var(--b1) / var(--tw-border-opacity));
+  }
+
+  &-borderbase200 {
+    --tw-border-opacity: 1;
+    border-color: hsl(var(--b2) / var(--tw-border-opacity));
+  }
+
+  &-textbasecontent {
+    --tw-text-opacity: 1;
+    color: hsl(var(--bc) / var(--tw-text-opacity));
+  }
+
+  &-roundedbox {
+    border-radius: var(--dv-roundedbox, 1rem);
+  }
 }

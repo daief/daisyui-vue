@@ -4,6 +4,7 @@ import { componentV2 } from 'daisyui-vue/shared/styled';
 import { ExtractFromProps } from 'daisyui-vue/shared/types/common';
 import { computed, InputHTMLAttributes } from 'vue';
 import styles from './style';
+import { useTheme } from 'daisyui-vue/shared/ctx';
 
 export const textareaProps = {
   ...colorVariantProps,
@@ -25,7 +26,9 @@ export const Textarea = componentV2<ITextareaProps, InputHTMLAttributes>(
     props: textareaProps,
     emits: [V_MODEL_EVENT],
     setup: (props, { emit }) => {
+      const theme = useTheme();
       const cls = computed(() => ({
+        [theme.className]: true,
         'dv-textarea': true,
         'dv-textarea-bordered': props.border,
         [`dv-textarea-${props.variant}`]: !!props.variant,
@@ -39,6 +42,7 @@ export const Textarea = componentV2<ITextareaProps, InputHTMLAttributes>(
         <textarea
           class={cls.value}
           value={props.modelValue}
+          // @ts-expect-error
           onInput={handleOnInput}
         />
       );

@@ -9,6 +9,7 @@ import {
 import { isUndefined } from 'daisyui-vue/shared/utils';
 import { computed, nextTick, PropType, reactive } from 'vue';
 import styles from './style';
+import { useTheme } from 'daisyui-vue/shared/ctx';
 
 export const toggleProps = {
   modelValue: {
@@ -37,6 +38,8 @@ export const Toggle = componentV2<IToggleProps>(
     props: toggleProps,
     emits: [V_MODEL_EVENT],
     setup: (props, { emit }) => {
+      const theme = useTheme();
+
       const state = reactive({
         checked: props.defaultValue ?? props.modelValue,
       });
@@ -46,6 +49,7 @@ export const Toggle = componentV2<IToggleProps>(
       );
 
       const cls = computed(() => [
+        theme.className,
         'dv-toggle',
         {
           [`dv-toggle-${props.variant}`]: props.variant,
@@ -59,13 +63,14 @@ export const Toggle = componentV2<IToggleProps>(
             type="checkbox"
             class={cls.value}
             checked={finalVal.value}
+            // @ts-expect-error
             onChange={(e: InputChangeEvent) => {
               const newVal = !finalVal.value;
               state.checked = newVal;
               emit(V_MODEL_EVENT, newVal);
               nextTick(() => {
                 // force sync with finalVal
-                e.target.checked = finalVal.value;
+                e.target.checked = finalVal.value!;
               });
             }}
           />

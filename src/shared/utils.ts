@@ -9,7 +9,7 @@ import {
 
 export const isBrowser = typeof window !== 'undefined';
 
-export function cssUnit(unit: string | number) {
+export function cssUnit(unit?: string | number) {
   if (typeof unit === 'number') {
     return (unit || 0) + 'px';
   }
@@ -58,7 +58,7 @@ export function flatUntilNotFragment(
 
   const res: IVueNode[] = [];
 
-  oneToArray<IVueNode>(n).forEach(function walkIn(it: IVueNode) {
+  oneToArray<IVueNode>(n || []).forEach(function walkIn(it: IVueNode) {
     if (isNil(it)) {
       return res.push(...(keepEmpty ? [it] : []));
     }

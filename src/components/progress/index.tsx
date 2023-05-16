@@ -3,6 +3,7 @@ import { computed, PropType } from 'vue';
 import { IColorType, ExtractFromProps } from 'daisyui-vue/shared/types/common';
 import style, { radialProgressStyle } from './style';
 import { cssUnit } from 'daisyui-vue/shared/utils';
+import { useTheme } from 'daisyui-vue/shared/ctx';
 
 export const progressProps = {
   type: String as PropType<IColorType>,
@@ -23,7 +24,9 @@ export const Progress = componentV2<IProgressProps>(
     name: 'Progress',
     props: progressProps,
     setup: (props) => {
+      const theme = useTheme();
       const cls = computed(() => [
+        theme.className,
         'dv-progress',
         {
           [`dv-progress-${props.type}`]: !!props.type,
@@ -60,14 +63,16 @@ export const RadialProgress = componentV2<IRadialProgressProps>(
     name: 'RadialProgress',
     props: radialProgressProps,
     setup: (props, { slots }) => {
+      const theme = useTheme();
       const cptdStyle = computed(() => ({
         '--value': props.value!,
-        '--size': cssUnit(props.size),
-        '--thickness': cssUnit(props.thickness) || 'calc(var(--size)/10)',
+        '--size': cssUnit(props.size!),
+        '--thickness': cssUnit(props.thickness!) || 'calc(var(--size)/10)',
       }));
       return () => (
         <div
           class={[
+            theme.className,
             'dv-radial-progress',
             {
               [`dv-radial-progress-${props.type}`]: props.type,

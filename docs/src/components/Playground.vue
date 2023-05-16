@@ -11,7 +11,7 @@ export default defineComponent({
   setup: (props, { slots }) => {
     const currentTab = ref('preview');
     const copied = ref(false);
-    const codeEl = ref<HTMLDivElement>(null);
+    const codeEl = ref<HTMLDivElement | null>(null);
 
     const langMap = {
       html: 'vue',
@@ -45,7 +45,9 @@ export default defineComponent({
                 class="cursor-pointer"
                 onMouseleave={() => (copied.value = false)}
                 onClick={async () => {
-                  await navigator.clipboard.writeText(codeEl.value.textContent);
+                  await navigator.clipboard.writeText(
+                    codeEl.value?.textContent || '',
+                  );
                   copied.value = true;
                 }}
               >
@@ -79,7 +81,8 @@ export default defineComponent({
       hsla(var(--b2) / 1) 0.5px
     );
     background-size: 5px 5px;
-    @apply flex flex-wrap justify-center items-center min-h-6;
+    min-height: 24px;
+    @apply flex flex-wrap justify-center items-center;
   }
 
   :deep(.code-wrapper) {

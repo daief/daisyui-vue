@@ -7,6 +7,7 @@ import {
   flatUntilNotFragment,
   isUndefined,
 } from 'daisyui-vue/shared/utils';
+import { useTheme } from 'daisyui-vue/shared/ctx';
 
 export const spaceProps = {
   align: {
@@ -40,6 +41,8 @@ export const Space = componentV2<ISpaceProps, HTMLAttributes>(
     name: 'Space',
     props: spaceProps,
     setup: (props, { slots }) => {
+      const theme = useTheme();
+
       const sizeMap: Record<ISize, string> = {
         xs: '4px',
         sm: '8px',
@@ -52,7 +55,7 @@ export const Space = componentV2<ISpaceProps, HTMLAttributes>(
           ? props.spacing
           : [props.spacing, props.spacing];
         y ||= x;
-        [x, y] = [x, y].map((it) => sizeMap[it] || cssUnit(it));
+        [x, y] = [x, y].map((it) => sizeMap[it!] || cssUnit(it!));
         return `${x} ${y}`;
       });
 
@@ -68,7 +71,7 @@ export const Space = componentV2<ISpaceProps, HTMLAttributes>(
       }));
 
       return () => (
-        <div class="dv-space" style={style.value}>
+        <div class={[theme.className, 'dv-space']} style={style.value}>
           {flatUntilNotFragment(slots.default?.()).map((it, i) => (
             <div
               class="dv-space-item"

@@ -1,5 +1,5 @@
 .dv-alert {
-  @apply bg-base-200 p-4 rounded-box;
+  @apply bg-base-200 p-4 rounded-box text-base-content;
   &-info {
     @apply bg-info text-info-content;
   }

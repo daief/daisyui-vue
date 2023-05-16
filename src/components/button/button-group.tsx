@@ -4,6 +4,7 @@ import { ctxKey, ICtx } from './state';
 import { IButtonShape } from './button';
 import { componentV2 } from 'daisyui-vue/shared/styled';
 import style from './style';
+import { useTheme } from 'daisyui-vue/shared/ctx';
 
 export const buttonGroupProps = {
   outline: Boolean,
@@ -23,15 +24,18 @@ export const ButtonGroup = componentV2<IButtonGroupProps, HTMLAttributes>(
     name: 'ButtonGroup',
     props: buttonGroupProps,
     setup: (props, { slots }) => {
+      const theme = useTheme();
       const ctxVal = computed<ICtx>(() => ({
         size: props.size || 'md',
         shape: props.shape || 'defalut',
-        outline: props.outline,
+        outline: props.outline!,
       }));
 
       provide(ctxKey, ctxVal);
 
-      return () => <div class="dv-btn-group">{slots.default?.()}</div>;
+      return () => (
+        <div class={[theme.className, 'dv-btn-group']}>{slots.default?.()}</div>
+      );
     },
   },
   style,

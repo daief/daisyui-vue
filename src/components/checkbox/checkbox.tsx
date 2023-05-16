@@ -13,6 +13,7 @@ import {
 } from 'vue';
 import { checkboxCtxKey, ICheckboxContext } from './state';
 import style from './style';
+import { useTheme } from 'daisyui-vue/shared/ctx';
 
 export const checkProps = {
   ...sizeProps,
@@ -45,23 +46,28 @@ export const Checkbox = componentV2<ICheckProps, HTMLAttributes>(
     name: 'Checkbox',
     props: checkProps,
     setup(props, { slots }) {
-      const ctx = inject<ComputedRef<ICheckboxContext>>(checkboxCtxKey, null);
+      const theme = useTheme();
+      const ctx = inject<ComputedRef<ICheckboxContext> | null>(
+        checkboxCtxKey,
+        null,
+      );
 
       const size = computed(() => ctx?.value.size || props.size);
       const disabled = computed(() => ctx?.value.disabled ?? props.disabled);
 
       const { checked, handleOnChange } = useCheckbox({
         checked: computed(
-          () => ctx?.value.value.includes(props.value) ?? props.checked,
+          () => ctx?.value.value.includes(props.value!) ?? props.checked,
         ),
         defaultChecked: props.defaultChecked,
         onChange: (e: InputChangeEvent) => {
-          ctx?.value.onChange(props.value);
+          ctx?.value.onChange(props.value!);
           props.onChange?.(e);
         },
       });
 
       const wrapperCls = computed(() => ({
+        [theme.className]: true,
         'dv-checkbox-wrapper': true,
         [`dv-checkbox-wrapper-${size.value}`]: size.value,
         'dv-checkbox-wrapper-disabled': disabled.value,
@@ -77,9 +83,9 @@ export const Checkbox = componentV2<ICheckProps, HTMLAttributes>(
       watch(
         () => props.value,
         (newValue, _, onInvalidate) => {
-          ctx?.value.register(newValue);
+          ctx?.value.register(newValue!);
           onInvalidate(() => {
-            ctx?.value.cancel(newValue);
+            ctx?.value.cancel(newValue!);
           });
         },
         {
@@ -96,7 +102,7 @@ export const Checkbox = componentV2<ICheckProps, HTMLAttributes>(
               disabled={disabled.value}
               checked={checked.value}
               class={inputCls.value}
-              onChange={handleOnChange}
+              onChange={handleOnChange as any}
               readonly={props.readOnly}
               value={props.value}
               name={props.name}

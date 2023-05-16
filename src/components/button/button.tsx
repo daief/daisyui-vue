@@ -17,6 +17,7 @@ import { ctxKey, ICtx } from './state';
 import { componentV2 } from 'daisyui-vue/shared/styled';
 import style from './style';
 import { isUndefined } from 'daisyui-vue/shared/utils';
+import { useTheme } from 'daisyui-vue/shared/ctx';
 
 export type IButtonShape = 'defalut' | 'circle' | 'square';
 
@@ -58,6 +59,7 @@ export const Button = componentV2<
     name: 'Button',
     props: buttonProps,
     setup: (props, { slots }) => {
+      const theme = useTheme();
       const ctxVal = inject<Ref<ICtx> | null>(ctxKey, null);
       const size = computed(() => ctxVal?.value.size || props.size || 'md');
       const shape = computed(
@@ -81,6 +83,7 @@ export const Button = componentV2<
             props.variant !== 'neutral' ? `dv-btn-${props.variant}` : '';
         }
         return [
+          theme.className,
           'dv-btn',
           variantCls,
           {
@@ -110,7 +113,7 @@ export const Button = componentV2<
       };
 
       const showContent = computed(() => {
-        if (['circle', 'square'].includes(props.shape)) {
+        if (['circle', 'square'].includes(props.shape!)) {
           return !finalLoading.value;
         }
         return true;

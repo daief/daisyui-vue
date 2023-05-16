@@ -5,6 +5,7 @@ import { computed, HTMLAttributes, inject, PropType } from 'vue';
 import style from './style';
 import { ctxAvatarGroupKey, getSizeValue, IAvatarGroupCtx } from './state';
 import { isUndefined } from 'daisyui-vue/shared/utils';
+import { useTheme } from 'daisyui-vue/shared/ctx';
 
 export const avatarProps = {
   src: String,
@@ -30,6 +31,7 @@ export const Avatar = componentV2<IAvatarProps, HTMLAttributes>(
     name: 'Avatar',
     props: avatarProps,
     setup: (props, { slots }) => {
+      const theme = useTheme();
       const ctx = inject<IAvatarGroupCtx>(ctxAvatarGroupKey, { size: '' });
       const merged = computed(() => ({
         size: ctx.size || props.size,
@@ -51,6 +53,7 @@ export const Avatar = componentV2<IAvatarProps, HTMLAttributes>(
         return (
           <div
             class={{
+              [theme.className]: true,
               'dv-avatar ': true,
               'dv-placeholder': !props.src && !isUndefined(props.placeholder),
               'dv-avatar-circle': props.type === 'circle',

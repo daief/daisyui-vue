@@ -3,6 +3,7 @@ import { componentV2 } from 'daisyui-vue/shared/styled';
 import { ExtractFromProps } from 'daisyui-vue/shared/types/common';
 import { computed, HTMLAttributes } from 'vue';
 import styles from './style';
+import { useTheme } from 'daisyui-vue/shared/ctx';
 
 export const linkProps = {
   ...brandVariantProps,
@@ -19,7 +20,9 @@ export const Link = componentV2<ILinkProps, HTMLAttributes>(
     name: 'Link',
     props: linkProps,
     setup: (props, { slots }) => {
+      const theme = useTheme();
       const cls = computed(() => [
+        theme.className,
         'dv-link',
         {
           [`dv-link-${props.variant}`]: !!props.variant,

@@ -11,6 +11,7 @@ import {
 } from 'vue';
 import { ctxAvatarGroupKey, IAvatarGroupCtx, sizeMap } from './state';
 import style from './style';
+import { useTheme } from 'daisyui-vue/shared/ctx';
 
 export const avatarGroupProps = {
   size: {
@@ -30,6 +31,8 @@ export const AvatrGroup = componentV2<IAvatarGroupProps, HTMLAttributes>(
     name: 'AvatarGroup',
     props: avatarGroupProps,
     setup: (props, { slots }) => {
+      const theme = useTheme();
+
       provide<IAvatarGroupCtx>(
         ctxAvatarGroupKey,
         reactive({
@@ -38,12 +41,12 @@ export const AvatrGroup = componentV2<IAvatarGroupProps, HTMLAttributes>(
       );
 
       const gapValue = computed(() => {
-        const res = props.gap || sizeMap[props.size] / 2 || 24;
+        const res = props.gap || sizeMap[props.size!] / 2 || 24;
         return typeof res === 'number' ? `-${res}px` : '-' + res;
       });
 
       return () => (
-        <div class="dv-avatar-group">
+        <div class={[theme.className, 'dv-avatar-group']}>
           {(slots.default?.() || []).map((v, i) =>
             cloneVNode(v, {
               style:

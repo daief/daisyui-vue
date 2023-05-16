@@ -1,5 +1,6 @@
 import { Plugin } from 'rollup';
 import postcss, { Plugin as PostcssPlugin } from 'postcss';
+import { postcssDvClsTransformer } from './classname-plugin';
 
 // const postcssJs = require('postcss-js');
 const less = require('less');
@@ -31,7 +32,6 @@ export const createStylesPlugin = (tailwindConfig: any) => {
     require('postcss-nested')({
       bubble: ['screen'],
     }),
-    require('autoprefixer'),
     require('cssnano')({
       preset: [
         'default',
@@ -40,6 +40,8 @@ export const createStylesPlugin = (tailwindConfig: any) => {
         },
       ],
     }),
+    // postcssDvClsTransformer(),
+    require('autoprefixer'),
     postcssRemToPx(),
   ]);
 

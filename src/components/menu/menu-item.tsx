@@ -2,6 +2,7 @@ import { componentV2 } from 'daisyui-vue/shared/styled';
 import { ExtractFromProps } from 'daisyui-vue/shared/types/common';
 import { createVNode, computed, HTMLAttributes, PropType } from 'vue';
 import style from './style';
+import { useTheme } from 'daisyui-vue/shared/ctx';
 
 export const menuItemProps = {
   asTitle: Boolean,
@@ -25,7 +26,9 @@ export const MenuItem = componentV2<IMuneItemProps, HTMLAttributes>(
     name: 'MenuItem',
     props: menuItemProps,
     setup: (props, { slots }) => {
+      const theme = useTheme();
       const cls = computed(() => [
+        theme.className,
         {
           'dv-menu-title': props.asTitle,
           'dv-disabled': props.disabled,

@@ -1,41 +1,33 @@
-import { inject, reactive } from 'vue';
-import { createStyle, IStyle } from './styled';
-import { IBreakPoints } from './types/theme';
+import { inject } from 'vue';
+import { IThemeContext } from './types/theme';
+import { createThemeLight } from './theme/themes';
+import { StyleManager } from './style-manager';
+import { isBrowser } from './utils';
 
-export const CONTEXT_SYMBOL = Symbol('context');
+export const THEME_CONTEXT_SYMBOL = Symbol('theme');
+export const STYLE_MANAGER_CONTEXT_SYMBOL = Symbol('style-manager');
 
-function createThemRules(): Omit<ITheme, 'style'> {
-  return {
-    breakpoints: {
-      rule: {
-        xs: 0,
-        sm: 640,
-        md: 768,
-        lg: 1024,
-        xl: 1280,
-        '2xl': 1536,
-      },
-    },
-  };
+let builtInCtx: IThemeContext | null = null;
+export function useTheme(): Readonly<IThemeContext> {
+  const val = inject<IThemeContext | null>(THEME_CONTEXT_SYMBOL, builtInCtx);
+
+  if (val) return val;
+
+  if (!builtInCtx) {
+    const buildInTheme = createThemeLight();
+    builtInCtx = {
+      ...buildInTheme,
+      className: styleManager.registerTheme(buildInTheme).className,
+    };
+  }
+
+  return builtInCtx;
 }
 
-export function createTheme() {
-  const style = createStyle();
-  const ctx: ITheme = reactive({
-    ...createThemRules(),
-    style,
-  });
-  return ctx;
-}
+const styleManager = new StyleManager();
 
-let builtInCtx: ITheme;
-
-export interface ITheme {
-  breakpoints: IBreakPoints;
-  style: IStyle;
-}
-
-export function useTheme() {
-  builtInCtx ||= createTheme();
-  return inject<ITheme>(CONTEXT_SYMBOL, builtInCtx) || builtInCtx;
+export function useStyleManager() {
+  // keep singleton in browser
+  if (isBrowser) return styleManager;
+  return inject<StyleManager>(STYLE_MANAGER_CONTEXT_SYMBOL);
 }
