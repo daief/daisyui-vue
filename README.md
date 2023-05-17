@@ -41,16 +41,6 @@ const App = defineComponent({
 Use as needed(👍 recommended):
 
 ```tsx
-// main.ts
-import { installTheme } from 'daisyui-vue';
-
-const app = createApp({
-  // ...
-});
-
-// optional, install theme only when SSR to extract critical css
-app.use(installTheme);
-
 // App.tsx
 // import what you need
 import { Button } from 'daisyui-vue';
