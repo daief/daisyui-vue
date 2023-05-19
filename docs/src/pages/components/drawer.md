@@ -1,202 +1,245 @@
 # Drawer
 
-<script setup lang="ts">
-  import { ref } from 'vue';
-
-  const open = ref(null);
-
-  function setOpen(type) {
-    open.value = type;
-  }
-
-  function close() {
-    open.value = null;
-  }
-
-  function isOpen(type) {
-    return open.value === type;
-  }
-</script>
-
 ## Examples
-
-```html
-<script setup lang="ts">
-  import { ref } from 'vue';
-
-  const open = ref(null);
-
-  function setOpen(type) {
-    open.value = type;
-  }
-
-  function close() {
-    open.value = null;
-  }
-
-  function isOpen(type) {
-    return open.value === type;
-  }
-</script>
-```
 
 global drawer, mouts on body. content has a animation.
 
-```html :::demo
-<dv-drawer :open="isOpen('d1')" @close="close">
-  <div class="dv-bgbase100 w-80 py-4">
-    <dv-menu>
-      <dv-menu-item>item1</dv-menu-item>
-      <dv-menu-item>item2</dv-menu-item>
-      <dv-menu-item>item3</dv-menu-item>
-    </dv-menu>
-  </div>
-  <template v-slot:content>
-    <div
-      class="rounded-lg shadow dv-bgbase200 h-52 flex justify-center items-center"
-    >
-      <dv-button :onClick="() => setOpen('d1')" type="primary">open</dv-button>
-    </div>
-  </template>
-</dv-drawer>
+```tsx :::run
+import { ref } from 'vue';
+
+export default {
+  setup: () => {
+    const isOpen = ref(false);
+    const toggle = () => (isOpen.value = !isOpen.value);
+
+    const slots = {
+      default: () => (
+        <div class="dv-bgbase100 w-80 py-4">
+          <dv-menu>
+            <dv-menu-item>item1</dv-menu-item>
+            <dv-menu-item>item2</dv-menu-item>
+            <dv-menu-item>item3</dv-menu-item>
+          </dv-menu>
+        </div>
+      ),
+      content: () => (
+        <div class="rounded-lg shadow dv-bgbase200 h-52 flex justify-center items-center">
+          <dv-button onClick={toggle} type="primary">
+            open
+          </dv-button>
+        </div>
+      ),
+    };
+
+    return () => (
+      <dv-drawer open={isOpen.value} onClose={toggle} v-slots={slots} />
+    );
+  },
+};
 ```
 
 drawer disable teleport
 
-```html :::demo
-<div class="w-full">
-  <dv-drawer
-    :open="isOpen('d2')"
-    disableTeleport
-    @close="close"
-    class="rounded-lg shadow dv-bgbase200 h-52"
-  >
-    <template v-slot:default>
-      <div class="dv-bgbase100 w-80 py-4">
-        <dv-menu class="px-4">
-          <dv-menu-item>item1</dv-menu-item>
-          <dv-menu-item>item2</dv-menu-item>
-          <dv-menu-item>item3</dv-menu-item>
-        </dv-menu>
+```tsx :::run
+import { ref } from 'vue';
+export default {
+  setup: () => {
+    const isOpen = ref(false);
+    const toggle = () => (isOpen.value = !isOpen.value);
+
+    const slots = {
+      default: () => (
+        <div class="dv-bgbase100 w-80 py-4">
+          <dv-menu class="px-4">
+            <dv-menu-item>item1</dv-menu-item>
+            <dv-menu-item>item2</dv-menu-item>
+            <dv-menu-item>item3</dv-menu-item>
+          </dv-menu>
+        </div>
+      ),
+      content: () => (
+        <div class="h-full flex justify-center items-center">
+          <dv-button onClick={toggle} type="primary">
+            open
+          </dv-button>
+        </div>
+      ),
+    };
+
+    return () => (
+      <div class="w-full">
+        <dv-drawer
+          open={isOpen.value}
+          disableTeleport
+          onClose={toggle}
+          class="rounded-lg shadow dv-bgbase200 h-52"
+          v-slots={slots}
+        />
       </div>
-    </template>
-    <template v-slot:content>
-      <div class="h-full flex justify-center items-center">
-        <dv-button :onClick="() => setOpen('d2')" type="primary">
-          open
-        </dv-button>
-      </div>
-    </template>
-  </dv-drawer>
-</div>
+    );
+  },
+};
 ```
 
-sliding drawer for mobile only
+sliding drawer for mobile only (via flattern)
 
-```html :::demo
-<dv-drawer
-  :open="isOpen('d3')"
-  disableTeleport
-  mobileOnly
-  @close="close"
-  class="rounded-lg shadow dv-bgbase200 h-52"
->
-  <template v-slot:default>
-    <div class="dv-bgbase100 w-80 py-4 border-r dv-borderbase100">
-      <dv-menu class="px-4">
-        <dv-menu-item>item1</dv-menu-item>
-        <dv-menu-item>item2</dv-menu-item>
-        <dv-menu-item>item3</dv-menu-item>
-      </dv-menu>
-    </div>
-  </template>
-  <template v-slot:content>
-    <div class="h-full flex justify-center items-center text-center">
-      <p class="hidden lg:block px-5">
-        Menu is always open on desktop size. Resize the browser to see toggle
-        button on mobile size
-      </p>
-      <div class="lg:hidden px-5">
-        <p
-          >Menu can be toggled on mobile size.
-          <br />
-          Resize the browser to see fixed sidebar on desktop size
-        </p>
-        <dv-button :onClick="() => setOpen('d3')" type="primary">
-          open
-        </dv-button>
-      </div>
-    </div>
-  </template>
-</dv-drawer>
+```tsx :::run
+import { ref, computed } from 'vue';
+import { useBreakPointLte } from 'daisyui-vue';
+
+export default {
+  setup: () => {
+    const isOpen = ref(false);
+    const toggle = () => (isOpen.value = !isOpen.value);
+    const isMobile = useBreakPointLte('sm');
+
+    const slots = {
+      default: () => (
+        <div class="dv-bgbase100 w-80 py-4 border-r dv-borderbase100">
+          <dv-menu class="px-4">
+            <dv-menu-item>item1</dv-menu-item>
+            <dv-menu-item>item2</dv-menu-item>
+            <dv-menu-item>item3</dv-menu-item>
+          </dv-menu>
+        </div>
+      ),
+      content: () => (
+        <div class="h-full flex justify-center items-center text-center">
+          {isMobile.value ? (
+            <div class="px-5">
+              <p>
+                Menu can be toggled on mobile size.
+                <br />
+                Resize the browser to see fixed sidebar on desktop size
+              </p>
+              <dv-button onClick={toggle} type="primary">
+                open
+              </dv-button>
+            </div>
+          ) : (
+            <p class="px-5">
+              Menu is always open on desktop size. Resize the browser to see
+              toggle button on mobile size
+            </p>
+          )}
+        </div>
+      ),
+    };
+
+    return () => (
+      <dv-drawer
+        open={isOpen.value}
+        disableTeleport
+        flattern={!isMobile.value}
+        onClose={toggle}
+        class="rounded-lg shadow dv-bgbase200 h-52"
+        v-slots={slots}
+      />
+    );
+  },
+};
 ```
 
 navbar menu for desktop + drawer for mobile
 
-```html :::demo
-<dv-drawer
-  :open="isOpen('d4')"
-  disableTeleport
-  @close="close"
-  class="rounded-lg shadow dv-bgbase200 h-52"
->
-  <template v-slot:default>
-    <div class="dv-bgbase100 w-80 py-4 border-r dv-borderbase100">
-      <dv-menu class="p-">
-        <dv-menu-item>item1</dv-menu-item>
-        <dv-menu-item>item2</dv-menu-item>
-        <dv-menu-item>item3</dv-menu-item>
-      </dv-menu>
-    </div>
-  </template>
-  <template v-slot:content>
-    <dv-navbar class="dv-bgbase300">
-      <div class="flex-none lg:hidden">
-        <dv-button :onClick="() => setOpen('d4')" type="ghost">
-          <icon-menu size="1.5em" />
-        </dv-button>
-      </div>
-      <div class="flex-1 mx-2"> Change screen size to show/hide menu </div>
-      <div class="flex-none hidden lg:block">
-        <dv-menu class="p-2" horizontal>
-          <dv-menu-item>item1</dv-menu-item>
-          <dv-menu-item>item2</dv-menu-item>
-          <dv-menu-item>item3</dv-menu-item>
-        </dv-menu>
-      </div>
-    </dv-navbar>
-  </template>
-</dv-drawer>
+```tsx :::run
+import { ref, computed } from 'vue';
+import { useBreakPointLte } from 'daisyui-vue';
+
+export default {
+  setup: () => {
+    const isOpen = ref(false);
+    const toggle = () => (isOpen.value = !isOpen.value);
+    const isMobile = useBreakPointLte('sm');
+
+    const slots = {
+      default: () => (
+        <div class="dv-bgbase100 w-80 py-4 border-r dv-borderbase100">
+          <dv-menu class="p-">
+            <dv-menu-item>item1</dv-menu-item>
+            <dv-menu-item>item2</dv-menu-item>
+            <dv-menu-item>item3</dv-menu-item>
+          </dv-menu>
+        </div>
+      ),
+      content: () => (
+        <dv-navbar class="dv-bgbase300">
+          {isMobile.value ? (
+            <div class="flex-none">
+              <dv-button onClick={toggle} type="ghost">
+                <icon-menu size="1.5em" />
+              </dv-button>
+            </div>
+          ) : null}
+          <div class="flex-1 mx-2"> Change screen size to show/hide menu </div>
+          {!isMobile.value ? (
+            <div class="flex-none">
+              <dv-menu class="p-2" horizontal>
+                <dv-menu-item>item1</dv-menu-item>
+                <dv-menu-item>item2</dv-menu-item>
+                <dv-menu-item>item3</dv-menu-item>
+              </dv-menu>
+            </div>
+          ) : null}
+        </dv-navbar>
+      ),
+    };
+    return () => (
+      <dv-drawer
+        open={isOpen.value}
+        disableTeleport
+        onClose={toggle}
+        class="rounded-lg shadow dv-bgbase200 h-52"
+        v-slots={slots}
+      />
+    );
+  },
+};
 ```
 
 drawer right
 
-```html :::demo
-<div class="w-full text-center">
-  <dv-button :onClick="() => setOpen('d5')" type="primary">open</dv-button>
-</div>
-<dv-drawer :open="isOpen('d5')" @close="close" placement="right">
-  <div class="bg-white w-80 py-4">
-    <dv-menu>
-      <dv-menu-item>item1</dv-menu-item>
-      <dv-menu-item>item2</dv-menu-item>
-      <dv-menu-item>item3</dv-menu-item>
-    </dv-menu>
-  </div>
-</dv-drawer>
+```tsx :::run
+import { ref, computed } from 'vue';
+import { useBreakPointLte } from 'daisyui-vue';
+
+export default {
+  setup: () => {
+    const isOpen = ref(false);
+    const toggle = () => (isOpen.value = !isOpen.value);
+    return () => (
+      <>
+        <div class="w-full text-center">
+          <dv-button onClick={toggle} type="primary">
+            open
+          </dv-button>
+        </div>
+        <dv-drawer open={isOpen.value} onClose={toggle} placement="right">
+          <div class="bg-white w-80 py-4">
+            <dv-menu>
+              <dv-menu-item>item1</dv-menu-item>
+              <dv-menu-item>item2</dv-menu-item>
+              <dv-menu-item>item3</dv-menu-item>
+            </dv-menu>
+          </div>
+        </dv-drawer>
+      </>
+    );
+  },
+};
 ```
 
 ## Drawer
 
 ### Attributes
 
-| name            | description                                                                | type        | default |
-| --------------- | -------------------------------------------------------------------------- | ----------- | ------- |
-| open            | drawer open/close status                                                   | boolean     | -       |
-| disableTeleport | disable teleport behavior                                                  | boolean     | -       |
-| mobileOnly      | makes drawer to open/close on mobile but will be always visible on desktop | boolean     | -       |
-| placement       | drawer open position                                                       | left, right | left    |
-| placement       | drawer open position                                                       | left, right | left    |
+| name            | description                      | type        | default |
+| --------------- | -------------------------------- | ----------- | ------- |
+| open            | drawer open/close status         | boolean     | -       |
+| disableTeleport | disable teleport behavior        | boolean     | -       |
+| flattern        | make drawer to be always visible | boolean     | -       |
+| placement       | drawer open position             | left, right | left    |
+| placement       | drawer open position             | left, right | left    |
 
 ### Events
 

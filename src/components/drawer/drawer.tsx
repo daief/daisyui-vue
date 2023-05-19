@@ -1,4 +1,3 @@
-import { useMediaParse } from 'daisyui-vue/shared/hooks/use-media';
 import { componentV2 } from 'daisyui-vue/shared/styled';
 import { ExtractFromProps } from 'daisyui-vue/shared/types/common';
 import { getRenderResult } from 'daisyui-vue/shared/utils';
@@ -10,7 +9,7 @@ import { useTheme } from 'daisyui-vue/shared/ctx';
 export const drawerProps = {
   open: Boolean,
   disableTeleport: Boolean,
-  mobileOnly: Boolean,
+  flattern: Boolean,
   placement: {
     type: String as PropType<'left' | 'right'>,
     default: 'left',
@@ -28,16 +27,11 @@ export const Drawer = componentV2<IDrawerProps>(
     props: drawerProps,
     setup: (props, { slots }) => {
       const theme = useTheme();
-      const matchMobile = useMediaParse({
-        xs: true,
-        lg: false,
-      });
 
       const clsStatus = computed(() => ({
         'dv-drawer-side-parent': true,
         'dv-drawer-end': props.placement === 'right',
-        'dv-drawer--mobile-unmatched': !matchMobile.value,
-        'dv-drawer--mobile-only': props.mobileOnly,
+        'dv-drawer--mobile-only': true,
         'dv-drawer--open': props.open,
       }));
 
@@ -59,7 +53,7 @@ export const Drawer = componentV2<IDrawerProps>(
           <div class="dv-drawer-side">{defaultNode()}</div>
         );
 
-        const showSideDirectly = props.mobileOnly && !matchMobile.value;
+        const showSideDirectly = props.flattern;
 
         return (
           <div class={rootCls.value}>

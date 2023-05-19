@@ -21,14 +21,13 @@ function getQueryString(brkRule: IBreakPoints, brks: IBreakPoint[]) {
   });
 }
 
-export function useMedias(
-  brks: IMaybeRef<IBreakPoint[]>,
+export function useBreakPoint(
   defaultMatched?: IBreakPoint,
-): ComputedRef<IBreakPoint | null> {
+): ComputedRef<IBreakPoint[]> {
   const theme = useTheme();
-
-  const querys = computed(() => getQueryString(theme.breakpoints, unref(brks)));
-
+  const querys = computed(() =>
+    getQueryString(theme.breakpoints, defaultBreakPoints),
+  );
   const matchedIdx = ref(-1);
 
   watch(
@@ -67,57 +66,38 @@ export function useMedias(
   );
 
   return computed(() => {
-    const v = unref(brks);
-    if (!isBrowser) return defaultMatched ?? (v[0] || null);
-    return v[matchedIdx.value] || null;
+    let finalIndex = matchedIdx.value;
+    if (!isBrowser && defaultMatched) {
+      finalIndex = defaultBreakPoints.indexOf(defaultMatched);
+    }
+    return defaultBreakPoints.slice(0, finalIndex + 1);
   });
 }
 
-export function useMedia(brk: IMaybeRef<IBreakPoint>) {
-  const result = useMedias(computed(() => [unref(brk)]));
-  return computed(() => !!result.value);
-}
+/**
+ * less then or equal to
+ * @param targetBreakPoint
+ * @param defaultResult
+ * @example
+ * ```tsx
+ * // true when break point is xs or sm (less then or equal to sm)
+ * const isMobile = useBreakPointLte('sm');
+ * ```
+ */
+export function useBreakPointLte(
+  targetBreakPoint: IMaybeRef<IBreakPoint>,
+  defaultResult?: boolean,
+): ComputedRef<boolean | undefined> {
+  const brks = useBreakPoint();
 
-export function useMediaParse<
-  T extends IMaybeRef<Partial<Record<IBreakPoint | 'default', any>>>,
->(map: T) {
-  type V = T extends IMaybeRef<
-    Partial<Record<IBreakPoint | 'default', infer val>>
-  >
-    ? val
-    : any;
+  const getTargetIndex = () =>
+    defaultBreakPoints.indexOf(unref(targetBreakPoint));
 
-  const brks = computed(() => {
-    const { default: _, ...rest } = unref(map);
-    const ks = Object.keys(rest);
-    // sort by default list
-    return defaultBreakPoints
-      .map((it, index) => ({
-        break: it,
-        index,
-      }))
-      .filter((it) => ks.includes(it.break));
-  });
-
-  const reversedBrks = computed(() => [...brks.value].reverse());
-
-  const res = useMedias(defaultBreakPoints);
-
-  return computed<V>(() => {
-    const input = unref(map);
-
-    if (!res.value) return input.default;
-
-    const exactRes = input[res.value];
-
-    if (res.value in input) return exactRes;
-
-    const idx = defaultBreakPoints.indexOf(res.value);
-
-    const pre = reversedBrks.value.find((it) => it.index < idx);
-
-    if (pre) return input[pre.break];
-
-    return input.default;
+  return computed(() => {
+    if (!isBrowser) return defaultResult;
+    // xs, sm , md
+    //     sm (index: 1)
+    const idx = getTargetIndex();
+    return idx === -1 ? defaultResult : brks.value.length - 1 <= idx;
   });
 }

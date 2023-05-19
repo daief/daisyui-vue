@@ -1,6 +1,7 @@
 <script lang="tsx">
 import { computed, defineComponent, ref, watch } from 'vue';
 import {
+  useBreakPointLte,
   Button,
   Drawer,
   Menu,
@@ -62,6 +63,7 @@ export default defineComponent({
       (isBrowser ? localStorage.getItem(DOC_THEMT_CACHE_KEY) : 'light') ||
         'light',
     );
+    const isMobile = useBreakPointLte('sm', false);
 
     const bodyRef = ref<HTMLDivElement | null>(null);
 
@@ -142,7 +144,7 @@ export default defineComponent({
         <main>
           <Drawer
             disableTeleport
-            mobileOnly
+            flattern={!isMobile.value}
             class="h-screen"
             open={open.value}
             onClose={() => (open.value = false)}
@@ -160,17 +162,19 @@ export default defineComponent({
                   <header class="sticky inset-x-0 top-0 dv-bgbase100 border-b dv-borderbase200 z-20">
                     <Navbar class="">
                       <NavbarStart class="mx-2">
-                        <div class="lg:hidden">
-                          <Button
-                            variant="ghost"
-                            shape="square"
-                            onClick={() => {
-                              open.value = !open.value;
-                            }}
-                          >
-                            <IconMenu size="2em" />
-                          </Button>
-                        </div>
+                        {isMobile.value ? (
+                          <div>
+                            <Button
+                              variant="ghost"
+                              shape="square"
+                              onClick={() => {
+                                open.value = !open.value;
+                              }}
+                            >
+                              <IconMenu size="2em" />
+                            </Button>
+                          </div>
+                        ) : null}
                       </NavbarStart>
                       <NavbarEnd>
                         <Dropdown
@@ -237,7 +241,14 @@ export default defineComponent({
                       </NavbarEnd>
                     </Navbar>
                   </header>
-                  <div class="p-4 pb-8 lg:p-10">
+                  <div
+                    class={[
+                      'p-4 pb-8',
+                      {
+                        'p-10': !isMobile.value,
+                      },
+                    ]}
+                  >
                     <router-view />
                   </div>
                 </div>

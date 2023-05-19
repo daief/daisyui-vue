@@ -12,13 +12,7 @@ export { useAsync } from './shared/hooks/use-async';
 
 export const version = VERSION;
 
-import { useMedia, useMediaParse, useMedias } from './shared/hooks/use-media';
-
-/**
- * @private
- */
-export const _ = {
-  useMedia,
-  useMedias,
-  useMediaParse,
-};
+export {
+  useBreakPoint,
+  useBreakPointLte,
+} from './shared/hooks/use-break-point';

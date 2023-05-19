@@ -69,26 +69,23 @@
     }
   } // end
 
-  &.dv-drawer--mobile-unmatched {
-    grid-auto-columns: max-content auto;
+  grid-auto-columns: max-content auto;
+  & > .dv-drawer-content {
+    @apply col-start-2;
+  }
+
+  &.dv-drawer-end {
+    grid-auto-columns: auto max-content;
+    direction: ltr;
 
     & > .dv-drawer-content {
-      @apply col-start-2;
+      @apply col-start-1;
     }
 
-    &.dv-drawer-end {
-      grid-auto-columns: auto max-content;
-      direction: ltr;
-
-      & > .dv-drawer-content {
-        @apply col-start-1;
-      }
-
-      & > .dv-drawer-side {
-        @apply col-start-2;
-      }
-    } // end
-  }
+    & > .dv-drawer-side {
+      @apply col-start-2;
+    }
+  } // end
 }
 
 // animation
