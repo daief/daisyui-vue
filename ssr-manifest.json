@@ -4,11 +4,11 @@
   "../node_modules/.pnpm/@vue+reactivity@3.2.26/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js": [],
   "../node_modules/.pnpm/@vue+runtime-core@3.2.26/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js": [],
   "../node_modules/.pnpm/@vue+runtime-dom@3.2.26/node_modules/@vue/runtime-dom/dist/runtime-dom.esm-bundler.js": [],
-  "../node_modules/.pnpm/vue-router@4.2.0_vue@3.2.26/node_modules/vue-router/dist/vue-router.mjs": [],
+  "../node_modules/.pnpm/vue-router@4.2.1_vue@3.2.26/node_modules/vue-router/dist/vue-router.mjs": [],
   "../node_modules/.pnpm/@vueuse+head@0.6.0_vue@3.2.26/node_modules/@vueuse/head/dist/index.mjs": [],
-  "../node_modules/.pnpm/vite-ssg@0.19.0_a741d6688c06a2c8ca528ecc69e06cfc/node_modules/vite-ssg/dist/chunks/state.mjs": [],
-  "../node_modules/.pnpm/vite-ssg@0.19.0_a741d6688c06a2c8ca528ecc69e06cfc/node_modules/vite-ssg/dist/chunks/ClientOnly.mjs": [],
-  "../node_modules/.pnpm/vite-ssg@0.19.0_a741d6688c06a2c8ca528ecc69e06cfc/node_modules/vite-ssg/dist/index.mjs": [],
+  "../node_modules/.pnpm/vite-ssg@0.19.0_f09d5ec7e6a232ce465ad9a3fe7f11c6/node_modules/vite-ssg/dist/chunks/state.mjs": [],
+  "../node_modules/.pnpm/vite-ssg@0.19.0_f09d5ec7e6a232ce465ad9a3fe7f11c6/node_modules/vite-ssg/dist/chunks/ClientOnly.mjs": [],
+  "../node_modules/.pnpm/vite-ssg@0.19.0_f09d5ec7e6a232ce465ad9a3fe7f11c6/node_modules/vite-ssg/dist/index.mjs": [],
   "vite/preload-helper": [],
   "src/pages/index.vue?vue&type=script&lang.tsx": [],
   "../../../../../../@vite-plugin-pages/generated-pages": [],
@@ -55,7 +55,7 @@
   "../dist/components/counter/index.js": [],
   "../dist/components/divider/index.js": [],
   "../dist/base-c113eccb.js": [],
-  "../dist/drawer-f69977e6.js": [],
+  "../dist/drawer-e4976f6c.js": [],
   "../node_modules/.pnpm/@popperjs+core@2.11.7/node_modules/@popperjs/core/lib/enums.js": [],
   "../node_modules/.pnpm/@popperjs+core@2.11.7/node_modules/@popperjs/core/lib/dom-utils/getNodeName.js": [],
   "../node_modules/.pnpm/@popperjs+core@2.11.7/node_modules/@popperjs/core/lib/dom-utils/getWindow.js": [],
@@ -116,21 +116,21 @@
   "../dist/components/input/index.js": [],
   "../dist/components/kbd/index.js": [],
   "../dist/components/link/index.js": [],
-  "../dist/menu-item-893f8d93.js": [],
+  "../dist/menu-item-c9ff69c2.js": [],
   "../dist/button-8cf815e4.js": [],
   "../dist/widgets-878d876f.js": [],
   "../dist/navbar-82cef586.js": [],
   "../dist/button-group-54622268.js": [],
   "../dist/components/pagination/index.js": [],
   "../dist/components/progress/index.js": [],
-  "../dist/group-95e015d0.js": [],
+  "../dist/group-bb942a5d.js": [],
   "../dist/components/space/index.js": [],
   "../dist/components/swap/index.js": [],
-  "../dist/tabs-e4017146.js": [],
-  "../dist/table-f6d44ef3.js": [],
+  "../dist/tabs-a5883512.js": [],
+  "../dist/table-31d3a9e1.js": [],
   "../dist/components/textarea/index.js": [],
   "../dist/components/toggle/index.js": [],
-  "../dist/tooltip-2c658361.js": [],
+  "../dist/tooltip-489974f0.js": [],
   "../dist/index.js": [],
   "src/styles/tailwind.css": [],
   "src/styles/markdown.less": [],
@@ -150,236 +150,251 @@
   "src/main.ts": [],
   "index.html": [],
   "src/.demo/CtsxCdxeweawvyuuawfcudyxtdxxzweetcufwfexwvcua.tsx": [
-    "/daisyui-vue/assets/demo.9f9e6e75.js"
+    "/daisyui-vue/assets/demo.f5310503.js"
   ],
   "src/pages/demo.md": [
-    "/daisyui-vue/assets/demo.9f9e6e75.js"
+    "/daisyui-vue/assets/demo.f5310503.js"
   ],
   "src/pages/components/tooltip.md": [
-    "/daisyui-vue/assets/tooltip.c2fe3c27.js"
+    "/daisyui-vue/assets/tooltip.63baed51.js"
   ],
   "src/pages/components/toggle.md": [
-    "/daisyui-vue/assets/toggle.e043f09b.js"
+    "/daisyui-vue/assets/toggle.91c101df.js"
   ],
   "src/pages/components/textarea.md": [
-    "/daisyui-vue/assets/textarea.9b390b14.js"
+    "/daisyui-vue/assets/textarea.237de769.js"
   ],
   "src/.demo/CtsxCyavdxwdvzxyvxwyzxwyzcxtaufxdwxvwdczdaxfe.tsx": [
-    "/daisyui-vue/assets/table.41a81f49.js"
+    "/daisyui-vue/assets/table.abcc9434.js"
   ],
   "src/.demo/ChtmlCwwfwfvyvwuxdwzzfvfywyxxcaxdfcbzvbabxfayy.vue?vue&type=script&lang.tsx": [
-    "/daisyui-vue/assets/table.41a81f49.js"
+    "/daisyui-vue/assets/table.abcc9434.js"
   ],
   "src/.demo/ChtmlCwwfwfvyvwuxdwzzfvfywyxxcaxdfcbzvbabxfayy.vue": [
-    "/daisyui-vue/assets/table.41a81f49.js"
+    "/daisyui-vue/assets/table.abcc9434.js"
   ],
   "src/.demo/CtsxCxaxdxzxdyxdweytxwduyxwvwxzytceavytyxwwet.tsx": [
-    "/daisyui-vue/assets/table.41a81f49.js"
+    "/daisyui-vue/assets/table.abcc9434.js"
   ],
   "src/pages/components/table.md": [
-    "/daisyui-vue/assets/table.41a81f49.js"
+    "/daisyui-vue/assets/table.abcc9434.js"
   ],
   "src/.demo/CtsxCayzydxufuwcubxeyefaedubfywtxztdywvvbexzw.tsx": [
-    "/daisyui-vue/assets/tab.eb667792.js"
+    "/daisyui-vue/assets/tab.40f63e19.js"
   ],
   "src/.demo/CtsxCywvwazxyvyfabctbtdcexadwadzyyawbyffuvyvb.tsx": [
-    "/daisyui-vue/assets/tab.eb667792.js"
+    "/daisyui-vue/assets/tab.40f63e19.js"
   ],
   "src/.demo/CtsxCcuefwdxeaccczbfyzbeycywtuwbwwwwydyxzabea.tsx": [
-    "/daisyui-vue/assets/tab.eb667792.js"
+    "/daisyui-vue/assets/tab.40f63e19.js"
   ],
   "src/.demo/CtsxCezxzbdbcbdwtvwdfxyaxewufuxafwwuwwtddtxua.tsx": [
-    "/daisyui-vue/assets/tab.eb667792.js"
+    "/daisyui-vue/assets/tab.40f63e19.js"
   ],
   "src/.demo/CtsxCbeywwybdwfxbwfdxbzdxxweaaawyfccwatyxyadc.tsx": [
-    "/daisyui-vue/assets/tab.eb667792.js"
+    "/daisyui-vue/assets/tab.40f63e19.js"
   ],
   "src/.demo/CtsxCxxfwwxxtuwwvtdwawfbwvwxyafzwvctxxvwywfyb.tsx": [
-    "/daisyui-vue/assets/tab.eb667792.js"
+    "/daisyui-vue/assets/tab.40f63e19.js"
   ],
   "src/pages/components/tab.md": [
-    "/daisyui-vue/assets/tab.eb667792.js"
+    "/daisyui-vue/assets/tab.40f63e19.js"
   ],
   "src/.demo/CtsxCeywvwxevtexwbtfyytzawycyxwweaaaywxawyuuy.tsx": [
-    "/daisyui-vue/assets/swap.a02fd41f.js"
+    "/daisyui-vue/assets/swap.aaf9e025.js"
   ],
   "src/.demo/CtsxCxwtxedceaedbzyvwfzebebyfxbxyytedxyevztuy.tsx": [
-    "/daisyui-vue/assets/swap.a02fd41f.js"
+    "/daisyui-vue/assets/swap.aaf9e025.js"
   ],
   "src/.demo/CtsxCyvtzycbacdxewvcvxcxcytxyayeyzvftttwtfxwu.tsx": [
-    "/daisyui-vue/assets/swap.a02fd41f.js"
+    "/daisyui-vue/assets/swap.aaf9e025.js"
   ],
   "src/pages/components/swap.md": [
-    "/daisyui-vue/assets/swap.a02fd41f.js"
+    "/daisyui-vue/assets/swap.aaf9e025.js"
   ],
   "src/.demo/CtsxCvbwtdyfbxbefvwbtyfuywyeawwcdbuwwducbyyzy.tsx": [
-    "/daisyui-vue/assets/space.7be06f46.js",
+    "/daisyui-vue/assets/space.569b2722.js",
     "/daisyui-vue/assets/space.4d87feab.css"
   ],
   "src/.demo/ChtmlCavvfffdxwazdwwcfuzxxexvuuyewyvaxffbbxywy.vue?vue&type=style&index=0&scoped=true&lang.css": [
-    "/daisyui-vue/assets/space.7be06f46.js",
+    "/daisyui-vue/assets/space.569b2722.js",
     "/daisyui-vue/assets/space.4d87feab.css"
   ],
   "src/.demo/ChtmlCavvfffdxwazdwwcfuzxxexvuuyewyvaxffbbxywy.vue": [
-    "/daisyui-vue/assets/space.7be06f46.js",
+    "/daisyui-vue/assets/space.569b2722.js",
     "/daisyui-vue/assets/space.4d87feab.css"
   ],
   "src/.demo/CtsxCyzyvxxybydyxaawyaeyxwcyefvwyuewwfwvwdtuy.tsx": [
-    "/daisyui-vue/assets/space.7be06f46.js",
+    "/daisyui-vue/assets/space.569b2722.js",
     "/daisyui-vue/assets/space.4d87feab.css"
   ],
   "src/pages/components/space.md": [
-    "/daisyui-vue/assets/space.7be06f46.js",
+    "/daisyui-vue/assets/space.569b2722.js",
     "/daisyui-vue/assets/space.4d87feab.css"
   ],
   "src/pages/components/raw.md": [
-    "/daisyui-vue/assets/raw.b1a488ff.js"
+    "/daisyui-vue/assets/raw.899b11f0.js"
   ],
   "src/.demo/CtsxCaetycwyxwyzfwvbbbwvfxwtyzuxexcvbftayfxzc.tsx": [
-    "/daisyui-vue/assets/radio.4d8e3a6b.js"
+    "/daisyui-vue/assets/radio.cae5c899.js"
   ],
   "src/.demo/CtsxCytwyaybwxzvtcccbeuaybawxyctyfuzuvyfaexyt.tsx": [
-    "/daisyui-vue/assets/radio.4d8e3a6b.js"
+    "/daisyui-vue/assets/radio.cae5c899.js"
   ],
   "src/.demo/CtsxCffwtvxetwvybtwfwwvyeyxbwxbwwcxxxuyyuexux.tsx": [
-    "/daisyui-vue/assets/radio.4d8e3a6b.js"
+    "/daisyui-vue/assets/radio.cae5c899.js"
   ],
   "src/.demo/CtsxCdyddwuwceddbwuffewtfzywxwwytuxfxtxzdwyay.tsx": [
-    "/daisyui-vue/assets/radio.4d8e3a6b.js"
+    "/daisyui-vue/assets/radio.cae5c899.js"
   ],
   "src/pages/components/radio.md": [
-    "/daisyui-vue/assets/radio.4d8e3a6b.js"
+    "/daisyui-vue/assets/radio.cae5c899.js"
   ],
   "src/pages/components/progress.md": [
-    "/daisyui-vue/assets/progress.ebd6a520.js"
+    "/daisyui-vue/assets/progress.5dcaac7a.js"
   ],
   "src/.demo/CtsxCwtzbyaxeyeueywwwaddddcxddtyatvwvzywbxzww.tsx": [
-    "/daisyui-vue/assets/popper.6c2f1039.js"
+    "/daisyui-vue/assets/popper.b9b59d47.js"
   ],
   "src/.demo/CtsxCxuvuwtwyyyuczuaeaubywzwtzzwbewxwftazcawd.tsx": [
-    "/daisyui-vue/assets/popper.6c2f1039.js"
+    "/daisyui-vue/assets/popper.b9b59d47.js"
   ],
   "src/.demo/CtsxCcuzvtweweveyeyabcwfzwtzytxttxcczuxxyxcwx.tsx": [
-    "/daisyui-vue/assets/popper.6c2f1039.js"
+    "/daisyui-vue/assets/popper.b9b59d47.js"
   ],
   "src/pages/components/popper.md": [
-    "/daisyui-vue/assets/popper.6c2f1039.js"
+    "/daisyui-vue/assets/popper.b9b59d47.js"
   ],
   "src/pages/components/pagination.md": [
-    "/daisyui-vue/assets/pagination.c0d781ab.js"
+    "/daisyui-vue/assets/pagination.4bb87a1d.js"
   ],
   "src/pages/components/navbar.md": [
-    "/daisyui-vue/assets/navbar.577d60d8.js"
+    "/daisyui-vue/assets/navbar.ad89b7df.js"
   ],
   "src/.demo/CtsxCzxdxwvdtyafwfcbxyxwxxfxyebcwcuafzwyfzdyy.tsx": [
-    "/daisyui-vue/assets/modal.df093b8d.js"
+    "/daisyui-vue/assets/modal.0a84b4be.js"
   ],
   "src/pages/components/modal.md": [
-    "/daisyui-vue/assets/modal.df093b8d.js"
+    "/daisyui-vue/assets/modal.0a84b4be.js"
   ],
   "src/pages/components/menu.md": [
-    "/daisyui-vue/assets/menu.fcd03a09.js"
+    "/daisyui-vue/assets/menu.b49fdc14.js"
   ],
   "src/.demo/CtsxCywdyxtydtczyvexueywyxfyfadazawvfbvyaebwu.tsx": [
-    "/daisyui-vue/assets/mask.7f78852e.js"
+    "/daisyui-vue/assets/mask.3616ddea.js"
   ],
   "src/pages/components/mask.md": [
-    "/daisyui-vue/assets/mask.7f78852e.js"
+    "/daisyui-vue/assets/mask.3616ddea.js"
   ],
   "src/pages/components/link.md": [
-    "/daisyui-vue/assets/link.19f2441e.js"
+    "/daisyui-vue/assets/link.68376cc4.js"
   ],
   "src/pages/components/kbd.md": [
-    "/daisyui-vue/assets/kbd.f4e3dbb1.js"
+    "/daisyui-vue/assets/kbd.4d95e51c.js"
   ],
   "src/pages/components/input.md": [
-    "/daisyui-vue/assets/input.713a0028.js"
+    "/daisyui-vue/assets/input.8057ee91.js"
   ],
   "src/.demo/CtsxCyvbecdfxwyxuyefexayduxtavzbcyxedtaxwyzyt.tsx": [
-    "/daisyui-vue/assets/indicator.56f9561e.js"
+    "/daisyui-vue/assets/indicator.b1bd6737.js"
   ],
   "src/pages/components/indicator.md": [
-    "/daisyui-vue/assets/indicator.56f9561e.js"
+    "/daisyui-vue/assets/indicator.b1bd6737.js"
   ],
   "src/.demo/ChtmlCdawwwxxyvvxdyadvyyyxdcbybbtxvfzxvuxtdwbf.vue": [
-    "/daisyui-vue/assets/icons.9c38b2a0.js"
+    "/daisyui-vue/assets/icons.a212efc9.js"
   ],
   "../node_modules/.pnpm/@vicons+fluent@0.12.0/node_modules/@vicons/fluent/es/Alert24Regular.js": [
-    "/daisyui-vue/assets/icons.9c38b2a0.js"
+    "/daisyui-vue/assets/icons.a212efc9.js"
   ],
   "../node_modules/.pnpm/@vicons+fluent@0.12.0/node_modules/@vicons/fluent/es/CheckmarkCircle24Regular.js": [
-    "/daisyui-vue/assets/icons.9c38b2a0.js"
+    "/daisyui-vue/assets/icons.a212efc9.js"
   ],
   "../node_modules/.pnpm/@vicons+fluent@0.12.0/node_modules/@vicons/fluent/es/ErrorCircle24Regular.js": [
-    "/daisyui-vue/assets/icons.9c38b2a0.js"
+    "/daisyui-vue/assets/icons.a212efc9.js"
   ],
   "../node_modules/.pnpm/@vicons+fluent@0.12.0/node_modules/@vicons/fluent/es/Info24Regular.js": [
-    "/daisyui-vue/assets/icons.9c38b2a0.js"
+    "/daisyui-vue/assets/icons.a212efc9.js"
   ],
   "../node_modules/.pnpm/@vicons+fluent@0.12.0/node_modules/@vicons/fluent/es/Warning24Regular.js": [
-    "/daisyui-vue/assets/icons.9c38b2a0.js"
+    "/daisyui-vue/assets/icons.a212efc9.js"
   ],
   "src/.demo/ChtmlCyyadxbzzefxeuuaxteauvwzzwvwatuzfaffcwcwx.vue": [
-    "/daisyui-vue/assets/icons.9c38b2a0.js"
+    "/daisyui-vue/assets/icons.a212efc9.js"
   ],
   "src/pages/components/icons.md": [
-    "/daisyui-vue/assets/icons.9c38b2a0.js"
+    "/daisyui-vue/assets/icons.a212efc9.js"
   ],
   "src/.demo/CtsxCxyzeytxztaufywatexdwayyebuyuuyzxwwxyuwvz.tsx": [
-    "/daisyui-vue/assets/dropdown.3f8e3006.js"
+    "/daisyui-vue/assets/dropdown.8eff7e9b.js"
   ],
   "src/pages/components/dropdown.md": [
-    "/daisyui-vue/assets/dropdown.3f8e3006.js"
+    "/daisyui-vue/assets/dropdown.8eff7e9b.js"
+  ],
+  "src/.demo/CtsxCubbbdxcfwcvvyaxxexwyfayxxxyzduxzxwzyyvzt.tsx": [
+    "/daisyui-vue/assets/drawer.546ee7dd.js"
+  ],
+  "src/.demo/CtsxCxazduyxxvxzwzdvatactduwdefxdyaacvabywuxw.tsx": [
+    "/daisyui-vue/assets/drawer.546ee7dd.js"
+  ],
+  "src/.demo/CtsxCuutvtwfyvyxcdtzcyzyxubzwwxxtvwwvzydxycct.tsx": [
+    "/daisyui-vue/assets/drawer.546ee7dd.js"
+  ],
+  "src/.demo/CtsxCybdbvfxawvywdyvwubuwyccbefbefywtecwuuxax.tsx": [
+    "/daisyui-vue/assets/drawer.546ee7dd.js"
+  ],
+  "src/.demo/CtsxCzxxftcaubwwvutbywadxbwcyvxbuwyuxfxefcfyx.tsx": [
+    "/daisyui-vue/assets/drawer.546ee7dd.js"
   ],
   "src/pages/components/drawer.md": [
-    "/daisyui-vue/assets/drawer.f599f588.js"
+    "/daisyui-vue/assets/drawer.546ee7dd.js"
   ],
   "src/pages/components/divider.md": [
-    "/daisyui-vue/assets/divider.8952e4a4.js"
+    "/daisyui-vue/assets/divider.0e9f0a53.js"
   ],
   "src/pages/components/counter.md": [
-    "/daisyui-vue/assets/counter.aa6e2884.js"
+    "/daisyui-vue/assets/counter.8d067852.js"
   ],
   "src/.demo/CtsxCuvczfbeeadvxyuybbxzzydaudffcxtxvwvxbetyz.tsx": [
-    "/daisyui-vue/assets/checkbox.194ceb0b.js"
+    "/daisyui-vue/assets/checkbox.affe676c.js"
   ],
   "src/.demo/CtsxCtayyyxuwwefdzdvywybuzuvbaxywedvwyvwbytzx.tsx": [
-    "/daisyui-vue/assets/checkbox.194ceb0b.js"
+    "/daisyui-vue/assets/checkbox.affe676c.js"
   ],
   "src/.demo/CtsxCuywfzyewywvfbuuutyzuwyzwbdfeybatavfbdfeb.tsx": [
-    "/daisyui-vue/assets/checkbox.194ceb0b.js"
+    "/daisyui-vue/assets/checkbox.affe676c.js"
   ],
   "src/.demo/CtsxCxcwbyvxedyyuveffyfxewuvczcdwdyeffwwybywd.tsx": [
-    "/daisyui-vue/assets/checkbox.194ceb0b.js"
+    "/daisyui-vue/assets/checkbox.affe676c.js"
   ],
   "src/pages/components/checkbox.md": [
-    "/daisyui-vue/assets/checkbox.194ceb0b.js"
+    "/daisyui-vue/assets/checkbox.affe676c.js"
   ],
   "src/pages/components/card.md": [
-    "/daisyui-vue/assets/card.3d51b4b0.js"
+    "/daisyui-vue/assets/card.a44c07ea.js"
   ],
   "src/.demo/ChtmlCyuuztecbbxxyzcutwyefbdwvzfzdbccxctfyyfuy.vue?vue&type=script&setup=true&lang.tsx": [
-    "/daisyui-vue/assets/button.4db1f0e5.js"
+    "/daisyui-vue/assets/button.e3886079.js"
   ],
   "src/.demo/ChtmlCuetyxdxwtxfwzwvexyvxvetbyccxwxyaexxxawva.vue?vue&type=script&setup=true&lang.tsx": [
-    "/daisyui-vue/assets/button.4db1f0e5.js"
+    "/daisyui-vue/assets/button.e3886079.js"
   ],
   "src/pages/components/button.md": [
-    "/daisyui-vue/assets/button.4db1f0e5.js"
+    "/daisyui-vue/assets/button.e3886079.js"
   ],
   "src/pages/components/breadcrumb.md": [
-    "/daisyui-vue/assets/breadcrumb.a5e37d45.js"
+    "/daisyui-vue/assets/breadcrumb.79858f1a.js"
   ],
   "src/pages/components/badge.md": [
-    "/daisyui-vue/assets/badge.46390c42.js"
+    "/daisyui-vue/assets/badge.cb746121.js"
   ],
   "src/pages/components/avatar.md": [
-    "/daisyui-vue/assets/avatar.d4b23eb0.js"
+    "/daisyui-vue/assets/avatar.f31bf3dd.js"
   ],
   "src/pages/components/artboard.md": [
-    "/daisyui-vue/assets/artboard.59944cf7.js"
+    "/daisyui-vue/assets/artboard.f1349322.js"
   ],
   "src/pages/components/alert.md": [
-    "/daisyui-vue/assets/alert.abc3185e.js"
+    "/daisyui-vue/assets/alert.78d17471.js"
   ]
 }
