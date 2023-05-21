@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.1-alpha.19](https://github.com/daief/daisyui-vue/compare/v0.0.1-alpha.18...v0.0.1-alpha.19) (2023-05-21)
+
+
+### Bug Fixes
+
+* set theme default color ([50e968a](https://github.com/daief/daisyui-vue/commit/50e968ac22d8723b4e6d5b0c519d3a1f3a80a56d))
+* theme style node order ([e48eedf](https://github.com/daief/daisyui-vue/commit/e48eedf7b7f57bff25ee55f5ff648ec1b77c2445))
+
 ### [0.0.1-alpha.18](https://github.com/daief/daisyui-vue/compare/v0.0.1-alpha.17...v0.0.1-alpha.18) (2023-05-21)
 
 
