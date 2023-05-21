@@ -11,7 +11,12 @@ export default defineComponent({
   setup: (props, { slots }) => {
     return () => (
       <div>
-        <Table zebra compact class="dv-markdowntable w-full" {...props} />
+        <Table
+          zebra
+          compact
+          class="dv-markdowntable w-full"
+          {...(props as any)}
+        />
       </div>
     );
   },

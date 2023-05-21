@@ -241,7 +241,8 @@ export default defineComponent({
                       </NavbarEnd>
                     </Navbar>
                   </header>
-                  <div
+                  <Raw
+                    variant="base-100"
                     class={[
                       'p-4 pb-8',
                       {
@@ -250,7 +251,7 @@ export default defineComponent({
                     ]}
                   >
                     <router-view />
-                  </div>
+                  </Raw>
                 </div>
               ),
             }}
