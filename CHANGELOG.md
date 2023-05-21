@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.1-alpha.18](https://github.com/daief/daisyui-vue/compare/v0.0.1-alpha.17...v0.0.1-alpha.18) (2023-05-21)
+
+
+### Bug Fixes
+
+* theme css ([f52969c](https://github.com/daief/daisyui-vue/commit/f52969ca5e8b89d3c41ee290fcb5962590e8ce07))
+
 ### [0.0.1-alpha.17](https://github.com/daief/daisyui-vue/compare/v0.0.1-alpha.16...v0.0.1-alpha.17) (2023-05-19)
 
 ### [0.0.1-alpha.16](https://github.com/daief/daisyui-vue/compare/v0.0.1-alpha.15...v0.0.1-alpha.16) (2023-05-16)
