@@ -16,6 +16,7 @@ function themeToCss(theme: ITheme): string {
     ...Object.entries(theme.variables.rule).map(
       (it) => `${themeVariable[it[0]][1]}: ${it[1]}`,
     ),
+    `color: ${themeVariable['base-content'][0]}`,
   ].join(';');
 }
 
