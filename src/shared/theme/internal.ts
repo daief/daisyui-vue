@@ -20,7 +20,7 @@ export function createThemeByVariables(
     variables: {
       ...variables,
       css: Object.fromEntries(
-        Object.keys(variables.rule).map((key) => [key, themeVariable[key][1]]),
+        Object.keys(variables.rule).map((key) => [key, themeVariable[key][0]]),
       ) as any,
     },
   };
