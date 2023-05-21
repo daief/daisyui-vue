@@ -82,13 +82,18 @@ export class StyleManager {
     };
     item.count++;
     this.themeMap.set(theme.name, item);
-    if (!item.styleNode && isBrowser) {
-      item.styleNode = document.createElement('style');
-      document.head.append(item.styleNode);
-    }
 
     if (!item.className) {
       item.className = CLASSNAME_UNIQUE + '_' + theme.name;
+    }
+
+    if (!item.styleNode && isBrowser) {
+      item.styleNode = document.createElement('style');
+      try {
+        this.styleNode?.before(item.styleNode);
+      } catch (error) {
+        console.warn(`insert theme [${item.className}] error:`, error);
+      }
     }
 
     const themeCss = `.${item.className}{${themeToCss(theme)}}`;
