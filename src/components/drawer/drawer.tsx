@@ -31,8 +31,8 @@ export const Drawer = componentV2<IDrawerProps>(
       const clsStatus = computed(() => ({
         'dv-drawer-side-parent': true,
         'dv-drawer-end': props.placement === 'right',
-        'dv-drawer--mobile-only': true,
         'dv-drawer--open': props.open,
+        [`dv-drawer--flattern-${props.flattern ? 'on' : 'off'}`]: true,
       }));
 
       const rootCls = computed(() => [
