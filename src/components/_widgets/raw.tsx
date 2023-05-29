@@ -16,7 +16,7 @@ export const rawProps = {
     default: 'div',
   },
   variant: {
-    type: String as PropType<IRawType>,
+    type: String as PropType<IRawType | ''>,
     default: '',
   },
   color: {
