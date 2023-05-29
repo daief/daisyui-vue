@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.1-alpha.20](https://github.com/daief/daisyui-vue/compare/v0.0.1-alpha.19...v0.0.1-alpha.20) (2023-05-29)
+
+
+### Bug Fixes
+
+* dist package type ([048a230](https://github.com/daief/daisyui-vue/commit/048a230189277b9b7dd6b8b926f271ab66b9f9f2))
+* drawer no translatex when flattern ([2118cfe](https://github.com/daief/daisyui-vue/commit/2118cfeac493e26a320acb73d1427db1260a4e11))
+* popper arrow ([001f74e](https://github.com/daief/daisyui-vue/commit/001f74ebce25b3efc85fc359b1859a4c960a5ce9))
+* ram type ([62d87f2](https://github.com/daief/daisyui-vue/commit/62d87f2c21e1a323bf568955d3a61abf2d26787c))
+
 ### [0.0.1-alpha.19](https://github.com/daief/daisyui-vue/compare/v0.0.1-alpha.18...v0.0.1-alpha.19) (2023-05-21)
 
 
