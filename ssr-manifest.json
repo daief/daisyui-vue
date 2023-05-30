@@ -4,16 +4,16 @@
   "../node_modules/.pnpm/@vue+reactivity@3.2.26/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js": [],
   "../node_modules/.pnpm/@vue+runtime-core@3.2.26/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js": [],
   "../node_modules/.pnpm/@vue+runtime-dom@3.2.26/node_modules/@vue/runtime-dom/dist/runtime-dom.esm-bundler.js": [],
-  "../node_modules/.pnpm/vue-router@4.2.1_vue@3.2.26/node_modules/vue-router/dist/vue-router.mjs": [],
+  "../node_modules/.pnpm/vue-router@4.2.2_vue@3.2.26/node_modules/vue-router/dist/vue-router.mjs": [],
   "../node_modules/.pnpm/@vueuse+head@0.6.0_vue@3.2.26/node_modules/@vueuse/head/dist/index.mjs": [],
-  "../node_modules/.pnpm/vite-ssg@0.19.0_f09d5ec7e6a232ce465ad9a3fe7f11c6/node_modules/vite-ssg/dist/chunks/state.mjs": [],
-  "../node_modules/.pnpm/vite-ssg@0.19.0_f09d5ec7e6a232ce465ad9a3fe7f11c6/node_modules/vite-ssg/dist/chunks/ClientOnly.mjs": [],
-  "../node_modules/.pnpm/vite-ssg@0.19.0_f09d5ec7e6a232ce465ad9a3fe7f11c6/node_modules/vite-ssg/dist/index.mjs": [],
+  "../node_modules/.pnpm/vite-ssg@0.19.0_6e92f274f22c48846db99834e937ec0e/node_modules/vite-ssg/dist/chunks/state.mjs": [],
+  "../node_modules/.pnpm/vite-ssg@0.19.0_6e92f274f22c48846db99834e937ec0e/node_modules/vite-ssg/dist/chunks/ClientOnly.mjs": [],
+  "../node_modules/.pnpm/vite-ssg@0.19.0_6e92f274f22c48846db99834e937ec0e/node_modules/vite-ssg/dist/index.mjs": [],
   "vite/preload-helper": [],
   "src/pages/index.vue?vue&type=script&lang.tsx": [],
   "../../../../../../@vite-plugin-pages/generated-pages": [],
   "../dist/_utils.js": [],
-  "../dist/styled-3222e166.js": [],
+  "../dist/styled-b3af6504.js": [],
   "../node_modules/.pnpm/@vicons+ionicons5@0.12.0/node_modules/@vicons/ionicons5/es/AddOutline.js": [],
   "../node_modules/.pnpm/@vicons+ionicons5@0.12.0/node_modules/@vicons/ionicons5/es/AtOutline.js": [],
   "../node_modules/.pnpm/@vicons+ionicons5@0.12.0/node_modules/@vicons/ionicons5/es/BagOutline.js": [],
@@ -41,96 +41,96 @@
   "../node_modules/.pnpm/@vicons+ionicons5@0.12.0/node_modules/@vicons/ionicons5/es/VolumeHigh.js": [],
   "../node_modules/.pnpm/@vicons+ionicons5@0.12.0/node_modules/@vicons/ionicons5/es/VolumeMute.js": [],
   "../node_modules/.pnpm/@vicons+ionicons5@0.12.0/node_modules/@vicons/ionicons5/es/WarningOutline.js": [],
-  "../dist/icons-cd2bbf2a.js": [],
+  "../dist/icons-c01d5711.js": [],
   "../dist/components/alert/index.js": [],
-  "../dist/artboard-c4f7b8e5.js": [],
+  "../dist/artboard-a1537151.js": [],
   "../dist/components/mask/index.js": [],
-  "../dist/avatar-group-c6b85b92.js": [],
+  "../dist/avatar-group-df460a1a.js": [],
   "../dist/components/badge/index.js": [],
   "../dist/components/breadcrumb/index.js": [],
   "../dist/components/card/index.js": [],
   "../dist/checkbox-radio-74b2263a.js": [],
   "../dist/base-props-beff0fda.js": [],
-  "../dist/group-861eaa16.js": [],
+  "../dist/group-5e74451f.js": [],
   "../dist/components/counter/index.js": [],
   "../dist/components/divider/index.js": [],
-  "../dist/base-9bcb062e.js": [],
-  "../dist/drawer-50414c19.js": [],
-  "../node_modules/.pnpm/@popperjs+core@2.11.7/node_modules/@popperjs/core/lib/enums.js": [],
-  "../node_modules/.pnpm/@popperjs+core@2.11.7/node_modules/@popperjs/core/lib/dom-utils/getNodeName.js": [],
-  "../node_modules/.pnpm/@popperjs+core@2.11.7/node_modules/@popperjs/core/lib/dom-utils/getWindow.js": [],
-  "../node_modules/.pnpm/@popperjs+core@2.11.7/node_modules/@popperjs/core/lib/dom-utils/instanceOf.js": [],
-  "../node_modules/.pnpm/@popperjs+core@2.11.7/node_modules/@popperjs/core/lib/modifiers/applyStyles.js": [],
-  "../node_modules/.pnpm/@popperjs+core@2.11.7/node_modules/@popperjs/core/lib/utils/getBasePlacement.js": [],
-  "../node_modules/.pnpm/@popperjs+core@2.11.7/node_modules/@popperjs/core/lib/utils/math.js": [],
-  "../node_modules/.pnpm/@popperjs+core@2.11.7/node_modules/@popperjs/core/lib/utils/userAgent.js": [],
-  "../node_modules/.pnpm/@popperjs+core@2.11.7/node_modules/@popperjs/core/lib/dom-utils/isLayoutViewport.js": [],
-  "../node_modules/.pnpm/@popperjs+core@2.11.7/node_modules/@popperjs/core/lib/dom-utils/getBoundingClientRect.js": [],
-  "../node_modules/.pnpm/@popperjs+core@2.11.7/node_modules/@popperjs/core/lib/dom-utils/getLayoutRect.js": [],
-  "../node_modules/.pnpm/@popperjs+core@2.11.7/node_modules/@popperjs/core/lib/dom-utils/contains.js": [],
-  "../node_modules/.pnpm/@popperjs+core@2.11.7/node_modules/@popperjs/core/lib/dom-utils/getComputedStyle.js": [],
-  "../node_modules/.pnpm/@popperjs+core@2.11.7/node_modules/@popperjs/core/lib/dom-utils/isTableElement.js": [],
-  "../node_modules/.pnpm/@popperjs+core@2.11.7/node_modules/@popperjs/core/lib/dom-utils/getDocumentElement.js": [],
-  "../node_modules/.pnpm/@popperjs+core@2.11.7/node_modules/@popperjs/core/lib/dom-utils/getParentNode.js": [],
-  "../node_modules/.pnpm/@popperjs+core@2.11.7/node_modules/@popperjs/core/lib/dom-utils/getOffsetParent.js": [],
-  "../node_modules/.pnpm/@popperjs+core@2.11.7/node_modules/@popperjs/core/lib/utils/getMainAxisFromPlacement.js": [],
-  "../node_modules/.pnpm/@popperjs+core@2.11.7/node_modules/@popperjs/core/lib/utils/within.js": [],
-  "../node_modules/.pnpm/@popperjs+core@2.11.7/node_modules/@popperjs/core/lib/utils/getFreshSideObject.js": [],
-  "../node_modules/.pnpm/@popperjs+core@2.11.7/node_modules/@popperjs/core/lib/utils/mergePaddingObject.js": [],
-  "../node_modules/.pnpm/@popperjs+core@2.11.7/node_modules/@popperjs/core/lib/utils/expandToHashMap.js": [],
-  "../node_modules/.pnpm/@popperjs+core@2.11.7/node_modules/@popperjs/core/lib/modifiers/arrow.js": [],
-  "../node_modules/.pnpm/@popperjs+core@2.11.7/node_modules/@popperjs/core/lib/utils/getVariation.js": [],
-  "../node_modules/.pnpm/@popperjs+core@2.11.7/node_modules/@popperjs/core/lib/modifiers/computeStyles.js": [],
-  "../node_modules/.pnpm/@popperjs+core@2.11.7/node_modules/@popperjs/core/lib/modifiers/eventListeners.js": [],
-  "../node_modules/.pnpm/@popperjs+core@2.11.7/node_modules/@popperjs/core/lib/utils/getOppositePlacement.js": [],
-  "../node_modules/.pnpm/@popperjs+core@2.11.7/node_modules/@popperjs/core/lib/utils/getOppositeVariationPlacement.js": [],
-  "../node_modules/.pnpm/@popperjs+core@2.11.7/node_modules/@popperjs/core/lib/dom-utils/getWindowScroll.js": [],
-  "../node_modules/.pnpm/@popperjs+core@2.11.7/node_modules/@popperjs/core/lib/dom-utils/getWindowScrollBarX.js": [],
-  "../node_modules/.pnpm/@popperjs+core@2.11.7/node_modules/@popperjs/core/lib/dom-utils/getViewportRect.js": [],
-  "../node_modules/.pnpm/@popperjs+core@2.11.7/node_modules/@popperjs/core/lib/dom-utils/getDocumentRect.js": [],
-  "../node_modules/.pnpm/@popperjs+core@2.11.7/node_modules/@popperjs/core/lib/dom-utils/isScrollParent.js": [],
-  "../node_modules/.pnpm/@popperjs+core@2.11.7/node_modules/@popperjs/core/lib/dom-utils/getScrollParent.js": [],
-  "../node_modules/.pnpm/@popperjs+core@2.11.7/node_modules/@popperjs/core/lib/dom-utils/listScrollParents.js": [],
-  "../node_modules/.pnpm/@popperjs+core@2.11.7/node_modules/@popperjs/core/lib/utils/rectToClientRect.js": [],
-  "../node_modules/.pnpm/@popperjs+core@2.11.7/node_modules/@popperjs/core/lib/dom-utils/getClippingRect.js": [],
-  "../node_modules/.pnpm/@popperjs+core@2.11.7/node_modules/@popperjs/core/lib/utils/computeOffsets.js": [],
-  "../node_modules/.pnpm/@popperjs+core@2.11.7/node_modules/@popperjs/core/lib/utils/detectOverflow.js": [],
-  "../node_modules/.pnpm/@popperjs+core@2.11.7/node_modules/@popperjs/core/lib/utils/computeAutoPlacement.js": [],
-  "../node_modules/.pnpm/@popperjs+core@2.11.7/node_modules/@popperjs/core/lib/modifiers/flip.js": [],
-  "../node_modules/.pnpm/@popperjs+core@2.11.7/node_modules/@popperjs/core/lib/modifiers/hide.js": [],
-  "../node_modules/.pnpm/@popperjs+core@2.11.7/node_modules/@popperjs/core/lib/modifiers/offset.js": [],
-  "../node_modules/.pnpm/@popperjs+core@2.11.7/node_modules/@popperjs/core/lib/modifiers/popperOffsets.js": [],
-  "../node_modules/.pnpm/@popperjs+core@2.11.7/node_modules/@popperjs/core/lib/utils/getAltAxis.js": [],
-  "../node_modules/.pnpm/@popperjs+core@2.11.7/node_modules/@popperjs/core/lib/modifiers/preventOverflow.js": [],
-  "../node_modules/.pnpm/@popperjs+core@2.11.7/node_modules/@popperjs/core/lib/dom-utils/getHTMLElementScroll.js": [],
-  "../node_modules/.pnpm/@popperjs+core@2.11.7/node_modules/@popperjs/core/lib/dom-utils/getNodeScroll.js": [],
-  "../node_modules/.pnpm/@popperjs+core@2.11.7/node_modules/@popperjs/core/lib/dom-utils/getCompositeRect.js": [],
-  "../node_modules/.pnpm/@popperjs+core@2.11.7/node_modules/@popperjs/core/lib/utils/orderModifiers.js": [],
-  "../node_modules/.pnpm/@popperjs+core@2.11.7/node_modules/@popperjs/core/lib/utils/debounce.js": [],
-  "../node_modules/.pnpm/@popperjs+core@2.11.7/node_modules/@popperjs/core/lib/utils/mergeByName.js": [],
-  "../node_modules/.pnpm/@popperjs+core@2.11.7/node_modules/@popperjs/core/lib/createPopper.js": [],
-  "../node_modules/.pnpm/@popperjs+core@2.11.7/node_modules/@popperjs/core/lib/popper.js": [],
+  "../dist/base-89387663.js": [],
+  "../dist/drawer-eddf30fb.js": [],
+  "../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/enums.js": [],
+  "../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/dom-utils/getNodeName.js": [],
+  "../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/dom-utils/getWindow.js": [],
+  "../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/dom-utils/instanceOf.js": [],
+  "../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/modifiers/applyStyles.js": [],
+  "../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/utils/getBasePlacement.js": [],
+  "../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/utils/math.js": [],
+  "../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/utils/userAgent.js": [],
+  "../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/dom-utils/isLayoutViewport.js": [],
+  "../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/dom-utils/getBoundingClientRect.js": [],
+  "../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/dom-utils/getLayoutRect.js": [],
+  "../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/dom-utils/contains.js": [],
+  "../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/dom-utils/getComputedStyle.js": [],
+  "../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/dom-utils/isTableElement.js": [],
+  "../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/dom-utils/getDocumentElement.js": [],
+  "../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/dom-utils/getParentNode.js": [],
+  "../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/dom-utils/getOffsetParent.js": [],
+  "../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/utils/getMainAxisFromPlacement.js": [],
+  "../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/utils/within.js": [],
+  "../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/utils/getFreshSideObject.js": [],
+  "../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/utils/mergePaddingObject.js": [],
+  "../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/utils/expandToHashMap.js": [],
+  "../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/modifiers/arrow.js": [],
+  "../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/utils/getVariation.js": [],
+  "../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/modifiers/computeStyles.js": [],
+  "../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/modifiers/eventListeners.js": [],
+  "../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/utils/getOppositePlacement.js": [],
+  "../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/utils/getOppositeVariationPlacement.js": [],
+  "../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/dom-utils/getWindowScroll.js": [],
+  "../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/dom-utils/getWindowScrollBarX.js": [],
+  "../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/dom-utils/getViewportRect.js": [],
+  "../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/dom-utils/getDocumentRect.js": [],
+  "../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/dom-utils/isScrollParent.js": [],
+  "../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/dom-utils/getScrollParent.js": [],
+  "../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/dom-utils/listScrollParents.js": [],
+  "../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/utils/rectToClientRect.js": [],
+  "../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/dom-utils/getClippingRect.js": [],
+  "../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/utils/computeOffsets.js": [],
+  "../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/utils/detectOverflow.js": [],
+  "../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/utils/computeAutoPlacement.js": [],
+  "../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/modifiers/flip.js": [],
+  "../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/modifiers/hide.js": [],
+  "../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/modifiers/offset.js": [],
+  "../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/modifiers/popperOffsets.js": [],
+  "../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/utils/getAltAxis.js": [],
+  "../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/modifiers/preventOverflow.js": [],
+  "../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/dom-utils/getHTMLElementScroll.js": [],
+  "../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/dom-utils/getNodeScroll.js": [],
+  "../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/dom-utils/getCompositeRect.js": [],
+  "../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/utils/orderModifiers.js": [],
+  "../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/utils/debounce.js": [],
+  "../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/utils/mergeByName.js": [],
+  "../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/createPopper.js": [],
+  "../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/popper.js": [],
   "../dist/components/popper/index.js": [],
   "../dist/components/dropdown/index.js": [],
   "../dist/components/indicator/index.js": [],
   "../dist/components/input/index.js": [],
   "../dist/components/kbd/index.js": [],
   "../dist/components/link/index.js": [],
-  "../dist/menu-item-a60febd1.js": [],
-  "../dist/button-7c97f723.js": [],
-  "../dist/widgets-f433de92.js": [],
-  "../dist/navbar-777a10f1.js": [],
-  "../dist/button-group-5a41b565.js": [],
+  "../dist/menu-item-fdbdd757.js": [],
+  "../dist/button-01002983.js": [],
+  "../dist/widgets-26224526.js": [],
+  "../dist/navbar-5723de71.js": [],
+  "../dist/button-group-d1210026.js": [],
   "../dist/components/pagination/index.js": [],
   "../dist/components/progress/index.js": [],
-  "../dist/group-4ecabac2.js": [],
+  "../dist/group-fd418c5c.js": [],
   "../dist/components/space/index.js": [],
   "../dist/components/swap/index.js": [],
-  "../dist/tabs-db5e8e42.js": [],
-  "../dist/table-f2a3f0f4.js": [],
+  "../dist/tabs-45899ece.js": [],
+  "../dist/table-f15c34aa.js": [],
   "../dist/components/textarea/index.js": [],
   "../dist/components/toggle/index.js": [],
-  "../dist/tooltip-9c216ed3.js": [],
+  "../dist/tooltip-38291160.js": [],
   "../dist/index.js": [],
   "src/styles/tailwind.css": [],
   "src/styles/markdown.less": [],
@@ -150,251 +150,251 @@
   "src/main.ts": [],
   "index.html": [],
   "src/.demo/CtsxCdxeweawvyuuawfcudyxtdxxzweetcufwfexwvcua.tsx": [
-    "/daisyui-vue/assets/demo.f030b8b6.js"
+    "/daisyui-vue/assets/demo.be7a6f72.js"
   ],
   "src/pages/demo.md": [
-    "/daisyui-vue/assets/demo.f030b8b6.js"
+    "/daisyui-vue/assets/demo.be7a6f72.js"
   ],
   "src/pages/components/tooltip.md": [
-    "/daisyui-vue/assets/tooltip.a7427c6e.js"
+    "/daisyui-vue/assets/tooltip.ff488699.js"
   ],
   "src/pages/components/toggle.md": [
-    "/daisyui-vue/assets/toggle.f336b9e0.js"
+    "/daisyui-vue/assets/toggle.ad845c71.js"
   ],
   "src/pages/components/textarea.md": [
-    "/daisyui-vue/assets/textarea.7a9b229d.js"
+    "/daisyui-vue/assets/textarea.eb72281e.js"
   ],
   "src/.demo/CtsxCyavdxwdvzxyvxwyzxwyzcxtaufxdwxvwdczdaxfe.tsx": [
-    "/daisyui-vue/assets/table.cf1b2eb2.js"
+    "/daisyui-vue/assets/table.c6a24589.js"
   ],
   "src/.demo/ChtmlCwwfwfvyvwuxdwzzfvfywyxxcaxdfcbzvbabxfayy.vue?vue&type=script&lang.tsx": [
-    "/daisyui-vue/assets/table.cf1b2eb2.js"
+    "/daisyui-vue/assets/table.c6a24589.js"
   ],
   "src/.demo/ChtmlCwwfwfvyvwuxdwzzfvfywyxxcaxdfcbzvbabxfayy.vue": [
-    "/daisyui-vue/assets/table.cf1b2eb2.js"
+    "/daisyui-vue/assets/table.c6a24589.js"
   ],
   "src/.demo/CtsxCxaxdxzxdyxdweytxwduyxwvwxzytceavytyxwwet.tsx": [
-    "/daisyui-vue/assets/table.cf1b2eb2.js"
+    "/daisyui-vue/assets/table.c6a24589.js"
   ],
   "src/pages/components/table.md": [
-    "/daisyui-vue/assets/table.cf1b2eb2.js"
+    "/daisyui-vue/assets/table.c6a24589.js"
   ],
   "src/.demo/CtsxCayzydxufuwcubxeyefaedubfywtxztdywvvbexzw.tsx": [
-    "/daisyui-vue/assets/tab.ded31133.js"
+    "/daisyui-vue/assets/tab.621d3e42.js"
   ],
   "src/.demo/CtsxCywvwazxyvyfabctbtdcexadwadzyyawbyffuvyvb.tsx": [
-    "/daisyui-vue/assets/tab.ded31133.js"
+    "/daisyui-vue/assets/tab.621d3e42.js"
   ],
   "src/.demo/CtsxCcuefwdxeaccczbfyzbeycywtuwbwwwwydyxzabea.tsx": [
-    "/daisyui-vue/assets/tab.ded31133.js"
+    "/daisyui-vue/assets/tab.621d3e42.js"
   ],
   "src/.demo/CtsxCezxzbdbcbdwtvwdfxyaxewufuxafwwuwwtddtxua.tsx": [
-    "/daisyui-vue/assets/tab.ded31133.js"
+    "/daisyui-vue/assets/tab.621d3e42.js"
   ],
   "src/.demo/CtsxCbeywwybdwfxbwfdxbzdxxweaaawyfccwatyxyadc.tsx": [
-    "/daisyui-vue/assets/tab.ded31133.js"
+    "/daisyui-vue/assets/tab.621d3e42.js"
   ],
   "src/.demo/CtsxCxxfwwxxtuwwvtdwawfbwvwxyafzwvctxxvwywfyb.tsx": [
-    "/daisyui-vue/assets/tab.ded31133.js"
+    "/daisyui-vue/assets/tab.621d3e42.js"
   ],
   "src/pages/components/tab.md": [
-    "/daisyui-vue/assets/tab.ded31133.js"
+    "/daisyui-vue/assets/tab.621d3e42.js"
   ],
   "src/.demo/CtsxCeywvwxevtexwbtfyytzawycyxwweaaaywxawyuuy.tsx": [
-    "/daisyui-vue/assets/swap.58d42f3a.js"
+    "/daisyui-vue/assets/swap.5a31c637.js"
   ],
   "src/.demo/CtsxCxwtxedceaedbzyvwfzebebyfxbxyytedxyevztuy.tsx": [
-    "/daisyui-vue/assets/swap.58d42f3a.js"
+    "/daisyui-vue/assets/swap.5a31c637.js"
   ],
   "src/.demo/CtsxCyvtzycbacdxewvcvxcxcytxyayeyzvftttwtfxwu.tsx": [
-    "/daisyui-vue/assets/swap.58d42f3a.js"
+    "/daisyui-vue/assets/swap.5a31c637.js"
   ],
   "src/pages/components/swap.md": [
-    "/daisyui-vue/assets/swap.58d42f3a.js"
+    "/daisyui-vue/assets/swap.5a31c637.js"
   ],
   "src/.demo/CtsxCvbwtdyfbxbefvwbtyfuywyeawwcdbuwwducbyyzy.tsx": [
-    "/daisyui-vue/assets/space.c7316f8b.js",
+    "/daisyui-vue/assets/space.b12d4c28.js",
     "/daisyui-vue/assets/space.4d87feab.css"
   ],
   "src/.demo/ChtmlCavvfffdxwazdwwcfuzxxexvuuyewyvaxffbbxywy.vue?vue&type=style&index=0&scoped=true&lang.css": [
-    "/daisyui-vue/assets/space.c7316f8b.js",
+    "/daisyui-vue/assets/space.b12d4c28.js",
     "/daisyui-vue/assets/space.4d87feab.css"
   ],
   "src/.demo/ChtmlCavvfffdxwazdwwcfuzxxexvuuyewyvaxffbbxywy.vue": [
-    "/daisyui-vue/assets/space.c7316f8b.js",
+    "/daisyui-vue/assets/space.b12d4c28.js",
     "/daisyui-vue/assets/space.4d87feab.css"
   ],
   "src/.demo/CtsxCyzyvxxybydyxaawyaeyxwcyefvwyuewwfwvwdtuy.tsx": [
-    "/daisyui-vue/assets/space.c7316f8b.js",
+    "/daisyui-vue/assets/space.b12d4c28.js",
     "/daisyui-vue/assets/space.4d87feab.css"
   ],
   "src/pages/components/space.md": [
-    "/daisyui-vue/assets/space.c7316f8b.js",
+    "/daisyui-vue/assets/space.b12d4c28.js",
     "/daisyui-vue/assets/space.4d87feab.css"
   ],
   "src/pages/components/raw.md": [
-    "/daisyui-vue/assets/raw.314648ca.js"
+    "/daisyui-vue/assets/raw.60f147d9.js"
   ],
   "src/.demo/CtsxCaetycwyxwyzfwvbbbwvfxwtyzuxexcvbftayfxzc.tsx": [
-    "/daisyui-vue/assets/radio.00d192ef.js"
+    "/daisyui-vue/assets/radio.90370048.js"
   ],
   "src/.demo/CtsxCytwyaybwxzvtcccbeuaybawxyctyfuzuvyfaexyt.tsx": [
-    "/daisyui-vue/assets/radio.00d192ef.js"
+    "/daisyui-vue/assets/radio.90370048.js"
   ],
   "src/.demo/CtsxCffwtvxetwvybtwfwwvyeyxbwxbwwcxxxuyyuexux.tsx": [
-    "/daisyui-vue/assets/radio.00d192ef.js"
+    "/daisyui-vue/assets/radio.90370048.js"
   ],
   "src/.demo/CtsxCdyddwuwceddbwuffewtfzywxwwytuxfxtxzdwyay.tsx": [
-    "/daisyui-vue/assets/radio.00d192ef.js"
+    "/daisyui-vue/assets/radio.90370048.js"
   ],
   "src/pages/components/radio.md": [
-    "/daisyui-vue/assets/radio.00d192ef.js"
+    "/daisyui-vue/assets/radio.90370048.js"
   ],
   "src/pages/components/progress.md": [
-    "/daisyui-vue/assets/progress.de4a5f7f.js"
+    "/daisyui-vue/assets/progress.7c6949c4.js"
   ],
   "src/.demo/CtsxCwtzbyaxeyeueywwwaddddcxddtyatvwvzywbxzww.tsx": [
-    "/daisyui-vue/assets/popper.9498b0a8.js"
+    "/daisyui-vue/assets/popper.b7c4ecb2.js"
   ],
   "src/.demo/CtsxCxuvuwtwyyyuczuaeaubywzwtzzwbewxwftazcawd.tsx": [
-    "/daisyui-vue/assets/popper.9498b0a8.js"
+    "/daisyui-vue/assets/popper.b7c4ecb2.js"
   ],
   "src/.demo/CtsxCcuzvtweweveyeyabcwfzwtzytxttxcczuxxyxcwx.tsx": [
-    "/daisyui-vue/assets/popper.9498b0a8.js"
+    "/daisyui-vue/assets/popper.b7c4ecb2.js"
   ],
   "src/pages/components/popper.md": [
-    "/daisyui-vue/assets/popper.9498b0a8.js"
+    "/daisyui-vue/assets/popper.b7c4ecb2.js"
   ],
   "src/pages/components/pagination.md": [
-    "/daisyui-vue/assets/pagination.d7cc6bd8.js"
+    "/daisyui-vue/assets/pagination.6d3c9467.js"
   ],
   "src/pages/components/navbar.md": [
-    "/daisyui-vue/assets/navbar.7600b0da.js"
+    "/daisyui-vue/assets/navbar.6c8e4f4d.js"
   ],
   "src/.demo/CtsxCzxdxwvdtyafwfcbxyxwxxfxyebcwcuafzwyfzdyy.tsx": [
-    "/daisyui-vue/assets/modal.139abf32.js"
+    "/daisyui-vue/assets/modal.3ab0d063.js"
   ],
   "src/pages/components/modal.md": [
-    "/daisyui-vue/assets/modal.139abf32.js"
+    "/daisyui-vue/assets/modal.3ab0d063.js"
   ],
   "src/pages/components/menu.md": [
-    "/daisyui-vue/assets/menu.efcc6085.js"
+    "/daisyui-vue/assets/menu.ec1e12b6.js"
   ],
   "src/.demo/CtsxCywdyxtydtczyvexueywyxfyfadazawvfbvyaebwu.tsx": [
-    "/daisyui-vue/assets/mask.a1b731cb.js"
+    "/daisyui-vue/assets/mask.1749ae78.js"
   ],
   "src/pages/components/mask.md": [
-    "/daisyui-vue/assets/mask.a1b731cb.js"
+    "/daisyui-vue/assets/mask.1749ae78.js"
   ],
   "src/pages/components/link.md": [
-    "/daisyui-vue/assets/link.6db6cfcf.js"
+    "/daisyui-vue/assets/link.9c74cbe8.js"
   ],
   "src/pages/components/kbd.md": [
-    "/daisyui-vue/assets/kbd.6889ef9d.js"
+    "/daisyui-vue/assets/kbd.8f1e4839.js"
   ],
   "src/pages/components/input.md": [
-    "/daisyui-vue/assets/input.ac2a9598.js"
+    "/daisyui-vue/assets/input.d6d7140c.js"
   ],
   "src/.demo/CtsxCyvbecdfxwyxuyefexayduxtavzbcyxedtaxwyzyt.tsx": [
-    "/daisyui-vue/assets/indicator.1dae884e.js"
+    "/daisyui-vue/assets/indicator.b6991a4f.js"
   ],
   "src/pages/components/indicator.md": [
-    "/daisyui-vue/assets/indicator.1dae884e.js"
+    "/daisyui-vue/assets/indicator.b6991a4f.js"
   ],
   "src/.demo/ChtmlCdawwwxxyvvxdyadvyyyxdcbybbtxvfzxvuxtdwbf.vue": [
-    "/daisyui-vue/assets/icons.44b03b41.js"
+    "/daisyui-vue/assets/icons.f865d43e.js"
   ],
   "../node_modules/.pnpm/@vicons+fluent@0.12.0/node_modules/@vicons/fluent/es/Alert24Regular.js": [
-    "/daisyui-vue/assets/icons.44b03b41.js"
+    "/daisyui-vue/assets/icons.f865d43e.js"
   ],
   "../node_modules/.pnpm/@vicons+fluent@0.12.0/node_modules/@vicons/fluent/es/CheckmarkCircle24Regular.js": [
-    "/daisyui-vue/assets/icons.44b03b41.js"
+    "/daisyui-vue/assets/icons.f865d43e.js"
   ],
   "../node_modules/.pnpm/@vicons+fluent@0.12.0/node_modules/@vicons/fluent/es/ErrorCircle24Regular.js": [
-    "/daisyui-vue/assets/icons.44b03b41.js"
+    "/daisyui-vue/assets/icons.f865d43e.js"
   ],
   "../node_modules/.pnpm/@vicons+fluent@0.12.0/node_modules/@vicons/fluent/es/Info24Regular.js": [
-    "/daisyui-vue/assets/icons.44b03b41.js"
+    "/daisyui-vue/assets/icons.f865d43e.js"
   ],
   "../node_modules/.pnpm/@vicons+fluent@0.12.0/node_modules/@vicons/fluent/es/Warning24Regular.js": [
-    "/daisyui-vue/assets/icons.44b03b41.js"
+    "/daisyui-vue/assets/icons.f865d43e.js"
   ],
   "src/.demo/ChtmlCyyadxbzzefxeuuaxteauvwzzwvwatuzfaffcwcwx.vue": [
-    "/daisyui-vue/assets/icons.44b03b41.js"
+    "/daisyui-vue/assets/icons.f865d43e.js"
   ],
   "src/pages/components/icons.md": [
-    "/daisyui-vue/assets/icons.44b03b41.js"
+    "/daisyui-vue/assets/icons.f865d43e.js"
   ],
   "src/.demo/CtsxCxyzeytxztaufywatexdwayyebuyuuyzxwwxyuwvz.tsx": [
-    "/daisyui-vue/assets/dropdown.b89f8a1a.js"
+    "/daisyui-vue/assets/dropdown.34375a3b.js"
   ],
   "src/pages/components/dropdown.md": [
-    "/daisyui-vue/assets/dropdown.b89f8a1a.js"
+    "/daisyui-vue/assets/dropdown.34375a3b.js"
   ],
   "src/.demo/CtsxCubbbdxcfwcvvyaxxexwyfayxxxyzduxzxwzyyvzt.tsx": [
-    "/daisyui-vue/assets/drawer.fc2fddf2.js"
+    "/daisyui-vue/assets/drawer.4edeeed0.js"
   ],
   "src/.demo/CtsxCxazduyxxvxzwzdvatactduwdefxdyaacvabywuxw.tsx": [
-    "/daisyui-vue/assets/drawer.fc2fddf2.js"
+    "/daisyui-vue/assets/drawer.4edeeed0.js"
   ],
   "src/.demo/CtsxCuutvtwfyvyxcdtzcyzyxubzwwxxtvwwvzydxycct.tsx": [
-    "/daisyui-vue/assets/drawer.fc2fddf2.js"
+    "/daisyui-vue/assets/drawer.4edeeed0.js"
   ],
   "src/.demo/CtsxCybdbvfxawvywdyvwubuwyccbefbefywtecwuuxax.tsx": [
-    "/daisyui-vue/assets/drawer.fc2fddf2.js"
+    "/daisyui-vue/assets/drawer.4edeeed0.js"
   ],
   "src/.demo/CtsxCzxxftcaubwwvutbywadxbwcyvxbuwyuxfxefcfyx.tsx": [
-    "/daisyui-vue/assets/drawer.fc2fddf2.js"
+    "/daisyui-vue/assets/drawer.4edeeed0.js"
   ],
   "src/pages/components/drawer.md": [
-    "/daisyui-vue/assets/drawer.fc2fddf2.js"
+    "/daisyui-vue/assets/drawer.4edeeed0.js"
   ],
   "src/pages/components/divider.md": [
-    "/daisyui-vue/assets/divider.efc60a8a.js"
+    "/daisyui-vue/assets/divider.85b220e3.js"
   ],
   "src/pages/components/counter.md": [
-    "/daisyui-vue/assets/counter.b42f9126.js"
+    "/daisyui-vue/assets/counter.2f1c9d4d.js"
   ],
   "src/.demo/CtsxCuvczfbeeadvxyuybbxzzydaudffcxtxvwvxbetyz.tsx": [
-    "/daisyui-vue/assets/checkbox.861b984a.js"
+    "/daisyui-vue/assets/checkbox.5d453da7.js"
   ],
   "src/.demo/CtsxCtayyyxuwwefdzdvywybuzuvbaxywedvwyvwbytzx.tsx": [
-    "/daisyui-vue/assets/checkbox.861b984a.js"
+    "/daisyui-vue/assets/checkbox.5d453da7.js"
   ],
   "src/.demo/CtsxCuywfzyewywvfbuuutyzuwyzwbdfeybatavfbdfeb.tsx": [
-    "/daisyui-vue/assets/checkbox.861b984a.js"
+    "/daisyui-vue/assets/checkbox.5d453da7.js"
   ],
   "src/.demo/CtsxCxcwbyvxedyyuveffyfxewuvczcdwdyeffwwybywd.tsx": [
-    "/daisyui-vue/assets/checkbox.861b984a.js"
+    "/daisyui-vue/assets/checkbox.5d453da7.js"
   ],
   "src/pages/components/checkbox.md": [
-    "/daisyui-vue/assets/checkbox.861b984a.js"
+    "/daisyui-vue/assets/checkbox.5d453da7.js"
   ],
   "src/pages/components/card.md": [
-    "/daisyui-vue/assets/card.a9465e45.js"
+    "/daisyui-vue/assets/card.8433a138.js"
   ],
   "src/.demo/ChtmlCyuuztecbbxxyzcutwyefbdwvzfzdbccxctfyyfuy.vue?vue&type=script&setup=true&lang.tsx": [
-    "/daisyui-vue/assets/button.04e35649.js"
+    "/daisyui-vue/assets/button.4d1a5754.js"
   ],
   "src/.demo/ChtmlCuetyxdxwtxfwzwvexyvxvetbyccxwxyaexxxawva.vue?vue&type=script&setup=true&lang.tsx": [
-    "/daisyui-vue/assets/button.04e35649.js"
+    "/daisyui-vue/assets/button.4d1a5754.js"
   ],
   "src/pages/components/button.md": [
-    "/daisyui-vue/assets/button.04e35649.js"
+    "/daisyui-vue/assets/button.4d1a5754.js"
   ],
   "src/pages/components/breadcrumb.md": [
-    "/daisyui-vue/assets/breadcrumb.cda10d82.js"
+    "/daisyui-vue/assets/breadcrumb.ca4f9102.js"
   ],
   "src/pages/components/badge.md": [
-    "/daisyui-vue/assets/badge.f25f8608.js"
+    "/daisyui-vue/assets/badge.ee6391c8.js"
   ],
   "src/pages/components/avatar.md": [
-    "/daisyui-vue/assets/avatar.f27cedd3.js"
+    "/daisyui-vue/assets/avatar.09ace9d9.js"
   ],
   "src/pages/components/artboard.md": [
-    "/daisyui-vue/assets/artboard.fa354003.js"
+    "/daisyui-vue/assets/artboard.4e7ec200.js"
   ],
   "src/pages/components/alert.md": [
-    "/daisyui-vue/assets/alert.58b973da.js"
+    "/daisyui-vue/assets/alert.6860e895.js"
   ]
 }
