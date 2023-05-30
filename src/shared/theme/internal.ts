@@ -20,7 +20,10 @@ export function createThemeByVariables(
     variables: {
       ...variables,
       css: Object.fromEntries(
-        Object.keys(variables.rule).map((key) => [key, themeVariable[key][0]]),
+        Object.keys(variables.rule).map((key) => {
+          const cssVar = `var(${themeVariable[key]})`;
+          return [key, cssVar];
+        }),
       ) as any,
     },
   };
