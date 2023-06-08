@@ -4,7 +4,7 @@ Vue3 UI components based on [daisyui](https://github.com/saadeghi/daisyui).
 
 ## Usage
 
-Install:
+Installation:
 
 ```bash
 $ pnpm add daisyui-vue
@@ -14,7 +14,7 @@ $ npm add daisyui-vue
 $ yarn add daisyui-vue
 ```
 
-Import all(❌ not recommended):
+Import All(❌ not recommended):
 
 ```tsx
 // main.ts
@@ -38,7 +38,7 @@ const App = defineComponent({
 });
 ```
 
-Use as needed(👍 recommended):
+Import On-demand(👍 recommended):
 
 ```tsx
 // App.tsx
@@ -81,7 +81,7 @@ export function render() {
 }
 ```
 
-## Todo
+## TODOs
 
 - [x] style files
   - [x] auto require style conntent when using a component (now css-in-js)
@@ -148,7 +148,7 @@ export function render() {
 - [ ] mockup-phone
 - [ ] mockup-window
 
-## 命名规则
+## Naming Rules
 
 - event handler name, `onNameAction`: onMaskClick、onEscKeyDown
 - action flag name, `xxxYyable`: keyboardCloseable
