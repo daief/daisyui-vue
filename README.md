@@ -73,9 +73,9 @@ export function render() {
   const styleManager = new StyleManager();
   app.provide(STYLE_MANAGER_CONTEXT_SYMBOL, styleManager);
 
-  const styleTagStr = styleManager.extractStyles(); // <style>...</style>
-
   const html = renderToString(app);
+
+  const styleTagStr = styleManager.extractStyles(); // <style>...</style>
 
   return html.replace('<!-- YOUR_STYLE_PLACEHOLDER -->', styleTagStr);
 }
