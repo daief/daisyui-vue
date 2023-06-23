@@ -184,8 +184,8 @@ importers:
         specifier: ^5.0.10
         version: 5.0.10(postcss@8.4.12)
       daisyui:
-        specifier: 2.42.1
-        version: 2.42.1(autoprefixer@10.3.7)(postcss@8.4.12)(ts-node@10.9.1)
+        specifier: 3.1.5
+        version: 3.1.5(autoprefixer@10.3.7)(postcss@8.4.12)(ts-node@10.9.1)
       download-git-repo:
         specifier: ^3.0.2
         version: 3.0.2
@@ -243,6 +243,10 @@ importers:
       vue:
         specifier: 3.2.26
         version: 3.2.26
+    devDependencies:
+      https-proxy-agent:
+        specifier: ^7.0.0
+        version: 7.0.0
 
 packages:
 
@@ -427,7 +431,7 @@ packages:
       '@babel/core': 7.17.7
       '@babel/helper-compilation-targets': 7.20.0(@babel/core@7.17.7)
       '@babel/helper-plugin-utils': 7.20.2
-      debug: 4.3.3
+      debug: 4.3.4
       lodash.debounce: 4.0.8
       resolve: 1.22.2
       semver: 6.3.0
@@ -1545,7 +1549,7 @@ packages:
       '@babel/helper-split-export-declaration': 7.18.6
       '@babel/parser': 7.20.2
       '@babel/types': 7.20.2
-      debug: 4.3.3
+      debug: 4.3.4
       globals: 11.12.0
     transitivePeerDependencies:
       - supports-color
@@ -1562,7 +1566,7 @@ packages:
       '@babel/helper-split-export-declaration': 7.18.6
       '@babel/parser': 7.19.1
       '@babel/types': 7.20.2
-      debug: 4.3.3
+      debug: 4.3.4
       globals: 11.12.0
     transitivePeerDependencies:
       - supports-color
@@ -1579,7 +1583,7 @@ packages:
       '@babel/helper-split-export-declaration': 7.18.6
       '@babel/parser': 7.20.2
       '@babel/types': 7.20.2
-      debug: 4.3.3
+      debug: 4.3.4
       globals: 11.12.0
     transitivePeerDependencies:
       - supports-color
@@ -2440,10 +2444,19 @@ packages:
     resolution: {integrity: sha512-qQLMr+8o0WC4FZGQTcJiKBVC59JylcPSrTtk6usvmIDFUOCKegapy1VHQwRbFMOFyb/inzUVqHs+eMYKDM1YeQ==}
 
   /agent-base@6.0.2:
-    resolution: {integrity: sha512-RZNwNclF7+MS/8bDg70amg32dyeZGZxiDuQmZxKLAlQjr3jGyLx+4Kkk58UO7D2QdgFIQCovuSuZESne6RG6XQ==, tarball: https://registry.npm.taobao.org/agent-base/-/agent-base-6.0.2.tgz}
+    resolution: {integrity: sha512-RZNwNclF7+MS/8bDg70amg32dyeZGZxiDuQmZxKLAlQjr3jGyLx+4Kkk58UO7D2QdgFIQCovuSuZESne6RG6XQ==}
     engines: {node: '>= 6.0.0'}
     dependencies:
-      debug: 4.3.3
+      debug: 4.3.4
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
+  /agent-base@7.1.0:
+    resolution: {integrity: sha512-o/zjMZRhJxny7OyEF+Op8X+efiELC7k7yOjMzgfzVqOzXqkBkWI79YoTdOtsuWd5BWhAGAuOY/Xa6xpiaWXiNg==}
+    engines: {node: '>= 14'}
+    dependencies:
+      debug: 4.3.4
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -2979,23 +2992,8 @@ packages:
   /color-name@1.1.4:
     resolution: {integrity: sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==}
 
-  /color-string@1.9.0:
-    resolution: {integrity: sha512-9Mrz2AQLefkH1UvASKj6v6hj/7eWgjnT/cVsR8CumieLoT+g900exWeNogqtweI8dxloXN9BDQTYro1oWu/5CQ==}
-    dependencies:
-      color-name: 1.1.4
-      simple-swizzle: 0.2.2
-    dev: false
-
-  /color@4.2.1:
-    resolution: {integrity: sha512-MFJr0uY4RvTQUKvPq7dh9grVOTYSFeXja2mBXioCGjnjJoXrAp9jJ1NQTDR73c9nwBSAQiNKloKl5zq9WB9UPw==}
-    engines: {node: '>=12.5.0'}
-    dependencies:
-      color-convert: 2.0.1
-      color-string: 1.9.0
-    dev: false
-
   /colord@2.9.1:
-    resolution: {integrity: sha512-4LBMSt09vR0uLnPVkOUBnmxgoaeN4ewRbx801wY/bXcltXfpR/G46OdWn96XpYmCWuYvO46aBZP4NgX8HpNAcw==, tarball: https://registry.npm.taobao.org/colord/-/colord-2.9.1.tgz}
+    resolution: {integrity: sha512-4LBMSt09vR0uLnPVkOUBnmxgoaeN4ewRbx801wY/bXcltXfpR/G46OdWn96XpYmCWuYvO46aBZP4NgX8HpNAcw==}
     dev: false
 
   /combined-stream@1.0.8:
@@ -3415,19 +3413,19 @@ packages:
   /csstype@2.6.18:
     resolution: {integrity: sha512-RSU6Hyeg14am3Ah4VZEmeX8H7kLwEEirXe6aU2IPfKNvhXwTflK5HQRDNI0ypQXoqmm+QPyG2IaPuQE5zMwSIQ==}
 
-  /daisyui@2.42.1(autoprefixer@10.3.7)(postcss@8.4.12)(ts-node@10.9.1):
-    resolution: {integrity: sha512-IVeEvP8gvOzHR47fMrOp2YocQJMRmYskhdt7OsuhKJNn+YzLRGOpVpY7AGXt/56pYeYy7h03THHXRTW5cVU9rQ==}
+  /daisyui@3.1.5(autoprefixer@10.3.7)(postcss@8.4.12)(ts-node@10.9.1):
+    resolution: {integrity: sha512-3nk5L//IU31ISzsonKEFG8ris8hS/MRAc+PrOTOyRbssjv1fYmNKSdIrOhG6op2ED3RyJL4p6I81JUwd7RWqTw==}
+    engines: {node: '>=16.9.0'}
     peerDependencies:
-      autoprefixer: ^10.0.2
-      postcss: ^8.1.6
+      postcss: ^8
     dependencies:
-      autoprefixer: 10.3.7(postcss@8.4.12)
-      color: 4.2.1
+      colord: 2.9.1
       css-selector-tokenizer: 0.8.0
       postcss: 8.4.12
       postcss-js: 4.0.0(postcss@8.4.12)
       tailwindcss: 3.0.15(autoprefixer@10.3.7)(postcss@8.4.12)(ts-node@10.9.1)
     transitivePeerDependencies:
+      - autoprefixer
       - ts-node
     dev: false
 
@@ -3461,6 +3459,17 @@ packages:
 
   /debug@4.3.3:
     resolution: {integrity: sha512-/zxw5+vh1Tfv+4Qn7a5nsbcJKPaSvCDhojn6FEl9vupwK2VCSDtEiEtqr8DFtzYFOdz63LBkxec7DYuc2jon6Q==}
+    engines: {node: '>=6.0'}
+    peerDependencies:
+      supports-color: '*'
+    peerDependenciesMeta:
+      supports-color:
+        optional: true
+    dependencies:
+      ms: 2.1.2
+
+  /debug@4.3.4:
+    resolution: {integrity: sha512-PRWFHuSU3eDtQJPvnNY7Jcket1j0t5OuOsFzPPzsekD52Zl8qUfFIPEiswXqIvHWGVHOgX+7G/vCNNhehwxfkQ==}
     engines: {node: '>=6.0'}
     peerDependencies:
       supports-color: '*'
@@ -4617,16 +4626,26 @@ packages:
     dependencies:
       '@tootallnate/once': 2.0.0
       agent-base: 6.0.2
-      debug: 4.3.3
+      debug: 4.3.4
     transitivePeerDependencies:
       - supports-color
     dev: true
 
   /https-proxy-agent@5.0.0:
-    resolution: {integrity: sha512-EkYm5BcKUGiduxzSt3Eppko+PiNWNEpa4ySk9vTC6wDsQJW9rHSa+UhGNJoRYp7bz6Ht1eaRIa6QaJqO5rCFbA==, tarball: https://registry.npm.taobao.org/https-proxy-agent/-/https-proxy-agent-5.0.0.tgz}
+    resolution: {integrity: sha512-EkYm5BcKUGiduxzSt3Eppko+PiNWNEpa4ySk9vTC6wDsQJW9rHSa+UhGNJoRYp7bz6Ht1eaRIa6QaJqO5rCFbA==}
     engines: {node: '>= 6'}
     dependencies:
       agent-base: 6.0.2
+      debug: 4.3.4
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
+  /https-proxy-agent@7.0.0:
+    resolution: {integrity: sha512-0euwPCRyAPSgGdzD1IVN9nJYHtBhJwb6XPfbpQcYbPCwrBidX6GzxmchnaF4sfF/jPb74Ojx5g4yTg3sixlyPw==}
+    engines: {node: '>= 14'}
+    dependencies:
+      agent-base: 7.1.0
       debug: 4.3.3
     transitivePeerDependencies:
       - supports-color
@@ -4756,10 +4775,6 @@ packages:
 
   /is-arrayish@0.2.1:
     resolution: {integrity: sha512-zz06S8t0ozoDXMG+ube26zeCTNXcKIPJZJi8hBrF4idCLms4CG9QtK7qBl1boi5ODzFpjswb5JPmHCbMpjaYzg==}
-
-  /is-arrayish@0.3.2:
-    resolution: {integrity: sha512-eVRqCvVlZbuw3GrM63ovNSNAeA1K16kaR/LRY/92w0zxQ5/1YzwblUX652i4Xs9RwAGjW9d9y6X88t8OaAJfWQ==}
-    dev: false
 
   /is-bigint@1.0.4:
     resolution: {integrity: sha512-zB9CruMamjym81i2JZ3UMn54PKGsQzsJeo6xvN3HJJ4CAsQNB6iRutp2To77OfCNuoxspsIhzaPoO1zyCEhFOg==, tarball: https://registry.npm.taobao.org/is-bigint/-/is-bigint-1.0.4.tgz}
@@ -5026,7 +5041,7 @@ packages:
     resolution: {integrity: sha512-n3s8EwkdFIJCG3BPKBYvskgXGoy88ARzvegkitk60NxRdwltLOTaH7CUiMRXvwYorl0Q712iEjcWB+fK/MrWVw==}
     engines: {node: '>=10'}
     dependencies:
-      debug: 4.3.3
+      debug: 4.3.4
       istanbul-lib-coverage: 3.2.0
       source-map: 0.6.1
     transitivePeerDependencies:
@@ -7236,12 +7251,6 @@ packages:
   /signal-exit@3.0.7:
     resolution: {integrity: sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ==}
     dev: true
-
-  /simple-swizzle@0.2.2:
-    resolution: {integrity: sha512-JA//kQgZtbuY83m+xT+tXJkmJncGMTFT+C+g2h2R9uxkYIrE2yy9sgmcLhCnw57/WSD+Eh3J97FPEDFnbXnDUg==}
-    dependencies:
-      is-arrayish: 0.3.2
-    dev: false
 
   /sisteransi@1.0.5:
     resolution: {integrity: sha512-bLGGlR1QxBcynn2d5YmDX4MGjlZvy2MRBDRNHLJ8VI6l6+9FUiyTFNJ0IveOSP0bcXgVDPRcfGqA0pjaqUpfVg==}

@@ -5,8 +5,6 @@ const version = pkg.dependencies.daisyui;
 import downloadRepo from 'download-git-repo';
 import path from 'path';
 import fs from 'fs-extra';
-// @ts-ignore
-import fetch from 'node-fetch';
 import { parseCssTheme } from './parse-css-theme';
 
 export const init = async (context: string) => {
@@ -79,3 +77,5 @@ export const Icon$name = /* @__PURE__ */ defineComponent<IIconProps & HTMLAttrib
 
   console.log(`[Generate icons]: create ${icons.length} icons success.`);
 }
+
+export { parseCssTheme };

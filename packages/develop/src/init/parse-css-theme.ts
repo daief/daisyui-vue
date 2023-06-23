@@ -6,6 +6,10 @@ import path from 'path';
 import fs from 'fs-extra';
 // @ts-ignore
 import fetch from 'node-fetch';
+import { HttpsProxyAgent } from 'https-proxy-agent';
+
+const envProxy = process.env.HTTP_PROXY || process.env.http_proxy;
+const agent = envProxy ? new HttpsProxyAgent(envProxy) : null;
 
 const ALIAS = {
   '--pf': 'primary-focus',
@@ -44,6 +48,7 @@ const ALIAS = {
   '--tab-border': 'tab-border',
   '--tab-radius': 'tab-radius',
 };
+const KNOWN_KEYS = Object.keys(ALIAS);
 
 // https://www.postcss.com.cn/docs/writing-a-postcss-plugin
 // https://astexplorer.net/
@@ -59,7 +64,9 @@ export async function parseCssTheme(context: string) {
   > = {};
 
   const themeCss = `https://cdn.jsdelivr.net/npm/daisyui@${version}/dist/themes.css`;
-  const css = await fetch(themeCss).then((resp: Response) => resp.text());
+  const css = await fetch(themeCss, { agent }).then((resp: Response) =>
+    resp.text(),
+  );
 
   await postcss([
     {
@@ -75,6 +82,11 @@ export async function parseCssTheme(context: string) {
         const dels = rule.nodes.filter(
           (node) => node.type === 'decl',
         ) as import('postcss').Declaration[];
+
+        const remoteThemeKeys = dels.filter((it) => it.prop.startsWith('--'));
+        if (remoteThemeKeys.length !== KNOWN_KEYS.length) {
+          throw new Error(`there are unknow theme key within [${themeName}]`);
+        }
 
         themeMap[themeName] = {
           scheme: '',

@@ -1,6 +1,6 @@
 import { cac } from 'cac';
 import path from 'path';
-import { createIcons, init } from './init';
+import { createIcons, init, parseCssTheme } from './init';
 import fs from 'fs-extra';
 
 const cli = cac('dv');
@@ -14,6 +14,10 @@ cli.command('init', 'init daisyui & theme').action(async () => {
 
 cli.command('icons', 'create icons').action(async () => {
   return createIcons(context);
+});
+
+cli.command('gen-themes', 'init theme').action(async () => {
+  return parseCssTheme(context);
 });
 
 cli.command('pre-publish', '').action(async () => {
