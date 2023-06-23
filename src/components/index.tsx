@@ -14,6 +14,7 @@ export * from './dropdown';
 export * from './icon';
 export * from './indicator';
 export * from './input';
+export * from './join';
 export * from './kbd';
 export * from './link';
 export * from './mask';
