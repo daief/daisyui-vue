@@ -1,6 +1,7 @@
 import { UserConfig } from 'vite';
 import Pages from 'vite-plugin-pages';
-import Markdown from 'vite-plugin-md';
+// import Markdown from 'vite-plugin-md';
+import Markdown from 'vite-plugin-vue-markdown';
 // import { VitePWA } from 'vite-plugin-pwa';
 import Vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
@@ -48,8 +49,8 @@ const wrap = (render) =>
 const config: UserConfig = {
   base: '/daisyui-vue/',
   plugins: [
-    // @ts-ignore
     {
+      name: 'pre_transformIndexHtml',
       enforce: 'pre',
       transformIndexHtml: (html) => {
         return html.replace(
@@ -337,6 +338,7 @@ const config: UserConfig = {
   },
   build: {},
   server: {
+    port: 3000,
     fs: {
       strict: false,
     },

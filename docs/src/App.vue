@@ -50,8 +50,7 @@ import {
 } from 'daisyui-vue';
 import { RouteRecordNormalized, RouterLink, useRoute } from 'vue-router';
 import { isBrowser } from './utils/index';
-// @ts-ignore
-import routes from 'virtual:generated-pages';
+import routes from '~pages';
 
 const DOC_THEMT_CACHE_KEY = '__DOCUMENT_THEME__';
 

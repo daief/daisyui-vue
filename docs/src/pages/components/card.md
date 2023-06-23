@@ -131,8 +131,7 @@ glass card
     side
     image="https://placeimg.com/400/225/arch"
     title="Glass"
-    description="Rerum reiciendis beatae tenetur excepturi aut pariatur est eos. Sit sit
- necessitatibus veritatis sed molestiae voluptates incidunt iure sapiente."
+    description="Rerum reiciendis beatae tenetur excepturi aut pariatur est eos. Sit sit necessitatibus veritatis sed molestiae voluptates incidunt iure sapiente."
   >
     <dv-card-image class="p-6">
       <img class="rounded-2xl" src="https://placeimg.com/400/225/arch" />
