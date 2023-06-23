@@ -93,6 +93,7 @@ export function render() {
   - [x] modal, drawer
 - [x] refine theme usage
 - [ ] inline-block(radio, checkbox, toggle) vertical-align
+- [ ] fix types check
 
 ## Naming Rules
 

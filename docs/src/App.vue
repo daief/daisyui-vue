@@ -48,9 +48,9 @@ import {
   createThemeWinter,
   createThemeWireframe,
 } from 'daisyui-vue';
-import { RouteRecordNormalized, RouterLink, useRoute } from 'vue-router';
+import { useRoute } from 'vue-router';
 import { isBrowser } from './utils/index';
-import routes from '~pages';
+import AppMenuVue from './components/app/app-menu.vue';
 
 const DOC_THEMT_CACHE_KEY = '__DOCUMENT_THEME__';
 
@@ -79,30 +79,6 @@ export default defineComponent({
     watch(currentDocTheme, () => {
       localStorage.setItem(DOC_THEMT_CACHE_KEY, currentDocTheme.value);
     });
-
-    const { components } = (routes as any[]).reduce<{
-      components: RouteRecordNormalized[];
-    }>(
-      (rs, r: RouteRecordNormalized) => {
-        if (/^\/components\//.test(r.path)) {
-          rs.components.push(r);
-        }
-        return rs;
-      },
-      {
-        components: [] as RouteRecordNormalized[],
-      },
-    );
-
-    const componentsMenus = components
-      .sort((a, b) => (a.name as string).localeCompare(b.name as string))
-      .map((it) => (
-        <MenuItem childWrapper={false} key={it.path} class="capitalize">
-          <RouterLink to={it.path} activeClass="dv-active">
-            {(it.name as string).replace('components-', '')}
-          </RouterLink>
-        </MenuItem>
-      ));
 
     const themes = {
       light: createThemeLight(),
@@ -150,10 +126,7 @@ export default defineComponent({
             v-slots={{
               default: () => (
                 <div class="overflow-y-auto w-80 dv-bgbase200 pb-6">
-                  <Menu class="dv-roundedbox p-4" compact>
-                    <MenuItem asTitle>Components</MenuItem>
-                    {componentsMenus}
-                  </Menu>
+                  <AppMenuVue />
                 </div>
               ),
               content: () => (

@@ -1,3 +1,8 @@
+<route lang="yml">
+meta:
+  menuHidden: true
+</route>
+
 # Demo for development
 
 ```tsx :::run

@@ -1,3 +1,9 @@
+<route lang="yml">
+meta:
+  name: Home
+  sort: 0
+</route>
+
 <script lang="tsx">
 import { useHead } from '@vueuse/head';
 
