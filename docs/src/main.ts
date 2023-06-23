@@ -18,9 +18,9 @@ import daisyui, {
   IconColorPalette,
 } from 'daisyui-vue';
 import './styles';
-import App from './App.vue';
-import Playground from './components/Playground.vue';
-import MarkdownTable from './components/MarkdownTable.vue';
+import App from './app.vue';
+import Playground from './components/playground.vue';
+import MarkdownTable from './components/markdown-table.vue';
 
 const icons = [
   IconHeart,
