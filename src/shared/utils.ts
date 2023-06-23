@@ -2,10 +2,13 @@ import {
   Comment,
   Fragment,
   isVNode,
+  Ref,
   Slots,
+  toRef,
   VNode,
   VNodeNormalizedChildren,
 } from 'vue';
+import { IMaybeRefs } from './types/common';
 
 export const isBrowser = typeof window !== 'undefined';
 
@@ -163,3 +166,15 @@ export function debounce<F extends (...args: any) => any>(
 
   return result;
 }
+
+export const maybeRefsToRefs = <T, Keys extends (keyof T)[]>(
+  obj: IMaybeRefs<T>,
+  keys: Keys,
+): {
+  [P in Keys[number]]: Ref<T[P]>;
+} => {
+  return keys.reduce((acc, key) => {
+    acc[key] = toRef(obj, key);
+    return acc;
+  }, {} as any);
+};

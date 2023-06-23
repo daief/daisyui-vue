@@ -239,7 +239,6 @@ export default {
 | disableTeleport | disable teleport behavior        | boolean     | -       |
 | flattern        | make drawer to be always visible | boolean     | -       |
 | placement       | drawer open position             | left, right | left    |
-| placement       | drawer open position             | left, right | left    |
 
 ### Events
 

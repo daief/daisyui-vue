@@ -33,7 +33,12 @@ export const radioGroupProps = {
 
 export type IRadioGroupProps = ExtractFromProps<typeof radioGroupProps>;
 
-export const RadioGroup = componentV2<IRadioGroupProps, HTMLAttributes>({
+export const RadioGroup = componentV2<
+  IRadioGroupProps,
+  HTMLAttributes & {
+    'onUpdate:modelValue'?: (value: IText) => void;
+  }
+>({
   name: 'RadioGroup',
   props: radioGroupProps,
   emits: [V_MODEL_EVENT],

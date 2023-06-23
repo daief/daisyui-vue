@@ -30,6 +30,10 @@ export interface IStyleProps {
   style?: StyleValue;
 }
 
+export interface IModalValueProps<V> {
+  'onUpdate:modelValue'?: (value: V) => void;
+}
+
 export type IMaybeRef<T> = T | Ref<T>;
 
 export type IMaybeRefs<T> = {

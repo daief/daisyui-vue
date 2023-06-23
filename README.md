@@ -91,7 +91,8 @@ export function render() {
 - [x] pre insert all global style
 - [ ] popper/modal/drawer animation(maybe some preset animations)
   - [x] modal, drawer
-- [ ] refine theme usage
+- [x] refine theme usage
+- [ ] inline-block(radio, checkbox, toggle) vertical-align
 
 ## Components
 
