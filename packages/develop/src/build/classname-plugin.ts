@@ -13,6 +13,8 @@ export const clsUnique =
     .digest('base64url')
     .slice(0, 6);
 
+export const clsUniquePrefix = clsUnique + '-';
+
 /**
  * __c 包裹的类名添加标识
  * @param context
@@ -73,30 +75,41 @@ export const createClassnameTransformerFactory = (program: ts.Program) => {
   return createClassnameTransformer;
 };
 
-export const convertClsName = (name: string) =>
-  name.replace(/\.dv-/g, '.' + clsUnique + '-');
-export const convertKeyFramesName = (name: string) => clsUnique + '-' + name;
+export const convertKeyFramesName = (name: string) => clsUniquePrefix + name;
 
 /**
  * classname 和 keyframes name 添加 hash 前缀
+ * - 暂时地：dv- 开头的类忽略
  * @returns
  */
 export const postcssDvClsTransformer = (): Plugin => {
+  const cache: Record<string, boolean> = {};
   return {
     postcssPlugin: 'postcssDvClsTransformer',
     Rule(rule) {
-      rule.selector = convertClsName(rule.selector);
+      if (cache[rule.selector]) return;
+
+      rule.selector = rule.selector.replace(/\.(dv-)?/g, (substr) => {
+        if (substr === '.dv-') return substr; // TODO rm
+        return '.' + clsUniquePrefix;
+      });
+      cache[rule.selector] = true;
     },
     AtRuleExit(atRule) {
-      if (atRule.name === 'keyframes' && !atRule.params.startsWith(clsUnique)) {
-        atRule.params = convertKeyFramesName(atRule.params);
-      }
+      if (atRule.name !== 'keyframes') return;
+      if (atRule.params.startsWith(clsUnique)) return;
+
+      if (atRule.params.startsWith('dv-')) return; // TODO rm
+
+      atRule.params = convertKeyFramesName(atRule.params);
     },
     Declaration: {
       ['animation-name']: (decl) => {
-        if (!decl.value.startsWith(clsUnique)) {
-          decl.value = convertKeyFramesName(decl.value);
-        }
+        if (decl.value.startsWith(clsUnique)) return;
+        if (decl.value.startsWith('var(')) return;
+        if (decl.value.startsWith('dv-')) return; // TODO rm
+
+        decl.value = convertKeyFramesName(decl.value);
       },
 
       animation: (decl) => {
@@ -104,6 +117,9 @@ export const postcssDvClsTransformer = (): Plugin => {
         const names = parsed.map((it) => it.name);
         names.forEach((name) => {
           if (name.startsWith(clsUnique)) return;
+          if (decl.value.startsWith('var(')) return;
+          if (decl.value.startsWith('dv-')) return; // TODO rm
+
           decl.value = decl.value.replace(name, convertKeyFramesName(name));
         });
       },
