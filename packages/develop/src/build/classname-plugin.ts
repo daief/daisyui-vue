@@ -23,47 +23,121 @@ export const clsUniquePrefix = clsUnique + '-';
 export const createClassnameTransformer: ts.TransformerFactory<
   ts.SourceFile
 > = (context) => {
-  const checkHeadText = (txt: string) => {
-    if (!txt || !txt.startsWith('dv-')) {
-      throw new Error(
-        `[${txt}] ` + 'must use like __c`dv-xx`, starts with dv-',
-      );
-    }
-  };
-
   return (source) => {
-    const visitor: ts.Visitor = (node: ts.Node): ts.VisitResult<ts.Node> => {
-      if (
-        ts.isTaggedTemplateExpression(node) &&
-        node.tag.getFullText() === '__c'
-      ) {
-        const tpl = node.template;
+    // const visitor: ts.Visitor = (node: ts.Node): ts.VisitResult<ts.Node> => {
+    //   if (
+    //     ts.isTaggedTemplateExpression(node) &&
+    //     node.tag.getFullText() === '__c'
+    //   ) {
+    //     const tpl = node.template;
 
-        if (ts.isNoSubstitutionTemplateLiteral(tpl)) {
-          const headText = tpl.getText().replace(/`/g, '');
-          checkHeadText(headText);
+    //     if (ts.isNoSubstitutionTemplateLiteral(tpl)) {
+    //       const headText = tpl.getText().replace(/`/g, '');
+    //       checkHeadText(headText);
 
-          return ts.factory.createNoSubstitutionTemplateLiteral(
-            headText.replace(/^dv/, clsUnique),
-          );
-        }
+    //       return ts.factory.createNoSubstitutionTemplateLiteral(
+    //         headText.replace(/^dv/, clsUnique),
+    //       );
+    //     }
 
-        if (ts.isTemplateExpression(tpl)) {
-          const headTxt = tpl.head
-            .getText()
-            .replace(/^`/, '')
-            .replace('${', '');
+    //     if (ts.isTemplateExpression(tpl)) {
+    //       const headTxt = tpl.head
+    //         .getText()
+    //         .replace(/^`/, '')
+    //         .replace('${', '');
 
-          checkHeadText(headTxt);
+    //       checkHeadText(headTxt);
 
-          return ts.factory.createTemplateExpression(
-            ts.factory.createTemplateHead(headTxt.replace(/^dv/, clsUnique)),
-            tpl.templateSpans,
-          );
-        }
+    //       return ts.factory.createTemplateExpression(
+    //         ts.factory.createTemplateHead(headTxt.replace(/^dv/, clsUnique)),
+    //         tpl.templateSpans,
+    //       );
+    //     }
 
-        throw new Error('not template expression, must use like __c`dv-xx`');
+    //     throw new Error('not template expression, must use like __c`dv-xx`');
+    //   }
+    //   return ts.visitEachChild(node, visitor, context);
+    // };
+
+    const updateNode = (node: ts.Node) => {
+      if (ts.isStringLiteral(node)) {
+        return ts.factory.createStringLiteral(clsUniquePrefix + node.text);
       }
+
+      if (ts.isNoSubstitutionTemplateLiteral(node)) {
+        return ts.factory.createNoSubstitutionTemplateLiteral(
+          clsUniquePrefix + node.text,
+        );
+      }
+
+      if (ts.isTemplateExpression(node)) {
+        return ts.factory.createTemplateExpression(
+          ts.factory.createTemplateHead(clsUniquePrefix + node.head.text),
+          node.templateSpans,
+        );
+      }
+
+      return null;
+    };
+
+    const visitor: ts.Visitor = (node) => {
+      if (
+        ts.isCallExpression(node) &&
+        ts.isIdentifier(node.expression) &&
+        node.expression.text === '__c'
+      ) {
+        const args = node.arguments.map((arg) => {
+          const newArg = updateNode(arg);
+          if (newArg) return newArg;
+
+          if (ts.isObjectLiteralExpression(arg)) {
+            const transformedProperties = arg.properties.map((prop) => {
+              if (!ts.isPropertyAssignment(prop)) return prop;
+
+              const propertyName = prop.name;
+              const propertyValue = prop.initializer;
+
+              if (ts.isComputedPropertyName(propertyName)) {
+                return ts.factory.createPropertyAssignment(
+                  ts.factory.updateComputedPropertyName(
+                    propertyName,
+                    updateNode(propertyName.expression) ||
+                      propertyName.expression,
+                  ),
+                  propertyValue,
+                );
+              }
+
+              if (
+                ts.isIdentifier(propertyName) ||
+                ts.isStringLiteral(propertyName)
+              ) {
+                const transformedPropertyName = ts.factory.createStringLiteral(
+                  clsUniquePrefix + propertyName.text,
+                );
+
+                return ts.factory.createPropertyAssignment(
+                  transformedPropertyName,
+                  propertyValue,
+                );
+              }
+
+              return prop;
+            });
+
+            const transformedObject = ts.factory.createObjectLiteralExpression(
+              transformedProperties,
+            );
+
+            return transformedObject;
+          }
+
+          return arg;
+        });
+
+        return ts.factory.createArrayLiteralExpression(args);
+      }
+
       return ts.visitEachChild(node, visitor, context);
     };
 
@@ -75,7 +149,7 @@ export const createClassnameTransformerFactory = (program: ts.Program) => {
   return createClassnameTransformer;
 };
 
-export const convertKeyFramesName = (name: string) => clsUniquePrefix + name;
+const convertKeyFramesName = (name: string) => clsUniquePrefix + name;
 
 /**
  * classname 和 keyframes name 添加 hash 前缀

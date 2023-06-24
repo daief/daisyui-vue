@@ -3,7 +3,6 @@ import {
   createClassnameTransformer,
   clsUniquePrefix,
   postcssDvClsTransformer,
-  convertKeyFramesName,
 } from '../src/build/classname-plugin';
 import postcss from 'postcss';
 
@@ -39,29 +38,44 @@ describe('classname-plugin', () => {
     }
   });
 
-  // it('ts-transformer', () => {
-  //   const compile = (code: string) =>
-  //     ts.transpileModule(code, {
-  //       compilerOptions: {
-  //         target: ts.ScriptTarget.ES2015,
-  //       },
-  //       transformers: {
-  //         before: [createClassnameTransformer],
-  //       },
-  //     });
+  it('ts-transformer', () => {
+    const compile = (code: string) =>
+      ts.transpileModule(code, {
+        compilerOptions: {
+          target: ts.ScriptTarget.ES2015,
+        },
+        transformers: {
+          before: [createClassnameTransformer],
+        },
+      });
 
-  //   const codes = ['__c`dv-btn`', "__c`dv-btn-${'primary'}`"];
-  //   const results = codes.map(
-  //     (it) => it.replace('__c', '').replace('`dv', '`' + clsUnique) + ';',
-  //   );
+    const its = [
+      ['__c("btn")', `["${clsUniquePrefix}btn"];`],
+      ['__c(`btn-${a}`)', `[\`${clsUniquePrefix}btn-\${a}\`];`],
+      ['__c("a", `b`)', `["${clsUniquePrefix}a", \`${clsUniquePrefix}b\`];`],
+      [
+        `__c({
+          a: true
+        })`,
+        `[{ \"${clsUniquePrefix}a\": true }];`,
+      ],
+      [
+        `__c({
+          "a": true
+        })`,
+        `[{ \"${clsUniquePrefix}a\": true }];`,
+      ],
+      [
+        `__c({
+          [\`bb\`]: true
+        })`,
+        `[{ [\`${clsUniquePrefix}bb\`]: true }];`,
+      ],
+    ];
 
-  //   codes.forEach((code, i) => {
-  //     const result = compile(code);
-  //     expect(result.outputText.trim()).toEqual(results[i]);
-  //   });
-
-  //   expect(() => compile('__c``')).toThrow();
-  //   expect(() => compile('__c`a`')).toThrow();
-  //   expect(() => compile('__c`dva`')).toThrow();
-  // });
+    its.forEach(([code, result]) => {
+      const actualResult = compile(code);
+      expect(actualResult.outputText.trim()).toEqual(result);
+    });
+  });
 });
