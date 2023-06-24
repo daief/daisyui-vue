@@ -8,7 +8,8 @@ button with brand colors
 <div
   class="flex flex-wrap items-start md:space-x-2 space-y-2 md:space-y-0 flex-col md:flex-row"
 >
-  <dv-button>neutral</dv-button>
+  <dv-button>default</dv-button>
+  <dv-button variant="neutral">neutral</dv-button>
   <dv-button variant="primary">secondary</dv-button>
   <dv-button variant="secondary">secondary</dv-button>
   <dv-button variant="accent">accent</dv-button>
@@ -23,12 +24,26 @@ active state button
 <div
   class="flex flex-wrap items-start md:space-x-2 space-y-2 md:space-y-0 flex-col md:flex-row"
 >
-  <dv-button active>neutral</dv-button>
+  <dv-button active>default</dv-button>
+  <dv-button active variant="neutral">neutral</dv-button>
   <dv-button active variant="primary">secondary</dv-button>
   <dv-button active variant="secondary">secondary</dv-button>
   <dv-button active variant="accent">accent</dv-button>
   <dv-button active variant="ghost">ghost</dv-button>
   <dv-button active variant="link">link</dv-button>
+</div>
+```
+
+button with state colors
+
+```html :::demo
+<div
+  class="flex flex-wrap items-start md:space-x-2 space-y-2 md:space-y-0 flex-col md:flex-row"
+>
+  <dv-button variant="info">info</dv-button>
+  <dv-button variant="success">success</dv-button>
+  <dv-button variant="warning">warning</dv-button>
+  <dv-button variant="error">error</dv-button>
 </div>
 ```
 
@@ -42,6 +57,19 @@ outline button
   <dv-button variant="primary" outline>secondary</dv-button>
   <dv-button variant="secondary" outline>secondary</dv-button>
   <dv-button variant="accent" outline>accent</dv-button>
+</div>
+```
+
+outline buttons with state colors
+
+```html :::demo
+<div
+  class="flex flex-wrap items-start md:space-x-2 space-y-2 md:space-y-0 flex-col md:flex-row"
+>
+  <dv-button variant="info" outline>info</dv-button>
+  <dv-button variant="success" outline>success</dv-button>
+  <dv-button variant="warning" outline>warning</dv-button>
+  <dv-button variant="error" outline>error</dv-button>
 </div>
 ```
 
@@ -59,26 +87,10 @@ disabled button
 </div>
 ```
 
-button with state colors
-
-```html :::demo
-<div
-  class="flex flex-wrap items-start md:space-x-2 space-y-2 md:space-y-0 flex-col md:flex-row"
->
-  <dv-button variant="info">info</dv-button>
-  <dv-button variant="success">success</dv-button>
-  <dv-button variant="warning">warning</dv-button>
-  <dv-button variant="error">error</dv-button>
-</div>
-```
-
 glass button
 
 ```html :::demo
-<div
-  class="p-20 bg-cover dv-bgbase200 w-80 h-52 rounded-lg"
-  style='background-image: url("https://placeimg.com/1000/300/arch");'
->
+<div class="p-20 bg-cover dv-bgbase200 w-80 h-52 rounded-lg docs-img-bg">
   <dv-button variant="glass">Glass Button</dv-button>
 </div>
 ```
