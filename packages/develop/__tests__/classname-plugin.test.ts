@@ -50,26 +50,39 @@ describe('classname-plugin', () => {
       });
 
     const its = [
-      ['__c("btn")', `["${clsUniquePrefix}btn"];`],
-      ['__c(`btn-${a}`)', `[\`${clsUniquePrefix}btn-\${a}\`];`],
-      ['__c("a", `b`)', `["${clsUniquePrefix}a", \`${clsUniquePrefix}b\`];`],
+      ['__c("btn")', `["${clsUniquePrefix}btn dv-btn"];`],
+      ['__c(`btn`)', `[\`${clsUniquePrefix}btn dv-btn\`];`],
+      [
+        '__c(`btn-${a}`)',
+        `[\`${clsUniquePrefix}btn-\${a}\` + \` dv-btn-\${a}\`];`,
+      ],
+      [
+        '__c("a", `b`)',
+        `["${clsUniquePrefix}a dv-a", \`${clsUniquePrefix}b dv-b\`];`,
+      ],
       [
         `__c({
           a: true
         })`,
-        `[{ \"${clsUniquePrefix}a\": true }];`,
+        `[{ \"${clsUniquePrefix}a dv-a\": true }];`,
       ],
       [
         `__c({
           "a": true
         })`,
-        `[{ \"${clsUniquePrefix}a\": true }];`,
+        `[{ \"${clsUniquePrefix}a dv-a\": true }];`,
       ],
       [
         `__c({
           [\`bb\`]: true
         })`,
-        `[{ [\`${clsUniquePrefix}bb\`]: true }];`,
+        `[{ [\`${clsUniquePrefix}bb dv-bb\`]: true }];`,
+      ],
+      [
+        `__c({
+          [\`bb-\${a}\`]: true
+        })`,
+        `[{ [\`${clsUniquePrefix}bb-\${a}\` + \` dv-bb-\${a}\`]: true }];`,
       ],
     ];
 

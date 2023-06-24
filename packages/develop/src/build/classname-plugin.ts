@@ -17,6 +17,11 @@ export const clsUniquePrefix = clsUnique + '-';
 
 /**
  * __c 包裹的类名添加标识
+ * ```ts
+ * __('a'); // ['$clsUnique-a dv-a']
+ * __(`a`); // [`$clsUnique-a dv-a`]
+ * __(`a-${x}`); // [`$clsUnique-a-${x}` + ` dv-a-${x}`]
+ * ```
  * @param context
  * @returns
  */
@@ -24,56 +29,30 @@ export const createClassnameTransformer: ts.TransformerFactory<
   ts.SourceFile
 > = (context) => {
   return (source) => {
-    // const visitor: ts.Visitor = (node: ts.Node): ts.VisitResult<ts.Node> => {
-    //   if (
-    //     ts.isTaggedTemplateExpression(node) &&
-    //     node.tag.getFullText() === '__c'
-    //   ) {
-    //     const tpl = node.template;
-
-    //     if (ts.isNoSubstitutionTemplateLiteral(tpl)) {
-    //       const headText = tpl.getText().replace(/`/g, '');
-    //       checkHeadText(headText);
-
-    //       return ts.factory.createNoSubstitutionTemplateLiteral(
-    //         headText.replace(/^dv/, clsUnique),
-    //       );
-    //     }
-
-    //     if (ts.isTemplateExpression(tpl)) {
-    //       const headTxt = tpl.head
-    //         .getText()
-    //         .replace(/^`/, '')
-    //         .replace('${', '');
-
-    //       checkHeadText(headTxt);
-
-    //       return ts.factory.createTemplateExpression(
-    //         ts.factory.createTemplateHead(headTxt.replace(/^dv/, clsUnique)),
-    //         tpl.templateSpans,
-    //       );
-    //     }
-
-    //     throw new Error('not template expression, must use like __c`dv-xx`');
-    //   }
-    //   return ts.visitEachChild(node, visitor, context);
-    // };
-
     const updateNode = (node: ts.Node) => {
       if (ts.isStringLiteral(node)) {
-        return ts.factory.createStringLiteral(clsUniquePrefix + node.text);
+        return ts.factory.createStringLiteral(
+          convertClsName(node.text) + ' dv-' + node.text,
+        );
       }
 
       if (ts.isNoSubstitutionTemplateLiteral(node)) {
         return ts.factory.createNoSubstitutionTemplateLiteral(
-          clsUniquePrefix + node.text,
+          convertClsName(node.text) + ' dv-' + node.text,
         );
       }
 
       if (ts.isTemplateExpression(node)) {
-        return ts.factory.createTemplateExpression(
-          ts.factory.createTemplateHead(clsUniquePrefix + node.head.text),
-          node.templateSpans,
+        return ts.factory.createBinaryExpression(
+          ts.factory.createTemplateExpression(
+            ts.factory.createTemplateHead(convertClsName(node.head.text)),
+            node.templateSpans,
+          ),
+          ts.SyntaxKind.PlusToken,
+          ts.factory.createTemplateExpression(
+            ts.factory.createTemplateHead(' dv-' + node.head.text),
+            node.templateSpans,
+          ),
         );
       }
 
@@ -113,7 +92,9 @@ export const createClassnameTransformer: ts.TransformerFactory<
                 ts.isStringLiteral(propertyName)
               ) {
                 const transformedPropertyName = ts.factory.createStringLiteral(
-                  clsUniquePrefix + propertyName.text,
+                  convertClsName(propertyName.text) +
+                    ' dv-' +
+                    propertyName.text,
                 );
 
                 return ts.factory.createPropertyAssignment(
@@ -149,7 +130,7 @@ export const createClassnameTransformerFactory = (program: ts.Program) => {
   return createClassnameTransformer;
 };
 
-const convertKeyFramesName = (name: string) => clsUniquePrefix + name;
+const convertClsName = (name: string) => clsUniquePrefix + name;
 
 /**
  * classname 和 keyframes name 添加 hash 前缀
@@ -175,7 +156,7 @@ export const postcssDvClsTransformer = (): Plugin => {
 
       if (atRule.params.startsWith('dv-')) return; // TODO rm
 
-      atRule.params = convertKeyFramesName(atRule.params);
+      atRule.params = convertClsName(atRule.params);
     },
     Declaration: {
       ['animation-name']: (decl) => {
@@ -183,7 +164,7 @@ export const postcssDvClsTransformer = (): Plugin => {
         if (decl.value.startsWith('var(')) return;
         if (decl.value.startsWith('dv-')) return; // TODO rm
 
-        decl.value = convertKeyFramesName(decl.value);
+        decl.value = convertClsName(decl.value);
       },
 
       animation: (decl) => {
@@ -194,7 +175,7 @@ export const postcssDvClsTransformer = (): Plugin => {
           if (decl.value.startsWith('var(')) return;
           if (decl.value.startsWith('dv-')) return; // TODO rm
 
-          decl.value = decl.value.replace(name, convertKeyFramesName(name));
+          decl.value = decl.value.replace(name, convertClsName(name));
         });
       },
     },
