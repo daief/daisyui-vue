@@ -102,14 +102,15 @@ export function getRoolupConfig(opts: IBuildOptions) {
           ],
           '@babel/preset-typescript',
         ],
-        // https://github.com/vuejs/jsx-next
         plugins: [
+          // https://github.com/vuejs/jsx-next
           [
             '@vue/babel-plugin-jsx',
             {
               enableObjectSlots: false,
             },
           ],
+          [],
         ],
       }),
       cleanup({

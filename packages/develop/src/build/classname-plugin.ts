@@ -3,6 +3,7 @@ import { createHash } from 'crypto';
 import * as ts from 'typescript';
 import { Plugin } from 'postcss';
 import { parse } from '@hookun/parse-animation-shorthand';
+import * as babelCore from '@babel/core';
 
 const rootPkg = require(path.resolve(process.cwd(), 'package.json'));
 
@@ -14,6 +15,58 @@ export const clsUnique =
     .slice(0, 6);
 
 export const clsUniquePrefix = clsUnique + '-';
+
+const convertClsName = (name: string) => clsUniquePrefix + name;
+
+/**
+ * classname 和 keyframes name 添加 hash 前缀
+ * - 暂时地：dv- 开头的类忽略
+ * @returns
+ */
+export const postcssDvClsTransformer = (): Plugin => {
+  const cache: Record<string, boolean> = {};
+  return {
+    postcssPlugin: 'postcssDvClsTransformer',
+    Rule(rule) {
+      if (cache[rule.selector]) return;
+
+      rule.selector = rule.selector.replace(/\.(dv-)?/g, (substr) => {
+        if (substr === '.dv-') return substr; // TODO rm
+        return '.' + clsUniquePrefix;
+      });
+      cache[rule.selector] = true;
+    },
+    AtRuleExit(atRule) {
+      if (atRule.name !== 'keyframes') return;
+      if (atRule.params.startsWith(clsUnique)) return;
+
+      if (atRule.params.startsWith('dv-')) return; // TODO rm
+
+      atRule.params = convertClsName(atRule.params);
+    },
+    Declaration: {
+      ['animation-name']: (decl) => {
+        if (decl.value.startsWith(clsUnique)) return;
+        if (decl.value.startsWith('var(')) return;
+        if (decl.value.startsWith('dv-')) return; // TODO rm
+
+        decl.value = convertClsName(decl.value);
+      },
+
+      animation: (decl) => {
+        const parsed = parse(decl.value);
+        const names = parsed.map((it) => it.name);
+        names.forEach((name) => {
+          if (name.startsWith(clsUnique)) return;
+          if (decl.value.startsWith('var(')) return;
+          if (decl.value.startsWith('dv-')) return; // TODO rm
+
+          decl.value = decl.value.replace(name, convertClsName(name));
+        });
+      },
+    },
+  };
+};
 
 /**
  * __c 包裹的类名添加标识
@@ -130,53 +183,97 @@ export const createClassnameTransformerFactory = (program: ts.Program) => {
   return createClassnameTransformer;
 };
 
-const convertClsName = (name: string) => clsUniquePrefix + name;
+export const createClassnamePlugin = ({
+  types: t,
+}: typeof babelCore): babelCore.PluginObj => {
+  const updateNode = (node: babelCore.types.Node) => {
+    if (t.isStringLiteral(node) || t.isIdentifier(node)) {
+      const text = t.isStringLiteral(node) ? node.value : node.name;
+      return t.stringLiteral(convertClsName(text) + ' dv-' + text);
+    }
 
-/**
- * classname 和 keyframes name 添加 hash 前缀
- * - 暂时地：dv- 开头的类忽略
- * @returns
- */
-export const postcssDvClsTransformer = (): Plugin => {
-  const cache: Record<string, boolean> = {};
+    if (t.isTemplateLiteral(node)) {
+      const first = node.quasis[0];
+      const rest = node.quasis.slice(1, -1);
+      const last = node.quasis[node.quasis.length - 1];
+
+      const expressions = [
+        ...node.expressions,
+        ...node.expressions.map((it) => t.cloneNode(it)),
+      ];
+
+      if (!node.expressions.length) {
+        return t.templateLiteral(
+          [
+            t.templateElement({
+              raw: convertClsName(first.value.raw) + ' dv-' + first.value.raw,
+            }),
+          ],
+          expressions,
+        );
+      }
+
+      return t.templateLiteral(
+        [
+          t.templateElement({ raw: convertClsName(first.value.raw) }),
+          ...rest,
+          t.templateElement({
+            raw: last.value.raw + ' dv-' + first.value.raw,
+          }),
+          ...rest,
+          last,
+        ],
+        expressions,
+      );
+    }
+
+    return null;
+  };
+
   return {
-    postcssPlugin: 'postcssDvClsTransformer',
-    Rule(rule) {
-      if (cache[rule.selector]) return;
+    visitor: {
+      CallExpression(path) {
+        const node = path.node as babelCore.types.CallExpression;
+        if (!t.isIdentifier(node.callee)) return;
+        if (node.callee.name !== '__c') return;
 
-      rule.selector = rule.selector.replace(/\.(dv-)?/g, (substr) => {
-        if (substr === '.dv-') return substr; // TODO rm
-        return '.' + clsUniquePrefix;
-      });
-      cache[rule.selector] = true;
-    },
-    AtRuleExit(atRule) {
-      if (atRule.name !== 'keyframes') return;
-      if (atRule.params.startsWith(clsUnique)) return;
+        const args = node.arguments.map((arg) => {
+          const newArg = updateNode(arg);
+          if (newArg) return newArg;
 
-      if (atRule.params.startsWith('dv-')) return; // TODO rm
+          if (t.isObjectExpression(arg)) {
+            const transformedProperties = arg.properties.map((prop) => {
+              if (!t.isObjectProperty(prop)) return prop;
 
-      atRule.params = convertClsName(atRule.params);
-    },
-    Declaration: {
-      ['animation-name']: (decl) => {
-        if (decl.value.startsWith(clsUnique)) return;
-        if (decl.value.startsWith('var(')) return;
-        if (decl.value.startsWith('dv-')) return; // TODO rm
+              const key = prop.key;
+              const value = prop.value;
 
-        decl.value = convertClsName(decl.value);
-      },
+              const newKey = updateNode(key);
 
-      animation: (decl) => {
-        const parsed = parse(decl.value);
-        const names = parsed.map((it) => it.name);
-        names.forEach((name) => {
-          if (name.startsWith(clsUnique)) return;
-          if (decl.value.startsWith('var(')) return;
-          if (decl.value.startsWith('dv-')) return; // TODO rm
+              if (newKey) {
+                return t.objectProperty(
+                  newKey,
+                  value,
+                  prop.computed,
+                  prop.shorthand,
+                  prop.decorators,
+                );
+              }
 
-          decl.value = decl.value.replace(name, convertClsName(name));
+              return prop;
+            });
+
+            const transformedObject = t.objectExpression(transformedProperties);
+
+            return transformedObject;
+          }
+
+          return arg;
         });
+
+        path.replaceWith(
+          t.arrayExpression(args as babelCore.types.Expression[]),
+        );
       },
     },
   };

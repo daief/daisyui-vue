@@ -3,6 +3,7 @@ import {
   createClassnameTransformer,
   clsUniquePrefix,
   postcssDvClsTransformer,
+  createClassnamePlugin,
 } from '../src/build/classname-plugin';
 import postcss from 'postcss';
 
@@ -89,6 +90,69 @@ describe('classname-plugin', () => {
     its.forEach(([code, result]) => {
       const actualResult = compile(code);
       expect(actualResult.outputText.trim()).toEqual(result);
+    });
+  });
+
+  it('babel-plugin', async () => {
+    const babel = await import('@babel/core');
+    const compile = (code: string) =>
+      babel.transform(code, {
+        plugins: [[createClassnamePlugin]],
+      });
+
+    const its = [
+      ['__c("btn")', `["${clsUniquePrefix}btn dv-btn"];`],
+      ['__c(`btn`)', `[\`${clsUniquePrefix}btn dv-btn\`];`],
+      ['__c(`btn-${a}`)', `[\`${clsUniquePrefix}btn-\${a} dv-btn-\${a}\`];`],
+      [
+        '__c("a", `b`)',
+        `["${clsUniquePrefix}a dv-a", \`${clsUniquePrefix}b dv-b\`];`,
+      ],
+      [
+        `__c({
+          a1: true
+        })`,
+        `[{
+  \"${clsUniquePrefix}a1 dv-a1\": true
+}];`,
+      ],
+      [
+        `__c({
+          "a2": true
+        })`,
+        `[{
+  \"${clsUniquePrefix}a2 dv-a2\": true
+}];`,
+      ],
+      [
+        `__c({
+          [\`bb\`]: true
+        })`,
+        `[{
+  [\`${clsUniquePrefix}bb dv-bb\`]: true
+}];`,
+      ],
+      [
+        `__c({
+          [\`bb-\${a}\`]: true
+        })`,
+        `[{
+  [\`${clsUniquePrefix}bb-\${a} dv-bb-\${a}\`]: true
+}];`,
+      ],
+      [
+        `__c({
+          [\`bb-\${a}-\${b}-ss\`]: true
+        })`,
+        `[{
+  [\`${clsUniquePrefix}bb-\${a}-\${b}-ss dv-bb-\${a}-\${b}-ss\`]: true
+}];`,
+      ],
+    ];
+
+    its.forEach(([code, result]) => {
+      const actualResult = compile(code);
+      expect(actualResult?.code).toEqual(result);
     });
   });
 });
