@@ -238,6 +238,8 @@ export const createClassnamePlugin = ({
         if (node.callee.name !== '__c') return;
 
         const args = node.arguments.map((arg) => {
+          if (t.isIdentifier(arg)) return arg;
+
           const newArg = updateNode(arg);
           if (newArg) return newArg;
 

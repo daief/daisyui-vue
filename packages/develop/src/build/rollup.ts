@@ -9,7 +9,7 @@ import cleanup from 'rollup-plugin-cleanup';
 import alias from '@rollup/plugin-alias';
 import replace from '@rollup/plugin-replace';
 import { createStylesPlugin } from './rollup-styles-plugin';
-import { clsUnique } from './classname-plugin';
+import { clsUnique, createClassnamePlugin } from './classname-plugin';
 import commonjs from '@rollup/plugin-commonjs';
 
 interface IBuildOptions {
@@ -110,7 +110,7 @@ export function getRoolupConfig(opts: IBuildOptions) {
               enableObjectSlots: false,
             },
           ],
-          [],
+          [createClassnamePlugin],
         ],
       }),
       cleanup({

@@ -102,6 +102,7 @@ describe('classname-plugin', () => {
 
     const its = [
       ['__c("btn")', `["${clsUniquePrefix}btn dv-btn"];`],
+      ['__c(a, "btn")', `[a, "${clsUniquePrefix}btn dv-btn"];`],
       ['__c(`btn`)', `[\`${clsUniquePrefix}btn dv-btn\`];`],
       ['__c(`btn-${a}`)', `[\`${clsUniquePrefix}btn-\${a} dv-btn-\${a}\`];`],
       [
