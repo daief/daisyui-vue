@@ -250,6 +250,8 @@ export const createClassnamePlugin = ({
               const key = prop.key;
               const value = prop.value;
 
+              if (prop.computed && t.isIdentifier(key)) return prop;
+
               const newKey = updateNode(key);
 
               if (newKey) {

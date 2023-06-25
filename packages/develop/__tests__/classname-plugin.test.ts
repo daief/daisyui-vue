@@ -119,6 +119,16 @@ describe('classname-plugin', () => {
       ],
       [
         `__c({
+          a1: true,
+          [a]: false
+        })`,
+        `[{
+  \"${clsUniquePrefix}a1 dv-a1\": true,
+  [a]: false
+}];`,
+      ],
+      [
+        `__c({
           "a2": true
         })`,
         `[{
