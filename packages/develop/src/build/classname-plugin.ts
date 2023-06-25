@@ -279,6 +279,15 @@ export const createClassnamePlugin = ({
           t.arrayExpression(args as babelCore.types.Expression[]),
         );
       },
+      TaggedTemplateExpression(path) {
+        const node = path.node;
+        if (!t.isIdentifier(node.tag)) return;
+        if (node.tag.name !== '__c') return;
+        const newQuasi = updateNode(node.quasi);
+        if (newQuasi) {
+          path.replaceWith(newQuasi);
+        }
+      },
     },
   };
 };

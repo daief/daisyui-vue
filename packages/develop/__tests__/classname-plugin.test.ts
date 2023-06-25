@@ -6,6 +6,9 @@ import {
   createClassnamePlugin,
 } from '../src/build/classname-plugin';
 import postcss from 'postcss';
+import * as fs from 'fs-extra';
+import * as path from 'path';
+import * as prettier from 'prettier';
 
 describe('classname-plugin', () => {
   it('postcss', async () => {
@@ -93,77 +96,45 @@ describe('classname-plugin', () => {
     });
   });
 
-  it('babel-plugin', async () => {
-    const babel = await import('@babel/core');
-    const compile = (code: string) =>
-      babel.transform(code, {
-        plugins: [[createClassnamePlugin]],
+  it(
+    'babel-plugin',
+    async () => {
+      const babel = await import('@babel/core');
+      const compile = (code: string) =>
+        babel.transform(code, {
+          plugins: [[createClassnamePlugin]],
+        });
+
+      const file = await fs.readFile(
+        path.resolve(__dirname, 'fixtures/classname-plugin.js'),
+        {
+          encoding: 'utf-8',
+        },
+      );
+      const prettierCfg = await fs.readJSON(
+        path.resolve(process.cwd(), '.prettierrc'),
+      );
+      prettierCfg.parser = 'babel';
+
+      const its = file
+        .replace(/\$clsUniquePrefix\$/g, clsUniquePrefix)
+        .split('/* - */')
+        .filter(Boolean)
+        .map((it) =>
+          it
+            .split('\n\n')
+            .map((subit) => subit.trim())
+            .filter(Boolean),
+        )
+        .filter((it) => it.length);
+
+      its.forEach(([code, result]) => {
+        const actualResult = compile(code);
+        expect(prettier.format(actualResult!.code, prettierCfg).trim()).toEqual(
+          result,
+        );
       });
-
-    const its = [
-      ['__c("btn")', `["${clsUniquePrefix}btn dv-btn"];`],
-      ['__c(a, "btn")', `[a, "${clsUniquePrefix}btn dv-btn"];`],
-      ['__c(`btn`)', `[\`${clsUniquePrefix}btn dv-btn\`];`],
-      ['__c(`btn-${a}`)', `[\`${clsUniquePrefix}btn-\${a} dv-btn-\${a}\`];`],
-      [
-        '__c("a", `b`)',
-        `["${clsUniquePrefix}a dv-a", \`${clsUniquePrefix}b dv-b\`];`,
-      ],
-      [
-        `__c({
-          a1: true
-        })`,
-        `[{
-  \"${clsUniquePrefix}a1 dv-a1\": true
-}];`,
-      ],
-      [
-        `__c({
-          a1: true,
-          [a]: false
-        })`,
-        `[{
-  \"${clsUniquePrefix}a1 dv-a1\": true,
-  [a]: false
-}];`,
-      ],
-      [
-        `__c({
-          "a2": true
-        })`,
-        `[{
-  \"${clsUniquePrefix}a2 dv-a2\": true
-}];`,
-      ],
-      [
-        `__c({
-          [\`bb\`]: true
-        })`,
-        `[{
-  [\`${clsUniquePrefix}bb dv-bb\`]: true
-}];`,
-      ],
-      [
-        `__c({
-          [\`bb-\${a}\`]: true
-        })`,
-        `[{
-  [\`${clsUniquePrefix}bb-\${a} dv-bb-\${a}\`]: true
-}];`,
-      ],
-      [
-        `__c({
-          [\`bb-\${a}-\${b}-ss\`]: true
-        })`,
-        `[{
-  [\`${clsUniquePrefix}bb-\${a}-\${b}-ss dv-bb-\${a}-\${b}-ss\`]: true
-}];`,
-      ],
-    ];
-
-    its.forEach(([code, result]) => {
-      const actualResult = compile(code);
-      expect(actualResult?.code).toEqual(result);
-    });
-  });
+    },
+    20 * 1000,
+  );
 });
