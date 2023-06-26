@@ -1,6 +1,7 @@
 import * as path from 'path';
 import { createHash } from 'crypto';
 import * as babelCore from '@babel/core';
+import postcssModules from 'postcss-modules';
 
 const rootPkg = require(path.resolve(process.cwd(), 'package.json'));
 
@@ -19,14 +20,22 @@ const convertClsName = (name: string) => clsUniquePrefix + name;
  * classname 和 keyframes name 添加 hash 前缀
  * - 暂时地：dv- 开头的类忽略
  */
-export const createPostcssModulesOptions = () => ({
-  scopeBehaviour: 'local' as 'local',
-  generateScopedName: (name: string, filename: string, css: string): string => {
-    if (name.startsWith('dv-')) return name;
-    if (name.startsWith('--')) return name;
-    return convertClsName(name);
-  },
-});
+export const createPostcssModulesOptions =
+  (): Parameters<postcssModules>[0] => ({
+    getJSON: () => {
+      // leave empty to avoid json output
+    },
+    scopeBehaviour: 'local',
+    generateScopedName: (
+      name: string,
+      filename: string,
+      css: string,
+    ): string => {
+      if (name.startsWith('dv-')) return name;
+      if (name.startsWith('--')) return name;
+      return convertClsName(name);
+    },
+  });
 
 export const createClassnamePlugin = ({
   types: t,
