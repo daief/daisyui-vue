@@ -1,6 +1,7 @@
 import { Plugin } from 'rollup';
 import postcss, { Plugin as PostcssPlugin } from 'postcss';
-import { postcssDvClsTransformer } from './classname-plugin';
+import { createPostcssModulesOptions } from './classname-plugin';
+import postcssModules from 'postcss-modules';
 
 // const postcssJs = require('postcss-js');
 const less = require('less');
@@ -40,9 +41,9 @@ export const createStylesPlugin = (tailwindConfig: any) => {
         },
       ],
     }),
-    // postcssDvClsTransformer(),
     require('autoprefixer'),
     postcssRemToPx(),
+    postcssModules(createPostcssModulesOptions()),
   ]);
 
   const uid = (() => {

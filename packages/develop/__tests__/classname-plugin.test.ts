@@ -1,19 +1,20 @@
-import * as ts from 'typescript';
 import {
-  createClassnameTransformer,
   clsUniquePrefix,
-  postcssDvClsTransformer,
   createClassnamePlugin,
+  createPostcssModulesOptions,
 } from '../src/build/classname-plugin';
 import postcss from 'postcss';
 import * as fs from 'fs-extra';
 import * as path from 'path';
 import * as prettier from 'prettier';
+import * as postcssModules from 'postcss-modules';
 
 describe('classname-plugin', () => {
   it('postcss', async () => {
     const compile = (code: string) =>
-      postcss([postcssDvClsTransformer()]).process(code, { from: undefined });
+      postcss([postcssModules(createPostcssModulesOptions())]).process(code, {
+        from: undefined,
+      });
 
     const its = [
       [`.dv-btn {}`],
@@ -40,60 +41,6 @@ describe('classname-plugin', () => {
       const actualResult = await compile(code);
       expect(actualResult.css.trim()).toEqual(result);
     }
-  });
-
-  it('ts-transformer', () => {
-    const compile = (code: string) =>
-      ts.transpileModule(code, {
-        compilerOptions: {
-          target: ts.ScriptTarget.ES2015,
-        },
-        transformers: {
-          before: [createClassnameTransformer],
-        },
-      });
-
-    const its = [
-      ['__c("btn")', `["${clsUniquePrefix}btn dv-btn"];`],
-      ['__c(`btn`)', `[\`${clsUniquePrefix}btn dv-btn\`];`],
-      [
-        '__c(`btn-${a}`)',
-        `[\`${clsUniquePrefix}btn-\${a}\` + \` dv-btn-\${a}\`];`,
-      ],
-      [
-        '__c("a", `b`)',
-        `["${clsUniquePrefix}a dv-a", \`${clsUniquePrefix}b dv-b\`];`,
-      ],
-      [
-        `__c({
-          a: true
-        })`,
-        `[{ \"${clsUniquePrefix}a dv-a\": true }];`,
-      ],
-      [
-        `__c({
-          "a": true
-        })`,
-        `[{ \"${clsUniquePrefix}a dv-a\": true }];`,
-      ],
-      [
-        `__c({
-          [\`bb\`]: true
-        })`,
-        `[{ [\`${clsUniquePrefix}bb dv-bb\`]: true }];`,
-      ],
-      [
-        `__c({
-          [\`bb-\${a}\`]: true
-        })`,
-        `[{ [\`${clsUniquePrefix}bb-\${a}\` + \` dv-bb-\${a}\`]: true }];`,
-      ],
-    ];
-
-    its.forEach(([code, result]) => {
-      const actualResult = compile(code);
-      expect(actualResult.outputText.trim()).toEqual(result);
-    });
   });
 
   it(

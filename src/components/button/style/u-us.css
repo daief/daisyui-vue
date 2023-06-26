@@ -1,4 +1,4 @@
-.dv-btn {
+.btn {
   &-xs {
     @apply h-6 px-2 min-h-6;
     font-size: 0.75rem;
@@ -22,39 +22,39 @@
     @apply w-full;
   }
   &-square {
-    &:where(.dv-btn-xs) {
+    &:where(.btn-xs) {
       @apply h-6 w-6 p-0;
     }
-    &:where(.dv-btn-sm) {
+    &:where(.btn-sm) {
       @apply h-8 w-8 p-0;
     }
-    &:where(.dv-btn-md) {
+    &:where(.btn-md) {
       @apply h-12 w-12 p-0;
     }
-    &:where(.dv-btn-lg) {
+    &:where(.btn-lg) {
       @apply h-16 w-16 p-0;
     }
   }
   &-circle {
-    &:where(.dv-btn-xs) {
+    &:where(.btn-xs) {
       @apply h-6 w-6 rounded-full p-0;
     }
-    &:where(.dv-btn-sm) {
+    &:where(.btn-sm) {
       @apply h-8 w-8 rounded-full p-0;
     }
-    &:where(.dv-btn-md) {
+    &:where(.btn-md) {
       @apply h-12 w-12 rounded-full p-0;
     }
-    &:where(.dv-btn-lg) {
+    &:where(.btn-lg) {
       @apply h-16 w-16 rounded-full p-0;
     }
   }
 }
 
 /* group */
-.dv-btn-group-horizontal {
-  @apply flex-row flex-wrap;
+.btn-group-horizontal {
+  @apply flex-row;
 }
-.dv-btn-group-vertical {
-  @apply flex-col flex-nowrap;
+.btn-group-vertical {
+  @apply flex-col;
 }

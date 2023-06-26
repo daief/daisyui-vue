@@ -82,22 +82,17 @@ export const Button = componentV2<
           variantCls =
             props.variant !== 'neutral' ? `dv-btn-${props.variant}` : '';
         }
-        return [
-          theme.className,
-          'dv-btn',
-          variantCls,
-          {
-            [`dv-btn-${size.value}`]: true,
-            [`dv-btn-${shape.value}`]: !!shape.value,
-            'dv-btn-block': props.block,
-            'dv-btn-wide': props.wide,
-            'dv-loading': finalLoading.value,
-            'dv-btn-disabled': props.disabled,
-            'dv-btn-active': props.active,
-            'dv-btn-outline': outline.value,
-            'dv-no-animation': props.noAnimation || finalLoading.value,
-          },
-        ];
+        return __c(theme.className, 'btn', variantCls, {
+          [`btn-${size.value}`]: true,
+          [`btn-${shape.value}`]: !!shape.value,
+          'btn-block': props.block,
+          'btn-wide': props.wide,
+          loading: finalLoading.value,
+          'btn-disabled': props.disabled,
+          'btn-active': props.active,
+          'btn-outline': outline.value,
+          'no-animation': props.noAnimation || finalLoading.value,
+        });
       });
 
       const handleOnClick = async (e: any) => {

@@ -4,4 +4,5 @@ module.exports = {
   testEnvironment: 'node',
   testPathIgnorePatterns: ['src/_daisyui'],
   testTimeout: 10000,
+  testMatch: ['**/__tests__/**/*.test.[jt]s?(x)'],
 };
