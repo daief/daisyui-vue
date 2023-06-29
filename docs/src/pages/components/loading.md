@@ -9,7 +9,7 @@ Loading shows an animation to indicate that something is loading.
 
 ## Examples
 
-loading spinner
+Loading spinner
 
 ```html :::demo
 <div class="flex items-center space-x-2">
@@ -20,7 +20,7 @@ loading spinner
 </div>
 ```
 
-loading dots
+Loading dots
 
 ```html :::demo
 <div class="flex items-center space-x-2">
@@ -31,7 +31,7 @@ loading dots
 </div>
 ```
 
-loading ring
+Loading ring
 
 ```html :::demo
 <div class="flex items-center space-x-2">
@@ -42,7 +42,7 @@ loading ring
 </div>
 ```
 
-loading ball
+Loading ball
 
 ```html :::demo
 <div class="flex items-center space-x-2">
@@ -53,7 +53,7 @@ loading ball
 </div>
 ```
 
-loading bars
+Loading bars
 
 ```html :::demo
 <div class="flex items-center space-x-2">
@@ -64,7 +64,7 @@ loading bars
 </div>
 ```
 
-loading infinity
+Loading infinity
 
 ```html :::demo
 <div class="flex items-center space-x-2">
@@ -75,7 +75,7 @@ loading infinity
 </div>
 ```
 
-loading with colors
+Loading with colors
 
 ```html :::demo
 <div class="flex items-center space-x-2">

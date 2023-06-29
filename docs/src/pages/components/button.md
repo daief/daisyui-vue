@@ -1,4 +1,11 @@
+<route lang="yml">
+meta:
+  category: actions
+</route>
+
 # Button
+
+Buttons allow the user to take actions or make choices.
 
 ## Examples
 
@@ -223,7 +230,7 @@ button doesn't have click animation
 button group size
 
 ```html :::demo
-<div class="space-y-2">
+<div class="flex flex-col items-center space-y-2">
   <dv-button-group>
     <dv-button variant="info">info</dv-button>
     <dv-button variant="warning">warning</dv-button>
@@ -241,13 +248,7 @@ button group size
 button group shape
 
 ```html :::demo
-<div class="space-y-2">
-  <dv-button-group size="sm" shape="circle">
-    <dv-button variant="info">A</dv-button>
-    <dv-button variant="warning">B</dv-button>
-    <dv-button variant="error">C</dv-button>
-  </dv-button-group>
-
+<div class="flex flex-col items-center space-y-2">
   <dv-button-group size="sm" shape="square">
     <dv-button variant="info">A</dv-button>
     <dv-button variant="warning">B</dv-button>
