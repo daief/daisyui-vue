@@ -1,3 +1,4 @@
+import globalStyles from 'daisyui-vue/components/_styles/global';
 import { themeVariable } from './theme/define';
 import type { ITheme } from './types/theme';
 import { isBrowser } from './utils';
@@ -57,6 +58,8 @@ export class StyleManager {
     } else {
       this.cssMap = new Map();
     }
+
+    this.insertCss(globalStyles);
   }
 
   insertCss(css: IStyleFile | IStyleFile[]) {

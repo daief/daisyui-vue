@@ -1,6 +1,8 @@
-# daisyui-vue
+# daisyui-vue(WIP)
 
 Vue3 UI components based on [daisyui](https://github.com/saadeghi/daisyui).
+
+> <small>Work is busy, and progress is slow.</small>
 
 ## Usage
 

@@ -17,6 +17,7 @@ export * from './input';
 export * from './join';
 export * from './kbd';
 export * from './link';
+export * from './loading';
 export * from './mask';
 export * from './menu';
 export * from './modal';

@@ -31,7 +31,7 @@ export const createPostcssModulesOptions =
       filename: string,
       css: string,
     ): string => {
-      if (name.startsWith('dv-')) return name;
+      if (name.startsWith('dv-')) return name; // TODO rm
       if (name.startsWith('--')) return name;
       return convertClsName(name);
     },

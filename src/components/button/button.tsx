@@ -18,6 +18,7 @@ import { componentV2 } from 'daisyui-vue/shared/styled';
 import style from './style';
 import { isUndefined } from 'daisyui-vue/shared/utils';
 import { useTheme } from 'daisyui-vue/shared/ctx';
+import { Loading } from '../loading';
 
 export type IButtonShape = 'defalut' | 'circle' | 'square';
 
@@ -29,11 +30,11 @@ export const buttonProps = {
   disabled: Boolean,
   outline: Boolean,
   active: Boolean,
-  loading: Boolean,
+  loading: { type: Boolean, default: void 0 },
   noAnimation: Boolean,
   variant: {
     type: String as PropType<IButtonType>,
-    default: 'neutral',
+    default: '',
   },
   shape: {
     type: String as PropType<IButtonShape>,
@@ -77,17 +78,15 @@ export const Button = componentV2<
       const cls = computed(() => {
         let variantCls = '';
         if (props.variant === 'glass') {
-          variantCls = 'dv-glass';
+          variantCls = __c`glass`;
         } else if (props.variant) {
-          variantCls =
-            props.variant !== 'neutral' ? `dv-btn-${props.variant}` : '';
+          variantCls = __c`btn-${props.variant}`;
         }
         return __c(theme.className, 'btn', variantCls, {
           [`btn-${size.value}`]: true,
           [`btn-${shape.value}`]: !!shape.value,
           'btn-block': props.block,
           'btn-wide': props.wide,
-          loading: finalLoading.value,
           'btn-disabled': props.disabled,
           'btn-active': props.active,
           'btn-outline': outline.value,
@@ -122,7 +121,10 @@ export const Button = componentV2<
             class: cls.value,
             onClick: handleOnClick,
           },
-          [showContent.value ? slots.default?.() : null],
+          [
+            finalLoading.value ? <Loading size={size.value} /> : null,
+            showContent.value ? slots.default?.() : null,
+          ],
         );
     },
   },

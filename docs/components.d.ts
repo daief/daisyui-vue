@@ -11,6 +11,7 @@ declare module 'vue' {
     ChtmlCdawwwxxyvvxdyadvyyyxdcbybbtxvfzxvuxtdwbf: typeof import('./src/.demo/ChtmlCdawwwxxyvvxdyadvyyyxdcbybbtxvfzxvuxtdwbf.vue')['default']
     ChtmlCuetyxdxwtxfwzwvexyvxvetbyccxwxyaexxxawva: typeof import('./src/.demo/ChtmlCuetyxdxwtxfwzwvexyvxvetbyccxwxyaexxxawva.vue')['default']
     ChtmlCwwfwfvyvwuxdwzzfvfywyxxcaxdfcbzvbabxfayy: typeof import('./src/.demo/ChtmlCwwfwfvyvwuxdwzzfvfywyxxcaxdfcbzvbabxfayy.vue')['default']
+    ChtmlCxxyxcbddazfuyytdzcbfwwaxfzywtaufadyfwtdz: typeof import('./src/.demo/ChtmlCxxyxcbddazfuyytdzcbfwwaxfzywtaufadyfwtdz.vue')['default']
     ChtmlCyuuztecbbxxyzcutwyefbdwvzfzdbccxctfyyfuy: typeof import('./src/.demo/ChtmlCyuuztecbbxxyzcutwyefbdwvzfzdbccxctfyyfuy.vue')['default']
     ChtmlCyyadxbzzefxeuuaxteauvwzzwvwatuzfaffcwcwx: typeof import('./src/.demo/ChtmlCyyadxbzzefxeuuaxteauvwzzwvwatuzfaffcwcwx.vue')['default']
     CtsxCaetycwyxwyzfwvbbbwvfxwtyzuxexcvbftayfxzc: typeof import('./src/.demo/CtsxCaetycwyxwyzfwvbbbwvfxwtyzuxexcvbftayfxzc')['default']

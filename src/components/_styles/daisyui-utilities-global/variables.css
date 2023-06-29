@@ -1,9 +1,9 @@
-.dv-no-animation {
+.no-animation {
   --btn-focus-scale: 1;
   --animation-btn: 0;
   --animation-input: 0;
 }
-/* .tab-border-none {
+.tab-border-none {
   --tab-border: 0px;
 }
 .tab-border {
@@ -20,4 +20,4 @@
 }
 .tab-rounded-lg {
   --tab-radius: 0.5rem;
-} */
+}
