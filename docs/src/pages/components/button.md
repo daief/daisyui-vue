@@ -60,7 +60,7 @@ outline button
 <div
   class="flex flex-wrap items-start md:space-x-2 space-y-2 md:space-y-0 flex-col md:flex-row"
 >
-  <dv-button outline>neutral</dv-button>
+  <dv-button outline>default</dv-button>
   <dv-button variant="primary" outline>secondary</dv-button>
   <dv-button variant="secondary" outline>secondary</dv-button>
   <dv-button variant="accent" outline>accent</dv-button>

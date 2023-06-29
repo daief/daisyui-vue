@@ -75,13 +75,27 @@ export default defineComponent({
 .dv-playground {
   margin-bottom: 1em;
 
+  :deep(.dv-tab-content),
   :deep(.preview-demo-wrap) {
-    background-image: radial-gradient(
-      hsla(var(--bc) / 0.2) 0.5px,
-      hsla(var(--b2) / 1) 0.5px
-    );
-    background-size: 5px 5px;
+    border-radius: var(--rounded-box, 16px);
+    border-top-left-radius: 0;
+  }
+
+  :deep(.dv-tab-content) {
+    margin-top: 0;
+  }
+
+  :deep(.preview-demo-wrap) {
     min-height: 24px;
+    background-image: repeating-linear-gradient(
+      45deg,
+      hsl(var(--b1)),
+      hsl(var(--b1)) 13px,
+      hsl(var(--b2)) 13px,
+      hsl(var(--b2)) 14px
+    );
+    border-color: hsl(var(--b3));
+    @apply border border-t-0;
     @apply flex flex-wrap justify-center items-center;
   }
 
